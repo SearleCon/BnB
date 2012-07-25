@@ -1,0 +1,22 @@
+<h1>Please fill in your contact details.</h1>
+<%= simple_form_for @bnb, url: wizard_path, :validate => true do |f| %>
+    <%= f.error_notification %>
+
+
+        <div class = 'form-inputs'>
+          <%= f.input :email %>
+          <%= f.input :address_line_one %>
+          <%= f.input :address_line_two %>
+          <%= f.input :city %>
+          <%= f.input :postal_code %>
+
+          <%= f.input :telephone_number %>
+          <%= f.input :website %>
+        </div>
+
+
+
+    <div class="form-actions">
+      <%= f.button :submit, :label => "Continue" %>
+    </div>
+<% end %>

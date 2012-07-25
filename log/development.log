@@ -1361,3 +1361,2720 @@ Processing by StaticPagesController#home as HTML
   Rendered layouts/_header.html.erb (1.5ms)
   Rendered layouts/_footer.html.erb (0.5ms)
 Completed 200 OK in 24ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 15:51:51 +0200
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 95ms (Views: 94.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /application.css - 304 Not Modified (49ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /static_pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 15:51:52 +0200
+Served asset /sc.png - 304 Not Modified (1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (224.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 256ms (Views: 242.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /application.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:51:54 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/new.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 89ms (Views: 54.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:15 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:16 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:16 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:16 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:16 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signin
+Filter chain halted as :signed_in_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /static_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:47 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /static_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:52:52 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-07-25 15:53:45 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "user"=>{"name"=>"James", "email"=>"j@j.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE LOWER("users"."email") = LOWER('j@j.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (4.2ms)[0m  INSERT INTO "users" ("admin", "created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["admin", false], ["created_at", Wed, 25 Jul 2012 13:53:45 UTC +00:00], ["email", "j@j.com"], ["name", "James"], ["password_digest", "$2a$10$bQlXP1UuBX.O8ByWXhR.5.30H1NgF5SnT9dn/z3t984niqfXsNbKS"], ["remember_token", "X-9I7yTj3DYFoWIHq3WxcA"], ["updated_at", Wed, 25 Jul 2012 13:53:45 UTC +00:00]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 109ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2012-07-25 15:53:45 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'X-9I7yTj3DYFoWIHq3WxcA' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:45 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:46 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'X-9I7yTj3DYFoWIHq3WxcA' LIMIT 1
+  Rendered shared/_user_info.html.erb (1.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 59.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 15:53:49 +0200
+Served asset /sc.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'X-9I7yTj3DYFoWIHq3WxcA' LIMIT 1[0m
+  Rendered shared/_user_info.html.erb (0.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /custom.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 15:57:49 +0200
+Served asset /sc.png - 304 Not Modified (1ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 15:57:53 +0200
+Served asset /sc.png - 304 Not Modified (0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /static_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /custom.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:57:56 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 15:58:34 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (37.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /users.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 15:58:35 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Processing by UsersController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered users/new.html.erb within layouts/application (159.2ms)
+Compiled rails.validations.js  (0ms)  (pid 7812)
+Compiled inline_form.js  (0ms)  (pid 7812)
+Compiled application.js  (30ms)  (pid 7812)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 326ms (Views: 315.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /rails.validations.js - 200 OK (2ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /inline_form.js - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /static_pages.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /users.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 16:08:47 +0200
+Served asset /application.js - 200 OK (28ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Processing by UsersController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered users/new.html.erb within layouts/application (153.4ms)
+Compiled inline_form.js  (0ms)  (pid 7826)
+Compiled application.js  (7ms)  (pid 7826)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 293ms (Views: 282.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /custom.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /inline_form.js - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:02 +0200
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 22ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /users.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 16:16:55 +0200
+Served asset /sc.png - 304 Not Modified (1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20120312191457)
+Migrating to AddIndexToUsersEmail (20120312225604)
+Migrating to AddPasswordDigestToUsers (20120313003545)
+Migrating to AddRememberTokenToUsers (20120315044928)
+Migrating to AddAdminToUsers (20120317061724)
+Migrating to CreateBnb (20120725142305)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "bnbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "description" varchar(255), "address_line_one" varchar(255), "address_line_two" varchar(255), "city" varchar(255), "postal_code" varchar(255), "country" varchar(255), "telephone_number" varchar(255), "website" varchar(255), "contact_person" varchar(255), "twitter_account" varchar(255), "facebook_page" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120725142305')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bnbs")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20120312191457)
+Migrating to AddIndexToUsersEmail (20120312225604)
+Migrating to AddPasswordDigestToUsers (20120313003545)
+Migrating to AddRememberTokenToUsers (20120315044928)
+Migrating to AddAdminToUsers (20120317061724)
+Migrating to CreateBnb (20120725142305)
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bnbs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_users_on_remember_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBnb (20120725142305)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "bnbs"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120725142305'
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20120312191457)
+Migrating to AddIndexToUsersEmail (20120312225604)
+Migrating to AddPasswordDigestToUsers (20120313003545)
+Migrating to AddRememberTokenToUsers (20120315044928)
+Migrating to AddAdminToUsers (20120317061724)
+Migrating to CreateBnb (20120725142305)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "bnbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "description" varchar(255), "address_line_one" varchar(255), "address_line_two" varchar(255), "city" varchar(255), "postal_code" varchar(255), "country" varchar(255), "telephone_number" varchar(255), "website" varchar(255), "contact_person" varchar(255), "twitter_account" varchar(255), "facebook_page" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120725142305')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bnbs")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBnb (20120725142305)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBnb (20120725142305)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "bnbs"[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120725142305'
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20120312191457)
+Migrating to AddIndexToUsersEmail (20120312225604)
+Migrating to AddPasswordDigestToUsers (20120313003545)
+Migrating to AddRememberTokenToUsers (20120315044928)
+Migrating to AddAdminToUsers (20120317061724)
+Migrating to CreateBnbs (20120725152620)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "bnbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "surname" varchar(255), "description" text, "email" varchar(255), "address_line_one" varchar(255), "address_line_two" varchar(255), "city" varchar(255), "postal_code" varchar(255), "country" varchar(255), "telephone_number" varchar(255), "website" varchar(255), "contact_person" varchar(255), "twitter_account" varchar(255), "facebook_page" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120725152620')[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bnbs")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_remember_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20120312191457)
+Migrating to AddIndexToUsersEmail (20120312225604)
+Migrating to AddPasswordDigestToUsers (20120313003545)
+Migrating to AddRememberTokenToUsers (20120315044928)
+Migrating to AddAdminToUsers (20120317061724)
+Migrating to CreateBnbs (20120725152620)
+Migrating to RemoveSurnameFromBnB (20120725155641)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  CREATE TEMPORARY TABLE "altered_bnbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "surname" varchar(255), "description" text, "email" varchar(255), "address_line_one" varchar(255), "address_line_two" varchar(255), "city" varchar(255), "postal_code" varchar(255), "country" varchar(255), "telephone_number" varchar(255), "website" varchar(255), "contact_person" varchar(255), "twitter_account" varchar(255), "facebook_page" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bnbs")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "bnbs"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "bnbs"[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "bnbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "email" varchar(255), "address_line_one" varchar(255), "address_line_two" varchar(255), "city" varchar(255), "postal_code" varchar(255), "country" varchar(255), "telephone_number" varchar(255), "website" varchar(255), "contact_person" varchar(255), "twitter_account" varchar(255), "facebook_page" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_bnbs")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_bnbs"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "altered_bnbs"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120725155641')
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bnbs")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_remember_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 18:31:32 +0200
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (5.1ms)
+Compiled bnb_steps.css  (8ms)  (pid 8129)
+Compiled bnbs.css  (1ms)  (pid 8129)
+Compiled scaffolds.css  (14ms)  (pid 8129)
+Compiled application.css  (51ms)  (pid 8129)
+Compiled bnb_steps.js  (101ms)  (pid 8129)
+Compiled bnbs.js  (81ms)  (pid 8129)
+Compiled application.js  (241ms)  (pid 8129)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 490ms (Views: 489.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /application.css - 304 Not Modified (60ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /bnb_steps.css - 200 OK (1ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /bnbs.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /sessions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /inline_form.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /bnb_steps.js - 200 OK (2ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /bnbs.js - 200 OK (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /users.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /application.js - 304 Not Modified (55ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 18:31:33 +0200
+Served asset /sc.png - 304 Not Modified (2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (138.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 188ms (Views: 187.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /custom.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /static_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:40 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:41 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:41 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-07-25 18:31:47 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "session"=>{"email"=>"p@p.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'p@p.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 140ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+  Rendered users/_user.html.erb (2.6ms)
+  Rendered users/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /sessions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:31:48 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered shared/_user_info.html.erb (1.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 18:32:13 +0200
+Served asset /sc.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered shared/_user_info.html.erb (1.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (54.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (22.3ms)
+Completed 200 OK in 149ms (Views: 146.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /application.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /bnb_steps.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /users.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /inline_form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /bnb_steps.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /users.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 18:34:11 +0200
+Served asset /sc.png - 304 Not Modified (1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:18 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 18:34:20 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  Rendered shared/_user_info.html.erb (1.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (35.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 57ms (Views: 56.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:20 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 18:34:21 +0200
+Served asset /sc.png - 304 Not Modified (0ms)
+
+
+Started GET "/bnb/new" for 127.0.0.1 at 2012-07-25 18:34:38 +0200
+
+ActionController::RoutingError (No route matches [GET] "/bnb/new"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:35:08 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (165.8ms)
+  Rendered bnbs/new.html.erb within layouts/application (168.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 206ms (Views: 191.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:35:09 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:35:33 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"Holy Hill", "description"=>"Quiet by the sea"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:35:33 UTC +00:00], ["description", "Quiet by the sea"], ["email", nil], ["facebook_page", nil], ["name", "Holy Hill"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:35:33 UTC +00:00], ["website", nil]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 221ms
+
+NoMethodError (undefined method `bnbs_steps_path' for #<BnbsController:0x007fc7369f4f98>):
+  app/controllers/bnbs_controller.rb:47:in `block in create'
+  app/controllers/bnbs_controller.rb:45:in `create'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/bnbs" for 127.0.0.1 at 2012-07-25 18:36:32 +0200
+Processing by BnbsController#index as HTML
+  [1m[36mBnb Load (0.2ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" [0m
+  Rendered bnbs/index.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc736e34838>):
+    24: <% @bnbs.each do |bnb| %>
+    25:   <tr>
+    26:     <td><%= bnb.name %></td>
+    27:     <td><%= bnb.surname %></td>
+    28:     <td><%= bnb.description %></td>
+    29:     <td><%= bnb.email %></td>
+    30:     <td><%= bnb.address_line_one %></td>
+  app/views/bnbs/index.html.erb:27:in `block in _app_views_bnbs_index_html_erb__2559722411543538763_70246804957260'
+  app/views/bnbs/index.html.erb:24:in `each'
+  app/views/bnbs/index.html.erb:24:in `_app_views_bnbs_index_html_erb__2559722411543538763_70246804957260'
+  app/controllers/bnbs_controller.rb:7:in `index'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  Rendered shared/_user_info.html.erb (1.9ms)
+  Rendered static_pages/home.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /custom.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:10 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sc.png" for 127.0.0.1 at 2012-07-25 18:37:11 +0200
+Served asset /sc.png - 304 Not Modified (0ms)
+
+
+Started GET "/bnb/new" for 127.0.0.1 at 2012-07-25 18:37:16 +0200
+
+ActionController::RoutingError (No route matches [GET] "/bnb/new"):
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/pauljansevanrensburg/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (6.3ms)
+  Rendered bnbs/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:37:21 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:37:22 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:37:35 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"The Jiminy Cricket", "description"=>"Grassy"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:37:35 UTC +00:00], ["description", "Grassy"], ["email", nil], ["facebook_page", nil], ["name", "The Jiminy Cricket"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:37:35 UTC +00:00], ["website", nil]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnb_steps.2
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (120.4ms)
+  Rendered bnbs/new.html.erb within layouts/application (146.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (26.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 290ms (Views: 275.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /bnb_steps.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /bnbs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /custom.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /static_pages.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /users.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /inline_form.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /bnb_steps.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /bnbs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /users.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:40:39 +0200
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:40:57 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"The Fishy Swallow", "description"=>"Peaceful fishing"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.5ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:40:57 UTC +00:00], ["description", "Peaceful fishing"], ["email", nil], ["facebook_page", nil], ["name", "The Fishy Swallow"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:40:57 UTC +00:00], ["website", nil]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Completed 500 Internal Server Error in 227ms
+
+NameError (undefined local variable or method `steps' for #<BnbsController:0x007f84cfb072e0>):
+  app/controllers/bnbs_controller.rb:47:in `block in create'
+  app/controllers/bnbs_controller.rb:45:in `create'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (23.9ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.4ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (117.9ms)
+  Rendered bnbs/new.html.erb within layouts/application (144.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (27.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 282ms (Views: 266.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /bnb_steps.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /bnbs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /static_pages.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:13 +0200
+Served asset /inline_form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /bnbs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /bnb_steps.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:43:14 +0200
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:43:25 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"Test", "description"=>"Test description"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.8ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:43:25 UTC +00:00], ["description", "Test description"], ["email", nil], ["facebook_page", nil], ["name", "Test"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:43:25 UTC +00:00], ["website", nil]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Completed 500 Internal Server Error in 219ms
+
+NameError (undefined local variable or method `steps' for #<BnbsController:0x007f85a46ac800>):
+  app/controllers/bnbs_controller.rb:47:in `block in create'
+  app/controllers/bnbs_controller.rb:45:in `create'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (24.0ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.5ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (118.3ms)
+  Rendered bnbs/new.html.erb within layouts/application (145.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (26.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 287ms (Views: 273.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /custom.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /bnb_steps.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /bnbs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /static_pages.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /users.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /inline_form.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /bnb_steps.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /bnbs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:46:04 +0200
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:46:08 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"adffad", "description"=>"dasasddasds"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.8ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:46:08 UTC +00:00], ["description", "dasasddasds"], ["email", nil], ["facebook_page", nil], ["name", "adffad"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:46:08 UTC +00:00], ["website", nil]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 216ms
+
+NoMethodError (undefined method `wizard_path' for #<BnbsController:0x007fbb960751d0>):
+  app/controllers/bnbs_controller.rb:47:in `block in create'
+  app/controllers/bnbs_controller.rb:45:in `create'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (174.9ms)
+  Rendered bnbs/new.html.erb within layouts/application (187.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (32.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 409ms (Views: 395.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /bnb_steps.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /bnbs.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /static_pages.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /bnbs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /inline_form.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /bnb_steps.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:50:19 +0200
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:50:24 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"jkhkjh", "description"=>"kjhkjhk"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:50:24 UTC +00:00], ["description", "kjhkjhk"], ["email", nil], ["facebook_page", nil], ["name", "jkhkjh"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:50:24 UTC +00:00], ["website", nil]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnbs/6/bnb_steps/contact_details
+Completed 406 Not Acceptable in 16ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (6.0ms)
+  Rendered bnbs/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /custom.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /bnbs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /bnbs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /static_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:55:28 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:55:32 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"dssa", "description"=>"sdaas"}, "commit"=>"Create Bnb"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:55:32 UTC +00:00], ["description", "sdaas"], ["email", nil], ["facebook_page", nil], ["name", "dssa"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:55:32 UTC +00:00], ["website", nil]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnbs/7/bnb_steps/contact_details
+Completed 406 Not Acceptable in 5ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/bnbs" for 127.0.0.1 at 2012-07-25 18:56:52 +0200
+Processing by BnbsController#index as HTML
+  [1m[36mBnb Load (0.3ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" [0m
+  Rendered bnbs/index.html.erb within layouts/application (32.2ms)
+Completed 500 Internal Server Error in 55ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc455bb5c08>):
+    24: <% @bnbs.each do |bnb| %>
+    25:   <tr>
+    26:     <td><%= bnb.name %></td>
+    27:     <td><%= bnb.surname %></td>
+    28:     <td><%= bnb.description %></td>
+    29:     <td><%= bnb.email %></td>
+    30:     <td><%= bnb.address_line_one %></td>
+  app/views/bnbs/index.html.erb:27:in `block in _app_views_bnbs_index_html_erb___3721347007357373310_70240615079620'
+  app/views/bnbs/index.html.erb:24:in `each'
+  app/views/bnbs/index.html.erb:24:in `_app_views_bnbs_index_html_erb___3721347007357373310_70240615079620'
+  app/controllers/bnbs_controller.rb:7:in `index'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.2ms)
+
+
+Started GET "/bnbs/new" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Processing by BnbsController#new as HTML
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnbs/_form.html.erb (6.6ms)
+  Rendered bnbs/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  Rendered layouts/_header.html.erb (24.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /bnbs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /static_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /bnbs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:57:00 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:57:01 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started POST "/bnbs" for 127.0.0.1 at 2012-07-25 18:57:05 +0200
+Processing by BnbsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"name"=>"sadsd", "description"=>"ssad"}, "commit"=>"Create Bnb"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "bnbs" ("address_line_one", "address_line_two", "city", "contact_person", "country", "created_at", "description", "email", "facebook_page", "name", "postal_code", "telephone_number", "twitter_account", "updated_at", "website") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address_line_one", nil], ["address_line_two", nil], ["city", nil], ["contact_person", nil], ["country", nil], ["created_at", Wed, 25 Jul 2012 16:57:05 UTC +00:00], ["description", "ssad"], ["email", nil], ["facebook_page", nil], ["name", "sadsd"], ["postal_code", nil], ["telephone_number", nil], ["twitter_account", nil], ["updated_at", Wed, 25 Jul 2012 16:57:05 UTC +00:00], ["website", nil]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/bnbs/8/bnb_steps/contact_details
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/bnbs/8/bnb_steps/contact_details" for 127.0.0.1 at 2012-07-25 18:57:05 +0200
+Processing by BnbStepsController#show as HTML
+  Parameters: {"bnb_id"=>"8", "id"=>"contact_details"}
+  [1m[35mBnb Load (0.3ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnb_steps/_form.html.erb (891.6ms)
+  Rendered bnb_steps/contact_details.html.erb within layouts/application (895.4ms)
+Completed 500 Internal Server Error in 900ms
+
+ActionView::Template::Error (undefined method `country_select' for #<SimpleForm::FormBuilder:0x007fc454310040>):
+    1: <%= simple_form_for @bnb, :validate => true do |f| %>
+    2:     <%= f.error_notification %>
+    3: 
+    4:     <%= yield f %>
+    5: 
+    6:     <div class="form-actions">
+    7:       <%= f.button :submit, :label => "Continue" %>
+  app/views/bnb_steps/contact_details.html.erb:12:in `block (2 levels) in _app_views_bnb_steps_contact_details_html_erb__1062014608989817450_70240600175780'
+  app/views/bnb_steps/_form.html.erb:4:in `block in _app_views_bnb_steps__form_html_erb___4478687174530473304_70240600788180'
+  app/views/bnb_steps/_form.html.erb:1:in `_app_views_bnb_steps__form_html_erb___4478687174530473304_70240600788180'
+  app/views/bnb_steps/contact_details.html.erb:5:in `block in _app_views_bnb_steps_contact_details_html_erb__1062014608989817450_70240600175780'
+  app/views/bnb_steps/contact_details.html.erb:2:in `_app_views_bnb_steps_contact_details_html_erb__1062014608989817450_70240600175780'
+  app/controllers/bnb_steps_controller.rb:7:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/bnbs/8/bnb_steps/contact_details" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Processing by BnbStepsController#show as HTML
+  Parameters: {"bnb_id"=>"8", "id"=>"contact_details"}
+  [1m[36mBnb Load (0.1ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnb_steps/contact_details.html.erb within layouts/application (41.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /bnbs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /static_pages.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /bnbs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 18:58:20 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started PUT "/bnbs/8" for 127.0.0.1 at 2012-07-25 18:58:57 +0200
+Processing by BnbsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"email"=>"sda", "address_line_one"=>"sda", "address_line_two"=>"sda", "city"=>"sdadsa", "postal_code"=>"dsaasd", "telephone_number"=>"dsaas", "website"=>"sadsa"}, "commit"=>"Update Bnb", "id"=>"8"}
+  [1m[36mBnb Load (0.2ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.1ms)[0m  [1mUPDATE "bnbs" SET "email" = 'sda', "address_line_one" = 'sda', "address_line_two" = 'sda', "city" = 'sdadsa', "postal_code" = 'dsaasd', "telephone_number" = 'dsaas', "website" = 'sadsa', "updated_at" = '2012-07-25 16:58:57.429908' WHERE "bnbs"."id" = 8[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnbs/8
+Completed 302 Found in 8ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/bnbs/8" for 127.0.0.1 at 2012-07-25 18:58:57 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBnb Load (0.2ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  Rendered bnbs/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc455d3cf40>):
+    7: 
+    8: <p>
+    9:   <b>Surname:</b>
+    10:   <%= @bnb.surname %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/bnbs/show.html.erb:10:in `_app_views_bnbs_show_html_erb__2864232197175312543_70240615418160'
+  app/controllers/bnbs_controller.rb:18:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.7ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.6ms)
+
+
+Started PUT "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:01:28 +0200
+Processing by BnbsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"email"=>"sda", "address_line_one"=>"sda", "address_line_two"=>"sda", "city"=>"sdadsa", "postal_code"=>"dsaasd", "telephone_number"=>"dsaas", "website"=>"sadsa"}, "commit"=>"Update Bnb", "id"=>"8"}
+  [1m[35mBnb Load (0.1ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnbs/8
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:01:28 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBnb Load (0.1ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  Rendered bnbs/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc455abc770>):
+    7: 
+    8: <p>
+    9:   <b>Surname:</b>
+    10:   <%= @bnb.surname %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/bnbs/show.html.erb:10:in `_app_views_bnbs_show_html_erb__2864232197175312543_70240615418160'
+  app/controllers/bnbs_controller.rb:18:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/bnbs/8/bnb_steps/contact_details" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Processing by BnbStepsController#show as HTML
+  Parameters: {"bnb_id"=>"8", "id"=>"contact_details"}
+  [1m[35mBnb Load (0.2ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnb_steps/contact_details.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /application.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /custom.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /bnbs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /sessions.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /sessions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /bnbs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /application.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 19:02:40 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started PUT "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:02:47 +0200
+Processing by BnbsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"email"=>"sda", "address_line_one"=>"sda", "address_line_two"=>"sda", "city"=>"sdadsa", "postal_code"=>"dsaasd", "telephone_number"=>"dsaas", "website"=>"sadsa"}, "commit"=>"Update Bnb", "id"=>"8"}
+  [1m[35mBnb Load (0.2ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/bnbs/8
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:02:47 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBnb Load (0.1ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  Rendered bnbs/show.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc454012988>):
+    7: 
+    8: <p>
+    9:   <b>Surname:</b>
+    10:   <%= @bnb.surname %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/bnbs/show.html.erb:10:in `_app_views_bnbs_show_html_erb__2864232197175312543_70240615418160'
+  app/controllers/bnbs_controller.rb:18:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.8ms)
+
+
+Started GET "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:04:28 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mBnb Load (0.2ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+  Rendered bnbs/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc452c8dc78>):
+    7: 
+    8: <p>
+    9:   <b>Surname:</b>
+    10:   <%= @bnb.surname %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/bnbs/show.html.erb:10:in `_app_views_bnbs_show_html_erb__2864232197175312543_70240615418160'
+  app/controllers/bnbs_controller.rb:18:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.5ms)
+
+
+Started PUT "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:04:32 +0200
+Processing by BnbsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"email"=>"sda", "address_line_one"=>"sda", "address_line_two"=>"sda", "city"=>"sdadsa", "postal_code"=>"dsaasd", "telephone_number"=>"dsaas", "website"=>"sadsa"}, "commit"=>"Update Bnb", "id"=>"8"}
+  [1m[36mBnb Load (0.2ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/bnbs/8
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/bnbs/8" for 127.0.0.1 at 2012-07-25 19:04:32 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mBnb Load (0.1ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+  Rendered bnbs/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `surname' for #<Bnb:0x007fc454f1bd58>):
+    7: 
+    8: <p>
+    9:   <b>Surname:</b>
+    10:   <%= @bnb.surname %>
+    11: </p>
+    12: 
+    13: <p>
+  app/views/bnbs/show.html.erb:10:in `_app_views_bnbs_show_html_erb__2864232197175312543_70240615418160'
+  app/controllers/bnbs_controller.rb:18:in `show'
+
+
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/bnbs/8/bnb_steps/contact_details" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Processing by BnbStepsController#show as HTML
+  Parameters: {"bnb_id"=>"8", "id"=>"contact_details"}
+  [1m[36mBnb Load (0.2ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnb_steps/contact_details.html.erb within layouts/application (157.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1
+  Rendered layouts/_header.html.erb (50.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 326ms (Views: 304.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /custom.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /bnbs.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /bnb_steps.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /sessions.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /static_pages.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /inline_form.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /bnb_steps.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /bnbs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /static_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:06 +0200
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started PUT "/bnbs/8/bnb_steps/contact_details" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Processing by BnbStepsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k77nithLi0pZwX52AQITf6h95qqt5E3wojcxhPebXBA=", "bnb"=>{"email"=>"sda", "address_line_one"=>"sda", "address_line_two"=>"sda", "city"=>"sdadsa", "postal_code"=>"dsaasd", "telephone_number"=>"dsaas", "website"=>"sadsa"}, "commit"=>"Update Bnb", "bnb_id"=>"8", "id"=>"contact_details"}
+  [1m[36mBnb Load (0.1ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "8"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/bnbs/8/bnb_steps/social_media
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/bnbs/8/bnb_steps/social_media" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Processing by BnbStepsController#show as HTML
+  Parameters: {"bnb_id"=>"8", "id"=>"social_media"}
+  [1m[35mBnb Load (0.1ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "8"]]
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_class is deprecated and has no effect. (called from error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.error_tag is deprecated and has no effect. (called from error_tag at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_error_class is deprecated and has no effect. (called from wrapper_error_class at (eval):1)
+DEPRECATION WARNING: [SIMPLE_FORM] SimpleForm.wrapper_tag is deprecated and has no effect. (called from wrapper_tag at (eval):1)
+  Rendered bnb_steps/social_media.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = 'qyrvCLDY3EBeObCR40bMwg' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /bnb_steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /bnbs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /static_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /bnbs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /bnb_steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /inline_form.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /static_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-25 19:05:09 +0200
+Served asset /application.js - 304 Not Modified (1ms)

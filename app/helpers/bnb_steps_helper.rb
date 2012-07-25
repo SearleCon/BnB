@@ -1,0 +1,2 @@
+module BnbStepsHelper
+end

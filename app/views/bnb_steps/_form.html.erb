@@ -1,0 +1,9 @@
+<%= simple_form_for @bnb, :validate => true do |f| %>
+    <%= f.error_notification %>
+
+    <%= yield f %>
+
+    <div class="form-actions">
+      <%= f.button :submit, :label => "Continue" %>
+    </div>
+<% end %>

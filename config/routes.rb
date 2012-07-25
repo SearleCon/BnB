@@ -1,4 +1,10 @@
 SampleApp::Application.routes.draw do
+  resources :bnbs do
+    resources :bnb_steps, controller: 'bnb_steps'
+  end
+
+  resources :bnb_steps
+
   resources :users
   resources :sessions,   only: [:new, :create, :destroy]
 

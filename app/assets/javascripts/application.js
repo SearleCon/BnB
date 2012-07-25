@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require rails.validations
+//= require inline_form
 //= require_tree .

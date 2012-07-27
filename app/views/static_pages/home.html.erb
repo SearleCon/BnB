@@ -9,7 +9,14 @@
         <%= render 'shared/user_info' %>
       </section>
     </aside>
-  </div>  
+  </div>
+  <div class="center hero-unit">
+      <% unless @bnb.nil?  %>
+        <%=render 'bnbs/showbnb' %>
+      <% else %>
+        <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
+      </div>
+      <% end %>
 <% else %>
   <div class="center hero-unit">
     <h1>Welcome</h1>

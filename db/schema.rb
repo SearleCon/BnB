@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725155641) do
+ActiveRecord::Schema.define(:version => 20120727133637) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20120725155641) do
     t.string   "facebook_page"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "description"
+    t.string   "image"
+    t.integer  "order"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

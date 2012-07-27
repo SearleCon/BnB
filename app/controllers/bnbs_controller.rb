@@ -40,10 +40,9 @@ class BnbsController < ApplicationController
   # POST /bnbs
   # POST /bnbs.json
   def create
-    @bnb = Bnb.new(params[:bnb])
-
+    @bnb = Bnb.new
       if @bnb.save
-        redirect_to  bnb_bnb_step_path(:contact_details,:bnb_id => @bnb.id)
+        redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)
       else
         format.html { render action: "new" }
         format.json { render json: @bnb.errors, status: :unprocessable_entity }

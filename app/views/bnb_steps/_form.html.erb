@@ -1,9 +1,10 @@
-<%= simple_form_for @bnb, :validate => true do |f| %>
+
+<%= simple_form_for @bnb, url: wizard_path do |f| %>
     <%= f.error_notification %>
 
     <%= yield f %>
 
     <div class="form-actions">
-      <%= f.button :submit, :label => "Continue" %>
+      <%= f.button :submit, :value => 'Continue', :id => 'commit' %>
     </div>
 <% end %>

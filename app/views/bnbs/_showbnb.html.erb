@@ -1,0 +1,95 @@
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+       Bnb Details
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <p>
+          <b>Name:</b>
+          <%= @bnb.name %>
+        </p>
+
+        <p>
+          <b>Description:</b>
+          <%= @bnb.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+       Contact Details
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+        <b>Email:</b>
+        <%= @bnb.email %>
+        </p>
+
+        <p>
+          <b>Address line one:</b>
+          <%= @bnb.address_line_one %>
+        </p>
+
+        <p>
+          <b>Address line two:</b>
+          <%= @bnb.address_line_two %>
+        </p>
+
+        <p>
+          <b>City:</b>
+          <%= @bnb.city %>
+        </p>
+
+        <p>
+          <b>Postal code:</b>
+          <%= @bnb.postal_code %>
+        </p>
+
+        <p>
+          <b>Country:</b>
+          <%= @bnb.country %>
+        </p>
+
+        <p>
+          <b>Telephone number:</b>
+          <%= @bnb.telephone_number %>
+        </p>
+
+        <p>
+          <b>Website:</b>
+          <%= @bnb.website %>
+        </p>
+
+        <p>
+          <b>Contact person:</b>
+          <%= @bnb.contact_person %>
+        </p></div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+        Social Media
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <p>
+          <b>Twitter account:</b>
+          <%= @bnb.twitter_account %>
+        </p>
+
+        <p>
+          <b>Facebook page:</b>
+          <%= @bnb.facebook_page %>
+        </p>      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,8 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'wicked'
+gem 'country_select'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -10,7 +10,9 @@ gem 'simple_form'
 gem 'client_side_validations'
 gem 'wicked'
 gem 'country_select'
+gem 'rmagick'
 gem 'carrierwave'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

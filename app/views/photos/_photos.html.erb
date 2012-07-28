@@ -1,0 +1,10 @@
+<ul class="thumbnails">
+<% photos.each do |photo| %>
+  <li class="span3">
+    <div class="thumbnail">
+      <%= image_tag photo.image_url if photo.image? %>
+      <p><%= photo.description %></p>
+    </div>
+  </li>
+ <% end %>
+</ul>

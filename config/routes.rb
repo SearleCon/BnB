@@ -1,7 +1,5 @@
 SampleApp::Application.routes.draw do
-  get "photos/create"
 
-  get "photos/destroy"
 
   resources :bnbs do
     resources :bnb_steps, controller: 'bnb_steps'
@@ -13,7 +11,7 @@ SampleApp::Application.routes.draw do
 
   resources :users
   resources :sessions,   only: [:new, :create, :destroy]
-  resources :photos, only: [:create, :destroy]
+  resources :photos, only: [:index, :create, :destroy]
 
 
   match '/signup',  to: 'users#new'

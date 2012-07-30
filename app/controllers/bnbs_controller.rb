@@ -2,7 +2,7 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnbs = Bnb.all
+    @bnbs = Bnb.last
 
     respond_to do |format|
       format.html # index.html.erb

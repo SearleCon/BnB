@@ -1,7 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+   <div class="row-fluid">
+     <div class="span3">
+          <div class="tooltip-demo well">
+            <%= render 'photos/form' %>
+          </div>
+   </div>
 
-<%= render :partial => 'showbnb' %>
-
-
-<%= link_to 'Edit', edit_bnb_path(@bnb) %> |
-<%= link_to 'Back', bnbs_path %>
+  <div class="span9">
+      <% unless @bnb.nil?  %>
+          <%=render 'bnbs/showbnb' %>
+          <% if @bnb.photos.any?  %>
+              <div id="photos"><%= render :partial => 'photos/photos', :locals =>  { :photos => @bnb.photos } %></div>
+          <% end %>
+      <% else %>
+          <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+</div>
+</div>

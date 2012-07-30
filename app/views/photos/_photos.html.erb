@@ -2,8 +2,9 @@
 <% photos.each do |photo| %>
   <li class="span3">
     <div class="thumbnail">
-      <%= image_tag photo.image_url if photo.image? %>
+      <%= image_tag photo.image_url(:thumb) if photo.image? %>
       <p><%= photo.description %></p>
+      <%= link_to 'Remove', photo_url(photo), method: :delete, :remote => true  %>
     </div>
   </li>
  <% end %>

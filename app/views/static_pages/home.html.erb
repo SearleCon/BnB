@@ -8,9 +8,6 @@
   <div class="row">
     <aside class="span4">
       <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
         <%= render 'photos/form' %>
       </section>
     </aside>
@@ -19,7 +16,7 @@
       <% unless @bnb.nil?  %>
         <%=render 'bnbs/showbnb' %>
         <% if @bnb.photos.any?  %>
-        <div><%= render :partial => 'photos/photos', :locals =>  { :photos => @bnb.photos } %></div>
+        <div id="photos"><%= render :partial => 'photos/photos', :locals =>  { :photos => @bnb.photos } %></div>
         <% end %>
       <% else %>
         <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
@@ -38,4 +35,4 @@
     <%= link_to "Sign up now!", signup_path, 
                                 class: "btn btn-large btn-primary" %>
   </div>
-<% end %> 
+<% end %>

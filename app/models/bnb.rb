@@ -1,7 +1,9 @@
 class Bnb < ActiveRecord::Base
-  has_many :photos
+  has_many :photos, :dependent => :delete_all
+  has_many :rooms, :dependent => :delete_all
 
   attr_accessor :status
+  attr_accessor :number_of_rooms
 
   before_validation(:on => :create) do
     self.status = 'inactive'

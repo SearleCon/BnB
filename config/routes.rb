@@ -1,8 +1,10 @@
 SampleApp::Application.routes.draw do
 
+  resources :rooms, controller: 'rooms', except: [:index]
 
   resources :bnbs do
     resources :bnb_steps, controller: 'bnb_steps'
+    resources :rooms, controller: 'rooms', only: [:index]
   end
 
 

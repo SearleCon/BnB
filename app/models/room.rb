@@ -3,4 +3,5 @@ class Room < ActiveRecord::Base
 
   scope :has_en_suite, where(:en_suite => true)
 
+
 end

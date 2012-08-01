@@ -2,7 +2,7 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnbs = Bnb.last
+    @bnb = Bnb.find_by_user_id(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +41,7 @@ class BnbsController < ApplicationController
   # POST /bnbs.json
   def create
     @bnb = Bnb.new
+    @bnb.user_id = current_user.id
       if @bnb.save
         redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)
       else

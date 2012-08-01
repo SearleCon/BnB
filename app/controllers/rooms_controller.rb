@@ -63,7 +63,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.update_attributes(params[:room])
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }
-        format.json { head :no_content }
+        format.json { respond_with_bip(@room) }
       else
         format.html { render action: "edit" }
         format.json { render json: @room.errors, status: :unprocessable_entity }

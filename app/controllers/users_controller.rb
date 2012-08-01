@@ -14,8 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Shell App!"
-      redirect_to @user
+      redirect_back_or root_path
     else
       render 'new'
     end

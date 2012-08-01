@@ -18,14 +18,14 @@ class BnbStepsController < ApplicationController
 
   private
   def redirect_to_finish_wizard
-    redirect_to root_url
+    redirect_to @bnb
   end
 
   def build_rooms (number_of_rooms)
     unless number_of_rooms.nil? or number_of_rooms < 1
       room_number = 1
       Room.transaction do
-        @bnb.number_of_rooms.times do
+       number_of_rooms.times do
           @bnb.rooms.create(:description => 'Room'.concat(room_number.to_s), :room_number => room_number, :extras => 'none', :rates => 0, :en_suite => false)
           room_number = room_number + 1
         end

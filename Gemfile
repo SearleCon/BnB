@@ -12,6 +12,7 @@ gem 'wicked'
 gem 'country_select'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'best_in_place'
 
 
 group :development, :test do

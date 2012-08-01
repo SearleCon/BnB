@@ -5,6 +5,7 @@ class Bnb < ActiveRecord::Base
   attr_accessor :status
   attr_accessor :number_of_rooms
 
+
   before_validation(:on => :create) do
     self.status = 'inactive'
   end

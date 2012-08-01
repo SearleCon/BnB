@@ -1,21 +1,20 @@
 <div class="container-fluid">
    <div class="row-fluid">
      <div class="span3">
-          <div class="well">
-            <%= link_to 'Rooms', bnb_rooms_path(@bnb) %>
-            <%= render 'photos/form' %>
-          </div>
-   </div>
+        <div class="well menu"> 
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <%= link_to 'Rooms', bnb_rooms_path(@bnb) %>
+              </li>
+              <li>
+                <%= link_to 'Gallery', photos_path %>
+              </li>
+            </ul>
+           </div>
+     </div>
 
   <div class="span9">
-      <% unless @bnb.nil?  %>
           <%=render 'bnbs/showbnb' %>
-          <% if @bnb.photos.any?  %>
-              <div id="photos"><%= render :partial => 'photos/photos', :locals =>  { :photos => @bnb.photos } %></div>
-          <% end %>
-      <% else %>
-          <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
-      <% end %>
     </div>
 </div>
 </div>

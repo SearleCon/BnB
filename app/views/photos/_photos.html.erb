@@ -1,11 +1,14 @@
 <ul class="thumbnails">
-<% photos.each do |photo| %>
-  <li class="span3">
-    <div class="thumbnail">
-      <%= image_tag photo.image_url(:thumb) if photo.image? %>
-      <p><%= photo.description %></p>
-      <%= link_to 'Remove', photo_url(photo), method: :delete, :remote => true  %>
-    </div>
-  </li>
+<% unless @photos.nil? %>
+  <% @photos.each do |photo| %>
+      <li class="span3">
+        <div class="thumbnail">
+          <%= image_tag photo.image_url(:thumb) if photo.image? %>
+          <p><%= photo.description %></p>
+          <%= link_to 'Remove', photo_url(photo), method: :delete, :remote => true  %>
+        </div>
+      </li>
+  <% end %>
  <% end %>
 </ul>
+

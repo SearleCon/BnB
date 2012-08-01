@@ -1,10 +1,6 @@
 <h3>Upload photo</h3>
 <%= simple_form_for Photo.new, :url => photos_path, :html => { :multipart => true }, :remote => true do |f| %>
     <%= f.error_notification %>
-    <%= f.hidden_field :bnb_id, :value =>  @bnb.id %>
-   <%= f.input :description %>
-   <%= f.input :order %>
-      <%= f.file_field :image %>
-      <%= f.button :submit %>
-
+    <%= f.input :description %>
+    <%= f.file_field :image %>
 <% end %>

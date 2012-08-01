@@ -10,15 +10,8 @@
     </aside>
   </div>
   <div class="center hero-unit">
-      <% unless @bnb.nil?  %>
-        <%=render 'bnbs/showbnb' %>
-        <% if @bnb.photos.any?  %>
-        <div id="photos"><%= render :partial => 'photos/photos', :locals =>  { :photos => @bnb.photos } %></div>
-        <% end %>
-      <% else %>
         <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
-      </div>
-      <% end %>
+  </div>
 <% else %>
   <div class="center hero-unit">
     <h1>Welcome</h1>

@@ -15,4 +15,8 @@
 //= require bootstrap
 //= require rails.validations
 //= require inline_form
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
+
+

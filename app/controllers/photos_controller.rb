@@ -1,12 +1,19 @@
 class PhotosController < ApplicationController
+    before_filter :get_bnb
+
+
+
+  def index
+    get_photos
+  end
+
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = @bnb.photos.new(params[:photo])
     if @photo.save
-     @bnb = Bnb.last
-     redirect_back_or root_path
+      get_photos
+       redirect_to photos_path
     else
       redirect_back_or root_path
-
     end
 
   end
@@ -15,6 +22,15 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.remove_image!
     @photo.destroy
-    @bnb = Bnb.last
+    get_photos
   end
+
+    private
+    def get_bnb
+      @bnb = Bnb.find_by_user_id(current_user)
+    end
+
+    def get_photos
+      @photos = Photo.find_all_by_bnb_id(@bnb)
+    end
 end

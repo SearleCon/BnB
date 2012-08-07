@@ -6,3 +6,4 @@ $(document).ready ->
   $('#photo_image').bind 'change', ->
     $('#new_photo').submit()
 
+

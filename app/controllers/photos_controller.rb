@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
 
   def index
     get_photos
+    @photo = @photos.first
   end
 
   def create

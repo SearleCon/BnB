@@ -42,11 +42,12 @@ class RoomsController < ApplicationController
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = Room.new(params[:room])
-
+    @room = @bnb.rooms.new(params[:room])
+    populate_default_room
     respond_to do |format|
       if @room.save
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.js { @room }
         format.json { render json: @room, status: :created, location: @room }
       else
         format.html { render action: "new" }
@@ -78,13 +79,23 @@ class RoomsController < ApplicationController
     @room.destroy
 
     respond_to do |format|
-      format.html { redirect_to rooms_url }
+      format.html { redirect_to bnb_rooms_path(@bnb) }
+      format.js { @room }
       format.json { head :no_content }
     end
   end
 
   private
   def get_bnb
-    @bnb = Bnb.last
+    @bnb = Bnb.find_by_user_id(current_user)
   end
+
+  def populate_default_room
+   @room.description='Describe room'
+   @room.room_number=999
+   @room.en_suite=false
+   @room.rates=0
+   @room.extras='none'
+  end
+
 end

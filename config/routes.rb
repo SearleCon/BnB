@@ -1,5 +1,13 @@
 SampleApp::Application.routes.draw do
 
+  resources :bookings
+
+  resources :guests
+
+  resources :events
+
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
   resources :rooms, controller: 'rooms', except: [:index]
 
   resources :bnbs do

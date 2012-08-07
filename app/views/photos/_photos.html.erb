@@ -1,7 +1,9 @@
-<ul class="thumbnails">
+<div>
+<h2>Your images</h2>
+<ul class="thumbnails" display="inline-table">
 <% unless @photos.nil? %>
   <% @photos.each do |photo| %>
-      <li class="span3">
+      <li class="span2">
         <div class="thumbnail">
           <%= image_tag photo.image_url(:thumb) if photo.image? %>
           <p><%= photo.description %></p>
@@ -11,4 +13,5 @@
   <% end %>
  <% end %>
 </ul>
+</div>
 

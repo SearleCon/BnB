@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.scoped
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,22 +14,39 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @event }
+    if request.xhr?
+      event_details = render_to_string :partial => 'events/show', :locals => {:event => @event}
+      event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
+      render :json => {:html => event_details, :error => '' }
+   else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @event }
+      end
     end
+
   end
 
   # GET /events/new
   # GET /events/new.json
   def new
     @event = Event.new
+    @event.start_at = Date.parse(params[:date]).strftime("%Y-%m-%d")  if params[:date]
+    @event.end_at = Date.parse(params[:date]).strftime("%Y-%m-%d").to_date + 2.days if params[:date]
+    @event.end_at + 1.days
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @event }
+    if request.xhr?
+
+      event_details = render_to_string :partial => 'events/form', :locals => {:event => @event}
+      event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
+      render :json => {:html => event_details, :error => '' }
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @event }
+      end
     end
+
   end
 
   # GET /events/1/edit
@@ -44,8 +61,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
+        format.json { render json: @event.as_json, status: :created, location: @event }
       else
         format.html { render action: "new" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
@@ -74,10 +90,8 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-
     respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :no_content }
+     format.json { render json: {:event_id => @event.id}}
     end
   end
 end

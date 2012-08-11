@@ -1,0 +1,16 @@
+<p>
+  <b>Name:</b>
+  <%= event.name %>
+</p>
+
+<p>
+  <b>Start at:</b>
+  <%= event.start_at %>
+</p>
+
+<p>
+  <b>End at:</b>
+  <%= event.end_at %>
+</p>
+
+<%= link_to 'Destroy', event, :id => 'deleteEvent',  method: :delete,  :remote => true %>

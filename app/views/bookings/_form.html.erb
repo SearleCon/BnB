@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :guest_id %>
-    <%= f.input :room_id %>
+    <%= f.association :rooms, :label_method => :description, :value_method => :id, :as => :check_boxes %>
     <%= f.input :active %>
 
     <br>
@@ -12,8 +12,6 @@
      <%=  event_form.input :name %>
      <%=  event_form.input :start_at, :as => :datepicker %>
      <%=  event_form.input :end_at, :as => :datepicker %>
-
-
 
     <% end %>
   </div>

@@ -13,14 +13,16 @@ gem 'country_select'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'best_in_place'
-gem 'event-calendar', :require => 'event_calendar'
+gem 'fullcalendar-rails'
+gem 'jquery-rest-rails'
+gem 'lazybox'
 
 
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.8.1'
-  gem 'annotate', '~> 2.4.1.beta'
+  gem 'annotate', ">=2.5.0"
 end
 
 # Gems used only for assets and not required

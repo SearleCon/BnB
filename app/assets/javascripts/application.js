@@ -19,6 +19,9 @@
 //= require inline_form
 //= require jquery.purr
 //= require best_in_place
+//= require jquery.rest
+//= require fullcalendar
+//= require lazybox
 //= require_tree .
 
 $.rails.allowAction = function(link) {
@@ -44,4 +47,12 @@ $.rails.showConfirmDialog = function(link) {
         return $.rails.confirmed(link);
     });
 };
+
+$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Accept", "text/javascript");
+    }
+});
+
+
 

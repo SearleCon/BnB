@@ -6,7 +6,7 @@ class ChangeRoomsRatesColumnToDecimal < ActiveRecord::Migration
   end
 
   def self.down
-    change_table :widgets do |t|
+    change_table :rooms do |t|
       t.change :rates, :float
     end
   end

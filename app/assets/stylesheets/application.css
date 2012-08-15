@@ -11,6 +11,7 @@
  *= require_self
  *= require fullcalendar
  *= require lazybox
+ *= require jquery.ui.datepicker
  *= require_tree .
-
 */
+

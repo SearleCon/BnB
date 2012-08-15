@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+
+
   # GET /bookings
   # GET /bookings.json
   def index
@@ -42,6 +44,10 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = Booking.new(params[:booking])
+    @booking.event.name = @booking.guest.name
+
+
+
 
     respond_to do |format|
       if @booking.save
@@ -81,4 +87,9 @@ class BookingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def formatDate(date)
+    Date.parse(date)
+  end
+
 end

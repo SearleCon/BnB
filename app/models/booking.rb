@@ -16,4 +16,12 @@ class Booking < ActiveRecord::Base
 
   accepts_nested_attributes_for :event
 
+  def guest_name
+    guest.try(:name)
+  end
+
+  def guest_name=(name)
+    self.guest = Guest.find_or_create_by_name(name) if name.present?
+  end
+
 end

@@ -1,13 +1,10 @@
 class GuestsController < ApplicationController
+
   # GET /guests
   # GET /guests.json
   def index
-    @guests = Guest.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @guests }
-    end
+    @guests= Guest.order(:name).where("name like ?", "%#{params[:term]}%")
+    render json: @guests.map(&:name)
   end
 
   # GET /guests/1

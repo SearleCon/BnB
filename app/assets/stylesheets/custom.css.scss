@@ -153,14 +153,6 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  padding: 10px;
-  height: auto;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
 
 #error_explanation {
   color:#f00;
@@ -210,4 +202,36 @@ input, textarea, select, .uneditable-input {
     margin: 1px 1px;
   }
 }
+
+ul.ui-autocomplete{
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+
+  li{
+    background: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a{
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+
+    a.ui-state-hover, a.ui-state-active{
+      background-color: #FFFCB2;
+    }
+  }
+}
+
+.datepicker{
+  width: 60%;
+  padding: 5px;
+
+}
+
 

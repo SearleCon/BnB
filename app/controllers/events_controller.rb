@@ -31,13 +31,17 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.start_at = Date.parse(params[:date]).strftime("%Y-%m-%d")  if params[:date]
-    @event.end_at = Date.parse(params[:date]).strftime("%Y-%m-%d").to_date + 2.days if params[:date]
-    @event.end_at + 1.days
+
+    params[:date] ? selected_day = formatDate(params[:date]) : selected_day = nil
+
+    @event.start_at = selected_day.strftime('%A, %d %B %Y')
+    @event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
+
 
     if request.xhr?
-
-      event_details = render_to_string :partial => 'events/form', :locals => {:event => @event}
+      @booking = Booking.new
+      @booking.event = @event
+      event_details = render_to_string :partial => 'bookings/form'
       event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
       render :json => {:html => event_details, :error => '' }
     else
@@ -74,10 +78,13 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
+    @event.start_at = formatDate(params[:start_at]).strftime("%Y-%m-%d")
+    @event.end_at = formatDate(params[:end_at]).strftime("%Y-%m-%d")
+
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @event.as_json }
       else
         format.html { render action: "edit" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
@@ -93,5 +100,9 @@ class EventsController < ApplicationController
     respond_to do |format|
      format.json { render json: {:event_id => @event.id}}
     end
+  end
+
+  def formatDate (date)
+    Date.parse(date)
   end
 end

@@ -1,27 +1,2 @@
 <h1>Listing bookings</h1>
-
-<table>
-  <tr>
-    <th>Guest</th>
-    <th>Room</th>
-    <th>Active</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @bookings.each do |booking| %>
-  <tr>
-    <td><%= booking.guest_id %></td>
-    <td><%= booking.room_id %></td>
-    <td><%= booking.active %></td>
-    <td><%= link_to 'Show', booking %></td>
-    <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-    <td><%= link_to 'Destroy', booking, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Booking', new_booking_path %>
+<div id ='calendar'></div>

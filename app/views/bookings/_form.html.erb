@@ -1,19 +1,29 @@
+
 <%= simple_form_for(@booking) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :guest_id %>
-    <%= f.association :rooms, :label_method => :description, :value_method => :id, :as => :check_boxes %>
-    <%= f.input :active %>
+
+
+     <%= f.input :guest_name, :input_html => { data: { autocomplete_source: guests_path} } %>
+
+
+    <%= f.association :rooms, :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %>
+
 
     <br>
+         <div class="row-fluid">
+             <%= f.simple_fields_for :event  do |event_form| %>
+               <div class="span6">
+                 <%= event_form.input :start_at, :as => :datepicker%>
+               </div>
+               <div class="span6">
+                 <%= event_form.input :end_at,  :as => :datepicker%>
+               </div>
+             <% end %>
+         </div>
 
-    <%= f.simple_fields_for :event  do |event_form| %>
-     <%=  event_form.input :name %>
-     <%=  event_form.input :start_at, :as => :datepicker %>
-     <%=  event_form.input :end_at, :as => :datepicker %>
 
-    <% end %>
   </div>
 
   <div class="form-actions">

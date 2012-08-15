@@ -16,6 +16,7 @@ gem 'best_in_place'
 gem 'fullcalendar-rails'
 gem 'jquery-rest-rails'
 gem 'lazybox'
+gem 'jquery-ui-rails'
 
 
 
@@ -34,6 +35,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 
 group :test do
   gem 'capybara', '1.1.2'

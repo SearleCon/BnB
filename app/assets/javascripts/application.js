@@ -12,14 +12,15 @@
 //
 
 //= require jquery
+//= require bootstrap
 //= require jquery-ui
 //= require jquery_ujs
-//= require bootstrap
 //= require rails.validations
 //= require inline_form
 //= require jquery.purr
 //= require best_in_place
 //= require jquery.rest
+//= require jquery.ui.datepicker
 //= require fullcalendar
 //= require lazybox
 //= require_tree .

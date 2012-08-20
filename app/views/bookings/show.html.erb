@@ -1,16 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Guest:</b>
-  <%= @booking.guest_id %>
-</p>
-
-
-
-<p>
-  <b>Active:</b>
-  <%= @booking.active %>
-</p>
+<%= render :partial => 'show' %>
 
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

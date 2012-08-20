@@ -17,6 +17,8 @@ gem 'fullcalendar-rails'
 gem 'jquery-rest-rails'
 gem 'lazybox'
 gem 'jquery-ui-rails'
+gem 'enumify'
+gem 'cocoon'
 
 
 

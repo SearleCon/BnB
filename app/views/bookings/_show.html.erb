@@ -1,0 +1,33 @@
+<h2>Booking details</h2>
+<p>
+  <b>Guest:</b>
+  <%= booking.guest.name %>
+</p>
+
+<p>
+  <b>Check In:</b>
+  <%= booking.event.start_at.strftime('%A, %d %B %Y') %>
+</p>
+
+<p>
+  <b>Check Out:</b>
+  <%= booking.event.end_at.strftime('%A, %d %B %Y') %>
+</p>
+
+<ul class="unstyled">
+  <lh>
+    <b>Rooms:</b>
+  </lh>
+  <% booking.rooms.each do |room| %>
+    <li>
+      <%= " #{room.room_number.to_s} #{room.description}" %>
+    </li>
+  <% end %>
+</ul>
+
+
+<label><%= link_to content_tag('i', '', class: 'icon-ok'), rooms_path, method: :post, remote: true %>Checkin</label>
+<label><%= link_to content_tag('i', '', class: 'icon-remove'), rooms_path, method: :post, remote: true %>Checkout</label>
+<label><%= link_to content_tag('i', '', class: 'icon-minus-sign'), booking_path, :id => 'deleteBooking', method: :delete, remote: true %>Remove</label>
+
+

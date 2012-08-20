@@ -4,10 +4,6 @@
 $(document).ready ->
 
 
-
-
-
-
   $('#calendar').fullCalendar
     editable: true,
     header:
@@ -42,29 +38,24 @@ $(document).ready ->
           source: $('#booking_guest_name').data('autocomplete-source')
 
 
+  $('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+    $.lazybox.close()
+    $('#calendar').fullCalendar('removeEvents', data.event_id)
 
-
-    $('#deleteEvent').live "ajax:success", (e, data, textStatus, jqXHR) ->
-      $.lazybox.close()
-      $('#calendar').fullCalendar('removeEvents', data.event_id)
-
-    $('#new_event').live "ajax:success", (e, data, textStatus, jqXHR) ->
-      $.lazybox.close()
-      $('#calendar').fullCalendar('renderEvent', data)
-
+  $('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+    $.lazybox.close()
+    $('#calendar').fullCalendar('renderEvent', data)
 
 
 updateEvent = (the_event) ->
   $.update "/events/" + the_event.id, {  start_at: the_event.start, end_at: the_event.end }
 
-
-
 showBooking = (the_event) ->
-  $.read "/events/" + the_event.id, (response) ->
+  $.read the_event.url, (response) ->
     $.lazybox(response.html)
 
 createBooking = (date) ->
-  $.read "/events/new", {date: date },  (response) ->
+  $.read "/bookings/new", {date: date },  (response) ->
     $.lazybox(response.html)
     $("input.datepicker").each (i) ->
       $(this).datepicker
@@ -77,6 +68,24 @@ createBooking = (date) ->
 
     $('#booking_guest_name').autocomplete
        source: $('#booking_guest_name').data('autocomplete-source')
+
+    $('#guest').bind 'insertion-callback', ->
+      $("#find_guest").hide()
+      $("#guest a.add_fields").hide()
+
+    $('#room_finder').click ->
+      $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
+      $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
+      $.read $(this).attr('href'), (response) ->
+        $.each response, (item) ->
+         element_id = "#booking_room_ids_" + this.id
+         $(element_id).closest('label').hide()
+         $(element_id).hide()
+
+      return false
+
+
+
 
 
 

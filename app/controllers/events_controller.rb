@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @events }
+      format.json { render json: @events.as_json }
     end
   end
 
@@ -102,7 +102,5 @@ class EventsController < ApplicationController
     end
   end
 
-  def formatDate (date)
-    Date.parse(date)
-  end
+
 end

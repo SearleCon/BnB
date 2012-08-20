@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
-  resources :bookings
+  resources :bookings do
+    get :find_available_rooms, :on => :collection
+  end
 
   resources :guests
 

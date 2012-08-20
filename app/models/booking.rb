@@ -12,16 +12,27 @@
 class Booking < ActiveRecord::Base
   belongs_to :guest
   has_and_belongs_to_many :rooms
-  has_one :event
+  has_one :event, :dependent => :delete
+
+  delegate :start_at, :end_at, :to => :event, :prefix => true
 
   accepts_nested_attributes_for :event
+  accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
+
+
+  enum :status, [:provisional, :booked, :checked_in, :closed]
+
+
+  def status_changed(old, new)
+    puts "status changed from #{old} to #{new}"
+  end
 
   def guest_name
     guest.try(:name)
   end
 
   def guest_name=(name)
-    self.guest = Guest.find_or_create_by_name(name) if name.present?
+    self.guest = Guest.find_by_name(name) if name.present?
   end
 
 end

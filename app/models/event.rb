@@ -14,6 +14,8 @@
 class Event < ActiveRecord::Base
   belongs_to :booking
 
+  scope :unbooked, includes(:bookings).where("bookings.id is null")
+
   scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
 
@@ -29,7 +31,7 @@ class Event < ActiveRecord::Base
         :end => end_at,
         :allDay => true,
         :recurring => false,
-        :url => Rails.application.routes.url_helpers.event_path(id),
+        :url => Rails.application.routes.url_helpers.booking_path(booking_id),
         #:color => "red"
     }
 

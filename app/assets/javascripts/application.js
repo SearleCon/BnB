@@ -23,6 +23,7 @@
 //= require jquery.ui.datepicker
 //= require fullcalendar
 //= require lazybox
+//= require cocoon
 //= require_tree .
 
 $.rails.allowAction = function(link) {

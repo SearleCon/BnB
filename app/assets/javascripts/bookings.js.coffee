@@ -66,6 +66,8 @@ createBooking = (date) ->
         onClose: (dateText, inst) ->
             setMinMaxDate(inst, dateText)
 
+    $('#rooms_available').hide()
+
     $('#booking_guest_name').autocomplete
        source: $('#booking_guest_name').data('autocomplete-source')
 
@@ -81,6 +83,8 @@ createBooking = (date) ->
          element_id = "#booking_room_ids_" + this.id
          $(element_id).closest('label').hide()
          $(element_id).hide()
+         $('#rooms_available').show()
+         $('#room_finder').hide()
 
       return false
 

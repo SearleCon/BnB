@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+     before_filter :get_bnb
 
   # GET /bookings
   # GET /bookings.json
@@ -32,13 +32,14 @@ class BookingsController < ApplicationController
   # GET /bookings/new.json
   def new
 
-
     @booking = Booking.new
     @booking.build_event
 
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
+    @rooms = Room.find_all_by_bnb_id(@bnb.id)
+
 
     if request.xhr?
       event_details = render_to_string :partial => 'bookings/form'
@@ -62,6 +63,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(params[:booking])
     @booking.event.name = @booking.guest.name
+
 
     respond_to do |format|
       if @booking.save
@@ -101,21 +103,23 @@ class BookingsController < ApplicationController
     end
   end
 
+  def check_in
+    @booking = Booking.find(params[:id])
+    @booking.status = :checked_in
+    @booking.save
+    redirect_to bookings_url
+  end
+
+ def check_out
+   @booking = Booking.find(params[:id])
+   @booking.status = :closed
+   @booking.save
+   redirect_to bookings_url
+ end
 
 
-  def find_available_rooms
-
-    params[:start_date] && params[:end_date] ?
-        @rooms = Room.open_days(Date.parse(params[:start_date]), Date.parse(params[:end_date])) :
-        @rooms = Room.all
-
-
-    respond_to do |format|
-        format.json { render json: @rooms }
-    end
-
-
-
+  def get_bnb
+    @bnb = Bnb.find_by_user_id(current_user)
   end
 
 end

@@ -6,7 +6,7 @@ class BnbsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @bnbs }
+      format.json { render json: @bnb}
     end
   end
 
@@ -41,6 +41,7 @@ class BnbsController < ApplicationController
   # POST /bnbs.json
   def create
     @bnb = Bnb.new
+    @bnb.status = 'inactive'
     @bnb.user_id = current_user.id
       if @bnb.save
         redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)

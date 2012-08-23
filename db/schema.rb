@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817092044) do
+ActiveRecord::Schema.define(:version => 20120822104819) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120817092044) do
     t.integer  "user_id"
   end
 
+  add_index "bnbs", ["user_id"], :name => "index_bnbs_on_user_id"
+
   create_table "bookings", :force => true do |t|
     t.integer  "guest_id"
     t.boolean  "active"
@@ -40,19 +42,27 @@ ActiveRecord::Schema.define(:version => 20120817092044) do
     t.string   "status",     :default => "provisional"
   end
 
+  add_index "bookings", ["guest_id"], :name => "index_bookings_on_guest_id"
+
   create_table "bookings_rooms", :id => false, :force => true do |t|
     t.integer "booking_id"
     t.integer "room_id"
   end
 
+  add_index "bookings_rooms", ["booking_id"], :name => "index_bookings_rooms_on_booking_id"
+  add_index "bookings_rooms", ["room_id"], :name => "index_bookings_rooms_on_room_id"
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "booking_id"
+    t.string   "color",      :default => "blue"
   end
+
+  add_index "events", ["booking_id"], :name => "index_events_on_booking_id"
 
   create_table "guests", :force => true do |t|
     t.string   "name"
@@ -71,6 +81,8 @@ ActiveRecord::Schema.define(:version => 20120817092044) do
     t.integer  "bnb_id"
   end
 
+  add_index "photos", ["bnb_id"], :name => "index_photos_on_bnb_id"
+
   create_table "rooms", :force => true do |t|
     t.string   "description"
     t.boolean  "en_suite"
@@ -83,6 +95,8 @@ ActiveRecord::Schema.define(:version => 20120817092044) do
     t.boolean  "available",   :default => true
     t.integer  "capacity",    :default => 2
   end
+
+  add_index "rooms", ["bnb_id"], :name => "index_rooms_on_bnb_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -23,19 +23,19 @@ $(document).ready ->
     dragOpacity: "0.5"
 
     eventDrop: (event, dayDelta, minuteDelta, allDay, revertFunc) ->
-      updateEvent(event);
+      updateEvent(event)
 
     eventResize: (event, dayDelta, minuteDelta, revertFunc) ->
-      updateEvent(event);
+      updateEvent(event)
 
     eventClick: (calEvent, jsEvent, view) ->
       showBooking(calEvent)
       return false
 
     dayClick: (date, allDay, jsEvent, view) ->
-      createBooking(date);
-      $('#booking_guest_name').autocomplete
-          source: $('#booking_guest_name').data('autocomplete-source')
+      createBooking(date)
+      return false
+
 
 
   $('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
@@ -57,47 +57,53 @@ showBooking = (the_event) ->
 createBooking = (date) ->
   $.read "/bookings/new", {date: date },  (response) ->
     $.lazybox(response.html)
-    $("input.datepicker").each (i) ->
-      $(this).datepicker
-        dateFormat: "DD, d MM yy"
-        altFormat: "yy-mm-dd"
-        altField: $(this).next()
-        minDate: 0
-        onClose: (dateText, inst) ->
-            setMinMaxDate(inst, dateText)
+    setupDatepickers()
+    bindAvailabeRoomBehaviour()
+    setupGuestBehaviour()
 
-    $('#rooms_available').hide()
 
-    $('#booking_guest_name').autocomplete
-       source: $('#booking_guest_name').data('autocomplete-source')
+bindAvailabeRoomBehaviour = () ->
+  $('#rooms_available').hide()
+  $('#room_finder').click ->
+    $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
+    $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
+    $.read $(this).attr('href'), (response) ->
+      $.each response, (item) ->
+        element_id = "#booking_room_ids_" + this.id
+        $(element_id).closest('label').hide()
+        $(element_id).hide()
+        $('#room_finder').hide()
+      $('#rooms_available').show()
+    return false
 
-    $('#guest').bind 'insertion-callback', ->
-      $("#find_guest").hide()
-      $("#guest a.add_fields").hide()
 
-    $('#room_finder').click ->
-      $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
-      $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
-      $.read $(this).attr('href'), (response) ->
-        $.each response, (item) ->
-         element_id = "#booking_room_ids_" + this.id
-         $(element_id).closest('label').hide()
-         $(element_id).hide()
-         $('#rooms_available').show()
-         $('#room_finder').hide()
-
-      return false
+setupGuestBehaviour = () ->
+  $('#booking_guest_name').autocomplete
+    source: $('#booking_guest_name').data('autocomplete-source')
+  $('#guest').bind 'insertion-callback', ->
+    $("#find_guest").hide()
+    $("#guest a.add_fields").hide()
 
 
 
-
-
+setupDatepickers = () ->
+  $("input.datepicker").each (i) ->
+    $(this).datepicker
+      dateFormat: "DD, d MM yy"
+      altFormat: "yy-mm-dd"
+      altField: $(this).next()
+      minDate: 0
+      onClose: (dateText, inst) ->
+        setMinMaxDate(inst, dateText)
 
 setMinMaxDate = (element, dateText) ->
   if element.id == 'booking_event_attributes_start_at'
     $('#booking_event_attributes_end_at').datepicker "option", "minDate", dateText
   else
     $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
+
+
+
 
 
 

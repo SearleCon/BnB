@@ -87,6 +87,18 @@ class RoomsController < ApplicationController
     end
   end
 
+  def find_available
+    params[:start_date] && params[:end_date] ?
+        @rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id) :
+        @rooms = Room.find_all_by_bnb_id(@bnb.id)
+
+
+
+    respond_to do |format|
+      format.json { render json: @rooms }
+    end
+  end
+
   private
   def get_bnb
     @bnb = Bnb.find_by_user_id(current_user)

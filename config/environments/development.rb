@@ -35,4 +35,20 @@ SampleApp::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+=begin
+    Bullet.growl = true
+    Bullet.xmpp = { :account => 'bullets_account@jabber.org',
+                    :password => 'bullets_password_for_jabber',
+                    :receiver => 'your_account@jabber.org',
+                    :show_online_status => true }
+=end
+    Bullet.rails_logger = true
+    Bullet.disable_browser_cache = true
+  end
+
 end

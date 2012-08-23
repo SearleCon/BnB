@@ -17,8 +17,8 @@ class BnbStepsController < ApplicationController
   end
 
   private
-  def redirect_to_finish_wizard
-    redirect_to @bnb
+  def finish_wizard_path
+    bnb_url(@bnb)
   end
 
   def build_rooms (number_of_rooms)

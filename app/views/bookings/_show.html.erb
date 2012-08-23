@@ -1,17 +1,17 @@
 <h2>Booking details</h2>
 <p>
   <b>Guest:</b>
-  <%= booking.guest.name %>
+  <%= booking.guest_name %>
 </p>
 
 <p>
   <b>Check In:</b>
-  <%= booking.event.start_at.strftime('%A, %d %B %Y') %>
+  <%= booking.event_start_at.strftime('%A, %d %B %Y') %>
 </p>
 
 <p>
   <b>Check Out:</b>
-  <%= booking.event.end_at.strftime('%A, %d %B %Y') %>
+  <%= booking.event_end_at.strftime('%A, %d %B %Y') %>
 </p>
 
 <ul class="unstyled">
@@ -26,8 +26,8 @@
 </ul>
 
 
-<label><%= link_to content_tag('i', '', class: 'icon-ok'), rooms_path, method: :post, remote: true %>Checkin</label>
-<label><%= link_to content_tag('i', '', class: 'icon-remove'), rooms_path, method: :post, remote: true %>Checkout</label>
-<label><%= link_to content_tag('i', '', class: 'icon-minus-sign'), booking_path, :id => 'deleteBooking', method: :delete, remote: true %>Remove</label>
+<div>
+<p><%= display_checkin_or_checkout(booking) %> <%= link_to content_tag('i', '', class: 'icon-minus-sign').concat('Cancel'), booking_path, :id => 'deleteBooking', method: :delete, remote: true %></p>
+</div>
 
 

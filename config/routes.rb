@@ -1,24 +1,28 @@
 SampleApp::Application.routes.draw do
 
   resources :bookings do
-    get :find_available_rooms, :on => :collection
+    put :check_in, on: :member
+    put :check_out, on: :member
   end
+
+  #match "booking/checkin/:id", :to => "bookings#checkin", :via => :put, :as => "checkin"
 
   resources :guests
 
-  resources :events
+  resources :events, only: [:index, :update] do
+    get :filter_by_status, on: :collection
+  end
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
-  resources :rooms, controller: 'rooms', except: [:index]
-
-  resources :bnbs do
-    resources :bnb_steps, controller: 'bnb_steps'
-    resources :rooms, controller: 'rooms', only: [:index]
+  resources :rooms, controller: 'rooms', except: [:index]  do
+    get :find_available, :on => :collection
   end
 
-
-  resources :bnb_steps
+  resources :bnbs do
+    resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
+    resources :rooms, controller: 'rooms', only: [:index]
+  end
 
 
   resources :users

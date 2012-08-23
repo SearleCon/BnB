@@ -14,17 +14,25 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
-  delegate :start_at, :end_at, :to => :event, :prefix => true
+  delegate :name, :start_at, :end_at, :to => :event, :prefix => true
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
 
 
+
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
+  EVENT_COLORS = { :provisional =>  'blue', :booked => 'green', :checked_in => 'red', :closed => 'orange' }
 
   def status_changed(old, new)
-    puts "status changed from #{old} to #{new}"
+    case new
+      when :booked
+      when :checked_in
+        self.event.color = EVENT_COLORS[:checked_in]
+      when :closed
+        self.event.color = EVENT_COLORS[:closed]
+    end
   end
 
   def guest_name

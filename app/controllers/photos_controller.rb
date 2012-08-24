@@ -5,7 +5,6 @@ class PhotosController < ApplicationController
 
   def index
     get_photos
-    @photo = @photos.first
   end
 
   def create
@@ -23,7 +22,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.remove_image!
     @photo.destroy
-    get_photos
+    respond_to do |format|
+      format.js { @photo }
+    end
   end
 
     private

@@ -1,3 +1,5 @@
-$('#photos').html("<%= escape_javascript(render(:partial => 'photos/photos', :locals =>  { :photos => @photos })) %>");
-
+$("#<%=@photo.id%>").fadeOut(1000,function()
+{
+    $(this).remove();
+});
 

@@ -1,4 +1,4 @@
-<%= form_tag(filter_by_status_events_path, method: :get) do %>
+<%= form_tag(filter_by_status_events_path, :id => 'status_search', method: :get, remote: true) do %>
 <div>
    <%=select_tag("status",options_for_select(Booking::STATUSES)) %>
    <%= submit_tag 'Find' %>

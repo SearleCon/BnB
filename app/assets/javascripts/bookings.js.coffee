@@ -46,6 +46,9 @@ $(document).ready ->
     $.lazybox.close()
     $('#calendar').fullCalendar('renderEvent', data)
 
+  $('#status_search').live "ajax:success", (e, data, textStatus, jqXHR) ->
+    refreshCalendarSource(data)
+
 
 updateEvent = (the_event) ->
   $.update "/events/" + the_event.id, {  start_at: the_event.start, end_at: the_event.end }
@@ -102,6 +105,13 @@ setMinMaxDate = (element, dateText) ->
   else
     $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
 
+
+
+refreshCalendarSource = (newSource) ->
+  $("#calendar").fullCalendar 'removeEventSource','/events'
+  $("#calendar").fullCalendar "removeEvents"
+  $("#calendar").fullCalendar "addEventSource", newSource
+  $("#calendar").fullCalendar "refetchEvents"
 
 
 

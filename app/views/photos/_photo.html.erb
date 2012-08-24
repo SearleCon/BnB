@@ -1,17 +1,12 @@
-<div>
-<h2>Your images</h2>
+
 <ul class="thumbnails" display="inline-table">
-<% unless @photos.nil? %>
-  <% @photos.each do |photo| %>
-      <li class="span2">
+      <li id="<%=photo.id %>" class="span2">
         <div class="thumbnail">
           <%= image_tag photo.image_url(:thumb) if photo.image? %>
           <p><%= photo.description %></p>
           <%= link_to 'Remove', photo_url(photo), method: :delete, :remote => true  %>
         </div>
       </li>
-  <% end %>
- <% end %>
 </ul>
-</div>
+
 

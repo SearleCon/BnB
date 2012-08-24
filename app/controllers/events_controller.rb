@@ -30,4 +30,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def filter_by_status
+    @events = Event.scoped.joins(:booking).where('bookings.status =?', params[:status])
+    respond_to do |format|
+      format.json {render json: @events.as_json}
+    end
+  end
+
 end

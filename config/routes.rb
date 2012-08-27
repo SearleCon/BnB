@@ -3,9 +3,11 @@ SampleApp::Application.routes.draw do
   resources :bookings do
     put :check_in, on: :member
     put :check_out, on: :member
+    get :dashboard, on: :collection
   end
 
   #match "booking/checkin/:id", :to => "bookings#checkin", :via => :put, :as => "checkin"
+  match "/quickbooking", :to => "bookings#create", :via => :post, :as => "quickbooking"
 
   resources :guests
 

@@ -1,6 +1,6 @@
 
-<%= simple_form_for @booking, :id => 'calendar_booking', :remote => true do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @booking do |f| %>
+    <%= f.error_notification %>
 
     <div class="form-inputs">
       <div class ="well">
@@ -38,7 +38,7 @@
 
     </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn btn-primary' %>
-  </div>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+    </div>
 <% end %>

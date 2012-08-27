@@ -19,6 +19,14 @@ class Booking < ActiveRecord::Base
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
 
+  scope :needs_check_in, lambda { |specified_date|
+     joins(:event).where("date(events.start_at) =?", specified_date).where(status: :booked)
+  }
+
+  scope :needs_check_out, lambda { |specified_date|
+    joins(:event).where("date(events.end_at) =?", specified_date).where(status: :checked_in)
+  }
+
 
 
   enum :status, [:provisional, :booked, :checked_in, :closed]

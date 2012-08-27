@@ -1,0 +1,41 @@
+<div class="container-fluid">
+   <div class="row-fluid">
+     <div class="span3">
+        <div class="well menu"> 
+  <ul class="nav nav-pills nav-stacked">
+    <li>
+      <%= link_to 'Calendar', bookings_path %>
+    </li>
+    <li>
+      <%= link_to 'Gallery', photos_path %>
+    </li>
+    <li>
+      <%= link_to 'Make a booking', new_booking_path %>
+    </li>
+    <li>
+      <%=  link_to 'Book a Room', new_booking_path %>
+    </li>
+  </ul>
+           </div>
+   </div>
+
+  <div class="span9">
+    <h3>Todays activities</h3>
+    <br>
+    <% unless @bookings_to_check_in.empty? %>
+        <%= render :partial => 'check_ins', locals: { bookings: @bookings_to_check_in} %>
+    <% end %>
+     <br>
+    <% unless @bookings_to_check_out.empty? %>
+        <%= render :partial => 'check_outs', locals: { bookings: @bookings_to_check_out} %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+

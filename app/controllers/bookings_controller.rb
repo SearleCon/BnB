@@ -12,6 +12,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  # GET /dashboard
+  # GET /dashboard.json
+  def dashboard
+   @bookings_to_check_in = Booking.needs_check_in(Date.today)
+   @bookings_to_check_out = Booking.needs_check_out(Date.today)
+
+   respond_to do |format|
+     format.html
+     format.json { render json: @bookings }
+   end
+  end
+
+
   # GET /bookings/1
   # GET /bookings/1.json
   def show
@@ -68,6 +81,7 @@ class BookingsController < ApplicationController
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
+        format.html { render action: "index"}
         format.json { render json: @event.as_json, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -99,7 +113,7 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     respond_to do |format|
-        format.json { render json: {:event_id => @booking.event.id}}
+        format.json { render json: {:event_id => @booking.event.id, :booking_id => @booking.id}}
     end
   end
 
@@ -107,14 +121,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = :checked_in
     @booking.save
-    redirect_to bookings_url
+    redirect_to :back
   end
 
  def check_out
    @booking = Booking.find(params[:id])
    @booking.status = :closed
    @booking.save
-   redirect_to bookings_url
+   redirect_to :back
  end
 
 

@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
 
+  setupDatepickers()
+  bindAvailabeRoomBehaviour()
+  setupGuestBehaviour()
 
   $('#calendar').fullCalendar
     editable: true,
@@ -42,7 +45,12 @@ $(document).ready ->
     $.lazybox.close()
     $('#calendar').fullCalendar('removeEvents', data.event_id)
 
-  $('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+  $('#removeBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+    element = "#" + data.booking_id
+    $(element).fadeOut 1000, ->
+     $(this).remove()
+
+  $('#calendar_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
     $.lazybox.close()
     $('#calendar').fullCalendar('renderEvent', data)
 

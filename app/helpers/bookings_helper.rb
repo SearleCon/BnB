@@ -1,12 +1,16 @@
 module BookingsHelper
 
   def display_checkin_or_checkout(booking)
-    if booking.checked_in?
-      html = (link_to content_tag('i', '', class: 'icon-remove').concat('Checkout'), check_out_booking_path(booking), method: :put)
-    else
-      html = (link_to content_tag('i', '', class: 'icon-ok').concat('Checkin'), check_in_booking_path(booking), method: :put)
-    end
+     case booking.status
+      when :checked_in
+        html = (link_to content_tag('i', '', class: 'icon-remove').concat('Checkout'), check_out_booking_path(booking), method: :put)
+      when :booked
+        html = (link_to content_tag('i', '', class: 'icon-ok').concat('Checkin'), check_in_booking_path(booking), method: :put)
+       when :provisional
+         html ="provisional"
+       when :closed
+         html ="closed"
+      end
   end
-
 
 end

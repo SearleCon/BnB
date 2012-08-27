@@ -1,0 +1,18 @@
+<h3>Outgoings</h3>
+<table class="table table-striped" id="rooms">
+  <tr>
+    <th>Guest</th>
+    <th>Room/Rooms</th>
+    <th>Started</th>
+    <th>Actions</th>
+  </tr>
+  <% bookings.each do |booking| %>
+      <tr id=<%=booking.id %>>
+        <td><%=booking.guest_name %></td>
+        <td><%=booking.rooms.count %></td>
+        <td><%=booking.event_start_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= display_checkin_or_checkout(booking)%></td>
+        <td><%= link_to content_tag('i', '', class: 'icon-minus-sign').concat('Cancel'), booking_path(booking), :id => 'removeBooking', method: :delete, remote: true %></td>
+      </tr>
+  <% end %>
+</table>

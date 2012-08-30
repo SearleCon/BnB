@@ -41,6 +41,7 @@ $(document).ready ->
 
 
 
+
   $('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
     $.lazybox.close()
     $('#calendar').fullCalendar('removeEvents', data.event_id)
@@ -50,12 +51,13 @@ $(document).ready ->
     $(element).fadeOut 1000, ->
      $(this).remove()
 
-  $('#calendar_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+  $('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
     $.lazybox.close()
     $('#calendar').fullCalendar('renderEvent', data)
 
   $('#status_search').live "ajax:success", (e, data, textStatus, jqXHR) ->
     refreshCalendarSource(data)
+
 
 
 updateEvent = (the_event) ->

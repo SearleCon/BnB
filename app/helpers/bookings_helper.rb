@@ -7,9 +7,7 @@ module BookingsHelper
       when :booked
         html = (link_to content_tag('i', '', class: 'icon-ok').concat('Checkin'), check_in_booking_path(booking), method: :put)
        when :provisional
-         html ="provisional"
-       when :closed
-         html ="closed"
+         html =(link_to content_tag('i', '', class: 'icon-ok').concat('Confirm'), confirm_booking_path(booking), method: :put)
       end
   end
 

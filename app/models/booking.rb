@@ -11,6 +11,7 @@
 
 class Booking < ActiveRecord::Base
   belongs_to :guest
+  has_many :line_items
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
@@ -18,6 +19,7 @@ class Booking < ActiveRecord::Base
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :line_items
 
   scope :needs_check_in, lambda { |specified_date|
      joins(:event).where("date(events.start_at) =?", specified_date).where(status: :booked)
@@ -36,6 +38,7 @@ class Booking < ActiveRecord::Base
   def status_changed(old, new)
     case new
       when :booked
+         event.color = EVENT_COLORS[:booked]
       when :checked_in
         self.event.color = EVENT_COLORS[:checked_in]
       when :closed
@@ -49,6 +52,10 @@ class Booking < ActiveRecord::Base
 
   def guest_name=(name)
     self.guest = Guest.find_by_name(name) if name.present?
+  end
+
+  def total_price
+   line_items.to_a.sum{ |item| item.value }
   end
 
 end

@@ -5,6 +5,8 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.all
+    @bookings_to_check_in = Booking.needs_check_in(Date.today)
+    @bookings_to_check_out = Booking.needs_check_out(Date.today)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,7 +83,6 @@ class BookingsController < ApplicationController
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
-        format.html { render action: "index"}
         format.json { render json: @event.as_json, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -127,13 +128,30 @@ class BookingsController < ApplicationController
  def check_out
    @booking = Booking.find(params[:id])
    @booking.status = :closed
+   @booking.rooms.each do |room|
+     @line_item = @booking.line_items.build
+     @line_item.description = room.room_number
+     @line_item.value = room.rates
+   end
+   if @booking.save
+     respond_to do |format|
+       format.html
+       format.json { render json: @booking}
+     end
+   end
+ end
+
+ def confirm
+   @booking = Booking.find(params[:id])
+   @booking.status = :booked
    @booking.save
    redirect_to :back
  end
 
 
-  def get_bnb
+
+ def get_bnb
     @bnb = Bnb.find_by_user_id(current_user)
-  end
+ end
 
 end

@@ -1,13 +1,14 @@
 SampleApp::Application.routes.draw do
 
+
+
   resources :bookings do
+    resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
     put :check_in, on: :member
     put :check_out, on: :member
-    get :dashboard, on: :collection
+    put :confirm, on: :member
   end
 
-  #match "booking/checkin/:id", :to => "bookings#checkin", :via => :put, :as => "checkin"
-  match "/quickbooking", :to => "bookings#create", :via => :post, :as => "quickbooking"
 
   resources :guests
 
@@ -26,10 +27,12 @@ SampleApp::Application.routes.draw do
     resources :rooms, controller: 'rooms', only: [:index]
   end
 
+  resources :line_items, controller: 'line_items', only: [:create, :destroy]
 
   resources :users
   resources :sessions,   only: [:new, :create, :destroy]
   resources :photos, only: [:index, :create, :destroy]
+
 
 
   match '/signup',  to: 'users#new'

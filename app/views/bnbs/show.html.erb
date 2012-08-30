@@ -4,16 +4,13 @@
         <div class="well menu"> 
             <ul class="nav nav-pills nav-stacked">
               <li>
-                <%= link_to 'Rooms', bnb_rooms_path(@bnb) %>
+                <%= link_to 'Manage Rooms', bnb_rooms_path(@bnb) %>
               </li>
               <li>
-                <%= link_to 'Gallery', photos_path %>
+                <%= link_to 'Manager Gallery', photos_path %>
               </li>
               <li>
-                <%= link_to 'Bookings', bookings_path %>
-              </li>
-              <li>
-                <%=  link_to 'Book a Room', new_booking_path %>
+                <%= link_to 'View Calendar', bookings_path %>
               </li>
             </ul>
            </div>

@@ -1,0 +1,5 @@
+$('#line_items').append("<%= escape_javascript(render(:partial => 'bookings/line_item_row', :locals =>  { :line_item => @line_item })) %>")
+$("#<%=@line_item.id%>").hide()
+$("#<%=@line_item.id%>").fadeIn(500)
+$("#total").text("Total: <%= @booking.total_price %>")
+

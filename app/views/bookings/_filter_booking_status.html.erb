@@ -1,6 +1,8 @@
+
+<h3>View by status</h3>
+<br>
+
 <%= form_tag(filter_by_status_events_path, :id => 'status_search', method: :get, remote: true) do %>
-<div>
-   <%=select_tag("status",options_for_select(Booking::STATUSES)) %>
-   <%= submit_tag 'Find' %>
-</div>
+    <%=select_tag("status",options_for_select(Booking::STATUSES)) %>
+    <%= submit_tag 'Find', :class => "btn btn-primary" %>
 <% end %>

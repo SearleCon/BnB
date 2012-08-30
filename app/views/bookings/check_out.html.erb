@@ -1,0 +1,37 @@
+<h2>Booking details</h2>
+<p>
+  <b>Guest:</b>
+  <%= @booking.guest_name %>
+</p>
+
+<p>
+  <b>Check In:</b>
+  <%= @booking.event_start_at.strftime('%A, %d %B %Y') %>
+</p>
+
+<p>
+  <b>Check Out:</b>
+  <%= @booking.event_end_at.strftime('%A, %d %B %Y') %>
+</p>
+
+
+<table class="table table-condensed" id="line_items">
+  <tr>
+    <th>Description</th>
+    <th>Value</th>
+  </tr>
+  <% @booking.line_items.each do |line_item| %>
+   <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
+  <% end %>
+</table>
+
+<div><%= link_to content_tag('i', '', class: 'icon-plus-sign'), booking_line_items_path(@booking), method: :post, remote: true %></div>
+<div id='Total_Cost'>
+    <p id='total'>Total: <%= @booking.total_price %></p>
+</div>
+
+
+
+
+
+

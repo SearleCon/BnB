@@ -1,20 +1,20 @@
 <div class="container-fluid">
    <div class="row-fluid">
      <div class="span3">
-        <div class="well menu"> 
-  <ul class="nav nav-pills nav-stacked">
-    <li>
-     <%= render 'bookings/filter_booking_status' %>
-    </li>
-  </ul>
-           </div>
-   </div>
+      <ul class="nav nav-list">
+        <% unless @bookings_to_check_in.empty? %>
+            <%= render :partial => 'check_ins', locals: { bookings: @bookings_to_check_in} %>
+        <% end %>
+        <% unless @bookings_to_check_out.empty? %>
+            <%= render :partial => 'check_outs', locals: { bookings: @bookings_to_check_out} %>
+        <% end %>
+      </ul>
+     </div>
+</div>
 
   <div class="span9">
-    <h1>Listing bookings</h1>
     <div id ='calendar'></div>
   </div>
-</div>
 </div>
 
 

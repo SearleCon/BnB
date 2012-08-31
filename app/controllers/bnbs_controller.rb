@@ -2,7 +2,7 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnb = Bnb.find_by_user_id(current_user)
+    @bnbs = Bnb.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -5,6 +5,9 @@
       <%= link_to "searle consulting", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
+          <form class="navbar-search pull-left" accept-charset="UTF-8" action="/bnbs" method="get">
+                           <input class="search-query" placeholder="Search" id="search" name="search" type="text" value="" />                
+          </form>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "MyBnb", bnb_path(1) %></li>
           <li><%= link_to "Help", help_path %></li>

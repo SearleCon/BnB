@@ -28,6 +28,11 @@ class Bnb < ActiveRecord::Base
   attr_accessor :status
   attr_accessor :number_of_rooms
 
+  geocoded_by :full_address
+
+  after_validation :geocode, :if => :address_details_changed?
+
+
 
   after_initialize(:on => :create) do
     self.status = 'inactive'
@@ -53,6 +58,22 @@ class Bnb < ActiveRecord::Base
 
   def active_or_social_media?
     self.status.include?('social_media') || active?
+  end
+
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+  def address_details_changed?
+    address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
+  end
+
+  def full_address
+     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
   end
 
 end

@@ -1,46 +1,35 @@
-<h1>Listing bnbs</h1>
+<h2>Search Results</h2>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
-    <th>Surname</th>
+    <th>Number of Rooms</th>
     <th>Description</th>
     <th>Email</th>
-    <th>Address line one</th>
-    <th>Address line two</th>
-    <th>City</th>
-    <th>Postal code</th>
-    <th>Country</th>
     <th>Telephone number</th>
     <th>Website</th>
     <th>Contact person</th>
-    <th>Twitter account</th>
-    <th>Facebook page</th>
   </tr>
 
 <% @bnbs.each do |bnb| %>
   <tr>
     <td><%= bnb.name %></td>
-    <td><%= bnb.surname %></td>
+    <td><%= bnb.rooms.size %></td>
     <td><%= bnb.description %></td>
     <td><%= bnb.email %></td>
-    <td><%= bnb.address_line_one %></td>
-    <td><%= bnb.address_line_two %></td>
-    <td><%= bnb.city %></td>
-    <td><%= bnb.postal_code %></td>
-    <td><%= bnb.country %></td>
     <td><%= bnb.telephone_number %></td>
     <td><%= bnb.website %></td>
     <td><%= bnb.contact_person %></td>
-    <td><%= bnb.twitter_account %></td>
-    <td><%= bnb.facebook_page %></td>
-    <td><%= link_to 'Show', bnb %></td>
-    <td><%= link_to 'Edit', edit_bnb_path(bnb) %></td>
-    <td><%= link_to 'Destroy', bnb, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{bnb.latitude}%2C#{bnb.longitude}" %>
+
+
+
+
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Bnb', new_bnb_path %>
+
+

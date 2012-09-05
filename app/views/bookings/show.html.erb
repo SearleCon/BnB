@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= render :partial => 'show' %>
+<%= render :partial => 'show', locals: { booking: @booking} %>
 
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

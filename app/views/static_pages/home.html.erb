@@ -4,7 +4,7 @@
 
 <%= link_to image_tag("sc.png", alt: "Rails"), 'http://searleconsulting.com/' %>
 
-<% if signed_in? %>
+<% if user_signed_in? %>
   <div class="row">
     <aside class="span4">
     </aside>
@@ -13,15 +13,23 @@
         <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
   </div>
 <% else %>
+    <div class="center hero-unit">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <% @photos.each_with_index do |photo, index| %>
-           <div class="<% if index==0 %>active<% end %> item">
-            <%=image_tag photo.image_url %>
-           </div>
+            <% if index==0 %>
+               <div class="active item">
+                <%=image_tag photo.image_url %>
+               </div>
+            <% else %>
+               <div class="item">
+                 <%=image_tag photo.image_url %>
+               </div>
+            <% end %>
         <% end %>
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
     </div>
+   </div>
 <% end %>

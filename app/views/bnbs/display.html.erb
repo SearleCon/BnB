@@ -1,0 +1,109 @@
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse"  href="#collapseOne">
+        Bnb Details
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <p>
+          <b>Name:</b>
+          <%= @bnb.name %>
+        </p>
+
+        <p>
+          <b>Description:</b>
+          <%= @bnb.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse"  href="#collapseTwo">
+        Contact Details
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <p>
+          <b>Email:</b>
+          <%= link_to @bnb.email, contactbnb_path(@bnb) %>
+        </p>
+
+        <p>
+          <b>Telephone number:</b>
+          <%= @bnb.telephone_number %>
+        </p>
+
+        <p>
+          <b>Website:</b>
+          <%= @bnb.website %>
+        </p>
+
+        <p>
+          <b>Twitter account:</b>
+          <%= @bnb.twitter_account %>
+        </p>
+
+        <p>
+          <b>Facebook page:</b>
+          <%= @bnb.facebook_page %>
+        </p>
+
+        <p>
+          <b>Contact person:</b>
+          <%= @bnb.contact_person %>
+        </p></div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" href="#collapseThree">
+        Location
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+      <div class="accordion-inner">
+        <div class="row">
+          <div class="span4">
+            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnb.latitude}%2C#{@bnb.longitude}" %>
+          </div>
+          <div class="span4">
+            <p>
+              <b>Street:</b>
+              <%= @bnb.address_line_one %>
+            </p>
+
+            <p>
+              <b>Suburb:</b>
+              <%= @bnb.address_line_two %>
+            </p>
+
+            <p>
+              <b>City:</b>
+              <%= @bnb.city %>
+            </p>
+
+            <p>
+              <b>Postal code:</b>
+              <%= @bnb.postal_code %>
+            </p>
+
+            <p>
+              <b>Country:</b>
+              <%= @bnb.country %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% if signed_in? %>
+<div><%=link_to 'Book Now', new_bnb_booking_path(@bnb) %></div>
+<% else %>
+<div>Register <%=link_to 'here', signup_path %> to book online now</div>
+<% end %>
+

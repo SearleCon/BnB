@@ -12,6 +12,17 @@ class BnbsController < ApplicationController
 
   # GET /bnbs/1
   # GET /bnbs/1.json
+  def display
+    @bnb = Bnb.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @bnb }
+    end
+  end
+
+  # GET /bnbs/1
+  # GET /bnbs/1.json
   def show
     @bnb = Bnb.find(params[:id])
 

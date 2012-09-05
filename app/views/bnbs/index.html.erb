@@ -20,16 +20,13 @@
     <td><%= bnb.telephone_number %></td>
     <td><%= bnb.website %></td>
     <td><%= bnb.contact_person %></td>
+    <td><%= link_to 'Details', display_bnb_path(bnb) %></td>
   </tr>
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{bnb.latitude}%2C#{bnb.longitude}" %>
-
-
-
 
 <% end %>
 </table>
 
-<br />
+
 
 
 

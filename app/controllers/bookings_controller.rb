@@ -46,9 +46,9 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   # GET /bookings/new.json
   def new
-
     @booking = Booking.new
     @booking.build_event
+    @booking.build_guest(name: current_user.name)
 
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
@@ -62,11 +62,12 @@ class BookingsController < ApplicationController
       render :json => {:html => event_details, :error => '' }
     else
       respond_to do |format|
-        format.html # new.html.erb
+        format.html { render 'client_booking_form'}
         format.json { render json: @booking }
       end
     end
   end
+
 
   # GET /bookings/1/edit
   def edit
@@ -79,10 +80,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params[:booking])
     @booking.event.name = @booking.guest.name
 
-
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
+        format.html { redirect_to @booking }
         format.json { render json: @event.as_json, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -151,7 +152,7 @@ class BookingsController < ApplicationController
 
 
  def get_bnb
-    @bnb = Bnb.find_by_user_id(current_user)
+    params[:bnb_id]  ? @bnb = Bnb.find(params[:bnb_id]) : @bnb = Bnb.find_by_user_id(current_user)
  end
 
 end

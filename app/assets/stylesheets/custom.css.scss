@@ -143,10 +143,7 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
+
 
 /* forms */
 
@@ -187,33 +184,7 @@ input, textarea, select, .uneditable-input {
   }
 }
 
-/* microposts */
 
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-.content {
-  display: block;
-}
-.timestamp {
-  color: $grayLight;
-}
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
 
 /* sidebar */
 
@@ -235,14 +206,6 @@ aside {
   }
   strong {
     display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
   }
 }
 
@@ -270,17 +233,23 @@ aside {
 
 }
 
+
 .navbar-search {
   position: relative;
 }
+
+#search{
+  width: 70%;
+}
  
 .navbar-search .search-query {
+  padding-top: 10px;
   padding-left: 29px;
 }
 
 .navbar-search .icon-search {
   position: absolute;
-  top: 0px;
+  top: 7px;
   left: 11px;
   background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
 }
@@ -292,5 +261,7 @@ aside {
 .search-query:focus + .icon-search {
   background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
 }
+
+.carousel .item > img { display: inline-block; }
 
 

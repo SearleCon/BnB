@@ -1,6 +1,6 @@
 SampleApp::Application.routes.draw do
 
-
+  devise_for :users
 
   resources :bookings do
     resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
@@ -23,28 +23,29 @@ SampleApp::Application.routes.draw do
   end
 
   resources :bnbs do
+    resources :bookings, only: [:new, :create]
+    get :display, on: :member
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
     resources :rooms, controller: 'rooms', only: [:index]
   end
 
   resources :line_items, controller: 'line_items', only: [:create, :destroy]
 
-  resources :users
-  resources :sessions,   only: [:new, :create, :destroy]
+
   resources :photos, only: [:index, :create, :destroy]
 
 
-
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact/:bnb_id' => 'contact#new', :as => 'contactbnb', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  match 'contact/:bnb_id' => 'contact#create', :as => 'contactbnb', :via => :post
 
   root to: 'static_pages#home'
   # match '/', to: 'static_pages#home'
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/contactus', to: 'static_pages#contact'
 
 end
 #== Route Map

@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $('.carousel').carousel 'cycle'
+   $('.carousel').carousel('cycle')

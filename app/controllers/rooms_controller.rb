@@ -92,8 +92,6 @@ class RoomsController < ApplicationController
         @rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id) :
         @rooms = Room.find_all_by_bnb_id(@bnb.id)
 
-
-
     respond_to do |format|
       format.json { render json: @rooms }
     end

@@ -1,0 +1,44 @@
+
+<%= simple_form_for @booking, :id => 'calendar_booking' do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div class ="well">
+        <h4>Select booking dates:</h4>
+        <div class="row-fluid">
+          <%= f.simple_fields_for :event  do |event_form| %>
+              <div class="span6">
+                <%= event_form.input :start_at, :as => :datepicker%>
+              </div>
+              <div class="span6">
+                <%= event_form.input :end_at,  :as => :datepicker%>
+              </div>
+          <% end %>
+        </div>
+      </div>
+
+
+      <br>
+
+      <div id='guest' class='well'>
+        <%= f.simple_fields_for :guest  do |guest_form| %>
+              <%= guest_form.input :name %>
+              <%= guest_form.input :surname %>
+              <%= guest_form.input :contact_number %>
+        <% end %>
+      </div>
+
+      <br>
+
+      <div id='rooms' class='well'>
+        <h4>Available rooms</h4>
+        <br>
+        <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_rooms_path, :id=> 'room_finder' %>
+        <div id ='rooms_available'><%= f.association :rooms,:collection => @rooms, :label =>'', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %></div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+    </div>
+<% end %>

@@ -1,19 +1,24 @@
 <div class="container-fluid">
-   <div class="row-fluid">
-     <div class="span3">
-      <ul class="nav nav-list">
-        <% unless @bookings_to_check_in.empty? %>
-            <%= render :partial => 'check_ins', locals: { bookings: @bookings_to_check_in} %>
-        <% end %>
-        <% unless @bookings_to_check_out.empty? %>
-            <%= render :partial => 'check_outs', locals: { bookings: @bookings_to_check_out} %>
-        <% end %>
-      </ul>
-     </div>
-</div>
+   
+  <div class="row-fluid">
+       
+    <div class="span2">
+      <div class="well">
+        <h4>Legend</h4>
+        <br>
+        <p style="color:blue">provisional: blue</p>
 
-  <div class="span9">
-    <div id ='calendar'></div>
+        <p style="color:green">booked: green</p>
+
+        <p style="color:red">checked in: red</p>
+
+        <p style='color:orange'>closed: orange</p>
+      </div>
+       
+    </div>
+    <div class="span9">
+      <div id='calendar'></div>
+    </div>
   </div>
 </div>
 

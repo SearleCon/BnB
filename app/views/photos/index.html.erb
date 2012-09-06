@@ -1,16 +1,22 @@
-<div>
-  <h2>Your images</h2>
-  <% if @photos.count >= 1 %>
-     <%= render @photos %>
-  <% else %>
-      <p class='center'>There are currently no images for your gallery</p>
-  <% end  %>
+<div class="container-fluid">
+   <div class="row-fluid">
+     <div class="span3">
+        <div class="well"> 
+          <%= simple_form_for Photo.new, :url => photos_path, :html => { :multipart => true}  do |f| %>
+              <%= f.error_notification %>
+              <%= f.input :description %>
+              <%= f.file_field :image %>
+          <% end %>
+        </div>
+    </div>
+  <div class="span9">
+    <h2>Your images</h2>
+    <% if @photos.count >= 1 %>
+        <%= render @photos %>
+    <% else %>
+        <p class='center'>There are currently no images for your gallery</p>
+    <% end %>
+  </div>
 </div>
-<div class='well'>
-  <%= simple_form_for Photo.new, :url => photos_path, :html => { :multipart => true}  do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :description %>
-      <%= f.file_field :image %>
-  <% end %>
 </div>
 

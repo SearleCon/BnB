@@ -22,12 +22,13 @@ SampleApp::Application.routes.draw do
     get :find_available, :on => :collection
   end
 
-  resources :bnbs do
+  resources :bnbs, except: [:show] do
     resources :bookings, only: [:new, :create]
-    get :display, on: :member
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
     resources :rooms, controller: 'rooms', only: [:index]
   end
+
+  match '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb', via: :get
 
   resources :line_items, controller: 'line_items', only: [:create, :destroy]
 

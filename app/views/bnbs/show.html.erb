@@ -1,3 +1,4 @@
+<% if @bnb %>
 <div class="container-fluid">
    <div class="row-fluid">
      <div class="span3">
@@ -7,17 +8,22 @@
                 <%= link_to 'Manage Rooms', bnb_rooms_path(@bnb) %>
               </li>
               <li>
-                <%= link_to 'Manager Gallery', photos_path %>
+                <%= link_to 'Manage Gallery', photos_path %>
               </li>
               <li>
                 <%= link_to 'View Calendar', bookings_path %>
               </li>
             </ul>
            </div>
-     </div>
-
+      </div>
   <div class="span9">
           <%=render 'bnbs/showbnb' %>
     </div>
 </div>
 </div>
+<% else %>
+    <div class="center hero-unit">
+      <p>Welcome, to begin the setup process for your bnb, press the button below and follow the steps.</p>
+      <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
+    </div>
+<% end %>

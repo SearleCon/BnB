@@ -5,8 +5,6 @@ class BookingsController < ApplicationController
   # GET /bookings.json
   def index
     @bookings = Booking.all
-    @bookings_to_check_in = Booking.needs_check_in(Date.today)
-    @bookings_to_check_out = Booking.needs_check_out(Date.today)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,17 +12,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  # GET /dashboard
-  # GET /dashboard.json
-  def dashboard
-   @bookings_to_check_in = Booking.needs_check_in(Date.today)
-   @bookings_to_check_out = Booking.needs_check_out(Date.today)
 
-   respond_to do |format|
-     format.html
-     format.json { render json: @bookings }
-   end
-  end
 
 
   # GET /bookings/1

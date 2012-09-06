@@ -4,17 +4,16 @@ class Ability
   def initialize(user)
 
     if user.role.description == 'Owner'
-
       #Bnb
       can :read, Bnb do |bnb|
-        bnb.try(:user) == user
+        bnb.try(:user_id) == user.id
       end
       can :create, Bnb
-      can :update. Bnb do |bnb|
-        bnb.try(:user) ==  user
+      can :update, Bnb do |bnb|
+        bnb.try(:user_id) ==  user.id
       end
       can :destroy, Bnb do |bnb|
-        bnb.try(:user) == user
+        bnb.try(:user_id) == user.id
       end
 
       #Room
@@ -40,7 +39,6 @@ class Ability
       can :update, Event
       can :create, Event
       can :destroy, Event
-      end
     end
     # Define abilities for the passed in user here. For example:
     #

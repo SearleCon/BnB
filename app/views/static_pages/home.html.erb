@@ -1,18 +1,6 @@
 <!DOCTYPE html>
-
 <% provide(:title, 'Home') %>
-
 <%= link_to image_tag("sc.png", alt: "Rails"), 'http://searleconsulting.com/' %>
-
-<% if user_signed_in? %>
-  <div class="row">
-    <aside class="span4">
-    </aside>
-  </div>
-  <div class="center hero-unit">
-        <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
-  </div>
-<% else %>
     <div class="center hero-unit">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
@@ -32,4 +20,3 @@
       </div>
     </div>
    </div>
-<% end %>

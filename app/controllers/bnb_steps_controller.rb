@@ -18,7 +18,7 @@ class BnbStepsController < ApplicationController
 
   private
   def finish_wizard_path
-    bnb_url(@bnb)
+    show_bnb_url(@bnb)
   end
 
   def build_rooms (number_of_rooms)

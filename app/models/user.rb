@@ -14,7 +14,7 @@
 
 class User < ActiveRecord::Base
 
-  has_one :role
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
 
   def add_name
     self.name = 'test'
+  end
+
+  def role
+    Role.find(self.role_id)
   end
 
 end

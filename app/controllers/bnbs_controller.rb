@@ -10,21 +10,12 @@ class BnbsController < ApplicationController
     end
   end
 
-  # GET /bnbs/1
-  # GET /bnbs/1.json
-  def display
-    @bnb = Bnb.find(params[:id])
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @bnb }
-    end
-  end
 
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    @bnb = Bnb.find(params[:id])
+    params[:id] ? @bnb = Bnb.find(params[:id]) : @bnb = Bnb.find_by_user_id(current_user)
 
     respond_to do |format|
       format.html # show.html.erb

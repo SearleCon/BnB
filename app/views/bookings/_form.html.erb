@@ -1,5 +1,5 @@
 
-<%= simple_form_for @booking, :id => 'calendar_booking', :remote => true do |f| %>
+<%= simple_form_for @booking,:html => {:'data-type' => 'json'}, :remote => true do |f| %>
   <%= f.error_notification %>
 
     <div class="form-inputs">

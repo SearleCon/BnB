@@ -26,8 +26,8 @@
 </ul>
 
 
-<div>
-<p><%= display_checkin_or_checkout(booking) %> <%= link_to content_tag('i', '', class: 'icon-minus-sign').concat('Cancel'), booking_path, :id => 'deleteBooking', method: :delete, remote: true %></p>
+<div id='booking_info' class="btn-group" style="text-align: center;">
+<p><%= display_checkin_or_checkout(booking) %>  <%= link_to 'Cancel', booking_path, method: :delete ,class: "btn btn-danger", remote: true %></p>
 </div>
 
 

@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-     before_filter :get_bnb
+     before_filter :get_bnb, :get_booking
 
   # GET /bookings
   # GET /bookings.json
@@ -12,13 +12,9 @@ class BookingsController < ApplicationController
     end
   end
 
-
-
-
   # GET /bookings/1
   # GET /bookings/1.json
   def show
-    @booking = Booking.find(params[:id])
     if request.xhr?
       booking = render_to_string :partial => 'bookings/show', :locals => {:booking => @booking}
       booking = booking.html_safe.gsub(/[\n\t\r]/, '')
@@ -43,7 +39,6 @@ class BookingsController < ApplicationController
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
     @rooms = Room.find_all_by_bnb_id(@bnb.id)
 
-
     if request.xhr?
       event_details = render_to_string :partial => 'bookings/form'
       event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
@@ -56,17 +51,15 @@ class BookingsController < ApplicationController
     end
   end
 
-
   # GET /bookings/1/edit
   def edit
-    @booking = Booking.find(params[:id])
   end
 
   # POST /bookings
   # POST /bookings.json
   def create
     @booking = Booking.new(params[:booking])
-    @booking.event.name = @booking.guest.name
+    @booking.event.name = @booking.guest_name
 
     respond_to do |format|
       if @booking.save
@@ -83,8 +76,6 @@ class BookingsController < ApplicationController
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
-    @booking = Booking.find(params[:id])
-
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
@@ -99,23 +90,18 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
-
     respond_to do |format|
         format.json { render json: {:event_id => @booking.event.id, :booking_id => @booking.id}}
     end
   end
 
   def check_in
-    @booking = Booking.find(params[:id])
-    @booking.status = :checked_in
-    @booking.save
+    @booking.update_attribute(:status, :checked_in)
     redirect_to :back
   end
 
  def check_out
-   @booking = Booking.find(params[:id])
    @booking.status = :closed
    @booking.rooms.each do |room|
      @line_item = @booking.line_items.build
@@ -131,16 +117,18 @@ class BookingsController < ApplicationController
  end
 
  def confirm
-   @booking = Booking.find(params[:id])
-   @booking.status = :booked
-   @booking.save
+   @booking.update_attribute(:status, :booked)
    redirect_to :back
  end
 
-
-
  def get_bnb
     params[:bnb_id]  ? @bnb = Bnb.find(params[:bnb_id]) : @bnb = Bnb.find_by_user_id(current_user)
+ end
+
+ def get_booking
+   if params[:id]
+     @booking = Booking.find(params[:id])
+   end
  end
 
 end

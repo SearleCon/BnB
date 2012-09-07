@@ -42,21 +42,14 @@ $(document).ready ->
 
 
 
-  $('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
-    $.lazybox.close()
-    $('#calendar').fullCalendar('removeEvents', data.event_id)
+$('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+  $.lazybox.close()
+  $('#calendar').fullCalendar('removeEvents', data.event_id)
 
-  $('#removeBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
-    element = "#" + data.booking_id
-    $(element).fadeOut 1000, ->
-     $(this).remove()
 
-  $('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
-    $.lazybox.close()
-    $('#calendar').fullCalendar('renderEvent', data)
-
-  $('#status_search').live "ajax:success", (e, data, textStatus, jqXHR) ->
-    refreshCalendarSource(data)
+$('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
+  $.lazybox.close()
+  $('#calendar').fullCalendar('renderEvent', data)
 
 
 
@@ -117,11 +110,6 @@ setMinMaxDate = (element, dateText) ->
 
 
 
-refreshCalendarSource = (newSource) ->
-  $("#calendar").fullCalendar 'removeEventSource','/events'
-  $("#calendar").fullCalendar "removeEvents"
-  $("#calendar").fullCalendar "addEventSource", newSource
-  $("#calendar").fullCalendar "refetchEvents"
 
 
 

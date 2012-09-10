@@ -7,8 +7,9 @@ SampleApp::Application.routes.draw do
     put :check_in, on: :member
     put :check_out, on: :member
     put :confirm, on: :member
+    get :refresh_total, on: :member
+    get :show_invoice, on: :member
   end
-
 
   resources :guests
 
@@ -31,7 +32,6 @@ SampleApp::Application.routes.draw do
   match '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb', via: :get
 
   resources :line_items, controller: 'line_items', only: [:create, :destroy]
-
 
   resources :photos, only: [:index, :create, :destroy]
 

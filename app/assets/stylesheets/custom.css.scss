@@ -234,10 +234,10 @@ input, textarea, select, .uneditable-input {
   float: right;
   p{
     font: bold;
+    float: left;
+    padding: 5px;
   }
-
 }
-
 
 .navbar-search {
   position: relative;
@@ -268,7 +268,6 @@ input, textarea, select, .uneditable-input {
 }
 
 .carousel .item > img { display: inline-block; }
-
 
 
 

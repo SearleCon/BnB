@@ -21,17 +21,12 @@
     <th>Value</th>
   </tr>
   <% @booking.line_items.each do |line_item| %>
-   <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
+      <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
   <% end %>
 </table>
 <div><%= link_to content_tag('i', '', class: 'icon-plus-sign'), booking_line_items_path(@booking), method: :post, remote: true %></div>
 <div id='Total_Cost'>
-    <p id='total'>Total: <%= number_to_currency(@booking.total_price, unit: 'ZAR') %></p>
-    <p><%= link_to 'Refresh Total',refresh_total_booking_path(@booking), method: :get, remote: true %></p>
+  <p id='total'>Total: <%= number_to_currency(@booking.total_price, unit: 'ZAR') %></p>
+  <p><%= link_to 'Refresh Total',refresh_total_booking_path(@booking), method: :get, remote: true %></p>
 </div>
-
-
-
-
-
 

@@ -9,13 +9,13 @@
                 <input class="search-query" placeholder="Search" id="search" name="search" type="text" value="" />               
           </form>
           <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
           <% if user_signed_in? %>
             <% if current_user.role.description == 'Owner' %>
                   <li><%= link_to "MyBnb", show_bnb_path %></li>
             <% else %>
                   <li><%= link_to "MyHistory" %></li>
             <% end %>
+            <li><%= link_to "Help", help_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>

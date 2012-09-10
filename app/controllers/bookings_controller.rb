@@ -121,6 +121,15 @@ class BookingsController < ApplicationController
    redirect_to :back
  end
 
+ def refresh_total
+   @total = @booking.total_price
+   respond_to do |format|
+     format.js { @total }
+   end
+
+ end
+
+ private
  def get_bnb
     params[:bnb_id]  ? @bnb = Bnb.find(params[:bnb_id]) : @bnb = Bnb.find_by_user_id(current_user)
  end

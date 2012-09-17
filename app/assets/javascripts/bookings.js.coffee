@@ -61,7 +61,8 @@ showBooking = (the_event) ->
     $.lazybox(response.html)
 
 createBooking = (date) ->
-  $.read "/bookings/new", {date: date },  (response) ->
+  path = $('#new_booking_path').val()
+  $.read path, {date: date },  (response) ->
     $.lazybox(response.html)
     setupDatepickers()
     bindAvailabeRoomBehaviour()

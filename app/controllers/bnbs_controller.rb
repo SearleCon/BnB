@@ -1,4 +1,6 @@
 class BnbsController < ApplicationController
+  load_and_authorize_resource
+
   # GET /bnbs
   # GET /bnbs.json
   def index
@@ -15,7 +17,7 @@ class BnbsController < ApplicationController
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    params[:id] ? @bnb = Bnb.find(params[:id]) : @bnb = Bnb.find_by_user_id(current_user)
+    @bnb = Bnb.find_by_user_id(current_user) if @bnb.nil?
 
     respond_to do |format|
       format.html # show.html.erb
@@ -56,8 +58,6 @@ class BnbsController < ApplicationController
   # PUT /bnbs/1
   # PUT /bnbs/1.json
   def update
-    @bnb = Bnb.find(params[:id])
-
     respond_to do |format|
       if @bnb.update_attributes(params[:bnb])
         format.html { redirect_to @bnb, notice: 'Bnb was successfully updated.' }
@@ -72,7 +72,6 @@ class BnbsController < ApplicationController
   # DELETE /bnbs/1
   # DELETE /bnbs/1.json
   def destroy
-    @bnb = Bnb.find(params[:id])
     @bnb.destroy
 
     respond_to do |format|

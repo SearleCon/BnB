@@ -1,10 +1,12 @@
 class BookingsController < ApplicationController
-     before_filter :get_bnb, :get_booking
+  load_and_authorize_resource :bnb
+  load_and_authorize_resource :booking, :through => :bnb
+
 
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = Booking.find_all_by_bnb_id(@bnb)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -58,14 +60,14 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(params[:booking])
+    @booking = @bnb.bookings.new(params[:booking])
     @booking.event.name = @booking.guest_name
 
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
-        format.html { redirect_to @booking }
-        format.json { render json: @event.as_json, status: :created, location: @event }
+        format.html { redirect_to @booking, notice: 'Booking was created' }
+        format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
       else
         format.html { render action: "new" }
         format.json { render json: @booking.errors, status: :unprocessable_entity }
@@ -98,7 +100,10 @@ class BookingsController < ApplicationController
 
   def check_in
     @booking.update_attribute(:status, :checked_in)
-    redirect_to :back
+    respond_to do |format|
+      format.html {redirect_to bookings_url}
+      format.js { @booking }
+    end
   end
 
  def check_out
@@ -118,15 +123,32 @@ class BookingsController < ApplicationController
 
  def confirm
    @booking.update_attribute(:status, :booked)
-   redirect_to :back
+   respond_to do |format|
+     format.js { @booking }
+   end
  end
 
  def refresh_total
-   @total = @booking.total_price
    respond_to do |format|
-     format.js { @total }
+     format.js { @booking }
    end
+ end
 
+ def print_pdf
+   respond_to do |format|
+     format.pdf do
+       @pdf = render_to_string :pdf => @booking.guest_name,
+              :template => 'bookings/invoice.pdf.erb',
+              :footer => {
+                  :center => "Center",
+                  :left => "Left",
+                  :right => "Right"
+              },
+              :encoding => "UTF-8"
+
+       send_data(@pdf, :filename => @booking.guest_name,  :type=>"application/pdf")
+     end
+   end
  end
 
  private

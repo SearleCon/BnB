@@ -8,9 +8,12 @@
 #  contact_number :string(255)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  bnb_id         :integer
+#  user_id        :integer
 #
 
 class Guest < ActiveRecord::Base
+  belongs_to :bnb
   has_many :bookings
   has_many :rooms, :through => :bookings
 end

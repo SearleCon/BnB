@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: bookings
+#
+#  id         :integer          not null, primary key
+#  guest_id   :integer
+#  active     :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  status     :string(255)      default("provisional")
+#  bnb_id     :integer
+#
+
 require 'spec_helper'
 
 describe Booking do

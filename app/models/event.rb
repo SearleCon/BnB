@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  booking_id :integer
+#  color      :string(255)      default("blue")
 #
 
 class Event < ActiveRecord::Base
@@ -28,13 +29,9 @@ class Event < ActiveRecord::Base
         :end => end_at,
         :allDay => true,
         :recurring => false,
-        :url => Rails.application.routes.url_helpers.booking_path(booking_id),
+        :url => Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
         :color => self.color
     }
 
   end
-
-
-
-
 end

@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
-  before_filter :get_bnb
+  load_and_authorize_resource :bnb
+  load_and_authorize_resource :room, :through => :bnb
 
   # GET /rooms
   # GET /rooms.json
@@ -7,18 +8,14 @@ class RoomsController < ApplicationController
     @rooms = @bnb.rooms
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @rooms }
     end
   end
 
-
-
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    @room = Room.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @room }
@@ -38,7 +35,6 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1/edit
   def edit
-    @room = Room.find(params[:id])
   end
 
   # POST /rooms
@@ -61,8 +57,6 @@ class RoomsController < ApplicationController
   # PUT /rooms/1
   # PUT /rooms/1.json
   def update
-    @room = Room.find(params[:id])
-
     respond_to do |format|
       if @room.update_attributes(params[:room])
         format.html { redirect_to @room, notice: 'Room was successfully updated.' }
@@ -77,9 +71,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
-    @room = Room.find(params[:id])
     @room.destroy
-
     respond_to do |format|
       format.html { redirect_to bnb_rooms_path(@bnb) }
       format.js { @room }

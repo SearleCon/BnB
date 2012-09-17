@@ -1,0 +1,2 @@
+<p id='total'>Total: <%= number_to_currency (@booking.total_price) %></p>
+<p><%= link_to 'Refresh Total',refresh_total_bnb_booking_path(@bnb, @booking), method: :get, remote: true %></p>

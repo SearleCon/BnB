@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905133058) do
+ActiveRecord::Schema.define(:version => 20120914073403) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120905133058) do
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
     t.string   "status",     :default => "provisional"
+    t.integer  "bnb_id"
   end
 
   add_index "bookings", ["guest_id"], :name => "index_bookings_on_guest_id"
@@ -88,11 +89,13 @@ ActiveRecord::Schema.define(:version => 20120905133058) do
     t.string   "contact_number"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "bnb_id"
+    t.integer  "user_id"
   end
 
   create_table "line_items", :force => true do |t|
     t.string   "description"
-    t.integer  "value"
+    t.decimal  "value"
     t.integer  "booking_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

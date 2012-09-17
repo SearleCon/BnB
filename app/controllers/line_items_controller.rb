@@ -14,9 +14,10 @@ class LineItemsController < ApplicationController
   end
 
   def update
-    if @booking.line_items.find(params[:id]).update_attributes(params[:line_item])
+    @line_item = @booking.line_items.find(params[:id])
+    if @line_item.update_attributes(params[:line_item])
       respond_to do |format|
-        format.json { render json: {:total_price => @booking.total_price } }
+        format.json { respond_with_bip(@line_item) }
       end
     end
   end

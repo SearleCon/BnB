@@ -1,5 +1,5 @@
 
-<%= simple_form_for @booking,:html => {:'data-type' => 'json'}, :remote => true do |f| %>
+<%= simple_form_for @booking, url: bnb_bookings_path(@bnb),:html => {:'data-type' => 'json'}, :remote => true do |f| %>
   <%= f.error_notification %>
 
     <div class="form-inputs">
@@ -17,24 +17,21 @@
         </div>
       </div>
 
-
       <br>
 
       <div id='guest' class='well'>
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
-        <div id='find_guest'><%= f.input :guest_name, :input_html => { data: { autocomplete_source: guests_path} } %></div>
+        <div id='find_guest'><%= f.input :guest_name, :input_html => { data: { autocomplete_source: bnb_guests_path(@bnb)} } %></div>
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign').concat(' New Guest'), f, :guest %></div>
       </div>
-
 
       <div id='rooms' class='well'>
         <h4>Available rooms</h4>
         <br>
-        <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_rooms_path, :id=> 'room_finder' %>
+        <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
         <div id ='rooms_available'><%= f.association :rooms,:collection => @rooms, :label =>'', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %></div>
       </div>
-
 
     </div>
 

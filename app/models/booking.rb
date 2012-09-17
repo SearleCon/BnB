@@ -7,9 +7,12 @@
 #  active     :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  status     :string(255)      default("provisional")
+#  bnb_id     :integer
 #
 
 class Booking < ActiveRecord::Base
+  belongs_to :bnb
   belongs_to :guest
   has_many :line_items
   has_and_belongs_to_many :rooms
@@ -28,8 +31,6 @@ class Booking < ActiveRecord::Base
   scope :needs_check_out, lambda { |specified_date|
     joins(:event).where("date(events.end_at) =?", specified_date).where(status: :checked_in)
   }
-
-
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
@@ -55,7 +56,11 @@ class Booking < ActiveRecord::Base
   end
 
   def total_price
-   line_items.to_a.sum{ |item| item.value }
+    total = 0
+    line_items.each do |item|
+      total = total + item.value
+    end
+    total
   end
 
 end

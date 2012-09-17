@@ -24,7 +24,9 @@ gem 'geocoder'
 gem 'delayed_job_active_record'
 gem 'devise'
 gem 'cancan'
-gem 'money-rails'
+gem 'wicked_pdf'
+gem "wkhtmltopdf-binary"
+
 
 
 

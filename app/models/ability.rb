@@ -5,7 +5,7 @@ class Ability
 
     if user.role.description == 'Owner'
       #Bnb
-      can :read, Bnb do |bnb|
+      can :show, Bnb do |bnb|
         bnb.try(:user_id) == user.id
       end
       can :create, Bnb
@@ -16,29 +16,25 @@ class Ability
         bnb.try(:user_id) == user.id
       end
 
-      #Room
-      can :read, Room
-      can :create, Room
-      can :update, Room
-      can :destroy, Room
+      #Rooms
+      can :manage, Room, :bnb => { :user_id => user.id }
+
+      #Bookings
+      can :manage, Booking, :bnb => { :user_id => user.id}
 
       #Guest
-      can :read, Guest
-      can :create, Guest
-      can :update, Guest
-      can :destroy, Guest
-
-      #Booking
-      can :read, Booking
-      can :update, Booking
-      can :create, Booking
-      can :destroy, Booking
+      can :manage, Guest, :bnb => {:user_id => user.id}
 
       #Events
-      can :read, Event
-      can :update, Event
-      can :create, Event
-      can :destroy, Event
+      can :manage, Event
+
+      #LineItems
+      can :manage, LineItem
+
+
+
+
+
     end
     # Define abilities for the passed in user here. For example:
     #

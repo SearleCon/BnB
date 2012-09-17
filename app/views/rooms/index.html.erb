@@ -16,4 +16,4 @@
 
 <br/>
 
-<label><%= link_to content_tag('i', '', class: 'icon-plus-sign'), rooms_path, method: :post, remote: true %> Add room</label>
+<label><%= link_to content_tag('i', '', class: 'icon-plus-sign'), bnb_rooms_path(@bnb, @bnb.rooms.build), method: :post, remote: true %> Add room</label>

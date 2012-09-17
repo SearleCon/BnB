@@ -1,0 +1,36 @@
+<%= wicked_pdf_stylesheet_link_tag "documents" %>
+
+<div class="document">
+  <h2>Booking details</h2>
+  <p>
+    <b>Guest:</b>
+    <%= @booking.guest_name %>
+  </p>
+
+  <p>
+    <b>Check In:</b>
+    <%= @booking.event_start_at.strftime('%A, %d %B %Y') %>
+  </p>
+
+  <p>
+    <b>Check Out:</b>
+    <%= @booking.event_end_at.strftime('%A, %d %B %Y') %>
+  </p>
+
+  <table class="table table-striped" id="line_items">
+    <tr>
+      <th>Description</th>
+      <th>Value</th>
+    </tr>
+    <% @booking.line_items.each do |line_item| %>
+        <tr id=<%=line_item.id%>>
+          <td><%= line_item.description %></td>
+          <td><%= number_to_currency (line_item.value) %></td>
+        </tr>
+    <% end %>
+    </table>
+    <div id='Total_Cost'>
+    <p id='total'>Total: <%= number_to_currency(@booking.total_price) %></p>
+    </div>
+</div>
+

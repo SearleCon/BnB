@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <% provide(:title, 'Home') %>
 <%= link_to image_tag("sc.png", alt: "Rails"), 'http://searleconsulting.com/' %>
-    <div class="center hero-unit">
+    <div class="center hero-unit" style="background: white;">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <% @photos.each_with_index do |photo, index| %>

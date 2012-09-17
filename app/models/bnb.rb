@@ -19,11 +19,15 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  user_id          :integer
+#  latitude         :float
+#  longitude        :float
 #
 
 class Bnb < ActiveRecord::Base
+  has_many :guests, :dependent => :delete_all
   has_many :photos, :dependent => :delete_all
   has_many :rooms, :dependent => :delete_all
+  has_many :bookings, :dependent => :delete_all
 
   attr_accessor :status
   attr_accessor :number_of_rooms

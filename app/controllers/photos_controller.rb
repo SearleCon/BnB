@@ -1,17 +1,19 @@
 class PhotosController < ApplicationController
-    before_filter :get_bnb
 
 
 
   def index
+    @bnb = Bnb.find(params[:bnb_id])
     get_photos
   end
 
   def create
-    @photo = @bnb.photos.new(params[:photo])
+    @bnb = Bnb.find(params[:bnb_id])
+    @photo = @bnb.photos.build(params[:photo])
+
     if @photo.save
       get_photos
-       redirect_to photos_path
+      redirect_to bnb_photos_url(@bnb)
     else
       redirect_back_or root_path
     end

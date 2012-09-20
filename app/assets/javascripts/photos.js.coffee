@@ -3,6 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
+
+
+  $('#image_thumb').lazybox()
+
   $('#photo_image').bind 'change', ->
     $('#new_photo').submit()
 

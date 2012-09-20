@@ -1,6 +1,0 @@
-<h3>Upload photo</h3>
-<%= simple_form_for Photo.new, :url => photos_path, :html => { :class=>"form-search",:multipart => true}  do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :description %>
-    <%= f.file_field :image %>
-<% end %>

@@ -1,13 +1,15 @@
 <div class="container-fluid">
    <div class="row-fluid">
      <div class="span3">
-        <div class="well"> 
-          <%= simple_form_for Photo.new, :url => photos_path, :html => { :multipart => true}  do |f| %>
-              <%= f.error_notification %>
-              <%= f.input :description %>
-              <%= f.file_field :image %>
-          <% end %>
-        </div>
+        <% if can? :create, Photo %>
+            <div class="well"> 
+              <%= simple_form_for Photo.new, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
+                  <%= f.error_notification %>
+                  <%= f.input :description %>
+                  <%= f.file_field :image %>
+              <% end %>
+            </div>
+        <% end %>
     </div>
   <div class="span9">
     <h2>Your images</h2>

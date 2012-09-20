@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
-  load_and_authorize_resource :bnb
-  load_and_authorize_resource :booking, :through => :bnb
-
+  load_and_authorize_resource :bnb, :except => :my_bookings
+  load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
 
   # GET /bookings
   # GET /bookings.json
@@ -12,6 +11,15 @@ class BookingsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @bookings }
     end
+  end
+
+  # GET /my_bookings
+  def my_bookings
+    @bookings = Booking.find_all_by_user_id(current_user)
+    respond_to do |format|
+      format.html
+    end
+
   end
 
   # GET /bookings/1
@@ -62,11 +70,12 @@ class BookingsController < ApplicationController
   def create
     @booking = @bnb.bookings.new(params[:booking])
     @booking.event.name = @booking.guest_name
+    @booking.user_id = current_user.id
 
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
-        format.html { redirect_to @booking, notice: 'Booking was created' }
+        format.html { redirect_to bnb_booking_url(@bnb,@booking), notice: 'Booking was created' }
         format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
       else
         format.html { render action: "new" }

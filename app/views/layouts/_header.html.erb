@@ -13,7 +13,7 @@
             <% if current_user.role.description == 'Owner' %>
                   <li><%= link_to "MyBnb", show_bnb_path %></li>
             <% else %>
-                  <li><%= link_to "MyHistory" %></li>
+                  <li><%= link_to "MyHistory", my_bookings_bookings_path  %></li>
             <% end %>
             <li><%= link_to "Help", help_path %></li>
             <li id="fat-menu" class="dropdown">

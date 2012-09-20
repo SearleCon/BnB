@@ -1,12 +1,12 @@
+<div class="row-fluid">
+    <ul class="thumbnails">
+          <li id="<%=photo.id %>" class="span2">
+            <a href="<%= photo.image_url %>"  class="thumbnail" id="image_thumb">
+              <%= image_tag photo.image_url(:thumb)%>
+            </a>
+          </li>
+    </ul>
+</div>
 
-<ul class="thumbnails" display="inline-table">
-      <li id="<%=photo.id %>" class="span2">
-        <div class="thumbnail">
-          <%= image_tag photo.image_url(:thumb) if photo.image? %>
-          <p><%= photo.description %></p>
-          <%= link_to 'Remove', photo_url(photo), method: :delete, :remote => true  %>
-        </div>
-      </li>
-</ul>
 
 

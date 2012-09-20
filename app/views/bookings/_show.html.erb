@@ -26,7 +26,7 @@
 </ul>
 
 <div id='booking_info' class="btn-group" style="text-align: center;">
-<p><%= display_checkin_or_checkout(booking) %>  <%= link_to 'Cancel',booking_path, id: 'deleteBooking', method: :delete ,class: "btn btn-danger", remote: true %></p>
+<p><% if can? :confirm, :check_in, :check_out, @booking %><%= display_checkin_or_checkout(booking) %><% end %> <%= link_to 'Cancel',booking_path, id: 'deleteBooking', method: :delete ,class: "btn btn-danger" %></p>
 </div>
 
 

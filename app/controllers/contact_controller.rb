@@ -10,7 +10,7 @@ class ContactController < ApplicationController
 
     if @message.valid?
       BnbNotifier.delay.enquiry(@message)
-      redirect_to root_path
+      redirect_to root_path, notice: 'your email was sent'
     else
       flash.now.alert = "Please fill all fields."
       render :new

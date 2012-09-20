@@ -10,6 +10,7 @@ SampleApp::Application.routes.draw do
     get :refresh_total, on: :member
     get :show_invoice, on: :member
     get :print_pdf, on: :member
+    get :my_bookings, on: :collection
   end
 
 
@@ -21,6 +22,7 @@ SampleApp::Application.routes.draw do
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :bnbs, except: [:show] do
+    resources :photos, only: [:index, :create, :destroy]
     resources :bookings do
       resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
       put :check_in, on: :member

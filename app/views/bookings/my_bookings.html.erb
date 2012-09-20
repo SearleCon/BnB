@@ -1,0 +1,30 @@
+<h1>My Bookings</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Bnb</th>
+    <th>Start at</th>
+    <th>End at</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>Rating</th>
+    <th>Current Status</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.bnb.name %></td>
+        <td><%= booking.event.start_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= booking.event.end_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= link_to booking.bnb.email, contactbnb_path(booking.bnb) %></td>
+        <td><%= booking.bnb.telephone_number %></td>
+        <td>4 stars</td>
+        <td><%= booking.status %></td>
+        <td><%= link_to 'view bnb info', show_bnb_path(booking.bnb) %></td>
+      </tr>
+  <% end %>
+</table>
+
+
+

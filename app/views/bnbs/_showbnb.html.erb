@@ -100,7 +100,4 @@
     </div>
   </div>
 </div>
-<% if user_signed_in? && current_user.role.description == "Guest" %>
-    <div><%=link_to 'Book Now', new_bnb_booking_path(@bnb) %></div>
-<% end %>
 

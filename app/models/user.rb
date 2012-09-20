@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def role
-    Role.find(self.role_id)
+    self.role_id.nil? ? Role.new(description: 'Temp') : Role.find(self.role_id)
   end
 
 end

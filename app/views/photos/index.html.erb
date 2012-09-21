@@ -13,11 +13,13 @@
     </div>
   <div class="span9">
     <h2>Your images</h2>
-    <% if @photos.count >= 1 %>
-        <%= render @photos %>
-    <% else %>
-        <p class='center'>There are currently no images for your gallery</p>
-    <% end %>
+    <div class="row">
+        <% if @photos.count >= 1 %>
+            <%= render @photos %>
+        <% else %>
+            <p class='center'>There are currently no images for your gallery</p>
+        <% end %>
+    </div>
   </div>
 </div>
 </div>

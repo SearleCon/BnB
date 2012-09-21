@@ -1,12 +1,14 @@
-<div class="row-fluid">
+
     <ul class="thumbnails">
           <li id="<%=photo.id %>" class="span2">
-            <a href="<%= photo.image_url %>"  class="thumbnail" id="image_thumb">
+            <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" >
               <%= image_tag photo.image_url(:thumb)%>
+              <p><%= photo.description %></p>
             </a>
+            <% if can? :destroy, photo %>
+            <%= link_to 'Remove', bnb_photo_path(@bnb, photo), method: :delete, remote: true %>
+            <% end %>
           </li>
     </ul>
-</div>
-
 
 

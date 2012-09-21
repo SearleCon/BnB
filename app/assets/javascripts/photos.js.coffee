@@ -5,7 +5,7 @@
 $(document).ready ->
 
 
-  $('#image_thumb').lazybox()
+  $('a[rel*=lazybox]').lazybox()
 
   $('#photo_image').bind 'change', ->
     $('#new_photo').submit()

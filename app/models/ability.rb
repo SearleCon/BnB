@@ -36,8 +36,7 @@ class Ability
              can :manage, LineItem
 
              #Photos
-             can :manage, Photos, :bnb => {:user_id => user.id }
-
+             can :manage, Photo, :bnb => {:user_id => user.id }
 
       when 'Guest'
         can :read, Bnb
@@ -47,6 +46,7 @@ class Ability
         can :read, Photo
       else
         can :read, Bnb
+        can :read, Photo
     end
   end
 

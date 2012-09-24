@@ -1,0 +1,4 @@
+$('#guests').append("<%= escape_javascript(render(:partial => 'guests/row', :locals =>  { :guest => @guest })) %>")
+$("[rel=tooltip]").tooltip({animation:true, placement:'right'})
+$("#<%=@guest.id%>").hide()
+$("#<%=@guest.id%>").fadeIn(500)

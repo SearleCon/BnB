@@ -75,7 +75,7 @@ class BookingsController < ApplicationController
     respond_to do |format|
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
-        format.html { redirect_to bnb_booking_url(@bnb,@booking), notice: 'Booking was created' }
+        format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
         format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
       else
         format.html { render action: "new" }

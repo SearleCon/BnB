@@ -16,4 +16,9 @@ class Guest < ActiveRecord::Base
   belongs_to :bnb
   has_many :bookings
   has_many :rooms, :through => :bookings
+
+  scope :search_by_name, lambda { |term|
+    order(:name).where("name like ?", "%#{term}%")
+  }
+
 end

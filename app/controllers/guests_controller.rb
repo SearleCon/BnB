@@ -3,8 +3,14 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-    @guests= Guest.order(:name).where("name like ?", "%#{params[:term]}%")
-    render json: @guests.map(&:name)
+    @bnb = Bnb.find(params[:bnb_id])
+    @guests = params[:term] ? Guest.search_by_name(params[:term]).where("bnb_id = ?", @bnb.id) : @guests = Guest.find_all_by_bnb_id(@bnb)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @guests.map(&:name) }
+    end
+
   end
 
   # GET /guests/1
@@ -37,11 +43,13 @@ class GuestsController < ApplicationController
   # POST /guests
   # POST /guests.json
   def create
-    @guest = Guest.new(params[:guest])
-
+    @bnb = Bnb.find(params[:bnb_id])
+    @guest = @bnb.guests.new(params[:guest])
+    create_default_guest
     respond_to do |format|
       if @guest.save
         format.html { redirect_to @guest, notice: 'Guest was successfully created.' }
+        format.js { @guest }
         format.json { render json: @guest, status: :created, location: @guest }
       else
         format.html { render action: "new" }
@@ -58,7 +66,7 @@ class GuestsController < ApplicationController
     respond_to do |format|
       if @guest.update_attributes(params[:guest])
         format.html { redirect_to @guest, notice: 'Guest was successfully updated.' }
-        format.json { head :no_content }
+        format.json { respond_with_bip(@guest) }
       else
         format.html { render action: "edit" }
         format.json { render json: @guest.errors, status: :unprocessable_entity }
@@ -74,7 +82,14 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to guests_url }
+      format.js { @guest }
       format.json { head :no_content }
     end
+  end
+
+  def create_default_guest
+    @guest.name = 'Joe'
+    @guest.surname = 'Soap'
+    @guest.contact_number = '123456789'
   end
 end

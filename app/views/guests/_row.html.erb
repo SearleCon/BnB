@@ -1,0 +1,6 @@
+<tr id="<%=guest.id %>" class="center">
+  <td><%= best_in_place guest, :name, type: :input, path: bnb_guest_path(@bnb,guest)%></td>
+  <td><%= best_in_place guest, :surname, type: :input, path: bnb_guest_path(@bnb,guest)%></td>
+  <td><%= best_in_place guest, :contact_number, type: :input, path: bnb_guest_path(@bnb,guest)%></td>
+  <td title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign'), bnb_guest_path(@bnb, guest), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></td>
+</tr>

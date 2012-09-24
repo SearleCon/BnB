@@ -15,6 +15,9 @@
                   <li>
                     <%= link_to 'View Calendar', bnb_bookings_path(@bnb) %>
                   </li>
+                  <li>
+                    <%= link_to 'Manage Guests', bnb_guests_path(@bnb) %>
+                  </li>
                 <% elsif user_signed_in? && current_user.role.description == "Guest" %>
                   <li>
                      <%= link_to 'Photo Gallery', bnb_photos_path(@bnb), class: "btn btn-primary" %>

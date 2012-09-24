@@ -27,7 +27,7 @@ class Ability
              can :manage, Booking, :bnb => { :user_id => user.id}
 
              #Guest
-             can :manage, Guest, :bnb => {:user_id => user.id}
+             can :manage, Guest
 
              #Events
              can :manage, Event

@@ -1,27 +1,19 @@
 <h1>Listing guests</h1>
 
-<table>
-  <tr>
+<table class="table table-striped" id="guests">
+  <tr id='headers'>
     <th>Name</th>
     <th>Surname</th>
     <th>Contact number</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
-
-<% @guests.each do |guest| %>
-  <tr>
-    <td><%= guest.name %></td>
-    <td><%= guest.surname %></td>
-    <td><%= guest.contact_number %></td>
-    <td><%= link_to 'Show', guest %></td>
-    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <%= render :partial => 'row', :collection => @guests, :as => :guest %>
 </table>
 
-<br />
+<br/>
 
-<%= link_to 'New Guest', new_guest_path %>
+<label><%= link_to content_tag('i', '', class: 'icon-plus-sign'), bnb_guests_path(@bnb, @bnb.guests.build), method: :post, remote: true %> Add guest</label>
+
+
+
+
+

@@ -2,8 +2,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.scoped.joins(:booking).where('bookings.status !=?', "closed")
-
+    @bnb = Bnb.find(params[:bnb_id])
+    @bookings = Booking.active_bookings_by_bnb(@bnb)
+    @events = Event.scoped.all(conditions: { booking_id: @bookings })
 
     respond_to do |format|
       format.html # index.html.erb

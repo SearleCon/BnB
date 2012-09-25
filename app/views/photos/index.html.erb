@@ -1,26 +1,18 @@
-<div class="container-fluid">
-   <div class="row-fluid">
-     <div class="span3">
-        <% if can? :create, Photo %>
-            <div class="well"> 
-              <%= simple_form_for Photo.new, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
-                  <%= f.error_notification %>
-                  <%= f.input :description %>
-                  <%= f.file_field :image %>
-              <% end %>
-            </div>
-        <% end %>
-    </div>
-  <div class="span9">
+
     <h2>Your images</h2>
-    <div class="row">
+    <div>
         <% if @photos.count >= 1 %>
             <%= render @photos %>
         <% else %>
             <p class='center'>There are currently no images for your gallery</p>
         <% end %>
     </div>
+  <div class='well'>
+      <% if can? :create, Photo %>       
+          <%= simple_form_for Photo.new, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
+              <%= f.error_notification %>
+              <%= f.input :description %>
+              <%= f.file_field :image %>
+          <% end %>   
+      <% end %>
   </div>
-</div>
-</div>
-

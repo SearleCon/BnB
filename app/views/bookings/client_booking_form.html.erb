@@ -23,6 +23,7 @@
               <%= guest_form.input :name %>
               <%= guest_form.input :surname %>
               <%= guest_form.input :contact_number %>
+              <%= guest_form.hidden_field :bnb_id, value: @bnb.id %>
         <% end %>
       </div>
 

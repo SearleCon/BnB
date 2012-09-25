@@ -1,4 +1,6 @@
 class GuestsController < ApplicationController
+  load_and_authorize_resource :bnb
+  load_and_authorize_resource :guest, :through => :bnb
 
   # GET /guests
   # GET /guests.json

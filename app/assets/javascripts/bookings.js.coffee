@@ -18,7 +18,7 @@ $(document).ready ->
     slotMinutes: 15,
 
     eventSources: [{
-    url: '/events',
+    url:  $('#get_bnb_events').val(),
     ignoreTimezone: false
     }],
 

@@ -13,8 +13,6 @@ SampleApp::Application.routes.draw do
     get :my_bookings, on: :collection
   end
 
-
-
   resources :events, only: [:index, :update] do
     get :filter_by_status, on: :collection
   end
@@ -22,6 +20,7 @@ SampleApp::Application.routes.draw do
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :bnbs, except: [:show] do
+    resources :events, only: [:index]
     resources :photos, only: [:index, :create, :destroy]
     resources :bookings do
       resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]

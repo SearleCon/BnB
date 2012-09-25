@@ -32,6 +32,10 @@ class Booking < ActiveRecord::Base
     joins(:event).where("date(events.end_at) =?", specified_date).where(status: :checked_in)
   }
 
+  scope :active_bookings_by_bnb, lambda { |bnb|
+        where("status != ? and bnb_id = ?",:closed, bnb)
+  }
+
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
   EVENT_COLORS = { :provisional =>  'blue', :booked => 'green', :checked_in => 'red', :closed => 'orange' }

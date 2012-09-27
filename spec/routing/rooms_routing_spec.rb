@@ -7,8 +7,8 @@ describe RoomsController do
       get("/rooms").should route_to("rooms#index")
     end
 
-    it "routes to #new" do
-      get("/rooms/new").should route_to("rooms#new")
+    it "routes to #othernew" do
+      get("/rooms/othernew").should route_to("rooms#new")
     end
 
     it "routes to #show" do

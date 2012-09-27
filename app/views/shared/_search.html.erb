@@ -1,0 +1,7 @@
+<h4>Search for bnb:</h4>
+<%= simple_form_for Search.new, url: bnbs_path,  html: {method: :get} do |f| %>
+    <%=f.input :country, :collection => 18..60, :prompt => "Select your country" %>
+    <%=f.input :region, :collection => 18..60, :prompt => "Select your region" %>
+    <%=f.input :city, :prompt => 'Search city' %>
+    <%= f.submit "Search",:class => "btn btn-primary" %>
+<% end %>

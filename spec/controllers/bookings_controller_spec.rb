@@ -50,9 +50,9 @@ describe BookingsController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new booking as @booking" do
-      get :new, {}, valid_session
+  describe "GET othernew" do
+    it "assigns a othernew booking as @booking" do
+      get :othernew, {}, valid_session
       assigns(:booking).should be_a_new(Booking)
     end
   end
@@ -67,7 +67,7 @@ describe BookingsController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Booking" do
+      it "creates a othernew Booking" do
         expect {
           post :create, {:booking => valid_attributes}, valid_session
         }.to change(Booking, :count).by(1)
@@ -93,11 +93,11 @@ describe BookingsController do
         assigns(:booking).should be_a_new(Booking)
       end
 
-      it "re-renders the 'new' template" do
+      it "re-renders the 'othernew' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Booking.any_instance.stub(:save).and_return(false)
         post :create, {:booking => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("othernew")
       end
     end
   end

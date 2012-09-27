@@ -7,8 +7,8 @@ describe BnbsController do
       get("/bnbs").should route_to("bnbs#index")
     end
 
-    it "routes to #new" do
-      get("/bnbs/new").should route_to("bnbs#new")
+    it "routes to #othernew" do
+      get("/bnbs/othernew").should route_to("bnbs#new")
     end
 
     it "routes to #show" do

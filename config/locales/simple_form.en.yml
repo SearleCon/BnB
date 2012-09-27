@@ -15,7 +15,7 @@ en:
     #   defaults:
     #     password: 'Password'
     #   user:
-    #     new:
+    #     othernew:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'

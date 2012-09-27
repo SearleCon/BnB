@@ -7,8 +7,8 @@ describe BookingsController do
       get("/bookings").should route_to("bookings#index")
     end
 
-    it "routes to #new" do
-      get("/bookings/new").should route_to("bookings#new")
+    it "routes to #othernew" do
+      get("/bookings/othernew").should route_to("bookings#new")
     end
 
     it "routes to #show" do

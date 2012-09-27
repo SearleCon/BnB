@@ -22,13 +22,13 @@ class RoomsController < ApplicationController
     end
   end
 
-  # GET /rooms/new
-  # GET /rooms/new.json
+  # GET /rooms/othernew
+  # GET /rooms/othernew.json
   def new
     @room = Room.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # othernewernew.html.erb
       format.json { render json: @room }
     end
   end

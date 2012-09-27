@@ -7,6 +7,16 @@ class PhotosController < ApplicationController
     get_photos
   end
 
+  def new
+    @bnb = Bnb.find(params[:bnb_id])
+    @photo = @bnb.photos.new
+
+    respond_to do |format|
+     format.html
+    end
+
+  end
+
   def create
     @bnb = Bnb.find(params[:bnb_id])
     @photo = @bnb.photos.build(params[:photo])

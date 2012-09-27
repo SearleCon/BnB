@@ -7,8 +7,8 @@ describe EventsController do
       get("/events").should route_to("events#index")
     end
 
-    it "routes to #new" do
-      get("/events/new").should route_to("events#new")
+    it "routes to #othernew" do
+      get("/events/othernew").should route_to("events#othernew")
     end
 
     it "routes to #show" do

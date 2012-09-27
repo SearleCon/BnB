@@ -7,7 +7,15 @@ $(document).ready ->
 
   $('a[rel*=lazybox]').lazybox()
 
+  $('#browse_files').click ->
+    $('#photo_image').click()
+
+
   $('#photo_image').bind 'change', ->
-    $('#new_photo').submit()
+    $('#photo_filepath').val($('#photo_image').val())
+
+
+
+
 
 

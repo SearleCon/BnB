@@ -50,9 +50,9 @@ describe BnbsController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new bnb as @bnb" do
-      get :new, {}, valid_session
+  describe "GET othernew" do
+    it "assigns a othernew bnb as @bnb" do
+      get :othernew, {}, valid_session
       assigns(:bnb).should be_a_new(Bnb)
     end
   end
@@ -67,7 +67,7 @@ describe BnbsController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Bnb" do
+      it "creates a othernew Bnb" do
         expect {
           post :create, {:bnb => valid_attributes}, valid_session
         }.to change(Bnb, :count).by(1)
@@ -93,11 +93,11 @@ describe BnbsController do
         assigns(:bnb).should be_a_new(Bnb)
       end
 
-      it "re-renders the 'new' template" do
+      it "re-renders the 'othernew' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Bnb.any_instance.stub(:save).and_return(false)
         post :create, {:bnb => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("othernew")
       end
     end
   end

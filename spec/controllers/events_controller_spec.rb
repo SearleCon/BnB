@@ -50,9 +50,9 @@ describe EventsController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new event as @event" do
-      get :new, {}, valid_session
+  describe "GET othernew" do
+    it "assigns a othernew event as @event" do
+      get :othernew, {}, valid_session
       assigns(:event).should be_a_new(Event)
     end
   end
@@ -67,7 +67,7 @@ describe EventsController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Event" do
+      it "creates a othernew Event" do
         expect {
           post :create, {:event => valid_attributes}, valid_session
         }.to change(Event, :count).by(1)
@@ -93,11 +93,11 @@ describe EventsController do
         assigns(:event).should be_a_new(Event)
       end
 
-      it "re-renders the 'new' template" do
+      it "re-renders the 'othernew' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Event.any_instance.stub(:save).and_return(false)
         post :create, {:event => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("othernew")
       end
     end
   end

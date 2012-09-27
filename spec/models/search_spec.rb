@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "contact/othernewernew.html.erb" do
+describe Search do
   pending "add some examples to (or delete) #{__FILE__}"
 end

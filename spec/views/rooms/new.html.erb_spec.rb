@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe "rooms/new" do
+describe "rooms/othernew" do
   before(:each) do
     assign(:room, stub_model(Room).as_new_record)
   end
 
-  it "renders new room form" do
+  it "renders othernew room form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "guests/new" do
+describe "guests/othernew" do
   before(:each) do
     assign(:guest, stub_model(Guest,
       :name => "MyString",
@@ -9,7 +9,7 @@ describe "guests/new" do
     ).as_new_record)
   end
 
-  it "renders new guest form" do
+  it "renders othernew guest form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers

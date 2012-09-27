@@ -269,6 +269,50 @@ input, textarea, select, .uneditable-input {
 
 .carousel .item > img { display: inline-block; }
 
+#photo_form{
+  width: 30%;
+
+
+  input{
+    width: 70%;
+    padding: 10px;
+
+  }
+}
+
+#this-carousel-id{
+  width: 600px;
+  margin: 0px auto;
+
+}
+
+
+.carousel-caption{
+  color: white;
+  text-align: center;
+
+}
+
+.span6{
+  @include border-radius(10px);
+  background:#d3d3d3;
+  
+  padding:10px;
+
+  h2{
+    font-family: Verdana;
+    font: white;
+    text-shadow: 2px 2px 2px #ddccb5;
+  }
+
+  ul{
+    font-family: Verdana;
+    text-shadow: 2px 2px 2px #ddccb5;
+    font-size: 15px;
+  }
+
+}
+
 
 
 

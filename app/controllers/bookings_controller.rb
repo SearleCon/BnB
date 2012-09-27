@@ -37,8 +37,8 @@ class BookingsController < ApplicationController
     end
   end
 
-  # GET /bookings/new
-  # GET /bookings/new.json
+  # GET /bookings/othernew
+  # GET /bookings/othernew.json
   def new
     @booking = Booking.new
     @booking.build_event

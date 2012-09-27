@@ -7,12 +7,7 @@
             <p class='center'>There are currently no images for your gallery</p>
         <% end %>
     </div>
-  <div class='well'>
       <% if can? :create, Photo %>       
-          <%= simple_form_for Photo.new, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
-              <%= f.error_notification %>
-              <%= f.input :description %>
-              <%= f.file_field :image %>
-          <% end %>   
+         <%= link_to 'Upload a new photo', new_bnb_photo_path(@bnb)  %>
       <% end %>
-  </div>
+

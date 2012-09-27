@@ -7,8 +7,8 @@ describe GuestsController do
       get("/guests").should route_to("guests#index")
     end
 
-    it "routes to #new" do
-      get("/guests/new").should route_to("guests#new")
+    it "routes to #othernew" do
+      get("/guests/othernew").should route_to("guests#new")
     end
 
     it "routes to #show" do

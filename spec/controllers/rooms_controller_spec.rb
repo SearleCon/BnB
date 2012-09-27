@@ -50,9 +50,9 @@ describe RoomsController do
     end
   end
 
-  describe "GET new" do
-    it "assigns a new room as @room" do
-      get :new, {}, valid_session
+  describe "GET othernew" do
+    it "assigns a othernew room as @room" do
+      get :othernew, {}, valid_session
       assigns(:room).should be_a_new(Room)
     end
   end
@@ -67,7 +67,7 @@ describe RoomsController do
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Room" do
+      it "creates a othernew Room" do
         expect {
           post :create, {:room => valid_attributes}, valid_session
         }.to change(Room, :count).by(1)
@@ -93,11 +93,11 @@ describe RoomsController do
         assigns(:room).should be_a_new(Room)
       end
 
-      it "re-renders the 'new' template" do
+      it "re-renders the 'othernew' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Room.any_instance.stub(:save).and_return(false)
         post :create, {:room => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("othernew")
       end
     end
   end

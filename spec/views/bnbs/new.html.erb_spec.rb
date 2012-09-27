@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "bnbs/new" do
+describe "bnbs/othernew" do
   before(:each) do
     assign(:bnb, stub_model(Bnb,
       :name => "MyString",
@@ -20,7 +20,7 @@ describe "bnbs/new" do
     ).as_new_record)
   end
 
-  it "renders new bnb form" do
+  it "renders othernew bnb form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "bookings/new" do
+describe "bookings/othernew" do
   before(:each) do
     assign(:booking, stub_model(Booking,
       :guest_id => 1,
@@ -9,7 +9,7 @@ describe "bookings/new" do
     ).as_new_record)
   end
 
-  it "renders new booking form" do
+  it "renders othernew booking form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers

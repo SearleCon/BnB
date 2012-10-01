@@ -1,17 +1,35 @@
+<div class="header form-search" align="right">
+  <%= form_tag bnb_rooms_path(@bnb), :method => 'get', id: 'search_table_form' do %>
+       <p>
+     <%= hidden_field_tag :direction, params[:direction] %>
+     <%= hidden_field_tag :sort, params[:sort] %>    
+     
+     <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search rooms", :method => 'get' %>
+     <% if params[:search] %>
+             <% if params[:search] != '' %>
+                    <div> <%=link_to "Back to index", bnb_rooms_path(@bnb) %></div>
+                 <% end %>
+         <% end %>
+   </p>
+  <% end %>
+</div>
+
 <h1>Listing rooms</h1>
 
-<table class="table table-striped" id="rooms">
+<table class="table table-striped sort_table" id="rooms">
   <tr id='headers'>
-    <th>Room Number</th>
-    <th>Description</th>
-    <th>En Suite</th>
-    <th>Extras</th>
-    <th>Rates</th>
-    <th>Capacity</th>
-    <th>Available</th>
+    <th><%= sortable "room_number" %></th>
+    <th><%= sortable "description"  %></th>
+    <th><%= sortable "en_suite" %></th>
+    <th><%= sortable "extras" %></th>
+    <th><%= sortable "rates" %></th>
+    <th><%= sortable "capacity" %></th>
+    <th><%= sortable "available" %></th>
   </tr>
   <%= render :partial => 'row', :collection => @rooms, :as => :room %>
 </table>
+
+<%= will_paginate @rooms  %>
 
 <br/>
 

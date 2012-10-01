@@ -2,9 +2,14 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :my_bookings
   load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
 
+  helper_method :sort_column, :sort_direction
+
+
   # GET /bookings
   # GET /bookings.json
   def index
+
+
     @bookings = Booking.find_all_by_bnb_id(@bnb)
 
     respond_to do |format|
@@ -15,7 +20,10 @@ class BookingsController < ApplicationController
 
   # GET /my_bookings
   def my_bookings
-    @bookings = Booking.find_all_by_user_id(current_user)
+
+   @bookings = Booking.search(params[:search]).where('bookings.user_id = ?', current_user.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+
+
     respond_to do |format|
       format.html
     end
@@ -170,5 +178,13 @@ class BookingsController < ApplicationController
      @booking = Booking.find(params[:id])
    end
  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def sort_column
+    Booking.column_names.include?(params[:sort]) ? params[:sort] : "bnb_id"
+  end
 
 end

@@ -2,10 +2,12 @@ class RoomsController < ApplicationController
   load_and_authorize_resource :bnb
   load_and_authorize_resource :room, :through => :bnb
 
+  helper_method :sort_column, :sort_direction
+
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = @bnb.rooms
+    @rooms = Room.search(params[:search]).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
       format.html
@@ -13,8 +15,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  # GET /rooms/1
-  # GET /rooms/1.json
+
   def show
     respond_to do |format|
       format.html # show.html.erb
@@ -22,8 +23,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  # GET /rooms/othernew
-  # GET /rooms/othernew.json
   def new
     @room = Room.new
 
@@ -100,6 +99,14 @@ class RoomsController < ApplicationController
    @room.en_suite=false
    @room.rates=0
    @room.extras='none'
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def sort_column
+    Room.column_names.include?(params[:sort]) ? params[:sort] : "description"
   end
 
 end

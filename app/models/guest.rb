@@ -21,4 +21,12 @@ class Guest < ActiveRecord::Base
     order(:name).where("name like ?", "%#{term}%")
   }
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
 end

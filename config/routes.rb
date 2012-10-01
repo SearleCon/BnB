@@ -38,6 +38,8 @@ SampleApp::Application.routes.draw do
     end
   end
 
+  match '/bnbs/sub_region_options', :to => "bnbs#subregions", via: :get
+
   match '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb', via: :get
 
   resources :line_items, controller: 'line_items', only: [:create, :destroy]

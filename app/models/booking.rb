@@ -20,6 +20,7 @@ class Booking < ActiveRecord::Base
 
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
 
+
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :line_items
@@ -65,6 +66,15 @@ class Booking < ActiveRecord::Base
       total = total + item.value
     end
     total
+  end
+
+  def self.search(search)
+    if search
+      joins(:bnb).where("bnbs.name like ?", "%#{search}%")
+    else
+      scoped
+    end
+
   end
 
 end

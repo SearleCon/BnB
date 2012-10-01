@@ -16,6 +16,7 @@
 */
 
 .content {
+
   background-color: #eee;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
@@ -58,3 +59,26 @@ html, body {
   margin: 100px auto;
   color: #333;
 }
+ .sort_table{
+     th .current {
+      padding-right: 12px;
+      background-repeat: no-repeat;
+      background-position: right center;
+     }
+
+     th .asc{
+      background-image: url(sortups.png);
+     }
+
+     th .desc {
+      background-image: url(sortdowns.png);
+     }
+ }
+
+ #search_table_form{
+   input{
+     padding:10px;
+     width: 20%;
+     float: right;
+   }
+ }

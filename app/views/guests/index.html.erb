@@ -1,13 +1,31 @@
+<div class="header form-search" align="right">
+  <%= form_tag bnb_guests_path(@bnb), :method => 'get', id: 'search_table_form' do %>
+       <p>
+     <%= hidden_field_tag :direction, params[:direction] %>
+     <%= hidden_field_tag :sort, params[:sort] %>    
+     
+     <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search guests", :method => 'get' %>
+     <% if params[:search] %>
+             <% if params[:search] != '' %>
+                    <div> <%=link_to "Back to index", bnb_guests_path(@bnb) %></div>
+                     <% end %>
+             <% end %>
+       </p>
+  <% end %>
+</div>
+
 <h1>Listing guests</h1>
 
-<table class="table table-striped" id="guests">
+<table class="table table-striped sort_table" id="guests">
   <tr id='headers'>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Contact number</th>
+    <th><%= sortable "name" %></th>
+    <th><%= sortable "surname" %></th>
+    <th><%= sortable "contact_number" %></th>
   </tr>
   <%= render :partial => 'row', :collection => @guests, :as => :guest %>
 </table>
+
+<%= will_paginate @guests  %>
 
 <br/>
 

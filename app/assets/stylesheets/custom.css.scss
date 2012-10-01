@@ -16,6 +16,8 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
+
+
 }
 
 body {
@@ -295,14 +297,16 @@ input, textarea, select, .uneditable-input {
 
 .span6{
   @include border-radius(10px);
-  background:#d3d3d3;
-  
+
+
+
   padding:10px;
 
   h2{
-    font-family: Verdana;
-    font: white;
-    text-shadow: 2px 2px 2px #ddccb5;
+    color: 007fcc;
+
+    text-shadow: -1px 0 0 #000000, 1px 1px 0 #000000,
+      2px -1px 0 #000000, 3px 0 0 #000000;
   }
 
   ul{
@@ -311,7 +315,81 @@ input, textarea, select, .uneditable-input {
     font-size: 15px;
   }
 
+
+
 }
+
+.hero-unit{
+
+  background:#464646;
+
+  color:#fff;
+
+  h1{
+
+   text-shadow: #000 1px 5px  10px;
+
+    span{
+
+      color:#F5821F;
+
+    }
+
+  }
+
+  .btn-info{
+
+    padding:15px;
+
+    font-size:1.2em;
+
+  }
+
+}
+
+.thumbnail{
+  @include border-radius(10px);
+  background:#55626B;
+  .caption{
+    position:relative;
+    color:#ccc9c9;
+    h5{
+      position:absolute;
+      top:-19px;
+      left:10px;
+      font-size:2em;
+      color:#fff;
+      text-shadow: #000 1px 5px 10px;
+    }
+  }
+}
+
+
+#searching{
+  text-align: center;
+  @include border-radius(10px);
+  background-color:#55626B;
+  input, select, .btn{
+    width: 60%;
+    padding: 10px;
+  }
+
+  h2{
+    position:relative;
+    color:#ccc9c9;
+    font-size:2em;
+    color:#fff;
+    text-shadow: #000 1px 5px 10px;
+    }
+
+
+
+}
+
+
+
+
+
 
 
 

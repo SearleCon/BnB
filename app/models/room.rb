@@ -27,4 +27,12 @@ class Room < ActiveRecord::Base
 
   scope :has_en_suite, where(:en_suite => true)
 
+  def self.search(search)
+    if search
+      where('description LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
 end

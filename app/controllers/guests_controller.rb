@@ -2,11 +2,13 @@ class GuestsController < ApplicationController
   load_and_authorize_resource :bnb
   load_and_authorize_resource :guest, :through => :bnb
 
+  helper_method :sort_column, :sort_direction
+
   # GET /guests
   # GET /guests.json
   def index
     @bnb = Bnb.find(params[:bnb_id])
-    @guests = params[:term] ? Guest.search_by_name(params[:term]).where("bnb_id = ?", @bnb.id) : @guests = Guest.find_all_by_bnb_id(@bnb)
+    @guests = params[:term] ? Guest.search_by_name(params[:term]).where("bnb_id = ?", @bnb.id) :  @guests = Guest.search(params[:search]).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
       format.html
@@ -93,5 +95,13 @@ class GuestsController < ApplicationController
     @guest.name = 'Joe'
     @guest.surname = 'Soap'
     @guest.contact_number = '123456789'
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
+  def sort_column
+    Guest.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 end

@@ -1,10 +1,14 @@
 class BnbsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :bnb, :except => :subregions
 
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnbs = Bnb.search(params[:search])
+    @search = Search.new(params[:search])
+    @country = @search.country
+    @bnbs = Bnb.find_all_by_country(Carmen::Country.coded(@search.country))
+
+    #@bnbs = Bnb.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -78,5 +82,12 @@ class BnbsController < ApplicationController
       format.html { redirect_to bnbs_url }
       format.json { head :no_content }
     end
+  end
+
+
+  def subregions
+      regions = render_to_string  partial: 'shared/select_region', parent_region: params[:parent_region]
+      regions = regions.html_safe.gsub(/[\n\t\r]/, '')
+      render :json => {:html => regions, :error => '' }
   end
 end

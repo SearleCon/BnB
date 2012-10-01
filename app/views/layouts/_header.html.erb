@@ -5,9 +5,6 @@
       <%= link_to "searle consulting", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <form class="navbar-search pull-left" accept-charset="UTF-8" action="/bnbs" method="get">
-                <input class="search-query" placeholder="Search" id="search" name="search" type="text" value="" />               
-          </form>
           <li><%= link_to "Home", root_path %></li>
           <% if user_signed_in? %>
             <% if current_user.role.description == 'Owner' %>

@@ -4,3 +4,15 @@
 
 $(document).ready ->
    $('.carousel').carousel('cycle')
+
+   $('#search_country').change (event) ->
+     select_wrapper = $('#order_state_code_wrapper')
+     $('select', select_wrapper).attr('disabled', true)
+     country_code = $(this).val()
+     url = "/bnbs/sub_region_options?parent_region=" + country_code.toString()
+     $.read url, (response) ->
+       select_wrapper.html(response.html)
+
+
+
+

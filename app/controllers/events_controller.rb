@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+
     @bnb = Bnb.find(params[:bnb_id])
     @bookings = Booking.active_bookings_by_bnb(@bnb)
     @events = Event.scoped.all(conditions: { booking_id: @bookings })

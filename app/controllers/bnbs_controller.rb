@@ -5,10 +5,13 @@ class BnbsController < ApplicationController
   # GET /bnbs.json
   def index
     @search = Search.new(params[:search])
-    @country = @search.country
-    @bnbs = Bnb.find_all_by_country(Carmen::Country.coded(@search.country))
-
-    #@bnbs = Bnb.search(params[:search])
+    if !@search.city.nil?
+      @bnbs = Bnb.where("city like ?", "%#{@search.city}%").paginate(:per_page => 5, :page => params[:page])
+    elsif !@search.region.nil?
+      @bnbs = Bnb.where("region like ?", "%#{@search.region}%").paginate(:per_page => 5, :page => params[:page])
+    else
+      @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 5, :page => params[:page])
+    end
 
     respond_to do |format|
       format.html # index.html.erb

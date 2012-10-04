@@ -1,29 +1,27 @@
-<h2>Search Results</h2>
-
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Number of Rooms</th>
-    <th>Description</th>
-    <th>Email</th>
-    <th>Telephone number</th>
-    <th>Website</th>
-    <th>Contact person</th>
-  </tr>
-
 <% @bnbs.each do |bnb| %>
-  <tr>
-    <td><%= bnb.name %></td>
-    <td><%= bnb.rooms.size %></td>
-    <td><%= bnb.description %></td>
-    <td><%= bnb.email %></td>
-    <td><%= bnb.telephone_number %></td>
-    <td><%= bnb.website %></td>
-    <td><%= bnb.contact_person %></td>
-    <td><%= link_to 'Details', show_bnb_path(bnb) %></td>
-  </tr>
+    <div class="row" id="bnb_row">
+      <div class="span3">
+      <div class="thumbnail">
+        <img alt="" src="http://placehold.it/160x120">
+      </div>
+      </div>
+      <div class="span6">
+        <h5><%= bnb.name %></h5>
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p><%= link_to "More...", show_bnb_path(bnb) %></p>
+      </div>
+    </div>
 <% end %>
-</table>
+
+<%= will_paginate @bnbs  %>
+
+<%= link_to "Back",:back%>
+
+
+
+
+
+
 
 
 

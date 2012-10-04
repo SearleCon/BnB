@@ -1,44 +1,10 @@
 <% if @bnb %>
 <div class="container-fluid">
    <div class="row-fluid">
-     <div class="span3">
-        <div class="well menu"> 
-            <ul class="nav nav-pills nav-stacked">
-              <%  if user_signed_in? %>
-                <% if current_user.role.description == "Owner" %>
-                  <li>
-                    <%= link_to 'Manage Rooms', bnb_rooms_path(@bnb) %>
-                  </li>
-                  <li>
-                    <%= link_to 'Manage Gallery', bnb_photos_path(@bnb) %>
-                  </li>
-                  <li>
-                    <%= link_to 'View Calendar', bnb_bookings_path(@bnb) %>
-                  </li>
-                  <li>
-                    <%= link_to 'Manage Guests', bnb_guests_path(@bnb) %>
-                  </li>
-                <% elsif user_signed_in? && current_user.role.description == "Guest" %>
-                  <li>
-                     <%= link_to 'Photo Gallery', bnb_photos_path(@bnb), class: "btn btn-primary" %>
-                  </li>
-                  <li>
-                    <%= link_to 'Book this Bnb', new_bnb_booking_path(@bnb), class: "btn btn-primary"  %>
-                  </li>
-                  <li>
-                    <%= link_to 'Email Bnb', contactbnb_path(@bnb), class: "btn btn-primary" %>
-                  </li>
-                <% end %>
-              <% else %>
-                  <li>
-                    <%= link_to 'Sign in now to book this bnb', new_user_session_path %>
-                  </li>
-              <% end %>
-            </ul>
-           </div>
-      </div>
-  <div class="span9">
+   
+  <div class="span12">
           <%=render 'bnbs/showbnb' %>
+          <%= link_to "Back",:back%>
     </div>
 </div>
 </div>

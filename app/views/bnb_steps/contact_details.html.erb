@@ -5,7 +5,8 @@
           <%= f.input :address_line_two %>
           <%= f.input :city %>
           <%= f.input :postal_code %>
-          <%= f.country_select :country %>
+          <%=f.input :country, :collection => Carmen::Country.all, :value_method => :name,  prompt: "Select a country", id: 'choose_country' ,label: false %>
+          <%= render 'shared/select_region',  :parent_region => f.object.country %>
           <%= f.input :telephone_number %>
           <%= f.input :website %>
         </div>

@@ -1,6 +1,6 @@
 
 <%= simple_form_for Search.new, url: bnbs_path, id: "search_by_region",  html: {method: :get} do |f| %>
-    <%=f.input :country, :collection => Carmen::Country.all, :value_method => :name, selected: "south Africa",  prompt: "Select a country", id: 'choose_country' ,label: false %>
+    <%=f.input :country, :collection => Carmen::Country.all, :value_method => :name,  prompt: "Select a country", id: 'choose_country' ,label: false %>
     <%= render 'shared/select_region',  :parent_region => f.object.country %>
     <%=f.input :city, :placeholder => 'Type your city here', label: false %>
     <%= f.submit "Search",:class => "btn btn-primary" %>

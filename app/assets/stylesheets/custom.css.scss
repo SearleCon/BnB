@@ -363,6 +363,11 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
+#bnb_row{
+
+  @include border-radius(10px);
+
+}
 
 
 #searching{

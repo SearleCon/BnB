@@ -3,6 +3,7 @@ class ContactController < ApplicationController
     @bnb = Bnb.find(params[:bnb_id])
     @message = Message.new
     @message.receiver= @bnb.email
+    session[:last_page] = request.env['HTTP_REFERER']
   end
 
   def create
@@ -10,7 +11,8 @@ class ContactController < ApplicationController
 
     if @message.valid?
       BnbNotifier.delay.enquiry(@message)
-      redirect_to root_path, notice: 'your email was sent'
+      url = session[:last_page] ? session[:last_page] : root_url
+      redirect_to url, notice: 'your email was sent'
     else
       flash.now.alert = "Please fill all fields."
       render :new

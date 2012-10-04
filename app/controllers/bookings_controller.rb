@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
 
    @bookings = Booking.search(params[:search]).where('bookings.user_id = ?', current_user.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
-
     respond_to do |format|
       format.html
     end
@@ -45,8 +44,8 @@ class BookingsController < ApplicationController
     end
   end
 
-  # GET /bookings/othernew
-  # GET /bookings/othernew.json
+  # GET /bookings/new
+  # GET /bookings/8new.json
   def new
     @booking = Booking.new
     @booking.build_event

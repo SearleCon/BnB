@@ -58,3 +58,27 @@ href values must reference the id for this carousel -->
 
 
 
+ <div class="span3">
+        <div class="well menu"> 
+  <ul class="nav nav-pills nav-stacked">
+    <%  if user_signed_in? %>
+        <% if current_user.role.description == "Owner" %>
+            <li>
+              <%= link_to 'Manage Rooms', bnb_rooms_path(@bnb) %>
+            </li>
+            <li>
+              <%= link_to 'Manage Gallery', bnb_photos_path(@bnb) %>
+            </li>
+            <li>
+              <%= link_to 'View Calendar', bnb_bookings_path(@bnb) %>
+            </li>
+            <li>
+              <%= link_to 'Manage Guests', bnb_guests_path(@bnb) %>
+            </li>
+        <% end %>
+    <% end %>
+  </ul>
+           </div>
+    </div>
+
+

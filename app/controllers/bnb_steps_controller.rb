@@ -9,6 +9,10 @@ class BnbStepsController < ApplicationController
 
   def update
     @bnb = Bnb.find(params[:bnb_id])
+    if params[:search]
+      @search = Search.new(params[:search])
+      params[:bnb][:region] = @search.region
+    end
     build_rooms(params[:bnb][:number_of_rooms].to_i) if params[:bnb][:number_of_rooms]
     params[:bnb][:status] = step.to_s
     params[:bnb][:status] = 'active' if step == steps.last

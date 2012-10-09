@@ -34,8 +34,9 @@ class Bnb < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  after_validation :geocode, :if => :address_details_changed?
+  acts_as_gmappable :process_geocoding => false
 
+  after_validation :geocode, :if => :address_details_changed?
 
 
   after_initialize(:on => :create) do
@@ -78,6 +79,14 @@ class Bnb < ActiveRecord::Base
 
   def full_address
      "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+  end
+
+  def gmaps4rails_address
+    "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+  end
+
+  def gmaps4rails_title
+    "<h4>#{self.name}</h4>"
   end
 
 end

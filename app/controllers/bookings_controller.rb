@@ -8,8 +8,6 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-
-
     @bookings = Booking.find_all_by_bnb_id(@bnb)
 
     respond_to do |format|
@@ -49,12 +47,14 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @booking.build_event
-    @booking.build_guest(name: current_user.name)
+
+
 
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
     @rooms = Room.find_all_by_bnb_id(@bnb.id)
+
 
     if request.xhr?
       event_details = render_to_string :partial => 'bookings/form'
@@ -78,6 +78,10 @@ class BookingsController < ApplicationController
     @booking = @bnb.bookings.new(params[:booking])
     @booking.event.name = @booking.guest_name
     @booking.user_id = current_user.id
+    if current_user.role.description == "Owner"
+      @booking.status = :booked8
+    end
+
 
     respond_to do |format|
       if @booking.save

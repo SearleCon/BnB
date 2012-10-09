@@ -19,6 +19,7 @@ class Booking < ActiveRecord::Base
   has_one :event, :dependent => :delete
 
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
+  validates :guest_name, presence: true
 
 
   accepts_nested_attributes_for :event
@@ -44,7 +45,7 @@ class Booking < ActiveRecord::Base
   def status_changed(old, new)
     case new
       when :booked
-         event.color = EVENT_COLORS[:booked]
+         self.event.color = EVENT_COLORS[:booked]
       when :checked_in
         self.event.color = EVENT_COLORS[:checked_in]
       when :closed

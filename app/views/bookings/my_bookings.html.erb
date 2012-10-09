@@ -1,3 +1,4 @@
+<div class="hero-unit clearfix">
 <div class="header form-search" align="right">
   <%= form_tag my_bookings_bookings_path, :method => 'get', id: 'search_table_form' do %>
        <p>
@@ -15,9 +16,7 @@
 </div>
 
 
-<h1>My Bookings</h1>
-
-<table class="table table-striped sort_table">
+<table class="table sort_table">
   <tr>
     <th><%= sortable "bnb_id", "Bnb" %></th>
     <th>Start at</th>
@@ -43,7 +42,9 @@
   <% end %>
 </table>
 
-<%= will_paginate @bookings  %>
+<br>
+<div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>
+</div>
 
 
 

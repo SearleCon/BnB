@@ -13,6 +13,11 @@ class BnbsController < ApplicationController
       @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 5, :page => params[:page])
     end
 
+
+    @json = @bnbs.to_gmaps4rails do |bnb, marker|
+      marker.title "#{bnb.name}"
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bnb}

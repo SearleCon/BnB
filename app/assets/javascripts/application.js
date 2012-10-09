@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require rails.validations
+//= require rails.validations.simple_form
 //= require inline_form
 //= require jquery.purr
 //= require best_in_place
@@ -55,6 +56,8 @@ $.ajaxSetup({
         xhr.setRequestHeader("Accept", "text/javascript");
     }
 });
+
+
 
 
 

@@ -1,81 +1,67 @@
 <div class="hero-unit clearfix">
-  <div class="span5">
+  <div class="span4">
+    <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
+    <h5>Description</h5>
+    <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
+
+    <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
+  </div>
+  <div class="span5 pull-right">
     <div class="thumbnail">
       <img alt="" src="http://placehold.it/640x480">
     </div>
   </div>
-  <div class="span4 pull-right">
-    <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
-    <h5>Description</h5>
-
-    <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
-
-    <p align="center"><a class="btn btn-primary btn-large">Book now</a></p>
-  </div>
-
-  <div class="span9">
-      <div class="span5">
+  <div class="span12" style="padding: 20px;">
+    <div class="span4">
+      <address>
+        <strong>Address</strong>
         <br>
-        <address>
-            <strong>Address</strong>
-            <br>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_one, type: :input %>,
-
-            <br>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_two, type: :input %>
-
-            <br>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :city, type: :input %>
-
-
-            <br>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :postal_code, type: :input %>
-
-            <br>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
-            <br>
-              <% if can? :update, @bnb %>
-                  <%= best_in_place_if can?(:update, @bnb), @bnb, :email, type: :input %>
-              <% else %>
-                  <%= link_to @bnb.email, contactbnb_path(@bnb) %>
-              <% end %>
-        </address>
-
-      <p>
-        email:
-        <% if can? :update, @bnb %>
-            <%= best_in_place_if can?(:update, @bnb), @bnb, :email, type: :input %>
-        <% else %>
-            <%= link_to @bnb.email, contactbnb_path(@bnb) %>
-        <% end %>
-      </p>
-
-      <p>
-        phone:
-        <%= best_in_place_if can?(:update, @bnb), @bnb, :telephone_number, type: :input %>
-      </p>
-
-      <p>
-        website:
-        <%= best_in_place_if can?(:update, @bnb), @bnb, :website, type: :input %>
-      </p>
-
-      <p>
-
-        <%= best_in_place_if can?(:update, @bnb), @bnb, :twitter_account , type: :input %>
-      </p>
-
-      <p>
-        <b>Facebook page:</b>
-        <%= best_in_place_if can?(:update, @bnb), @bnb, :facebook_page, type: :input %>
-      </p>
-
-      <p>
-        Contact person:
+        <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_one, type: :input %>,
+        <br>
+        <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_two, type: :input %>
+        <br>
+        <%= best_in_place_if can?(:update, @bnb), @bnb, :city, type: :input %>
+        <br>
+        <%= best_in_place_if can?(:update, @bnb), @bnb, :postal_code, type: :input %>
+        <br>
+        <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
+      </address>
+    </div>
+    <div class= "span4">
+      <address>
+        <strong>Contact</strong>
+        <br>
         <%= best_in_place_if can?(:update, @bnb), @bnb, :contact_person, type: :input %>
-      </p>
+        <br>
+        telephone: <%= best_in_place_if can?(:update, @bnb), @bnb, :telephone_number, type: :input %>
+        <br>
+        <% if can? :update, @bnb %>
+            mail: <%= best_in_place_if can?(:update, @bnb), @bnb, :email, type: :input %>
+        <% else %>
+            mail: <%= link_to @bnb.email, contactbnb_path(@bnb) %>
+        <% end %>
+        <br>
+        <% if can? :update, @bnb %>
+         <%= best_in_place_if can?(:update, @bnb), @bnb, :website, type: :input %>
+        <% else %>
+         <%= link_to @bnb.website, url_with_protocol(@bnb.website), :target => '_blank'  %>
+        <% end %>
+        <br>
+        facebook: <%= best_in_place_if can?(:update, @bnb), @bnb, :facebook_page, type: :input %>
+        <br>
+        twitter: <%= best_in_place_if can?(:update, @bnb), @bnb, :twitter_account, type: :input %>
+
+      </address>
+    </div>
+    <div class="span4">
+      <%= link_to "Rooms", bnb_rooms_path(@bnb) %>
+      <%= link_to "Guests", bnb_guests_path(@bnb) %>
+      <%= link_to "Bookings", bnb_bookings_path(@bnb) %>
+    </div>
+
   </div>
- </div>
+
+
 </div>
 
 <div class="hero-unit clearfix">
@@ -134,85 +120,7 @@
     </div>
   </div>
 </div>
-</div>
-</div>
- </div>
 
-<br>
-
-<div class="accordion" id="accordion2">
-    <div id="collapseTwo" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <p>
-          <b>Email:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :email, type: :input %>  <br>
-          <underline><%= link_to "Contact bnb", contactbnb_path(@bnb) %></underline>
-        </p>
-
-        <p>
-          <b>Telephone number:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :telephone_number, type: :input %>
-        </p>
-
-        <p>
-          <b>Website:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :website, type: :input %>
-        </p>
-
-        <p>
-          <b>Twitter account:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :twitter_account , type: :input %>
-        </p>
-
-        <p>
-          <b>Facebook page:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :facebook_page, type: :input %>
-        </p>
-
-        <p>
-          <b>Contact person:</b>
-          <%= best_in_place_if can?(:update, @bnb), @bnb, :contact_person, type: :input %>
-        </p></div>
-    </div>
-  </div>
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" href="#collapseThree">
-        Location
-      </a>
-    </div>
-    <div id="collapseThree" class="accordion-body collapse in">
-      <div class="accordion-inner">
-        <div class="row">
-          <div class="span4">
-            <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@bnb.latitude}%2C#{@bnb.longitude}" %>
-          </div>
-          <div id="show_address" class="span4" align="right">
-            <address>
-              <strong>Address</strong>
-
-              <br>
-              <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_one, type: :input %>
-
-              <br>
-              <%= best_in_place_if can?(:update, @bnb), @bnb, :address_line_two, type: :input %>
-
-              <br>
-              <%= best_in_place_if can?(:update, @bnb), @bnb, :city, type: :input %>
-
-
-              <br>
-              <%= best_in_place_if can?(:update, @bnb), @bnb, :postal_code, type: :input %>
-
-              <br>
-              <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
-            </address>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

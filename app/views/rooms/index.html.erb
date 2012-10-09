@@ -1,3 +1,4 @@
+<div class="hero-unit clearfix">
 <div class="header form-search" align="right">
   <%= form_tag bnb_rooms_path(@bnb), :method => 'get', id: 'search_table_form' do %>
        <p>
@@ -14,9 +15,7 @@
   <% end %>
 </div>
 
-<h1>Listing rooms</h1>
-
-<table class="table table-striped sort_table" id="rooms">
+<table class="table  sort_table" id="rooms">
   <tr id='headers'>
     <th><%= sortable "room_number" %></th>
     <th><%= sortable "description"  %></th>
@@ -29,8 +28,13 @@
   <%= render :partial => 'row', :collection => @rooms, :as => :room %>
 </table>
 
-<%= will_paginate @rooms  %>
+<label><%= link_to content_tag('i', '', class: 'icon-plus-sign'), bnb_rooms_path(@bnb, @bnb.rooms.build), method: :post, remote: true %> Add room</label>
 
 <br/>
 
-<label><%= link_to content_tag('i', '', class: 'icon-plus-sign'), bnb_rooms_path(@bnb, @bnb.rooms.build), method: :post, remote: true %> Add room</label>
+<div class="span9" style="text-align: center;"><%= will_paginate @rooms  %></div>
+
+
+
+
+</div>

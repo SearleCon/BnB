@@ -15,5 +15,8 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class}
   end
 
+  def url_with_protocol(url)
+    /^http/.match(url) ? url : "http://#{url}"
+  end
 
 end

@@ -364,9 +364,7 @@ input, textarea, select, .uneditable-input {
   }
 }
 #bnb_row{
-
   @include border-radius(10px);
-
 }
 
 
@@ -386,10 +384,16 @@ input, textarea, select, .uneditable-input {
     color:#fff;
     text-shadow: #000 1px 5px 10px;
     }
-
-
-
 }
+#calendar{
+  background-color:#eee;
+  padding: 5px;
+}
+
+#booking_schedule{
+  background-color:#55626B;
+}
+
 
 
 

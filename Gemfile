@@ -26,6 +26,8 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
+gem 'gmaps4rails'
+gem 'client_side_validations-simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

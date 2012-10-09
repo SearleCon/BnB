@@ -59,7 +59,10 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
-    client_side_validations (3.1.4)
+    client_side_validations (3.2.0.rc.2)
+    client_side_validations-simple_form (2.0.0.rc.1)
+      client_side_validations (~> 3.2.0.rc.1)
+      simple_form (~> 2.0.3)
     cocoon (1.0.22)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -103,9 +106,10 @@ GEM
       i18n (~> 0.4)
     ffi (1.1.5)
     fullcalendar-rails (1.5.3.0)
-    geocoder (1.1.3)
-    gherkin (2.11.2)
+    geocoder (1.1.4)
+    gherkin (2.11.3)
       json (>= 1.4.6)
+    gmaps4rails (1.5.5)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -180,7 +184,7 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
-    simple_form (2.0.3)
+    simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     sprockets (2.1.3)
@@ -224,6 +228,7 @@ DEPENDENCIES
   carmen-rails
   carrierwave
   client_side_validations
+  client_side_validations-simple_form
   cocoon
   coffee-rails (= 3.2.2)
   country_select
@@ -236,6 +241,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   fullcalendar-rails
   geocoder
+  gmaps4rails
   jquery-rails
   jquery-rest-rails
   jquery-ui-rails

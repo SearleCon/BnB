@@ -1,9 +1,8 @@
-
+<div class="hero-unit">
 <%= simple_form_for @booking, url: bnb_bookings_path(@bnb) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <div class ="well">
+
         <h4>Select booking dates:</h4>
         <div class="row-fluid">
           <%= f.simple_fields_for :event  do |event_form| %>
@@ -15,10 +14,9 @@
               </div>
           <% end %>
         </div>
-      </div>
       <br>
 
-      <div id='guest' class='well'>
+      <div id='guest'>
         <%= f.simple_fields_for :guest  do |guest_form| %>
               <%= guest_form.input :name %>
               <%= guest_form.input :surname %>
@@ -29,15 +27,16 @@
 
       <br>
 
-      <div id='rooms' class='well'>
+      <div id='rooms'>
         <h4>Available rooms</h4>
         <br>
         <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
         <div id ='rooms_available'><%= f.association :rooms,:collection => @rooms, :label =>'', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %></div>
       </div>
-    </div>
+     <br>
 
-    <div class="form-actions">
+    <div class="span9" style="text-align: center;">
       <%= f.button :submit, :class => 'btn btn-primary' %>
     </div>
 <% end %>
+</div>

@@ -33,6 +33,7 @@ class ApplicationController < ActionController::Base
     if current_user.role.description == "Owner"
       show_bnb_path
     else
+      session[:last_page] ? session[:last_page] :
       root_url
     end
   end

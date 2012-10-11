@@ -21,6 +21,8 @@
 #  user_id          :integer
 #  latitude         :float
 #  longitude        :float
+#  rating           :integer
+#  region           :string(255)
 #
 
 require 'spec_helper'

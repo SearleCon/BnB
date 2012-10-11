@@ -1,6 +1,6 @@
 SampleApp::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {:sessions => "sessions"}
 
   resources :bookings do
     resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
@@ -60,76 +60,94 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 14 Sep 2012 13:44
+# Generated on 11 Oct 2012 10:16
 #
-#             user_session POST   /users/sign_in(.:format)                       devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)                      devise/sessions#destroy
-#            user_password POST   /users/password(.:format)                      devise/passwords#create
-#        new_user_password GET    /users/password/othernew(.:format)                  devise/passwords#othernew
-#       edit_user_password GET    /users/password/edit(.:format)                 devise/passwords#edit
-#                          PUT    /users/password(.:format)                      devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)                        devise/registrations#cancel
-#        user_registration POST   /users(.:format)                               devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)                       devise/registrations#othernew
-#   edit_user_registration GET    /users/edit(.:format)                          devise/registrations#edit
-#                          PUT    /users(.:format)                               devise/registrations#update
-#                          DELETE /users(.:format)                               devise/registrations#destroy
-#       booking_line_items POST   /bookings/:booking_id/line_items(.:format)     line_items#create
-#        booking_line_item PUT    /bookings/:booking_id/line_items/:id(.:format) line_items#update
-#                          DELETE /bookings/:booking_id/line_items/:id(.:format) line_items#destroy
-#         check_in_booking PUT    /bookings/:id/check_in(.:format)               bookings#check_in
-#        check_out_booking PUT    /bookings/:id/check_out(.:format)              bookings#check_out
-#          confirm_booking PUT    /bookings/:id/confirm(.:format)                bookings#confirm
-#    refresh_total_booking GET    /bookings/:id/refresh_total(.:format)          bookings#refresh_total
-#     show_invoice_booking GET    /bookings/:id/show_invoice(.:format)           bookings#show_invoice
-#        print_pdf_booking GET    /bookings/:id/print_pdf(.:format)              bookings#print_pdf
-#                 bookings GET    /bookings(.:format)                            bookings#index
-#                          POST   /bookings(.:format)                            bookings#create
-#              new_booking GET    /bookings/othernew(.:format)                        bookings#othernew
-#             edit_booking GET    /bookings/:id/edit(.:format)                   bookings#edit
-#                  booking GET    /bookings/:id(.:format)                        bookings#show
-#                          PUT    /bookings/:id(.:format)                        bookings#update
-#                          DELETE /bookings/:id(.:format)                        bookings#destroy
-#  filter_by_status_events GET    /events/filter_by_status(.:format)             events#filter_by_status
-#                   events GET    /events(.:format)                              events#index
-#                    event PUT    /events/:id(.:format)                          events#update
-#                 calendar        /calendar(/:year(/:month))(.:format)           calendar#index {:year=>/\d{4}/, :month=>/\d{1,2}/}
-#               bnb_guests GET    /bnbs/:bnb_id/guests(.:format)                 guests#index
-#                          POST   /bnbs/:bnb_id/guests(.:format)                 guests#create
-#            new_bnb_guest GET    /bnbs/:bnb_id/guests/othernew(.:format)             guests#othernew
-#           edit_bnb_guest GET    /bnbs/:bnb_id/guests/:id/edit(.:format)        guests#edit
-#                bnb_guest GET    /bnbs/:bnb_id/guests/:id(.:format)             guests#show
-#                          PUT    /bnbs/:bnb_id/guests/:id(.:format)             guests#update
-#                          DELETE /bnbs/:bnb_id/guests/:id(.:format)             guests#destroy
-#             bnb_bookings POST   /bnbs/:bnb_id/bookings(.:format)               bookings#create
-#          new_bnb_booking GET    /bnbs/:bnb_id/bookings/othernew(.:format)           bookings#othernew
-#             bnb_bnb_step GET    /bnbs/:bnb_id/bnb_steps/:id(.:format)          bnb_steps#show
-#                          PUT    /bnbs/:bnb_id/bnb_steps/:id(.:format)          bnb_steps#update
-# find_available_bnb_rooms GET    /bnbs/:bnb_id/rooms/find_available(.:format)   rooms#find_available
-#                bnb_rooms GET    /bnbs/:bnb_id/rooms(.:format)                  rooms#index
-#                          POST   /bnbs/:bnb_id/rooms(.:format)                  rooms#create
-#             new_bnb_room GET    /bnbs/:bnb_id/rooms/othernew(.:format)              rooms#othernew
-#            edit_bnb_room GET    /bnbs/:bnb_id/rooms/:id/edit(.:format)         rooms#edit
-#                 bnb_room PUT    /bnbs/:bnb_id/rooms/:id(.:format)              rooms#update
-#                          DELETE /bnbs/:bnb_id/rooms/:id(.:format)              rooms#destroy
-#                     bnbs GET    /bnbs(.:format)                                bnbs#index
-#                          POST   /bnbs(.:format)                                bnbs#create
-#                  new_bnb GET    /bnbs/othernew(.:format)                            bnbs#othernew
-#                 edit_bnb GET    /bnbs/:id/edit(.:format)                       bnbs#edit
-#                      bnb PUT    /bnbs/:id(.:format)                            bnbs#update
-#                          DELETE /bnbs/:id(.:format)                            bnbs#destroy
-#                 show_bnb GET    /bnb(/:id)(.:format)                           bnbs#show
-#               line_items POST   /line_items(.:format)                          line_items#create
-#                line_item DELETE /line_items/:id(.:format)                      line_items#destroy
-#                   photos GET    /photos(.:format)                              photos#index
-#                          POST   /photos(.:format)                              photos#create
-#                    photo DELETE /photos/:id(.:format)                          photos#destroy
-#                  contact GET    /contact(.:format)                             contact#othernew
-#               contactbnb GET    /contact/:bnb_id(.:format)                     contact#othernew
-#                  contact POST   /contact(.:format)                             contact#create
-#               contactbnb POST   /contact/:bnb_id(.:format)                     contact#create
-#                     root        /                                              static_pages#home
-#                     help        /help(.:format)                                static_pages#help
-#                    about        /about(.:format)                               static_pages#about
-#                contactus        /contactus(.:format)                           static_pages#contact
-#                                 /*path(.:format)                               application#routing_error
+#              user_session POST   /users/sign_in(.:format)                                    sessions#create
+#      destroy_user_session DELETE /users/sign_out(.:format)                                   sessions#destroy
+#             user_password POST   /users/password(.:format)                                   devise/passwords#create
+#         new_user_password GET    /users/password/new(.:format)                               devise/passwords#new
+#        edit_user_password GET    /users/password/edit(.:format)                              devise/passwords#edit
+#                           PUT    /users/password(.:format)                                   devise/passwords#update
+#  cancel_user_registration GET    /users/cancel(.:format)                                     devise/registrations#cancel
+#         user_registration POST   /users(.:format)                                            devise/registrations#create
+#     new_user_registration GET    /users/sign_up(.:format)                                    devise/registrations#new
+#    edit_user_registration GET    /users/edit(.:format)                                       devise/registrations#edit
+#                           PUT    /users(.:format)                                            devise/registrations#update
+#                           DELETE /users(.:format)                                            devise/registrations#destroy
+#        booking_line_items POST   /bookings/:booking_id/line_items(.:format)                  line_items#create
+#         booking_line_item PUT    /bookings/:booking_id/line_items/:id(.:format)              line_items#update
+#                           DELETE /bookings/:booking_id/line_items/:id(.:format)              line_items#destroy
+#          check_in_booking PUT    /bookings/:id/check_in(.:format)                            bookings#check_in
+#         check_out_booking PUT    /bookings/:id/check_out(.:format)                           bookings#check_out
+#           confirm_booking PUT    /bookings/:id/confirm(.:format)                             bookings#confirm
+#     refresh_total_booking GET    /bookings/:id/refresh_total(.:format)                       bookings#refresh_total
+#      show_invoice_booking GET    /bookings/:id/show_invoice(.:format)                        bookings#show_invoice
+#         print_pdf_booking GET    /bookings/:id/print_pdf(.:format)                           bookings#print_pdf
+#      my_bookings_bookings GET    /bookings/my_bookings(.:format)                             bookings#my_bookings
+#                  bookings GET    /bookings(.:format)                                         bookings#index
+#                           POST   /bookings(.:format)                                         bookings#create
+#               new_booking GET    /bookings/new(.:format)                                     bookings#new
+#              edit_booking GET    /bookings/:id/edit(.:format)                                bookings#edit
+#                   booking GET    /bookings/:id(.:format)                                     bookings#show
+#                           PUT    /bookings/:id(.:format)                                     bookings#update
+#                           DELETE /bookings/:id(.:format)                                     bookings#destroy
+#   filter_by_status_events GET    /events/filter_by_status(.:format)                          events#filter_by_status
+#                    events GET    /events(.:format)                                           events#index
+#                     event PUT    /events/:id(.:format)                                       events#update
+#                  calendar        /calendar(/:year(/:month))(.:format)                        calendar#index {:year=>/\d{4}/, :month=>/\d{1,2}/}
+#                bnb_events GET    /bnbs/:bnb_id/events(.:format)                              events#index
+#                bnb_photos GET    /bnbs/:bnb_id/photos(.:format)                              photos#index
+#                           POST   /bnbs/:bnb_id/photos(.:format)                              photos#create
+#             new_bnb_photo GET    /bnbs/:bnb_id/photos/new(.:format)                          photos#new
+#                 bnb_photo DELETE /bnbs/:bnb_id/photos/:id(.:format)                          photos#destroy
+#    bnb_booking_line_items POST   /bnbs/:bnb_id/bookings/:booking_id/line_items(.:format)     line_items#create
+#     bnb_booking_line_item PUT    /bnbs/:bnb_id/bookings/:booking_id/line_items/:id(.:format) line_items#update
+#                           DELETE /bnbs/:bnb_id/bookings/:booking_id/line_items/:id(.:format) line_items#destroy
+#      check_in_bnb_booking PUT    /bnbs/:bnb_id/bookings/:id/check_in(.:format)               bookings#check_in
+#     check_out_bnb_booking PUT    /bnbs/:bnb_id/bookings/:id/check_out(.:format)              bookings#check_out
+#       confirm_bnb_booking PUT    /bnbs/:bnb_id/bookings/:id/confirm(.:format)                bookings#confirm
+# refresh_total_bnb_booking GET    /bnbs/:bnb_id/bookings/:id/refresh_total(.:format)          bookings#refresh_total
+#  show_invoice_bnb_booking GET    /bnbs/:bnb_id/bookings/:id/show_invoice(.:format)           bookings#show_invoice
+#     print_pdf_bnb_booking GET    /bnbs/:bnb_id/bookings/:id/print_pdf(.:format)              bookings#print_pdf
+#              bnb_bookings GET    /bnbs/:bnb_id/bookings(.:format)                            bookings#index
+#                           POST   /bnbs/:bnb_id/bookings(.:format)                            bookings#create
+#           new_bnb_booking GET    /bnbs/:bnb_id/bookings/new(.:format)                        bookings#new
+#          edit_bnb_booking GET    /bnbs/:bnb_id/bookings/:id/edit(.:format)                   bookings#edit
+#               bnb_booking GET    /bnbs/:bnb_id/bookings/:id(.:format)                        bookings#show
+#                           PUT    /bnbs/:bnb_id/bookings/:id(.:format)                        bookings#update
+#                           DELETE /bnbs/:bnb_id/bookings/:id(.:format)                        bookings#destroy
+#                bnb_guests GET    /bnbs/:bnb_id/guests(.:format)                              guests#index
+#                           POST   /bnbs/:bnb_id/guests(.:format)                              guests#create
+#             new_bnb_guest GET    /bnbs/:bnb_id/guests/new(.:format)                          guests#new
+#            edit_bnb_guest GET    /bnbs/:bnb_id/guests/:id/edit(.:format)                     guests#edit
+#                 bnb_guest GET    /bnbs/:bnb_id/guests/:id(.:format)                          guests#show
+#                           PUT    /bnbs/:bnb_id/guests/:id(.:format)                          guests#update
+#                           DELETE /bnbs/:bnb_id/guests/:id(.:format)                          guests#destroy
+#              bnb_bnb_step GET    /bnbs/:bnb_id/bnb_steps/:id(.:format)                       bnb_steps#show
+#                           PUT    /bnbs/:bnb_id/bnb_steps/:id(.:format)                       bnb_steps#update
+#  find_available_bnb_rooms GET    /bnbs/:bnb_id/rooms/find_available(.:format)                rooms#find_available
+#                 bnb_rooms GET    /bnbs/:bnb_id/rooms(.:format)                               rooms#index
+#                           POST   /bnbs/:bnb_id/rooms(.:format)                               rooms#create
+#              new_bnb_room GET    /bnbs/:bnb_id/rooms/new(.:format)                           rooms#new
+#             edit_bnb_room GET    /bnbs/:bnb_id/rooms/:id/edit(.:format)                      rooms#edit
+#                  bnb_room PUT    /bnbs/:bnb_id/rooms/:id(.:format)                           rooms#update
+#                           DELETE /bnbs/:bnb_id/rooms/:id(.:format)                           rooms#destroy
+#                      bnbs GET    /bnbs(.:format)                                             bnbs#index
+#                           POST   /bnbs(.:format)                                             bnbs#create
+#                   new_bnb GET    /bnbs/new(.:format)                                         bnbs#new
+#                  edit_bnb GET    /bnbs/:id/edit(.:format)                                    bnbs#edit
+#                       bnb PUT    /bnbs/:id(.:format)                                         bnbs#update
+#                           DELETE /bnbs/:id(.:format)                                         bnbs#destroy
+#   bnbs_sub_region_options GET    /bnbs/sub_region_options(.:format)                          bnbs#subregions
+#                  show_bnb GET    /bnb(/:id)(.:format)                                        bnbs#show
+#                line_items POST   /line_items(.:format)                                       line_items#create
+#                 line_item DELETE /line_items/:id(.:format)                                   line_items#destroy
+#                   contact GET    /contact(.:format)                                          contact#new
+#                contactbnb GET    /contact/:bnb_id(.:format)                                  contact#new
+#                   contact POST   /contact(.:format)                                          contact#create
+#                contactbnb POST   /contact/:bnb_id(.:format)                                  contact#create
+#                      root        /                                                           static_pages#home
+#                      help        /help(.:format)                                             static_pages#help
+#                     about        /about(.:format)                                            static_pages#about
+#                 contactus        /contactus(.:format)                                        static_pages#contact
+#                                  /*path(.:format)                                            application#routing_error

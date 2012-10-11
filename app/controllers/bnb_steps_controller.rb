@@ -36,7 +36,5 @@ class BnbStepsController < ApplicationController
       end
     end
   end
-
-
 end
 

@@ -8,7 +8,7 @@ class ContactController < ApplicationController
     end
 
     @message = Message.new
-    @message.receiver=
+    @message.receiver = email
     session[:last_page] = request.env['HTTP_REFERER']
   end
 

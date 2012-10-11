@@ -3,8 +3,11 @@
     <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
     <h5>Description</h5>
     <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
-
-    <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
+    <% if user_signed_in? && current_user.role.description == 'Guest' %>
+        <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
+    <% else %>
+        <p align="center"><%= link_to "Sign in to book",  new_user_session_path, :class => "btn btn-primary" %></p>
+    <% end %>
   </div>
   <div class="span5 pull-right">
     <div class="thumbnail">

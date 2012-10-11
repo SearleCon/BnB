@@ -1,3 +1,4 @@
+<div class="hero-unit">
 <%= form_for @message, :url => contact_path do |form| %>
     <fieldset class="fields">
       <div class="field">
@@ -26,6 +27,7 @@
     </fieldset>
 
     <fieldset class="actions">
-      <%= form.submit "Send" %>
+      <%= form.submit "Send", class: 'btn btn-primary' %>
     </fieldset>
 <% end %>
+</div>

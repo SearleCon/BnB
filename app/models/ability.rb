@@ -56,6 +56,7 @@ class Ability
         can :show, Booking
         can :my_bookings, Booking
         can :read, Photo
+        can :find_available, Room
       else
         can :read, Bnb
         can :read, Photo

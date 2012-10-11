@@ -9,6 +9,7 @@
 #  updated_at :datetime         not null
 #  status     :string(255)      default("provisional")
 #  bnb_id     :integer
+#  user_id    :integer
 #
 
 class Booking < ActiveRecord::Base

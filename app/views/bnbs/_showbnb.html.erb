@@ -3,8 +3,10 @@
     <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
     <h5>Description</h5>
     <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
-    <% if user_signed_in? && current_user.role.description == 'Guest' %>
-        <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
+    <% if user_signed_in? %>
+        <% if  current_user.role.description == 'Guest' %>
+            <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
+        <% end %>
     <% else %>
         <p align="center"><%= link_to "Sign in to book",  new_user_session_path, :class => "btn btn-primary" %></p>
     <% end %>
@@ -56,11 +58,13 @@
 
       </address>
     </div>
+    <% if user_signed_in? && current_user.role.description %>
     <div class="span4">
-      <%= link_to "Rooms", bnb_rooms_path(@bnb) %>
-      <%= link_to "Guests", bnb_guests_path(@bnb) %>
-      <%= link_to "Bookings", bnb_bookings_path(@bnb) %>
+      <p><%= link_to "Rooms", bnb_rooms_path(@bnb), class: "btn btn-primary" %></p>
+      <p><%= link_to "Guests", bnb_guests_path(@bnb), class: "btn btn-primary" %></p>
+      <p><%= link_to "Bookings", bnb_bookings_path(@bnb),class: "btn btn-primary" %></p>
     </div>
+    <% end %>
 
   </div>
 

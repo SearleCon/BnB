@@ -2,17 +2,27 @@
 <header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "searle consulting", root_path, id: "logo" %>
+      <%= link_to "bnbeezy", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <% if user_signed_in? %>
             <% if current_user.role.description == 'Owner' %>
-                  <li><%= link_to "MyBnb", show_bnb_path %></li>
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      MyBnb <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "Details", show_bnb_path %></li>
+                      <li class="divider"></li>
+                      <li>
+                        <%= link_to "Calendar", bnb_bookings_path(session[:bnb_id]) %>
+                      </li>
+                    </ul>
+                  </li>
             <% else %>
                   <li><%= link_to "MyHistory", my_bookings_bookings_path  %></li>
             <% end %>
-            <li><%= link_to "Help", help_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -28,6 +38,7 @@
           <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
+          <li><%= link_to "Help", help_path %></li>
         </ul>
       </nav>
     </div>

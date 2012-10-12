@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
     @bnb = Bnb.find(params[:bnb_id])
     @bookings = Booking.active_bookings_by_bnb(@bnb)
-    @events = Event.scoped.all(conditions: { booking_id: @bookings })
+    @events = Event.scoped.all(:include => [:booking => :bnb], conditions: { booking_id: @bookings })
 
     respond_to do |format|
       format.html # index.html.erb

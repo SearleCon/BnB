@@ -124,6 +124,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show_invoice
+
+  end
+
  def check_out
    @booking.status = :closed
    @booking.rooms.each do |room|
@@ -133,7 +137,7 @@ class BookingsController < ApplicationController
    end
    if @booking.save
      respond_to do |format|
-       format.html
+       format.html { redirect_to show_invoice_bnb_booking_url(@bnb,@booking)}
        format.json { render json: @booking}
      end
    end

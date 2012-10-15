@@ -1,10 +1,26 @@
 <%= wicked_pdf_stylesheet_link_tag "documents" %>
 
+<div style="float:right">
+  <address>
+    <strong>Address</strong>
+    <br>
+    <%= @bnb.address_line_one %>
+    <br>
+    <%= @bnb.address_line_two %>
+    <br>
+    <%= @bnb.city %>
+    <br>
+    <%= @bnb.postal_code %>
+    <br>
+    <%= @bnb.country %>
+  </address>
+</div>
+
 <div class="document">
   <h2>Booking details</h2>
   <p>
     <b>Guest:</b>
-    <%= @booking.guest_name %>
+    <% @booking.guest_name %>
   </p>
 
   <p>

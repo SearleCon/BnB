@@ -30,6 +30,7 @@ gem 'gmaps4rails'
 gem 'client_side_validations-simple_form'
 
 group :development, :test do
+  gem "thin"
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.8.1'
   gem 'annotate', ">=2.5.0"

@@ -1,8 +1,12 @@
+
+
 <h2>Booking details</h2>
 <p>
   <b>Guest:</b>
   <%= @booking.guest_name %>
 </p>
+
+
 
 <p>
   <b>Check In:</b>
@@ -26,7 +30,18 @@
 </table>
 <div><%= link_to content_tag('i', '', class: 'icon-plus-sign'), booking_line_items_path(@booking), method: :post, remote: true %></div>
 <div id='Total_Cost'>
-  <p id='total'>Total: <%= number_to_currency(@booking.total_price, unit: 'ZAR') %></p>
-  <p><%= link_to 'Refresh Total',refresh_total_booking_path(@booking), method: :get, remote: true %></p>
+  <%= render :partial => 'total_cost' %>
 </div>
+<br>
+<br>
+<div align="center">
+  <%= link_to 'Print Invoice', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary' %>
+</div>
+
+
+
+
+
+
+
 

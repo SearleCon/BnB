@@ -18,6 +18,18 @@
                       <li>
                         <%= link_to "Calendar", bnb_bookings_path(session[:bnb_id]) %>
                       </li>
+                      <li class="divider"></li>
+                      <li>
+                        <%= link_to "Rooms", bnb_rooms_path(session[:bnb_id]) %>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <%= link_to "Guests", bnb_guests_path(session[:bnb_id]) %>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <%= link_to "Photos", bnb_photos_path(session[:bnb_id]) %>
+                      </li>
                     </ul>
                   </li>
             <% else %>

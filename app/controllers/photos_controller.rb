@@ -1,15 +1,13 @@
 class PhotosController < ApplicationController
 
-
-
   def index
     @bnb = Bnb.find(params[:bnb_id])
-    get_photos
+    @photos = @bnb.photos
   end
 
   def new
     @bnb = Bnb.find(params[:bnb_id])
-    @photo = @bnb.photos.new
+    @photo = Photo.new
 
     respond_to do |format|
      format.html
@@ -22,7 +20,7 @@ class PhotosController < ApplicationController
     @photo = @bnb.photos.build(params[:photo])
 
     if @photo.save
-      get_photos
+      @photos = @bnb.photos.reload
       redirect_to bnb_photos_url(@bnb)
     else
       redirect_back_or root_path
@@ -32,19 +30,9 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-    @photo.remove_image!
     @photo.destroy
     respond_to do |format|
       format.js { @photo }
     end
   end
-
-    private
-    def get_bnb
-      @bnb = Bnb.find_by_user_id(current_user)
-    end
-
-    def get_photos
-      @photos = Photo.find_all_by_bnb_id(@bnb)
-    end
 end

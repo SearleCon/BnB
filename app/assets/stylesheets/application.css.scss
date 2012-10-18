@@ -82,3 +82,12 @@ html, body {
      float: right;
    }
  }
+
+document {
+  height: 297mm - 23mm;
+  width: 210mm -21mm;
+
+  background-repeat: no-repeat;
+  background-position: 200px 280px;
+}
+

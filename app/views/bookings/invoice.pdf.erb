@@ -1,42 +1,43 @@
-<%= wicked_pdf_stylesheet_link_tag "documents" %>
+<%= wicked_pdf_stylesheet_link_tag "application" %>
 
-<div style="float:right">
-  <address>
-    <strong>Address</strong>
-    <br>
-    <%= @bnb.address_line_one %>
-    <br>
-    <%= @bnb.address_line_two %>
-    <br>
-    <%= @bnb.city %>
-    <br>
-    <%= @bnb.postal_code %>
-    <br>
-    <%= @bnb.country %>
-  </address>
+<div class="row">
+    <div style="float:right">
+      <address>
+        <strong>Address</strong>
+        <br>
+        <%= @bnb.address_line_one %>
+        <br>
+        <%= @bnb.address_line_two %>
+        <br>
+        <%= @bnb.city %>
+        <br>
+        <%= @bnb.postal_code %>
+        <br>
+        <%= @bnb.country %>
+      </address>
+    </div>
+
+    <div style="float:left">
+      <h4>
+        <%= @bnb.name %>
+      </h4>
+      <p>
+        <%= @bnb.email %>
+      </p>
+    </div>
 </div>
 
+
 <div class="document">
-  <h2>Booking details</h2>
-  <p>
-    <b>Guest:</b>
-    <% @booking.guest_name %>
-  </p>
+  <p><b>Guest: </b><%= @booking.guest.name.concat(" ").concat(@booking.guest.surname).camelcase %></p>
 
-  <p>
-    <b>Check In:</b>
-    <%= @booking.event_start_at.strftime('%A, %d %B %Y') %>
-  </p>
+  <p><b>Period of stay:</b> <%= @booking.event_start_at.strftime('%A, %d %B %Y') %> to <%= @booking.event_end_at.strftime('%A, %d %B %Y') %> </p>
+  <br>
 
-  <p>
-    <b>Check Out:</b>
-    <%= @booking.event_end_at.strftime('%A, %d %B %Y') %>
-  </p>
-
-  <table class="table table-striped" id="line_items">
+  <table class="table table-condensed" id="line_items">
     <tr>
       <th>Description</th>
-      <th>Value</th>
+      <th>Cost</th>
     </tr>
     <% @booking.line_items.each do |line_item| %>
         <tr id=<%=line_item.id%>>

@@ -4,7 +4,6 @@
 
 $(document).ready ->
 
-
    $('#search_country').change (event) ->
      select_wrapper = $('#order_state_code_wrapper')
      $('select', select_wrapper).attr('disabled', true)

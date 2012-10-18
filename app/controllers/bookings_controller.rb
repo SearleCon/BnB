@@ -161,11 +161,7 @@ class BookingsController < ApplicationController
      format.pdf do
        @pdf = render_to_string :pdf => @booking.guest_name,
               :template => 'bookings/invoice.pdf.erb',
-              :footer => {
-                  :center => "Center",
-                  :left => "Left",
-                  :right => "Right"
-              },
+              :header => { center: "Invoice", right: Time.now.strftime('%A, %d %B %Y') },
               :encoding => "UTF-8"
 
        send_data(@pdf, :filename => @booking.guest_name,  :type=>"application/pdf")

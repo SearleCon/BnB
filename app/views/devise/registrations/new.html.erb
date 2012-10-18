@@ -8,7 +8,10 @@
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
     <%= f.input :role_id, collection: Role.all, as: :radio_buttons, :label_method => :description, :value_method => :id, :item_wrapper_class => 'inline'  %>
+    <%= f.input :terms_of_service %>
   </div>
+
+
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>

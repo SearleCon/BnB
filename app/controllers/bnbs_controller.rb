@@ -29,8 +29,7 @@ class BnbsController < ApplicationController
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    @bnb = Bnb.find_by_user_id(current_user) if @bnb.nil?
-
+    @bnb = Bnb.includes(:photos).find_by_user_id(current_user) if @bnb.nil?
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bnb }

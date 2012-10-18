@@ -3,10 +3,6 @@
 #You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
 
-  $('#myCarousel').carousel
-     interval: 2000
-
-
 
   $('#bnb_country').change (event) ->
     select_wrapper = $('#order_state_code_wrapper')

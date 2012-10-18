@@ -11,7 +11,7 @@ SampleApp::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
 
   # Action Mailer
@@ -52,7 +52,7 @@ SampleApp::Application.configure do
 
   config.after_initialize do
     Bullet.enable = true
-    Bullet.alert = true
+    Bullet.alert = false
     Bullet.bullet_logger = true
     Bullet.console = true
 =begin

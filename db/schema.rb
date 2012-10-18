@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002073543) do
+ActiveRecord::Schema.define(:version => 20121017131552) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -107,10 +107,10 @@ ActiveRecord::Schema.define(:version => 20121002073543) do
   create_table "photos", :force => true do |t|
     t.string   "description"
     t.string   "image"
-    t.integer  "order"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "bnb_id"
+    t.boolean  "main",        :default => false
   end
 
   add_index "photos", ["bnb_id"], :name => "index_photos_on_bnb_id"

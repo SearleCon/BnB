@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
 
   before_save :add_name
 
+  validates_acceptance_of :terms_of_service
+
   def add_name
     self.name = 'test'
   end

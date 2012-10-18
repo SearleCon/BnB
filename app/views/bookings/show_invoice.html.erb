@@ -1,6 +1,6 @@
 
 
-<h2>Booking details</h2>
+<h2>Booking costs</h2>
 <p>
   <b>Guest:</b>
   <%= @booking.guest_name %>
@@ -34,7 +34,7 @@
 </div>
 <br>
 <br>
-<div align="center">
+<div>
   <%= link_to 'Print Invoice', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary' %>
 </div>
 

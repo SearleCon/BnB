@@ -5,10 +5,10 @@
 #  id          :integer          not null, primary key
 #  description :string(255)
 #  image       :string(255)
-#  order       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  bnb_id      :integer
+#  main        :boolean          default(FALSE)
 #
 
 require 'spec_helper'

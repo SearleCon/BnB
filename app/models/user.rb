@@ -32,18 +32,24 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id
-
-  before_save :add_name
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service
 
   validates_acceptance_of :terms_of_service
 
-  def add_name
-    self.name = 'test'
-  end
+  #before_save :add_name
+
+  after_create :send_welcome_email
+
+
 
   def role
     self.role_id.nil? ? Role.new(description: 'Temp') : Role.find(self.role_id)
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.delay.welcome(self)
   end
 
 end

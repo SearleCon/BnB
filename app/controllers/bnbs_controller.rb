@@ -1,6 +1,8 @@
 class BnbsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :subregions
 
+
+
   # GET /bnbs
   # GET /bnbs.json
   def index

@@ -1,0 +1,11 @@
+<h3>Booking confirmation</h3>
+
+<p>Hi <%= @booking.guest_name %></p>
+<p>
+  This email is just to let you know that your booking from <%= @booking.event.start_at %> to <%= @booking.event.end_at %>
+  has been confirmed by <%= @booking.bnb.name %> who will confirm the details.
+</p>
+
+<br>
+<p>Regards</p>
+<p>BnbEezy.com</p>

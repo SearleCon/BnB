@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
   # GET /my_bookings
   def my_bookings
 
-   @bookings = Booking.search(params[:search]).where('bookings.user_id = ?', current_user.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+   @bookings = Booking.includes(:event, :bnb).search(params[:search]).where('bookings.user_id = ?', current_user.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
       format.html
@@ -83,6 +83,11 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
+        if current_user.role.description == "Guest"
+          UserMailer.delay.booking_made(current_user, @booking)
+          UserMailer.delay.notify_bnb(@booking)
+
+        end
         @event = Event.find_by_booking_id(@booking)
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
         format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
@@ -145,6 +150,7 @@ class BookingsController < ApplicationController
 
  def confirm
    @booking.update_attribute(:status, :booked)
+   UserMailer.deliver_confirmation_received.delay(@booking)
    respond_to do |format|
      format.js { @booking }
    end

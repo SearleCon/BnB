@@ -52,6 +52,8 @@ SampleApp::Application.routes.draw do
   root to: 'static_pages#home'
   # match '/', to: 'static_pages#home'
 
+  match '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
+  match '/privacypolicy', to: 'static_pages#privacy_policy'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contact'
@@ -60,7 +62,7 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 11 Oct 2012 10:16
+# Generated on 22 Oct 2012 14:42
 #
 #              user_session POST   /users/sign_in(.:format)                                    sessions#create
 #      destroy_user_session DELETE /users/sign_out(.:format)                                   sessions#destroy
@@ -147,6 +149,8 @@ end
 #                   contact POST   /contact(.:format)                                          contact#create
 #                contactbnb POST   /contact/:bnb_id(.:format)                                  contact#create
 #                      root        /                                                           static_pages#home
+#      terms_and_conditions        /terms_and_conditions(.:format)                             static_pages#termsandconditions
+#             privacypolicy        /privacypolicy(.:format)                                    static_pages#privacypolicy
 #                      help        /help(.:format)                                             static_pages#help
 #                     about        /about(.:format)                                            static_pages#about
 #                 contactus        /contactus(.:format)                                        static_pages#contact

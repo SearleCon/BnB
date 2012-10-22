@@ -14,7 +14,6 @@ class ContactController < ApplicationController
 
   def create
     @message = Message.new(params[:message])
-
     if @message.valid?
       BnbNotifier.delay.enquiry(@message)
       url = session[:last_page] ? session[:last_page] : root_url

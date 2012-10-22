@@ -14,9 +14,10 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><%= link_to "Details", show_bnb_path %></li>
+                    <% unless session[:bnb_id].nil? %>
                       <li class="divider"></li>
                       <li>
-                        <%= link_to "Calendar", bnb_bookings_path(session[:bnb_id]) %>
+                        <%= link_to "Bookings", bnb_bookings_path(session[:bnb_id]) %>
                       </li>
                       <li class="divider"></li>
                       <li>
@@ -30,6 +31,7 @@
                       <li>
                         <%= link_to "Photos", bnb_photos_path(session[:bnb_id]) %>
                       </li>
+                    <% end %>
                     </ul>
                   </li>
             <% else %>

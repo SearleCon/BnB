@@ -35,8 +35,12 @@ class ApplicationController < ActionController::Base
       show_bnb_path
     else
       session[:last_page] ? session[:last_page] :
-      root_url
+          root_url
     end
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+
   end
 
 

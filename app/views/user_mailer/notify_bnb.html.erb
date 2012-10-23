@@ -1,13 +1,17 @@
 <h3>Booking confirmation required</h3>
 
-<p><%= "#{@booking.guest.name}  #{@booking.id}"%></p>
-<p>
-  This is a notice of an online booking which is awaiting confirmation:
+<p><%= "#{@booking.guest.name}  #{@booking.id}" %></p>
 
+<p>This is a notice of an online booking which is awaiting confirmation:
+  <br>
   Starting: <%= @booking.event.start_at %>
-  Ending: <%= @booking.end_at %>
+  <br>
+  Ending: <%= @booking.event.end_at %>
+  <br>
   Guest: <%= @booking.guest.name %>
+  <br>
   Rooms: <%= @booking.rooms.count %>
+  <br>
 
   Once you confirm on the schedule the guest will be notified via email.
 

@@ -16,8 +16,9 @@ class UserMailer < ActionMailer::Base
 
   def notify_bnb(booking)
     @booking = booking
+    subject_Text = "Notice of online booking - #{@booking.guest.name} #{@booking.id}"
 
-    mail to: @booking.bnb.email, subject: "Notice of online booking - #{@booking.guest_name @booking.id}"
+    mail to: @booking.bnb.email, subject: subject_Text
   end
 
   def confirmation_received(booking)

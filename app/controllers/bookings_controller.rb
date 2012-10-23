@@ -86,7 +86,6 @@ class BookingsController < ApplicationController
         if current_user.role.description == "Guest"
           UserMailer.delay.booking_made(current_user, @booking)
           UserMailer.delay.notify_bnb(@booking)
-
         end
         @event = Event.find_by_booking_id(@booking)
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }

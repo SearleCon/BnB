@@ -26,8 +26,6 @@ class BnbsController < ApplicationController
     end
   end
 
-
-
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show

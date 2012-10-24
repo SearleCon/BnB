@@ -47,7 +47,7 @@ class Bnb < ActiveRecord::Base
   end
 
 
-  validates :name, :description, :presence => true, :if => :active_or_bnb_details?
+  validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
 

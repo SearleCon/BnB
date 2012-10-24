@@ -30,7 +30,7 @@ class BnbStepsController < ApplicationController
       room_number = 1
       Room.transaction do
        number_of_rooms.times do
-          @bnb.rooms.create(:description => 'Room'.concat(room_number.to_s), :room_number => room_number, :extras => 'none', :rates => 0, :en_suite => false)
+          @bnb.rooms.create(:description => 'Room'.concat(room_number.to_s), :room_number => room_number, :extras => 'none', :rates => @bnb.standard_rate, :en_suite => false)
           room_number = room_number + 1
         end
       end

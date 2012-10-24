@@ -27,7 +27,7 @@ class RoomsController < ApplicationController
     @room = Room.new
 
     respond_to do |format|
-      format.html # othernewernew.html.erb
+      format.html
       format.json { render json: @room }
     end
   end
@@ -79,10 +79,10 @@ class RoomsController < ApplicationController
   end
 
   def find_available
-    params[:start_date] && params[:end_date] ?
-        @rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id) :
-        @rooms = Room.find_all_by_bnb_id(@bnb.id)
+    @booked_rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id)
+    @rooms = Room.all
 
+    @unbooked = @booked_rooms.nil? ? @rooms : @rooms.to_a - @booked_rooms
     respond_to do |format|
       format.json { render json: @rooms }
     end

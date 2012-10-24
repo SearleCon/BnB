@@ -7,10 +7,10 @@
         <div class="row-fluid">
           <%= f.simple_fields_for :event  do |event_form| %>
               <div class="span6">
-                <%= event_form.input :start_at, :as => :datepicker%>
+                <%=event_form.input :start_at, :label => "Check in", :as => :datepicker %>
               </div>
               <div class="span6">
-                <%= event_form.input :end_at,  :as => :datepicker%>
+                <%= event_form.input :end_at, :label => "Check out",  :as => :datepicker%>
               </div>
           <% end %>
         </div>

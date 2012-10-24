@@ -1,0 +1,14 @@
+
+
+
+<%= simple_form_for(@suggestion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subject %>
+    <%= f.input :suggestion %>
+    <%= f.hidden_field :user_id %>
+  </div>
+
+    <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>

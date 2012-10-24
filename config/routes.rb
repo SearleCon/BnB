@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  resources :suggestions
+
   devise_for :users, :controllers => {:sessions => "sessions"}
 
   resources :bookings do
@@ -62,8 +64,15 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 22 Oct 2012 14:42
+# Generated on 24 Oct 2012 11:13
 #
+#                           POST   /suggestions(.:format)                                      suggestions#create
+#            new_suggestion GET    /suggestions/new(.:format)                                  suggestions#new
+#           edit_suggestion GET    /suggestions/:id/edit(.:format)                             suggestions#edit
+#                suggestion GET    /suggestions/:id(.:format)                                  suggestions#show
+#                           PUT    /suggestions/:id(.:format)                                  suggestions#update
+#                           DELETE /suggestions/:id(.:format)                                  suggestions#destroy
+#          new_user_session GET    /users/sign_in(.:format)                                    sessions#new
 #              user_session POST   /users/sign_in(.:format)                                    sessions#create
 #      destroy_user_session DELETE /users/sign_out(.:format)                                   sessions#destroy
 #             user_password POST   /users/password(.:format)                                   devise/passwords#create
@@ -149,8 +158,8 @@ end
 #                   contact POST   /contact(.:format)                                          contact#create
 #                contactbnb POST   /contact/:bnb_id(.:format)                                  contact#create
 #                      root        /                                                           static_pages#home
-#      terms_and_conditions        /terms_and_conditions(.:format)                             static_pages#termsandconditions
-#             privacypolicy        /privacypolicy(.:format)                                    static_pages#privacypolicy
+#      terms_and_conditions        /terms_and_conditions(.:format)                             static_pages#terms_and_conditions
+#             privacypolicy        /privacypolicy(.:format)                                    static_pages#privacy_policy
 #                      help        /help(.:format)                                             static_pages#help
 #                     about        /about(.:format)                                            static_pages#about
 #                 contactus        /contactus(.:format)                                        static_pages#contact

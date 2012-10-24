@@ -23,6 +23,7 @@
 #  longitude        :float
 #  rating           :integer
 #  region           :string(255)
+#  standard_rate    :decimal(, )
 #
 
 require 'spec_helper'

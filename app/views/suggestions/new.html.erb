@@ -1,0 +1,14 @@
+<div class="hero-unit">
+    <h3>Customer Feedback and Comments</h3>
+    <p>We're here to help! And we would love to hear what you think of our product.<br>
+       If you would like to give us any feedback, or would like to make any feature requests,<br>
+       please don't hesitate to contact us using the form below. Thank you for your support!</p><br>
+
+    <%= render 'suggestions/form' %>
+
+    <p>If you have any Support related issue, please use the <%= link_to "Contact Us", contact_path %> page instead.</p>
+
+    Head back to the <%= link_to 'Home page.', root_path %>, but please come back soon!<br>
+    Or to login again, <%= link_to 'click here', new_user_session_path %>
+</div>
+

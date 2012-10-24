@@ -23,6 +23,7 @@
 #  longitude        :float
 #  rating           :integer
 #  region           :string(255)
+#  standard_rate    :decimal(, )
 #
 
 class Bnb < ActiveRecord::Base

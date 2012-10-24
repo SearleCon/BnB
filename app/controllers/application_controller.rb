@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(resource_or_scope)
     if current_user.role.description == "Owner"
       session[:bnb_id] = Bnb.find_by_user_id(current_user)
       show_bnb_path
@@ -39,10 +39,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
   def after_sign_out_path_for(resource_or_scope)
 
+    unless current_user.nil?
+      new_suggestion_url(:user_id => current_user.id)
+    end
+
   end
-
-
 
 end

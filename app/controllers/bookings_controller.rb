@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
-
   # GET /bookings
   # GET /bookings.json
   def index
@@ -51,8 +50,6 @@ class BookingsController < ApplicationController
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
-    @rooms = Room.find_all_by_bnb_id(@bnb.id)
-
 
     if request.xhr?
       event_details = render_to_string :partial => 'bookings/form'

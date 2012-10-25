@@ -22,7 +22,7 @@ class Room < ActiveRecord::Base
   has_many  :guests, :through => :bookings
 
   scope :booked, lambda { |start_date, end_date|
-     includes({ :bookings => :event}).where('(events.start_at BETWEEN ? AND ? OR events.end_at BETWEEN ? AND ? OR events.start_at <= ? AND events.end_at >= ?)',start_date, end_date, start_date, end_date, start_date, end_date)
+     includes({ :bookings => :event}).where('(events.start_at BETWEEN ? AND ? OR events.end_at BETWEEN ? AND ? OR events.start_at <= ? AND events.end_at >= ?) And status != ?',start_date, end_date, start_date, end_date, start_date, end_date, :closed)
   }
 
   scope :has_en_suite, where(:en_suite => true)

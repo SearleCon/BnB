@@ -43,6 +43,8 @@ class Booking < ActiveRecord::Base
 
   EVENT_COLORS = { :provisional =>  'blue', :booked => 'green', :checked_in => 'red', :closed => 'orange' }
 
+
+
   def status_changed(old, new)
     case new
       when :booked

@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require autocomplete-rails
 //= require bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form

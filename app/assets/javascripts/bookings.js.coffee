@@ -75,11 +75,8 @@ bindAvailabeRoomBehaviour = () ->
     $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
     $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
     $.read $(this).attr('href'), (response) ->
-      $.each response, (item) ->
-        element_id = "#booking_room_ids_" + this.id
-        $(element_id).closest('label').hide()
-        $(element_id).hide()
-        $('#room_finder').hide()
+      $("#rooms_available").html(response.html)
+      $('#room_finder').hide()
       $('#rooms_available').show()
     return false
 
@@ -90,7 +87,6 @@ setupGuestBehaviour = () ->
   $('#guest').bind 'insertion-callback', ->
     $("#find_guest").hide()
     $("#guest a.add_fields").hide()
-
 
 
 setupDatepickers = () ->

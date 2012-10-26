@@ -31,7 +31,7 @@
         <h4>Available rooms</h4>
         <br>
         <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
-        <div id ='rooms_available'><%= f.association :rooms,:collection => @rooms, :label =>'', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %></div>
+        <div id ='rooms_available'></div>
       </div>
      <br>
 

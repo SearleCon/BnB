@@ -20,10 +20,13 @@
       <br>
 
       <div id='guest' class='well'>
+
+
+
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
-        <div id='find_guest'><%= f.input :guest_name, :input_html => { data: { autocomplete_source: bnb_guests_path(@bnb)} } %></div>
-        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign').concat(' New Guest'), f, :guest %></div>
+        <div id='find_guest'><%= f.association :guest%></div>
+        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign').concat('Add a new guest'), f, :guest %></div>
       </div>
 
       <div id='rooms' class='well'>

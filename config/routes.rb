@@ -22,6 +22,7 @@ SampleApp::Application.routes.draw do
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :bnbs, except: [:show] do
+    get :map, on: :collection
     resources :events, only: [:index]
     resources :photos, only: [:index, :new, :create, :destroy]
     resources :bookings do

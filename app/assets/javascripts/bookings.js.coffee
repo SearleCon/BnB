@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
 
+
+  $('#booking_guest_id').select2
+    width: 'element'
+    placeholder: 'Search for a guest'
+
   setupDatepickers()
   bindAvailabeRoomBehaviour()
   setupGuestBehaviour()
@@ -39,9 +44,6 @@ $(document).ready ->
       createBooking(date)
       return false
 
-
-
-
 $('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
   $.lazybox.close()
   $('#calendar').fullCalendar('removeEvents', data.event_id)
@@ -69,6 +71,7 @@ createBooking = (date) ->
     setupGuestBehaviour()
 
 
+
 bindAvailabeRoomBehaviour = () ->
   $('#rooms_available').hide()
   $('#room_finder').click ->
@@ -87,6 +90,9 @@ setupGuestBehaviour = () ->
   $('#guest').bind 'insertion-callback', ->
     $("#find_guest").hide()
     $("#guest a.add_fields").hide()
+  $('#booking_guest_id').select2
+    width: 'element'
+    placeholder: 'Search for a guest'
 
 
 setupDatepickers = () ->

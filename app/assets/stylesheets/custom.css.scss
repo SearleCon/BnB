@@ -150,7 +150,7 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  width: 95%;
+  width: 80%;
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
@@ -393,6 +393,14 @@ input, textarea, select, .uneditable-input {
 #booking_schedule{
   background-color:#55626B;
 }
+
+#booking_guest_id{
+  width: 40%;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
 
 
 

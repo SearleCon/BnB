@@ -28,6 +28,9 @@ gem "wkhtmltopdf-binary"
 gem 'gmaps4rails'
 gem 'client_side_validations-simple_form'
 
+
+gem 'select2-rails'
+
 group :development, :test do
   gem "thin"
   gem 'sqlite3', '1.3.5'

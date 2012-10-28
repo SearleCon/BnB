@@ -23,6 +23,7 @@ SampleApp::Application.routes.draw do
 
   resources :bnbs, except: [:show] do
     get :map, on: :collection
+    get :nearby_bnbs, on: :member
     resources :events, only: [:index]
     resources :photos, only: [:index, :new, :create, :destroy]
     resources :bookings do

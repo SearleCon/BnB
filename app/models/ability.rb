@@ -51,6 +51,8 @@ class Ability
              can :manage, Photo, :bnb => {:user_id => user.id }
 
       when 'Guest'
+        can :map, Bnb
+        can :nearby_bnbs, Bnb
         can :read, Bnb
         can :create, Booking
         can :show, Booking
@@ -59,7 +61,9 @@ class Ability
         can :find_available, Room
       else
         can :read, Bnb
+        can :map, Bnb
         can :read, Photo
+        can :nearby_bnbs, Bnb
     end
   end
 

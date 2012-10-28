@@ -2,6 +2,9 @@ class BnbsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :subregions
 
 
+  def map
+   convert_to_map_data(Bnb.all)
+  end
 
   # GET /bnbs
   # GET /bnbs.json
@@ -16,9 +19,7 @@ class BnbsController < ApplicationController
     end
 
 
-    @json = @bnbs.to_gmaps4rails do |bnb, marker|
-      marker.title "#{bnb.name}"
-    end
+    convert_to_map_data(@bnbs)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,6 +35,14 @@ class BnbsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @bnb }
     end
+  end
+
+  def nearby_bnbs
+  @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page])
+   convert_to_map_data(@bnbs)
+   respond_to do |format|
+     format.html { render 'bnbs/index' }
+   end
   end
 
   # GET /bnbs/new
@@ -96,5 +105,12 @@ class BnbsController < ApplicationController
       regions = render_to_string  partial: 'shared/select_region', parent_region: params[:parent_region]
       regions = regions.html_safe.gsub(/[\n\t\r]/, '')
       render :json => {:html => regions, :error => '' }
+  end
+
+  private
+  def convert_to_map_data(bnbs)
+    @json = bnbs.to_gmaps4rails do |bnb, marker|
+      marker.title "#{bnb.name}"
+    end
   end
 end

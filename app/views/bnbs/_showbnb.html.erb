@@ -32,6 +32,9 @@
         <%= best_in_place_if can?(:update, @bnb), @bnb, :postal_code, type: :input %>
         <br>
         <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
+        <br>
+        <%= link_to 'Find other bnbs in the area', nearby_bnbs_bnb_path(@bnb) %>
+
       </address>
     </div>
     <div class="span4">

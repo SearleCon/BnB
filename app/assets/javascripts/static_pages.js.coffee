@@ -4,9 +4,6 @@
 
 $(document).ready ->
 
-   maxHeight = 0
-   $("div").each ->
-      maxHeight = $(this).height()  if $(this).height() > maxHeight
 
    $("div").height(maxHeight)
 

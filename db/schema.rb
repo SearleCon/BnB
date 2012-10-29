@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024142051) do
+ActiveRecord::Schema.define(:version => 20121029095442) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -171,6 +171,8 @@ ActiveRecord::Schema.define(:version => 20121024142051) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.integer  "role_id"
+    t.string   "country"
+    t.string   "contact_number"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

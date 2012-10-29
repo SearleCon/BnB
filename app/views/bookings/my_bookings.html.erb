@@ -1,49 +1,32 @@
 <div class="hero-unit clearfix">
+  <h1>My Bookings</h1>
+
 <div class="header form-search" align="right">
   <%= form_tag my_bookings_bookings_path, :method => 'get', id: 'search_table_form' do %>
-       <p>
-     <%= hidden_field_tag :direction, params[:direction] %>
-     <%= hidden_field_tag :sort, params[:sort] %>    
-     
-     <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search by bnb", :method => 'get' %>
-     <% if params[:search] %>
-             <% if params[:search] != '' %>
-                    <div> <%=link_to "Back to index", my_bookings_bookings_path %></div>
-                     <% end %>
-             <% end %>
-       </p>
+    <p>
+         <%= hidden_field_tag :direction, params[:direction] %>
+         <%= hidden_field_tag :sort, params[:sort] %>    
+         <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search by bnb", :method => 'get' %>
+         <% if params[:search] %>
+                 <% if params[:search] != '' %>
+                        <div> <%=link_to "Back to index", my_bookings_bookings_path %></div>
+                         <% end %>
+                 <% end %>
+    </p>
   <% end %>
 </div>
 
+<% unless @active_bookings.nil? || @active_bookings.empty? %>
+   <h2>Current</h2>
+ <%= render :partial => 'client_bookings_table', :locals => {bookings: @active_bookings, info_page: 'active_page'  } %>
+<% end %>
 
-<table class="table sort_table">
-  <tr>
-    <th><%= sortable "bnb_id", "Bnb" %></th>
-    <th>Start at</th>
-    <th>End at</th>
-    <th>Email</th>
-    <th>Phone number</th>
-    <th>Rating</th>
-    <th><%= sortable "status"%></th>
-    <th>Actions</th>
-  </tr>
+<% unless @inactive_bookings.nil? || @inactive_bookings.empty? %>
+   <h2>History</h2>
+ <%= render :partial => 'client_bookings_table', :locals => {bookings: @inactive_bookings, info_page: 'inactive_page'  } %>
+<% end %>
 
-  <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.bnb.name %></td>
-        <td><%= booking.event.start_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= booking.event.end_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= link_to booking.bnb.email, contactbnb_path(booking.bnb) %></td>
-        <td><%= booking.bnb.telephone_number %></td>
-        <td>4 stars</td>
-        <td><%= booking.status %></td>
-        <td><%= link_to 'view bnb info', show_bnb_path(booking.bnb) %></td>
-      </tr>
-  <% end %>
-</table>
 
-<br>
-<div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>
 </div>
 
 

@@ -32,14 +32,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service, :contact_number, :country
 
   validates_acceptance_of :terms_of_service
-
-  #before_save :add_name
-
   after_create :send_welcome_email
-
 
 
   def role

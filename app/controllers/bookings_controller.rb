@@ -18,7 +18,9 @@ class BookingsController < ApplicationController
   # GET /my_bookings
   def my_bookings
 
-   @bookings = Booking.includes(:event, :bnb).search(params[:search]).where('bookings.user_id = ?', current_user.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @active_bookings = Booking.active_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:active_page])
+
+    @inactive_bookings = Booking.inactive_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:inactive_page])
 
     respond_to do |format|
       format.html

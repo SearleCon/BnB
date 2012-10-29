@@ -1,8 +1,9 @@
 SampleApp::Application.routes.draw do
 
+
   resources :suggestions
 
-  devise_for :users, :controllers => {:sessions => "sessions"}
+  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
 
   resources :bookings do
     resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
@@ -61,6 +62,11 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contact'
+
+
+  devise_scope :user do
+    match "users/signup/:user_role" => "registrations#new", as: 'register'
+  end
 
   match "*path", :to => "application#routing_error"
 

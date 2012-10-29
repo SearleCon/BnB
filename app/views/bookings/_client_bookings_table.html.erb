@@ -1,0 +1,31 @@
+<table class="table sort_table">
+  <tr>
+    <th><%= sortable "bnb_id", "Bnb" %></th>
+    <th>Start at</th>
+    <th>End at</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>Rating</th>
+    <th><%= sortable "status"%></th>
+    <th>Actions</th>
+  </tr>
+
+  <% bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.bnb.name %></td>
+        <td><%= booking.event.start_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= booking.event.end_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= link_to booking.bnb.email, contactbnb_path(booking.bnb) %></td>
+        <td><%= booking.bnb.telephone_number %></td>
+        <td><% booking.bnb.rating.times do %>
+              <i class="icon-star icon-white"></i>
+          <% end %>
+        </td>
+        <td><%= booking.status %></td>
+        <td><%= link_to 'bnb info', show_bnb_path(booking.bnb), class: 'btn btn-mini btn-primary' %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br>
+<div class="span9" style="text-align: center;"><%= will_paginate(bookings, :param_name => info_page) %></div>

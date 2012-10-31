@@ -23,7 +23,7 @@
       <div id='guest'>
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
-        <div id='find_guest'><%=f.association :guest, error_html: { :id => "name_error" } %></div>
+        <div id='find_guest'><%=f.association :guest, collection: @bnb.guests %></div>
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat('Add a new guest'), f, :guest %></div>
       </div>
       <br>

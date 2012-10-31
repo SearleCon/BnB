@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030133935) do
+ActiveRecord::Schema.define(:version => 20121031124803) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(:version => 20121030133935) do
     t.integer  "user_id"
     t.string   "email"
   end
+
+  add_index "guests", ["bnb_id"], :name => "index_guests_on_bnb_id"
 
   create_table "line_items", :force => true do |t|
     t.string   "description"

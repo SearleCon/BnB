@@ -53,6 +53,11 @@ $('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
   $.lazybox.close()
   $('#calendar').fullCalendar('renderEvent', data)
 
+$('#new_booking').live "ajax:error", (e, data, textStatus, jqXHR) ->
+  $('#errors').html(data.responseText)
+
+
+
 
 
 updateEvent = (the_event) ->
@@ -85,10 +90,8 @@ bindAvailabeRoomBehaviour = () ->
 
 
 setupGuestBehaviour = () ->
-  $('#booking_guest_name').autocomplete
-    source: $('#booking_guest_name').data('autocomplete-source')
-  $('#guest').bind 'insertion-callback', ->
-    $("#find_guest").hide()
+  $('#guest').bind 'cocoon:before-insert', ->
+    $("#find_guest").remove()
     $("#guest a.add_fields").hide()
   $('#booking_guest_id').select2
     width: 'element'

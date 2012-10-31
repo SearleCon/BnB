@@ -1,9 +1,10 @@
-
-<%= simple_form_for @booking, url: bnb_bookings_path(@bnb),:html => {:'data-type' => 'json'}, :remote => true do |f| %>
-  <%= f.error_notification %>
-
+<div class="hero-unit">
+<%= simple_form_for booking, url: bnb_bookings_path(@bnb),:html => {:'data-type' => 'json'}, :remote => true do |f| %>
+ <div id="errors">
+  <%= render 'shared/error_messages', :object => booking %>
+ </div>
     <div class="form-inputs">
-      <div class ="well">
+      <div>
         <h4>Select booking dates:</h4>
         <div class="row-fluid">
           <%= f.simple_fields_for :event  do |event_form| %>
@@ -19,27 +20,22 @@
 
       <br>
 
-      <div id='guest' class='well'>
-
-
-
+      <div id='guest'>
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
-        <div id='find_guest'><%= f.association :guest%></div>
-        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign').concat('Add a new guest'), f, :guest %></div>
+        <div id='find_guest'><%=f.association :guest, error_html: { :id => "name_error" } %></div>
+        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat('Add a new guest'), f, :guest %></div>
       </div>
-
-      <div id='rooms' class='well'>
+      <br>
+      <div id='rooms'>
         <h4>Available rooms</h4>
         <br>
-        <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
+        <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
         <div id ='rooms_available'></div>
       </div>
 
     </div>
-
-
-  <div class="form-actions">
+      <br>
     <%= f.button :submit, :class => 'btn btn-primary' %>
-  </div>
 <% end %>
+</div>

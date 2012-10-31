@@ -1,3 +1,4 @@
+<div class="hero-unit">
 <h1>Please fill in your social media details.</h1>
 
 <%= render :layout => 'form' do |f| %>
@@ -6,4 +7,6 @@
         <%= f.input :twitter_account %>
         <%= f.input :facebook_page %>
     </div>
+      <%= f.button :submit, :value => 'Finish', :id => 'commit', class: "btn btn-primary" %>
 <%end%>
+</div>

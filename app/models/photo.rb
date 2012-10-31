@@ -19,6 +19,8 @@ class Photo < ActiveRecord::Base
 
   after_destroy :destroy_file
 
+  validates :description, :image, presence: true
+
 
   private
   def destroy_file

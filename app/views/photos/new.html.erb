@@ -3,10 +3,10 @@
   <%= simple_form_for @photo, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
       <%= f.error_notification %>
       <%= image_tag(@photo.image_url) if @photo.image? %>
-      <%= f.input :description, input_html: { maxlength: 20, size: 20 }, as: :text %>
+      <%= f.input :description, as: :string %>
       <div style="display:none;"><%= f.file_field :image %></div>
       <%= f.input :filepath, readonly: true,  :wrapper => :append do %>
-          <%= f.input_field :filepath, readonly: true %><%= button_tag 'Browse', type: 'button', class: 'btn btn-mini', id: 'browse_files' %>
+          <%= f.input_field :filepath, readonly: true %><%= button_tag 'Browse', type: 'button', class: 'btn btn-primary btn-mini', id: 'browse_files' %>
       <% end %>
       <%= f.input :main %>
 

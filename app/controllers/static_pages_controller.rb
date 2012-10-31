@@ -21,4 +21,8 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def startpage
+
+  end
+
 end

@@ -33,7 +33,9 @@
         <br>
         <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
         <br>
-        <%= link_to 'Find other bnbs in the area', nearby_bnbs_bnb_path(@bnb) %>
+        <% unless user_signed_in? && current_user.role.description == 'Owner' %>
+         <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat( 'Find other bnbs in the area'), nearby_bnbs_bnb_path(@bnb) %>
+        <% end %>
 
       </address>
     </div>

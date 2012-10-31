@@ -16,6 +16,7 @@ class BnbStepsController < ApplicationController
     build_rooms(params[:bnb][:number_of_rooms].to_i) if params[:bnb][:number_of_rooms]
     params[:bnb][:status] = step.to_s
     params[:bnb][:status] = 'active' if step == steps.last
+    step == steps.last ? @step_text == 'Finish' : @step_text = 'Continue'
     @bnb.update_attributes(params[:bnb])
     render_wizard @bnb
   end

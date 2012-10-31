@@ -6,5 +6,5 @@
   <td><%= best_in_place room, :rates, :display_with => :number_to_currency, :path => bnb_room_path(@bnb,room)  %></td>
   <td><%= best_in_place room, :capacity, :type => :input, :path => bnb_room_path(@bnb,room)  %></td>
   <td><%= best_in_place room, :available, :type => :checkbox, :path => bnb_room_path(@bnb,room)   %></td>
-  <td title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign'), bnb_room_path(@bnb,room), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></td>
+  <td title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), bnb_room_path(@bnb,room), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></td>
 </tr>

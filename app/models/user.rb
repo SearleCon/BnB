@@ -20,6 +20,8 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  role_id                :integer
+#  country                :string(255)
+#  contact_number         :string(255)
 #
 
 class User < ActiveRecord::Base

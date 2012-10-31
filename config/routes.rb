@@ -55,8 +55,8 @@ SampleApp::Application.routes.draw do
   match 'contact/:bnb_id' => 'contact#create', :as => 'contactbnb', :via => :post
 
   root to: 'static_pages#home'
-  # match '/', to: 'static_pages#home'
 
+  match '/startpage', to: 'static_pages#startpage'
   match '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
   match '/privacypolicy', to: 'static_pages#privacy_policy'
   match '/help',    to: 'static_pages#help'
@@ -72,7 +72,7 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 24 Oct 2012 11:13
+# Generated on 30 Oct 2012 09:16
 #
 #                           POST   /suggestions(.:format)                                      suggestions#create
 #            new_suggestion GET    /suggestions/new(.:format)                                  suggestions#new
@@ -87,12 +87,12 @@ end
 #         new_user_password GET    /users/password/new(.:format)                               devise/passwords#new
 #        edit_user_password GET    /users/password/edit(.:format)                              devise/passwords#edit
 #                           PUT    /users/password(.:format)                                   devise/passwords#update
-#  cancel_user_registration GET    /users/cancel(.:format)                                     devise/registrations#cancel
-#         user_registration POST   /users(.:format)                                            devise/registrations#create
-#     new_user_registration GET    /users/sign_up(.:format)                                    devise/registrations#new
-#    edit_user_registration GET    /users/edit(.:format)                                       devise/registrations#edit
-#                           PUT    /users(.:format)                                            devise/registrations#update
-#                           DELETE /users(.:format)                                            devise/registrations#destroy
+#  cancel_user_registration GET    /users/cancel(.:format)                                     registrations#cancel
+#         user_registration POST   /users(.:format)                                            registrations#create
+#     new_user_registration GET    /users/sign_up(.:format)                                    registrations#new
+#    edit_user_registration GET    /users/edit(.:format)                                       registrations#edit
+#                           PUT    /users(.:format)                                            registrations#update
+#                           DELETE /users(.:format)                                            registrations#destroy
 #        booking_line_items POST   /bookings/:booking_id/line_items(.:format)                  line_items#create
 #         booking_line_item PUT    /bookings/:booking_id/line_items/:id(.:format)              line_items#update
 #                           DELETE /bookings/:booking_id/line_items/:id(.:format)              line_items#destroy
@@ -114,6 +114,8 @@ end
 #                    events GET    /events(.:format)                                           events#index
 #                     event PUT    /events/:id(.:format)                                       events#update
 #                  calendar        /calendar(/:year(/:month))(.:format)                        calendar#index {:year=>/\d{4}/, :month=>/\d{1,2}/}
+#                  map_bnbs GET    /bnbs/map(.:format)                                         bnbs#map
+#           nearby_bnbs_bnb GET    /bnbs/:id/nearby_bnbs(.:format)                             bnbs#nearby_bnbs
 #                bnb_events GET    /bnbs/:bnb_id/events(.:format)                              events#index
 #                bnb_photos GET    /bnbs/:bnb_id/photos(.:format)                              photos#index
 #                           POST   /bnbs/:bnb_id/photos(.:format)                              photos#create
@@ -166,9 +168,11 @@ end
 #                   contact POST   /contact(.:format)                                          contact#create
 #                contactbnb POST   /contact/:bnb_id(.:format)                                  contact#create
 #                      root        /                                                           static_pages#home
+#                 startpage        /startpage(.:format)                                        static_pages#startpage
 #      terms_and_conditions        /terms_and_conditions(.:format)                             static_pages#terms_and_conditions
 #             privacypolicy        /privacypolicy(.:format)                                    static_pages#privacy_policy
 #                      help        /help(.:format)                                             static_pages#help
 #                     about        /about(.:format)                                            static_pages#about
 #                 contactus        /contactus(.:format)                                        static_pages#contact
+#                  register        /users/signup/:user_role(.:format)                          registrations#new
 #                                  /*path(.:format)                                            application#routing_error

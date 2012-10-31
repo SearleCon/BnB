@@ -1,0 +1,14 @@
+<div class="center hero-unit">
+  <h1>Welcome to BnbEezy</h1>
+
+  <p>Thank you for signing with us!</p>
+  <br>
+  <% if current_user.role.description == "Owner" %>
+  <p>As an owner you need to set up your bnb first and foremost, to do so now click on the button below.</p>
+    <%= link_to "Click here to create your Bnb", bnbs_url, :method => 'post', class: "btn btn-large btn-primary" %>
+   <p>Once your bnb is created you will be able to setup rooms, add guests, gain access to your booking schedule and so much more!</p>
+  <% else %>
+   <p>As a guest, you now have the ability to book online, track a history of your bookings and have a relaxing holiday or business trip</p>
+   <p>Click here to go to the <%= link_to 'Home', root_path %> page and search and book a bnb now!</p>
+  <% end %>
+</div>

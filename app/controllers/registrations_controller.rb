@@ -4,4 +4,10 @@ class RegistrationsController < Devise::RegistrationsController
     @user = User.new
     @user.role_id = @role.id
   end
+
+  protected
+  def after_sign_up_path_for(resource_or_scope)
+    startpage_url
+  end
+
 end

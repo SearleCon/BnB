@@ -21,6 +21,10 @@ class Room < ActiveRecord::Base
   has_and_belongs_to_many :bookings
   has_many  :guests, :through => :bookings
 
+  validates :description, :rates, :room_number, :capacity, presence: true
+  validates :rates, :room_number, :capacity, numericality: true
+  validates :description, length: { minimum: 2 }
+
   scope :booked, lambda { |start_date, end_date|
      includes({ :bookings => :event}).where('(events.start_at BETWEEN ? AND ? OR events.end_at BETWEEN ? AND ? OR events.start_at <= ? AND events.end_at >= ?) And status != ?',start_date, end_date, start_date, end_date, start_date, end_date, :closed)
   }

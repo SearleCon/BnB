@@ -17,6 +17,13 @@ class Guest < ActiveRecord::Base
   has_many :bookings
   has_many :rooms, :through => :bookings
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :name, :surname, :contact_number, presence: true
+  validates :contact_number, numericality: true
+  validates :contact_number, length: { is: 10 }
+  validates :email, format: { with: VALID_EMAIL_REGEX},  uniqueness: { case_sensitive: false }, allow_nil: true
+
   scope :search_by_name, lambda { |term|
     order(:name).where("name like ?", "%#{term}%")
   }

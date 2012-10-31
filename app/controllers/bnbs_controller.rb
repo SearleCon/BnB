@@ -31,10 +31,15 @@ class BnbsController < ApplicationController
   # GET /bnbs/1.json
   def show
     @bnb = Bnb.includes(:photos).find_by_user_id(current_user) if @bnb.nil?
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bnb }
-    end
+
+    if @bnb.nil?
+      redirect_to startpage_url
+   else
+      respond_to do |format|
+        format.html
+        format.json { render json: @bnb }
+      end
+   end
   end
 
   def nearby_bnbs

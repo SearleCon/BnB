@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
 
     if request.xhr?
-      event_details = render_to_string :partial => 'bookings/form'
+      event_details = render_to_string :partial => 'bookings/form', locals: { booking: @booking }
       event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
       render :json => {:html => event_details, :error => '' }
     else
@@ -79,7 +79,6 @@ class BookingsController < ApplicationController
       @booking.status = :booked
     end
 
-
     respond_to do |format|
       if @booking.save
         if current_user.role.description == "Guest"
@@ -90,8 +89,15 @@ class BookingsController < ApplicationController
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
         format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
       else
-        format.html { render action: "new" }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        format.html  do
+          if request.xhr?
+            event_details = render_to_string :partial => 'shared/error_messages', locals: { object: @booking}
+            event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
+            render :json =>  event_details , status: :unprocessable_entity
+          else
+            render action: :new
+          end
+        end
       end
     end
   end

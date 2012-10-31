@@ -1,11 +1,14 @@
-<h1>Please fill in details for your Bed and Breakfast</h1>
+<div class="hero-unit">
+    <h1>Please fill in details for your Bed and Breakfast</h1>
 
-<%= render :layout => 'form' do |f| %>
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :number_of_rooms %>
-      <%= f.input :standard_rate %>
-      <%=f.input :rating, :collection => 1..5,  :as => :radio_buttons %>
-    </div>
-<% end %>
+    <%= render :layout => 'form' do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :number_of_rooms %>
+          <%= f.input :standard_rate, as: :string%>
+          <%= f.input :rating, :collection => 1..5,  :as => :radio_buttons %>
+        </div>
+      <%= f.button :submit, :value => 'Continue', :id => 'commit', class: "btn btn-primary" %>
+    <% end %>
+</div>

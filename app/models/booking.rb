@@ -20,8 +20,8 @@ class Booking < ActiveRecord::Base
   has_one :event, :dependent => :delete
 
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
-  validates :guest_name, presence: true
-
+  validates_presence_of :guest, :rooms
+  validates_associated :guest
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true

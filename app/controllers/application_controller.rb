@@ -40,16 +40,13 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     if current_user.role.description == "Owner"
       session[:bnb_id] = Bnb.find_by_user_id(current_user)
-      show_bnb_path
+      show_bnb_url
     else
       session[:last_page] ? session[:last_page] :
           root_url
     end
   end
 
-  def after_sign_up_path_for(resource_or_scope)
-      about_path
-  end
 
 
 

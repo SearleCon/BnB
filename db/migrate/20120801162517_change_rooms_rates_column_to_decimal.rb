@@ -1,7 +1,7 @@
 class ChangeRoomsRatesColumnToDecimal < ActiveRecord::Migration
   def self.up
     change_table :rooms do |t|
-      t.change :rates, :BigDecimal
+      t.change :rates, :decimal
     end
   end
 

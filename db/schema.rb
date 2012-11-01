@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031124803) do
+ActiveRecord::Schema.define(:version => 20121101074810) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"

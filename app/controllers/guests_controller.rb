@@ -94,7 +94,8 @@ class GuestsController < ApplicationController
   def create_default_guest
     @guest.name = 'Joe'
     @guest.surname = 'Soap'
-    @guest.contact_number = '123456789'
+    @guest.contact_number = '0123456789'
+    @guest.email = 'guest_new@example.com'
   end
 
   def sort_direction

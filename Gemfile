@@ -7,7 +7,6 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'simple_form'
-gem 'client_side_validations'
 gem 'wicked'
 gem 'country_select'
 gem 'rmagick'
@@ -27,7 +26,7 @@ gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
 gem 'gmaps4rails'
-gem 'client_side_validations-simple_form'
+
 
 
 gem 'select2-rails'

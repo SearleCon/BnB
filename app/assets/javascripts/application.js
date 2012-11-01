@@ -16,9 +16,6 @@
 //= require jquery_ujs
 //= require select2
 //= require bootstrap
-//= require rails.validations
-//= require rails.validations.simple_form
-//= require inline_form
 //= require jquery.purr
 //= require best_in_place
 //= require jquery.rest

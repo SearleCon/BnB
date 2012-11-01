@@ -95,7 +95,7 @@ class BookingsController < ApplicationController
             event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
             render :json =>  event_details , status: :unprocessable_entity
           else
-            render action: :new
+            render 'bookings/client_booking_form'
           end
         end
       end

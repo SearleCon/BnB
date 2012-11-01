@@ -1,0 +1,923 @@
+
+
+Started GET "/bnbs/1/bookings" for 127.0.0.1 at 2012-10-31 16:15:11 +0200
+Processing by BookingsController#index as HTML
+  Parameters: {"bnb_id"=>"1"}
+  [1m[35mBnb Load (0.2ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mBooking Load (0.3ms)[0m  [1mSELECT "bookings".* FROM "bookings" WHERE "bookings"."bnb_id" = 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-31 16:15:11 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."main" = 't'
+  Rendered shared/_select_region.html.erb (8.4ms)
+  Rendered shared/_search.html.erb (35.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (38.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 146ms (Views: 144.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/lazybox.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /lazybox.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.ui.datepicker.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.ui.core.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.ui.theme.css - 200 OK (0ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /fullcalendar.css - 200 OK (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /select2.css - 200 OK (0ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bnbs.css - 200 OK (0ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bnb_steps.css - 200 OK (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bookings.css - 200 OK (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /custom.css - 200 OK (2ms)
+
+
+Started GET "/assets/contact.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /contact.css - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails.css - 200 OK (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /guests.css - 200 OK (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /events.css - 200 OK (0ms)
+
+
+Started GET "/assets/line_items.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /line_items.css - 200 OK (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /photos.css - 200 OK (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /suggestions.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery-ui.js - 200 OK (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /select2.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-affix.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-transition.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-alert.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-button.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-carousel.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-scrollspy.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-tab.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-collapse.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-tooltip.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-popover.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap-typeahead.js - 200 OK (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /rails.validations.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/rails.validations.simple_form.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /rails.validations.simple_form.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.purr.js - 200 OK (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /inline_form.js - 200 OK (0ms)
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /best_in_place.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.rest.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.rest.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.ui.core.js - 200 OK (0ms)
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /fullcalendar.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /jquery.ui.datepicker.js - 200 OK (0ms)
+
+
+Started GET "/assets/cocoon.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /cocoon.js - 200 OK (0ms)
+
+
+Started GET "/assets/lazybox.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /lazybox.js - 200 OK (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bnb_steps.js - 200 OK (0ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bnbs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bookings.js - 200 OK (0ms)
+
+
+Started GET "/assets/contact.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /contact.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails/gmaps4rails.base.js - 200 OK (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /events.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails/gmaps4rails.bing.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 200 OK (0ms)
+
+
+Started GET "/assets/line_items.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /line_items.js - 200 OK (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /photos.js - 200 OK (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /guests.js - 200 OK (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /rooms.js - 200 OK (0ms)
+
+
+Started GET "/assets/suggestions.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /suggestions.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/bnb_home_screen.jpg" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /bnb_home_screen.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/holiday.jpg" for 127.0.0.1 at 2012-10-31 16:15:12 +0200
+Served asset /holiday.jpg - 200 OK (0ms)
+
+
+Started GET "/bnbs/1/bookings" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Processing by BookingsController#index as HTML
+  Parameters: {"bnb_id"=>"1"}
+  [1m[36mBnb Load (1.0ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mBooking Load (0.3ms)[0m  SELECT "bookings".* FROM "bookings" WHERE "bookings"."bnb_id" = 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."main" = 't'[0m
+  Rendered shared/_select_region.html.erb (7.8ms)
+  Rendered shared/_search.html.erb (36.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (41.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 125ms (Views: 123.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /fullcalendar.css - 200 OK (0ms)
+
+
+Started GET "/assets/lazybox.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /lazybox.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.ui.datepicker.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.ui.theme.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.ui.core.css - 200 OK (0ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /select2.css - 200 OK (0ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bnb_steps.css - 200 OK (0ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bookings.css - 200 OK (0ms)
+
+
+Started GET "/assets/contact.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /contact.css - 200 OK (0ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bnbs.css - 200 OK (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /custom.css - 200 OK (2ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /gmaps4rails.css - 200 OK (0ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /events.css - 200 OK (0ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /guests.css - 200 OK (0ms)
+
+
+Started GET "/assets/line_items.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /line_items.css - 200 OK (0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /photos.css - 200 OK (0ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /suggestions.css - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /static_pages.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery-ui.js - 200 OK (0ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /select2.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-transition.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-affix.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-button.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-alert.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-carousel.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-collapse.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-tooltip.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-tab.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-scrollspy.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-popover.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap-typeahead.js - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /bootstrap.js - 200 OK (0ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /rails.validations.js - 200 OK (0ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /inline_form.js - 200 OK (0ms)
+
+
+Started GET "/assets/rails.validations.simple_form.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /rails.validations.simple_form.js - 200 OK (0ms)
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /best_in_place.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.purr.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.rest.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:25 +0200
+Served asset /jquery.rest.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /jquery.ui.core.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /jquery.ui.datepicker.js - 200 OK (0ms)
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /fullcalendar.js - 200 OK (0ms)
+
+
+Started GET "/assets/lazybox.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /lazybox.js - 200 OK (0ms)
+
+
+Started GET "/assets/cocoon.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /cocoon.js - 200 OK (0ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /bnb_steps.js - 200 OK (0ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /bnbs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /bookings.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /gmaps4rails/gmaps4rails.base.js - 200 OK (0ms)
+
+
+Started GET "/assets/contact.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /contact.js - 200 OK (0ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /events.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /gmaps4rails/gmaps4rails.bing.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 200 OK (0ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /guests.js - 200 OK (0ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /photos.js - 200 OK (0ms)
+
+
+Started GET "/assets/line_items.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /line_items.js - 200 OK (0ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /rooms.js - 200 OK (0ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /static_pages.js - 200 OK (0ms)
+
+
+Started GET "/assets/suggestions.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /suggestions.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /application.js - 200 OK (2ms)
+
+
+Started GET "/assets/bnb_home_screen.jpg" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /bnb_home_screen.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/holiday.jpg" for 127.0.0.1 at 2012-10-31 17:52:26 +0200
+Served asset /holiday.jpg - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-01 08:08:38 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."main" = 't'[0m
+  Rendered shared/_select_region.html.erb (8.8ms)
+  Rendered shared/_search.html.erb (2395.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (2456.2ms)
+Compiled fullcalendar.css  (0ms)  (pid 10002)
+Compiled lazybox.css  (9ms)  (pid 10002)
+Compiled jquery.ui.core.css  (1ms)  (pid 10002)
+Compiled jquery.ui.theme.css  (10ms)  (pid 10002)
+Compiled jquery.ui.datepicker.css  (38ms)  (pid 10002)
+Compiled select2.css  (212ms)  (pid 10002)
+Compiled bnb_steps.css  (2ms)  (pid 10002)
+Compiled bnbs.css  (2ms)  (pid 10002)
+Compiled bookings.css  (3ms)  (pid 10002)
+Compiled contact.css  (1ms)  (pid 10002)
+Compiled custom.css  (2453ms)  (pid 10002)
+Compiled events.css  (1ms)  (pid 10002)
+Compiled gmaps4rails.css  (0ms)  (pid 10002)
+Compiled guests.css  (1ms)  (pid 10002)
+Compiled line_items.css  (1ms)  (pid 10002)
+Compiled photos.css  (2ms)  (pid 10002)
+Compiled static_pages.css  (1ms)  (pid 10002)
+Compiled suggestions.css  (3ms)  (pid 10002)
+Compiled application.css  (3081ms)  (pid 10002)
+Compiled jquery.js  (40ms)  (pid 10002)
+Compiled jquery-ui.js  (18ms)  (pid 10002)
+Compiled jquery_ujs.js  (0ms)  (pid 10002)
+Compiled select2.js  (1ms)  (pid 10002)
+Compiled bootstrap-transition.js  (0ms)  (pid 10002)
+Compiled bootstrap-affix.js  (0ms)  (pid 10002)
+Compiled bootstrap-alert.js  (0ms)  (pid 10002)
+Compiled bootstrap-button.js  (0ms)  (pid 10002)
+Compiled bootstrap-carousel.js  (0ms)  (pid 10002)
+Compiled bootstrap-collapse.js  (0ms)  (pid 10002)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 10002)
+Compiled bootstrap-modal.js  (0ms)  (pid 10002)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 10002)
+Compiled bootstrap-tab.js  (0ms)  (pid 10002)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 10002)
+Compiled bootstrap-popover.js  (0ms)  (pid 10002)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 10002)
+Compiled bootstrap.js  (294ms)  (pid 10002)
+Compiled rails.validations.js  (0ms)  (pid 10002)
+Compiled rails.validations.simple_form.js  (0ms)  (pid 10002)
+Compiled inline_form.js  (0ms)  (pid 10002)
+Compiled jquery.purr.js  (0ms)  (pid 10002)
+Compiled best_in_place.js  (0ms)  (pid 10002)
+Compiled jquery.rest.js  (0ms)  (pid 10002)
+Compiled jquery.ui.core.js  (1ms)  (pid 10002)
+Compiled jquery.ui.datepicker.js  (12ms)  (pid 10002)
+Compiled fullcalendar.js  (1ms)  (pid 10002)
+Compiled lazybox.js  (297ms)  (pid 10002)
+Compiled cocoon.js  (0ms)  (pid 10002)
+Compiled bnb_steps.js  (103ms)  (pid 10002)
+Compiled bnbs.js  (88ms)  (pid 10002)
+Compiled bookings.js  (156ms)  (pid 10002)
+Compiled contact.js  (147ms)  (pid 10002)
+Compiled events.js  (87ms)  (pid 10002)
+Compiled gmaps4rails/gmaps4rails.base.js  (799ms)  (pid 10002)
+Compiled gmaps4rails/gmaps4rails.bing.js  (203ms)  (pid 10002)
+Compiled gmaps4rails/gmaps4rails.googlemaps.js  (512ms)  (pid 10002)
+Compiled gmaps4rails/gmaps4rails.mapquest.js  (210ms)  (pid 10002)
+Compiled gmaps4rails/gmaps4rails.openlayers.js  (401ms)  (pid 10002)
+Compiled guests.js  (91ms)  (pid 10002)
+Compiled line_items.js  (87ms)  (pid 10002)
+Compiled photos.js  (85ms)  (pid 10002)
+Compiled rooms.js  (154ms)  (pid 10002)
+Compiled static_pages.js  (113ms)  (pid 10002)
+Compiled suggestions.js  (98ms)  (pid 10002)
+Compiled application.js  (4672ms)  (pid 10002)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (2.1ms)
+Completed 200 OK in 10616ms (Views: 10438.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /application.css - 200 OK (86ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /jquery.ui.core.css - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /jquery.ui.theme.css - 200 OK (16ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /jquery.ui.datepicker.css - 200 OK (12ms)
+
+
+Started GET "/assets/fullcalendar.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /fullcalendar.css - 200 OK (6ms)
+
+
+Started GET "/assets/lazybox.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /lazybox.css - 200 OK (7ms)
+
+
+Started GET "/assets/select2.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /select2.css - 200 OK (5ms)
+
+
+Started GET "/assets/bnb_steps.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /bnb_steps.css - 200 OK (3ms)
+
+
+Started GET "/assets/bnbs.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:49 +0200
+Served asset /bnbs.css - 200 OK (3ms)
+
+
+Started GET "/assets/bookings.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bookings.css - 200 OK (4ms)
+
+
+Started GET "/assets/contact.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /contact.css - 200 OK (3ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /custom.css - 200 OK (25ms)
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /events.css - 200 OK (4ms)
+
+
+Started GET "/assets/gmaps4rails.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /gmaps4rails.css - 200 OK (4ms)
+
+
+Started GET "/assets/guests.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /guests.css - 200 OK (4ms)
+
+
+Started GET "/assets/line_items.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /line_items.css - 200 OK (4ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /photos.css - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /static_pages.css - 200 OK (3ms)
+
+
+Started GET "/assets/suggestions.css?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /suggestions.css - 200 OK (52ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery.js - 200 OK (46ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery-ui.js - 200 OK (84ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery_ujs.js - 200 OK (7ms)
+
+
+Started GET "/assets/select2.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /select2.js - 200 OK (37ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-button.js - 200 OK (7ms)
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-affix.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-alert.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-transition.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-carousel.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-collapse.js - 200 OK (7ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-dropdown.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-modal.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-scrollspy.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-tab.js - 200 OK (6ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-tooltip.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-popover.js - 200 OK (4ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap-typeahead.js - 200 OK (5ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /bootstrap.js - 200 OK (48ms)
+
+
+Started GET "/assets/rails.validations.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /rails.validations.js - 200 OK (10ms)
+
+
+Started GET "/assets/rails.validations.simple_form.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /rails.validations.simple_form.js - 200 OK (7ms)
+
+
+Started GET "/assets/inline_form.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /inline_form.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.purr.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery.purr.js - 200 OK (7ms)
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /best_in_place.js - 200 OK (59ms)
+
+
+Started GET "/assets/jquery.rest.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery.rest.js - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery.ui.core.js - 200 OK (55ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /jquery.ui.datepicker.js - 200 OK (27ms)
+
+
+Started GET "/assets/fullcalendar.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:50 +0200
+Served asset /fullcalendar.js - 200 OK (30ms)
+
+
+Started GET "/assets/lazybox.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /lazybox.js - 200 OK (7ms)
+
+
+Started GET "/assets/cocoon.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /cocoon.js - 200 OK (5ms)
+
+
+Started GET "/assets/bnb_steps.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /bnb_steps.js - 200 OK (3ms)
+
+
+Started GET "/assets/bnbs.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /bnbs.js - 200 OK (3ms)
+
+
+Started GET "/assets/bookings.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /bookings.js - 200 OK (4ms)
+
+
+Started GET "/assets/contact.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /contact.js - 200 OK (3ms)
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /events.js - 200 OK (3ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /gmaps4rails/gmaps4rails.base.js - 200 OK (5ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /gmaps4rails/gmaps4rails.bing.js - 200 OK (13ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /gmaps4rails/gmaps4rails.googlemaps.js - 200 OK (10ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /gmaps4rails/gmaps4rails.mapquest.js - 200 OK (4ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /gmaps4rails/gmaps4rails.openlayers.js - 200 OK (6ms)
+
+
+Started GET "/assets/guests.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /guests.js - 200 OK (5ms)
+
+
+Started GET "/assets/line_items.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /line_items.js - 200 OK (3ms)
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /photos.js - 200 OK (4ms)
+
+
+Started GET "/assets/rooms.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /rooms.js - 200 OK (2ms)
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /static_pages.js - 200 OK (3ms)
+
+
+Started GET "/assets/suggestions.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /suggestions.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /application.js - 200 OK (277ms)
+
+
+Started GET "/assets/bnb_home_screen.jpg" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /bnb_home_screen.jpg - 200 OK (14ms)
+
+
+Started GET "/assets/holiday.jpg" for 127.0.0.1 at 2012-11-01 08:08:51 +0200
+Served asset /holiday.jpg - 200 OK (11ms)

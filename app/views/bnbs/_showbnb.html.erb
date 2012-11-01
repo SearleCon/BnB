@@ -13,7 +13,7 @@
   </div>
   <div class="span5 pull-right">
     <div class="thumbnail">
-      <% unless @bnb.photos.nil? %>
+      <% unless @bnb.photos.nil? || @bnb.photos.empty? %>
       <%= image_tag @bnb.photos.find_by_main(true).image_url %>
       <% end %>
     </div>

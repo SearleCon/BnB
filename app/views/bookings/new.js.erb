@@ -1,0 +1,34 @@
+
+$.lazybox('<%= escape_javascript(render :partial => 'bookings/form',  locals: { booking: @booking })%>');
+
+
+// setup controls
+var setMinMaxDate;
+
+$("input.datepicker").each(function (i) {
+    $(this).datepicker({
+        dateFormat:"DD, d MM yy",
+        altFormat:"yy-mm-dd",
+        altField:$(this).next(),
+        minDate:0,
+        onClose:function (dateText, inst) {
+            return setMinMaxDate(inst, dateText);
+        }
+    });
+});
+
+$('#booking_guest_id').select2({
+    width: 'element',
+    placeholder: 'Search for a guest'
+});
+
+
+setMinMaxDate = function (element, dateText) {
+    if (element.id === 'booking_event_attributes_start_at') {
+        $('#booking_event_attributes_end_at').datepicker("option", "minDate", dateText);
+    } else {
+        $('#booking_event_attributes_start_at').datepicker("option", "maxDate", dateText);
+    }
+};
+
+

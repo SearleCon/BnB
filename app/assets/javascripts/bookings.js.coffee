@@ -4,14 +4,6 @@
 $(document).ready ->
 
 
-  $('#booking_guest_id').select2
-    width: 'element'
-    placeholder: 'Search for a guest'
-
-  setupDatepickers()
-  bindAvailabeRoomBehaviour()
-  setupGuestBehaviour()
-
   $('#calendar').fullCalendar
     editable: true,
     header:
@@ -37,25 +29,31 @@ $(document).ready ->
       updateEvent(event)
 
     eventClick: (calEvent, jsEvent, view) ->
-      showBooking(calEvent)
+      showBooking2(calEvent)
       return false
 
     dayClick: (date, allDay, jsEvent, view) ->
-      createBooking(date)
+      createBooking2(date)
       return false
 
-$('#deleteBooking').live "ajax:success", (e, data, textStatus, jqXHR) ->
-  $.lazybox.close()
-  $('#calendar').fullCalendar('removeEvents', data.event_id)
 
-
-$('#new_booking').live "ajax:success", (e, data, textStatus, jqXHR) ->
-  $.lazybox.close()
-  $('#calendar').fullCalendar('renderEvent', data)
 
 $('#new_booking').live "ajax:error", (e, data, textStatus, jqXHR) ->
   $('#errors').html(data.responseText)
 
+$('#room_finder').live 'click', ->
+  $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
+  $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
+  $.read $(this).attr('href'), (response) ->
+    $("#rooms_available").html(response.html)
+    $('#room_finder').hide()
+    $('#rooms_available').show()
+  return false
+
+
+$('#guest').live 'cocoon:before-insert', ->
+  $("#find_guest").remove()
+  $("#guest a.add_fields").hide()
 
 
 
@@ -63,56 +61,29 @@ $('#new_booking').live "ajax:error", (e, data, textStatus, jqXHR) ->
 updateEvent = (the_event) ->
   $.update "/events/" + the_event.id, {  start_at: the_event.start, end_at: the_event.end }
 
-showBooking = (the_event) ->
-  $.read the_event.url, (response) ->
-    $.lazybox(response.html)
+showBooking2 = (the_event) ->
+  $.ajax({
+  type : 'GET',
+  url : the_event.url,
+  dataType : 'script'
+  });
 
-createBooking = (date) ->
+
+createBooking2 = (date) ->
   path = $('#new_booking_path').val()
-  $.read path, {date: date },  (response) ->
-    $.lazybox(response.html)
-    setupDatepickers()
-    bindAvailabeRoomBehaviour()
-    setupGuestBehaviour()
+  $.ajax({
+  data: { date: date }
+  type : 'GET',
+  url : path,
+  dataType : 'script'
+  });
 
 
 
-bindAvailabeRoomBehaviour = () ->
-  $('#rooms_available').hide()
-  $('#room_finder').click ->
-    $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
-    $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
-    $.read $(this).attr('href'), (response) ->
-      $("#rooms_available").html(response.html)
-      $('#room_finder').hide()
-      $('#rooms_available').show()
-    return false
 
 
-setupGuestBehaviour = () ->
-  $('#guest').bind 'cocoon:before-insert', ->
-    $("#find_guest").remove()
-    $("#guest a.add_fields").hide()
-  $('#booking_guest_id').select2
-    width: 'element'
-    placeholder: 'Search for a guest'
 
 
-setupDatepickers = () ->
-  $("input.datepicker").each (i) ->
-    $(this).datepicker
-      dateFormat: "DD, d MM yy"
-      altFormat: "yy-mm-dd"
-      altField: $(this).next()
-      minDate: 0
-      onClose: (dateText, inst) ->
-        setMinMaxDate(inst, dateText)
-
-setMinMaxDate = (element, dateText) ->
-  if element.id == 'booking_event_attributes_start_at'
-    $('#booking_event_attributes_end_at').datepicker "option", "minDate", dateText
-  else
-    $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
 
 
 

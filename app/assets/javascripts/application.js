@@ -25,6 +25,8 @@
 //= require cocoon
 //= require_tree .
 
+
+// change confirmation box to bootstrap styles
 $.rails.allowAction = function(link) {
     if (!link.attr('data-confirm')) {
         return true;
@@ -37,7 +39,6 @@ $.rails.confirmed = function(link) {
     link.removeAttr('data-confirm');
     return link.trigger('click.rails');
 };
-
 
 $.rails.showConfirmDialog = function(link) {
     var html, message;
@@ -54,6 +55,27 @@ $.ajaxSetup({
         xhr.setRequestHeader("Accept", "text/javascript");
     }
 });
+
+$(document).ready(function() {
+    $('.best_in_place').best_in_place();
+    $("[rel=tooltip]").tooltip({
+        animation: true,
+        placement: 'right'
+    });
+    return $('#bnb_country').change(function(event) {
+        var country_code, select_wrapper, url;
+        select_wrapper = $('#order_state_code_wrapper');
+        $('select', select_wrapper).attr('disabled', true);
+        country_code = $(this).val();
+        url = "/bnbs/sub_region_options?parent_region=" + country_code.toString();
+        return $.read(url, function(response) {
+            return select_wrapper.html(response.html);
+        });
+    });
+});
+
+
+
 
 
 

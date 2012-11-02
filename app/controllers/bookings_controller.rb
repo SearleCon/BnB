@@ -31,16 +31,10 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
-    if request.xhr?
-      booking = render_to_string :partial => 'bookings/show', :locals => {:booking => @booking}
-      booking = booking.html_safe.gsub(/[\n\t\r]/, '')
-      render :json => {:html => booking, :error => '' }
-    else
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @booking }
+        format.js { @booking }
       end
-    end
   end
 
   # GET /bookings/new
@@ -53,27 +47,18 @@ class BookingsController < ApplicationController
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
 
-    if request.xhr?
-      event_details = render_to_string :partial => 'bookings/form', locals: { booking: @booking }
-      event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
-      render :json => {:html => event_details, :error => '' }
-    else
-      respond_to do |format|
-        format.html { render 'client_booking_form'}
-        format.json { render json: @booking }
-      end
+    respond_to do |format|
+         format.html { render 'client_booking_form'}
+         format.js { @booking }
     end
   end
 
-  # GET /bookings/1/edit
-  def edit
-  end
 
   # POST /bookings
   # POST /bookings.json
   def create
     @booking = @bnb.bookings.new(params[:booking])
-    @booking.event.name = @booking.guest_name
+    @booking.event.name = @booking.guest.name
     @booking.user_id = current_user.id
     if current_user.role.description == "Owner"
       @booking.status = :booked
@@ -87,17 +72,10 @@ class BookingsController < ApplicationController
         end
         @event = Event.find_by_booking_id(@booking)
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
-        format.json { render json: @event.as_json, status: :created, location: @event,  notice: 'Booking was created'}
+        format.js
       else
-        format.html  do
-          if request.xhr?
-            event_details = render_to_string :partial => 'shared/error_messages', locals: { object: @booking}
-            event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
-            render :json =>  event_details , status: :unprocessable_entity
-          else
-            render 'bookings/client_booking_form'
-          end
-        end
+        format.html  { render 'bookings/client_booking_form' }
+        format.js
       end
     end
   end
@@ -119,9 +97,10 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
+    @event_id = @booking.event.id
     @booking.destroy
     respond_to do |format|
-        format.json { render json: {:event_id => @booking.event.id, :booking_id => @booking.id}}
+        format.js { @event_id }
     end
   end
 

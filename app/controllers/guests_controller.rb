@@ -95,7 +95,7 @@ class GuestsController < ApplicationController
     @guest.name = 'Joe'
     @guest.surname = 'Soap'
     @guest.contact_number = '0123456789'
-    @guest.email = 'guest_new@example.com'
+    @guest.email = nil
   end
 
   def sort_direction

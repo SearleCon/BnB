@@ -107,9 +107,9 @@ class BnbsController < ApplicationController
 
 
   def subregions
-      regions = render_to_string  partial: 'shared/select_region', parent_region: params[:parent_region]
-      regions = regions.html_safe.gsub(/[\n\t\r]/, '')
-      render :json => {:html => regions, :error => '' }
+      respond_to do |format|
+           format.js { params[:parent_region] }
+       end
   end
 
   private

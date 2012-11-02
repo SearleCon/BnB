@@ -17,9 +17,7 @@ class BookingsController < ApplicationController
 
   # GET /my_bookings
   def my_bookings
-
     @active_bookings = Booking.active_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:active_page])
-
     @inactive_bookings = Booking.inactive_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:inactive_page])
 
     respond_to do |format|
@@ -58,7 +56,7 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = @bnb.bookings.new(params[:booking])
-    @booking.event.name = @booking.guest.name
+    @booking.event.name = @booking.guest.name unless @booking.guest.nil?
     @booking.user_id = current_user.id
     if current_user.role.description == "Owner"
       @booking.status = :booked

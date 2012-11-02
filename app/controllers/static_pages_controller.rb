@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  caches_page :about, :contact, :terms_and_conditions, :privacy_policy
+
   def home
       @photos = Photo.find_all_by_main(true)
   end

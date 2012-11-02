@@ -56,8 +56,6 @@ $('#guest').live 'cocoon:before-insert', ->
   $("#guest a.add_fields").hide()
 
 
-
-
 updateEvent = (the_event) ->
   $.update "/events/" + the_event.id, {  start_at: the_event.start, end_at: the_event.end }
 

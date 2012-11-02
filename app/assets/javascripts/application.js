@@ -18,11 +18,11 @@
 //= require bootstrap
 //= require jquery.purr
 //= require best_in_place
-//= require jquery.rest
 //= require jquery.ui.datepicker
 //= require fullcalendar
 //= require lazybox
 //= require cocoon
+//= require jquery.turbolinks
 //= require_tree .
 
 
@@ -68,8 +68,10 @@ $(document).ready(function() {
         $('select', select_wrapper).attr('disabled', true);
         country_code = $(this).val();
         url = "/bnbs/sub_region_options?parent_region=" + country_code.toString();
-        return $.read(url, function(response) {
-            return select_wrapper.html(response.html);
+        $.ajax({
+            type : 'GET',
+            url : url,
+            dataType : 'script'
         });
     });
 });

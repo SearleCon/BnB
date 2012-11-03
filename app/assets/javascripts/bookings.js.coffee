@@ -15,7 +15,7 @@ $(document).ready ->
     slotMinutes: 15,
 
     eventSources: [{
-    url:  $('#get_bnb_events').val(),
+    url:  $('#get_bnb_events').val().concat('.json'),
     ignoreTimezone: false
     }],
 
@@ -38,16 +38,14 @@ $(document).ready ->
 
 
 
-$('#new_booking').live "ajax:error", (e, data, textStatus, jqXHR) ->
-  $('#errors').html(data.responseText)
-
 $('#room_finder').live 'click', ->
   $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
   $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
-  $.read $(this).attr('href'), (response) ->
-    $("#rooms_available").html(response.html)
-    $('#room_finder').hide()
-    $('#rooms_available').show()
+  $.ajax({
+  type : 'GET',
+  url : $(this).attr('href'),
+  dataType : 'script'
+  });
   return false
 
 

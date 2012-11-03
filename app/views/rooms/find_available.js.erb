@@ -1,0 +1,4 @@
+$("#rooms_available").html('<%= escape_javascript(render :partial => 'bookings/unbooked_rooms', locals: { unbooked: @unbooked})%>');
+
+$('#room_finder').hide()
+$('#rooms_available').show()

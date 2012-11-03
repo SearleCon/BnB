@@ -81,19 +81,9 @@ class RoomsController < ApplicationController
   def find_available
     @booked_rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id)
     @rooms = Room.find_all_by_bnb_id(@bnb)
-
     @booked_rooms.nil? ? @unbooked = @rooms : @unbooked = @rooms.to_a - @booked_rooms.to_a
-
-
-
-    if request.xhr?
-      event_details = render_to_string :partial => 'bookings/unbooked_rooms'
-      event_details = event_details.html_safe.gsub(/[\n\t\r]/, '')
-      render :json => {:html => event_details, :error => '' }
-    else
-      respond_to do |format|
-        format.json { render json: @rooms }
-      end
+    respond_to do |format|
+      format.js
     end
   end
 

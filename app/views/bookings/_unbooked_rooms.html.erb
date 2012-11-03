@@ -1,7 +1,7 @@
 <% if current_user.role.description == 'Owner' %>
   <%= simple_form_for Booking.new do |f| %>
-      <%= f.association :rooms, :collection => @unbooked, :label => '', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %>
+      <%= f.association :rooms, :collection => unbooked, :label => '', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %>
    <% end %>
 <% else %>
-  <p>There are <%= @unbooked.size %> currently available</p>
+  <p>There are <%= unbooked.size %> currently available</p>
 <% end %>

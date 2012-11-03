@@ -1,4 +1,4 @@
-
+<div class="hero-unit">
 
 <h2>Booking costs</h2>
 <p>
@@ -28,7 +28,7 @@
       <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
   <% end %>
 </table>
-<div><%= link_to content_tag('i', '', class: 'icon-plus-sign'), booking_line_items_path(@booking), method: :post, remote: true %></div>
+<div><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white'), booking_line_items_path(@booking), method: :post, remote: true %></div>
 <div id='Total_Cost'>
   <%= render :partial => 'total_cost' %>
 </div>
@@ -36,6 +36,7 @@
 <br>
 <div>
   <%= link_to 'Print Invoice', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary' %>
+</div>
 </div>
 
 

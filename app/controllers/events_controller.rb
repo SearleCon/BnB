@@ -8,7 +8,6 @@ class EventsController < ApplicationController
     @events = Event.scoped.all(:include => [:booking => :bnb], conditions: { booking_id: @bookings })
 
     respond_to do |format|
-      format.html # index.html.erb
       format.json { render json: @events.as_json }
     end
   end
@@ -22,13 +21,9 @@ class EventsController < ApplicationController
     @event.end_at = Date.parse(params[:end_at]).strftime("%Y-%m-%d")
 
     respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { render json: @event.as_json }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+      @event.save ?
+          format.json { render json: @event.as_json } :
+          format.json { render json: @event.errors, status: :unprocessable_entity }
     end
   end
 

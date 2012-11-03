@@ -42,8 +42,7 @@ class ApplicationController < ActionController::Base
       session[:bnb_id] = Bnb.find_by_user_id(current_user)
       show_bnb_url
     else
-      session[:last_page] ? session[:last_page] :
-          root_url
+     root_url
     end
   end
 

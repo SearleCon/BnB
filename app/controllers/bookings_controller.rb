@@ -41,6 +41,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.build_event
     @booking.build_guest
+    @booking.rooms_required = false
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
     @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
@@ -60,6 +61,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     if current_user.role.description == "Owner"
       @booking.status = :booked
+      @booking.rooms_required = true
     end
 
     respond_to do |format|

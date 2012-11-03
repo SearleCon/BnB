@@ -116,6 +116,8 @@ class BnbsController < ApplicationController
   def convert_to_map_data(bnbs)
     @json = bnbs.to_gmaps4rails do |bnb, marker|
       marker.title "#{bnb.name}"
+      marker.infowindow render_to_string(:partial => "/bnbs/mapinfo", :locals => { :bnb => bnb})
     end
+
   end
 end

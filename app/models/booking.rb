@@ -19,9 +19,12 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
+  attr_accessor :rooms_required
+
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
   validates_presence_of :guest
   validates_associated :guest
+  validates_presence_of :rooms, :if => :is_owner?
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
@@ -64,13 +67,6 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def guest_name
-    guest.try(:name)
-  end
-
-  def guest_name=(name)
-    self.guest = Guest.find_by_name(name) if name.present?
-  end
 
   def total_price
     total = 0
@@ -86,7 +82,10 @@ class Booking < ActiveRecord::Base
     else
       scoped
     end
-
   end
 
+  private
+  def is_owner?
+    self.rooms_required
+  end
 end

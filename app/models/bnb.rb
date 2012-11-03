@@ -88,8 +88,6 @@ class Bnb < ActiveRecord::Base
     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
   end
 
-  def gmaps4rails_title
-    "<h4>#{self.name}</h4>"
-  end
+
 
 end

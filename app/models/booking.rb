@@ -24,7 +24,7 @@ class Booking < ActiveRecord::Base
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
   validates_presence_of :guest
   validates_associated :guest
-  validates_presence_of :rooms, :if => :is_owner?
+  validates_presence_of :rooms, :if => :must_have_rooms?
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
@@ -52,22 +52,6 @@ class Booking < ActiveRecord::Base
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
-  EVENT_COLORS = { :provisional =>  'blue', :booked => 'green', :checked_in => 'red', :closed => 'orange' }
-
-
-
-  def status_changed(old, new)
-    case new
-      when :booked
-         self.event.color = EVENT_COLORS[:booked]
-      when :checked_in
-        self.event.color = EVENT_COLORS[:checked_in]
-      when :closed
-        self.event.color = EVENT_COLORS[:closed]
-    end
-  end
-
-
   def total_price
     total = 0
     line_items.each do |item|
@@ -85,7 +69,7 @@ class Booking < ActiveRecord::Base
   end
 
   private
-  def is_owner?
+  def must_have_rooms?
     self.rooms_required
   end
 end

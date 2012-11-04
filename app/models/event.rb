@@ -14,10 +14,6 @@
 
 class Event < ActiveRecord::Base
   belongs_to :booking
-
-
-
-
   # need to override the json view to return what full_calendar is expecting.
   # http://arshaw.com/fullcalendar/docs/event_data/Event_Object/
   def as_json(options = {})
@@ -30,8 +26,8 @@ class Event < ActiveRecord::Base
         :allDay => true,
         :recurring => false,
         :url => Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
+        :update_url => Rails.application.routes.url_helpers.booking_event_path(self.booking, self.id),
         :color => self.color
     }
-
   end
 end

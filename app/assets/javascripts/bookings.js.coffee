@@ -55,7 +55,12 @@ $('#guest').live 'cocoon:before-insert', ->
 
 
 updateEvent = (the_event) ->
-  $.update "/events/" + the_event.id, {  start_at: the_event.start, end_at: the_event.end }
+  $.ajax({
+  type : 'PUT',
+  data: { start_at: the_event.start, end_at: the_event.end }
+  url : the_event.update_url,
+  dataType: 'json'
+  });
 
 showBooking2 = (the_event) ->
   $.ajax({

@@ -10,12 +10,14 @@
 #  updated_at     :datetime         not null
 #  bnb_id         :integer
 #  user_id        :integer
+#  email          :string(255)
 #
 
 class Guest < ActiveRecord::Base
   belongs_to :bnb
   has_many :bookings
   has_many :rooms, :through => :bookings
+
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

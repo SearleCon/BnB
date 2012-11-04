@@ -10,6 +10,7 @@
 #  updated_at     :datetime         not null
 #  bnb_id         :integer
 #  user_id        :integer
+#  email          :string(255)
 #
 
 require 'spec_helper'

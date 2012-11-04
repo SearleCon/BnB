@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101074810) do
+ActiveRecord::Schema.define(:version => 20121104143536) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121101074810) do
     t.string   "status",     :default => "provisional"
     t.integer  "bnb_id"
     t.integer  "user_id"
+    t.boolean  "online",     :default => false
   end
 
   add_index "bookings", ["guest_id"], :name => "index_bookings_on_guest_id"

@@ -1,21 +1,15 @@
 <div class="hero-unit">
-<%= simple_form_for booking, url: bnb_bookings_path(@bnb), :remote => true do |f| %>
- <div id="errors">
-  <%= render 'shared/error_messages', :object => booking %>
- </div>
-    <div class="form-inputs">
-      <div>
+  <%= simple_form_for booking, url: bnb_bookings_path(@bnb), :remote => true do |f| %>
+      <div id="errors">
+        <%= render 'shared/error_messages', :object => booking %>
+      </div>
+      <div class="form-inputs">
         <h4>Select booking dates:</h4>
-        <div class="row-fluid">
-          <%= f.simple_fields_for :event  do |event_form| %>
-              <div class="span6">
-                <%= event_form.input :start_at, :as => :datepicker%>
-              </div>
-              <div class="span6">
-                <%= event_form.input :end_at,  :as => :datepicker%>
-              </div>
-          <% end %>
-        </div>
+        <%= f.simple_fields_for :event do |event_form| %>
+            <%= event_form.input :start_at, :as => :datepicker %>
+
+            <%= event_form.input :end_at, :as => :datepicker %>
+        <% end %>
       </div>
 
       <br>
@@ -23,19 +17,25 @@
       <div id='guest'>
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
-        <div id='find_guest'><%=f.association :guest, collection: @bnb.guests %></div>
-        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat('Add a new guest'), f, :guest %></div>
+
+        <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %></div>
+        <p>or</p>
+
+        <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add a new guest'), f, :guest %></div>
       </div>
       <br>
+
       <div id='rooms'>
         <h4>Available rooms</h4>
         <br>
-        <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
-        <div id ='rooms_available'></div>
+        <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id => 'room_finder' %>
+        <div id='rooms_available'></div>
       </div>
-
-    </div>
       <br>
-    <%= f.button :submit, :class => 'btn btn-primary' %>
-<% end %>
+      <%= f.hidden_field :rooms_required, value: true %>
+      <%= f.hidden_field :status, value: :booked %>
+      <%= f.hidden_field :online, value: false %>
+      <%= f.button :submit, :class => 'btn btn-primary' %>
+  <% end %>
 </div>
+

@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @bookings }
     end
   end
 
@@ -30,8 +29,7 @@ class BookingsController < ApplicationController
   # GET /bookings/1.json
   def show
       respond_to do |format|
-        format.html # show.html.erb
-        format.js { @booking }
+        format.js { render layout: false }
       end
   end
 
@@ -39,16 +37,12 @@ class BookingsController < ApplicationController
   # GET /bookings/8new.json
   def new
     @booking = Booking.new
-    @booking.build_event
-    @booking.build_guest
-    @booking.rooms_required = false
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
-    @booking.event.start_at = selected_day.strftime('%A, %d %B %Y')
-    @booking.event.end_at = (selected_day + 1.days).strftime('%A, %d %B %Y')
+    @booking.build_event(:start_at => format_date(selected_day), :end_at => format_date(selected_day + 1.days))
 
     respond_to do |format|
          format.html { render 'client_booking_form'}
-         format.js { @booking }
+         format.js { render layout: false }
     end
   end
 
@@ -57,25 +51,16 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = @bnb.bookings.new(params[:booking])
-    @booking.event.name = @booking.guest.name unless @booking.guest.nil?
     @booking.user_id = current_user.id
-    if current_user.role.description == "Owner"
-      @booking.status = :booked
-      @booking.rooms_required = true
-    end
 
     respond_to do |format|
       if @booking.save
-        if current_user.role.description == "Guest"
-          UserMailer.delay.booking_made(current_user, @booking)
-          UserMailer.delay.notify_bnb(@booking)
-        end
         @event = Event.find_by_booking_id(@booking)
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
         format.js
       else
         format.html  { render 'bookings/client_booking_form' }
-        format.js
+        format.js  { render layout: false }
       end
     end
   end
@@ -100,15 +85,14 @@ class BookingsController < ApplicationController
     @event_id = @booking.event.id
     @booking.destroy
     respond_to do |format|
-        format.js { @event_id }
+        format.js { render layout: false }
     end
   end
 
   def check_in
     @booking.update_attribute(:status, :checked_in)
     respond_to do |format|
-      format.html {redirect_to bookings_url}
-      format.js { @booking }
+      format.js { render layout: false }
     end
   end
 
@@ -126,7 +110,6 @@ class BookingsController < ApplicationController
    if @booking.save
      respond_to do |format|
        format.html { redirect_to show_invoice_bnb_booking_url(@bnb,@booking)}
-       format.json { render json: @booking}
      end
    end
  end
@@ -135,13 +118,13 @@ class BookingsController < ApplicationController
    @booking.update_attribute(:status, :booked)
    UserMailer.deliver_confirmation_received.delay(@booking)
    respond_to do |format|
-     format.js { @booking }
+     format.js { render layout: false }
    end
  end
 
  def refresh_total
    respond_to do |format|
-     format.js { @booking }
+     format.js { render layout: false }
    end
  end
 
@@ -159,15 +142,10 @@ class BookingsController < ApplicationController
  end
 
  private
- def get_bnb
-    params[:bnb_id]  ? @bnb = Bnb.find(params[:bnb_id]) : @bnb = Bnb.find_by_user_id(current_user)
- end
 
- def get_booking
-   if params[:id]
-     @booking = Booking.find(params[:id])
-   end
- end
+  def format_date(date)
+    date.strftime('%A, %d %B %Y')
+  end
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"

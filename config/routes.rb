@@ -5,22 +5,12 @@ SampleApp::Application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
 
+
+
   resources :bookings do
-    resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
-    put :check_in, on: :member
-    put :check_out, on: :member
-    put :confirm, on: :member
-    get :refresh_total, on: :member
-    get :show_invoice, on: :member
-    get :print_pdf, on: :member
     get :my_bookings, on: :collection
+    resources :events, only: [:update]
   end
-
-  resources :events, only: [:index, :update] do
-    get :filter_by_status, on: :collection
-  end
-
-  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   resources :bnbs, except: [:show] do
     get :map, on: :collection
@@ -72,7 +62,7 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 30 Oct 2012 09:16
+# Generated on 04 Nov 2012 15:09
 #
 #                           POST   /suggestions(.:format)                                      suggestions#create
 #            new_suggestion GET    /suggestions/new(.:format)                                  suggestions#new

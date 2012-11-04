@@ -36,6 +36,8 @@
      <br>
 
     <div class="span9" style="text-align: center;">
+      <%= f.hidden_field :online, value: true  %>
+      <%= f.hidden_field :rooms_required, value :false %>
       <%= f.button :submit, :class => 'btn btn-primary' %>
     </div>
 <% end %>

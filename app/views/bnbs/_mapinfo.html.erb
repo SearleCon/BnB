@@ -1,8 +1,15 @@
 <br>
 <div class="hero-unit">
- <p><%= bnb.name %></p>
- <p>Rooms: <%= bnb.rooms.size %></p>
  <address>
-   <p>Telephone:  <%= bnb.telephone_number %></p>
+   <%= bnb.name %>
+   <br>
+   <p>
+     <% bnb.rating.times do %>
+         <i class="icon-star icon-white"></i>
+     <% end %>
+   </p>
+   Rooms: <%= bnb.rooms.size %>
+   <br>
+   Telephone: <%= bnb.telephone_number %>
  </address>
 </div>

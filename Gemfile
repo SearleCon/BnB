@@ -26,11 +26,6 @@ gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
 gem 'gmaps4rails'
 gem 'jquery-turbolinks'
-
-
-
-
-
 gem 'select2-rails'
 
 group :development, :test do

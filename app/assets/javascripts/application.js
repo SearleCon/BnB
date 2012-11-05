@@ -56,25 +56,7 @@ $.ajaxSetup({
     }
 });
 
-$(document).ready(function() {
-    $('.best_in_place').best_in_place();
-    $("[rel=tooltip]").tooltip({
-        animation: true,
-        placement: 'right'
-    });
-    return $('#bnb_country').change(function(event) {
-        var country_code, select_wrapper, url;
-        select_wrapper = $('#order_state_code_wrapper');
-        $('select', select_wrapper).attr('disabled', true);
-        country_code = $(this).val();
-        url = "/bnbs/sub_region_options?parent_region=" + country_code.toString();
-        $.ajax({
-            type : 'GET',
-            url : url,
-            dataType : 'script'
-        });
-    });
-});
+
 
 
 

@@ -3,7 +3,23 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
 
+$('#room_finder').live 'click', ->
+  $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
+  $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
+  $.ajax({
+  type : 'GET',
+  url : $(this).attr('href'),
+  dataType : 'script'
+  });
+  return false
 
+
+$('#guest').live 'cocoon:before-insert', ->
+  $("#find_guest").remove()
+  $("#guest a.add_fields").hide()
+
+
+$(window).load ->
   $('#calendar').fullCalendar
     editable: true,
     header:
@@ -15,9 +31,9 @@ $(document).ready ->
     slotMinutes: 15,
 
     eventSources: [{
-    url:  $('#get_bnb_events').val().concat('.json'),
-    ignoreTimezone: false
-    }],
+                      url:  $('#get_bnb_events').val().concat('.json'),
+                      ignoreTimezone: false
+                  }],
 
     timeFormat: 'h:mm t{ - h:mm t} ',
     dragOpacity: "0.5"
@@ -36,22 +52,6 @@ $(document).ready ->
       createBooking2(date)
       return false
 
-
-
-$('#room_finder').live 'click', ->
-  $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
-  $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
-  $.ajax({
-  type : 'GET',
-  url : $(this).attr('href'),
-  dataType : 'script'
-  });
-  return false
-
-
-$('#guest').live 'cocoon:before-insert', ->
-  $("#find_guest").remove()
-  $("#guest a.add_fields").hide()
 
 
 updateEvent = (the_event) ->
@@ -78,6 +78,8 @@ createBooking2 = (date) ->
   url : path,
   dataType : 'script'
   });
+
+
 
 
 

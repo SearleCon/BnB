@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @events = Event.scoped.all(:include => [:booking => :bnb], conditions: { booking_id: @bookings })
 
     respond_to do |format|
-      format.js { render json: @events.as_json, layout: false }
+      format.json { render json: @events.as_json, layout: false }
     end
   end
 

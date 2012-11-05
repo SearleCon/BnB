@@ -45,7 +45,7 @@ $(window).load ->
     slotMinutes: 15,
 
     eventSources: [{
-                      url:  $('#get_bnb_events').val(),
+                      url:  $('#get_bnb_events').val().concat('.json'),
                       ignoreTimezone: false
                   }],
 

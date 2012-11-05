@@ -10,6 +10,7 @@ SampleApp::Application.routes.draw do
   resources :bookings do
     get :my_bookings, on: :collection
     resources :events, only: [:update]
+    resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
   end
 
   resources :bnbs, except: [:show] do
@@ -18,7 +19,6 @@ SampleApp::Application.routes.draw do
     resources :events, only: [:index]
     resources :photos, only: [:index, :new, :create, :destroy]
     resources :bookings do
-      resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
       put :check_in, on: :member
       put :check_out, on: :member
       put :confirm, on: :member

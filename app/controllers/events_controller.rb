@@ -21,8 +21,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       @event.save ?
-          format.js { render json: @event.as_json } :
-          format.js {  render json: @event.errors, status: :unprocessable_entity }
+          format.js { render json: @event.as_json, layout: false } :
+          format.js {  render json: @event.errors, layout: false, status: :unprocessable_entity }
 
 
     end

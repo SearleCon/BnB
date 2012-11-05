@@ -12,6 +12,10 @@ class BookingObserver < ActiveRecord::Observer
    end
  end
 
+ def before_update(booking)
+   booking.event.color = get_event_colour(booking.status)
+ end
+
 private
 def get_event_colour(status_for_colour)
   case status_for_colour

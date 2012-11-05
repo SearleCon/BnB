@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  # encoding: utf-8
 
   caches_page :about, :contact, :terms_and_conditions, :privacy_policy
 

@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-
+   before_filter :get_booking
 
 
   def create
@@ -33,5 +33,9 @@ class LineItemsController < ApplicationController
   end
 
 
+  private
+  def get_booking
+    @booking = Booking.find(params[:booking_id])
+  end
 
 end

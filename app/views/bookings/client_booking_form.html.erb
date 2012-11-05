@@ -3,17 +3,12 @@
     <%= f.error_notification %>
 
 
-        <h4>Select booking dates:</h4>
-        <div class="row-fluid">
-          <%= f.simple_fields_for :event  do |event_form| %>
-              <div class="span6">
-                <%=event_form.input :start_at, :label => "Check in", :as => :datepicker %>
-              </div>
-              <div class="span6">
-                <%= event_form.input :end_at, :label => "Check out",  :as => :datepicker%>
-              </div>
-          <% end %>
-        </div>
+      <h4>Select booking dates:</h4>
+      <%= f.simple_fields_for :event do |event_form| %>
+          <%= event_form.input :start_at, :as => :datepicker %>
+
+          <%= event_form.input :end_at, :as => :datepicker %>
+      <% end %>
       <br>
 
       <div id='guest'>
@@ -30,14 +25,14 @@
       <div id='rooms'>
         <h4>Available rooms</h4>
         <br>
-        <%= link_to content_tag('i', '', class: 'icon-search').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
+        <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id=> 'room_finder' %>
         <div id ='rooms_available'></div>
       </div>
      <br>
 
     <div class="span9" style="text-align: center;">
       <%= f.hidden_field :online, value: true  %>
-      <%= f.hidden_field :rooms_required, value :false %>
+      <%= f.hidden_field :rooms_required, value: false %>
       <%= f.button :submit, :class => 'btn btn-primary' %>
     </div>
 <% end %>

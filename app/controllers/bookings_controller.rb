@@ -37,6 +37,7 @@ class BookingsController < ApplicationController
   # GET /bookings/8new.json
   def new
     @booking = Booking.new
+    @booking.build_guest
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
     @booking.build_event(:start_at => format_date(selected_day), :end_at => format_date(selected_day + 1.days))
 

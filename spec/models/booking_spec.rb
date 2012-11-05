@@ -10,6 +10,7 @@
 #  status     :string(255)      default("provisional")
 #  bnb_id     :integer
 #  user_id    :integer
+#  online     :boolean          default(FALSE)
 #
 
 require 'spec_helper'

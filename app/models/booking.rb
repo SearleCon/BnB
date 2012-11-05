@@ -10,6 +10,7 @@
 #  status     :string(255)      default("provisional")
 #  bnb_id     :integer
 #  user_id    :integer
+#  online     :boolean          default(FALSE)
 #
 
 class Booking < ActiveRecord::Base
@@ -52,6 +53,8 @@ class Booking < ActiveRecord::Base
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
+
+
   def total_price
     total = 0
     line_items.each do |item|
@@ -70,6 +73,6 @@ class Booking < ActiveRecord::Base
 
   private
   def must_have_rooms?
-    self.rooms_required
+    self.rooms_required == 'true'
   end
 end

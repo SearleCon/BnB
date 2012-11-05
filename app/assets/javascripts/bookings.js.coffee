@@ -2,6 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
+  $("input.datepicker").each (i) ->
+    $(this).datepicker
+      dateFormat: "DD, d MM yy"
+      altFormat: "yy-mm-dd"
+      altField: $(this).next()
+      minDate: 0
+      onClose: (dateText, inst) ->
+        setMinMaxDate(inst, dateText)
+
+setMinMaxDate = (element, dateText) ->
+  if element.id == 'booking_event_attributes_start_at'
+    $('#booking_event_attributes_end_at').datepicker "option", "minDate", dateText
+  else
+    $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
 
 $('#room_finder').live 'click', ->
   $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
@@ -18,8 +32,8 @@ $('#guest').live 'cocoon:before-insert', ->
   $("#find_guest").remove()
   $("#guest a.add_fields").hide()
 
-
 $(window).load ->
+
   $('#calendar').fullCalendar
     editable: true,
     header:
@@ -31,7 +45,7 @@ $(window).load ->
     slotMinutes: 15,
 
     eventSources: [{
-                      url:  $('#get_bnb_events').val().concat('.json'),
+                      url:  $('#get_bnb_events').val(),
                       ignoreTimezone: false
                   }],
 

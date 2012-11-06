@@ -58,7 +58,7 @@ class BookingsController < ApplicationController
       if @booking.save
         @event = Event.find_by_booking_id(@booking)
         format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
-        format.js
+        format.js { render layout: false }
       else
         format.html  { render 'bookings/client_booking_form' }
         format.js  { render layout: false }

@@ -22,9 +22,6 @@ $('#booking_guest_id').select2({
     placeholder: 'Search for a guest'
 });
 
-$('form[data-validate]').validate();
-
-
 setMinMaxDate = function (element, dateText) {
     if (element.id === 'booking_event_attributes_start_at') {
         $('#booking_event_attributes_end_at').datepicker("option", "minDate", dateText);
@@ -32,5 +29,6 @@ setMinMaxDate = function (element, dateText) {
         $('#booking_event_attributes_start_at').datepicker("option", "maxDate", dateText);
     }
 };
+
 
 

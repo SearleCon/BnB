@@ -23,9 +23,6 @@
 //= require lazybox
 //= require cocoon
 //= require jquery.turbolinks
-//= require rails.validations
-//= require rails.validations.simple_form
-//= require rails.validations.turbolinks
 //= require_tree .
 
 

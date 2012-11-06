@@ -1,14 +1,0 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352196086.646558:@value"S[I"E(function() {
-
-  $(document).ready(function() {
-    $('a[rel*=lazybox]').lazybox();
-    $('#browse_files').click(function() {
-      return $('#photo_image').click();
-    });
-    return $('#photo_image').bind('change', function() {
-      return $('#photo_filepath').val($('#photo_image').val());
-    });
-  });
-
-}).call(this);
-:ET

@@ -26,46 +26,4 @@ $(document).ready ->
     $('#photo_filepath').val($('#photo_image').val())
 
 
-  #bookings
-  $("input.datepicker").each (i) ->
-    $(this).datepicker
-      dateFormat: "DD, d MM yy"
-      altFormat: "yy-mm-dd"
-      altField: $(this).next()
-      minDate: 0
-      onClose: (dateText, inst) ->
-        setMinMaxDate(inst, dateText)
-
-  $('#calendar').fullCalendar
-    editable: true,
-    header:
-      left: 'prev,next today',
-      center: 'title',
-      right: 'month,agendaWeek,agendaDay'
-    defaultView: 'month',
-    height: 500,
-    slotMinutes: 15,
-
-    eventSources: [{
-    url: /events/,
-    ignoreTimezone: false
-    }],
-
-    timeFormat: 'h:mm t{ - h:mm t} ',
-    dragOpacity: "0.5"
-
-    eventDrop: (event, dayDelta, minuteDelta, allDay, revertFunc) ->
-      updateEvent(event)
-
-    eventResize: (event, dayDelta, minuteDelta, revertFunc) ->
-      updateEvent(event)
-
-    eventClick: (calEvent, jsEvent, view) ->
-      showBooking2(calEvent)
-      return false
-
-    dayClick: (date, allDay, jsEvent, view) ->
-      createBooking2(date)
-      return false
-
 

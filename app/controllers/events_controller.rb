@@ -3,12 +3,12 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
 
-    @bnb = Bnb.find(params[:bnb_id])
+    @bnb = Bnb.find(session[:bnb_id])
     @bookings = Booking.active_bookings_by_bnb(@bnb)
     @events = Event.scoped.all(:include => [:booking => :bnb], conditions: { booking_id: @bookings })
 
     respond_to do |format|
-      format.json { render json: @events.as_json, layout: false }
+      format.js { render json: @events.as_json, layout: false }
     end
   end
 

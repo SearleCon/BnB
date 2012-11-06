@@ -2,10 +2,9 @@ SampleApp::Application.routes.draw do
 
 
   resources :suggestions
+  resources :events, only: [:index]
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
-
-
 
   resources :bookings do
     get :my_bookings, on: :collection
@@ -16,7 +15,6 @@ SampleApp::Application.routes.draw do
   resources :bnbs, except: [:show] do
     get :map, on: :collection
     get :nearby_bnbs, on: :member
-    resources :events, only: [:index]
     resources :photos, only: [:index, :new, :create, :destroy]
     resources :bookings do
       put :check_in, on: :member

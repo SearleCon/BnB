@@ -1,6 +1,7 @@
 
 <div class="container-fluid" id="booking_schedule">
-   
+    <%= hidden_field_tag 'new_booking_path', new_bnb_booking_path(@bnb) %>
+  <%= hidden_field_tag 'get_bnb_events', bnb_events_path(@bnb) %>
   <div class="row-fluid">
        
     <div class="span2">
@@ -20,8 +21,6 @@
     <div class="span9">
       <div id='calendar'></div>
     </div>
-    <%= hidden_field_tag 'new_booking_path', new_bnb_booking_path(@bnb) %>
-    <%= hidden_field_tag 'get_bnb_events', bnb_events_path(@bnb) %>
   </div>
 
 

@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352186930.898459:@value"‰[I"{(function() {
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352199150.720648:@value"‰[I"{(function() {
 
   $(document).ready(function() {
     $('.best_in_place').best_in_place();

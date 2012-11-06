@@ -22,6 +22,8 @@ $('#booking_guest_id').select2({
     placeholder: 'Search for a guest'
 });
 
+$('form[data-validate]').validate();
+
 
 setMinMaxDate = function (element, dateText) {
     if (element.id === 'booking_event_attributes_start_at') {

@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352186930.65838:@value"VY[I"HY/*
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352196086.2503302:@value"VY[I"HY/*
         BestInPlace (for jQuery)
         version: 0.1.0 (01/01/2011)
         @requires jQuery >= v1.4

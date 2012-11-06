@@ -1,0 +1,77 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352198684.911469:@value"P	[I"B	// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
+// GO AFTER THE REQUIRES BELOW.
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// change confirmation box to bootstrap styles
+$.rails.allowAction = function(link) {
+    if (!link.attr('data-confirm')) {
+        return true;
+    }
+    $.rails.showConfirmDialog(link);
+    return false;
+};
+
+$.rails.confirmed = function(link) {
+    link.removeAttr('data-confirm');
+    return link.trigger('click.rails');
+};
+
+$.rails.showConfirmDialog = function(link) {
+    var html, message;
+    message = link.attr('data-confirm');
+    html = "<div class=\"modal\" id=\"confirmationDialog\">\n  <div class=\"modal-header\">\n    <a class=\"close\" data-dismiss=\"modal\">X<a>\n    <h3>Confirm delete</h3>\n  </div>\n  <div class=\"modal-body\">\n    <p>" + message + "</p>\n  </div>\n  <div class=\"modal-footer\">\n    <a data-dismiss=\"modal\" class=\"btn\">Cancel</a>\n    <a data-dismiss=\"modal\" class=\"btn btn-primary confirm\">OK</a>\n  </div>\n</div>";
+    $(html).modal();
+    return $('#confirmationDialog .confirm').on('click', function() {
+        return $.rails.confirmed(link);
+    });
+};
+
+$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader("Accept", "text/javascript");
+    }
+});
+
+$.setEqualHeight = function (o) {
+    var maxHeight = 0;
+    var maxElement = null;
+    jQuery(this).each(function (i) {
+        if ((jQuery(this).height() + parseInt(jQuery(this).css("padding-bottom")) + parseInt(jQuery(this).css("padding-top"))) > maxHeight) {
+            maxHeight = jQuery(this).height() + parseInt(jQuery(this).css("padding-top")) + parseInt(jQuery(this).css("padding-bottom"));
+            maxElement = this;
+        }
+    });
+    jQuery(this).not($(maxElement)).each(function () {
+        $(this).height(maxHeight - parseInt(jQuery(this).css("padding-top")) - parseInt(jQuery(this).css("padding-bottom")))
+    })
+};
+
+
+:ET

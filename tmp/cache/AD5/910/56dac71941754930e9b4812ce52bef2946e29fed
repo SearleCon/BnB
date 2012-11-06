@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352186930.795855:@value"h[I"Z(function($) {
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352196086.3492212:@value"h[I"Z(function($) {
 
   function replace_in_content(content, regexp_str, with_str) {
     reg_exp = new RegExp(regexp_str);

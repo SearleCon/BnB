@@ -13,8 +13,10 @@
   </div>
   <div class="span5 pull-right">
     <div class="thumbnail">
-      <% unless @bnb.photos.nil? || @bnb.photos.empty? %>
-      <%= image_tag @bnb.photos.find_by_main(true).image_url %>
+      <% if @bnb.photos.nil? || @bnb.photos.empty? %>
+       <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
+      <% else %>
+       <%= image_tag @bnb.photos.find_main_photo.image_url %>
       <% end %>
     </div>
   </div>
@@ -71,20 +73,29 @@
 
 </div>
 
-<% unless @bnb.photos.empty? %>
 <div class="hero-unit clearfix">
   <div class="carousel span12" id="myCarousel">
     <div class="carousel-inner">
       <div class="item active">
         <ul class="thumbnails">
-          <% @bnb.photos.each do |photo| %>
-           <% unless photo.main? %>
+          <% if @bnb.photos.find_support_photos.any? %>
+              <% @bnb.photos.each do |photo| %>
+               <% unless photo.main? %>
+                  <li class="span4">
+                    <div class="thumbnail">
+                        <%=image_tag photo.image_url(:thumb) %>
+                    </div>
+                  </li>
+               <% end %>
+              <% end %>
+          <% else %>
+            <% 3.times do %>
               <li class="span4">
                 <div class="thumbnail">
-                    <%=image_tag photo.image_url(:thumb) %>
+                  <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
                 </div>
               </li>
-           <% end %>
+            <% end %>
           <% end %>
         </ul>
       </div>
@@ -93,7 +104,6 @@
     </div>
   </div>
 </div>
-<% end %>
 
 
 

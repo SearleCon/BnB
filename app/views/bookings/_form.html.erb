@@ -1,5 +1,5 @@
 <div class="hero-unit">
-  <%= simple_form_for booking, url: bnb_bookings_path(@bnb), :remote => true do |f| %>
+  <%= simple_form_for booking, url: bnb_bookings_path(@bnb), validate: true, :remote => true do |f| %>
       <div id="errors">
         <%= render 'shared/error_messages', :object => booking %>
       </div>

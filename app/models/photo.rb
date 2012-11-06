@@ -21,6 +21,9 @@ class Photo < ActiveRecord::Base
 
   validates :description, :image, presence: true
 
+  scope :find_main_photo, where(:main => true)
+  scope :find_support_photos, where(:main => false)
+
 
   private
   def destroy_file

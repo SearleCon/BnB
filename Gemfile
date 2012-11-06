@@ -27,6 +27,10 @@ gem "wkhtmltopdf-binary"
 gem 'gmaps4rails'
 gem 'jquery-turbolinks'
 gem 'select2-rails'
+gem 'placeholdit'
+gem 'client_side_validations'
+gem 'client_side_validations-turbolinks'
+gem 'client_side_validations-simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

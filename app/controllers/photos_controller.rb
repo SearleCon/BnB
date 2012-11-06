@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     respond_to do |format|
-      format.js { @photo }
+      format.js { render layout: false}
     end
   end
 end

@@ -4,7 +4,11 @@
     <div class="row" id="bnb_row">
       <div class="span3">
       <div class="thumbnail">
-        <img alt="" src="http://placehold.it/160x120">
+        <% if bnb.photos.nil? || bnb.photos.empty? %>
+            <%= placeholdit_image_tag "150", text: "No photos uploaded!" %>
+        <% else %>
+            <%= image_tag @bnb.photos.find_main_photo.image_url(:thumb) %>
+        <% end %>
       </div>
       </div>
       <div class="span6">

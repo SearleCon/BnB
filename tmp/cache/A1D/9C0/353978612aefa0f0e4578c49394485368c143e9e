@@ -1,0 +1,110 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1352186929.884026:@value"([I"@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+
+
+
+*/
+/* line 20, ../../app/assets/stylesheets/application.css.scss */
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px;
+  /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  /*  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15); */
+  /*  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15); */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  /* SS Added for more Shadow effect (took out the top two) */
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Full Screen BG */
+/* line 39, ../../app/assets/stylesheets/application.css.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 46, ../../app/assets/stylesheets/application.css.scss */
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 57, ../../app/assets/stylesheets/application.css.scss */
+#wrapper {
+  position: relative;
+  width: 800px;
+  min-height: 400px;
+  margin: 100px auto;
+  color: #333;
+}
+
+/* line 65, ../../app/assets/stylesheets/application.css.scss */
+.sort_table th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+/* line 71, ../../app/assets/stylesheets/application.css.scss */
+.sort_table th .asc {
+  background-image: url(sortups.png);
+}
+/* line 75, ../../app/assets/stylesheets/application.css.scss */
+.sort_table th .desc {
+  background-image: url(sortdowns.png);
+}
+
+/* line 81, ../../app/assets/stylesheets/application.css.scss */
+#search_table_form input {
+  padding: 10px;
+  width: 20%;
+  float: right;
+}
+
+/* line 88, ../../app/assets/stylesheets/application.css.scss */
+document {
+  height: 274mm;
+  width: 210mm -21mm;
+  background-repeat: no-repeat;
+  background-position: 200px 280px;
+}
+
+/* line 97, ../../app/assets/stylesheets/application.css.scss */
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #C66;
+}
+/* line 105, ../../app/assets/stylesheets/application.css.scss */
+.purr:first-letter {
+  text-transform: uppercase;
+}
+:ET

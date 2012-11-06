@@ -18,12 +18,14 @@ class BnbsController < ApplicationController
       @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 5, :page => params[:page])
     end
 
-
-    convert_to_map_data(@bnbs)
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @bnb}
+      if @bnbs.nil? || @bnbs.empty?
+        format.html { redirect_to root_url, :alert => "No results were found for this search"}
+      else
+        convert_to_map_data(@bnbs)
+        format.html
+      end
+
     end
   end
 

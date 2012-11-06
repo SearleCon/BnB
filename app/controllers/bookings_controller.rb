@@ -117,7 +117,6 @@ class BookingsController < ApplicationController
 
  def confirm
    @booking.update_attribute(:status, :booked)
-   UserMailer.deliver_confirmation_received.delay(@booking)
    respond_to do |format|
      format.js { render layout: false }
    end

@@ -16,6 +16,14 @@ class BookingObserver < ActiveRecord::Observer
    booking.event.color = get_event_colour(booking.status)
  end
 
+ def after_update(booking)
+   if booking.booked? && booking.online?
+     UserMailer.delay.confirmation_received(booking)
+   end
+
+ end
+
+
 private
 def get_event_colour(status_for_colour)
   case status_for_colour

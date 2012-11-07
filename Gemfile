@@ -28,6 +28,7 @@ gem 'gmaps4rails'
 gem 'jquery-turbolinks'
 gem 'select2-rails'
 gem 'placeholdit'
+gem "paypal-recurring"
 
 
 group :development, :test do

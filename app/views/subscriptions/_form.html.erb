@@ -1,0 +1,22 @@
+<%= simple_form_for(@subscription) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email %>
+    <%= f.hidden_field :paypal_customer_token %>
+    <%= f.hidden_field :paypal_payment_token %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :plan %>
+    <%= f.hidden_field :price %>
+  </div>
+
+  <div id="paypal_checkout" >
+      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path %>
+   </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+
+<% end %>

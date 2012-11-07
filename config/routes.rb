@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
 
+  resources :subscriptions
+
   resources :suggestions
   resources :events, only: [:index]
 
@@ -47,9 +49,12 @@ SampleApp::Application.routes.draw do
   match '/startpage', to: 'static_pages#startpage'
   match '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
   match '/privacypolicy', to: 'static_pages#privacy_policy'
+  match '/faq', to: 'static_pages#faq'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contact'
+
+  get "paypal/checkout", to: "subscriptions#paypal_checkout"
 
 
   devise_scope :user do

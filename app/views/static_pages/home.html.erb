@@ -70,6 +70,7 @@ href values must reference the id for this carousel -->
           <li>View your booking history at your leisure</li>
         </ul>
         <p align="center"><%= link_to 'Subscribe now', new_subscription_url, class: "btn btn-primary"  %></p>
+        <p align="center"><%= link_to 'See subscription', subscription_path(Subscription.first), class: "btn btn-primary"  %></p>
 
         <p align="center"><%= link_to 'Register to book now', register_path("Guest"), class: "btn btn-primary"  %></p>
       </div>

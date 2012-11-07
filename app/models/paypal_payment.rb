@@ -4,8 +4,25 @@ class PaypalPayment
     @subscription = subscription
   end
 
+  def profile_details
+    process(:profile, profile_id: @subscription.paypal_recurring_profile_token)
+
+  end
+
   def checkout_details
     process :checkout_details
+  end
+
+  def suspend
+    process(:suspend,{ profile_id: @subscription.paypal_recurring_profile_token })
+  end
+
+  def reactivate
+    process(:reactivate,{ profile_id: @subscription.paypal_recurring_profile_token })
+  end
+
+  def cancel
+    process(:cancel, { profile_id: @subscription.paypal_recurring_profile_token })
   end
 
   def checkout_url(options)
@@ -23,6 +40,8 @@ class PaypalPayment
         token: @subscription.paypal_payment_token,
         payer_id: @subscription.paypal_customer_token,
         description: @subscription.plan,
+        frequency: 1,
+        period:  :monthly,
         amount: @subscription.price,
         currency: "USD"
     )

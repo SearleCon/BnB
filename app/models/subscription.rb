@@ -26,4 +26,14 @@ class Subscription < ActiveRecord::Base
     save!
   end
 
+  def cancel
+    response = paypal.cancel
+    response.success?
+  end
+
+  def reactivate
+    response = paypal.reactivate
+    response.success?
+  end
+
 end

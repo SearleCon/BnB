@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
 
 
+  get "payment_notification/create"
+
   resources :subscriptions
 
   resources :suggestions

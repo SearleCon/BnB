@@ -74,7 +74,10 @@ class SubscriptionsController < ApplicationController
   # DELETE /subscriptions/1.json
   def destroy
     @subscription = Subscription.find(params[:id])
-    @subscription.destroy
+    if @subscription.cancel
+      @subscription.destroy
+    end
+
 
     respond_to do |format|
       format.html { redirect_to subscriptions_url }
@@ -91,4 +94,7 @@ class SubscriptionsController < ApplicationController
                     return_url: new_subscription_url,
                     cancel_url: root_url)
   end
+
+
+
 end

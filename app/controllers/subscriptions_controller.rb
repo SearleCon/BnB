@@ -92,7 +92,7 @@ class SubscriptionsController < ApplicationController
     subscription.price = 50
     redirect_to subscription.paypal.checkout_url(
                     return_url: new_subscription_url,
-                    cancel_url: root_url)
+                    cancel_url: root_url, ipn_url: payment_notifications_url)
   end
 
 

@@ -1,0 +1,22 @@
+class PaymentNotificationObserver < ActiveRecord::Observer
+
+  def after_create(payment_notification)
+    notification = PayPal::Recurring::Notification.new(payment_notification.params)
+    if notification.completed?
+      @subscription = Subscription.find_by_paypal_customer_token(notification.params[:payer_id])
+      if notification.recurring_payment_profile?
+         @subscription.toggle(:active_profile)
+         # TODO send subscription active mail
+      elsif notification.recurring_payment? || notification.express_checkout?
+         if notification.params[:mc_gross] == @subscription.price && notification.params[:item_name] == @subscription.plan
+            # TODO send success mail
+         end
+      end
+    else
+      BillingMailer.delay.paypal_error(@subscription, notification)
+    end
+
+
+  end
+
+end

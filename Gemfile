@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rspec-rails', '2.8.1'
   gem 'annotate', ">=2.5.0"
   gem "bullet", :group => "development"
+  gem "localtunnel"
 end
 
 # Gems used only for assets and not required

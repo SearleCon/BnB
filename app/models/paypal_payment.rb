@@ -41,9 +41,10 @@ class PaypalPayment
         payer_id: @subscription.paypal_customer_token,
         description: @subscription.plan,
         frequency: 1,
-        period:  :monthly,
+        period:  :daily,
         amount: @subscription.price,
-        currency: "USD"
+        currency: "USD",
+        start_at: Time.now - 1.days
     )
     response = PayPal::Recurring.new(options).send(action)
     raise response.errors.inspect if response.errors.present?

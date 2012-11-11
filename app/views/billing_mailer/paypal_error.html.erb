@@ -1,0 +1,21 @@
+<h3>Paypal error notification</h3>
+
+<p>There has been an error for the subscription of <%= @user.name %> <%=  @subscription.id %></p>
+
+<p>Notification id: <%=@notification.id %></p>
+<p>Date: <%= Time.now %></p>
+
+<br>
+<h4>Paypal data</h4>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <% @notification.params.each do |key, value| %>
+     <tr>
+       <td><%= key %></td>
+       <td><%= value %></td>
+     </tr>
+  <% end %>
+</table>

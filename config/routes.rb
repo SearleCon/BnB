@@ -1,7 +1,7 @@
 SampleApp::Application.routes.draw do
 
 
-  get "payment_notification/create"
+  resources :payment_notifications, controller: 'payment_notification',  only: [:create]
 
   resources :subscriptions
 

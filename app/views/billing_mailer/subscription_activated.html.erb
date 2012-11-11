@@ -1,0 +1,11 @@
+<h3>Subscription activated</h3>
+
+<p>Dear <%= @user.name %></p>
+
+<p>We have received confirmation from paypal that your BnbEezy subscription  has successfully been created.</p>
+<p>If you have any queries please mail us with your reference number <%= @subscription.paypal_customer_token %> at support@searleconsulting.co.za or go to <%= link_to @bnb.website, url_with_protocol(@bnb.website), :target => '_blank' %> and click on contact.</p>
+<br>
+<p>Thank you for your support</p>
+<br>
+<p>Regards</p>
+<p>BnbEezy.com</p>

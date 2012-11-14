@@ -24,17 +24,13 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/new
   # GET /subscriptions/new.json
   def new
-    @subscription = Subscription.new
+    @plan = Plan.find(params[:plan_id])
+    @subscription = @plan.subscriptions.build
     @subscription.user_id = current_user.id
-    @subscription.plan = 'Test plan'
-    @subscription.price = 50
     if params[:PayerID]
       @subscription.paypal_customer_token = params[:PayerID]
       @subscription.paypal_payment_token = params[:token]
       @subscription.email = @subscription.paypal.checkout_details.email
-      @subscription.user_id = current_user.id
-      @subscription.plan = 'Test plan'
-      @subscription.price = 50
     end
   end
 
@@ -47,6 +43,7 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions.json
   def create
     @subscription = Subscription.new(params[:subscription])
+    @subscription.user_id = current_user.id
     if @subscription.save_with_paypal_payment
       redirect_to @subscription, :notice => "Thank you for subscribing!"
     else
@@ -78,20 +75,22 @@ class SubscriptionsController < ApplicationController
       @subscription.destroy
     end
 
-
     respond_to do |format|
       format.html { redirect_to subscriptions_url }
       format.json { head :no_content }
     end
   end
 
+  def payment_plans
+    @plans = Plan.find_all_by_active(true)
+  end
+
   def paypal_checkout
-    subscription = Subscription.new
+    plan = Plan.find(params[:plan_id])
+    subscription = plan.subscriptions.new
     subscription.user_id = current_user.id
-    subscription.plan = 'Test plan'
-    subscription.price = 50
     redirect_to subscription.paypal.checkout_url(
-                    return_url: new_subscription_url,
+                    return_url: new_subscription_url(:plan_id => plan.id),
                     cancel_url: root_url, ipn_url: payment_notifications_url)
   end
 

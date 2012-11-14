@@ -1,0 +1,21 @@
+<div class="hero-unit">
+  <h1>Pricing</h1>
+     <br>
+     <table class="table table-bordered">
+       <tr>
+         <td>Package</td>
+         <td>Number of months</td>
+         <td>Price</td>
+         <td>#</td>
+       </tr>
+       <% @plans.each do |plan| %>
+       <tr>
+       <td><%= plan.name %></td>
+       <td><%= plan.duration %></td>
+       <td><%= plan.price %></td>
+       <td><%= link_to 'Buy Now', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary btn-small" %></td>
+       </tr>
+       <% end %>
+     </table>
+
+</div>

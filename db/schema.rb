@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111083501) do
+ActiveRecord::Schema.define(:version => 20121114153316) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -129,6 +129,16 @@ ActiveRecord::Schema.define(:version => 20121111083501) do
 
   add_index "photos", ["bnb_id"], :name => "index_photos_on_bnb_id"
 
+  create_table "plans", :force => true do |t|
+    t.integer  "duration"
+    t.decimal  "price"
+    t.boolean  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.boolean  "free"
+  end
+
   create_table "roles", :force => true do |t|
     t.string    "description"
     t.timestamp "created_at",  :null => false
@@ -159,16 +169,17 @@ ActiveRecord::Schema.define(:version => 20121111083501) do
   end
 
   create_table "subscriptions", :force => true do |t|
-    t.string   "email"
     t.string   "paypal_customer_token"
     t.string   "paypal_recurring_profile_token"
     t.integer  "user_id"
-    t.string   "plan"
-    t.decimal  "price"
     t.datetime "created_at",                                        :null => false
     t.datetime "updated_at",                                        :null => false
     t.boolean  "active_profile",                 :default => false
+    t.integer  "plan_id"
+    t.datetime "expiry_date"
   end
+
+  add_index "subscriptions", ["plan_id"], :name => "index_subscriptions_on_plan_id"
 
   create_table "suggestions", :force => true do |t|
     t.text      "suggestion"

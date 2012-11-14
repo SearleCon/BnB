@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/observers/payment_notification_observer" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/billing_mailer/paypal_error.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BnB.iml" afterPath="$PROJECT_DIR$/.idea/BnB.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/subscriptions/payment_plans.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/observers/payment_notification_observer" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/payment_notification_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/payment_notification_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/subscriptions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/subscriptions_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/payment_notification.rb" afterPath="$PROJECT_DIR$/app/models/payment_notification.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/paypal_payment.rb" afterPath="$PROJECT_DIR$/app/models/paypal_payment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/subscription.rb" afterPath="$PROJECT_DIR$/app/models/subscription.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb" afterPath="$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb" afterPath="$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subscriptions/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/subscriptions/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/subscriptions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/subscriptions/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/payment_notification_spec.rb" afterPath="$PROJECT_DIR$/spec/models/payment_notification_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/subscription_spec.rb" afterPath="$PROJECT_DIR$/spec/models/subscription_spec.rb" />
     </list>
     <ignored path="BnB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,46 +52,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="billing_mailer.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mailers/billing_mailer.rb">
+      <file leaf-file-name="subscriptions_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="103" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
+            <state line="41" column="69" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payment_received.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb">
+      <file leaf-file-name="20121114141130_remove_email_from_subscriptions.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20121114141130_remove_email_from_subscriptions.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="256" selection-start="436" selection-end="436" vertical-scroll-proportion="0.11173184">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subscription_activated.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb">
+      <file leaf-file-name="subscription_observer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/observers/subscription_observer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="262" selection-start="324" selection-end="438" vertical-scroll-proportion="-3.2">
+            <state line="7" column="117" selection-start="246" selection-end="312" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bnbs/show.html.erb">
+      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="43" column="46" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_showbnb.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb">
+      <file leaf-file-name="bnbs_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/bnbs_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="92" selection-start="2612" selection-end="2695" vertical-scroll-proportion="-12.8">
+            <state line="13" column="7" selection-start="275" selection-end="275" vertical-scroll-proportion="0.21757323">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_observer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/observers/user_observer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="19" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,43 +109,25 @@
       <file leaf-file-name="subscription.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/subscription.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="25" selection-start="180" selection-end="202" vertical-scroll-proportion="0.0">
+            <state line="24" column="59" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bnb_notifier.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/mailers/bnb_notifier.rb">
+      <file leaf-file-name="plan.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="18" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paypal_error.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/paypal_error.html.erb">
+      <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="82" selection-start="297" selection-end="297" vertical-scroll-proportion="-8.32">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/rooms/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="payment_notification_observer" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/observers/payment_notification_observer">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="66" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0">
+            <state line="53" column="33" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,26 +150,48 @@
     <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: BnB" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/subscription.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/db/migrate/20121113092530_remove_plan_and_price_from_subscriptions.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="/Rails BnB: development" />
-        <option value="$PROJECT_DIR$/app/controllers/payment_notification_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/subscriptions/payment_plans.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/subscriptions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/subscriptions/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/subscriptions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/observers/subscription_observer.rb" />
+        <option value="/Rails BnB: development" />
+        <option value="$PROJECT_DIR$/app/observers/paypal_ipn_observer.rb" />
         <option value="$PROJECT_DIR$/app/models/paypal_payment.rb" />
-        <option value="$PROJECT_DIR$/app/mailers/billing.rb" />
-        <option value="$PROJECT_DIR$/app/models/payment_notification.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20121111083501_add_active_profile_flag_to_subscription.rb" />
-        <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/app/views/billing_mailer/paypal_error.html.erb" />
-        <option value="$PROJECT_DIR$/app/observers/payment_notification_observer" />
-        <option value="$PROJECT_DIR$/app/mailers/billing_mailer.rb" />
-        <option value="$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/subscription.rb" />
+        <option value="$PROJECT_DIR$/app/models/plan.rb" />
+        <option value="$PROJECT_DIR$/app/observers/user_observer.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
       </list>
     </option>
   </component>
@@ -186,8 +203,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -237,16 +254,6 @@
             <PATH_ELEMENT USER_OBJECT="Root">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="RailsProjectView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BnB" />
-              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -390,26 +397,8 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="BnB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BnB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
+              <option name="myItemId" value="suggestions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,7 +420,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rooms" />
+              <option name="myItemId" value="subscriptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -453,7 +460,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bnbs" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,7 +482,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="billing_mailer" />
+              <option name="myItemId" value="guests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,6 +497,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uploaders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -544,6 +555,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mailers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,6 +658,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -652,7 +687,7 @@
     <property name="JdbcConsole.EnableParameterPattern" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="JdbcConsole.ParameterPattern" value="(\?\d*|\:\w+|\@\w+|\$\{[^$\{\}]*\}|\$\w+\$|\#\w+\#)" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="JdbcConsole.ResultPageSize" value="1000" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
     <property name="JdbcConsole.Extract.IncludeRowNumbers" value="false" />
@@ -670,32 +705,12 @@
       <recent name="$PROJECT_DIR$/vendor/assets/stylesheets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/observers" />
       <recent name="$PROJECT_DIR$/app/views/bookings" />
       <recent name="$PROJECT_DIR$/app/views/guests" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Development: BnB">
-    <configuration default="false" name="IRB console" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
-      <module name="BnB" />
-      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$USER_HOME$/.rvm/rubies/ruby-1.9.3-p194/bin/irb" />
-      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="--prompt simple" />
-      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Rake.db:migrate">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="BnB" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -763,6 +778,30 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="jobs:work" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="jobs:clear" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="BnB" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="jobs:clear" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
@@ -1037,7 +1076,7 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="test" type="RakeRunConfigurationType" factoryName="Rake">
+    <configuration default="false" name="ipn_observer" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="BnB" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
@@ -1086,19 +1125,19 @@
     <list size="9">
       <item index="0" class="java.lang.String" itemvalue="Rails.Production: BnB" />
       <item index="1" class="java.lang.String" itemvalue="Rails.Development: BnB" />
-      <item index="2" class="java.lang.String" itemvalue="Rake.test" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.ipn_observer" />
       <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="4" class="java.lang.String" itemvalue="IRB console.IRB console" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.routes" />
-      <item index="7" class="java.lang.String" itemvalue="Rake.jobs:work" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.routes" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.jobs:work" />
+      <item index="7" class="java.lang.String" itemvalue="Rake.jobs:clear" />
       <item index="8" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
+        <item index="0" class="java.lang.String" itemvalue="Rake.db:migrate" />
         <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
-        <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate" />
+        <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
         <item index="3" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
         <item index="4" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
       </list>
@@ -1152,16 +1191,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31636363" sideWeight="0.4914621" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31442785" sideWeight="0.4914621" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272727" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32484847" sideWeight="0.4909285" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31994262" sideWeight="0.68363637" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3191035" sideWeight="0.68557215" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2862267" sideWeight="0.4" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31483456" sideWeight="0.4" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39900497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49212122" sideWeight="0.5779082" order="7" side_tool="true" content_ui="tabs" />
@@ -1171,6 +1209,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3243781" sideWeight="0.4909285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272727" sideWeight="0.4842181" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1230,114 +1269,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/room.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/subscriptions/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="2616" selection-end="2616" vertical-scroll-proportion="0.0">
+        <state line="25" column="85" selection-start="645" selection-end="645" vertical-scroll-proportion="-3.52">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/user_mailer.rb">
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p194/gems/activemodel-3.2.2/lib/active_model/observing.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="45" selection-start="100" selection-end="158" vertical-scroll-proportion="0.0">
+        <state line="230" column="0" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.30028328">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user_mailer/booking_made.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/observers/paypal_ipn_observer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/paypal_payment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="28" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/subscriptions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/rooms/_row.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20121114141130_remove_email_from_subscriptions.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+    <entry file="file://$PROJECT_DIR$/app/observers/subscription_observer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="7" column="117" selection-start="246" selection-end="312" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/bnb_notifier.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/subscriptions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="41" column="69" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/paypal_error.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/observers/user_observer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="82" selection-start="297" selection-end="297" vertical-scroll-proportion="-8.32">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/observers/payment_notification_observer">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="66" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/billing_mailer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="103" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
+        <state line="3" column="19" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/subscription.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="25" selection-start="180" selection-end="202" vertical-scroll-proportion="0.0">
+        <state line="24" column="59" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/rooms/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="53" column="33" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bnbs/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="43" column="46" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="92" selection-start="2612" selection-end="2695" vertical-scroll-proportion="-12.8">
+        <state line="29" column="76" selection-start="1400" selection-end="1400" vertical-scroll-proportion="0.49838883">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/subscription_activated.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/bnbs_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="262" selection-start="324" selection-end="438" vertical-scroll-proportion="-3.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/billing_mailer/payment_received.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="256" selection-start="436" selection-end="436" vertical-scroll-proportion="0.11173184">
+        <state line="13" column="7" selection-start="275" selection-end="275" vertical-scroll-proportion="0.21757323">
           <folding />
         </state>
       </provider>

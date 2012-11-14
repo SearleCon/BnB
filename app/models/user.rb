@@ -37,17 +37,22 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service, :contact_number, :country
 
   validates_acceptance_of :terms_of_service
-  after_create :send_welcome_email
-
 
   def role
     self.role_id.nil? ? Role.new(description: 'Temp') : Role.find(self.role_id)
   end
 
-  private
-
-  def send_welcome_email
-    UserMailer.delay.welcome(self)
+  def is_owner?
+    self.role.description == "Owner"
   end
+
+  def active_subscription
+    Subscription.find_by_user_id_and_active_profile(self, true)
+  end
+
+  def bnb
+    Bnb.find_last_by_user_id(self)
+  end
+
 
 end

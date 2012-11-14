@@ -2,6 +2,7 @@ class PaypalPayment
 
   def initialize(subscription)
     @subscription = subscription
+    @plan = Plan.find(subscription.plan_id)
   end
 
   def profile_details
@@ -11,6 +12,10 @@ class PaypalPayment
 
   def checkout_details
     process :checkout_details
+  end
+
+  def request_payment
+    process :request_payment
   end
 
   def suspend
@@ -30,7 +35,6 @@ class PaypalPayment
   end
 
   def make_recurring
-    process :request_payment
     process :create_recurring_profile, period: :monthly, frequency: 1, start_at: Time.zone.now
   end
 
@@ -39,12 +43,9 @@ class PaypalPayment
     options = options.reverse_merge(
         token: @subscription.paypal_payment_token,
         payer_id: @subscription.paypal_customer_token,
-        description: @subscription.plan,
-        frequency: 1,
-        period:  :daily,
-        amount: @subscription.price,
+        description: @plan.name,
+        amount: @plan.price,
         currency: "USD",
-        start_at: Time.now - 1.days
     )
     response = PayPal::Recurring.new(options).send(action)
     raise response.errors.inspect if response.errors.present?

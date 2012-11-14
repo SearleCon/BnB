@@ -39,15 +39,12 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.role.description == "Owner"
-      session[:bnb_id] = Bnb.find_by_user_id(current_user)
-      show_bnb_url
-    else
-     root_url
+    if current_user.is_owner?
+      if current_user.active_subscription.has_expired?
+        #TODO go to payments_page with options
+      else
+        show_bnb_url
+      end
     end
   end
-
-
-
-
 end

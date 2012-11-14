@@ -3,14 +3,14 @@
 # Table name: subscriptions
 #
 #  id                             :integer          not null, primary key
-#  email                          :string(255)
 #  paypal_customer_token          :string(255)
 #  paypal_recurring_profile_token :string(255)
 #  user_id                        :integer
-#  plan                           :string(255)
-#  price                          :decimal(, )
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
+#  active_profile                 :boolean          default(FALSE)
+#  plan_id                        :integer
+#  expiry_date                    :datetime
 #
 
 require 'spec_helper'

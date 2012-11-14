@@ -1,22 +1,34 @@
+
+<div class="hero-unit">
 <%= simple_form_for(@subscription) do |f| %>
   <%= f.error_notification %>
+      <h1>Order details</h1>
+      <br>
+  <div>
+    <table class="table table-bordered">
+      <tr>
+        <td><%= @plan.name %></td>
+        <td><%= @plan.duration %></td>
+        <td><%= @plan.price %></td>
+      </tr>
+    </table>
+  </div>
 
   <div class="form-inputs">
-    <%= f.input :email %>
     <%= f.hidden_field :paypal_customer_token %>
     <%= f.hidden_field :paypal_payment_token %>
-    <%= f.hidden_field :user_id %>
-    <%= f.hidden_field :plan %>
-    <%= f.hidden_field :price %>
+    <%= f.hidden_field :plan_id %>
   </div>
 
-  <div id="paypal_checkout" >
-      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path %>
-   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
 
+  <% if @subscription.payment_provided? %>
+        <%= f.button :submit, class: "btn btn-primary", :value => 'Complete order' %>
+  <% else %>
+    <div id="paypal_checkout" >
+      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path(:plan_id => @plan) %>
+    </div>
+  <% end %>
 
 <% end %>
+</div>

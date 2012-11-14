@@ -3,17 +3,18 @@
 # Table name: subscriptions
 #
 #  id                             :integer          not null, primary key
-#  email                          :string(255)
 #  paypal_customer_token          :string(255)
 #  paypal_recurring_profile_token :string(255)
 #  user_id                        :integer
-#  plan                           :string(255)
-#  price                          :decimal(, )
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
+#  active_profile                 :boolean          default(FALSE)
+#  plan_id                        :integer
+#  expiry_date                    :datetime
 #
 
 class Subscription < ActiveRecord::Base
+  belongs_to :plan
   attr_accessor :paypal_payment_token
 
   def paypal
@@ -21,9 +22,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def save_with_paypal_payment
-    response = paypal.make_recurring
-    self.paypal_recurring_profile_token = response.profile_id
-    save!
+    response = paypal.request_payment
+    response.approved? && response.success? ? save! : false
   end
 
   def cancel
@@ -34,6 +34,14 @@ class Subscription < ActiveRecord::Base
   def reactivate
     response = paypal.reactivate
     response.success?
+  end
+
+  def has_expired?
+    Time.now > self.expiry_date
+  end
+
+  def payment_provided?
+    paypal_payment_token.present?
   end
 
 end

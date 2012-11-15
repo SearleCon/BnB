@@ -23,7 +23,6 @@ class BnbStepsController < ApplicationController
 
   private
   def finish_wizard_path
-    session[:bnb_id] = @bnb
     show_bnb_url(@bnb)
   end
 

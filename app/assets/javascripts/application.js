@@ -50,10 +50,6 @@ $.rails.showConfirmDialog = function(link) {
     });
 };
 
-$.ajaxSetup({
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader("Accept", "text/javascript");
-    }
-});
+
 
 

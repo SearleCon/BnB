@@ -30,4 +30,14 @@ class Event < ActiveRecord::Base
         :color => self.color
     }
   end
+
+=begin
+  def start_at=(start_at)
+    write_attribute(:start_at, start_at.strftime('%A, %d %B %Y'))
+  end
+
+  def end_at=(end_at)
+    write_attribute(:end_at, end_at.strftime('%A, %d %B %Y'))
+  end
+=end
 end

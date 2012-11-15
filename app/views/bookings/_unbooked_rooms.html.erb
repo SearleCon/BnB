@@ -1,4 +1,4 @@
-<% if current_user.role.description == 'Owner' %>
+<% if current_user.is_owner? %>
   <%= simple_form_for Booking.new do |f| %>
       <%= f.association :rooms, :collection => unbooked, :label => '', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %>
    <% end %>

@@ -7,24 +7,13 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.find_all_by_bnb_id(@bnb)
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   # GET /my_bookings
   def my_bookings
     @active_bookings = Booking.active_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:active_page])
     @inactive_bookings = Booking.inactive_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:inactive_page])
-
-    respond_to do |format|
-      format.html
-    end
-
   end
-
   # GET /bookings/1
   # GET /bookings/1.json
   def show
@@ -37,9 +26,9 @@ class BookingsController < ApplicationController
   # GET /bookings/8new.json
   def new
     @booking = Booking.new
-    @booking.build_guest
+    @guest = Guest.new
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
-    @booking.build_event(:start_at => format_date(selected_day), :end_at => format_date(selected_day + 1.days))
+    @event = Event.new(:start_at => selected_day, :end_at => selected_day + 1.days)
 
     respond_to do |format|
          format.html { render 'client_booking_form'}
@@ -142,10 +131,6 @@ class BookingsController < ApplicationController
  end
 
  private
-
-  def format_date(date)
-    date.strftime('%A, %d %B %Y')
-  end
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"

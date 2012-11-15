@@ -41,10 +41,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource_or_scope)
     if current_user.is_owner?
       if current_user.active_subscription.has_expired?
-        #TODO go to payments_page with options
+        payment_plans_subscriptions_url
       else
         show_bnb_url
       end
     end
+    root_url
   end
 end

@@ -27,7 +27,7 @@ $(document).ready ->
     slotMinutes: 15,
 
     eventSources: [{
-    url: '/events/',
+    url: '/events',
     ignoreTimezone: false
     }],
 

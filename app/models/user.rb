@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   validates_acceptance_of :terms_of_service
 
   def role
-    self.role_id.nil? ? Role.new(description: 'Temp') : Role.find(self.role_id)
+    role ||= Role.find(role_id)
   end
 
   def is_owner?
@@ -47,11 +47,11 @@ class User < ActiveRecord::Base
   end
 
   def active_subscription
-    Subscription.find_by_user_id_and_active_profile(self, true)
+    subscription ||= Subscription.find_by_user_id_and_active_profile(self, true)
   end
 
   def bnb
-    Bnb.find_last_by_user_id(self)
+    bnb ||= Bnb.find_last_by_user_id(self)
   end
 
 

@@ -1,6 +1,16 @@
 <div class="hero-unit">
   <h1>Pricing</h1>
      <br>
+     <% if current_user.active_subscription && current_user.active_subscription.has_expired? %>
+      <% if current_user.active_subscription.plan.free? %>
+          <p>Your free trial has expired, to continue to use BnbEezy please select one of the payment options below:</p>
+      <% else %>
+          <p>Your current subscription has expired, to continue to use BnbEezy please select one of the payment options below or click the renew button to use the previously selected plan:</p>
+          <br>
+          <div><%= link_to 'Renew', new_subscription_path(:plan_id => current_user.active_subscription.plan_id), class: "btn btn-primary" %></div>
+      <% end %>
+     <% end %>
+     <br>
      <table class="table table-bordered">
        <tr>
          <td>Package</td>
@@ -9,13 +19,14 @@
          <td>#</td>
        </tr>
        <% @plans.each do |plan| %>
-       <tr>
-       <td><%= plan.name %></td>
-       <td><%= plan.duration %></td>
-       <td><%= plan.price %></td>
-       <td><%= link_to 'Buy Now', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary btn-small" %></td>
-       </tr>
+        <% unless plan.free %>
+           <tr>
+           <td><%= plan.name %></td>
+           <td><%= plan.duration %></td>
+           <td><%= plan.price %></td>
+           <td><%= link_to 'Buy Now', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary btn-small" %></td>
+           </tr>
+        <% end %>
        <% end %>
      </table>
-
 </div>

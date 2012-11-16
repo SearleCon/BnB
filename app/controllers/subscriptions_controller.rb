@@ -95,5 +95,4 @@ class SubscriptionsController < ApplicationController
   end
 
 
-
 end

@@ -45,7 +45,8 @@ class ApplicationController < ActionController::Base
       else
         show_bnb_url
       end
+    else
+     root_url
     end
-    root_url
   end
 end

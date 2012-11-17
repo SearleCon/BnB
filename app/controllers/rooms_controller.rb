@@ -4,6 +4,12 @@ class RoomsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+
+  caches_action :index, :cache_path => proc {|c|
+    room = Room.order('updated_at DESC').limit(1).first
+    c.params.merge!(:tag => room.updated_at.to_i )
+  }
+
   # GET /rooms
   # GET /rooms.json
   def index
@@ -71,6 +77,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1.json
   def destroy
     @room.destroy
+
     respond_to do |format|
       format.html { redirect_to bnb_rooms_path(@bnb) }
       format.js { @room }

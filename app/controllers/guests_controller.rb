@@ -4,6 +4,11 @@ class GuestsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+  caches_action :index, :cache_path => proc {|c|
+    guest = Guest.order('updated_at DESC').limit(1).first
+    c.params.merge!(:tag => guest.updated_at.to_i )
+  }
+
   # GET /guests
   # GET /guests.json
   def index
@@ -83,6 +88,7 @@ class GuestsController < ApplicationController
   def destroy
     @guest = Guest.find(params[:id])
     @guest.destroy
+
 
     respond_to do |format|
       format.html { redirect_to guests_url }

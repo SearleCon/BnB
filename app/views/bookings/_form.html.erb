@@ -20,7 +20,6 @@
 
         <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %></div>
         <p>or</p>
-
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add a new guest'), f, :guest %></div>
       </div>
       <br>

@@ -6,8 +6,12 @@ class GuestsController < ApplicationController
 
   caches_action :index, :cache_path => proc {|c|
     guest = Guest.order('updated_at DESC').limit(1).first
-    c.params.merge!(:tag => guest.updated_at.to_i )
+    unless guest.nil?
+     c.params.merge!(:tag => guest.updated_at.to_i)
+    end
   }
+
+
 
   # GET /guests
   # GET /guests.json

@@ -4,6 +4,18 @@ class BookingsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+  caches_action :show, :cache_path => proc {|c|
+    booking = Booking.find(c.params[:id])
+    { :tag => booking.updated_at.to_i }
+  }
+
+  caches_action :my_bookings, :cache_path => proc {|c|
+    booking = Booking.order('updated_at DESC').find_all_by_user_id(current_user.id).first
+    unless booking.nil?
+      c.params.merge!(:tag => booking.updated_at.to_i)
+    end
+  }
+
   # GET /bookings
   # GET /bookings.json
   def index
@@ -11,8 +23,11 @@ class BookingsController < ApplicationController
 
   # GET /my_bookings
   def my_bookings
-    @active_bookings = Booking.active_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:active_page])
-    @inactive_bookings = Booking.inactive_bookings_by_user(current_user).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:inactive_page])
+    bookings = Booking.search(params[:search]).order(sort_column + " " + sort_direction).find_all_by_user_id(current_user)
+    active = bookings.select{|booking| !booking.closed?}
+    @active_bookings = active.paginate(:per_page => 5, :page => params[:active_page]) if active
+    inactive = bookings.select{|booking| booking.closed?}
+    @inactive_bookings = inactive.paginate(:per_page => 5, :page => params[:inactive_page]) if inactive
   end
   # GET /bookings/1
   # GET /bookings/1.json
@@ -23,12 +38,15 @@ class BookingsController < ApplicationController
   end
 
   # GET /bookings/new
-  # GET /bookings/8new.json
+  # GET /bookings/new.json
   def new
     @booking = Booking.new
-    @guest = Guest.new
+    unless current_user.is_owner?
+      @booking.build_guest(:name => current_user.name, :email => current_user.email, :contact_number => current_user.contact_number)
+    end
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
-    @event = Event.new(:start_at => selected_day, :end_at => selected_day + 1.days)
+    @booking.event.formatted_start_at(selected_day)
+    @booking.event.formatted_end_at(selected_day + 1.days)
 
     respond_to do |format|
          format.html { render 'client_booking_form'}
@@ -40,8 +58,8 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = @bnb.bookings.new(params[:booking])
-    @booking.user_id = current_user.id
+    params[:booking].merge!(:user_id => current_user.id)
+    @booking = @bnb.bookings.build(params[:booking])
 
     respond_to do |format|
       if @booking.save
@@ -98,6 +116,7 @@ class BookingsController < ApplicationController
      @line_item.value = room.rates
    end
    if @booking.save
+     expire_action(action: :show, :id => @booking)
      respond_to do |format|
        format.html { redirect_to show_invoice_bnb_booking_url(@bnb,@booking)}
      end

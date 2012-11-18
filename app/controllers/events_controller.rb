@@ -1,6 +1,13 @@
 class EventsController < ApplicationController
   respond_to :json
 
+  caches_action :index, :cache_path => proc {|c|
+    event = Event.order('updated_at DESC').limit(1).first
+    unless event.nil?
+     {:tag => event.updated_at.to_i}
+    end
+  }
+
   # GET /events
   # GET /events.json
   def index

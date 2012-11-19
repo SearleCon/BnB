@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 
+  before_filter :subscription_required
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = "Access denied."
@@ -36,6 +37,14 @@ class ApplicationController < ActionController::Base
     unless current_user.nil?
       new_suggestion_url(:user_id => current_user.id)
     end
+  end
+
+  def subscription_required
+   unless current_user.nil?
+     if current_user.active_subscription && current_user.is_owner? && current_user.active_subscription.has_expired?
+        redirect_to payment_plans_subscriptions_url
+     end
+   end
   end
 
   def after_sign_in_path_for(resource_or_scope)

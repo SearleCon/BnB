@@ -6,7 +6,7 @@
           <%= f.input :address_line_two %>
           <%= f.input :city %>
           <%= f.input :postal_code %>
-          <%=f.input :country, :collection => Carmen::Country.all, :value_method => :name,  prompt: "Select a country",label: false %>
+          <%=f.input :country, :collection => sort_countries_for_carmen(Carmen::Country.all),  prompt: "Select a country",label: false %>
           <%= render 'shared/select_region',  :parent_region => f.object.country %>
           <%= f.input :telephone_number %>
           <%= f.input :website %>

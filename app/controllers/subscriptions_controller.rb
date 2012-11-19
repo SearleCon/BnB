@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+
+  skip_before_filter :subscription_required
   # GET /subscriptions
   # GET /subscriptions.json
   def index
@@ -30,7 +32,6 @@ class SubscriptionsController < ApplicationController
     if params[:PayerID]
       @subscription.paypal_customer_token = params[:PayerID]
       @subscription.paypal_payment_token = params[:token]
-      @subscription.email = @subscription.paypal.checkout_details.email
     end
   end
 
@@ -45,7 +46,8 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(params[:subscription])
     @subscription.user_id = current_user.id
     if @subscription.save_with_paypal_payment
-      redirect_to @subscription, :notice => "Thank you for subscribing!"
+      current_user.reload
+      redirect_to root_url, :notice => "Thank you for subscribing!"
     else
       render :new
     end

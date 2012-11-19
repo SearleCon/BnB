@@ -22,6 +22,7 @@
 #  role_id                :integer
 #  country                :string(255)
 #  contact_number         :string(255)
+#  surname                :string(255)
 #
 
 require 'spec_helper'

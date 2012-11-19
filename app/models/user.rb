@@ -22,6 +22,7 @@
 #  role_id                :integer
 #  country                :string(255)
 #  contact_number         :string(255)
+#  surname                :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -34,12 +35,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service, :contact_number, :country
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service, :contact_number, :country, :surname
 
   validates_acceptance_of :terms_of_service
 
   def role
-    role ||= Role.find(role_id)
+    @role ||= Role.find(role_id)
   end
 
   def is_owner?
@@ -47,11 +48,16 @@ class User < ActiveRecord::Base
   end
 
   def active_subscription
-    subscription ||= Subscription.find_by_user_id_and_active_profile(self, true)
+    @subscription ||= Subscription.find_by_user_id_and_active_profile(self, true)
   end
 
   def bnb
-    bnb ||= Bnb.find_last_by_user_id(self)
+    @bnb ||= Bnb.find_last_by_user_id(self)
+  end
+
+  def reload(options = nil)
+    super
+    @subscription = nil
   end
 
 

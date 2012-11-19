@@ -19,4 +19,8 @@ module ApplicationHelper
     /^http/.match(url) ? url : "http://#{url}"
   end
 
+  def sort_countries_for_carmen(countries)
+    sorted_countries = countries.map{|c| c.name}.sort
+  end
+
 end

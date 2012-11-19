@@ -10,6 +10,10 @@
     <%= f.input :password, :autocomplete => "off", :hint => "Leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "We need your current password to confirm your changes", :required => true %>
+    <%= f.input :name %>
+    <%= f.input :surname %>
+    <%= f.input :contact_number %>
+    <%= f.input :country, :collection => sort_countries_for_carmen(Carmen::Country.all),  prompt: "Select a country",label: false %>
   </div>
 
 

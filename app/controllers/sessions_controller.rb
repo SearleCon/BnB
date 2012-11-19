@@ -1,9 +1,4 @@
 class SessionsController < Devise::SessionsController
-
-  # GET /resource/sign_in
-  def new
-    session[:last_page] = request.referrer
-    super
-  end
+  skip_before_filter :subscription_required, :only => :destroy
 
 end

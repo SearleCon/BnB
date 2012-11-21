@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119113828) do
+ActiveRecord::Schema.define(:version => 20121121084238) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -50,7 +50,9 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
     t.boolean   "online",     :default => false
   end
 
+  add_index "bookings", ["bnb_id"], :name => "index_bookings_on_bnb_id"
   add_index "bookings", ["guest_id"], :name => "index_bookings_on_guest_id"
+  add_index "bookings", ["user_id"], :name => "index_bookings_on_user_id"
 
   create_table "bookings_rooms", :id => false, :force => true do |t|
     t.integer "booking_id"
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
   end
 
   add_index "guests", ["bnb_id"], :name => "index_guests_on_bnb_id"
+  add_index "guests", ["user_id"], :name => "index_guests_on_user_id"
 
   create_table "line_items", :force => true do |t|
     t.string    "description"
@@ -109,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
     t.timestamp "updated_at",  :null => false
   end
 
+  add_index "line_items", ["booking_id"], :name => "index_line_items_on_booking_id"
+
   create_table "payment_notifications", :force => true do |t|
     t.text     "params"
     t.integer  "user_id"
@@ -117,6 +122,9 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "payment_notifications", ["transaction_id"], :name => "index_payment_notifications_on_transaction_id"
+  add_index "payment_notifications", ["user_id"], :name => "index_payment_notifications_on_user_id"
 
   create_table "photos", :force => true do |t|
     t.string    "description"
@@ -180,6 +188,7 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
   end
 
   add_index "subscriptions", ["plan_id"], :name => "index_subscriptions_on_plan_id"
+  add_index "subscriptions", ["user_id"], :name => "index_subscriptions_on_user_id"
 
   create_table "suggestions", :force => true do |t|
     t.text      "suggestion"
@@ -188,6 +197,8 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
     t.timestamp "updated_at", :null => false
     t.string    "subject"
   end
+
+  add_index "suggestions", ["user_id"], :name => "index_suggestions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string    "name"
@@ -215,5 +226,6 @@ ActiveRecord::Schema.define(:version => 20121119113828) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

@@ -69,7 +69,7 @@ SampleApp::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 14 Nov 2012 12:00
+# Generated on 21 Nov 2012 12:24
 #
 # payment_plans_subscriptions GET    /subscriptions/payment_plans(.:format)             subscriptions#payment_plans
 #               subscriptions GET    /subscriptions(.:format)                           subscriptions#index

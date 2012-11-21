@@ -32,8 +32,6 @@ class BnbsController < ApplicationController
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    @bnb = Bnb.includes(:photos).find_by_user_id(current_user) if @bnb.nil?
-
     if @bnb.nil?
       redirect_to startpage_url
    else
@@ -72,7 +70,6 @@ class BnbsController < ApplicationController
   # POST /bnbs.json
   def create
     @bnb = Bnb.new
-    @bnb.status = 'inactive'
     @bnb.user_id = current_user.id
       if @bnb.save
         redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)

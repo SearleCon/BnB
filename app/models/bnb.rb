@@ -42,9 +42,7 @@ class Bnb < ActiveRecord::Base
   after_validation :geocode, :if => :address_details_changed?
 
 
-  after_initialize(:on => :create) do
-    self.status = 'inactive'
-  end
+  after_initialize :set_default_status, if: :new_record?
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
@@ -84,6 +82,10 @@ class Bnb < ActiveRecord::Base
 
   def gmaps4rails_address
     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+  end
+
+  def set_default_status
+    self.status = 'inactive'
   end
 
 

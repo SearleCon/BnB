@@ -4,7 +4,7 @@
     <h5>Description</h5>
     <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
     <% if user_signed_in? %>
-        <% if  current_user.role.description == 'Guest' %>
+        <% if current_user.is?(:guest) %>
             <p align="center"><%= link_to "Book Now",  new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
         <% end %>
     <% else %>
@@ -35,7 +35,7 @@
         <br>
         <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
         <br>
-        <% unless user_signed_in? && current_user.is_owner? %>
+        <% unless user_signed_in? && current_user.is?(:owner) %>
          <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat( 'Find other bnbs in the area'), nearby_bnbs_bnb_path(@bnb) %>
         <% end %>
 

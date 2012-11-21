@@ -53,8 +53,6 @@ class Booking < ActiveRecord::Base
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
-
-
   def total_price
     total = 0
     line_items.each do |item|

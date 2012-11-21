@@ -166,6 +166,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     rmagick (2.13.1)
+    role_model (0.8.1)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   placeholdit
   rails (= 3.2.2)
   rmagick
+  role_model
   rspec-rails (= 2.8.1)
   sass-rails
   select2-rails

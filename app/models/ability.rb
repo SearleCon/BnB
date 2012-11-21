@@ -6,8 +6,7 @@ class Ability
    user ||= User.new
 
 
-    case user.role.description
-      when 'Owner'
+    if user.has_role? :owner
              #Bnb
              can :show, Bnb do |bnb|
                bnb.try(:user_id) == user.id
@@ -49,8 +48,10 @@ class Ability
 
              #Photos
              can :manage, Photo, :bnb => {:user_id => user.id }
+    end
 
-      when 'Guest'
+
+    if user.has_role? :guest
         can :map, Bnb
         can :nearby_bnbs, Bnb
         can :read, Bnb
@@ -59,7 +60,7 @@ class Ability
         can :my_bookings, Booking
         can :read, Photo
         can :find_available, Room
-      else
+    else
         can :read, Bnb
         can :map, Bnb
         can :read, Photo

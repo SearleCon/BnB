@@ -29,6 +29,7 @@ gem 'jquery-turbolinks'
 gem 'select2-rails'
 gem 'placeholdit'
 gem "paypal-recurring"
+gem "role_model"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

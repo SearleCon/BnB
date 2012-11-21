@@ -2,16 +2,17 @@ class EventsController < ApplicationController
   respond_to :json
 
   caches_action :index, :cache_path => proc {|c|
-    event = Event.order('updated_at DESC').limit(1).first
+    @bnb = current_user.bnb
+    @bookings = Booking.active_bookings_by_bnb(@bnb)
+    event = Event.order('updated_at DESC').limit(1).find_all_by_booking_id(@bookings).first
     unless event.nil?
-     {:tag => event.updated_at.to_i}
+    {:tag => event.updated_at.to_i}
     end
   }
 
   # GET /events
   # GET /events.json
   def index
-
     @bnb = current_user.bnb
     @bookings = Booking.active_bookings_by_bnb(@bnb)
     @events = Event.scoped.all(:include => [:booking => :bnb], conditions: { booking_id: @bookings })

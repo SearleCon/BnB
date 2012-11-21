@@ -1,4 +1,5 @@
 class UserObserver < ActiveRecord::Observer
+
   def after_create(user)
     add_subscription(user) if user.is_owner?
     UserMailer.delay.welcome(user)

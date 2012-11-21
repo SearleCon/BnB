@@ -41,18 +41,18 @@ class ApplicationController < ActionController::Base
 
   def subscription_required
    unless current_user.nil?
-     if current_user.active_subscription && current_user.is_owner? && current_user.active_subscription.has_expired?
+     if current_user.active_subscription && current_user.is?(:owner) && current_user.active_subscription.has_expired?
         redirect_to payment_plans_subscriptions_url
      end
    end
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.is_owner?
+    if current_user.is?(:owner)
       if current_user.active_subscription.has_expired?
         payment_plans_subscriptions_url
       else
-        show_bnb_url
+        show_bnb_url(current_user.bnb)
       end
     else
      root_url

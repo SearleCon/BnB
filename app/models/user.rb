@@ -35,17 +35,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id, :terms_of_service, :contact_number, :country, :surname
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :terms_of_service, :contact_number, :country, :surname
 
   validates_acceptance_of :terms_of_service
 
-  def role
-    @role ||= Role.find(role_id)
-  end
+  include RoleModel
+  roles_attribute :role_id
 
-  def is_owner?
-    self.role.description == "Owner"
-  end
+  roles :guest, :owner
 
   def active_subscription
     @subscription ||= Subscription.find_by_user_id_and_active_profile(self, true)
@@ -59,6 +56,5 @@ class User < ActiveRecord::Base
     super
     @subscription = nil
   end
-
 
 end

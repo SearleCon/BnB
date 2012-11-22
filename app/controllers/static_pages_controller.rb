@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   # encoding: utf-8
 
-  caches_page :about, :contact, :terms_and_conditions, :privacy_policy, :faq
+  caches_action :faq, :about, :terms_and_conditions, :privacy_policy , :layout => false
 
   def home
       @photos = Photo.find_all_by_main(true)

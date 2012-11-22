@@ -17,7 +17,7 @@ class GuestsController < ApplicationController
   # GET /guests.json
   def index
     @bnb = Bnb.find(params[:bnb_id])
-    @guests = params[:term] ? Guest.search_by_name(params[:term]).where("bnb_id = ?", @bnb.id) :  @guests = Guest.search(params[:search]).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @guests = params[:term] ? Guest.search_by_name(params[:term]).where("bnb_id = ?", @bnb.id) :  @guests = Guest.search(params[:search]).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
 
     respond_to do |format|
       format.html
@@ -37,13 +37,13 @@ class GuestsController < ApplicationController
     end
   end
 
-  # GET /guests/othernew
-  # GET /guests/othernew.json
+  # GET /guests/new
+  # GET /guests/new.json
   def new
     @guest = Guest.new
 
     respond_to do |format|
-      format.html # othernewernew.html.erb
+      format.html # new.html.erb
       format.json { render json: @guest }
     end
   end
@@ -105,7 +105,7 @@ class GuestsController < ApplicationController
     @guest.name = 'Joe'
     @guest.surname = 'Soap'
     @guest.contact_number = '0123456789'
-    @guest.email = nil
+    @guest.email = 'JoeSoap@example.com'
   end
 
   def sort_direction

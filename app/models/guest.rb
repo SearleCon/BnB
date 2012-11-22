@@ -24,7 +24,7 @@ class Guest < ActiveRecord::Base
   validates :name, :surname, :contact_number, presence: true
   validates :contact_number, numericality: true
   validates :contact_number, length: { is: 10 }
-  validates :email, format: { with: VALID_EMAIL_REGEX},  uniqueness: { case_sensitive: false }, allow_nil: true
+  validates :email, format: { with: VALID_EMAIL_REGEX}, allow_nil: true
 
   scope :search_by_name, lambda { |term|
     order(:name).where("name like ?", "%#{term}%")
@@ -36,6 +36,10 @@ class Guest < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def full_name
+    "#{self.name} #{self.surname}".capitalize!
   end
 
 end

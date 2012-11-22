@@ -11,11 +11,11 @@ class BnbsController < ApplicationController
   def index
     @search = Search.new(params[:search])
     if !@search.city.nil?
-      @bnbs = Bnb.where("city like ?", "%#{@search.city}%").paginate(:per_page => 5, :page => params[:page])
+      @bnbs = Bnb.where("city like ?", "%#{@search.city}%").paginate(:per_page => 15, :page => params[:page])
     elsif !@search.region.nil?
-      @bnbs = Bnb.where("region like ?", "%#{@search.region}%").paginate(:per_page => 5, :page => params[:page])
+      @bnbs = Bnb.where("region like ?", "%#{@search.region}%").paginate(:per_page => 15, :page => params[:page])
     else
-      @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 5, :page => params[:page])
+      @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 15, :page => params[:page])
     end
 
     respond_to do |format|

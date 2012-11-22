@@ -34,8 +34,10 @@ class ApplicationController < ActionController::Base
 
   private
   def after_sign_out_path_for(resource_or_scope)
-    unless current_user.nil?
+    if current_user
       new_suggestion_url(:user_id => current_user.id)
+    else
+      root_url
     end
   end
 

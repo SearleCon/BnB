@@ -8,8 +8,8 @@
       <%= f.input :filepath, readonly: true,  :wrapper => :append do %>
           <%= f.input_field :filepath, readonly: true %><%= button_tag 'Browse', type: 'button', class: 'btn btn-primary btn-mini', id: 'browse_files' %>
       <% end %>
-      <%= f.input :main %>
-
+      <%= f.input :main, label: false, inline_label: 'Would you like to make this your main photo?' %>
+      <br>
       <%= f.submit "Save",:class => "btn btn-primary"%>
   <% end %>
 </div>

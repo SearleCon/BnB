@@ -41,8 +41,7 @@ class Bnb < ActiveRecord::Base
 
   after_validation :geocode, :if => :address_details_changed?
 
-
-  after_initialize :set_default_status, if: :new_record?
+  after_initialize :set_default_status
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
@@ -85,7 +84,11 @@ class Bnb < ActiveRecord::Base
   end
 
   def set_default_status
-    self.status = 'inactive'
+    if new_record?
+      self.status = 'inactive'
+    else
+      self.status = 'active'
+    end
   end
 
 

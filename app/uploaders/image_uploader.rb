@@ -31,14 +31,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-   process :resize_to_limit => [640, 480]
-  #
+  # process :resize_to_limit => [640, 480]
+
+  process :resize_to_fit => [640, 480]
   # def scale(width, height)
   #   # do something
   # end
 
   version :thumb do
-    process :resize_to_limit => [350, 350]
+    process :resize_to_fit => [350, 350]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

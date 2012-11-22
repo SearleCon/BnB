@@ -21,9 +21,9 @@ class BookingsController < ApplicationController
   def my_bookings
     bookings = Booking.search(params[:search]).order(sort_column + " " + sort_direction).find_all_by_user_id(current_user)
     active = bookings.select{|booking| !booking.closed?}
-    @active_bookings = active.paginate(:per_page => 5, :page => params[:active_page]) if active
+    @active_bookings = active.paginate(:per_page => 15, :page => params[:active_page]) if active
     inactive = bookings.select{|booking| booking.closed?}
-    @inactive_bookings = inactive.paginate(:per_page => 5, :page => params[:inactive_page]) if inactive
+    @inactive_bookings = inactive.paginate(:per_page => 15, :page => params[:inactive_page]) if inactive
   end
   # GET /bookings/1
   # GET /bookings/1.json

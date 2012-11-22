@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>BnBeezy</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/fullcalendar.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/lazybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jquery.ui.core.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jquery.ui.theme.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/jquery.ui.datepicker.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/select2.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/custom.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/gmaps4rails.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery-ui.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/select2.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-transition.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-affix.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-alert.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-button.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-tab.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-popover.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+<script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.purr.js?body=1" type="text/javascript"></script>
+<script src="/assets/best_in_place.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.ui.datepicker.js?body=1" type="text/javascript"></script>
+<script src="/assets/fullcalendar.js?body=1" type="text/javascript"></script>
+<script src="/assets/lazybox.js?body=1" type="text/javascript"></script>
+<script src="/assets/cocoon.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.turbolinks.js?body=1" type="text/javascript"></script>
+<script src="/assets/bookings.js?body=1" type="text/javascript"></script>
+<script src="/assets/global_loader.js?body=1" type="text/javascript"></script>
+<script src="/assets/gmaps4rails/gmaps4rails.base.js?body=1" type="text/javascript"></script>
+<script src="/assets/gmaps4rails/gmaps4rails.bing.js?body=1" type="text/javascript"></script>
+<script src="/assets/gmaps4rails/gmaps4rails.googlemaps.js?body=1" type="text/javascript"></script>
+<script src="/assets/gmaps4rails/gmaps4rails.mapquest.js?body=1" type="text/javascript"></script>
+<script src="/assets/gmaps4rails/gmaps4rails.openlayers.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="XVZx/9GNBpOx+aCYimmUTEHIgdRQB32W7M3J2aJfPrU=" name="csrf-token" />
+  <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<img alt="full screen background image" src="/background/background_wood.jpg" id="full-screen-background-image" />
+
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="/" id="logo">bnbeezy</a>
+      <nav>
+        <ul class="nav pull-right">
+          <li><a href="/">Home</a></li>
+                  <li id="fat-menu" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      MyBnb <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/bnb/28">Details</a></li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="/bnbs/28/bookings">Bookings</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="/bnbs/28/rooms">Rooms</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="/bnbs/28/guests">Guests</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="/bnbs/28/photos">Photos</a>
+                      </li>
+                    </ul>
+                  </li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/users/edit">Profile</a></li>
+                <li class="divider"></li>
+                <li>
+                  <a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a>
+                </li>
+              </ul>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <div class="span12">
+        <div class="hero-unit">
+<h3>Frequently Asked Questions</h3><br>
+
+<a href="#Question1">1. How much does BnbEezy cost?</a><br>
+<a href="#Question2">2. I own a bnb, how easy is to create an account on BnbEezy?</a><br>
+<a href="#Question3">3. How do I make a booking for a client?</a><br>
+<a href="#Question4">4. What if I need to extend or reschedule the booking for a guest?</a><br>
+<a href="#Question5">5. What do I do when my guest wants to check in?</a><br>
+<a href="#Question6">6. What happens when i click checkout?</a><br>
+<a href="#Question7">7. What does setting an image to main photo do?</a><br>
+<a href="#Question8">8. Is BnbEezy available as a mobile app?</a><br>
+<a href="#Question9">9. When i set an online booking (blue on calendar) to booked, does it notify the guest?</a><br>
+<a href="#Question10">10. How quickly will I get an answer to any support emails?</a><br>
+<a href="#Question11">11. Can I submit an idea for a new feature for BnbEezy?</a><br>
+<a href="#Question12">12. How secure is my data?</a><br>
+<a href="#Question13">13. Do I still own my data once I upload it to your servers?</a><br>
+<a href="#Question14">14. Will you ever sell any of my information?</a><br>
+<a href="#Question15">15. Is it easy for me to cancel my account and remove my data?</a><br>
+<a href="#Question16">16. Can I upload my existing guest and booking information all at once?</a><br>
+<a href="#Question17">17. You mentioned Charity?</a><br>
+<a href="#Question18">18. Why is BnbEezy so awesome?</a><br>
+
+<br>
+
+Your question not listed above? You can also check out the <a href="/about">About</a> page or <a href="/contact">Contact Us</a>.
+
+<hr class="bs-docs-separator">
+
+<h3>Answers</h3><br>
+
+
+<a name="Question1">1. How much does BnbEezy cost?</a><a href="#top"> (Back to Top)</a><br>
+There are a few options available, namely Free, Bronze, Silver and Gold. Everyone automatically starts out on the fully functioning free version, for which there is a 30 day free trial.  Once the free trial expires, you will be asked if you want to upgrade to the next version.
+
+<br><br><a name="Question2">2. I own a bnb, how easy is to create an account on BnbEezy?</a><a href="#top"> (Back to Top)</a><br>
+Once you have setup your user account, you will instructed on the start page to begin the BnbEezy setup wizard which will guide you along. Following the setup, a whole new set of options will be available in the menu bar for you to manage your bnb.
+
+<br><br><a name="Question3">3. How do I make a booking for a client?</a><a href="#top"> (Back to Top)</a><br>
+On the bookings screen which can be navigated to via the dropdown BnB menu and clicking the bookings option, there is a calendar. To book for a particular day, click on the day on the calendar and the booking form should pop up. Select your dates, fill in the guest info and select a room and its done.
+
+<br><br><a name="Question4">4. What if I need to extend or reschedule the booking for a guest?</a><a href="#top"> (Back to Top)</a><br>
+Any booking visible on the calendar can be moved via the use of drag and drop or extended by clicking the edge of the booking and stretching it out or shortening it.
+
+<br><br><a name="Question5">5. What do I do when my guest wants to check in?</a><a href="#top"> (Back to Top)</a><br>
+On your calendar, simply clicking on the booking will allow you to see its details and update its status from that of booked to checked in, repeat this process to check out.
+
+<br><br><a name="Question6">6. What happens when i click checkout?</a><a href="#top"> (Back to Top)</a><br>
+This will end the booking lifecycle and take you to the checkout screen where you can add the costs of the persons stay and download a copy of the invoice.
+
+<br><br><a name="Question7">7. What does setting an image to main photo do?</a><a href="#top"> (Back to Top)</a><br>
+Your main photo will be advertised on the home page of the website, and will also be displayed when the online guests search for a Bnb. It is your best selling point, always have a good photo handy!
+
+<br><br><a name="Question8">8. Is BnbEezy available as a mobile app?</a><a href="#top"> (Back to Top)</a><br>
+It will be. We are working on the Mobile App and once it is available, you will be notified. We have taken great care to make sure that the application works on many screen sizes, including tablets and smart phones. But we want your life to be as easy as possible, and are therefore making the mobile app as well. Keep a look out for it.
+
+<br><br><a name="Question9">9. When i set an online booking (blue on calendar) to booked, does it notify the guest?</a><a href="#top"> (Back to Top)</a><br>
+As soon as the you confirm the booking on your side an email will be sent out by the application to your guest. Conversely you will get an email anytime a guest makes a booking online.
+
+<br><br><a name="Question10">10. How quickly will I get an answer to any support emails?</a><a href="#top"> (Back to Top)</a><br>
+We are serious about customer service, and we try our best to get an answer to each and every one of our customers within 24 hours of you contacting us. We typically answer within 5 to 10 hours though.
+
+<br><br><a name="Question11">11. Can I submit an idea for a new feature for BnbEezy?</a><a href="#top"> (Back to Top)</a><br>
+Yes, please do! Whenever you log out of your account, you will be presented with a screen where you can give us feedback on your experience, and request new features. If enough people request the same features, we will certainly look into it. You can give us feedback anonymously, or enter in your contact email address in the optional email field on that form. Your honest thoughts are welcome, as we are always striving to make our products the best the can be.
+
+<br><br><a name="Question12">12. How secure is my data?</a><a href="#top"> (Back to Top)</a><br>
+Very. It is stored on secure servers and we take every precaution to make sure no-one but you can see your data. For more information, view our <a href="/privacypolicy">privacy policy</a>.
+
+<br><br><a name="Question13">13. Do I still own my data once I upload it to your servers?</a><a href="#top"> (Back to Top)</a><br>
+Yes, you do. Your data is yours, and always will be.
+
+<br><br><a name="Question14">14. Will you ever sell any of my information?</a><a href="#top"> (Back to Top)</a><br>
+Never! And that is a promise! For more information, view our <a href="/privacypolicy">privacy policy</a>.
+
+<br><br><a name="Question15">15. Is it easy for me to cancel my account and remove my data?</a><a href="#top"> (Back to Top)</a><br>
+Yes, it is. If you are unhappy with the product, simply go to your user profile (in the Account drop down menu), and click on the "Cancel my Account" link. Beware that this will delete all your information and close your BnbEezy account. We hope that you love the service though, and if you ever are unhappy, we would prefer that you rather <a href="/contact">contact us</a> and let us know why, so we can try make things better for you.
+
+<br><br><a name="Question16">16. Can I upload my existing guest and booking information all at once?</a><a href="#top"> (Back to Top)</a><br>
+At the moment, no. But it is currently under development for the next version of BnbEezy (Along with a lot of other goodies)
+
+<br><br><a name="Question17">17. You mentioned Charity?</a><a href="#top"> (Back to Top)</a><br>
+We are a company that does like to give back wherever possible. And as you can see from our <a href="/subscriptions/payment_plans">pricing</a>, we offer this service at very affordable prices for businesses. So we urge you to upgrade to a paid package if you enjoy the service, and it works for you. And as an extra thank you for that, we will give 10% of all of the BnbEezy profits to charity. Look out in the news section for information of which charities will benefit. We pick one new charity each year. If you have suggestions of others, let us know in the feedback form that is displayed whenever you log out.
+
+<br><br><a name="Question18">18. Why is BnbEezy so awesome? </a><a href="#top">(Back to Top)</a><br>
+It just is :)
+
+<hr class="bs-docs-separator">
+
+For more information on how BnbEezy works, check out the <a href="/contact">About page</a>.<br>
+
+</div>
+
+        
+        <footer class="footer">
+  <small>
+    <a href="http://searleconsulting.com/">Copyright Searle Consulting 2012</a>
+    by Searle Consulting
+  </small>
+  <nav>
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/terms_and_conditions">Terms and Conditions</a></li>
+      <li><a href="/privacypolicy">Privacy Policy</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</footer>
+        <pre class='debug_dump'>--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+controller: static_pages
+action: faq
+</pre>
+        <script type="text/javascript">
+//<![CDATA[
+var AUTH_TOKEN = "XVZx/9GNBpOx+aCYimmUTEHIgdRQB32W7M3J2aJfPrU=";
+//]]>
+</script>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

@@ -104,3 +104,9 @@ document {
   &:first-letter { text-transform: uppercase; }
 }
 
+.peopleCarouselImg img {
+  width: auto;
+  height: 225px;
+  max-height: 225px;
+}
+

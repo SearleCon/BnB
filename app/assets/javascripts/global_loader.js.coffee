@@ -23,7 +23,14 @@ $(document).ready ->
     $('#photo_image').click()
 
   $('#photo_image').bind 'change', ->
-    $('#photo_filepath').val($('#photo_image').val())
+    $('#photo_filepath').val($('#photo_image').val().split('\\').pop())
+
+
+  flashCallback = ->
+    $("#flash").fadeOut()
+  $("#flash").bind 'click', (ev) =>
+    $("#flash").fadeOut()
+  setTimeout flashCallback, 3000
 
 
 

@@ -6,9 +6,9 @@
       <div class="form-inputs">
         <h4>Select booking dates:</h4>
         <%= f.simple_fields_for :event do |event_form| %>
-            <%= event_form.input :start_at, :as => :datepicker %>
+            <%= event_form.input :start_at, :as => :datepicker, label: 'Check-in date:' %>
 
-            <%= event_form.input :end_at, :as => :datepicker %>
+            <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:' %>
         <% end %>
       </div>
 
@@ -18,8 +18,9 @@
         <h4>Search for a guest or click the link to add a new one:</h4>
         <br>
 
-        <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %></div>
+        <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %>
         <p>or</p>
+        </div>
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add a new guest'), f, :guest %></div>
       </div>
       <br>

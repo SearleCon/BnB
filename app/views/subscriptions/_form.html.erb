@@ -2,17 +2,6 @@
 <div class="hero-unit">
 <%= simple_form_for(@subscription) do |f| %>
   <%= f.error_notification %>
-      <h1>Order details</h1>
-      <br>
-  <div>
-    <table class="table table-bordered">
-      <tr>
-        <td><%= @plan.name %></td>
-        <td><%= @plan.duration %></td>
-        <td><%= @plan.price %></td>
-      </tr>
-    </table>
-  </div>
 
   <div class="form-inputs">
     <%= f.hidden_field :paypal_customer_token %>
@@ -21,14 +10,51 @@
   </div>
 
 
-
   <% if @subscription.payment_provided? %>
-        <%= f.button :submit, class: "btn btn-primary", :value => 'Complete order' %>
+      <h2>Welcome back!</h2><br>
+      <h5>And finally, to unlock BnbEezy, please confirm and complete your order:</h5><br>
+
+      <table class="table table-bordered">
+        <tr>
+          <td>Grant me full access to the site for the next <%= @plan.duration %> month(s) - Plan: <%= @plan.name %> at the cost of $<%= number_with_precision(@plan.price, :precision => 0) %>.</td>
+        </tr>
+      </table>
+
+      <%= f.button :submit, :class => 'btn btn-primary', :value => 'Complete my Order' %>
+
   <% else %>
-    <div id="paypal_checkout" >
-      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path(:plan_id => @plan) %>
-    </div>
+      <h2>Order details</h2>
+      <h5>Please confirm the below payment plan and then click on the Paypal button to continue:</h5>
+      <br>
+      <div>
+        <table class="table table-bordered">
+          <tr>
+            <td><%= @plan.name %></td>
+            <td>You will be charged <b>$<%= number_with_precision(@plan.price, :precision => 0) %></b> and have full access to the site for the next <b><%= @plan.duration %> months</b></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div id="paypal_checkout" >
+        <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), paypal_checkout_path(:plan_id => @plan) %>
+      </div>
+
+      <br>
+      <b>Please note:</b><br>Once you click on the above button, you will be taken to the secure Paypal site, where you can complete your payment.<br>You will be redirected back to the BnbEezy site once completed. The site's full functionality will be restored immediately once you renew.
+
+      <hr class="bs-docs-separator">
+
   <% end %>
+
+
 
 <% end %>
 </div>
+
+
+
+
+
+
+

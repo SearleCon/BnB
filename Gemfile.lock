@@ -39,6 +39,7 @@ GEM
     bootstrap-sass (2.1.0.1)
     bootstrap-will_paginate (0.0.5)
       will_paginate
+    browser (0.1.5)
     builder (3.0.4)
     bullet (4.2.0)
       uniform_notifier
@@ -256,6 +257,7 @@ DEPENDENCIES
   best_in_place
   bootstrap-sass (~> 2.1.0.1)
   bootstrap-will_paginate (= 0.0.5)
+  browser
   bullet
   cancan
   capybara (= 1.1.2)

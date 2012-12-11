@@ -1,5 +1,4 @@
 class PaypalPayment
-
   def initialize(subscription)
     @subscription = subscription
     @plan = Plan.find(subscription.plan_id)
@@ -48,7 +47,7 @@ class PaypalPayment
         currency: "USD",
     )
     response = PayPal::Recurring.new(options).send(action)
-    raise response.errors.inspect if response.errors.present?
+    raise PaypalError.new(response.errors.first[:code], response.errors.first[:messages][1]) if response.errors.present?
     response
   end
 end

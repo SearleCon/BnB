@@ -1,32 +1,31 @@
 <div class="hero-unit">
-  <h1>Pricing</h1>
-     <br>
-     <% if current_user.active_subscription && current_user.active_subscription.has_expired? %>
-      <% if current_user.active_subscription.plan.free? %>
-          <p>Your free trial has expired, to continue to use BnbEezy please select one of the payment options below:</p>
-      <% else %>
-          <p>Your current subscription has expired, to continue to use BnbEezy please select one of the payment options below or click the renew button to use the previously selected plan:</p>
-          <br>
-          <div><%= link_to 'Renew', new_subscription_path(:plan_id => current_user.active_subscription.plan_id), class: "btn btn-primary" %></div>
-      <% end %>
-     <% end %>
-     <br>
-     <table class="table table-bordered">
-       <tr>
-         <td>Package</td>
-         <td>Number of months</td>
-         <td>Price</td>
-         <td>#</td>
-       </tr>
-       <% @plans.each do |plan| %>
+  <img class="header" src= <%= image_path("expired.png") %>><h2>Please Subscribe</h2><br>
+  <img style="float:right" src=<%= image_path("secure-paypal-logo.png") %>>
+
+  <br>
+  <% if current_user.active_subscription && current_user.active_subscription.has_expired? %>
+      <p>Your free trial has expired. To continue using BnbEezy you need to subscribe:</p>
+      <p>(Note that payment is done through PayPal and is 100% secure)</p>
+
+
+  <% end %>
+  <br>
+  <table class="table table-bordered">
+    <tr>
+      <td>Package</td>
+      <td>Subscription Duration</td>
+      <td>Price</td>
+      <td></td>
+    </tr>
+    <% @plans.each do |plan| %>
         <% unless plan.free %>
-           <tr>
-           <td><%= plan.name %></td>
-           <td><%= plan.duration %></td>
-           <td><%= plan.price %></td>
-           <td><%= link_to 'Buy Now', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary btn-small" %></td>
-           </tr>
+            <tr>
+              <td><b><%= plan.name %></b></td>
+              <td><%= plan.duration %> Months</td>
+              <td>$ <%= number_with_precision(plan.price, :precision => 2) %></td>
+              <td align="center"><%= link_to 'Place Order', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary" %></td>
+            </tr>
         <% end %>
-       <% end %>
-     </table>
+    <% end %>
+  </table>
 </div>

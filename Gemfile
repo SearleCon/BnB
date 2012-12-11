@@ -31,6 +31,7 @@ gem 'placeholdit'
 gem "paypal-recurring"
 gem "role_model"
 gem "hirefire"
+gem "browser"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

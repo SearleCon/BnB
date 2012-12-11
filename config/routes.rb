@@ -3,8 +3,9 @@ SampleApp::Application.routes.draw do
 
   resources :payment_notifications, controller: 'payment_notification',  only: [:create]
 
-  resources :subscriptions do
+  resources :subscriptions, except: [:index, :edit, :destroy, :update] do
     get :payment_plans, on: :collection
+    get :paypal_checkout, on: :collection
   end
 
   resources :suggestions
@@ -57,8 +58,8 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contact'
-
-  get "paypal/checkout", to: "subscriptions#paypal_checkout"
+  match '/pricing', to: 'static_pages#pricing'
+  match '/ie_warning', to: 'static_pages#ie_warning'
 
 
   devise_scope :user do

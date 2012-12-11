@@ -1,10 +1,17 @@
 class StaticPagesController < ApplicationController
   # encoding: utf-8
 
-  caches_action :faq, :about, :terms_and_conditions, :privacy_policy , :layout => false
+  caches_action :faq, :about, :terms_and_conditions, :privacy_policy, :ie_warning, :layout => false
+
+  caches_action :home, :cache_path => proc {|c|
+    photo = Photo.find_main_photo.order('created_at DESC').limit(1).first
+    unless photo.nil?
+      c.params.merge!(:tag => photo.created_at.to_i )
+    end
+  }, :layout => false
 
   def home
-      @photos = Photo.find_all_by_main(true)
+      @photos = Photo.find_main_photo
   end
 
   def faq
@@ -32,4 +39,11 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def pricing
+
+  end
+
+  def ie_warning
+
+  end
 end

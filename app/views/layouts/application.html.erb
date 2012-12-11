@@ -22,6 +22,12 @@
               <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
             </div>
         <% end %>
+        <% if browser.ie6? || browser.ie7? || browser.ie8? %>
+               <div class="ie_warn">                    
+                     <p style="text-align: center;">WARNING: You're running an older version of Internet Explorer that is not fully supported.
+                      <br> For more information, please click <%= link_to 'here', ie_warning_path %> </p>
+               </div>
+        <% end %>
         <%= yield %>
         <%= yield :scripts %>
         <%= render 'layouts/footer' %>

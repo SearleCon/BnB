@@ -30,7 +30,7 @@ $(document).ready ->
     $("#flash").fadeOut()
   $("#flash").bind 'click', (ev) =>
     $("#flash").fadeOut()
-  setTimeout flashCallback, 3000
+  setTimeout flashCallback, 5000
 
 
 

@@ -5,7 +5,7 @@
       <% if country.nil? %>
           <%=searchform.input :region, :collection => 1..2, prompt: "Select a region" , disabled: true, label: false %>
       <% elsif country.subregions? %>
-          <%= searchform.input :region,prompt: "Select a region", :value_method => :name,:collection => country.subregions %>
+          <%= searchform.input :region,prompt: "Select a region", :value_method => :name,:collection => country.subregions, label: false %>
       <% end %>
  <% end %>
 </div>

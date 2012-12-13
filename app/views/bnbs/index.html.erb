@@ -1,5 +1,6 @@
 <div class="hero-unit clearfix"><%= gmaps4rails(@json) %></div>
 
+
 <% @bnbs.each do |bnb| %>
     <div class="row" id="bnb_row">
       <div class="span3">
@@ -7,7 +8,7 @@
         <% if bnb.photos.nil? || bnb.photos.empty? %>
             <%= placeholdit_image_tag "150", text: "No photos uploaded!" %>
         <% else %>
-            <%= image_tag @bnb.photos.find_main_photo.image_url(:thumb) %>
+            <%= image_tag bnb.photos.find_main_photo.first.image_url(:thumb) %>
         <% end %>
       </div>
       </div>

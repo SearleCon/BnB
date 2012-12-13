@@ -1,5 +1,7 @@
 <div class="hero-unit clearfix">
 
+<h2>Guests</h2>
+
 <div class="header form-search" align="right">
   <%= form_tag bnb_guests_path(@bnb), :method => 'get', id: 'search_table_form' do %>
        <p>
@@ -31,6 +33,11 @@
 
 <br/>
 <div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>
+
+  <div style="background-color: grey; margin: 0 auto;" align="center">
+    Information: Please note to edit any of the guest information click upon the item you wish to edit and proceed.
+  </div>
+
 </div>
 
 

@@ -3,7 +3,7 @@ class BnbNotifier < ActionMailer::Base
 
   def enquiry(message)
     @message = message
-    mail to: message.receiver, subject: message.subject
+    mail to: 'support@searleconsulting.co.za', subject: message.subject
   end
 
 end

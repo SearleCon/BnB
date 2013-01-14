@@ -1,7 +1,5 @@
 class SubscriptionsController < ApplicationController
-
-  skip_before_filter :subscription_required
-
+  authorize_resource
 
   # GET /subscriptions/1
   # GET /subscriptions/1.json

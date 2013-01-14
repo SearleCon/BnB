@@ -2,10 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 
-  before_filter :subscription_required
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "Access denied."
+
+    redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
+
+    flash[:error] = exception.message
     redirect_to root_url
   end
 
@@ -41,21 +43,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def subscription_required
-   unless current_user.nil?
-     if current_user.active_subscription && current_user.is?(:owner) && current_user.active_subscription.has_expired?
-        redirect_to payment_plans_subscriptions_url
-     end
-   end
+  def subscription_expired?
+    current_user.is?(:owner) &&  current_user.try(:active_subscription).has_expired?
   end
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user.is?(:owner)
-      if current_user.active_subscription.has_expired?
-        payment_plans_subscriptions_url
-      else
-        show_bnb_url(current_user.bnb)
-      end
+     show_bnb_url(current_user.bnb)
     else
      root_url
     end

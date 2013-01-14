@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :my_bookings
   load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
+  authorize_resource :only => :my_bookings
 
   helper_method :sort_column, :sort_direction
 

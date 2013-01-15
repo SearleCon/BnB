@@ -32,12 +32,14 @@ gem "paypal-recurring"
 gem "role_model"
 gem "browser"
 
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.8.1'
   gem 'annotate', ">=2.5.0"
   gem "bullet", :group => "development"
   gem "localtunnel"
+  gem 'traceroute'
 end
 
 # Gems used only for assets and not required

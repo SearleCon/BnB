@@ -128,9 +128,8 @@ a1.more:hover {
 
 
 .sections {
-  width: 899px;
-  height: 184px;
-  float: left;
+  width: auto;
+  height: auto;
   padding-top: 41px;
   text-align: center;
 }
@@ -139,58 +138,56 @@ a1.more:hover {
   background-image: url(sec3bg.jpg);
   background-repeat: no-repeat;
   background-position: left top;
-  width: 171px;
-  height: 111px;
-  float: left;
+  width: auto;
+  height: auto;
   padding: 18px;
-  margin-left: 10px;
   color: #000000;
 }
 .section1 h3, .section4 h3 {
   font-size: 14px;
+  padding: 0px;
+  margin: 0px;
 }
 .section2 {
   font-size: 11px;
   background-image: url(sec2bg.jpg);
   background-repeat: no-repeat;
   background-position: left top;
-  width: 171px;
-  height: 111px;
-  float: left;
+  width: auto;
+  height: auto;
   padding: 18px;
-  margin-left: 17px;
   color: #000000;
 }
 .section2 h3 {
   font-size: 14px;
   color: #1f5aa0;
+  padding: 0px;
+  margin: 0px;
 }
 .section3 {
   font-size: 11px;
   background-image: url(sec1bg.jpg);
   background-repeat: no-repeat;
   background-position: left top;
-  width: 171px;
-  height: 111px;
-  float: left;
+  width: auto;
+  height: auto;
   padding: 18px;
-  margin-left: 17px;
   color: #000000;
 }
 .section3 h3 {
   font-size: 14px;
   color: #2d680c;
+  padding: 0px;
+  margin: 0px;
 }
 .section4 {
   font-size: 11px;
   background-image: url(sec4bg.jpg);
   background-repeat: no-repeat;
   background-position: left top;
-  width: 172px;
-  height: 111px;
-  float: left;
+  width: auto;
+  height: auto;
   padding: 18px;
-  margin-left: 17px;
   color: #000000;
 }
 

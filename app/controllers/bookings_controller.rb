@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   def new
     @booking = @bnb.bookings.build
     unless current_user.is?(:owner)
-      @booking.build_guest(:name => current_user.name, :email => current_user.email, :contact_number => current_user.contact_number)
+      @booking.build_guest(:name => current_user.name, :surname => current_user.surname, :email => current_user.email, :contact_number => current_user.contact_number)
     end
     @booking.build_event
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today

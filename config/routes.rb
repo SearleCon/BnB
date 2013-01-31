@@ -46,9 +46,7 @@ SampleApp::Application.routes.draw do
   resources :line_items, controller: 'line_items', only: [:create, :destroy]
 
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact/:bnb_id' => 'contact#new', :as => 'contactbnb', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
-  match 'contact/:bnb_id' => 'contact#create', :as => 'contactbnb', :via => :post
 
   root to: 'static_pages#home'
 

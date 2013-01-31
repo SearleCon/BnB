@@ -9,6 +9,7 @@
         <% end %>
     <% else %>
         <p align="center"><%= link_to "Sign in to book",  new_user_session_path, :class => "btn btn-primary" %></p>
+        <p align="center"><%= link_to 'Register to book now', register_path("guest"), class: "btn btn-primary"  %></p>
     <% end %>
   </div>
   <div class="span5 pull-right">
@@ -52,7 +53,7 @@
         <% if can? :update, @bnb %>
             mail: <%= best_in_place_if can?(:update, @bnb), @bnb, :email, type: :input %>
         <% else %>
-            mail: <%= link_to @bnb.email, contactbnb_path(@bnb) %>
+            mail: <%= mail_to @bnb.email %>
         <% end %>
         <br>
         <% if can? :update, @bnb %>

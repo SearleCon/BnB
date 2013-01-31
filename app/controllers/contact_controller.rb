@@ -1,14 +1,6 @@
 class ContactController < ApplicationController
   def new
-    if params[:bnb_id]
-     @bnb = Bnb.find(params[:bnb_id])
-     email = @bnb.email
-    else
-     email = "support@searleconsulting.co.za"
-    end
-
     @message = Message.new
-    @message.receiver = email
     session[:last_page] = request.env['HTTP_REFERER']
   end
 

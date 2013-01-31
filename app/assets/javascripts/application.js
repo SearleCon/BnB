@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require jquery-ui
+//= require jquery.ui.touch-punch
 //= require jquery_ujs
 //= require select2
 //= require bootstrap

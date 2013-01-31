@@ -31,6 +31,8 @@ gem 'placeholdit'
 gem "paypal-recurring"
 gem "role_model"
 gem "browser"
+gem "workless"
+gem 'touchpunch-rails'
 
 
 group :development, :test do

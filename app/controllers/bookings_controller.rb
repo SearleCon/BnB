@@ -57,7 +57,9 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     params[:booking].merge!(:user_id => current_user.id)
+
     @booking = @bnb.bookings.build(params[:booking])
+    @booking.guest.user_id = @bnb.user_id
 
     respond_to do |format|
       if @booking.save
@@ -111,7 +113,7 @@ class BookingsController < ApplicationController
    @booking.rooms.each do |room|
      @line_item = @booking.line_items.build
      @line_item.description = room.room_number
-     @line_item.value = room.rates
+     @line_item.value = room.rates * number_of_nights
    end
    if @booking.save
      expire_action(action: :show, :id => @booking)
@@ -155,6 +157,10 @@ class BookingsController < ApplicationController
 
   def sort_column
     Booking.column_names.include?(params[:sort]) ? params[:sort] : "bnb_id"
+  end
+
+  def number_of_nights
+   total ||= (@booking.event.end_at.day - @booking.event.start_at.day).to_i
   end
 
 end

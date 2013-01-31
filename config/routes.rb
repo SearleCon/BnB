@@ -2,7 +2,6 @@ SampleApp::Application.routes.draw do
 
 
 
-
   resources :payment_notifications, controller: 'payment_notification',  only: [:create]
 
   resources :subscriptions, except: [:index, :edit, :destroy, :update] do

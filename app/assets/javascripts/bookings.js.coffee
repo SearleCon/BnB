@@ -41,11 +41,11 @@ $(document).ready ->
       updateEvent(event)
 
     eventClick: (calEvent, jsEvent, view) ->
-      showBooking2(calEvent)
+      showBooking(calEvent)
       return false
 
     dayClick: (date, allDay, jsEvent, view) ->
-      createBooking2(date)
+      createBooking(date)
       return false
 
 setMinMaxDate = (element, dateText) ->
@@ -77,7 +77,7 @@ updateEvent = (the_event) ->
   dataType: 'json'
   });
 
-showBooking2 = (the_event) ->
+showBooking = (the_event) ->
   $.ajax({
   type : 'GET',
   url : the_event.url,
@@ -85,7 +85,7 @@ showBooking2 = (the_event) ->
   });
 
 
-createBooking2 = (date) ->
+createBooking = (date) ->
   path = $('#new_booking_path').val()
   $.ajax({
   data: { date: date }

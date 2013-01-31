@@ -92,7 +92,7 @@ class RoomsController < ApplicationController
     @rooms = Room.find_all_by_bnb_id(@bnb)
     @booked_rooms.nil? ? @unbooked = @rooms : @unbooked = @rooms.to_a - @booked_rooms.to_a
     respond_to do |format|
-      format.js
+      format.js { render layout: false }
     end
   end
 

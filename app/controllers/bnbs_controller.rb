@@ -1,7 +1,6 @@
 class BnbsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :subregions
 
-
   def map
    convert_to_map_data(Bnb.all)
   end
@@ -20,12 +19,11 @@ class BnbsController < ApplicationController
 
     respond_to do |format|
       if @bnbs.nil? || @bnbs.empty?
-        format.html { redirect_to root_url, :alert => "No results were found for this search"}
+        format.html { redirect_to root_url, :alert => "No results were found for this search" }
       else
         convert_to_map_data(@bnbs)
         format.html
       end
-
     end
   end
 

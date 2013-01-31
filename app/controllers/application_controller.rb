@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   end
 
   def subscription_expired?
-    current_user.is?(:owner) &&  current_user.try(:active_subscription).has_expired?
+    current_user.is?(:owner) && current_user.try(:active_subscription).has_expired? if current_user
   end
 
   def after_sign_in_path_for(resource_or_scope)

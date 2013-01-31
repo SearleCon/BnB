@@ -62,7 +62,7 @@ class Ability
         can :my_bookings, Booking
         can :read, Photo
         can :find_available, Room
-    elsif user.roles.nil?
+    elsif user.roles.empty?
         can :read, Bnb
         can :map, Bnb
         can :read, Photo

@@ -111,22 +111,6 @@ document {
 }
 
 /* Pricing blocks added by Shaun */
-
-h11, h21, h31, h41, h51, h61, p1, ul1, ol1, li1, form1, input1, textarea1 {
-  padding: 0px;
-  margin: 0px;
-}
-a1.more {
-  font-size: 11px;
-  font-weight: bold;
-  color: #333333;
-  text-decoration: none;
-}
-a1.more:hover {
-  color: #FFFFFF;
-}
-
-
 .sections {
   width: auto;
   height: auto;
@@ -142,6 +126,7 @@ a1.more:hover {
   height: auto;
   padding: 18px;
   color: #000000;
+  margin-left: 40px;
 }
 .section1 h3, .section4 h3 {
   font-size: 14px;
@@ -189,6 +174,7 @@ a1.more:hover {
   height: auto;
   padding: 18px;
   color: #000000;
+  margin-right: 40px;
 }
 
 

@@ -106,7 +106,7 @@ class RoomsController < ApplicationController
    @room.description='Describe room'
    @room.room_number=999
    @room.en_suite=false
-   @room.rates=0
+   @room.rates= @bnb.standard_rate
    @room.extras='none'
   end
 

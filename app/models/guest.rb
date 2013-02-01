@@ -15,7 +15,7 @@
 
 class Guest < ActiveRecord::Base
   belongs_to :bnb
-  has_many :bookings
+  has_many :bookings, :dependent => :destroy
   has_many :rooms, :through => :bookings
 
 

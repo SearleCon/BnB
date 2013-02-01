@@ -1,5 +1,5 @@
 class BnbNotifier < ActionMailer::Base
-  default from: "Your business"
+  default from: "BnBeezy"
 
   def enquiry(message)
     @message = message

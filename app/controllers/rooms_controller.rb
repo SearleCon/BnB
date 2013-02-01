@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
 
 
   caches_action :index, :cache_path => proc {|c|
-    room = Room.order('updated_at DESC').limit(1).first
+    room = Room.maximum('updated_at')
     unless room.nil?
      c.params.merge!(:tag => room.updated_at.to_i )
     end
@@ -79,6 +79,7 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1.json
   def destroy
     @room.destroy
+    expire_action :action => :index
 
     respond_to do |format|
       format.html { redirect_to bnb_rooms_path(@bnb) }

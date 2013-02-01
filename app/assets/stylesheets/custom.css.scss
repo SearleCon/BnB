@@ -3,7 +3,6 @@
 
 
 /* mixins, variables, etc. */
-
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -262,6 +261,16 @@ input, textarea, select, .uneditable-input {
   margin: 0px auto;
 
 }
+
+.carousel-inner { text-align: center; }
+
+.carousel .item > img {
+  width: auto;
+  height: 480px;
+  max-height: 480px;
+  display: inline-block;
+}
+
 
 
 .carousel-caption{

@@ -5,12 +5,11 @@ class GuestsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   caches_action :index, :cache_path => proc {|c|
-    guest = Guest.order('updated_at DESC').limit(1).first
+    guest = Guest.maximum('updated_at')
     unless guest.nil?
-     c.params.merge!(:tag => guest.updated_at.to_i)
+      c.params.merge!(:tag => guest.updated_at.to_i )
     end
   }
-
 
 
   # GET /guests
@@ -92,6 +91,7 @@ class GuestsController < ApplicationController
   def destroy
     @guest = Guest.find(params[:id])
     @guest.destroy
+    expire_action :action => :index
 
 
     respond_to do |format|

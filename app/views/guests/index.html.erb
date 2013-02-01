@@ -25,6 +25,7 @@
     <th><%= sortable "surname" %></th>
     <th><%= sortable "contact_number" %></th>
     <th><%= sortable "email" %></th>
+    <th></th>
   </tr>
   <%= render :partial => 'row', :collection => @guests, :as => :guest %>
 </table>

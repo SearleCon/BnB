@@ -4,6 +4,8 @@ class GuestsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
+  after_filter :expire_cached_index, :only => :destroy
+
   caches_action :index, :cache_path => proc {|c|
     key = Guest.maximum(:updated_at)
     unless key.nil?
@@ -91,8 +93,6 @@ class GuestsController < ApplicationController
   def destroy
     @guest = Guest.find(params[:id])
     @guest.destroy
-    expire_action :action => :index
-
 
     respond_to do |format|
       format.html { redirect_to guests_url }
@@ -101,11 +101,13 @@ class GuestsController < ApplicationController
     end
   end
 
+  private
   def create_default_guest
     @guest.name = 'Joe'
     @guest.surname = 'Soap'
     @guest.contact_number = '0123456789'
     @guest.email = 'JoeSoap@example.com'
+    @guest.user_id = current_user.id
   end
 
   def sort_direction
@@ -114,5 +116,9 @@ class GuestsController < ApplicationController
 
   def sort_column
     Guest.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def expire_cached_index
+    expire_action :action => :index, :tag => Guest.maximum(:updated_at).to_i
   end
 end

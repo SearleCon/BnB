@@ -3,6 +3,7 @@ class RoomsController < ApplicationController
   load_and_authorize_resource :room, :through => :bnb
 
   helper_method :sort_column, :sort_direction
+  after_filter :expire_cached_index, :only => :destroy
 
 
   caches_action :index, :cache_path => proc {|c|
@@ -79,7 +80,6 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1.json
   def destroy
     @room.destroy
-    expire_action :action => :index
 
     respond_to do |format|
       format.html { redirect_to bnb_rooms_path(@bnb) }
@@ -116,6 +116,10 @@ class RoomsController < ApplicationController
 
   def sort_column
     Room.column_names.include?(params[:sort]) ? params[:sort] : "description"
+  end
+
+  def expire_cached_index
+    expire_action :action => :index, :tag => Room.maximum(:updated_at).to_i
   end
 
 end

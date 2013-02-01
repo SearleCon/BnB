@@ -1,7 +1,7 @@
 <div class="hero-unit clearfix">
   <div class="span4" align="left" style="padding-left: 20px;">
     <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
-    <h5>Description</h5>
+    <strong>Description</strong>
     <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
     <% if user_signed_in? %>
         <% if current_user.is?(:guest) %>
@@ -37,7 +37,7 @@
         <%= best_in_place_if can?(:update, @bnb), @bnb, :country, type: :input %>
         <br>
         <% unless user_signed_in? && current_user.is?(:owner) %>
-         <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat( 'Find other bnbs in the area'), nearby_bnbs_bnb_path(@bnb) %>
+         <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat( 'Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
         <% end %>
 
       </address>

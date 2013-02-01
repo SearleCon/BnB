@@ -5,9 +5,9 @@ class GuestsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   caches_action :index, :cache_path => proc {|c|
-    guest = Guest.maximum('updated_at')
-    unless guest.nil?
-      c.params.merge!(:tag => guest.updated_at.to_i )
+    key = Guest.maximum(:updated_at)
+    unless key.nil?
+      c.params.merge!(:tag => key.to_i )
     end
   }
 

@@ -384,3 +384,9 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
+
+.loading{
+  width: 320px;
+  height: 320px;
+  background-color: #add8e6;
+}

@@ -1,6 +1,6 @@
 <div style="display: inline-block;">
     <ul class="thumbnails">
-          <li id="<%=photo.id %>" class="span3">
+          <li id="<%=photo.id %>" class="span3 gallery ">
             <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" >
               <%= image_tag photo.image_url(:thumb)%>
               <p><%= photo.description %></p>

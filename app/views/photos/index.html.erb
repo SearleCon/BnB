@@ -8,6 +8,9 @@
         <% end %>
     </div>
       <% if can? :create, Photo %>       
-         <%= link_to 'Upload a new photo', new_bnb_photo_path(@bnb)  %>
+        <%= direct_upload_form_for @uploader do |f| %>
+            <p><%= f.file_field :image %></p>
+            <p><%= f.submit "Upload Image" %></p>
+        <% end %>
       <% end %>
 

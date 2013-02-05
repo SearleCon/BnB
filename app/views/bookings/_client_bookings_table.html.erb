@@ -15,7 +15,7 @@
         <td><%= booking.bnb.name %></td>
         <td><%= booking.event.start_at.strftime('%A, %d %B %Y') %></td>
         <td><%= booking.event.end_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= link_to booking.bnb.email, contactbnb_path(booking.bnb) %></td>
+        <td><%= mail_to booking.bnb.email %> %></td>
         <td><%= booking.bnb.telephone_number %></td>
         <td><% booking.bnb.rating.times do %>
               <i class="icon-star icon-white"></i>

@@ -33,7 +33,7 @@ class Room < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('description LIKE ?', "%#{search}%")
+      where('lower(description) LIKE ?', "%#{search.downcase}%")
     else
       scoped
     end

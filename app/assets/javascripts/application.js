@@ -24,6 +24,7 @@
 //= require lazybox
 //= require cocoon
 //= require jquery.turbolinks
+//= require jquery.spin
 //= require_tree .
 
 

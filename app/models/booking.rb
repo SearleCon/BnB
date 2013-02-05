@@ -63,7 +63,7 @@ class Booking < ActiveRecord::Base
 
   def self.search(search)
     if search
-      joins(:bnb).where("bnbs.name like ?", "%#{search}%")
+      joins(:bnb).where("lower(bnbs.name) like ?", "%#{search.downcase}%")
     else
       scoped
     end

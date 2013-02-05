@@ -18,7 +18,7 @@
         <div class="item active"><!-- class of active since it's the first item -->
           <img class="peopleCarouselImg" src="/background/bnb3.gif" alt=""   />
           <div class="carousel-caption">
-            <p>Welcome to BnBeezy</p>
+            <p>Welcome to BnBeezy <%= @session.to_s %></p>
           </div>
         </div>
         <% @photos.each do |photo| %>

@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+
+
   before_filter :correct_safari_and_ie_accept_headers
   after_filter :set_xhr_flash
 
@@ -51,7 +53,8 @@ class ApplicationController < ActionController::Base
     if current_user.is?(:owner)
      show_bnb_url(current_user.bnb)
     else
-     root_url
+      session.delete(:return_to) || root_url
     end
   end
+
 end

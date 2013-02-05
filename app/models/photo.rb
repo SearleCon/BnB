@@ -15,16 +15,29 @@ class Photo < ActiveRecord::Base
   belongs_to :bnb
   mount_uploader :image, ImageUploader
 
+  attr_accessible :description, :main
   attr_accessor :filepath
 
   after_destroy :destroy_file
 
-  validates :description, :image, presence: true
+  validates :description, presence: true
 
   scope :find_main_photo, where(main: true)
   scope :find_support_photos, where(:main => false)
 
 
+  def image_name
+    File.basename(image.path || image.filename) if image
+  end
+
+  def save_and_process_image(options = {})
+    if options[:now]
+      self.remote_image_url = image.direct_fog_url(:with_path => true)
+      save!
+    else
+      Delayed::Job.enqueue ProcessImageJob.new(self.attributes.merge(:key => self.key))
+    end
+  end
 
 
   private

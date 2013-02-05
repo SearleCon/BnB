@@ -22,10 +22,6 @@ $(document).ready ->
   $('#browse_files').click ->
     $('#photo_image').click()
 
-  $('#photo_image').bind 'change', ->
-    $('#photo_filepath').val($('#photo_image').val().split('\\').pop())
-
-
   flashCallback = ->
     $("#flash").fadeOut()
   $("#flash").bind 'click', (ev) =>

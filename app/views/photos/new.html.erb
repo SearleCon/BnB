@@ -1,14 +1,11 @@
 <div class="hero-unit">
 <h2>Add new image</h2>
-  <%= simple_form_for @photo, :url => bnb_photos_path(@bnb), :html => { :multipart => true}  do |f| %>
+  <%= simple_form_for @photo, :url => bnb_photos_path(@bnb)  do |f| %>
       <%= f.error_notification %>
-      <%= image_tag(@photo.image_url) if @photo.image? %>
+      <%= image_tag(@photo.image)  %>
       <%= f.input :description, as: :string %>
-      <div style="display:none;"><%= f.file_field :image %></div>
-      <%= f.input :filepath, readonly: true,  :wrapper => :append do %>
-          <%= f.input_field :filepath, readonly: true %><%= button_tag 'Browse', type: 'button', class: 'btn btn-primary btn-mini', id: 'browse_files' %>
-      <% end %>
       <%= f.input :main, label: false, inline_label: 'Would you like to make this your main photo?' %>
+      <%= f.hidden_field :key %>
       <br>
       <%= f.submit "Save",:class => "btn btn-primary"%>
   <% end %>

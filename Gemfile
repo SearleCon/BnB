@@ -33,6 +33,9 @@ gem "role_model"
 gem "browser"
 gem "workless"
 gem 'touchpunch-rails'
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'spinjs-rails'
 
 
 group :development, :test do
@@ -42,6 +45,7 @@ group :development, :test do
   gem "bullet", :group => "development"
   gem "localtunnel"
   gem 'traceroute'
+  gem 'daemons'
 end
 
 # Gems used only for assets and not required

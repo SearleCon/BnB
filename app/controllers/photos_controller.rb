@@ -3,11 +3,14 @@ class PhotosController < ApplicationController
   def index
     @bnb = Bnb.find(params[:bnb_id])
     @photos = @bnb.photos
+    @uploader = Photo.new.image
+    @uploader.success_action_redirect = new_bnb_photo_url(@bnb)
+
   end
 
   def new
     @bnb = Bnb.find(params[:bnb_id])
-    @photo = Photo.new
+    @photo = @bnb.photos.new(key: params[:key])
 
     respond_to do |format|
      format.html
@@ -19,13 +22,11 @@ class PhotosController < ApplicationController
     @bnb = Bnb.find(params[:bnb_id])
     @photo = @bnb.photos.build(params[:photo])
 
-    if @photo.save
-      @photos = @bnb.photos.reload
+    if @photo.save_and_process_image
       redirect_to bnb_photos_url(@bnb)
     else
-      redirect_back_or root_path
+      render :new
     end
-
   end
 
   def destroy

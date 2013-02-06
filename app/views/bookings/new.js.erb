@@ -1,6 +1,8 @@
 
 $.lazybox('<%= escape_javascript(render :partial => 'bookings/form',  locals: { booking: @booking })%>');
 
+$('#create_booking').height($('#lazybox').height());
+
 
 // setup controls
 var setMinMaxDate;

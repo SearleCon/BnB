@@ -6,6 +6,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $(document).ready ->
+
+  $(document).on 'cocoon:before-insert','#guest', ->
+    $("#find_guest").remove()
+    $("#guest a.add_fields").hide()
+
+  $(document).on 'click','#room_finder', ->
+    $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
+    $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
+    $.ajax({
+    type : 'GET',
+    url : $(this).attr('href'),
+    dataType : 'script'
+    });
+    return false
+
   $("input.datepicker").each (i) ->
     $(this).datepicker
       dateFormat: "DD, d MM yy"
@@ -54,21 +69,6 @@ setMinMaxDate = (element, dateText) ->
   else
     $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
 
-$('#room_finder').live 'click', ->
-  $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
-  $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
-  $.ajax({
-  type : 'GET',
-  url : $(this).attr('href'),
-  dataType : 'script'
-  });
-  return false
-
-
-$('#guest').live 'cocoon:before-insert', ->
-  $("#find_guest").remove()
-  $("#guest a.add_fields").hide()
-
 updateEvent = (the_event) ->
   $.ajax({
   type : 'PUT',
@@ -83,7 +83,6 @@ showBooking = (the_event) ->
   url : the_event.url,
   dataType : 'script'
   });
-
 
 createBooking = (date) ->
   path = $('#new_booking_path').val()

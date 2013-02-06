@@ -59,7 +59,7 @@ class BookingsController < ApplicationController
     params[:booking].merge!(:user_id => current_user.id)
 
     @booking = @bnb.bookings.build(params[:booking])
-    @booking.guest.user_id = @bnb.user_id
+    @booking.guest.user_id = @bnb.user_id unless @booking.guest.nil?
 
     respond_to do |format|
       if @booking.save

@@ -1,0 +1,7 @@
+<%= simple_form_for @photo, :url => bnb_photos_path(@bnb), :remote => true  do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :description, as: :string %>
+    <%= f.input :main, label: false, inline_label: 'Would you like to make this your main photo?' %>
+    <br>
+    <%= f.submit "Save",:class => "btn btn-primary"%>
+<% end %>

@@ -1,16 +1,20 @@
+<h2>Your images</h2>
+<div class="gallery">
+  <% if @photos.count >= 1 %>
+      <div id="loading" align="center">
+        <p>Please wait while the images are loading....</p>
+        <div class="progress progress-striped active" id="progress">
+          <div class="bar" style="width: 0%;"></div>
+        </div>
+      </div>
+      <%= render @photos %>
+  <% else %>
+      <p class='center'>There are currently no images for your gallery</p>
+  <% end %>
+</div>
 
-    <h2>Your images</h2>
-    <div>
-        <% if @photos.count >= 1 %>
-            <%= render @photos %>
-        <% else %>
-            <p class='center'>There are currently no images for your gallery</p>
-        <% end %>
-    </div>
-      <% if can? :create, Photo %>       
-        <%= direct_upload_form_for @uploader do |f| %>
-            <p><%= f.file_field :image %></p>
-            <p><%= f.submit "Upload Image" %></p>
-        <% end %>
-      <% end %>
+<%= link_to "Upload an image", new_bnb_photo_path(@bnb) %>
+<% if can? :create, Photo %>       
+
+<% end %>
 

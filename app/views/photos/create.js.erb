@@ -1,0 +1,13 @@
+<% if @photo.errors.any? %>
+$('#photoform').html('<%= escape_javascript(render :partial => 'photos/form')%>');
+<% else %>
+$('#fileuploader').html('<%= escape_javascript(render :partial => 'upload_form')%>');
+$('#browse_files').click(function() {
+    return $('.image_file').click();
+});
+$('.image_file').bind('change', function() {
+    return $('#filepath').val($('.image_file').val().split('/').pop().split('\\').pop());
+});
+<% end %>
+
+

@@ -5,7 +5,6 @@
 
 <div class="header form-search" align="right">
   <%= form_tag bnb_rooms_path(@bnb), :method => 'get', id: 'search_table_form' do %>
-       <p>
      <%= hidden_field_tag :direction, params[:direction] %>
      <%= hidden_field_tag :sort, params[:sort] %>    
      
@@ -15,7 +14,6 @@
                     <div> <%=link_to "Back to index", bnb_rooms_path(@bnb) %></div>
                  <% end %>
          <% end %>
-   </p>
   <% end %>
 </div>
 

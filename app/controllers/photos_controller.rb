@@ -5,7 +5,6 @@ class PhotosController < ApplicationController
     @photos = @bnb.photos
     @uploader = Photo.new.image
     @uploader.success_action_redirect = new_bnb_photo_url(@bnb)
-
   end
 
   def new
@@ -22,10 +21,9 @@ class PhotosController < ApplicationController
     @bnb = Bnb.find(params[:bnb_id])
     @photo = @bnb.photos.build(params[:photo])
 
-    if @photo.save_and_process_image
-      redirect_to bnb_photos_url(@bnb)
-    else
-      render :new
+    @photo.save
+    respond_to do |format|
+      format.js  { render layout: false }
     end
   end
 
@@ -36,4 +34,5 @@ class PhotosController < ApplicationController
       format.js { render layout: false}
     end
   end
+
 end

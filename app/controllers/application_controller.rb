@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 
-
   rescue_from CanCan::AccessDenied do |exception|
 
     redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
@@ -11,8 +10,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
-
-
   before_filter :correct_safari_and_ie_accept_headers
   after_filter :set_xhr_flash
 
@@ -20,9 +17,19 @@ class ApplicationController < ActionController::Base
     flash.discard if request.xhr?
   end
 
-  def correct_safari_and_ie_accept_headers
-    ajax_request_types = ['text/javascript', 'application/json', 'text/xml']
-    request.accepts.sort! { |x, y| ajax_request_types.include?(y.to_s) ? 1 : -1 } if request.xhr?
+  def set_return_url
+    session[:return_to] = request.env['HTTP_REFERER'] unless is_same_controller_and_action?(request.env['HTTP_REFERER'], registration_page_url)
+  end
+
+  def is_same_controller_and_action?(url1, url2)
+    hash_url1 = Rails.application.routes.recognize_path(url1)
+    hash_url2 = Rails.application.routes.recognize_path(url2)
+
+    [:controller, :action].each do |key|
+      return false if hash_url1[key] != hash_url2[key]
+    end
+
+    return true
   end
 
   rescue_from ActionController::RoutingError, :with => :render_not_found
@@ -55,6 +62,11 @@ class ApplicationController < ActionController::Base
     else
       session.delete(:return_to) || root_url
     end
+  end
+
+  def correct_safari_and_ie_accept_headers
+    ajax_request_types = ['text/javascript', 'application/json', 'text/xml']
+    request.accepts.sort! { |x, y| ajax_request_types.include?(y.to_s) ? 1 : -1 } if request.xhr?
   end
 
 end

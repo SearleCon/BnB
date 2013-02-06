@@ -331,6 +331,11 @@ input, textarea, select, .uneditable-input {
 
 }
 
+#registration{
+  background:#464646;
+  color:#fff;
+}
+
 .thumbnail{
   @include border-radius(10px);
   background:#55626B;
@@ -389,4 +394,18 @@ input, textarea, select, .uneditable-input {
   width: 320px;
   height: 320px;
   background-color: #add8e6;
+}
+
+.invisible{
+  display: none;
+}
+
+#lazybox{
+  max-height: 85%;
+  overflow: hidden;
+}
+
+#create_booking{
+  padding-bottom: 5px;
+  padding-top: 5px;
 }

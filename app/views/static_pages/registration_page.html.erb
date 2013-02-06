@@ -1,0 +1,40 @@
+<div class="container span12">
+  <div class="row span11">
+    <div class="span5">
+      <div class="thumbnail">
+        <img alt="" src= <%= image_path("bnb_home_screen.jpg") %>>
+        <div class="caption">
+          <h5>Own a BnB?</h5>
+          <br>
+          <p>Register now and have access to features such as:</p>
+          <ul>
+            <li>Online bookings management</li>
+            <li>Maintain BnB, guest and room information with an easy to use interface</li>
+            <li>Upload photos easily to promote your bed and breakfast</li>
+            <li>Your BnB will be promoted and advertised on the site</li>
+          </ul>
+          <p align="center"><%= link_to 'Register your bnb now', register_path("owner"), class: "btn btn-primary"  %></p>
+        </div>
+      </div>
+    </div>
+    <div class="span5">
+      <div class="thumbnail">
+        <img alt="" src=<%= image_path("holiday.jpg") %>>
+        <div class="caption">
+          <h5>Need a place to stay?</h5>
+          <br>
+          <p>Register now and have access to features such as:</p>
+          <ul>
+            <li>View guest houses/BnBs all over the world</li>
+            <li>Search for BnBs in a specific area anywhere in the world</li>
+            <li>Book online to guarantee peace of mind and focus on enjoying your holiday instead</li>
+            <li>Maintains a history of your bookings for future reference</li>
+          </ul>
+          <p align="center"><%= link_to 'Register to book now', register_path("guest"), class: "btn btn-primary"  %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

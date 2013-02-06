@@ -1,7 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  before_filter :set_return_url, :only => :new
+
   def new
-    session[:return_to] = request.env['HTTP_REFERER']
     @user = User.new
     @user.roles = params[:user_role]
   end
@@ -14,5 +15,8 @@ class RegistrationsController < Devise::RegistrationsController
        session.delete(:return_to) || root_url
      end
   end
+
+
+
 
 end

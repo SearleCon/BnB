@@ -58,6 +58,7 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   match '/contactus', to: 'static_pages#contact'
   match '/pricing', to: 'static_pages#pricing'
+  match '/registration_page', to: 'static_pages#registration_page'
   match '/ie_warning', to: 'static_pages#ie_warning'
 
 

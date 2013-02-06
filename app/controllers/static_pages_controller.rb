@@ -46,4 +46,8 @@ class StaticPagesController < ApplicationController
   def ie_warning
 
   end
+
+  def registration_page
+
+  end
 end

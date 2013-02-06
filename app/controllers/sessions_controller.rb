@@ -1,7 +1,8 @@
 class SessionsController < Devise::SessionsController
 
+  before_filter :set_return_url, :only => :new
+
   def new
-    session[:return_to] = request.env['HTTP_REFERER']
     super
   end
 end

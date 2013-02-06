@@ -4,7 +4,6 @@
 
 <div class="header form-search" align="right">
   <%= form_tag bnb_guests_path(@bnb), :method => 'get', id: 'search_table_form' do %>
-       <p>
      <%= hidden_field_tag :direction, params[:direction] %>
      <%= hidden_field_tag :sort, params[:sort] %>    
      
@@ -14,7 +13,6 @@
                     <div> <%=link_to "Back to index", bnb_guests_path(@bnb) %></div>
                      <% end %>
              <% end %>
-       </p>
   <% end %>
 </div>
 
@@ -35,7 +33,7 @@
 <br/>
 <div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>
 
-  <div class="ie_warn">
+  <div class="help_info">
     Information: Please note to edit any of the guest information click upon the item you wish to edit and proceed.
   </div>
 

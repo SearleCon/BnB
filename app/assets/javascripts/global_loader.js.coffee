@@ -19,14 +19,24 @@ $(document).ready ->
   # photos
   $('a[rel*=lazybox]').lazybox()
 
-  $('#browse_files').click ->
-    $('#photo_image').click()
 
   flashCallback = ->
     $("#flash").fadeOut()
   $("#flash").bind 'click', (ev) =>
     $("#flash").fadeOut()
   setTimeout flashCallback, 5000
+
+  dfd = $(".gallery").imagesLoaded(
+    progress: (isBroken, $images, $proper, $broken) ->
+      $('#progress .bar').css width: Math.round((($proper.length + $broken.length) * 100) / $images.length) + "%"
+  )
+
+  dfd.always ->
+    $(".invisible").fadeIn "slow", ->
+     $(this).toggleClass("invisible")
+
+    $('#loading').fadeOut "slow", ->
+     $(this).hide()
 
 
 

@@ -1,6 +1,7 @@
-class ProcessImageJob < Struct.new(:attributes)
+class ProcessImageJob < Struct.new(:id, :key)
   def perform
-    photo = Photo.new.tap{|photo| photo.assign_attributes(attributes, :without_protection => true)}
+    photo = Photo.find(id)
+    photo.key = key
     photo.save_and_process_image(:now => true)
   end
 end

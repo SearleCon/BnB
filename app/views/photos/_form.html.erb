@@ -5,3 +5,14 @@
     <br>
     <%= f.submit "Save",:class => "btn btn-primary"%>
 <% end %>
+<br>
+<div class="help_info">
+  <ul>
+    <li>
+      <%= simple_format("<h5>Description:</h5> This field is used to describe the image, the description will be displayed in all galleries along with the image. (On the home page the BnB name will be used instead of the description)") %>
+    </li>
+    <li>
+      <%= simple_format("<h5>Main Photo:</h5> The main photo will appear on the home page carousel of this website and be the most prominently displayed photo on your BnB info screen.(Generally this will be a picture of the BnB itself.)") %>
+    </li>
+  </ul>
+</div>

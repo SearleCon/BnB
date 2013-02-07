@@ -3,5 +3,15 @@
       <input id="filepath" name="filepath" disabled="disabled" size="50" type="text" /><button class="btn btn-primary btn-mini" id="browse_files" name="button" type="button">Browse</button>
     </div></div>
     <div style="display: none;"><%= f.file_field :image, :class => "image_file" %></div>
-    <%= f.submit :class => "btn btn-primary" %>
+    <%= f.submit  "Upload to BnBeezy" ,:class => "btn btn-primary" %>
 <% end %>
+<div class="help_info">
+  <ul>
+    <li>
+      <%= simple_format("<h5>Choose file:</h5> Click on the browse button to open up the file search screen and select the file you wish to upload. The filename will appear in the text box showing your file has been selected.") %>
+    </li>
+    <li>
+      <%= simple_format("<h5>Upload file:</h5> Click the upload button, once the upload is complete you will be redirected back to the photo gallery page. NB Images will be processed after the upload so it may take a few minutes to appear in the gallery.") %>
+    </li>
+  </ul>
+</div>

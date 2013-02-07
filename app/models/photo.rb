@@ -25,7 +25,6 @@ class Photo < ActiveRecord::Base
   scope :find_main_photo, where(main: true)
   scope :find_support_photos, where(:main => false)
 
-
   def image_name
     File.basename(image.path || image.filename) if image
   end
@@ -33,12 +32,12 @@ class Photo < ActiveRecord::Base
   def save_and_process_image(options = {})
     if options[:now]
       self.remote_image_url = image.direct_fog_url(:with_path => true)
+      self.processed = true
       save!
     else
-      Delayed::Job.enqueue ProcessImageJob.new(self.attributes.merge(:key => self.key))
+      Delayed::Job.enqueue ProcessImageJob.new(self.id, self.key)
     end
   end
-
 
   private
   def destroy_file

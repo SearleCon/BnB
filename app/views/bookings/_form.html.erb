@@ -27,11 +27,9 @@
 
       <div id='rooms'>
         <h4>Available rooms</h4>
-        <br>
         <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id => 'room_finder' %>
         <div id='rooms_available'></div>
       </div>
-      <br>
       <%= f.hidden_field :rooms_required, value: true %>
       <%= f.hidden_field :status, value: :booked %>
       <%= f.hidden_field :online, value: false %>

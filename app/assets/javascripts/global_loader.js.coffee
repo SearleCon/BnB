@@ -20,6 +20,10 @@ $(document).ready ->
   $('a[rel*=lazybox]').lazybox()
 
 
+  $(document).on 'ajax:beforeSend','.delete_photo', ->
+    photo = $(this).closest('li').fadeTo("slow", 0.70).spin("large", "blue")
+
+
   flashCallback = ->
     $("#flash").fadeOut()
   $("#flash").bind 'click', (ev) =>

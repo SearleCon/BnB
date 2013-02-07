@@ -1,15 +1,22 @@
 <div style="display: inline-block;" class="invisible">
-    <ul class="thumbnails">
-          <li id="<%=photo.id %>" class="span3">
-            <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" >
-              <%= image_tag photo.image_url(:thumb)%>
-              <p><%= photo.description %></p>
-            </a>
-            <% if can? :destroy, photo %>
-            <%= link_to 'Remove', bnb_photo_path(@bnb, photo), method: :delete, remote: true %>
-            <% end %>
-          </li>
-    </ul>
+  <ul class="thumbnails">
+    <li id="<%=photo.id %>" class="span3">
+      <% if photo.main? %>
+          <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" style="border: solid; border-width: thick; border-color: red;" >
+            <%= image_tag photo.image_url(:thumb)%>
+            <p><%= photo.description %></p>
+          </a>
+      <% else %>
+          <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox">
+            <%= image_tag photo.image_url(:thumb)%>
+            <p><%= photo.description %></p>
+          </a>
+      <% end %>
+      <% if can? :destroy, photo %>
+          <%= link_to 'Remove', bnb_photo_path(@bnb, photo),:class => "delete_photo", method: :delete, remote: true %>
+      <% end %>
+    </li>
+  </ul>
 </div>
 
 

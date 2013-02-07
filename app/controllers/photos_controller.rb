@@ -1,38 +1,37 @@
 class PhotosController < ApplicationController
+  load_and_authorize_resource :bnb
+  load_and_authorize_resource :photo, :through => :bnb
+
 
   def index
-    @bnb = Bnb.find(params[:bnb_id])
-    @photos = @bnb.photos
-    @uploader = Photo.new.image
-    @uploader.success_action_redirect = new_bnb_photo_url(@bnb)
+    @photos = @bnb.photos.where(:processed => true)
   end
 
   def new
-    @bnb = Bnb.find(params[:bnb_id])
-    @photo = @bnb.photos.new(key: params[:key])
-
-    respond_to do |format|
-     format.html
-    end
-
+    @photo = @bnb.photos.new
   end
 
   def create
-    @bnb = Bnb.find(params[:bnb_id])
     @photo = @bnb.photos.build(params[:photo])
+    @photo.image.success_action_redirect = process_image_bnb_photo_url(@bnb, @photo) if @photo.save
 
-    @photo.save
     respond_to do |format|
       format.js  { render layout: false }
     end
   end
 
   def destroy
-    @photo = Photo.find(params[:id])
     @photo.destroy
     respond_to do |format|
       format.js { render layout: false}
     end
   end
 
+  def process_image
+    @photo.key = params[:key]
+    @photo.save_and_process_image
+    respond_to do |format|
+      format.html { redirect_to bnb_photos_url(@bnb) }
+    end
+  end
 end

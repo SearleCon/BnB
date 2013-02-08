@@ -20,13 +20,13 @@
   </lh>
   <% booking.rooms.each do |room| %>
     <li>
-      <%=room.room_number.to_s %>
+      <%=room.description %>
     </li>
   <% end %>
 </ul>
 
-<div id='booking_info' class="btn-group" style="text-align: center;">
-<p><% if can? :confirm, @booking %><%= display_checkin_or_checkout(booking) %><% end %> <%= link_to 'Remove', bnb_booking_path(@bnb,booking), id: 'deleteBooking', method: :delete ,class: "btn btn-danger", :remote => true %></p>
+<div id='booking_info' style="text-align: center;">
+<% if can? :confirm, @booking %><%= display_checkin_or_checkout(booking) %><% end %> <%= link_to 'Remove', bnb_booking_path(@bnb,booking), id: 'deleteBooking', method: :delete , :remote => true %>
 </div>
 
 

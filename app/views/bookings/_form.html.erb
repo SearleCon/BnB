@@ -4,36 +4,29 @@
         <%= render 'shared/error_messages', :object => booking %>
       </div>
       <div class="form-inputs">
-        <h4>Select booking dates:</h4>
+        <h5>Select booking dates:</h5>
         <%= f.simple_fields_for :event do |event_form| %>
             <%= event_form.input :start_at, :as => :datepicker, label: 'Check-in date:' %>
 
             <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:' %>
         <% end %>
       </div>
-
-      <br>
-
       <div id='guest'>
-        <h4>Search for a guest or click the link to add a new one:</h4>
-        <br>
-
+        <h5>Search for a guest or click the link to add a new one:</h5>
         <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %>
-        <p>or</p>
+        <p style="font-size: medium;">or</p>
         </div>
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add a new guest'), f, :guest %></div>
       </div>
-      <br>
-
       <div id='rooms'>
-        <h4>Available rooms</h4>
+        <h5>Available rooms</h5>
         <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find Rooms'), find_available_bnb_rooms_path(@bnb), :id => 'room_finder' %>
         <div id='rooms_available'></div>
       </div>
       <%= f.hidden_field :rooms_required, value: true %>
       <%= f.hidden_field :status, value: :booked %>
       <%= f.hidden_field :online, value: false %>
-      <%= f.button :submit, :class => 'btn btn-primary' %>
+      <%= f.button :submit, :class => 'btn btn-primary btn-mini' %>
   <% end %>
 </div>
 

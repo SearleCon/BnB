@@ -1,28 +1,20 @@
-
 <div class="container-fluid" id="booking_schedule">
     <%= hidden_field_tag 'new_booking_path', new_bnb_booking_path(@bnb) %>
   <div class="row-fluid">
-       
     <div class="span2">
       <div class="well">
         <h4>Legend</h4>
         <br>
-        <p style="color:blue">provisional: blue</p>
-
-        <p style="color:green">booked: green</p>
-
-        <p style="color:red">checked in: red</p>
-
+        <p style="color:red">provisional: red</p>
+        <p style="color:blue">booked: blue</p>
+        <p style="color:green">checked in: green</p>
       </div>
       <br>
-
-       
     </div>
     <div class="span9">
       <div id='calendar'></div>
     </div>
   </div>
-
 </div>
 
 

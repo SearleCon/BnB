@@ -28,13 +28,13 @@ private
 def get_event_colour(status_for_colour)
   case status_for_colour
     when :booked
-      'green'
+      'blue'
     when :checked_in
-      'red'
+      'green'
     when :closed
       'orange'
     else
-      'blue'
+      'red'
   end
 end
 

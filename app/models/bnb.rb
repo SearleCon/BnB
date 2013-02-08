@@ -40,7 +40,6 @@ class Bnb < ActiveRecord::Base
   acts_as_gmappable :process_geocoding => false
 
   after_validation :geocode, :if => :address_details_changed?
-
   after_initialize :set_default_status
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?

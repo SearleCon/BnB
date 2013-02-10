@@ -27,6 +27,7 @@ class Event < ActiveRecord::Base
         :recurring => false,
         :url => Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
         :update_url => Rails.application.routes.url_helpers.booking_event_path(self.booking, self.id),
+        :edit_booking_url => Rails.application.routes.url_helpers.edit_bnb_booking_path(self.booking.bnb, booking_id),
         :color => self.color
     }
   end
@@ -37,6 +38,14 @@ class Event < ActiveRecord::Base
 
   def formatted_end_at(end_at)
     write_attribute(:end_at, end_at.strftime('%A, %d %B %Y'))
+  end
+
+  def start_at
+    read_attribute(:start_at).strftime('%A, %d %B %Y')
+  end
+
+  def end_at
+    read_attribute(:end_at).strftime('%A, %d %B %Y')
   end
 
 end

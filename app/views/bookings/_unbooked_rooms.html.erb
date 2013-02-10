@@ -1,7 +1,20 @@
-<% if current_user.is?(:owner) %>
-  <%= simple_form_for Booking.new do |f| %>
-      <%= f.association :rooms, :collection => unbooked, :label => '', :label_method => :description, :value_method => :id, :as => :check_boxes, :item_wrapper_class => 'inline' %>
-   <% end %>
-<% else %>
-  <p>There are <%= unbooked.size %> currently available</p>
+<%= simple_form_for Booking.new do |rooms_field| %>
+<table class="table">
+  <tr>
+    <th></th>
+    <th>Number</th>
+    <th>Description</th>
+    <th>Rates</th>
+    <th>Capacity</th>
+  </tr>
+  <% @unbooked.try(:each) do |room| %>
+      <tr class="center">
+        <td><%= check_box_tag "room_ids[]", room.id %></td>
+        <td><%= room.room_number %></td>
+        <td><%= room.description  %></td>
+        <td><%= room.rates  %></td>
+        <td><%= room.capacity  %></td>
+      </tr>
+  <% end %>
+</table>
 <% end %>

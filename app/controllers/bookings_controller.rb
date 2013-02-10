@@ -40,6 +40,7 @@ class BookingsController < ApplicationController
     @booking = @bnb.bookings.build
     unless current_user.is?(:owner)
       @booking.build_guest(:name => current_user.name, :surname => current_user.surname, :email => current_user.email, :contact_number => current_user.contact_number)
+      @booking.online = true
     end
     @booking.build_event
     params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
@@ -47,7 +48,7 @@ class BookingsController < ApplicationController
     @booking.event.formatted_end_at(selected_day + 1.days)
 
     respond_to do |format|
-         format.html { render 'client_booking_form'}
+         format.html { render 'new'}
          format.js { render layout: false }
     end
   end
@@ -56,19 +57,22 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    params[:booking].merge!(:user_id => current_user.id)
-
-    @booking = @bnb.bookings.build(params[:booking])
-    @booking.guest.user_id = @bnb.user_id unless @booking.guest.nil?
+    @booking = @bnb.bookings.build(params[:booking]) do |booking|
+      booking.user_id = current_user.id
+      booking.try(:guest).user_id = current_user.id if booking.guest.try(:new_record?)
+      booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
+    end
 
     respond_to do |format|
       if @booking.save
-        @event = Event.find_by_booking_id(@booking)
-        format.html { redirect_to my_bookings_bookings_url, notice: 'Booking was created' }
-        format.js { render layout: false }
+        flash[:notice] = 'Booking was created'
+        if current_user.is?(:owner)
+         format.html { redirect_to bnb_bookings_url(@bnb) }
+        else
+          format.html { redirect_to my_bookings_bookings_url }
+        end
       else
-        format.html  { render 'bookings/client_booking_form' }
-        format.js  { render layout: false }
+        format.html { render action: 'new'}
       end
     end
   end
@@ -78,7 +82,7 @@ class BookingsController < ApplicationController
   def update
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
-        format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
+        format.html { redirect_to bnb_bookings_url(@bnb), notice: 'Booking was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

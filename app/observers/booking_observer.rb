@@ -2,7 +2,8 @@ class BookingObserver < ActiveRecord::Observer
 
 
  def before_create(booking)
-   booking.event.name = "#{booking.guest.name} #{booking.guest.contact_number} #{booking.guest.email}"
+   booking.status = :booked unless booking.online
+   booking.event.name = "#{booking.guest.name} (#{booking.guest.contact_number} #{booking.guest.email})"
    booking.event.color = get_event_colour(booking.status)
  end
 

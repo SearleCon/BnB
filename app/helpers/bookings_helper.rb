@@ -10,4 +10,13 @@ module BookingsHelper
          html =(link_to 'Confirm', confirm_bnb_booking_path(booking.bnb, booking), method: :put, remote: true, class: "btn btn-danger")
       end
   end
+
+  def edit_or_create_url(booking)
+      bnb = booking.bnb
+      if booking.new_record?
+        url = bnb_bookings_path(bnb)
+      else
+        url = edit_bnb_booking_path(bnb)
+      end
+  end
 end

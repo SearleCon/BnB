@@ -34,18 +34,17 @@ class BookingsController < ApplicationController
       end
   end
 
+  def edit
+  end
+
   # GET /bookings/new
   # GET /bookings/new.json
   def new
-    @booking = @bnb.bookings.build
-    unless current_user.is?(:owner)
-      @booking.build_guest(:name => current_user.name, :surname => current_user.surname, :email => current_user.email, :contact_number => current_user.contact_number)
-      @booking.online = true
+    @booking = @bnb.bookings.build(:online => current_user.is?(:guest)) do |booking|
+      booking.build_event(:start_at => params[:date])
+      booking.build_guest(:name => current_user.name, :surname => current_user.surname, :email => current_user.email, :contact_number => current_user.contact_number) if current_user.is?(:guest)
     end
-    @booking.build_event
-    params[:date] ? selected_day = Date.parse(params[:date]) : selected_day = Date.today
-    @booking.event.formatted_start_at(selected_day)
-    @booking.event.formatted_end_at(selected_day + 1.days)
+
 
     respond_to do |format|
          format.html { render 'new'}

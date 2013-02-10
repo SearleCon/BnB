@@ -14,6 +14,7 @@
 
 class Event < ActiveRecord::Base
   belongs_to :booking
+  after_initialize :set_default_date
 
 
   def as_json(options = {})
@@ -32,20 +33,20 @@ class Event < ActiveRecord::Base
     }
   end
 
-  def formatted_start_at(start_at)
-    write_attribute(:start_at, start_at.strftime('%A, %d %B %Y'))
-  end
-
-  def formatted_end_at(end_at)
-    write_attribute(:end_at, end_at.strftime('%A, %d %B %Y'))
-  end
-
   def start_at
-    read_attribute(:start_at).strftime('%A, %d %B %Y')
+    self[:start_at].strftime('%A, %d %B %Y')
   end
 
   def end_at
-    read_attribute(:end_at).strftime('%A, %d %B %Y')
+    self[:end_at].strftime('%A, %d %B %Y')
+  end
+
+  private
+  def set_default_date
+    if new_record?
+      write_attribute(:start_at, Date.today) if self[:start_at].nil?
+      write_attribute(:end_at, read_attribute(:start_at) + 1.day) unless self[:end_at].present?
+    end
   end
 
 end

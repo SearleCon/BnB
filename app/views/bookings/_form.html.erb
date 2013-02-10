@@ -6,9 +6,9 @@
       <div class="form-inputs">
         <h5>Select booking dates:</h5>
         <%= f.simple_fields_for :event do |event_form| %>
-            <%= event_form.input :start_at, :as => :datepicker, label: 'Check-in date:' %>
+            <%= event_form.input :start_at, :as => :datepicker, label: 'Check-in date:', :input_html => { :value => f.object.event.start_at} %>
 
-            <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:' %>
+            <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:', :input_html => { :value => f.object.event.end_at} %>
         <% end %>
       </div>
      <% if @booking.new_record? %>

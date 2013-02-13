@@ -36,6 +36,7 @@ gem 'touchpunch-rails'
 gem 'fog'
 gem 'carrierwave_direct'
 gem 'spinjs-rails'
+gem 'net-scp', '1.1.0'
 
 
 group :development, :test do

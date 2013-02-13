@@ -1,0 +1,32 @@
+<div class="hero-unit">
+  <h3 align="center">Edit image</h3>
+  <div class="gallery" align="center">
+    <%= image_tag @photo.image_url %>
+    <div id="loading" align="center">
+      <p>Please wait while the image loads....</p>
+      <div class="progress progress-striped active" id="progress" style="width: 50%">
+        <div class="bar" style="width: 0%;"></div>
+      </div>
+    </div>
+  </div>
+  <div id='photoform'>
+    <%= simple_form_for [@bnb,@photo]  do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description, as: :string %>
+        <%= f.input :main, label: false, inline_label: 'Would you like to make this your main photo?' %>
+        <br>
+        <%= f.submit "Update",:class => "btn btn-primary"%>
+    <% end %>
+    <br>
+    <div class="help_info">
+      <ul>
+        <li>
+          <%= simple_format("<h5>Description:</h5> This field is used to describe the image, the description will be displayed in all galleries along with the image. (On the home page the BnB name will be used instead of the description)") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>Main Photo:</h5> The main photo will appear on the home page carousel of this website and be the most prominently displayed photo on your BnB info screen.(Generally this will be a picture of the BnB itself.)") %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -260,6 +260,9 @@ input, textarea, select, .uneditable-input {
   width: 600px;
   margin: 0px auto;
 
+
+
+
 }
 
 .carousel-inner { text-align: center; }
@@ -410,5 +413,13 @@ input, textarea, select, .uneditable-input {
   padding-top: 5px;
   a{
     font-size: small;
+  }
+}
+
+#myCarousel{
+  img{
+    width:100%;
+    height:200px;
+    max-height: 200px;
   }
 }

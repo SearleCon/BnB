@@ -12,9 +12,11 @@
             <p><%= photo.description %></p>
           </a>
       <% end %>
-      <% if can? :destroy, photo %>
-          <%= link_to 'Remove', bnb_photo_path(@bnb, photo),:class => "delete_photo", method: :delete, remote: true %>
-      <% end %>
+
+
+      <%= link_to 'Edit', edit_bnb_photo_path(@bnb,photo) if can? :edit, photo %>
+      <%= link_to 'Remove', bnb_photo_path(@bnb, photo),:class => "delete_photo", method: :delete, remote: true if can? :destroy, photo  %>
+
     </li>
   </ul>
 </div>

@@ -8,11 +8,10 @@
      <%= hidden_field_tag :sort, params[:sort] %>    
      
      <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search guests", :method => 'get' %>
-     <% if params[:search] %>
-             <% if params[:search] != '' %>
-                    <div> <%=link_to "Back to index", bnb_guests_path(@bnb) %></div>
-                     <% end %>
-             <% end %>
+       <% if params[:search]  %>
+          <br>
+          <label><%=link_to content_tag('i', '', class: 'icon-remove-sign icon-white').concat(" Show All"), bnb_guests_path(@bnb) %></label>
+      <% end %>
   <% end %>
 </div>
 

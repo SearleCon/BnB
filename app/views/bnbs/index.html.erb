@@ -8,7 +8,7 @@
         <% if bnb.photos.nil? || bnb.photos.empty? %>
             <%=link_to(placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb)) %>
         <% else %>
-            <%= link_to(image_tag bnb.photos.find_main_photo.first.image_url(:thumb))%>
+            <%= link_to(image_tag bnb.photos.main_photo.first.image_url(:thumb))%>
         <% end %>
       </div>
       </div>

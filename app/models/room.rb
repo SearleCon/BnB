@@ -39,4 +39,8 @@ class Room < ActiveRecord::Base
     end
   end
 
+  def self.unbooked_rooms(start_date, end_date)
+    Room.where('id NOT IN (select id from rooms where id in (?))', Booking.includes(:event, :rooms).where('events.start_at <= ? AND events.end_at >= ?', end_date, start_date).collect(&:rooms).flatten.map(&:id))
+  end
+
 end

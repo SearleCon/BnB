@@ -11,6 +11,9 @@ class PhotosController < ApplicationController
     @photo = @bnb.photos.new
   end
 
+  def edit
+  end
+
   def create
     @photo = @bnb.photos.build(params[:photo])
     @photo.image.success_action_redirect = process_image_bnb_photo_url(@bnb, @photo) if @photo.save
@@ -18,6 +21,17 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.js  { render layout: false }
     end
+  end
+
+  def update
+    respond_to do |format|
+      if @photo.update_attributes(params[:photo])
+        format.html { redirect_to bnb_photos_url(@bnb), notice: 'Photo was successfully updated.' }
+      else
+        format.html { render action: "edit" }
+      end
+    end
+
   end
 
   def destroy

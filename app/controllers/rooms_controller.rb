@@ -89,9 +89,9 @@ class RoomsController < ApplicationController
   end
 
   def find_available
-    @booked_rooms = Room.booked(Date.parse(params[:start_date]),Date.parse(params[:end_date])).where(:bnb_id => @bnb.id)
-    @rooms = Room.find_all_by_bnb_id(@bnb)
-    @booked_rooms.nil? ? @unbooked = @rooms : @unbooked = @rooms.to_a - @booked_rooms.to_a
+    Booking.find(params[:booking_id]).rooms.destroy_all if params[:booking_id]
+    @unbooked = @bnb.rooms.unbooked_rooms(Date.parse(params[:start_at]), Date.parse(params[:end_at]))
+
     respond_to do |format|
       format.js { render layout: false }
     end

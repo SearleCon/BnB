@@ -65,7 +65,7 @@ SampleApp::Application.configure do
     Bullet.rails_logger = true
     Bullet.disable_browser_cache = true
 
-    Delayed::Job.scaler = :local
+    Delayed::Job.scaler = :null
   end
 
 end

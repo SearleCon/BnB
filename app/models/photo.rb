@@ -22,8 +22,8 @@ class Photo < ActiveRecord::Base
 
   validates :description, presence: true
 
-  scope :find_main_photo, where(main: true)
-  scope :find_support_photos, where(:main => false)
+  scope :main_photo, where(main: true)
+  scope :support_photos, where(:main => false)
 
   def image_name
     File.basename(image.path || image.filename) if image
@@ -36,6 +36,23 @@ class Photo < ActiveRecord::Base
       save!
     else
       Delayed::Job.enqueue ProcessImageJob.new(self.id, self.key)
+    end
+  end
+
+
+  def remove_image!
+    begin
+      super
+    rescue Fog::Storage::Rackspace::NotFound
+    end
+  end
+
+
+  def remove_previously_stored_image
+    begin
+      super
+    rescue Fog::Storage::Rackspace::NotFound
+      @previous_model_for_avatar = nil
     end
   end
 

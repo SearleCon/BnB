@@ -1,4 +1,10 @@
 <div class="hero-unit clearfix">
+  <div id="loading" align="center">
+    <p>Please wait while the images are loading....</p>
+    <div class="progress progress-striped active" id="progress">
+      <div class="bar" style="width: 0%;"></div>
+    </div>
+  </div>
   <div class="span4" align="left" style="padding-left: 20px;">
     <h2><%= best_in_place_if can?(:update, @bnb), @bnb, :name, type: :input %></h2>
     <strong>Description</strong>
@@ -12,12 +18,12 @@
         <p align="center"><%= link_to "No Account? Register here. It's Free!", register_path("guest"), class: "btn btn-primary"  %></p>
     <% end %>
   </div>
-  <div class="span5 pull-right">
-    <div class="thumbnail">
+  <div class="span5 pull-right gallery">
+    <div class="thumbnail invisible">
       <% if @bnb.photos.nil? || @bnb.photos.empty? %>
        <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
       <% else %>
-       <%= image_tag @bnb.photos.find_main_photo.first.image_url unless @bnb.photos.find_main_photo.first.nil? %>
+       <%= image_tag @bnb.photos.main_photo.first.image_url unless @bnb.photos.main_photo.first.nil? %>
       <% end %>
     </div>
   </div>
@@ -74,15 +80,13 @@
 
 </div>
 
-<div class="hero-unit clearfix">
-  <div class="carousel span12" id="myCarousel">
+<div class="hero-unit clearfix gallery">
+  <div class="carousel slide span12" id="myCarousel">
     <div class="carousel-inner">
       <div class="item active">
-        <ul class="thumbnails">
-          <% if @bnb.photos.find_support_photos.any? %>
-              <% @bnb.photos.each do |photo| %>
-               <% unless photo.main? %>
-                  <li class="span4">
+        <ul class="thumbnails invisible">
+              <%  @bnb.photos.support_photos.try(:each) do |photo| %>
+                  <li class=<%="span".concat(12.div(@bnb.photos.support_photos.count).to_s) %>>
                     <div class="thumbnail">
                       <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" >
                         <%=image_tag photo.image_url(:thumb) %>
@@ -90,21 +94,8 @@
                     </div>
                   </li>
                <% end %>
-              <% end %>
-          <% else %>
-            <% 3.times do %>
-              <li class="span4">
-                <div class="thumbnail">
-                   <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                  </a>
-                </div>
-              </li>
-            <% end %>
-          <% end %>
         </ul>
       </div>
-      <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-      <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
     </div>
   </div>
 </div>

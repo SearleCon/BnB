@@ -12,11 +12,10 @@ $(document).ready ->
     $("#guest a.add_fields").hide()
 
   $(document).on 'click','#room_finder', ->
-    $(this).attr('href', $(this).attr('href') + '?start_date=' + $('#booking_event_attributes_start_at').val());
-    $(this).attr('href', $(this).attr('href') + '&end_date=' + $('#booking_event_attributes_end_at').val());
     $.ajax({
     type : 'GET',
     url : $(this).attr('href'),
+    data: { start_at: $('#booking_event_attributes_start_at').datepicker("getDate"), end_at: $('#booking_event_attributes_end_at').datepicker("getDate") }
     dataType : 'script'
     });
     return false
@@ -26,9 +25,12 @@ $(document).ready ->
       dateFormat: "DD, d MM yy"
       altFormat: "yy-mm-dd"
       altField: $(this).next()
-      minDate: 0
-      onClose: (dateText, inst) ->
+      onSelect: (dateText, inst) ->
+        previous = $(this).data("previous-value")
+        $('#room_finder').trigger('click') unless new Date(previous).getTime() == new Date(dateText).getTime()
+        $(this).data "previous-value", $(this).val()
         setMinMaxDate(inst, dateText)
+
 
 
   $('#calendar').fullCalendar
@@ -36,11 +38,9 @@ $(document).ready ->
     header:
       left: 'prev,next today',
       center: 'title',
-      right: 'month,agendaWeek,agendaDay'
     defaultView: 'month',
-    height: 500,
+    height: 600,
     slotMinutes: 15,
-
     eventSources: [{
     url: '/events',
     ignoreTimezone: false

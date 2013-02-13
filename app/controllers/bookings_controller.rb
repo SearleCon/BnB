@@ -79,6 +79,8 @@ class BookingsController < ApplicationController
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
+    @booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
+
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
         format.html { redirect_to bnb_bookings_url(@bnb), notice: 'Booking was successfully updated.' }

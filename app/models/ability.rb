@@ -59,6 +59,8 @@ class Ability
         can :nearby_bnbs, Bnb
         can :read, Bnb
         can :create, Booking
+        can :edit, Booking
+        can :update, Booking
         can :show, Booking
         can :my_bookings, Booking
         can :read, Photo

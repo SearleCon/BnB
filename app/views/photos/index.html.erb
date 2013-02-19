@@ -1,12 +1,6 @@
 <h2>Your images</h2>
 <div class="gallery">
-  <% if @photos.count >= 1 %>
-      <div id="loading" align="center">
-        <p>Please wait while the images are loading....</p>
-        <div class="progress progress-striped active" id="progress">
-          <div class="bar" style="width: 0%;"></div>
-        </div>
-      </div>
+  <% if @photos && @photos.any? %>
       <%= render @photos %>
   <% else %>
       <p class='center'>There are currently no images for your gallery</p>

@@ -2,12 +2,6 @@
   <h3 align="center">Edit image</h3>
   <div class="gallery" align="center">
     <%= image_tag @photo.image_url %>
-    <div id="loading" align="center">
-      <p>Please wait while the image loads....</p>
-      <div class="progress progress-striped active" id="progress" style="width: 50%">
-        <div class="bar" style="width: 0%;"></div>
-      </div>
-    </div>
   </div>
   <div id='photoform'>
     <%= simple_form_for [@bnb,@photo]  do |f| %>

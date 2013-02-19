@@ -423,3 +423,10 @@ input, textarea, select, .uneditable-input {
     max-height: 200px;
   }
 }
+
+.overlay {
+  opacity: 0.4;
+  background-color: 'black';
+  width: auto;
+  height: auto;
+}

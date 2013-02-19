@@ -1,4 +1,4 @@
-<table class="table sort_table">
+<table class="table sort_table" style="font-size: 14px">
   <tr>
     <th><%= sortable "bnb_id", "Bnb" %></th>
     <th>Start at</th>
@@ -7,22 +7,22 @@
     <th>Phone number</th>
     <th>Rating</th>
     <th><%= sortable "status"%></th>
-    <th>Actions</th>
+    <th></th>
   </tr>
 
-  <% bookings.each do |booking| %>
+  <% bookings.try(:each) do |booking| %>
       <tr>
-        <td><%= booking.bnb.name %></td>
-        <td><%= booking.event.start_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= booking.event.end_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= mail_to booking.bnb.email %> %></td>
+        <td><%= link_to booking.bnb.name, show_bnb_path(booking.bnb) %></td>
+        <td><%= booking.event.start_at %></td>
+        <td><%= booking.event.end_at %></td>
+        <td><%= mail_to booking.bnb.email %></td>
         <td><%= booking.bnb.telephone_number %></td>
         <td><% booking.bnb.rating.times do %>
               <i class="icon-star icon-white"></i>
-          <% end %>
+            <% end %>
         </td>
-        <td><%= booking.status %></td>
-        <td><%= link_to 'bnb info', show_bnb_path(booking.bnb), class: 'btn btn-mini btn-primary' %></td>
+        <td><%= display_status_label(booking.status) %></td>
+        <td><%= link_to 'Edit', edit_bnb_booking_path(booking.bnb, booking), class: 'btn btn-mini btn-primary' unless booking.closed? %></td>
       </tr>
   <% end %>
 </table>

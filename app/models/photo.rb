@@ -18,6 +18,7 @@ class Photo < ActiveRecord::Base
   attr_accessible :description, :main
   attr_accessor :filepath
 
+  before_create :set_previous_main_to_false
   after_destroy :destroy_file
 
   validates :description, presence: true
@@ -57,6 +58,10 @@ class Photo < ActiveRecord::Base
   end
 
   private
+  def set_previous_main_to_false
+    Photo.main_photo.where(:bnb_id => self.bnb_id).first.try(:toggle!, :main)
+  end
+
   def destroy_file
    self.remove_image!
   rescue

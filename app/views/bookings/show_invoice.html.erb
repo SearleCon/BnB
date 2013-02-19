@@ -1,4 +1,4 @@
-<div class="hero-unit">
+<div class="hero-unit" style="font-size: 14px" >
 
 <h2>Booking costs</h2>
 <p>
@@ -10,12 +10,12 @@
 
 <p>
   <b>Check In:</b>
-  <%= @booking.event_start_at.strftime('%A, %d %B %Y') %>
+  <%= @booking.event_start_at %>
 </p>
 
 <p>
   <b>Check Out:</b>
-  <%= @booking.event_end_at.strftime('%A, %d %B %Y') %>
+  <%= @booking.event_end_at %>
 </p>
 
 

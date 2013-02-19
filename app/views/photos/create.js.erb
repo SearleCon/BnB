@@ -6,7 +6,9 @@ $('#browse_files').click(function() {
     return $('.image_file').click();
 });
 $('.image_file').bind('change', function() {
-    return $('#filepath').val($('.image_file').val().split('/').pop().split('\\').pop());
+   $('#filepath').val($('.image_file').val().split('/').pop().split('\\').pop());
+   contentType = $('input:file').prop('files')[0].type.toString();
+   $('#mime_field').val(contentType);
 });
 <% end %>
 

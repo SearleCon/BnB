@@ -83,11 +83,10 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
-        format.html { redirect_to bnb_bookings_url(@bnb), notice: 'Booking was successfully updated.' }
-        format.json { head :no_content }
+          redirect_url = current_user.is?(:owner) ? bnb_bookings_url(@bnb) : my_bookings_bookings_url
+          format.html { redirect_to redirect_url, notice: 'Booking was successfully updated.' }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+          format.html { render action: "edit" }
       end
     end
   end
@@ -165,7 +164,7 @@ class BookingsController < ApplicationController
   end
 
   def number_of_nights
-   total ||= (@booking.event.end_at.day - @booking.event.start_at.day).to_i
+   total ||= (Date.parse(@booking.event.end_at) - Date.parse(@booking.event.start_at)).to_i
   end
 
 end

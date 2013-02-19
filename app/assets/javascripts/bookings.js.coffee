@@ -88,6 +88,7 @@ createBooking = (date) ->
   window.location.href = addParametersToURL($('#new_booking_path').val(),"date",date)
 
 
+
 addParametersToURL = (url, parameterName, parameterValue) ->
   otherQueryStringParameters = ""
   urlParts = url.split("?")
@@ -105,12 +106,6 @@ addParametersToURL = (url, parameterName, parameterValue) ->
       i++
   newQueryStringParameter = itemSeparator + parameterName + "=" + parameterValue
   baseUrl + "?" + otherQueryStringParameters + newQueryStringParameter
-
-
-
-
-
-
 
 
 

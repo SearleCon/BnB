@@ -3,5 +3,5 @@
     <%=f.input :country, :collection => sort_countries_for_carmen(Carmen::Country.all),  prompt: "Select a country", input_html: {id: "bnb_country"}, label: false  %>
     <%= render 'shared/select_region',  :parent_region => f.object.country %>
     <%=f.input :city, :placeholder => 'Type your city here', label: false  %>
-    <%= f.submit "Search",:class => "btn btn-primary" %>
+    <%= f.submit "Search",:class => "btn btn-primary wait" %>
 <% end %>

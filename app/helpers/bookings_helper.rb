@@ -11,6 +11,19 @@ module BookingsHelper
       end
   end
 
+  def display_status_label(status)
+    case status
+      when :checked_in
+        content_tag(:span, status.capitalize, :class => "label label-success")
+      when :booked
+        content_tag(:span, status.capitalize, :class => "label label-info")
+      when :provisional
+        content_tag(:span, status.capitalize, :class => "label label-important")
+      when :closed
+        content_tag(:span, status.capitalize, :class => "label label-inverse")
+    end
+  end
+
   def edit_or_create_url(booking)
       bnb = booking.bnb
       if booking.new_record?

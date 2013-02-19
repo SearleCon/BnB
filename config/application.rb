@@ -30,7 +30,7 @@ module SampleApp
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running.
-    config.active_record.observers = :booking_observer, :paypal_ipn_observer, :subscription_observer, :user_observer, :photo_observer
+    config.active_record.observers = :booking_observer, :paypal_ipn_observer, :subscription_observer, :user_observer
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

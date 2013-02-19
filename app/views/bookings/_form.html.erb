@@ -11,7 +11,7 @@
             <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:', :input_html => { :data => { :previous_value => f.object.event.end_at}, :value => f.object.event.end_at} %>
         <% end %>
       </div>
-     <% if @booking.new_record? %>
+     <% if @booking.new_record? && current_user.is?(:owner) %>
       <div id='guest'>
         <h5>Search for a guest or click the link to add a new one:</h5>
         <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %>

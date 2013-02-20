@@ -6,4 +6,5 @@ CarrierWave.configure do |config|
       :region => 'eu-west-1'
   }
   config.fog_directory  = 'bnbeezy'
+  config.max_file_size  = 1.megabyte
 end

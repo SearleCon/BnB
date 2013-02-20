@@ -1,13 +1,13 @@
 <h2>Your images</h2>
 <div class="gallery">
-  <% if @photos && @photos.any? %>
+  <% if  @photos.any? %>
       <%= render @photos %>
   <% else %>
       <p class='center'>There are currently no images for your gallery</p>
   <% end %>
 </div>
 
-<% if can? :create, Photo %>       
+<% if can? :create, Photo && @photos.count < 5 %>       
  <%= link_to "Upload an image", new_bnb_photo_path(@bnb) %>
 <% end %>
 <br>
@@ -22,6 +22,9 @@
     </li>
     <li>
       <%= simple_format("<h5>Remove:</h5> Click on remove to delete the image.") %>
+    </li>
+    <li>
+      <%= simple_format("<h5>Limit:</h5> Maximum of 5 photos per bnb with a maximum size of 1 mb per image.") %>
     </li>
   </ul>
 </div>

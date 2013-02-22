@@ -19,12 +19,16 @@
 //= require bootstrap
 //= require jquery.purr
 //= require best_in_place
+//= require best_in_place.purr
 //= require jquery.ui.datepicker
 //= require fullcalendar
 //= require lazybox
 //= require cocoon
 //= require jquery.turbolinks
 //= require jquery.spin
+//= require gmaps4rails/base
+//= require gmaps4rails/google
+//= require gmaps4rails/openlayers
 //= require_tree .
 
 
@@ -51,6 +55,8 @@ $.rails.showConfirmDialog = function(link) {
         return $.rails.confirmed(link);
     });
 };
+
+
 
 
 

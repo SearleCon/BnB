@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   def booking_made(booking)
     @booking = booking
     @user = User.find(@booking.user_id)
-    mail to: user.email, subject: "Booking notification"
+    mail to: @user.email, subject: "Booking notification"
   end
 
   def notify_bnb(booking)

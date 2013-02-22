@@ -426,3 +426,23 @@ input, textarea, select, .uneditable-input {
   width: auto;
   height: auto;
 }
+
+
+#map img {
+  max-width: none;
+}
+#map label {
+  width: auto; display:inline;
+}
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };
+}
+

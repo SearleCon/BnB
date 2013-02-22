@@ -24,7 +24,7 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
-gem 'gmaps4rails'
+gem 'gmaps4rails', '2.0.0pre'
 gem 'jquery-turbolinks'
 gem 'select2-rails'
 gem 'placeholdit'

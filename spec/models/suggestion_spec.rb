@@ -2,11 +2,11 @@
 #
 # Table name: suggestions
 #
-#  id         :integer          primary key
+#  id         :integer          not null, primary key
 #  suggestion :text
 #  user_id    :integer
-#  created_at :timestamp        not null
-#  updated_at :timestamp        not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #  subject    :string(255)
 #
 

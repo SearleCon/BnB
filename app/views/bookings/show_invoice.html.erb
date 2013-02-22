@@ -24,7 +24,7 @@
     <th>Description</th>
     <th>Value</th>
   </tr>
-  <% @booking.line_items.each do |line_item| %>
+  <% @booking.line_items.try(:each) do |line_item| %>
       <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
   <% end %>
 </table>
@@ -37,6 +37,7 @@
 <div>
   <%= link_to 'Print Invoice', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary' %>
 </div>
+  <%= hidden_field_tag 'booking_total_path', refresh_total_bnb_booking_path(@bnb, @booking) %>
 </div>
 
 

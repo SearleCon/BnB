@@ -8,105 +8,60 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @search = Search.new(params[:search])
-    if !@search.city.nil?
-      @bnbs = Bnb.where("city like ?", "%#{@search.city}%").paginate(:per_page => 15, :page => params[:page])
-    elsif !@search.region.nil?
-      @bnbs = Bnb.where("region like ?", "%#{@search.region}%").paginate(:per_page => 15, :page => params[:page])
+    @bnbs = Bnb.find_by_location(Search.new(params[:search])).paginate(:per_page => 15, :page => params[:page])
+    if @bnbs.any?
+     convert_to_map_data(@bnbs)
     else
-      @bnbs = Bnb.where("country like ?", "%#{@search.country}%").paginate(:per_page => 15, :page => params[:page])
-    end
-
-    respond_to do |format|
-      if @bnbs.nil? || @bnbs.empty?
-        format.html { redirect_to root_url, :alert => "No results were found for this search" }
-      else
-        convert_to_map_data(@bnbs)
-        format.html
-      end
+     flash[:alert] = "No results were found for this search"
+     redirect_to root_url
     end
   end
 
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    if @bnb.nil?
-      redirect_to startpage_url
-   else
-      respond_to do |format|
-        format.html
-        format.json { render json: @bnb }
-      end
-   end
+    redirect_to startpage_url unless @bnb
   end
 
   def nearby_bnbs
   @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page])
    convert_to_map_data(@bnbs)
-   respond_to do |format|
-     format.html { render 'bnbs/index' }
-   end
+   redirect_to bnbs_url
   end
 
   # GET /bnbs/new
   # GET /bnbs/new.json
   def new
     @bnb = Bnb.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @bnb }
-    end
-  end
-
-  # GET /bnbs/1/edit
-  def edit
-    @bnb = Bnb.find(params[:id])
   end
 
   # POST /bnbs
   # POST /bnbs.json
   def create
-    @bnb = Bnb.new
-    @bnb.user_id = current_user.id
-      if @bnb.save
-        redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)
-      else
-        format.html { render action: "new" }
-        format.json { render json: @bnb.errors, status: :unprocessable_entity }
-      end
+    @bnb = Bnb.new(:user_id => current_user.id)
+    if @bnb.save
+      redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)
+    else
+      flash[:alert] = 'An error occurred while initializing bnb setup wizard'
+      redirect_to startpage_url
+    end
   end
 
   # PUT /bnbs/1
   # PUT /bnbs/1.json
   def update
-    respond_to do |format|
-      if @bnb.update_attributes(params[:bnb])
-        format.html { redirect_to @bnb, notice: 'Bnb was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @bnb.errors, status: :unprocessable_entity }
-      end
-    end
+   @bnb.update_attributes(params[:bnb])
+   respond_with_bip(@bnb)
   end
 
   # DELETE /bnbs/1
   # DELETE /bnbs/1.json
   def destroy
     @bnb.destroy
-
-    respond_to do |format|
-      format.html { redirect_to bnbs_url }
-      format.json { head :no_content }
-    end
   end
 
-
   def subregions
-      respond_to do |format|
-           format.js { params[:parent_region] }
-       end
+    respond_to { |format| format.js { params[:parent_region] } }
   end
 
   private
@@ -115,6 +70,5 @@ class BnbsController < ApplicationController
       marker.title "#{bnb.name}"
       marker.infowindow render_to_string(:partial => "/bnbs/mapinfo", :locals => { :bnb => bnb})
     end
-
   end
 end

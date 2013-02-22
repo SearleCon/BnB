@@ -2,7 +2,7 @@
 #
 # Table name: bnbs
 #
-#  id               :integer          primary key
+#  id               :integer          not null, primary key
 #  name             :string(255)
 #  description      :text
 #  email            :string(255)
@@ -16,8 +16,8 @@
 #  contact_person   :string(255)
 #  twitter_account  :string(255)
 #  facebook_page    :string(255)
-#  created_at       :timestamp        not null
-#  updated_at       :timestamp        not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #  user_id          :integer
 #  latitude         :float
 #  longitude        :float
@@ -34,13 +34,13 @@ class Bnb < ActiveRecord::Base
 
   attr_accessor :status
   attr_accessor :number_of_rooms
-
-  geocoded_by :full_address
+  attr_accessor :address_processed
 
   acts_as_gmappable :process_geocoding => false
 
-  after_validation :geocode, :if => :address_details_changed?
   after_initialize :set_default_status
+  after_save :fetch_address, :if => :address_details_changed?
+
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
@@ -70,8 +70,12 @@ class Bnb < ActiveRecord::Base
     end
   end
 
+  def self.find_by_location(search)
+    where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country)
+  end
+
   def address_details_changed?
-    address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
+     address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
   end
 
   def full_address
@@ -79,9 +83,14 @@ class Bnb < ActiveRecord::Base
   end
 
   def gmaps4rails_address
-    "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+    full_address
   end
 
+  def address_processed?
+    self.address_processed == "y"
+  end
+
+  private
   def set_default_status
     if new_record?
       self.status = 'inactive'
@@ -90,6 +99,9 @@ class Bnb < ActiveRecord::Base
     end
   end
 
-
-
+  def fetch_address
+    unless self.address_processed?
+     Delayed::Job.enqueue ProcessAddressJob.new(self.id)
+    end
+  end
 end

@@ -109,7 +109,6 @@ class BookingsController < ApplicationController
   end
 
   def show_invoice
-
   end
 
  def check_out

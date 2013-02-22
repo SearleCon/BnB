@@ -1,5 +1,8 @@
+$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+<% if @guest.destroyed? %>
 $("[rel=tooltip]").tooltip('hide');
 $("#<%=@guest.id%>").fadeOut(1000,function()
 {
     $(this).remove();
 });
+<% end %>

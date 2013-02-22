@@ -2,13 +2,14 @@
 #
 # Table name: photos
 #
-#  id          :integer          primary key
+#  id          :integer          not null, primary key
 #  description :string(255)
 #  image       :string(255)
-#  created_at  :timestamp        not null
-#  updated_at  :timestamp        not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #  bnb_id      :integer
 #  main        :boolean          default(FALSE)
+#  processed   :boolean          default(FALSE)
 #
 
 require 'spec_helper'

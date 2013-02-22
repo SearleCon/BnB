@@ -1,4 +1,6 @@
-$('#rooms').append("<%= escape_javascript(render(:partial => 'rooms/row', :locals =>  { :room => @room })) %>")
-$("[rel=tooltip]").tooltip({animation:true, placement:'right'})
-$("#<%=@room.id%>").hide()
-$("#<%=@room.id%>").fadeIn(500)
+$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+<% if @room.persisted? %>
+$('#rooms').append("<%= escape_javascript(render(:partial => 'rooms/row', :locals =>  { :room => @room })) %>");
+$("[rel=tooltip]").tooltip({animation:true, placement:'right'});
+$("#<%=@room.id%>").hide().fade(500);
+<% end %>

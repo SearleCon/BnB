@@ -2,10 +2,10 @@
 #
 # Table name: roles
 #
-#  id          :integer          primary key
+#  id          :integer          not null, primary key
 #  description :string(255)
-#  created_at  :timestamp        not null
-#  updated_at  :timestamp        not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 class Role < ActiveRecord::Base

@@ -16,12 +16,9 @@
   <div class="content">
     <div class="row">
       <div class="span12">
-        <% flash.each do |name, msg| %>
-            <div id="flash" class="alert alert-<%= name == :notice ? "success" : "error" %>">
-              <a class="close" data-dismiss="alert">&#215;</a>
-              <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-            </div>
-        <% end %>
+        <div id="flash">
+          <%= render :partial => 'shared/flash_messages' %>
+        </div>
         <% if browser.ie6? || browser.ie7? || browser.ie8? %>
                <div class="ie_warn">                    
                      <p style="text-align: center;">WARNING: You're running an older version of Internet Explorer that is not fully supported.

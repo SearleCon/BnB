@@ -1,41 +1,34 @@
 class LineItemsController < ApplicationController
+  respond_to :js, :json
    before_filter :get_booking
+   before_filter :get_line_item, :only => [:update, :destroy]
 
 
   def create
-    @line_item = @booking.line_items.build
-    @line_item.description = 'describe charge'
-    @line_item.value = 0
-    if @line_item.save
-      respond_to do |format|
-        format.js { @line_item}
-        format.json { render json: @line_item}
-      end
-    end
+    @line_item = @booking.line_items.build(:description => 'describe charge', :value => 0)
+    flash.now[:error] = "An error occurred. Line item could not be created." unless @line_item.save
+    respond_with(@line_item)
   end
 
   def update
-    @line_item = @booking.line_items.find(params[:id])
-    if @line_item.update_attributes(params[:line_item])
-      respond_to do |format|
-        format.json { respond_with_bip(@line_item) }
-      end
-    end
+    @line_item.update_attributes(params[:line_item])
+    respond_with_bip(@line_item)
   end
 
   def destroy
-    @line_item = @booking.line_items.find(params[:id])
-    @booking.line_items.destroy(@line_item)
-    respond_to do |format|
-      format.js { @line_item }
-      format.json { render json: @line_item }
-    end
+    @line_item.destroy
+    flash.now[:error] = 'An error occurred. Line item could not be removed.' unless @line_item.destroyed?
+    respond_with(@line_item)
   end
 
 
   private
   def get_booking
     @booking = Booking.find(params[:booking_id])
+  end
+
+  def get_line_item
+    @line_item = @booking.line_items.find(params[:id])
   end
 
 end

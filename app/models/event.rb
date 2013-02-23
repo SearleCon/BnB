@@ -27,7 +27,6 @@ class Event < ActiveRecord::Base
         :allDay => true,
         :recurring => false,
         :url => Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
-        :update_url => Rails.application.routes.url_helpers.booking_event_path(self.booking, self.id),
         :edit_booking_url => Rails.application.routes.url_helpers.edit_bnb_booking_path(self.booking.bnb, booking_id),
         :color => self.color
     }

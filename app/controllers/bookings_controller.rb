@@ -3,18 +3,19 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
   authorize_resource :only => :my_bookings
 
+  after_filter :expire_cached_action, :only => :destroy
+
+
   helper_method :sort_column, :sort_direction
 
   caches_action :show, :cache_path => proc {|c|
-    booking = Booking.find(c.params[:id])
-    { :tag => booking.updated_at.to_i }
+    key = Booking.find(c.params[:id]).updated_at
+    { :tag => key.to_i } if key
   }
 
   caches_action :my_bookings, :cache_path => proc {|c|
-    booking = Booking.order('updated_at DESC').find_all_by_user_id(current_user.id).first
-    unless booking.nil?
-      c.params.merge!(:tag => booking.updated_at.to_i)
-    end
+    key = Booking.where(:user_id => current_user.id).maximum(:updated_at)
+    { :tag => key.to_i} if key
   }
 
 
@@ -32,9 +33,6 @@ class BookingsController < ApplicationController
       respond_to do |format|
         format.js { render layout: false }
       end
-  end
-
-  def edit
   end
 
   # GET /bookings/new
@@ -108,9 +106,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show_invoice
-  end
-
  def check_out
    @booking.status = :closed
    @booking.rooms.each do |room|
@@ -164,6 +159,11 @@ class BookingsController < ApplicationController
 
   def number_of_nights
    total ||= (Date.parse(@booking.event.end_at) - Date.parse(@booking.event.start_at)).to_i
+  end
+
+  def expire_cached_action
+    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.active_bookings.maximum(:updated_at).to_i
+    expire_action :action => :my_bookings, :tag => Booking.where(:user_id => current_user.id).maximum(:updated_at).to_i
   end
 
 end

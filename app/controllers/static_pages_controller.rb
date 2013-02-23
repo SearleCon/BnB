@@ -13,41 +13,4 @@ class StaticPagesController < ApplicationController
   def home
       @photos = Photo.main_photo
   end
-
-  def faq
-
-  end
-
-  def help
-  end
-  
-  def about
-  end
-  
-  def contact
-  end
-
-  def terms_and_conditions
-
-  end
-
-  def privacy_policy
-
-  end
-
-  def startpage
-
-  end
-
-  def pricing
-
-  end
-
-  def ie_warning
-
-  end
-
-  def registration_page
-
-  end
 end

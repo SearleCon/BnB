@@ -7,14 +7,13 @@ SampleApp::Application.routes.draw do
     get :paypal_checkout, on: :collection
   end
 
-  resources :suggestions
+  resources :suggestions, only: [:new, :create]
   resources :events, only: [:index]
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
 
   resources :bookings do
     get :my_bookings, on: :collection
-    resources :events, only: [:update]
     resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
   end
 

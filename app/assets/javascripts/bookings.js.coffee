@@ -56,7 +56,6 @@ class BookingsController
           else
             $('#booking_event_attributes_start_at').datepicker "option", "maxDate", dateText
 
-
     $('#booking_guest_id').select2({
        width: 'element',
        placeholder: 'Search for a guest'

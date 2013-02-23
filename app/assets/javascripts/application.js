@@ -29,4 +29,8 @@
 //= require gmaps4rails/base
 //= require gmaps4rails/google
 //= require gmaps4rails/openlayers
-//= require_tree .
+//= require bnbeezy
+//= require initialize
+//= require ajax_helper
+//= require utilities
+//= require jquery.imagesloaded

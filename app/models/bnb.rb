@@ -46,6 +46,43 @@ class Bnb < ActiveRecord::Base
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
 
+
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+
+  def self.find_by_location(search)
+    where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country)
+  end
+
+
+
+  def full_address
+     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+  end
+
+  def gmaps4rails_address
+    full_address
+  end
+
+
+  private
+  def set_default_status
+    if new_record?
+      self.status = 'inactive'
+    else
+      self.status = 'active'
+    end
+  end
+
+  def address_details_changed?
+    address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
+  end
+
   def active?
     self.status == 'active'
   end
@@ -62,42 +99,10 @@ class Bnb < ActiveRecord::Base
     self.status.include?('social_media') || active?
   end
 
-  def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
-
-  def self.find_by_location(search)
-    where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country)
-  end
-
-  def address_details_changed?
-     address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
-  end
-
-  def full_address
-     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
-  end
-
-  def gmaps4rails_address
-    full_address
-  end
-
   def address_processed?
     self.address_processed == "y"
   end
 
-  private
-  def set_default_status
-    if new_record?
-      self.status = 'inactive'
-    else
-      self.status = 'active'
-    end
-  end
 
   def fetch_address
     unless self.address_processed?

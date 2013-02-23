@@ -3,8 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   before_filter :set_return_url, :only => :new
 
   def new
-    @user = User.new
-    @user.roles = params[:user_role]
+    @user = User.new { |user| user.roles = params[:user_role] }
   end
 
   protected

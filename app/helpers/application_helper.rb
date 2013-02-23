@@ -23,4 +23,8 @@ module ApplicationHelper
     sorted_countries = countries.map{|c| c.name}.sort
   end
 
+  def display_icon(icon)
+    raw('<i class=' + icon + '></i>')
+  end
+
 end

@@ -11,9 +11,6 @@ class PhotosController < ApplicationController
     @photo = @bnb.photos.new
   end
 
-  def edit
-  end
-
   def create
     @photo = @bnb.photos.build(params[:photo])
     @photo.image.success_action_redirect = process_image_bnb_photo_url(@bnb, @photo) if @photo.save
@@ -31,7 +28,6 @@ class PhotosController < ApplicationController
         format.html { render action: "edit" }
       end
     end
-
   end
 
   def destroy

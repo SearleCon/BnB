@@ -25,15 +25,16 @@ class BnbsController < ApplicationController
 
   def nearby_bnbs
   @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page])
-   convert_to_map_data(@bnbs)
-   redirect_to bnbs_url
+    if @bnbs.any?
+      convert_to_map_data(@bnbs)
+      redirect_to bnbs_url
+    else
+      flash[:alert] = "No bnbs were found nearby"
+      redirect_to @bnb
+    end
+
   end
 
-  # GET /bnbs/new
-  # GET /bnbs/new.json
-  def new
-    @bnb = Bnb.new
-  end
 
   # POST /bnbs
   # POST /bnbs.json

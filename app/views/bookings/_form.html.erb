@@ -14,7 +14,7 @@
      <% if @booking.new_record? && current_user.is?(:owner) %>
       <div id='guest'>
         <h5>Search for a guest or click the link to add a new one:</h5>
-        <div id='find_guest'><%= f.association :guest, collection: @bnb.guests %>
+        <div id='find_guest'><%= f.association :guest, collection: @bnb.guests, label_method: :full_name %>
         <p style="font-size: medium;">or</p>
         </div>
         <div><%= link_to_add_association content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add a new guest'), f, :guest %></div>

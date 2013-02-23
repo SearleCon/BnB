@@ -38,7 +38,7 @@ class Guest < ActiveRecord::Base
   end
 
   def full_name
-    "#{self.name} #{self.surname}".capitalize!
+    "#{self.name} #{self.surname}".titleize
   end
 
 end

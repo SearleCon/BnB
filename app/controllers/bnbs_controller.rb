@@ -61,9 +61,6 @@ class BnbsController < ApplicationController
     @bnb.destroy
   end
 
-  def subregions
-    respond_to { |format| format.js { params[:parent_region] } }
-  end
 
   private
   def convert_to_map_data(bnbs)

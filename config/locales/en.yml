@@ -7,10 +7,6 @@ en:
           format:
               format: "%u%n"
               unit: "R"
-              # These three are to override number.format and are optional
               separator: "."
               delimiter: ","
               precision: 2
-
-
-

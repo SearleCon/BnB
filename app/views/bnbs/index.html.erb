@@ -5,7 +5,7 @@
     <div class="row" id="bnb_row">
       <div class="span3">
       <div class="thumbnail" align="center">
-        <% if bnb.photos.any? %>
+        <% if  bnb.photos.main_photo.any? %>
             <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb)), show_bnb_path(bnb))%>
       <% else %>
             <%=link_to placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb) %>

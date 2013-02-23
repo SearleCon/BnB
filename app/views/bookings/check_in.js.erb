@@ -1,2 +1,8 @@
-$.lazybox.close()
-$('#calendar').fullCalendar('refetchEvents')
+$.lazybox.close();
+var event = $('#calendar').fullCalendar('clientEvents', <%= @booking.event.id %>);
+event = event[0];
+event.color = "<%= @booking.event.color %>";
+$('#calendar').fullCalendar('updateEvent', event);
+
+
+

@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  include ApplicationHelper
 
   before_filter :set_return_url, :only => :new
 

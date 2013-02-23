@@ -1,5 +1,4 @@
 <%= direct_upload_form_for @photo.image do |f| %>
-    <%= hidden_field_tag('Content-Type', nil, {:id => 'mime_field'}) %>
     <div class="controls"><div class="input-append">
       <input id="filepath" name="filepath" disabled="disabled" size="50" type="text" /><button class="btn btn-primary btn-mini" id="browse_files" name="button" type="button">Browse</button>
     </div></div>

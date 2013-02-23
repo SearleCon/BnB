@@ -2,7 +2,7 @@ module ApplicationHelper
   def full_title(page_title)
     base_title = "BnBeezy"
     if page_title.empty?
-      return base_title
+       base_title
     else
       "#{base_title} | #{page_title}"
     end
@@ -26,5 +26,21 @@ module ApplicationHelper
   def display_icon(icon)
     raw('<i class=' + icon + '></i>')
   end
+
+  def set_return_url
+    session[:return_to] = request.env['HTTP_REFERER'] unless is_same_controller_and_action?(request.env['HTTP_REFERER'], registration_page_url)
+  end
+
+
+  def is_same_controller_and_action?(url1, url2)
+    hash_url1 = Rails.application.routes.recognize_path(url1)
+    hash_url2 = Rails.application.routes.recognize_path(url2)
+
+    [:controller, :action].each do |key|
+      return false if hash_url1[key] != hash_url2[key]
+    end
+    true
+  end
+
 
 end

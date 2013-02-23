@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
   # GET /my_bookings
   def my_bookings
-    bookings = Booking.search(params[:search]).order(sort_column + " " + sort_direction).find_all_by_user_id(current_user)
+    bookings = Booking.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
     active = bookings.select{|booking| !booking.closed?}
     @active_bookings = active.paginate(:per_page => 15, :page => params[:active_page]) if active
     inactive = bookings.select{|booking| booking.closed?}
@@ -101,6 +101,7 @@ class BookingsController < ApplicationController
 
   def check_in
     @booking.update_attribute(:status, :checked_in)
+
     respond_to do |format|
       format.js { render layout: false }
     end

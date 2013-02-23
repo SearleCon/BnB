@@ -10,9 +10,7 @@ class RoomsController < ApplicationController
 
   caches_action :index, :cache_path => proc {|c|
     key = Room.maximum('updated_at')
-    unless key.nil?
-     c.params.merge!(:tag => key.to_i )
-    end
+    {:tag => key.to_i } if key
   }
 
   # GET /rooms

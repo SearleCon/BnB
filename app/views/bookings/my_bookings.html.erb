@@ -3,15 +3,13 @@
 
   <div class="header form-search" align="right">
     <%= form_tag my_bookings_bookings_path, :method => 'get', id: 'search_table_form' do %>
-        <p>
-             <%= hidden_field_tag :direction, params[:direction] %>
-             <%= hidden_field_tag :sort, params[:sort] %>    
-           
-           <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search by bnb", :method => 'get' %>
-          <% unless params[:search].blank? %>
+           <%= hidden_field_tag :direction, params[:direction] %>
+           <%= hidden_field_tag :sort, params[:sort] %>    
+         
+         <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search by bnb", :method => 'get' %>
+        <% unless params[:search].blank? %>
             <div> <%= link_to "Back to index", my_bookings_bookings_path %></div>
-          <% end %>
-        </p>
+        <% end %>
     <% end %>
   </div>
 

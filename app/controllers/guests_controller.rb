@@ -10,9 +10,7 @@ class GuestsController < ApplicationController
 
   caches_action :index, :cache_path => proc {|c|
     key = Guest.maximum(:updated_at)
-    unless key.nil?
-      c.params.merge!(:tag => key.to_i )
-    end
+     c.params.merge! :tag => key.to_i  if key
   }
 
 

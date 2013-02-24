@@ -1,9 +1,9 @@
-<div class="hero-unit clearfix" style="text-align: center" ><%= gmaps4rails(@json) %></div>
+<div class="hero-unit clearfix"><%= gmaps4rails(@json) %></div>
 
 
 <% @bnbs.each do |bnb| %>
     <div class="row" id="bnb_row">
-      <div class="span3">
+      <div class="span3 gallery">
       <div class="thumbnail" align="center">
         <% if  bnb.photos.main_photo.any? %>
             <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb)), show_bnb_path(bnb))%>

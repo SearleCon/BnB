@@ -1,2 +1,5 @@
+$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+<% if @booking.destroyed? %>
 $.lazybox.close();
-$('#calendar').fullCalendar('removeEvents', <%= @event_id %>);
+$('#calendar').fullCalendar('removeEvents', <%= @booking.event.id %>);
+<% end %>

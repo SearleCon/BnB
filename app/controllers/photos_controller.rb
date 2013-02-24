@@ -19,8 +19,15 @@ class PhotosController < ApplicationController
   end
 
   def update
-    @photo.update_attributes(params[:photo])
-    respond_with(@photo, :location => bnb_photos_url(@bnb) )
+    if @photo.update_attributes(params[:photo])
+      flash[:notice] = 'Photo was updated successfully'
+      redirect_to bnb_photos_url(@bnb)
+    else
+      render 'edit'
+    end
+
+
+
   end
 
   def destroy

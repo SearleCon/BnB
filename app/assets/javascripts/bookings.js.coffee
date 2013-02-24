@@ -1,7 +1,6 @@
 class BookingsController
   init: ->
 
-
   index: ->
     $('#calendar').fullCalendar
       header:
@@ -32,6 +31,9 @@ class BookingsController
     setFormElements()
 
   edit: ->
+    setFormElements()
+
+  create: ->
     setFormElements()
 
   show_invoice: ->

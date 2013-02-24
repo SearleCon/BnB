@@ -161,28 +161,6 @@ input, textarea, select, .uneditable-input {
 
 
 
-/* sidebar */
-
-.stats {
-  overflow: auto;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $grayLighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
 
 
 #headers{
@@ -190,16 +168,6 @@ input, textarea, select, .uneditable-input {
 }
 
 
-
-/* accordion */
-.accordion-heading{
-  a{
-    background-color: $blue;
-    color: white;
-    font-size: 3;
-    font-family: tahoma;
-  }
-}
 
 .datepicker{
   width: 85%;

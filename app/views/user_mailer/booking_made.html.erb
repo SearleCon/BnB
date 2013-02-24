@@ -1,6 +1,6 @@
 <h3>Booking notification</h3>
 
-<p>Hi <%= @booking.guest_name %></p>
+<p>Hi <%= @booking.guest.name %></p>
 <p>
  This email is just to let you know that the details for your booking from <%= @booking.event.start_at %> to <%= @booking.event.end_at %>
   have been sent to <%= @booking.bnb.name %> who will confirm the details. Upon confirmation you will receive an email to notify you.

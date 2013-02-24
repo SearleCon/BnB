@@ -1,8 +1,11 @@
+$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+<% if @booking.persisted? %>
 $.lazybox.close();
 var event = $('#calendar').fullCalendar('clientEvents', <%= @booking.event.id %>);
 event = event[0];
 event.color = "<%= @booking.event.color %>";
 $('#calendar').fullCalendar('updateEvent', event);
+<% end %>
 
 
 

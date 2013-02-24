@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  respond_to  :js, :html, :json
   load_and_authorize_resource :bnb, :except => :my_bookings
   load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
   authorize_resource :only => :my_bookings
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
 
   caches_action :my_bookings, :cache_path => proc {|c|
     key = Booking.where(:user_id => current_user.id).maximum(:updated_at)
-    { :tag => key.to_i} if key
+    c.params.merge! :tag => key.to_i if key
   }
 
 
@@ -30,9 +31,7 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
-      respond_to do |format|
-        format.js { render layout: false }
-      end
+    respond_with(@booking)
   end
 
   # GET /bookings/new
@@ -41,12 +40,6 @@ class BookingsController < ApplicationController
     @booking = @bnb.bookings.build(:online => current_user.is?(:guest)) do |booking|
       booking.build_event(:start_at => params[:date])
       booking.build_guest(:name => current_user.name, :surname => current_user.surname, :email => current_user.email, :contact_number => current_user.contact_number) if current_user.is?(:guest)
-    end
-
-
-    respond_to do |format|
-         format.html { render 'new'}
-         format.js { render layout: false }
     end
   end
 
@@ -60,52 +53,33 @@ class BookingsController < ApplicationController
       booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
     end
 
-    respond_to do |format|
-      if @booking.save
-        flash[:notice] = 'Booking was created'
-        if current_user.is?(:owner)
-         format.html { redirect_to bnb_bookings_url(@bnb) }
-        else
-          format.html { redirect_to my_bookings_bookings_url }
-        end
-      else
-        format.html { render action: 'new'}
-      end
-    end
+    @booking.save
+    respond_with(@booking, :location => get_correct_user_response  )
+
   end
 
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
     @booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
-
-    respond_to do |format|
-      if @booking.update_attributes(params[:booking])
-          redirect_url = current_user.is?(:owner) ? bnb_bookings_url(@bnb) : my_bookings_bookings_url
-          format.html { redirect_to redirect_url, notice: 'Booking was successfully updated.' }
-      else
-          format.html { render action: "edit" }
-      end
+    if @booking.update_attributes(params[:booking])
+     flash.now[:notice] = "Booking was successfully updated." if request.xhr?
+    else
+      flash.now[:alert] = "Booking could not be updated." if request.xhr?
     end
+
+    respond_with(@booking, :location => get_correct_user_response )
+
   end
 
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
-    @event_id = @booking.event.id
     @booking.destroy
-    respond_to do |format|
-        format.js { render layout: false }
-    end
+    flash.now[:alert] = 'Booking could not be destroyed' unless @booking.destroyed?
+    respond_with(@booking)
   end
 
-  def check_in
-    @booking.update_attribute(:status, :checked_in)
-
-    respond_to do |format|
-      format.js { render layout: false }
-    end
-  end
 
  def check_out
    @booking.status = :closed
@@ -115,41 +89,28 @@ class BookingsController < ApplicationController
      @line_item.value = room.rates * number_of_nights
    end
    if @booking.save
-     expire_action(action: :show, :id => @booking)
-     respond_to do |format|
-       format.html { redirect_to show_invoice_bnb_booking_url(@bnb,@booking)}
-     end
+     redirect_to show_invoice_bnb_booking_url(@bnb,@booking)
+   else
+     redirect_to bnb_bookings_url(@bnb), :alert => "This booking could not be checked out."
    end
  end
 
- def confirm
-   @booking.update_attribute(:status, :booked)
-   respond_to do |format|
-     format.js { render layout: false }
-   end
- end
 
  def refresh_total
-   respond_to do |format|
-     format.js { render layout: false }
-   end
+   respond_with(@booking)
  end
 
  def print_pdf
+   @pdf = render_to_string :pdf => @booking.guest.name,
+                           :template => 'bookings/invoice.pdf.erb',
+                           :header => { center: "Invoice", right: Time.now.strftime('%A, %d %B %Y') },
+                           :encoding => "UTF-8"
    respond_to do |format|
-     format.pdf do
-       @pdf = render_to_string :pdf => @booking.guest.name,
-              :template => 'bookings/invoice.pdf.erb',
-              :header => { center: "Invoice", right: Time.now.strftime('%A, %d %B %Y') },
-              :encoding => "UTF-8"
-
-       send_data(@pdf, :filename => @booking.guest.name,  :type=>"application/pdf")
-     end
+     format.pdf { send_data(@pdf, :filename => @booking.guest.name,  :type=>"application/pdf") }
    end
  end
 
  private
-
   def sort_direction
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
@@ -165,6 +126,10 @@ class BookingsController < ApplicationController
   def expire_cached_action
     expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.active_bookings.maximum(:updated_at).to_i
     expire_action :action => :my_bookings, :tag => Booking.where(:user_id => current_user.id).maximum(:updated_at).to_i
+  end
+
+  def get_correct_user_response
+    current_user.is?(:owner) ? bnb_bookings_url(@bnb) : my_bookings_bookings_url
   end
 
 end

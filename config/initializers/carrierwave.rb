@@ -8,3 +8,13 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'bnbeezy'
   config.max_file_size  = 1.megabyte
 end
+
+CarrierWave::Uploader::Download.module_eval do
+  def process_uri(uri)
+    begin
+      URI.parse(uri)
+    rescue
+      URI.parse(URI.escape(URI.unescape(uri)))
+    end
+  end
+end

@@ -22,14 +22,11 @@ class Photo < ActiveRecord::Base
   before_create :set_previous_main_to_false
   after_destroy :destroy_file
 
+
   validates :description, presence: true
 
   scope :main_photo, where(main: true)
   scope :support_photos, where(:main => false)
-
-  def image_name
-    File.basename(image.path || image.filename) if image
-  end
 
   def save_and_process_image(options = {})
     if options[:now]
@@ -69,5 +66,6 @@ class Photo < ActiveRecord::Base
     logger.info "Exception removing #{self.image_url}"
     return false
   end
+
 
 end

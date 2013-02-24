@@ -1,8 +1,5 @@
 <div class="hero-unit">
   <h3 align="center">Edit image</h3>
-  <div class="gallery" align="center">
-    <%= image_tag @photo.image_url %>
-  </div>
   <div id='photoform'>
     <%= simple_form_for [@bnb,@photo]  do |f| %>
         <%= f.error_notification %>

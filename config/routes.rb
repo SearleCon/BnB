@@ -24,9 +24,7 @@ SampleApp::Application.routes.draw do
      get :process_image, on: :member
     end
     resources :bookings do
-      put :check_in, on: :member
       put :check_out, on: :member
-      put :confirm, on: :member
       get :refresh_total, on: :member
       get :show_invoice, on: :member
       get :print_pdf, on: :member

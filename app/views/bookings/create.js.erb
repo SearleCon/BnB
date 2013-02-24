@@ -1,6 +1,0 @@
-<% if @booking.errors.any? %>
-$('#errors').html('<%= escape_javascript(render :partial => 'shared/error_messages', locals: { object: @booking})%>');
-<% else %>
-$.lazybox.close();
-$('#calendar').fullCalendar('renderEvent', <%= j @event.as_json.to_json.html_safe %>);
-<% end %>

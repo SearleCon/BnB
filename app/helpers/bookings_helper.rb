@@ -5,9 +5,9 @@ module BookingsHelper
        when :checked_in
         html = (link_to 'Check out', check_out_bnb_booking_path(booking.bnb, booking), method: :put, class: "btn btn-warning")
       when :booked
-        html = (link_to 'Check in', check_in_bnb_booking_path(booking.bnb,booking), method: :put, remote: true, class: "btn btn-success")
+        html = (link_to 'Check in', bnb_booking_path(@bnb, @booking, {:booking => { :status => :checked_in}}), method: :put, remote: true, class: "btn btn-success")
        when :provisional
-         html =(link_to 'Confirm', confirm_bnb_booking_path(booking.bnb, booking), method: :put, remote: true, class: "btn btn-info")
+         html =(link_to 'Confirm', bnb_booking_path(@bnb, @booking , { :booking => { :status => :booked}}), method: :put, remote: true, class: "btn btn-info")
       end
   end
 

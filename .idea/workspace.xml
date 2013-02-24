@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" line="304" />
+    <bookmark url="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" line="261" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/bookings/update.js.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/bookings/check_in.js.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/bookings/confirm.js.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/bookings/create.js.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/bookings/new.js.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb" afterPath="$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_mailer/booking_made.html.erb" afterPath="$PROJECT_DIR$/app/views/user_mailer/booking_made.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/bookings.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/bookings.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/bookings_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/bookings_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/carrierwave.rb" afterPath="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/destroy.js.erb" afterPath="$PROJECT_DIR$/app/views/bookings/destroy.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/photos/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/photos/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/gmaps4rails.css" afterPath="$PROJECT_DIR$/vendor/assets/stylesheets/gmaps4rails.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/guests_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/guests_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bnbs/index.html.erb" afterPath="$PROJECT_DIR$/app/views/bnbs/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/photos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/photos/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/my_bookings.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/my_bookings.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/photo.rb" afterPath="$PROJECT_DIR$/app/models/photo.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/photos.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/photos.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/photos_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/photos_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/rooms_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/rooms_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/pricing.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/pricing.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BnB.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="../Backups/BnB/public/uploads/" />
-    <file path="/Dummy.txt" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361694500807" ignored="false" />
-    <file path="/Ruby Console" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361691024282" ignored="false" />
+    <file path="/Dummy.txt" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361717260671" ignored="false" />
+    <file path="/Ruby Console" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361721933548" ignored="false" />
     <file path="/_unbooked_rooms.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360610161789" ignored="false" />
     <file path="$PROJECT_DIR$/../3things/app/views/tasks/_task.html.haml" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360480758271" ignored="false" />
     <file path="/find_available.js.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360481344153" ignored="false" />
@@ -55,22 +36,22 @@
     <file path="/bookings_helper.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361654598162" ignored="false" />
     <file path="/ability.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361270415232" ignored="false" />
     <file path="/datepicker_input.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360522829927" ignored="false" />
-    <file path="/index.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361696791085" ignored="false" />
+    <file path="/index.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361717376279" ignored="false" />
     <file path="/environment.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360573845271" ignored="false" />
     <file path="/bookings.js.coffee" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361655849335" ignored="false" />
     <file path="/fragment.js2" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360608554702" ignored="false" />
-    <file path="/home.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361347599860" ignored="false" />
+    <file path="/home.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361724197094" ignored="false" />
     <file path="/room.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360677474535" ignored="false" />
     <file path="/booking.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361621853524" ignored="false" />
     <file path="/rooms_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361690238894" ignored="false" />
     <file path="/routes.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361653247868" ignored="false" />
     <file path="/photos_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361691509182" ignored="false" />
     <file path="/_photo.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361695384151" ignored="false" />
-    <file path="/custom.css.scss" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361477130468" ignored="false" />
+    <file path="/custom.css.scss" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361723030372" ignored="false" />
     <file path="/_showbnb.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361696631112" ignored="false" />
-    <file path="/a.dummy" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361618408909" ignored="false" />
+    <file path="/a.dummy" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361721745203" ignored="false" />
     <file path="/photo.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361692293280" ignored="false" />
-    <file path="/development.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361620298380" ignored="false" />
+    <file path="/development.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361719909097" ignored="false" />
     <file path="/Gemfile" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361364563872" ignored="false" />
     <file path="/global_loader.js.coffee" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361554848379" ignored="false" />
     <file path="/_upload_form.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361697488666" ignored="false" />
@@ -126,6 +107,10 @@
     <file path="/check_in.js.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361640906596" ignored="false" />
     <file path="/update.js.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361654946715" ignored="false" />
     <file path="/booking_made.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361690905295" ignored="false" />
+    <file path="/static_pages.css.scss" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361724333532" ignored="false" />
+    <file path="/pricing.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361721112921" ignored="false" />
+    <file path="/*.regexp" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361722415333" ignored="false" />
+    <file path="/*.txt" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361722429639" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,55 +137,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="photos.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/photos.js.coffee">
+      <file leaf-file-name="bookings_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="32" selection-start="50" selection-end="174" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="initialize.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/initialize.js.coffee">
+      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="24" selection-start="1405" selection-end="1427" vertical-scroll-proportion="0.0">
+            <state line="99" column="0" selection-start="2204" selection-end="2204" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bnbs.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee">
+      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="28" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+            <state line="18" column="75" selection-start="1090" selection-end="1090" vertical-scroll-proportion="-9.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bnbs/show.html.erb">
+      <file leaf-file-name="static_pages.css.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_showbnb.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="59" selection-start="1082" selection-end="1082" vertical-scroll-proportion="-10.24">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/bnbs/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -209,16 +176,45 @@
       <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="0" selection-start="2115" selection-end="2115" vertical-scroll-proportion="0.0">
+            <state line="1" column="15" selection-start="21" selection-end="53" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#3019#3210#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/rooms/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_upload_form.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/photos/_upload_form.html.erb">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/guests/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="80" selection-start="496" selection-end="496" vertical-scroll-proportion="0.10840108">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/guests/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.28">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="50" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -227,7 +223,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/photos/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="95" selection-start="335" selection-end="335" vertical-scroll-proportion="0.2">
+            <state line="10" column="95" selection-start="335" selection-end="335" vertical-scroll-proportion="-6.4">
               <folding />
             </state>
           </provider>
@@ -255,22 +251,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/user_mailer/booking_made.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/photos/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/photos_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/photo.rb" />
         <option value="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
         <option value="$PROJECT_DIR$/app/views/photos/_photo.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/utilities.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/photos.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee" />
         <option value="$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/bnbs/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/vendor/assets/stylesheets/gmaps4rails.css" />
         <option value="$PROJECT_DIR$/app/views/photos/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/photos/_upload_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/bnbs/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/pricing.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss" />
       </list>
     </option>
   </component>
@@ -333,6 +329,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="BnB" />
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -558,6 +564,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static_pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rooms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -901,16 +951,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -954,7 +994,7 @@
       <recent name="$PROJECT_DIR$/app/views/guests" />
     </key>
   </component>
-  <component name="RunManager" selected="Rake.jobs:work">
+  <component name="RunManager" selected="IRB console.Rails console: BnB">
     <configuration default="false" name="traceroute" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="BnB" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -1409,11 +1449,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Rake.jobs:work" />
-        <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
+        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.jobs:work" />
         <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
         <item index="3" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
-        <item index="4" class="java.lang.String" itemvalue="Rake.routes" />
+        <item index="4" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
       </list>
     </recent_temporary>
   </component>
@@ -1470,9 +1510,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32527205" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32363635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31680775" sideWeight="0.4909285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12646745" sideWeight="0.65174127" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27618363" sideWeight="0.62756956" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28479198" sideWeight="0.62756956" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39900497" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30646765" sideWeight="0.58004266" order="7" side_tool="true" content_ui="tabs" />
@@ -1483,7 +1524,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31680775" sideWeight="0.4909285" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3243781" sideWeight="0.4842181" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.65174127" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1547,117 +1587,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/photos/destroy.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/static_pages.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="55" selection-end="66" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/photos/_photo.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="103" selection-end="103" vertical-scroll-proportion="-1.28">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/utilities.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="12" selection-start="1124" selection-end="1181" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/ajax_helper.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/initialize.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="24" selection-start="1405" selection-end="1427" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/photos.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="50" selection-end="174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bnbs/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="28" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/bnbs/_showbnb.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="59" selection-start="1082" selection-end="1082" vertical-scroll-proportion="-10.24">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bnbs/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="0" selection-start="2115" selection-end="2115" vertical-scroll-proportion="0.0">
+        <state line="19" column="59" selection-start="1082" selection-end="1082" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/gmaps4rails.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="15" selection-start="346" selection-end="351" vertical-scroll-proportion="0.0">
+        <state line="14" column="15" selection-start="346" selection-end="351" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/photos/_upload_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="80" selection-start="496" selection-end="496" vertical-scroll-proportion="0.10840108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bnbs/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="85" selection-end="85" vertical-scroll-proportion="-1.92">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="50" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/registration_page.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6975169">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/pricing.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="25" selection-start="936" selection-end="936" vertical-scroll-proportion="-12.16">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/photos/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="95" selection-start="335" selection-end="335" vertical-scroll-proportion="0.2">
+        <state line="10" column="95" selection-start="335" selection-end="335" vertical-scroll-proportion="-6.4">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/photos/_upload_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/rooms/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="80" selection-start="496" selection-end="496" vertical-scroll-proportion="0.10840108">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/guests/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/guests/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="1.28">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="15" selection-start="21" selection-end="53" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#3019#3210#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="0" selection-start="2204" selection-end="2204" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="75" selection-start="1090" selection-end="1090" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/static_pages.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

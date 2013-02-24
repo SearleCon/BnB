@@ -144,30 +144,9 @@ input, textarea, select, .uneditable-input {
   @extend .error;
 }
 
-/* users index */
-
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter
-    }
-  }
-}
-
-
-
-
-
 #headers{
-  color: $blue ;
+  color: blue ;
 }
-
-
 
 .datepicker{
   width: 85%;
@@ -222,28 +201,6 @@ input, textarea, select, .uneditable-input {
     padding: 10px;
 
   }
-}
-
-#this-carousel-id{
-  width: 600px;
-  margin: 0px auto;
-}
-
-.carousel-inner { text-align: center; }
-
-.carousel .item > img {
-  width: auto;
-  height: 480px;
-  max-height: 480px;
-  display: inline-block;
-}
-
-
-
-.carousel-caption{
-  color: white;
-  text-align: center;
-
 }
 
 .span6{
@@ -323,24 +280,6 @@ input, textarea, select, .uneditable-input {
   @include border-radius(10px);
 }
 
-
-#searching{
-  text-align: center;
-  @include border-radius(10px);
-  background-color:#55626B;
-  input, select, .btn{
-    width: 60%;
-    padding: 10px;
-  }
-
-  h2{
-    position:relative;
-    color:#ccc9c9;
-    font-size:2em;
-    color:#fff;
-    text-shadow: #000 1px 5px 10px;
-    }
-}
 #calendar{
   background-color:#eee;
   padding: 5px;

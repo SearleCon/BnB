@@ -1,0 +1,86 @@
+
+body.static_pages{
+
+  .peopleCarouselImg img {
+    width: auto;
+    height: 225px;
+    max-height: 225px;
+  }
+
+  #this-carousel-id{
+    width: 600px;
+    margin: 0px auto;
+  }
+
+  .carousel-inner { text-align: center; }
+
+  .carousel .item > img {
+    width: auto;
+    height: 480px;
+    max-height: 480px;
+    display: inline-block;
+  }
+
+
+
+  .carousel-caption{
+    color: white;
+    text-align: center;
+
+  }
+
+  #searching{
+    text-align: center;
+    background-color:#55626B;
+    input, select, .btn{
+      width: 60%;
+      padding: 10px;
+    }
+
+    h2{
+      position:relative;
+      color:#ccc9c9;
+      font-size:2em;
+      color:#fff;
+      text-shadow: #000 1px 5px 10px;
+    }
+  }
+
+
+  word-wrap: break-word;
+
+  .sections{
+    font-size: 11px;
+    background-position: left top;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: black;
+
+    h3{
+      font-size: 14px;
+    }
+
+    h4{
+      font-size: 13px;
+    }
+
+    .section1 {
+      height: 200px;
+      background-image: url(sec3bg.jpg);
+    }
+
+    .section2 {
+      background-image: url(sec2bg.jpg);
+    }
+
+    .section3 {
+      background-image: url(sec1bg.jpg);
+    }
+
+    .section4 {
+      background-image: url(sec4bg.jpg);
+    }
+  }
+
+
+}

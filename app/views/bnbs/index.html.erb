@@ -1,7 +1,7 @@
 <div class="hero-unit clearfix"><%= gmaps4rails(@json) %></div>
 
 
-<% @bnbs.each do |bnb| %>
+<% @bnbs.try(:each) do |bnb| %>
     <div class="row" id="bnb_row">
       <div class="span3 gallery">
       <div class="thumbnail" align="center">

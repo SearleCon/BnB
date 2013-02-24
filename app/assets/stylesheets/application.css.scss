@@ -17,6 +17,14 @@
  *= require_tree .
 */
 
+document {
+  height: 297mm - 23mm;
+  width: 210mm -21mm;
+
+  background-repeat: no-repeat;
+  background-position: 200px 280px;
+}
+
 .content {
 
   background-color: #eee;
@@ -54,13 +62,7 @@ html, body {
   left: 0;
 }
 
-#wrapper {
-  position: relative;
-  width: 800px;
-  min-height: 400px;
-  margin: 100px auto;
-  color: #333;
-}
+
  .sort_table{
      th .current {
       padding-right: 12px;
@@ -85,15 +87,6 @@ html, body {
    }
  }
 
-document {
-  height: 297mm - 23mm;
-  width: 210mm -21mm;
-
-  background-repeat: no-repeat;
-  background-position: 200px 280px;
-}
-
-
 .purr {
   position: fixed;
   top: 30px;
@@ -104,80 +97,6 @@ document {
   border: solid 2px #C66;
   &:first-letter { text-transform: uppercase; }
 }
-
-.peopleCarouselImg img {
-  width: auto;
-  height: 225px;
-  max-height: 225px;
-}
-
-/* Pricing blocks added by Shaun */
-.sections {
-  width: auto;
-  height: auto;
-  padding-top: 41px;
-  text-align: center;
-}
-.section1 {
-  font-size: 11px;
-  background-image: url(sec3bg.jpg);
-  background-repeat: no-repeat;
-  background-position: left top;
-  width: auto;
-  height: auto;
-  padding: 18px;
-  color: #000000;
-  margin-left: 40px;
-}
-.section1 h3, .section4 h3 {
-  font-size: 14px;
-  padding: 0px;
-  margin: 0px;
-}
-.section2 {
-  font-size: 11px;
-  background-image: url(sec2bg.jpg);
-  background-repeat: no-repeat;
-  background-position: left top;
-  width: auto;
-  height: auto;
-  padding: 18px;
-  color: #000000;
-}
-.section2 h3 {
-  font-size: 14px;
-  color: #1f5aa0;
-  padding: 0px;
-  margin: 0px;
-}
-.section3 {
-  font-size: 11px;
-  background-image: url(sec1bg.jpg);
-  background-repeat: no-repeat;
-  background-position: left top;
-  width: auto;
-  height: auto;
-  padding: 18px;
-  color: #000000;
-}
-.section3 h3 {
-  font-size: 14px;
-  color: #2d680c;
-  padding: 0px;
-  margin: 0px;
-}
-.section4 {
-  font-size: 11px;
-  background-image: url(sec4bg.jpg);
-  background-repeat: no-repeat;
-  background-position: left top;
-  width: auto;
-  height: auto;
-  padding: 18px;
-  color: #000000;
-  margin-right: 40px;
-}
-
 
 .ie_warn {
   border: 1px solid;

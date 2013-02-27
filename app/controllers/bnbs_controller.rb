@@ -24,7 +24,7 @@ class BnbsController < ApplicationController
   @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page])
     if @bnbs.any?
       convert_to_map_data(@bnbs)
-      redirect_to bnbs_url
+      render 'index'
     else
       flash[:alert] = "No bnbs were found nearby"
       redirect_to show_bnb_url(@bnb)

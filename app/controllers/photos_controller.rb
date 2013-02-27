@@ -1,13 +1,11 @@
 class PhotosController < ApplicationController
   respond_to :js, :html
+  prepend_before_filter :load_resources, :only => :index
   prepend_before_filter :new_resource, :only => [:new, :create]
   prepend_before_filter :load_resource, :only => [:edit,:update, :process_image, :destroy]
   prepend_before_filter :load_parent
   authorize_resource
 
-  def index
-    @photos = @bnb.photos
-  end
 
   def create
     @photo.image.success_action_redirect = process_image_bnb_photo_url(@bnb, @photo) if @photo.save
@@ -47,14 +45,14 @@ class PhotosController < ApplicationController
   end
 
   def new_resource
-   Photo.unscoped do
-     @photo = @bnb.photos.new(params[:photo])
-   end
+   Photo.unscoped { @photo = @bnb.photos.new(params[:photo]) }
   end
 
   def load_resource
-    Photo.unscoped do
-     @photo = @bnb.photos.find(params[:id])
-    end
+    Photo.unscoped { @photo = @bnb.photos.find(params[:id]) }
+  end
+
+  def load_resources
+    @photos = @bnb.photos.scoped
   end
 end

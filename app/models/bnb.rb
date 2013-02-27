@@ -35,10 +35,13 @@ class Bnb < ActiveRecord::Base
   attr_accessor :status
   attr_accessor :number_of_rooms
 
+  geocoded_by :full_address
+
   acts_as_gmappable :process_geocoding => false
 
   after_initialize :set_default_status
   after_commit :fetch_address, :if => :persisted?
+
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
@@ -58,6 +61,10 @@ class Bnb < ActiveRecord::Base
 
   def full_address
      [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")
+  end
+
+  def co_ordinates
+    [latitude, longitude].reject(&:nil?).join(",")
   end
 
   def gmaps4rails_address

@@ -27,7 +27,7 @@ class BnbsController < ApplicationController
       redirect_to bnbs_url
     else
       flash[:alert] = "No bnbs were found nearby"
-      redirect_to @bnb
+      redirect_to show_bnb_url(@bnb)
     end
 
   end

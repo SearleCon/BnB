@@ -14,6 +14,7 @@
 
 class Photo < ActiveRecord::Base
   belongs_to :bnb
+  default_scope where(:processed => true)
   mount_uploader :image, ImageUploader
 
   attr_accessible :description, :main
@@ -51,7 +52,7 @@ class Photo < ActiveRecord::Base
     begin
       super
     rescue Fog::Storage::Rackspace::NotFound
-      @previous_model_for_avatar = nil
+      @previous_model_for_image = nil
     end
   end
 

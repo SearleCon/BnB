@@ -14,8 +14,10 @@
 
 class Event < ActiveRecord::Base
   belongs_to :booking
-  after_initialize :set_default_date
+  after_initialize :set_default_date, :if => :new_record?
 
+
+  scope :by_bnb,lambda { |bnb| where(:booking_id => bnb.bookings.active) }
 
   def as_json(options = {})
     {
@@ -41,11 +43,10 @@ class Event < ActiveRecord::Base
   end
 
   private
+
   def set_default_date
-    if new_record?
       write_attribute(:start_at, Date.today) if self[:start_at].nil?
       write_attribute(:end_at, read_attribute(:start_at) + 1.day) unless self[:end_at].present?
-    end
   end
 
 end

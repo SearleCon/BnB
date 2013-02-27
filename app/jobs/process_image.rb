@@ -1,7 +1,9 @@
 class ProcessImageJob < Struct.new(:id, :key)
   def perform
-    photo = Photo.find(id)
-    photo.key = key
-    photo.save_and_process_image(:now => true)
+    Photo.unscoped do
+      photo = Photo.find(id)
+      photo.key = key
+      photo.save_and_process_image(:now => true)
+    end
   end
 end

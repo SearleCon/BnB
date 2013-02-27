@@ -2,7 +2,10 @@ class UserObserver < ActiveRecord::Observer
 
   def after_create(user)
     add_subscription(user) if user.is_owner?
-    UserMailer.delay.welcome(user)
+  end
+
+  def after_commit(user)
+    UserMailer.delay.welcome(user) if user.persisted? && user.created_at == user.updated_at
   end
 
   private

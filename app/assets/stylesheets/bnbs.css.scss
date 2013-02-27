@@ -1,0 +1,51 @@
+body.bnbs{
+
+  /* index */
+  /* Search results details  */
+  #result_details{
+    padding:10px;
+    h2{
+      color: 007fcc;
+
+      text-shadow: -1px 0 0 #000000, 1px 1px 0 #000000,
+        2px -1px 0 #000000, 3px 0 0 #000000;
+    }
+    ul{
+      font-family: Verdana;
+      text-shadow: 2px 2px 2px #ddccb5;
+      font-size: 15px;
+    }
+  }
+
+  /* Google map on search screen */
+  #map img {
+    max-width: none;
+  }
+  #map label {
+    width: auto; display:inline;
+  }
+
+
+  /* Show */
+  /* Shows the bnb name and description info */
+  #details{
+    padding-left: 20px;
+    font-size: 15px;
+  }
+
+  /* Shows contact and address details */
+  #contact_and_address{
+    padding-top: 10px;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  /* Carousel which displays the photos on the bnb info screen */
+  #support_photos_carousel{
+    img{
+      width:100%;
+      height:200px;
+      max-height: 200px;
+    }
+  }
+}

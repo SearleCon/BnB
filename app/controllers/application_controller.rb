@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
   end
 
+
   private
   def after_sign_out_path_for(resource_or_scope)
     if current_user

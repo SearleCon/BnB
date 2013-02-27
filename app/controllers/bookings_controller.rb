@@ -95,6 +95,11 @@ class BookingsController < ApplicationController
    end
  end
 
+ def tabular_view
+   @bookings = @bnb.bookings.active.search(params[:search]).order(sort_column + " " + sort_direction)
+
+
+ end
 
  def refresh_total
    respond_with(@booking)
@@ -106,7 +111,7 @@ class BookingsController < ApplicationController
                            :header => { center: "Invoice", right: Time.now.strftime('%A, %d %B %Y') },
                            :encoding => "UTF-8"
    respond_to do |format|
-     format.pdf { send_data(@pdf, :filename => @booking.guest.name,  :type=>"application/pdf") }
+     format.pdf { send_data(@pdf, :filename => @booking.guest.name,  :type=>"application/pdf", :disposition => 'inline') }
    end
  end
 
@@ -124,7 +129,7 @@ class BookingsController < ApplicationController
   end
 
   def expire_cached_action
-    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.active_bookings.maximum(:updated_at).to_i
+    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.active.maximum(:updated_at).to_i
     expire_action :action => :my_bookings, :tag => Booking.where(:user_id => current_user.id).maximum(:updated_at).to_i
   end
 

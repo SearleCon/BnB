@@ -1,15 +1,15 @@
 <br>
-<div class="hero-unit">
+<div class="hero-unit" id="map_marker">
  <address>
-   <%= bnb.name %>
+   <%= bnb.try(:name) %>
    <br>
    <p>
-     <% bnb.rating.times do %>
+     <% bnb.try(:rating).try(:times) do %>
          <i class="icon-star icon-white"></i>
      <% end %>
    </p>
-   Rooms: <%= bnb.rooms.size %>
+   Rooms: <%= bnb.try(:rooms).try(:size) %>
    <br>
-   Telephone: <%= bnb.telephone_number %>
+   Telephone: <%= bnb.try(:telephone_number) %>
  </address>
 </div>

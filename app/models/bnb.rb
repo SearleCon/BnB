@@ -34,18 +34,15 @@ class Bnb < ActiveRecord::Base
 
   attr_accessor :status
   attr_accessor :number_of_rooms
-  attr_accessor :address_processed
 
   acts_as_gmappable :process_geocoding => false
 
   after_initialize :set_default_status
-  after_save :fetch_address, :if => :address_details_changed?
-
+  after_commit :fetch_address, :if => :persisted?
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
-
 
   def self.search(search)
     if search
@@ -59,10 +56,8 @@ class Bnb < ActiveRecord::Base
     where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country)
   end
 
-
-
   def full_address
-     "#{address_line_one}, #{address_line_two}, #{city}, #{postal_code}, #{country}"
+     [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")
   end
 
   def gmaps4rails_address
@@ -77,10 +72,6 @@ class Bnb < ActiveRecord::Base
     else
       self.status = 'active'
     end
-  end
-
-  def address_details_changed?
-    address_line_one_changed? || address_line_two_changed? || city_changed? || postal_code_changed? || country_changed?
   end
 
   def active?
@@ -99,14 +90,12 @@ class Bnb < ActiveRecord::Base
     self.status.include?('social_media') || active?
   end
 
-  def address_processed?
-    self.address_processed == "y"
+  def address_changed?
+    ['address_line_one', 'address_line_two', 'city', 'postal_code', 'country'].any? { |k| self.previous_changes.key?(k) }
   end
-
 
   def fetch_address
-    unless self.address_processed?
-     Delayed::Job.enqueue ProcessAddressJob.new(self.id)
-    end
+    Delayed::Job.enqueue ProcessAddressJob.new(self.id) if address_changed?
   end
+
 end

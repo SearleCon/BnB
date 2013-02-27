@@ -28,7 +28,7 @@ class LineItemsController < ApplicationController
   end
 
   def get_line_item
-    @line_item = @booking.line_items.find(params[:id])
+    @line_item = LineItem.find(params[:id])
   end
 
 end

@@ -18,7 +18,6 @@ SampleApp::Application.routes.draw do
   end
 
   resources :bnbs, except: [:show] do
-    get :map, on: :collection
     get :nearby_bnbs, on: :member
     resources :photos, only: [:index, :edit, :update, :new, :create, :destroy]  do
      get :process_image, on: :member
@@ -28,6 +27,7 @@ SampleApp::Application.routes.draw do
       get :refresh_total, on: :member
       get :show_invoice, on: :member
       get :print_pdf, on: :member
+      get :tabular_view, on: :collection
     end
     resources :guests, except: [:show, :new, :edit]
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]

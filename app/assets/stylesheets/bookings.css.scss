@@ -1,0 +1,40 @@
+
+body.bookings{
+
+  /* Index */
+  /* Calendar for bookings */
+  #booking_schedule{
+    background-color:#55626B;
+
+    #calendar{
+      background-color:#eee;
+      padding: 5px;
+    }
+  }
+
+  /* Date picker on booking forms */
+  /* Create and Edit */
+  .datepicker{
+    width: 85%;
+    padding: 5px;
+  }
+
+  /* Stores selected guest for booking */
+  #booking_guest_id{
+    width: 20%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+
+  /* Show_Invoice */
+  /* Holds the total of the costs */
+  #Total_Cost{
+    float: right;
+    p{
+      font: bold;
+      float: left;
+      padding: 5px;
+    }
+  }
+}

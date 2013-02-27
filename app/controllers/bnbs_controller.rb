@@ -1,9 +1,6 @@
 class BnbsController < ApplicationController
   load_and_authorize_resource :bnb, :except => :subregions
 
-  def map
-   convert_to_map_data(Bnb.all)
-  end
 
   # GET /bnbs
   # GET /bnbs.json
@@ -41,7 +38,7 @@ class BnbsController < ApplicationController
   def create
     @bnb = Bnb.new(:user_id => current_user.id)
     if @bnb.save
-      redirect_to  bnb_bnb_step_path(:bnb_details, :bnb_id => @bnb.id)
+      redirect_to  bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id)
     else
       flash[:alert] = 'An error occurred while initializing bnb setup wizard'
       redirect_to startpage_url

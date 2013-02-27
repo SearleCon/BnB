@@ -16,10 +16,9 @@
 class Booking < ActiveRecord::Base
   belongs_to :bnb
   belongs_to :guest
-  has_many :line_items
+  has_many :line_items, :dependent => :delete_all
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
-
 
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
   validates_presence_of :guest
@@ -29,9 +28,7 @@ class Booking < ActiveRecord::Base
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
 
-
-  scope :active_bookings, where("status != ?", :closed)
-
+  scope :active, where("status != ?", :closed)
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 

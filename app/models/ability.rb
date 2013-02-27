@@ -50,6 +50,7 @@ class Ability
        can :manage, LineItem
 
        #Photos
+       can :manage, Photo, :processed => false
        can :manage, Photo, :bnb => {:user_id => user.id }
       end
     end

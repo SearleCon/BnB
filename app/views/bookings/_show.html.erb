@@ -26,7 +26,7 @@
 </ul>
 
 <div id='booking_info' style="text-align: center;">
-<% if can? :confirm, @booking %><%= display_checkin_or_checkout(booking) %><% end %> <%= link_to 'Edit', edit_bnb_booking_path(@bnb,booking), :class => "btn btn-inverse" %> <%= link_to 'Remove', bnb_booking_path(@bnb,booking), id: 'deleteBooking', method: :delete , :remote => true %>
+<% if can? :confirm, @booking %><%= display_checkin_or_checkout(booking) %><% end %>  <%= link_to 'Edit', edit_bnb_booking_path(@bnb,booking), :class => "btn btn-inverse" %> <%= link_to 'Cancel', bnb_booking_path(@bnb,booking), :class => 'btn btn-danger' ,id: 'deleteBooking', method: :delete , :remote => true %>
 </div>
 
 

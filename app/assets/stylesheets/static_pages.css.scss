@@ -1,66 +1,59 @@
+body.static_pages {
 
-body.static_pages{
-
-  .peopleCarouselImg img {
-    width: auto;
-    height: 225px;
-    max-height: 225px;
-  }
-
-  #this-carousel-id{
+  /* BnB Carousel */
+  #home_carousel {
     width: 600px;
     margin: 0px auto;
+
+    .carousel-inner {
+      text-align: center;
+    }
+
+    .carousel .item > img {
+      width: auto;
+      height: 480px;
+      max-height: 480px;
+      display: inline-block;
+    }
+
+    .carousel-caption {
+      color: white;
+      text-align: center;
+    }
+
   }
 
-  .carousel-inner { text-align: center; }
-
-  .carousel .item > img {
-    width: auto;
-    height: 480px;
-    max-height: 480px;
-    display: inline-block;
-  }
-
-
-
-  .carousel-caption{
-    color: white;
+  /* BnB Search */
+  #searching {
     text-align: center;
-
-  }
-
-  #searching{
-    text-align: center;
-    background-color:#55626B;
-    input, select, .btn{
+    background-color: #55626B;
+    input, select, .btn {
       width: 60%;
       padding: 10px;
     }
 
-    h2{
-      position:relative;
-      color:#ccc9c9;
-      font-size:2em;
-      color:#fff;
+    h2 {
+      position: relative;
+      color: #ccc9c9;
+      font-size: 2em;
+      color: #fff;
       text-shadow: #000 1px 5px 10px;
     }
   }
 
-
-  word-wrap: break-word;
-
-  .sections{
+  /* Pricing page */
+  .sections {
     font-size: 11px;
     background-position: left top;
     background-size: auto;
     background-repeat: no-repeat;
     color: black;
 
-    h3{
+    h3 {
       font-size: 14px;
     }
 
-    h4{
+    h4 {
       font-size: 13px;
     }
 
@@ -81,6 +74,5 @@ body.static_pages{
       background-image: url(sec4bg.jpg);
     }
   }
-
 
 }

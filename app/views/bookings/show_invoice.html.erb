@@ -35,7 +35,7 @@
 <br>
 <br>
 <div>
-  <%= link_to 'Print Invoice', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary' %>
+  <%= link_to 'Generate PDF', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary', :target => '_blank' %>
 </div>
   <%= hidden_field_tag 'booking_total_path', refresh_total_bnb_booking_path(@bnb, @booking) %>
 </div>

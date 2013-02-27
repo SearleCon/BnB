@@ -11,6 +11,6 @@ class StaticPagesController < ApplicationController
   }, :layout => false
 
   def home
-      @photos = Photo.main_photo
+    @photos = Photo.main_photo
   end
 end

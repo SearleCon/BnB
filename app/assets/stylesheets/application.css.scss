@@ -26,7 +26,6 @@ document {
 }
 
 .content {
-
   background-color: #eee;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
@@ -40,7 +39,6 @@ document {
   /* SS Added for more Shadow effect (took out the top two) */
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-
 }
 
 /* Full Screen BG */
@@ -62,7 +60,7 @@ html, body {
   left: 0;
 }
 
-
+/* Make table sortable */
  .sort_table{
      th .current {
       padding-right: 12px;
@@ -79,6 +77,7 @@ html, body {
      }
  }
 
+ /* Search forms for rooms and guests */
  #search_table_form{
    input{
      padding:10px;
@@ -87,6 +86,14 @@ html, body {
    }
  }
 
+
+/* Set table header colours */
+#table_headers{
+  color: blue ;
+}
+
+
+/* jquery purr notifications */
 .purr {
   position: fixed;
   top: 30px;
@@ -98,6 +105,7 @@ html, body {
   &:first-letter { text-transform: uppercase; }
 }
 
+/* ie warning notice */
 .ie_warn {
   border: 1px solid;
   padding:15px 20px 15px 55px;
@@ -116,6 +124,7 @@ html, body {
 }
 
 
+/* help information block */
 .help_info {
   border: 1px solid;
   padding:15px 20px 15px 55px;
@@ -132,3 +141,18 @@ html, body {
   color: #fff;
   background: #888 no-repeat 10px center;
 }
+
+.exceptions{
+  border: 1px solid;
+  padding:15px 20px 15px 55px;
+  font: bold 12px verdana;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background: crimson no-repeat 10px center;
+}
+
+

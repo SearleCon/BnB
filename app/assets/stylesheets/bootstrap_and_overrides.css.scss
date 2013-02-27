@@ -144,30 +144,9 @@ input, textarea, select, .uneditable-input {
   @extend .error;
 }
 
-#headers{
-  color: blue ;
-}
-
-.datepicker{
-  width: 85%;
-  padding: 5px;
-}
-
-#Total_Cost{
-  float: right;
-  p{
-    font: bold;
-    float: left;
-    padding: 5px;
-  }
-}
 
 .navbar-search {
   position: relative;
-}
-
-#search{
-  width: 70%;
 }
  
 .navbar-search .search-query {
@@ -190,42 +169,6 @@ input, textarea, select, .uneditable-input {
   background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
 }
 
-.carousel .item > img { display: inline-block; }
-
-#photo_form{
-  width: 30%;
-
-
-  input{
-    width: 70%;
-    padding: 10px;
-
-  }
-}
-
-.span6{
-  @include border-radius(10px);
-
-
-
-  padding:10px;
-
-  h2{
-    color: 007fcc;
-
-    text-shadow: -1px 0 0 #000000, 1px 1px 0 #000000,
-      2px -1px 0 #000000, 3px 0 0 #000000;
-  }
-
-  ul{
-    font-family: Verdana;
-    text-shadow: 2px 2px 2px #ddccb5;
-    font-size: 15px;
-  }
-
-
-
-}
 
 .hero-unit{
 
@@ -255,10 +198,6 @@ input, textarea, select, .uneditable-input {
 
 }
 
-#registration{
-  background:#464646;
-  color:#fff;
-}
 
 .thumbnail{
   @include border-radius(10px);
@@ -276,56 +215,7 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
-#bnb_row{
-  @include border-radius(10px);
-}
 
-#calendar{
-  background-color:#eee;
-  padding: 5px;
-}
-
-#booking_schedule{
-  background-color:#55626B;
-}
-
-#booking_guest_id{
-  width: 40%;
-  height: auto;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-.loading{
-  width: 320px;
-  height: 320px;
-  background-color: #add8e6;
-}
-
-.invisible{
-  display: none;
-}
-
-#lazybox{
-  max-height: 85%;
-}
-
-#create_booking{
-  max-height: 80%;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  a{
-    font-size: small;
-  }
-}
-
-#myCarousel{
-  img{
-    width:100%;
-    height:200px;
-    max-height: 200px;
-  }
-}
 
 .overlay {
   opacity: 0.4;
@@ -334,22 +224,4 @@ input, textarea, select, .uneditable-input {
   height: auto;
 }
 
-
-#map img {
-  max-width: none;
-}
-#map label {
-  width: auto; display:inline;
-}
-
-.purr {
-  position: fixed;
-  top: 30px;
-  right: 100px;
-  width: 250px;
-  padding: 20px;
-  background-color: #FCC;
-  border: solid 2px #666;
-  &:first-letter { text-transform: uppercase };
-}
 

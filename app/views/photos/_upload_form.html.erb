@@ -5,6 +5,26 @@
     <div style="display: none;"><%= f.file_field :image, :class => "image_file", :id => "upload" %></div>
     <%= f.submit  "Upload to BnBeezy" ,:class => "btn btn-primary show-progress" %>
 <% end %>
+
+<% if @photo.errors.any? %>
+<div class="exceptions">
+      <h4>Image uploading failed, avoid errors by following below guidelines:</h4>
+      <ul>
+        <li>
+          <%= simple_format("<h5>File Name:</h5> Filename should be one word or seperated by underscores if more than one word. Must not contain any special characters like */+ etc. Must not be too long.") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>File Size:</h5> Images are limited to a size of one megabyte.") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>File Types:</h5>  Images of the following types are accepted by BnBEezy: jpg, jpeg, gif, png. ") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>Support:</h5> If the problem persists, please contact us at support@searleconsulting.co.za") %>
+        </li>
+      </ul>
+    </div>
+<% else %>
 <div class="help_info">
   <ul>
     <li>
@@ -18,3 +38,4 @@
     </li>
   </ul>
 </div>
+<% end %>

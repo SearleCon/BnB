@@ -10,8 +10,12 @@ class ProcessAddressJob < Struct.new(:id)
     bnb.country = address.country
     bnb.latitude = address.latitude
     bnb.longitude = address.longitude
-    bnb.address_processed = "y"
-    bnb.save!
+    Bnb.update_all(values_to_update(bnb), { :id => bnb.id })
+  end
+
+  private
+  def values_to_update(bnb)
+    bnb.changed_attributes.merge(bnb.attributes).slice(* ( bnb.changed_attributes.keys & bnb.attributes.keys ) )
   end
 
 end

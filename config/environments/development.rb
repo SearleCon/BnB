@@ -51,20 +51,6 @@ SampleApp::Application.configure do
   config.assets.debug = true
 
   config.after_initialize do
-    Bullet.enable = false
-    Bullet.alert = false
-    Bullet.bullet_logger = true
-    Bullet.console = true
-=begin
-    Bullet.growl = true
-    Bullet.xmpp = { :account => 'bullets_account@jabber.org',
-                    :password => 'bullets_password_for_jabber',
-                    :receiver => 'your_account@jabber.org',
-                    :show_online_status => true }
-=end
-    Bullet.rails_logger = true
-    Bullet.disable_browser_cache = true
-
     Delayed::Job.scaler = :local
   end
 

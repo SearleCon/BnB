@@ -25,7 +25,7 @@ gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
 gem 'gmaps4rails', '2.0.0pre'
-gem 'jquery-turbolinks'
+gem "jquery-turbolinks", "~> 1.0.0.rc2"
 gem 'select2-rails'
 gem 'placeholdit'
 gem "paypal-recurring"
@@ -39,12 +39,10 @@ gem 'spinjs-rails'
 gem 'net-scp', '1.1.0'
 
 
-
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.8.1'
   gem 'annotate', ">=2.5.0"
-  gem "bullet", :group => "development"
   gem "localtunnel"
   gem 'traceroute'
   gem 'daemons'

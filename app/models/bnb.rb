@@ -47,14 +47,6 @@ class Bnb < ActiveRecord::Base
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
 
-  def self.search(search)
-    if search
-      where('name LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
-  end
-
   def self.find_by_location(search)
     where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country)
   end

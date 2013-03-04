@@ -17,6 +17,11 @@ class Subscription < ActiveRecord::Base
   belongs_to :plan
   attr_accessor :paypal_payment_token
 
+  default_scope where(:active_profile => true)
+  after_initialize :set_expiry_date
+  before_create :deactivate_previous_subscription
+
+
   def paypal
     PaypalPayment.new(self)
   end
@@ -42,6 +47,16 @@ class Subscription < ActiveRecord::Base
 
   def payment_provided?
     paypal_payment_token.present?
+  end
+
+  private
+  def set_expiry_date
+    self.expiry_date = Time.now + self.plan.duration.months if self.new_record?
+  end
+
+  def deactivate_previous_subscription
+    previous = Subscription.where(user_id: self.user_id).first
+    previous.try(:toggle!,:active_profile)
   end
 
 end

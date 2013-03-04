@@ -16,14 +16,14 @@
     <div id="home_carousel" class="carousel slide"><!-- class of slide for animation -->
       <div class="carousel-inner">
         <div class="item active"><!-- class of active since it's the first item -->
-          <img  src=<%= image_path("bnb3.gif") %>  />
+          <img src=<%= image_path("bnb3.gif") %>  />
           <div class="carousel-caption">
             <p>Welcome to BnBeezy <%= @session.to_s %></p>
           </div>
         </div>
         <% @photos.try(:each) do |photo| %>
             <div class="item">
-              <img src='<%= photo.image_url %>'  />
+              <img src='<%= photo.image_url %>'   />
               <div class="carousel-caption">
                 <p><%= link_to photo.try(:bnb).try(:name), show_bnb_path(photo.bnb) %></p>
               </div>
@@ -71,8 +71,8 @@
     </div>
   </div>
   <div id="searching" class="span4">
-      <h2>Find a BnB now</h2>
-      <%= render 'shared/search' %>
+     <h2>Search for BnB</h2>
+     <%= render 'shared/search' %>
   </div>
 </div>
 

@@ -36,8 +36,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id ,:terms_of_service, :contact_number, :country, :surname
-
   validates_acceptance_of :terms_of_service
+
+  after_create :create_subscription, :if => :subscription_required
+  after_commit :send_welcome_mail, :if => :created?
 
   include RoleModel
   roles_attribute :role_id
@@ -45,7 +47,7 @@ class User < ActiveRecord::Base
   roles :guest, :owner
 
   def active_subscription
-    @subscription ||= Subscription.find_by_user_id_and_active_profile(self, true)
+    @subscription ||= Subscription.where(user_id: self).first
   end
 
   def bnb
@@ -55,6 +57,25 @@ class User < ActiveRecord::Base
   def reload(options = nil)
     super
     @subscription = nil
+  end
+
+  private
+  def created?
+    self.persisted? && self.created_at == self.updated_at
+  end
+
+  def send_welcome_mail
+    UserMailer.delay.welcome(self)
+  end
+
+  def subscription_required
+    self.is_owner?
+  end
+
+  def create_subscription
+    plan = Plan.free_trial.first
+    subscription = plan.subscriptions.build(user_id: self.id)
+    subscription.save!
   end
 
 end

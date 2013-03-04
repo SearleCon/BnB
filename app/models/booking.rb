@@ -20,6 +20,14 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
+  default_scope where(:active => true)
+
+  before_create :set_status_and_event_name
+  before_save :set_event_color
+  after_commit :send_notifications, :if => :notification_required?
+  after_commit :send_booking_confirmation, :if => :confirmation_required?
+
+
   delegate :name, :start_at, :end_at, :to => :event, :prefix => true
   validates_presence_of :guest
   validates_associated :guest
@@ -28,9 +36,14 @@ class Booking < ActiveRecord::Base
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
 
-  scope :active, where("status != ?", :closed)
-
   enum :status, [:provisional, :booked, :checked_in, :closed]
+
+  EVENT_COLORS = {
+      :booked => 'blue',
+      :checked_in => 'green',
+      :closed => 'orange',
+      :provisional => 'red'
+  }
 
   def total_price
    self.line_items.sum(:value)
@@ -44,4 +57,44 @@ class Booking < ActiveRecord::Base
     end
   end
 
+  def self.inactive
+    Booking.unscoped do
+      where(:status => :closed)
+    end
+  end
+
+  private
+  def confirmation_required?
+    self.persisted? && record_updated? && self.booked? && self.online?
+  end
+
+  def notification_required?
+    self.persisted? && record_created? && self.online?
+  end
+
+  def record_created?
+    self.created_at == self.updated_at
+  end
+
+  def record_updated?
+    !record_created?
+  end
+
+  def send_notifications
+    UserMailer.delay.booking_made(self)
+    UserMailer.delay.notify_bnb(self)
+  end
+
+  def send_booking_confirmation
+    UserMailer.delay.confirmation_received(self)
+  end
+
+  def set_status_and_event_name
+    self.status = :booked unless self.online?
+    self.event.name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
+  end
+
+  def set_event_color
+    self.event.color = EVENT_COLORS[self.status]
+  end
 end

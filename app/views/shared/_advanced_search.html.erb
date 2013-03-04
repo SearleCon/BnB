@@ -1,0 +1,8 @@
+<%= search_form_for @q, url: bnbs_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name_cont %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city_cont %>
+    <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

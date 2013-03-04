@@ -24,7 +24,7 @@
             <% if @bnb.photos.empty? || @bnb.photos.main_photo.empty? %>
                 <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
             <% else %>
-                <%= image_tag @bnb.photos.main_photo.first.image_url %>
+                <%= image_tag @bnb.photos.main_photo.first.image_url, :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
             <% end %>
           </div>
         </div>
@@ -91,7 +91,7 @@
                         <li class=<%= "span3" %>>
                           <div class="thumbnail">
                             <a href="<%= photo.image_url %>" class="thumbnail" rel="lazybox">
-                              <%= image_tag photo.image_url(:thumb) %>
+                              <%= image_tag photo.image_url(:thumb), :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
                             </a>
                           </div>
                         </li>

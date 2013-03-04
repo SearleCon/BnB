@@ -15,5 +15,7 @@
 class Plan < ActiveRecord::Base
   has_many :subscriptions
 
+  scope :free_trial, where(free: true)
+
 
 end

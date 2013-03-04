@@ -34,3 +34,5 @@
 //= require ajax_helper
 //= require utilities
 //= require jquery.imagesloaded
+//= require jquery.disabler
+//= require lazyload.min

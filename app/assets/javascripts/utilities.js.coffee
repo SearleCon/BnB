@@ -1,4 +1,7 @@
 class @Utilities
+
+
+
   @addParametersToURL: (url, parameterName, parameterValue) ->
     otherQueryStringParameters = ""
     urlParts = url.split("?")
@@ -32,10 +35,17 @@ class @Utilities
 
   @imageLoader: (selector) ->
    element = $(selector)
-   element.toggleClass("overlay").spin("large", "white")
+   element.disabler()
+   element.disabler("option", "disable", true)
+   element.toggleClass('overlay')
+
+
 
    element.imagesLoaded ->
-    element.toggleClass("overlay").spin(false)
+    element.toggleClass('overlay')
+    element.disabler()
+    element.disabler("option", "disable", false)
+
 
 
 

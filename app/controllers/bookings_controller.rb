@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
   authorize_resource :only => :my_bookings
 
-  after_filter :expire_cached_action, :only => :destroy
+  before_filter :expire_cached_action, :only => :destroy
 
 
   helper_method :sort_column, :sort_direction
@@ -22,11 +22,10 @@ class BookingsController < ApplicationController
 
   # GET /my_bookings
   def my_bookings
-    bookings = Booking.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
-    active = bookings.select{|booking| !booking.closed?}
-    @active_bookings = active.paginate(:per_page => 15, :page => params[:active_page]) if active
-    inactive = bookings.select{|booking| booking.closed?}
-    @inactive_bookings = inactive.paginate(:per_page => 15, :page => params[:inactive_page]) if inactive
+      active = Booking.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+      @active_bookings = active.paginate(:per_page => 15, :page => params[:active_page]) if active
+      inactive = Booking.inactive.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+      @inactive_bookings = inactive.paginate(:per_page => 15, :page => params[:inactive_page]) if inactive
   end
   # GET /bookings/1
   # GET /bookings/1.json
@@ -76,13 +75,13 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1.json
   def destroy
     @booking.destroy
-    flash.now[:alert] = 'Booking could not be destroyed' unless @booking.destroyed?
+    flash.now[:alert] = 'Booking could not be destroyed' if @booking.destroyed?
     respond_with(@booking)
   end
 
-
  def check_out
    @booking.status = :closed
+   @booking.active = false
    @booking.rooms.each do |room|
      @line_item = @booking.line_items.build
      @line_item.description = room.room_number
@@ -96,9 +95,7 @@ class BookingsController < ApplicationController
  end
 
  def tabular_view
-   @bookings = @bnb.bookings.active.search(params[:search]).order(sort_column + " " + sort_direction)
-
-
+   @bookings = @bnb.bookings.search(params[:search]).order(sort_column + " " + sort_direction)
  end
 
  def refresh_total
@@ -129,7 +126,7 @@ class BookingsController < ApplicationController
   end
 
   def expire_cached_action
-    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.active.maximum(:updated_at).to_i
+    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.maximum(:updated_at).to_i
     expire_action :action => :my_bookings, :tag => Booking.where(:user_id => current_user.id).maximum(:updated_at).to_i
   end
 

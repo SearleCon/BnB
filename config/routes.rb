@@ -28,6 +28,8 @@ SampleApp::Application.routes.draw do
       get :show_invoice, on: :member
       get :print_pdf, on: :member
       get :tabular_view, on: :collection
+      put :cancel_check_out, on: :member
+      put :complete_check_out, on: :member
     end
     resources :guests, except: [:show, :new, :edit]
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]

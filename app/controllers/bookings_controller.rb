@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   respond_to  :js, :html, :json
-  load_and_authorize_resource :bnb, :except => [:my_bookings, :show_invoice]
-  load_and_authorize_resource :booking, :through => :bnb, :except => [:my_bookings, :index, :show_invoice]
+  load_and_authorize_resource :bnb, :except => [:my_bookings]
+  load_and_authorize_resource :booking, :through => :bnb, :except => [:my_bookings, :index]
   authorize_resource :only => [:my_bookings, :index]
 
   before_filter :expire_cached_action, :only => :destroy
@@ -78,8 +78,6 @@ class BookingsController < ApplicationController
   end
 
  def check_out
-   @booking.status = :closed
-   @booking.active = false
    @booking.rooms.each do |room|
      @line_item = @booking.line_items.build
      @line_item.description = room.room_number
@@ -91,6 +89,29 @@ class BookingsController < ApplicationController
      redirect_to bnb_bookings_url(@bnb), :alert => "This booking could not be checked out."
    end
  end
+
+ def cancel_check_out
+   @booking.status = :checked_in
+   @booking.active = true
+   @booking.line_items.destroy_all
+   if @booking.save
+     redirect_to bnb_bookings_url(@bnb), :notice => 'Check out process was cancelled successfully.'
+   else
+     flash[:alert] = "Cancellation failed."
+     redirect_to show_invoice_bnb_booking_url(@bnb,@booking)
+   end
+ end
+
+  def complete_check_out
+    @booking.status = :closed
+    @booking.active = false
+    if @booking.save
+      redirect_to bnb_bookings_url(@bnb), :notice => 'Booking has been checked out successfully.'
+    else
+      flash[:alert] = "The check out process could not be completed."
+      redirect_to show_invoice_bnb_booking_url(@bnb,@booking)
+    end
+  end
 
  def tabular_view
    @bookings = @bnb.bookings.search(params[:search]).order(sort_column + " " + sort_direction)

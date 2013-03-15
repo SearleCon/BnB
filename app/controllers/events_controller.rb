@@ -10,11 +10,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    respond_with(@events.by_bnb(current_user.bnb))
+    respond_with(@events)
   end
 
   private
   def get_events
-    @events = Event.scoped.includes(:booking => :bnb)
+    @events = Event.by_bookings(current_user.bnb.bookings.scoped)
   end
 end

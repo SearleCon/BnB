@@ -14,7 +14,7 @@
 
 class Photo < ActiveRecord::Base
   belongs_to :bnb
-  default_scope where(:processed => true)
+  default_scope  -> {where(:processed => true)}
   mount_uploader :image, ImageUploader
 
   attr_accessible :description, :main
@@ -26,8 +26,8 @@ class Photo < ActiveRecord::Base
 
   validates :description, presence: true
 
-  scope :main_photo, where(main: true)
-  scope :support_photos, where(:main => false)
+  scope :main_photo, -> {where(main: true)}
+  scope :support_photos, -> { where(:main => false) }
 
   def save_and_process_image(options = {})
     if options[:now]

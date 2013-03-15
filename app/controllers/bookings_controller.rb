@@ -1,11 +1,10 @@
 class BookingsController < ApplicationController
   respond_to  :js, :html, :json
-  load_and_authorize_resource :bnb, :except => :my_bookings
-  load_and_authorize_resource :booking, :through => :bnb, :except => :my_bookings
-  authorize_resource :only => :my_bookings
+  load_and_authorize_resource :bnb, :except => [:my_bookings, :show_invoice]
+  load_and_authorize_resource :booking, :through => :bnb, :except => [:my_bookings, :index, :show_invoice]
+  authorize_resource :only => [:my_bookings, :index]
 
   before_filter :expire_cached_action, :only => :destroy
-
 
   helper_method :sort_column, :sort_direction
 
@@ -19,12 +18,11 @@ class BookingsController < ApplicationController
     c.params.merge! :tag => key.to_i if key
   }
 
-
   # GET /my_bookings
   def my_bookings
-      active = Booking.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+      active = Booking.includes([:event, :bnb]).where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
       @active_bookings = active.paginate(:per_page => 15, :page => params[:active_page]) if active
-      inactive = Booking.inactive.where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+      inactive = Booking.inactive.includes([:event, :bnb]).where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
       @inactive_bookings = inactive.paginate(:per_page => 15, :page => params[:inactive_page]) if inactive
   end
   # GET /bookings/1
@@ -50,6 +48,7 @@ class BookingsController < ApplicationController
       booking.user_id = current_user.id
       booking.try(:guest).user_id = current_user.id if booking.guest.try(:new_record?)
       booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
+      booking.status = :booked unless booking.online?
     end
 
     @booking.save
@@ -66,7 +65,6 @@ class BookingsController < ApplicationController
     else
       flash.now[:alert] = "Booking could not be updated." if request.xhr?
     end
-
     respond_with(@booking, :location => get_correct_user_response )
 
   end
@@ -111,6 +109,12 @@ class BookingsController < ApplicationController
      format.pdf { send_data(@pdf, :filename => @booking.guest.name,  :type=>"application/pdf", :disposition => 'inline') }
    end
  end
+
+def show_invoice
+  @bnb = Bnb.find(params[:bnb_id])
+
+  Booking.unscoped {@booking = @bnb.bookings.find(params[:id])}
+end
 
  private
   def sort_direction

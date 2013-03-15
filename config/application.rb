@@ -77,5 +77,7 @@ module SampleApp
     config.assets.initialize_on_precompile = false
 
     config.autoload_paths << "#{Rails.root}/app/jobs"
+
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end

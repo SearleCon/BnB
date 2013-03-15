@@ -53,6 +53,6 @@ class PhotosController < ApplicationController
   end
 
   def load_resources
-    @photos = @bnb.photos.scoped
+    @photos = @bnb.photos.includes(:bnb).scoped
   end
 end

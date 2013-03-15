@@ -17,7 +17,7 @@ class Ability
        can :update, Bnb do |bnb|
          bnb.try(:user_id) ==  user.id
        end
-       can :destroy, Bnb do |bnb|
+       can(:destroy, Bnb) do |bnb|
          bnb.try(:user_id) == user.id
        end
 

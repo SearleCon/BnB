@@ -25,17 +25,8 @@ class Guest < ActiveRecord::Base
   validates :contact_number, length: { is: 10 }
   validates :email, format: { with: VALID_EMAIL_REGEX}, allow_nil: true
 
-  scope :search_by_name, lambda { |term|
-    order(:name).where("name like ?", "%#{term}%")
-  }
+  scope :search, -> term { where('lower(name) LIKE ?', "%#{term}%") }
 
-  def self.search(search)
-    if search
-      where('lower(name) LIKE ?', "%#{search.downcase}%")
-    else
-      scoped
-    end
-  end
 
   def full_name
     "#{self.name} #{self.surname}".titleize

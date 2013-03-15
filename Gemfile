@@ -9,7 +9,7 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'simple_form'
 gem 'wicked'
 gem 'country_select'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'carrierwave'
 gem 'best_in_place'
 gem 'fullcalendar-rails'
@@ -43,18 +43,18 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.8.1'
   gem 'annotate', ">=2.5.0"
-  gem "localtunnel"
-  gem 'traceroute'
   gem 'daemons'
+  gem 'bullet'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
-  gem 'bootstrap-sass', '~> 2.2.2.0'
+  gem 'bootstrap-sass', '~> 2.3.0.1'
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
+  gem 'turbo-sprockets-rails3'
 end
 
 group :test do

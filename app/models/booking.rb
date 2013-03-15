@@ -20,9 +20,11 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
-  default_scope where(:active => true)
+  default_scope -> {where(:active => true)}
 
-  before_create :set_status_and_event_name
+  scope :inactive, -> { where(:active => false) }
+
+  before_create :set_event_name
   before_save :set_event_color
   after_commit :send_notifications, :if => :notification_required?
   after_commit :send_booking_confirmation, :if => :confirmation_required?
@@ -57,28 +59,15 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def self.inactive
-    Booking.unscoped do
-      where(:status => :closed)
-    end
-  end
-
   private
   def confirmation_required?
-    self.persisted? && record_updated? && self.booked? && self.online?
+     updated? && booked? && online?
   end
 
   def notification_required?
-    self.persisted? && record_created? && self.online?
+    created? && online?
   end
 
-  def record_created?
-    self.created_at == self.updated_at
-  end
-
-  def record_updated?
-    !record_created?
-  end
 
   def send_notifications
     UserMailer.delay.booking_made(self)
@@ -89,8 +78,7 @@ class Booking < ActiveRecord::Base
     UserMailer.delay.confirmation_received(self)
   end
 
-  def set_status_and_event_name
-    self.status = :booked unless self.online?
+  def set_event_name
     self.event.name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
   end
 

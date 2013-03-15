@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
   end
 
   def bnb
-    @bnb ||= Bnb.find_last_by_user_id(self)
+    @bnb ||= Bnb.where(user_id: self).last
   end
 
   def reload(options = nil)
@@ -60,10 +60,6 @@ class User < ActiveRecord::Base
   end
 
   private
-  def created?
-    self.persisted? && self.created_at == self.updated_at
-  end
-
   def send_welcome_mail
     UserMailer.delay.welcome(self)
   end

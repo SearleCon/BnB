@@ -2,12 +2,11 @@
 require 'carrierwave/processing/mime_types'
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWaveDirect::Uploader
-  include CarrierWave::RMagick
 
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
    include Sprockets::Helpers::RailsHelper

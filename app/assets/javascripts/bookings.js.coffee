@@ -1,5 +1,6 @@
 class BookingsController
   init: ->
+    setFormElements()
 
   index: ->
     $('#calendar').fullCalendar
@@ -26,15 +27,6 @@ class BookingsController
       dayClick: (date, allDay, jsEvent, view) ->
         window.location.href = Utilities.addParametersToURL($('#new_booking_path').val(),"date",date)
         return false
-
-  new: ->
-    setFormElements()
-
-  edit: ->
-    setFormElements()
-
-  create: ->
-    setFormElements()
 
   show_invoice: ->
     $('.best_in_place').best_in_place()

@@ -17,7 +17,7 @@ class Subscription < ActiveRecord::Base
   belongs_to :plan
   attr_accessor :paypal_payment_token
 
-  default_scope where(:active_profile => true)
+  default_scope -> {where(:active_profile => true) }
   after_initialize :set_expiry_date
   before_create :deactivate_previous_subscription
 

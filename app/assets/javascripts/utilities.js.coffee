@@ -1,8 +1,5 @@
-class @Utilities
-
-
-
-  @addParametersToURL: (url, parameterName, parameterValue) ->
+@Utilities =
+  addParametersToURL: (url, parameterName, parameterValue) ->
     otherQueryStringParameters = ""
     urlParts = url.split("?")
     baseUrl = urlParts[0]
@@ -20,7 +17,7 @@ class @Utilities
     newQueryStringParameter = itemSeparator + parameterName + "=" + parameterValue
     baseUrl + "?" + otherQueryStringParameters + newQueryStringParameter
 
-  @createOverLay: ->
+  createOverLay: ->
     docHeight = $(document).height()
     $("body").append "<div id='overlay'></div>"
     $("#overlay").height(docHeight).css
@@ -33,13 +30,11 @@ class @Utilities
       "z-index": 5000
     $("#overlay").spin({ lines: 10, length: 8, width: 20, radius: 30, color: '#FFFFFF' })
 
-  @imageLoader: (selector) ->
+  imageLoader: (selector) ->
    element = $(selector)
    element.disabler()
    element.disabler("option", "disable", true)
    element.toggleClass('overlay')
-
-
 
    element.imagesLoaded ->
     element.toggleClass('overlay')

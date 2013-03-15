@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
   belongs_to :booking
   after_initialize :set_default_date, :if => :new_record?
 
-  scope :by_bnb,lambda { |bnb| where(:booking_id => bnb.bookings) }
+  scope :by_bookings, -> bookings { includes(:booking => :bnb).where(:booking_id => bookings) }
 
   def as_json(options = {})
     {

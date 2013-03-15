@@ -26,7 +26,7 @@
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="best_in_place (v2.1.0, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v2.3.0.1, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v2.2.2.0, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.5, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="browser (v0.1.6, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />

@@ -1,9 +1,9 @@
 /*!
- * jQuery imagesLoaded plugin v2.1.1
- * http://github.com/desandro/imagesloaded
- *
- * MIT License. by Paul Irish et al.
- */
+* jQuery imagesLoaded plugin v2.1.1
+* http://github.com/desandro/imagesloaded
+*
+* MIT License. by Paul Irish et al.
+*/
 
 /*jshint curly: true, eqeqeq: true, noempty: true, strict: true, undef: true, browser: true */
 /*global jQuery: false */

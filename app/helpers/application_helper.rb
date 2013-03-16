@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def set_return_url
-    session[:return_to] = request.env['HTTP_REFERER'] unless is_same_controller_and_action?(request.env['HTTP_REFERER'], registration_page_url)
+    session[:return_to] = request.env['HTTP_REFERER'] unless is_same_controller_and_action?(request.env['HTTP_REFERER'], registration_page_url) || is_same_controller_and_action?(request.env['HTTP_REFERER'], new_suggestion_url)
   end
 
 
@@ -41,6 +41,4 @@ module ApplicationHelper
     end
     true
   end
-
-
 end

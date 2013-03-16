@@ -78,6 +78,7 @@ class BookingsController < ApplicationController
   end
 
  def check_out
+   @booking.line_items.delete_all
    @booking.rooms.each do |room|
      @line_item = @booking.line_items.build
      @line_item.description = room.room_number
@@ -93,7 +94,6 @@ class BookingsController < ApplicationController
  def cancel_check_out
    @booking.status = :checked_in
    @booking.active = true
-   @booking.line_items.destroy_all
    if @booking.save
      redirect_to bnb_bookings_url(@bnb), :notice => 'Check out process was cancelled successfully.'
    else

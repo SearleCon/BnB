@@ -34,7 +34,7 @@ class PhotosController < ApplicationController
         @photo.save_and_process_image(:now => false)
         redirect_to bnb_photos_url(@bnb), notice: "Image is being processed."
       else
-        @photo.remove_image!
+       @photo.remove_image!
         render 'upload', alert: "There was an error processing the image."
       end
   end

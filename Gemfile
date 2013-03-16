@@ -37,6 +37,8 @@ gem 'fog'
 gem 'carrierwave_direct'
 gem 'spinjs-rails'
 gem 'net-scp', '1.1.0'
+gem 'cache_digests'
+gem 'dalli'
 
 
 group :development, :test do

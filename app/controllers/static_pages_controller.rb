@@ -1,14 +1,16 @@
 class StaticPagesController < ApplicationController
   # encoding: utf-8
-
-
-  caches_action :faq, :about, :terms_and_conditions, :privacy_policy, :ie_warning, :layout => false
-
-
+  before_filter :generate_cache_key
 
   def home
     @photos = Photo.main_photo
   end
 
+
+  private
+  def generate_cache_key
+    page_name = action_name.dup
+    @cache_key = page_name.concat("-#{AppName::REVISION}")
+  end
 
 end

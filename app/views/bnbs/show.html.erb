@@ -24,7 +24,9 @@
             <% if @bnb.photos.empty? || @bnb.photos.main_photo.empty? %>
                 <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
             <% else %>
+               <% cache @bnb.photos.main_photo.first do %>
                 <%= image_tag @bnb.photos.main_photo.first.image_url, :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+               <% end %>
             <% end %>
           </div>
         </div>
@@ -74,11 +76,7 @@
               twitter: <%= best_in_place_if can?(:update, @bnb), @bnb, :twitter_account, type: :input %>
             </address>
           </div>
-
-
         </div>
-
-
       </div>
 
       <div class="hero-unit clearfix gallery">
@@ -87,6 +85,7 @@
             <div class="item active">
               <ul class="thumbnails">
                 <% if @bnb.photos.support_photos.any? %>
+                   <% cache @bnb.photos.support_photos do %>
                     <% @bnb.photos.support_photos.try(:each) do |photo| %>
                         <li class=<%= "span3" %>>
                           <div class="thumbnail">
@@ -96,6 +95,7 @@
                           </div>
                         </li>
                     <% end %>
+                  <% end %>
                 <% else %>
                     <% 4.times do %>
                         <li class='span3'>

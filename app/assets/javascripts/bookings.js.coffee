@@ -30,7 +30,7 @@ class BookingsController
 
   show_invoice: ->
     $('.best_in_place').best_in_place()
-    $(document).on 'ajax:success', '.best_in_place', ->
+    $('#line_items').on 'ajax:success', '.best_in_place', ->
       AjaxHelper.read
        url : $('#booking_total_path').val()
        response: 'script'
@@ -55,11 +55,11 @@ class BookingsController
        placeholder: 'Search for a guest'
        });
 
-    $(document).on 'cocoon:before-insert','#guest', ->
+    $('#guest').on 'cocoon:before-insert', ->
       $("#find_guest").remove()
       $("#guest a.add_fields").hide()
 
-    $(document).on 'click','#room_finder', ->
+    $('#rooms').on 'click','#room_finder', ->
       AjaxHelper.read
         url: $(this).attr('href')
         params: { start_at: $('#booking_event_attributes_start_at').datepicker("getDate"), end_at: $('#booking_event_attributes_end_at').datepicker("getDate") }

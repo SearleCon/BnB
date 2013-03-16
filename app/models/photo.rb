@@ -58,7 +58,7 @@ class Photo < ActiveRecord::Base
 
   private
   def set_previous_main_to_false
-    Photo.main_photo.where(:bnb_id => self.bnb_id).first.try(:toggle!, :main)
+    Photo.main_photo.where(:bnb_id => self.bnb_id).first.try(:toggle!, :main) if main?
   end
 
   def destroy_file

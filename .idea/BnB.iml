@@ -32,6 +32,7 @@
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bullet (v4.4.0, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cache_digests (v0.2.0, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.9, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v1.1.2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carmen (v1.0.0.beta2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
@@ -47,6 +48,7 @@
     <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.2.2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v1.2.1, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="daemons (v1.1.9, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="dalli (v2.6.2, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v0.7.0, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="delayed_job (v3.0.5, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="delayed_job_active_record (v0.4.3, RVM: ruby-1.9.3-p392 [Rails3.2.12]) [gem]" level="application" />

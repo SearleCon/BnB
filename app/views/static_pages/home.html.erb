@@ -13,14 +13,9 @@
             <p>Welcome to BnBeezy <%= @session.to_s %></p>
           </div>
         </div>
-        <% @photos.try(:each) do |photo| %>
-            <div class="item">
-              <img src='<%= photo.image_url %>'   />
-              <div class="carousel-caption">
-                <p><%= link_to photo.try(:bnb).try(:name), show_bnb_path(photo.bnb) %></p>
-              </div>
-            </div>
-        <% end %>
+         <% cache @photos do %>
+          <%= render :partial => 'carousel_items', :collection => @photos, :as => :photo %>
+         <% end %>
       </div>
       <a class="carousel-control left" href="#home_carousel" data-slide="prev">&lsaquo;</a>
       <a class="carousel-control right" href="#home_carousel" data-slide="next">&rsaquo;</a>

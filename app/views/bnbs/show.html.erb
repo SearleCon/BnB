@@ -9,15 +9,8 @@
           <strong>Description</strong>
 
           <p><%= best_in_place_if can?(:update, @bnb), @bnb, :description, type: :input %></p>
-          <% if user_signed_in? %>
-              <% if current_user.is?(:guest) %>
-                  <p align="center"><%= link_to "Book Now", new_bnb_booking_path(@bnb), :class => "btn btn-primary" %></p>
-              <% end %>
-          <% else %>
-              <p align="center"><%= link_to "Sign in to book", new_user_session_path, :class => "btn btn-primary" %></p>
 
-              <p align="center"><%= link_to "No Account? Register here. It's Free!", register_path("guest"), class: "btn btn-primary" %></p>
-          <% end %>
+          <%= display_action_links_for_user  %>
         </div>
         <div class="span5 pull-right gallery">
           <div class="thumbnail">
@@ -84,7 +77,7 @@
           <div class="carousel-inner">
             <div class="item active">
               <ul class="thumbnails">
-                <% if @bnb.photos.support_photos.any? %>
+                <% unless @bnb.photos.support_photos.empty? %>
                    <% cache @bnb.photos.support_photos do %>
                     <% @bnb.photos.support_photos.try(:each) do |photo| %>
                         <li class=<%= "span3" %>>
@@ -95,23 +88,13 @@
                           </div>
                         </li>
                     <% end %>
-                  <% end %>
-                <% else %>
-                    <% 4.times do %>
-                        <li class='span3'>
-                          <div class="thumbnail">
-                            <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                          </div>
-                        </li>
-                    <% end %>
+                   <% end %>
                 <% end %>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </div>

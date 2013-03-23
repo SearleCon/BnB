@@ -48,7 +48,7 @@ class Booking < ActiveRecord::Base
   }
 
   def total_price
-   self.line_items.sum(:value)
+   line_items.sum(:value)
   end
 
   def self.search(search)
@@ -57,6 +57,10 @@ class Booking < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def confirm!
+    booked!
   end
 
   private

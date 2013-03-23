@@ -27,9 +27,7 @@ class Ability
        #Bookings
        can :manage, Booking, :bnb => { :user_id => user.id}
        can :show, Booking, :bnb => { :user_id => user.id}
-       can :confirm, Booking do |bnb|
-         bnb.try(:user_id) == user.id
-       end
+       can :confirm, Booking, :bnb => { :user_id => user.id}
        can :destroy, Booking, :bnb => { :user_id => user.id }
 
        can :check_in, Booking do |bnb|

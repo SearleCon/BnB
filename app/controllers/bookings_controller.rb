@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   respond_to  :js, :html, :json
+  before_filter :authenticate_user!, :only => :confirm
   load_and_authorize_resource :bnb, :except => [:my_bookings]
   load_and_authorize_resource :booking, :through => :bnb, :except => [:my_bookings, :index]
   authorize_resource :only => [:my_bookings, :index]
@@ -73,7 +74,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1.json
   def destroy
     @booking.destroy
-    flash.now[:alert] = 'Booking could not be destroyed' if @booking.destroyed?
+    flash.now[:alert] = 'Booking could not be destroyed' unless @booking.destroyed?
     respond_with(@booking)
   end
 
@@ -132,9 +133,14 @@ class BookingsController < ApplicationController
  end
 
 def show_invoice
-  @bnb = Bnb.find(params[:bnb_id])
+end
 
-  Booking.unscoped {@booking = @bnb.bookings.find(params[:id])}
+def confirm
+  if @booking.confirm!
+    redirect_to bnb_bookings_url(@bnb), notice: "Booking for #{@booking.guest.name} was confirmed successfully"
+  else
+    redirect_to bnb_bookings_url(@bnb), :alert => "Booking for #{@booking.guest.name} could not be confirmed"
+  end
 end
 
  private

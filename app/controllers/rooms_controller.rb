@@ -38,7 +38,7 @@ class RoomsController < ApplicationController
   # PUT /rooms/1.json
   def update
     @room.update_attributes(params[:room])
-    respond_with_bip(@room)
+    respond_with(@room)
   end
 
   # DELETE /rooms/1

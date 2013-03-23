@@ -32,7 +32,8 @@ $.rails.showConfirmDialog = (link) ->
 
 
 
-#global ajax
+
+
 $(document).ajaxStart ->
   Utilities.createOverLay()
 

@@ -30,6 +30,7 @@ SampleApp::Application.routes.draw do
       get :tabular_view, on: :collection
       put :cancel_check_out, on: :member
       put :complete_check_out, on: :member
+      get :confirm, on: :member
     end
     resources :guests, except: [:show, :new, :edit]
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]

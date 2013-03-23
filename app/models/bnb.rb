@@ -28,10 +28,14 @@
 
 class Bnb < ActiveRecord::Base
 
+  include DelegateAssociation
+
   has_many :guests, :dependent => :delete_all
   has_many :photos, :dependent => :delete_all
   has_many :rooms, :dependent => :delete_all
   has_many :bookings, :dependent => :delete_all
+
+  delegate_association :guests
 
   attr_accessor :status
   attr_accessor :number_of_rooms

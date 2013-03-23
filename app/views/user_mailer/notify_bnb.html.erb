@@ -14,6 +14,8 @@
   <br>
 
   Once you confirm on the schedule the guest will be notified via email.
+  <%= link_to 'Confirm booking now', confirm_bnb_booking_url(@booking.bnb, @booking , { :auth_token => @user.authentication_token}) %>
+
 
 </p>
 

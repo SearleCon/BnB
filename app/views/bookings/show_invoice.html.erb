@@ -1,47 +1,48 @@
-<div class="hero-unit" style="font-size: 14px" >
+<div class="hero-unit" style="font-size: 14px">
 
-<h2>Booking costs</h2>
-<p>
-  <b>Guest:</b>
-  <%= @booking.guest.name %>
-</p>
+  <h2>Booking costs</h2>
+
+  <p>
+    <b>Guest:</b>
+    <%= @booking.guest.name %>
+  </p>
+
+  <p>
+    <b>Check In:</b>
+    <%= @booking.event_start_at %>
+  </p>
+
+  <p>
+    <b>Check Out:</b>
+    <%= @booking.event_end_at %>
+  </p>
 
 
+  <table class="table table-condensed" id="line_items">
+    <tr>
+      <th>Description</th>
+      <th>Value</th>
+      <th></th>
+    </tr>
+    <% @booking.line_items.try(:each) do |line_item| %>
+        <%= render :partial => 'line_item_row', locals: {line_item: line_item} %>
+    <% end %>
+  </table>
+  <div><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add Line Item'), booking_line_items_path(@booking), method: :post, remote: true %></div>
+  <div id='Total_Cost'>
+    <%= render :partial => 'total_cost' %>
+  </div>
+  <br>
+  <br>
 
-<p>
-  <b>Check In:</b>
-  <%= @booking.event_start_at %>
-</p>
-
-<p>
-  <b>Check Out:</b>
-  <%= @booking.event_end_at %>
-</p>
-
-
-<table class="table table-condensed" id="line_items">
-  <tr>
-    <th>Description</th>
-    <th>Value</th>
-  </tr>
-  <% @booking.line_items.try(:each) do |line_item| %>
-      <%= render :partial => 'line_item_row', locals: { line_item: line_item} %>
-  <% end %>
-</table>
-<div><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white'), booking_line_items_path(@booking), method: :post, remote: true %></div>
-<div id='Total_Cost'>
-  <%= render :partial => 'total_cost' %>
-</div>
-<br>
-<br>
-<div align="center">
-  <%= link_to 'Print PDF', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary', :target => '_blank' %>
-</div>
-<div class="pull-left">
-  <%= link_to 'Cancel Checkout', cancel_check_out_bnb_booking_path(@bnb, @booking), :method => :put, class: 'btn btn-danger' %>
-</div>
+  <div align="center">
+    <%= link_to 'Print PDF', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary', :target => '_blank' %>
+  </div>
+  <div class="pull-left">
+    <%= link_to 'Cancel Checkout', cancel_check_out_bnb_booking_path(@bnb, @booking), :method => :put, class: 'btn btn-danger' %>
+  </div>
   <div class="pull-right">
-    <%= link_to 'Complete Checkout', complete_check_out_bnb_booking_path(@bnb, @booking), :method => :put , class: 'btn btn-inverse' %>
+    <%= link_to 'Complete Checkout', complete_check_out_bnb_booking_path(@bnb, @booking), :method => :put, class: 'btn btn-inverse' %>
   </div>
   <%= hidden_field_tag 'booking_total_path', refresh_total_bnb_booking_path(@bnb, @booking) %>
 </div>

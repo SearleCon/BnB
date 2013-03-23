@@ -5,7 +5,7 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnbs = Bnb.find_by_location(Search.new(params[:search])).paginate(:per_page => 15, :page => params[:page])
+    @bnbs = Bnb.includes(:rooms).find_by_location(Search.new(params[:search])).paginate(:per_page => 15, :page => params[:page])
     if @bnbs.any?
      convert_to_map_data(@bnbs)
     else

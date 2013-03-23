@@ -132,8 +132,6 @@ class BookingsController < ApplicationController
    end
  end
 
-def show_invoice
-end
 
 def confirm
   if @booking.confirm!

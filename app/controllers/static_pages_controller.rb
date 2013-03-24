@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   before_filter :generate_cache_key
 
   def home
-    @photos = Photo.main_photo
+    @photos = Photo.includes(:bnb).main_photo
   end
 
 

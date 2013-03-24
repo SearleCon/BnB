@@ -2,20 +2,22 @@
 #
 # Table name: subscriptions
 #
-#  id                             :integer          not null, primary key
+#  id                             :integer          primary key
 #  paypal_customer_token          :string(255)
 #  paypal_recurring_profile_token :string(255)
 #  user_id                        :integer
-#  created_at                     :datetime         not null
-#  updated_at                     :datetime         not null
+#  created_at                     :timestamp        not null
+#  updated_at                     :timestamp        not null
 #  active_profile                 :boolean          default(FALSE)
 #  plan_id                        :integer
-#  expiry_date                    :datetime
+#  expiry_date                    :timestamp
 #
 
 class Subscription < ActiveRecord::Base
   belongs_to :plan
   attr_accessor :paypal_payment_token
+
+  attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date
 
   default_scope -> {where(:active_profile => true) }
   after_initialize :set_expiry_date

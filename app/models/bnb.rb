@@ -2,7 +2,7 @@
 #
 # Table name: bnbs
 #
-#  id               :integer          not null, primary key
+#  id               :integer          primary key
 #  name             :string(255)
 #  description      :text
 #  email            :string(255)
@@ -16,8 +16,8 @@
 #  contact_person   :string(255)
 #  twitter_account  :string(255)
 #  facebook_page    :string(255)
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  created_at       :timestamp        not null
+#  updated_at       :timestamp        not null
 #  user_id          :integer
 #  latitude         :float
 #  longitude        :float
@@ -35,7 +35,8 @@ class Bnb < ActiveRecord::Base
   has_many :rooms, :dependent => :delete_all
   has_many :bookings, :dependent => :delete_all
 
-  delegate_association :guests
+  attr_accessible :name, :description, :email, :address_line_one, :address_line_two, :city, :postal_code, :country, :telephone_number, :website, :contact_person, :twitter_account, :standard_rate, :region, :rating, :facebook_page
+
 
   attr_accessor :status
   attr_accessor :number_of_rooms

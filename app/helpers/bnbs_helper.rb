@@ -4,7 +4,7 @@ module BnbsHelper
       content_tag(:p, :align => "center") do
         link_to "Book Now", new_bnb_booking_path(@bnb), :class => "btn btn-primary"
       end
-    else
+    elsif !user_signed_in?
       content_tag(:div) do
         @links =
             content_tag(:p, :align => "center") do

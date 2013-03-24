@@ -2,11 +2,11 @@
 #
 # Table name: bookings
 #
-#  id         :integer          not null, primary key
+#  id         :integer          primary key
 #  guest_id   :integer
-#  active     :boolean
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  active     :boolean          default(TRUE)
+#  created_at :timestamp        not null
+#  updated_at :timestamp        not null
 #  status     :string(255)      default("provisional")
 #  bnb_id     :integer
 #  user_id    :integer

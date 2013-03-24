@@ -2,11 +2,11 @@
 #
 # Table name: bookings
 #
-#  id         :integer          not null, primary key
+#  id         :integer          primary key
 #  guest_id   :integer
-#  active     :boolean
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  active     :boolean          default(TRUE)
+#  created_at :timestamp        not null
+#  updated_at :timestamp        not null
 #  status     :string(255)      default("provisional")
 #  bnb_id     :integer
 #  user_id    :integer
@@ -23,6 +23,8 @@ class Booking < ActiveRecord::Base
   default_scope -> {where(:active => true)}
 
   scope :inactive, -> { where(:active => false) }
+
+  attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id
 
   before_create :set_event_name
   before_save :set_event_color

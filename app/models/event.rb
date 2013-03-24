@@ -2,12 +2,12 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
+#  id         :integer          primary key
 #  name       :string(255)
-#  start_at   :datetime
-#  end_at     :datetime
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  start_at   :timestamp
+#  end_at     :timestamp
+#  created_at :timestamp        not null
+#  updated_at :timestamp        not null
 #  booking_id :integer
 #  color      :string(255)      default("blue")
 #
@@ -15,6 +15,8 @@
 class Event < ActiveRecord::Base
   belongs_to :booking
   after_initialize :set_default_date, :if => :new_record?
+
+  attr_accessible :name, :start_at, :end_at, :color
 
   scope :by_bookings, -> bookings { includes(:booking => :bnb).where(:booking_id => bookings) }
 

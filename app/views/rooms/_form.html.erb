@@ -1,10 +1,22 @@
-<%= simple_form_for(@room) do |f| %>
+<%= simple_form_for [@bnb, @room], validate: true do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :room_number %>
+    <%= f.input :description %>
+    <%= f.input :en_suite, as: :radio_buttons,  item_wrapper_class: "inline" %>
+    <%= f.input :extras, as: :text %>
+    <%= f.input :rates, :wrapper => :prepend, :class => "inline" do %>
+        <%= content_tag :span, "R", :class => "add-on", :style => "color:black;" %>
+        <%= f.input_field :rates%>
+    <% end %>
+    <%= f.input :capacity, as: :integer%>
+    <%= f.input :available, as: :radio_buttons, item_wrapper_class: "inline" %>
+
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <p align="center"><%= f.button :wrapped %></p>
+
+
 <% end %>

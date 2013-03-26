@@ -40,6 +40,8 @@
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.8.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave_direct (v0.0.11, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.3.9, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="client_side_validations (v3.2.5, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="client_side_validations-simple_form (v2.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.1.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
@@ -112,7 +114,7 @@
     <orderEntry type="library" scope="PROVIDED" name="select2-rails (v3.3.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.31.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="session (v3.1.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="simple_form (v2.1.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="simple_form (v2.0.4, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spinjs-rails (v1.2.8, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.2.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.7, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />

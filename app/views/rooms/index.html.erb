@@ -1,8 +1,6 @@
 <div class="hero-unit clearfix">
 <h2>Rooms</h2>
 
-
-
 <div class="header form-search" align="right">
   <%= form_tag bnb_rooms_path(@bnb), :method => 'get', id: 'search_table_form' do %>
      <%= hidden_field_tag :direction, params[:direction] %>
@@ -15,8 +13,7 @@
   <% end %>
 </div>
 
-
-<table class="table  sort_table" id="rooms">
+<table class="table  sort_table" id="rooms" style="font-size: 15px">
   <tr id='table_headers'>
     <th><%= sortable "room_number" %></th>
     <th><%= sortable "description"  %></th>
@@ -30,7 +27,7 @@
   <%= render :partial => 'row', :collection => @rooms, :as => :room %>
 </table>
 
-<label><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add room'), bnb_rooms_path(@bnb, @bnb.rooms.build), :id => 'test', method: :post, remote: true %></label>
+<label><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add room'), new_bnb_room_path(@bnb), :id => 'test' %></label>
 
 <br/>
 

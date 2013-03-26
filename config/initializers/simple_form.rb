@@ -45,48 +45,8 @@ SimpleForm.setup do |config|
     b.use :error, :wrap_with => { :tag => :span, :class => :error }
   end
 
-  config.wrappers :bootstrap, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |ba|
-      ba.use :input
-      ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
-      ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
-    end
-  end
-
-  config.wrappers :prepend, :tag => 'div', :class => "control-group", :error_class => 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |input|
-      input.wrapper :tag => 'div', :class => 'input-prepend' do |prepend|
-        prepend.use :input
-      end
-      input.use :hint,  :wrap_with => { :tag => 'span', :class => 'help-block' }
-      input.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
-    end
-  end
-
-  config.wrappers :append, :tag => 'div', :class => "control-group", :error_class => 'error' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.use :label
-    b.wrapper :tag => 'div', :class => 'controls' do |input|
-      input.wrapper :tag => 'div', :class => 'input-append' do |append|
-        append.use :input
-      end
-      input.use :hint,  :wrap_with => { :tag => 'span', :class => 'help-block' }
-      input.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
-    end
-  end
-
-  # Wrappers for forms and inputs using the Twitter Bootstrap toolkit.
-  # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
-  # to learn about the different styles for forms and inputs,
-  # buttons and other elements.
-  config.default_wrapper = :bootstrap
+  # The default wrapper to be used by the FormBuilder.
+  config.default_wrapper = :default
 
   # Define the way to render check boxes / radio buttons with labels.
   # Defaults to :nested for bootstrap config.
@@ -132,13 +92,13 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-  # config.label_text = lambda { |label, required| "#{required} #{label}" }
+   config.label_text = lambda { |label, required| "#{label}" }
 
   # You can define the class to use on all labels. Default is nil.
   config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
+  #config.form_class = 'simple_form form-horizontal'
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
@@ -158,6 +118,10 @@ SimpleForm.setup do |config|
   # matches the regexp as value.
   # config.input_mappings = { /count/ => :integer }
 
+  # Custom wrappers for input types. This should be a hash containing an input
+  # type as key and the wrapper that will be used for all inputs with specified type.
+  # config.wrapper_mappings = { :string => :prepend }
+
   # Default priority for time_zone inputs.
   # config.time_zone_priority = nil
 
@@ -170,12 +134,12 @@ SimpleForm.setup do |config|
   # When false, do not use translations for labels.
   # config.translate_labels = true
 
-  # Automatically discover othernew inputs in Rails' autoload path.
+  # Automatically discover new inputs in Rails' autoload path.
   # config.inputs_discovery = true
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
-
-  # Remove asterisk
-  config.label_text = lambda { |label, required| "#{label}" }
 end
+
+require 'simple_form_extensions'
+

@@ -1,5 +1,10 @@
 en:
   simple_form:
+    creating: "Creating..."
+    updating: 'Updating...'
+    buttons:
+      or: 'or'
+      cancel: 'cancel'
     "yes": 'Yes'
     "no": 'No'
     required:
@@ -15,7 +20,7 @@ en:
     #   defaults:
     #     password: 'Password'
     #   user:
-    #     othernew:
+    #     new:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'

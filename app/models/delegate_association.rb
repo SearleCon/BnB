@@ -1,9 +1,11 @@
 module DelegateAssociation
   extend ActiveSupport::Concern
 
+  included do
+    associations = self.reflect_on_all_associations.reject{ |assoc| assoc.macro == :belongs_to || assoc.name == :has_one }.map(&:name)
 
-  module ClassMethods
-    def delegate_association(assoc)
+    associations.each do |assoc|
+
       plural_association_name = assoc.to_s
       singular_association_name = plural_association_name.singularize
 
@@ -35,7 +37,7 @@ module DelegateAssociation
         send(plural_association_name).count(*args)
       end
 
-      define_method("has_#{plural_association_name}?") do
+      define_method("any_#{plural_association_name}?") do
         send(plural_association_name).any?
       end
 
@@ -48,6 +50,5 @@ module DelegateAssociation
       end
     end
   end
-
 
 end

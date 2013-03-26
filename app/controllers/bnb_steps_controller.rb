@@ -18,6 +18,7 @@ class BnbStepsController < ApplicationController
 
   private
   def finish_wizard_path
+    flash[:notice] = "Bnb was saved successfully."
     show_bnb_url(@bnb)
   end
 

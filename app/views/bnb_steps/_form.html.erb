@@ -1,5 +1,5 @@
 
-<%= simple_form_for @bnb, url: wizard_path do |f| %>
+<%= simple_form_for @bnb, url: wizard_path, validate: true do |f| %>
     <%= f.error_notification %>
 
     <%= yield f %>

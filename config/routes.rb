@@ -32,9 +32,9 @@ SampleApp::Application.routes.draw do
       put :complete_check_out, on: :member
       get :confirm, on: :member
     end
-    resources :guests, except: [:show, :new, :edit]
+    resources :guests, except: [:show]
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
-    resources :rooms, controller: 'rooms', except: [:show, :new, :edit] do
+    resources :rooms, controller: 'rooms', except: [:show] do
       get :find_available, :on => :collection
     end
   end

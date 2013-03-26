@@ -1,10 +1,11 @@
-<tr id="<%=room.id %>" class="center" >
-  <td><%= best_in_place room, :room_number, :type => :input, :path => bnb_room_path(@bnb,room) %></td>
-  <td><%= best_in_place room, :description, :type => :input, :path => bnb_room_path(@bnb,room)  %></td>
-  <td><%= best_in_place room, :en_suite, :type => :checkbox, :path => bnb_room_path(@bnb,room)   %></td>
-  <td><%= best_in_place room, :extras, :type => :input, :path => bnb_room_path(@bnb,room)  %></td>
-  <td><%= best_in_place room, :rates, :display_with => :number_to_currency, :path => bnb_room_path(@bnb,room)  %></td>
-  <td><%= best_in_place room, :capacity, :type => :input, :path => bnb_room_path(@bnb,room)  %></td>
-  <td><%= best_in_place room, :available, :type => :checkbox, :path => bnb_room_path(@bnb,room)   %></td>
-  <td title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), bnb_room_path(@bnb,room), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></td>
+<tr id="<%=room.id %>" class="center"  >
+  <td><%= room.room_number %></td>
+  <td><%= room.description %></td>
+  <td><%= room.en_suite ? 'Yes' : 'No' %></td>
+  <td><%= room.extras  %></td>
+  <td><%= number_to_currency (room.rates)  %></td>
+  <td><%= room.capacity %></td>
+  <td><%= room.available ? 'Yes' : 'No'  %></td>
+  <td><div title="Click to edit" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-edit icon-white'), edit_bnb_room_path(@bnb, room), :id => 'edit' %></div></td>
+  <td><div title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), bnb_room_path(@bnb,room), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></div></td>
 </tr>

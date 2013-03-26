@@ -36,4 +36,8 @@
 //= require jquery.imagesloaded
 //= require jquery.disabler
 //= require lazyload.min
+//= require rails.validations
+//= require rails.validations.simple_form
+
+
 

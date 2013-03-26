@@ -6,7 +6,7 @@ gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'simple_form'
+gem 'simple_form', "~> 2.0.1"
 gem 'wicked'
 gem 'country_select'
 gem 'mini_magick'
@@ -40,6 +40,8 @@ gem 'net-scp', '1.1.0'
 gem 'cache_digests'
 gem 'memcachier'
 gem 'dalli'
+gem 'client_side_validations'
+gem "client_side_validations-simple_form", "~> 2.0.1"
 
 
 group :development, :test do

@@ -120,16 +120,16 @@ footer {
   @include box_sizing;
 }
 
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  width: 100%;
-  padding: 10px;
-  height: auto;
-  margin-bottom: 15px;
-  @include box_sizing;
+ width: 80%;
+ height: 50%;
+ padding: 10px;
+ margin-bottom: 15px;
+  //@include box_sizing;
 }
+
 
 #error_explanation {
   color:#f00;
@@ -215,5 +215,7 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
+
+
 
 

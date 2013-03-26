@@ -66,6 +66,10 @@ GEM
       uuid
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    client_side_validations (3.2.5)
+    client_side_validations-simple_form (2.0.1)
+      client_side_validations (~> 3.2.0)
+      simple_form (~> 2.0.3)
     cocoon (1.1.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -221,7 +225,7 @@ GEM
       websocket (~> 1.0.4)
     session (3.1.0)
       fattr
-    simple_form (2.1.0)
+    simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     spinjs-rails (1.2.8)
@@ -285,6 +289,8 @@ DEPENDENCIES
   carmen-rails
   carrierwave
   carrierwave_direct
+  client_side_validations
+  client_side_validations-simple_form (~> 2.0.1)
   cocoon
   coffee-rails
   country_select
@@ -316,7 +322,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   select2-rails
-  simple_form
+  simple_form (~> 2.0.1)
   spinjs-rails
   sqlite3
   touchpunch-rails

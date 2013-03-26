@@ -1,4 +1,4 @@
-<%= simple_form_for [@bnb,@booking] do |f| %>
+<%= simple_form_for [@bnb,@booking], validate: true do |f| %>
     <%= f.error_notification %>
       <div class="form-inputs">
         <h5>Select booking dates:</h5>

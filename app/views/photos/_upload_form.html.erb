@@ -1,6 +1,6 @@
 <%= direct_upload_form_for @photo.image do |f| %>
     <div class="controls"><div class="input-append">
-      <input id="filepath" name="filepath" disabled="disabled" size="50" type="text" /><button class="btn btn-primary btn-mini" id="browse_files" name="button" type="button">Browse</button>
+      <input id="filepath" name="filepath" disabled="disabled" size="50" type="text" /><button class="btn btn-primary" id="browse_files" name="button" type="button">Browse</button>
     </div></div>
     <div style="display: none;"><%= f.file_field :image, :class => "image_file", :id => "upload" %></div>
     <%= f.submit  "Upload to BnBeezy" ,:class => "btn btn-primary show-progress" %>

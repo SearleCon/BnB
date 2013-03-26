@@ -17,7 +17,7 @@ class Subscription < ActiveRecord::Base
   belongs_to :plan
   attr_accessor :paypal_payment_token
 
-  attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date
+  attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date, :user_id
 
   default_scope -> {where(:active_profile => true) }
   after_initialize :set_expiry_date

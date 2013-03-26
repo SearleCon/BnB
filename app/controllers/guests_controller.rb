@@ -24,22 +24,22 @@ class GuestsController < ApplicationController
   # POST /guests
   # POST /guests.json
   def create
-    @guest = @bnb.guests.new do |guest|
-      guest.name = 'Joe'
-      guest.surname = 'Soap'
-      guest.contact_number = '0123456789'
-      guest.email = 'JoeSoap@example.com'
-      guest.user_id = current_user.id
-    end
-    flash.now[:error] = "An error occurred while creating a guest." unless  @guest.save
-    respond_with(@guest)
+    @guest.user_id = current_user
+    flash[:notice] = "#{@guest.full_name} was created successfully" if @guest.save
+    respond_with(@guest, location: bnb_guests_url(@bnb))
+  end
+
+  def edit
   end
 
   # PUT /guests/1
   # PUT /guests/1.json
   def update
-    @guest.update_attributes(params[:guest])
-    respond_with_bip(@guest)
+    flash[:notice] = "#{@guest.full_name} was updated successfully" if @guest.update_attributes(params[:guest])
+
+    respond_with(@guest, location: bnb_guests_url(@bnb)) do |format|
+      format.json { respond_with_bip(@guest) }
+    end
   end
 
   # DELETE /guests/1

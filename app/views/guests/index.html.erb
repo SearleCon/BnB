@@ -16,18 +16,19 @@
 </div>
 
 
-<table class="table sort_table" id="guests">
+<table class="table sort_table" id="guests" style="font-size: 15px">
   <tr id='table_headers'>
     <th><%= sortable "name" %></th>
     <th><%= sortable "surname" %></th>
     <th><%= sortable "contact_number" %></th>
     <th><%= sortable "email" %></th>
     <th></th>
+    <th></th>
   </tr>
   <%= render :partial => 'row', :collection => @guests, :as => :guest %>
 </table>
 
-<label><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add guest'), bnb_guests_path(@bnb, @bnb.guests.build), method: :post, remote: true %></label>
+<label><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add guest'), new_bnb_guest_path(@bnb) %></label>
 
 <br/>
 <div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>

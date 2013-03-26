@@ -20,25 +20,22 @@ class RoomsController < ApplicationController
     @rooms = Room.search(search_term).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
   end
 
+  def new
+    @room.rates = @bnb.standard_rate
+  end
+
   # POST /rooms
   # POST /rooms.json
   def create
-    @room = @bnb.rooms.new do |room|
-      room.description='Describe room'
-      room.room_number=999
-      room.en_suite=false
-      room.rates= @bnb.standard_rate
-      room.extras='none'
-    end
-    flash.now[:error] = "An error occurred while creating a room." unless @room.save
-    respond_with(@room)
+    flash[:notice] = "#{@room.room_number} was created successfully" if @room.save
+    respond_with(@room, :location => bnb_rooms_url(@bnb))
   end
 
   # PUT /rooms/1
   # PUT /rooms/1.json
   def update
-    @room.update_attributes(params[:room])
-    respond_with(@room)
+    flash[:notice] = "#{@room.room_number} was updated successfully" if @room.update_attributes(params[:room])
+    respond_with(@room, :location => bnb_rooms_url(@bnb))
   end
 
   # DELETE /rooms/1

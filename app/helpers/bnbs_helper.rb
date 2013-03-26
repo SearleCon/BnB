@@ -1,9 +1,15 @@
 module BnbsHelper
   def display_action_links_for_user
-    if user_signed_in? && current_user.is?(:guest) then
-      content_tag(:p, :align => "center") do
-        link_to "Book Now", new_bnb_booking_path(@bnb), :class => "btn btn-primary"
-      end
+    if user_signed_in?
+       if current_user.is?(:guest)
+        content_tag(:p, :align => "center") do
+          link_to "Book Now", new_bnb_booking_path(@bnb), :class => "btn btn-primary"
+        end
+       else
+         content_tag(:p, :align => "center") do
+           link_to "Change Bnb Details", bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id), :class => "btn btn-primary"
+         end
+       end
     elsif !user_signed_in?
       content_tag(:div) do
         @links =

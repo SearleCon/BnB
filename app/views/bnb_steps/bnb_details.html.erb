@@ -5,7 +5,7 @@
         <div class="form-inputs">
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input :standard_rate, as: :string%>
+          <%= f.input :standard_rate, as: :string, label: "Standard Rate (Per person sharing)" %>
           <%= f.input :rating, :collection => 1..5,  :as => :radio_buttons %>
         </div>
       <%= f.button :submit, :value => 'Continue', :id => 'commit', class: "btn btn-primary" %>

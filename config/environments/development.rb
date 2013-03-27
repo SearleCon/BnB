@@ -11,7 +11,7 @@ SampleApp::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
   config.cache_store = :dalli_store
 
 
@@ -53,12 +53,12 @@ SampleApp::Application.configure do
 
   config.after_initialize do
     Delayed::Job.scaler = :local
-    Bullet.enable = true
-    Bullet.alert = true
+    Bullet.enable = false
+    Bullet.alert = false
     Bullet.bullet_logger = false
-    Bullet.console = true
+    Bullet.console = false
     Bullet.growl = false
-    Bullet.rails_logger = true
+    Bullet.rails_logger = false
     Bullet.airbrake = false
   end
 

@@ -1,5 +1,5 @@
-<%= simple_form_for [@bnb,@booking], validate: true do |f| %>
-    <%= f.error_notification %>
+<%= simple_form_for [@bnb,@booking] do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
       <div class="form-inputs">
         <h5>Select booking dates:</h5>
         <%= f.simple_fields_for :event do |event_form| %>

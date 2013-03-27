@@ -48,6 +48,7 @@ class BookingsController < ApplicationController
     @booking = @bnb.bookings.build(params[:booking]) do |booking|
       booking.user_id = current_user.id
       booking.try(:guest).user_id = current_user.id if booking.guest.try(:new_record?)
+      booking.try(:guest).bnb_id = @bnb.id if booking.guest.try(:new_record?)
       booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
       booking.status = :booked unless booking.online?
     end

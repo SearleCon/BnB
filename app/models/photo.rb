@@ -14,7 +14,6 @@
 
 class Photo < ActiveRecord::Base
   belongs_to :bnb
-  default_scope  -> {where(:processed => true)}
   mount_uploader :image, ImageUploader
 
   attr_accessible :description, :main
@@ -28,6 +27,8 @@ class Photo < ActiveRecord::Base
 
   scope :main_photo, -> {where(main: true)}
   scope :support_photos, -> { where(:main => false) }
+  scope :processed, -> { where(:processed => true) }
+
 
   def save_and_process_image(options = {})
     if options[:now]
@@ -46,7 +47,6 @@ class Photo < ActiveRecord::Base
     rescue Fog::Storage::Rackspace::NotFound
     end
   end
-
 
   def remove_previously_stored_image
     begin

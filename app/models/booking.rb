@@ -20,6 +20,7 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
+  include DelegateAssociation
 
   default_scope -> {where(:active => true)}
 

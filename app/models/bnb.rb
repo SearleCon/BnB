@@ -41,7 +41,7 @@ class Bnb < ActiveRecord::Base
   attr_accessor :status
   attr_accessor :number_of_rooms
 
-  scope :find_by_location, -> search { where('city like ? or region = ? or country = ?' , "%#{search.city}%", search.region, search.country) }
+  scope :find_by_location, -> search { where('city like ? or region like ? or country like ?' , "%#{search.city}%", search.region, search.country) }
 
   geocoded_by :full_address
 
@@ -57,6 +57,10 @@ class Bnb < ActiveRecord::Base
 
   def full_address
      [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")
+  end
+
+  def total_photos
+    photos.unscoped.count
   end
 
   def co_ordinates

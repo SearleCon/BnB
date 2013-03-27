@@ -13,7 +13,7 @@
 #
 
 class Event < ActiveRecord::Base
-  belongs_to :booking
+  belongs_to :booking, touch: true
   after_initialize :set_default_date, :if => :new_record?
 
   attr_accessible :name, :start_at, :end_at, :color

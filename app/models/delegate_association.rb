@@ -2,7 +2,7 @@ module DelegateAssociation
   extend ActiveSupport::Concern
 
   included do
-    associations = self.reflect_on_all_associations.reject{ |assoc| assoc.macro == :belongs_to || assoc.name == :has_one }.map(&:name)
+    associations = self.reflect_on_all_associations.select(&:collection?).map(&:name)
 
     associations.each do |assoc|
 

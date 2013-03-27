@@ -2,6 +2,7 @@ class BnBsController
   init: ->
 
   show: ->
+    $('a[rel*=lazybox]').lazybox()
 
 
 

@@ -34,8 +34,7 @@ class PhotosController < ApplicationController
         @photo.save_and_process_image(:now => false)
         redirect_to bnb_photos_url(@bnb), notice: "Image is being processed."
       else
-       @photo.remove_image!
-        render 'upload', alert: "There was an error processing the image."
+        @photo.destroy and render 'photos/upload'
       end
   end
 
@@ -45,14 +44,14 @@ class PhotosController < ApplicationController
   end
 
   def new_resource
-   Photo.unscoped { @photo = @bnb.photos.new(params[:photo]) }
+    @photo = @bnb.photos.new(params[:photo])
   end
 
   def load_resource
-    Photo.unscoped { @photo = @bnb.photos.find(params[:id]) }
+   @photo = @bnb.photos.find(params[:id])
   end
 
   def load_resources
-    @photos = @bnb.photos.includes(:bnb).scoped
+    @photos = @bnb.photos.processed.includes(:bnb)
   end
 end

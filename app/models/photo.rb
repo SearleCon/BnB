@@ -13,7 +13,7 @@
 #
 
 class Photo < ActiveRecord::Base
-  belongs_to :bnb
+  belongs_to :bnb, :touch => true
   mount_uploader :image, ImageUploader
 
   attr_accessible :description, :main

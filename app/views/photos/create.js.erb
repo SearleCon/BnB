@@ -2,6 +2,7 @@
 $('#photoform').html('<%= escape_javascript(render :partial => 'photos/form')%>');
 <% else %>
 $('#photoform').html('<%= escape_javascript(render :partial => 'upload_form')%>');
+$('#upload_button').prop('disabled', true);
 <% end %>
 
 

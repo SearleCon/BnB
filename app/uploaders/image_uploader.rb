@@ -33,4 +33,22 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def filename
+    if original_filename
+      if model && model.read_attribute(mounted_as).present?
+        model.read_attribute(mounted_as)
+      else
+        @name ||= "#{mounted_as}-#{uuid}.#{file.extension}"
+      end
+    end
+  end
+
+  protected
+
+  def uuid
+    UUID.state_file = false
+    uuid = UUID.new
+    uuid.generate
+  end
+
 end

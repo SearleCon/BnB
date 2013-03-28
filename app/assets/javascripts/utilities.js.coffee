@@ -42,6 +42,33 @@
     element.disabler("option", "disable", false)
 
 
+  validateFile: (file) ->
+    if !checkFileSizeValid(file)
+      return false
+
+    if file.name.match(/^\s*[a-z-._\d,\s]+\s*$/i) == null
+      return false
+
+    return true
+
+checkFileSizeValid =  (file) ->
+  iSize = 0
+  iSize = (file.size / 1024)
+  if iSize / 1024 > 1
+    if ((iSize / 1024) / 1024) > 1
+      return false
+    else
+      iSize = (Math.round((iSize / 1024) * 100) / 100)
+      return !iSize > 1
+  else
+    return true
+
+
+
+
+
+
+
 
 
 

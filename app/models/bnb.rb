@@ -28,7 +28,6 @@
 
 class Bnb < ActiveRecord::Base
 
-  include DelegateAssociation
 
   has_many :guests, :dependent => :delete_all
   has_many :photos, :dependent => :delete_all
@@ -45,7 +44,7 @@ class Bnb < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  acts_as_gmappable :process_geocoding => false
+  acts_as_gmappable
 
   after_initialize :set_default_status
   after_commit :fetch_address, :if => :persisted?
@@ -57,10 +56,6 @@ class Bnb < ActiveRecord::Base
 
   def full_address
      [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")
-  end
-
-  def total_photos
-    photos.unscoped.count
   end
 
   def co_ordinates

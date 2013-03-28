@@ -6,7 +6,7 @@
     <%= f.input :description %>
     <%= f.input :en_suite, as: :radio_buttons,  item_wrapper_class: "inline" %>
     <%= f.input :extras, as: :text %>
-    <%= f.input :rates, :wrapper => :prepend, :class => "inline" do %>
+    <%= f.input :rates, :wrapper => :prepend, :class => "inline", :label => "Rates (Per person sharing)" do %>
         <%= content_tag :span, "R", :class => "add-on", :style => "color:black;" %>
         <%= f.input_field :rates%>
     <% end %>

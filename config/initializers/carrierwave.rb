@@ -12,7 +12,7 @@ end
 CarrierWave::Uploader::Download.module_eval do
   def process_uri(uri)
     begin
-      URI.parse(uri)
+      URI.parse(URI.encode(uri))
     rescue
       URI.parse(URI.escape(URI.unescape(uri)))
     end

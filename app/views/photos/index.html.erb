@@ -8,7 +8,7 @@
 </div>
 
 <% if can? :create, Photo %>       
- <%= link_to "Upload an image", new_bnb_photo_path(@bnb) unless @photos.any? && @bnb.total_photos >= 5 %>
+ <%= link_to "Upload an image", new_bnb_photo_path(@bnb) unless @photos.any? && @bnb.photos.count >= 5 %>
 <% end %>
 <br>
 <br>

@@ -21,9 +21,9 @@ class BnbsController < ApplicationController
   end
 
   def nearby_bnbs
-  @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page])
-    if @bnbs.any?
-      convert_to_map_data(@bnbs)
+  @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page]) if @bnb.nearbys
+    if @bnbs.try(:any?)
+      convert_to_map_data(@bnbs.reject{|bnb| bnb.latitude == nil or bnb.longitude == nil})
       render 'index'
     else
       flash[:alert] = "No bnbs were found nearby"

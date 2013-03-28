@@ -19,7 +19,7 @@ class Photo < ActiveRecord::Base
   attr_accessible :description, :main
   attr_accessor :filepath
 
-  before_create :set_previous_main_to_false
+  before_save :set_previous_main_to_false, if: :is_main?
   after_destroy :destroy_file
 
 
@@ -58,7 +58,8 @@ class Photo < ActiveRecord::Base
 
   private
   def set_previous_main_to_false
-    Photo.main_photo.where(:bnb_id => self.bnb_id).first.try(:toggle!, :main) if main?
+    previous_main = Photo.main_photo.where("bnb_id = (?) AND id != (?)", self[:bnb_id], self[:id]).order("id ASC").first
+    previous_main.try(:toggle!, :main)
   end
 
   def destroy_file
@@ -66,6 +67,10 @@ class Photo < ActiveRecord::Base
   rescue
     logger.info "Exception removing #{self.image_url}"
     return false
+  end
+
+  def is_main?
+    self[:main]
   end
 
 

@@ -35,6 +35,8 @@ GEM
     best_in_place (2.1.0)
       jquery-rails
       rails (~> 3.1)
+    bootbox-rails (0.0.1)
+      railties (>= 3.1.0)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -92,6 +94,8 @@ GEM
     daemons (1.1.9)
     dalli (2.6.2)
     database_cleaner (0.9.1)
+    datejs-rails (2.0.1)
+      railties (>= 3.1)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
     delayed_job_active_record (0.4.3)
@@ -279,6 +283,7 @@ DEPENDENCIES
   annotate (>= 2.5.0)
   bcrypt-ruby
   best_in_place
+  bootbox-rails
   bootstrap-sass (~> 2.2.2.0)
   bootstrap-will_paginate
   browser
@@ -298,6 +303,7 @@ DEPENDENCIES
   daemons
   dalli
   database_cleaner
+  datejs-rails
   delayed_job_active_record
   devise
   enumify

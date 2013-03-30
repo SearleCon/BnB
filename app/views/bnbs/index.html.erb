@@ -1,4 +1,6 @@
-<div class="hero-unit clearfix"><%= gmaps4rails(@json) %></div>
+<% if @json.nil? %>
+<div class="hero-unit clearfix"><%= gmaps4rails(@json)  %></div>
+<% end %>
 
 
 <% @bnbs.try(:each) do |bnb| %>

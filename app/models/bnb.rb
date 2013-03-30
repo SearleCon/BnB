@@ -44,7 +44,10 @@ class Bnb < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  acts_as_gmappable
+  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => true, :check_process => false,
+                    :address => :full_address,
+                    :msg => "is not valid according to Google Maps"
+
 
   after_initialize :set_default_status
   after_commit :fetch_address, :if => :persisted?

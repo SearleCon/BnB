@@ -12,7 +12,7 @@ class PhotosController
          contentType = $("input:file").prop("files")[0].type.toString()
          $("#mime_field").val contentType
       else
-         alert "File is invalid"
+         bootbox.alert "File is invalid, make sure size is 1 mb or less and the name contains no special characters."
 
 
   index: ->

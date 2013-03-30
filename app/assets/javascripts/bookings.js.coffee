@@ -25,7 +25,12 @@ class BookingsController
         return false
 
       dayClick: (date, allDay, jsEvent, view) ->
-        window.location.href = Utilities.addParametersToURL($('#new_booking_path').val(),"date",date)
+        if date < Date.today()
+         $('#calendar').fullCalendar('today')
+         bootbox.alert "The selected date is invalid, date must be today or greater."
+        else
+         window.location.href = Utilities.addParametersToURL($('#new_booking_path').val(),"date",date)
+
         return false
 
   show_invoice: ->
@@ -41,6 +46,7 @@ class BookingsController
         dateFormat: "DD, d MM yy"
         altFormat: "yy-mm-dd"
         altField: $(this).next()
+        minDate: date.today
         onSelect: (dateText, inst) ->
           previous = $(this).data("previous-value")
           $('#room_finder').trigger('click') unless new Date(previous).getTime() == new Date(dateText).getTime()

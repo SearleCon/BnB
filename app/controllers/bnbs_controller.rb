@@ -6,8 +6,8 @@ class BnbsController < ApplicationController
   # GET /bnbs.json
   def index
     @bnbs = Bnb.includes(:rooms).find_by_location(Search.new(params[:search])).paginate(:per_page => 15, :page => params[:page])
-    if @bnbs.any?
-     convert_to_map_data(@bnbs)
+    if @bnbs.try(:any?)
+     convert_to_map_data(@bnbs.reject{|bnb| valid_address(bnb.full_address)})
     else
      flash[:alert] = "No results were found for this search"
      redirect_to root_url
@@ -23,7 +23,7 @@ class BnbsController < ApplicationController
   def nearby_bnbs
   @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page]) if @bnb.nearbys
     if @bnbs.try(:any?)
-      convert_to_map_data(@bnbs.reject{|bnb| bnb.latitude == nil or bnb.longitude == nil})
+      convert_to_map_data(@bnbs.reject{|bnb| valid_address(bnb.full_address)})
       render 'index'
     else
       flash[:alert] = "No bnbs were found nearby"
@@ -60,9 +60,22 @@ class BnbsController < ApplicationController
 
   private
   def convert_to_map_data(bnbs)
-    @json = bnbs.to_gmaps4rails do |bnb, marker|
-      marker.title "#{bnb.name}"
-      marker.infowindow render_to_string(:partial => "/bnbs/mapinfo", :locals => { :bnb => bnb})
+    if bnbs.any?
+      @json = bnbs.to_gmaps4rails do |bnb, marker|
+        marker.title "#{bnb.name}"
+        marker.infowindow render_to_string(:partial => "/bnbs/mapinfo", :locals => { :bnb => bnb})
+      end
+    else
+      @json = nil
     end
+
+
+  end
+
+  def valid_address(address)
+     Gmaps4rails.geocode(address)
+     true
+  rescue
+    false
   end
 end

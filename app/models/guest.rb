@@ -14,6 +14,10 @@
 #
 
 class Guest < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :full_name, use: :scoped, :scope => :bnb
+
+
   belongs_to :bnb
   has_many :bookings, :dependent => :destroy
   has_many :rooms, :through => :bookings

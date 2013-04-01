@@ -132,6 +132,7 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.4)
+    friendly_id (4.0.9)
     fullcalendar-rails (1.5.4.0)
     geocoder (1.1.6)
     gherkin (2.11.6)
@@ -310,6 +311,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fog
+  friendly_id
   fullcalendar-rails
   geocoder
   gmaps4rails

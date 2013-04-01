@@ -44,6 +44,7 @@ gem 'client_side_validations'
 gem "client_side_validations-simple_form", "~> 2.0.1"
 gem 'datejs-rails'
 gem 'bootbox-rails'
+gem "friendly_id"
 
 
 group :development, :test do

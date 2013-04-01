@@ -46,7 +46,7 @@ class BookingsController
         dateFormat: "DD, d MM yy"
         altFormat: "yy-mm-dd"
         altField: $(this).next()
-        minDate: date.today
+        minDate: Date.today()
         onSelect: (dateText, inst) ->
           previous = $(this).data("previous-value")
           $('#room_finder').trigger('click') unless new Date(previous).getTime() == new Date(dateText).getTime()

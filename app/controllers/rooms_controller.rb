@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   respond_to :js, :json, :html
 
-  load_and_authorize_resource :bnb
+  load_and_authorize_resource :bnb, :find_by => :slug, :parent => true
   load_and_authorize_resource :room, :through => :bnb
 
   helper_method :sort_column, :sort_direction

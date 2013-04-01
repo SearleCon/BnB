@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320102139) do
+ActiveRecord::Schema.define(:version => 20130401062952) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(:version => 20130320102139) do
     t.integer   "rating"
     t.string    "region"
     t.decimal   "standard_rate"
+    t.string    "slug"
   end
 
+  add_index "bnbs", ["slug"], :name => "index_bnbs_on_slug", :unique => true
   add_index "bnbs", ["user_id"], :name => "index_bnbs_on_user_id"
 
   create_table "bookings", :force => true do |t|
@@ -99,9 +101,11 @@ ActiveRecord::Schema.define(:version => 20130320102139) do
     t.integer   "bnb_id"
     t.integer   "user_id"
     t.string    "email"
+    t.string    "slug"
   end
 
   add_index "guests", ["bnb_id"], :name => "index_guests_on_bnb_id"
+  add_index "guests", ["slug"], :name => "index_guests_on_slug", :unique => true
   add_index "guests", ["user_id"], :name => "index_guests_on_user_id"
 
   create_table "line_items", :force => true do |t|
@@ -223,11 +227,13 @@ ActiveRecord::Schema.define(:version => 20130320102139) do
     t.string    "contact_number"
     t.string    "surname"
     t.string    "authentication_token"
+    t.string    "slug"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["role_id"], :name => "index_users_on_role_id"
+  add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
 
 end

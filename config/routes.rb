@@ -58,6 +58,7 @@ SampleApp::Application.routes.draw do
   match '/pricing', to: 'static_pages#pricing'
   match '/registration_page', to: 'static_pages#registration_page'
   match '/ie_warning', to: 'static_pages#ie_warning'
+  match '/screens', to: 'static_pages#screens'
 
   devise_scope :user do
     match "users/signup/:user_role" => "registrations#new", as: 'register'

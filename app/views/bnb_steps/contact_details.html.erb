@@ -9,8 +9,8 @@
           <%= f.input :address_line_two %>
           <%= f.input :city %>
           <%= f.input :postal_code %>
-          <%= f.input :country, :collection => sort_countries_for_carmen(Carmen::Country.all),  prompt: "Select a country",label: false %>
-          <%= render 'shared/select_region',  :parent_region => f.object.country %>
+          <%= f.input :country, :collection => sort_countries_for_carmen(Carmen::Country.all),  prompt: "Select a country" %>
+          <%= f.input :region, prompt: "Select a region", :value_method => :name,:collection => Carmen::Country.named(f.object.country).subregions %>
         </div>
       <%= f.button :submit, :value => 'Continue', :id => 'commit', class: "btn btn-primary" %>
 <% end %>

@@ -4,7 +4,7 @@ class BnBStepsController
       select_wrapper = $('#order_state_code_wrapper')
       $('select', select_wrapper).attr('disabled', true)
       country_code = $(this).val()
-      url = "/bnbs/sub_region_options?parent_region=" + country_code.toString()
+      url = Utilities.addParametersToURL("/bnbs/sub_region_options","parent_region",country_code.toString())
       $.ajax({
              type : 'GET',
              url : url,

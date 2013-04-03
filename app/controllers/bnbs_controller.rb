@@ -36,7 +36,7 @@ class BnbsController < ApplicationController
   # POST /bnbs.json
   def create
     @bnb = Bnb.new(:user_id => current_user.id)
-    if @bnb.save
+    if @bnb.save(validate: false)
       redirect_to  bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id)
     else
       flash[:alert] = 'An error occurred while initializing bnb setup wizard'

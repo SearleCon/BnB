@@ -46,7 +46,7 @@ class Bnb < ActiveRecord::Base
 
   geocoded_by :full_address
 
-  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => true, :check_process => false,
+  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => :geocode?, :check_process => false,
                     :address => :full_address,
                     :msg => "is not valid according to Google Maps"
 
@@ -58,6 +58,9 @@ class Bnb < ActiveRecord::Base
   validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
 
+  def geocode?
+    active_or_contact_details? || address_changed?
+  end
 
   def full_address
      [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")

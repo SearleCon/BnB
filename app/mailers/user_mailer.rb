@@ -23,5 +23,4 @@ class UserMailer < ActionMailer::Base
       @user = User.find(@booking.user_id)
       mail to: @user.email, subject: "Booking has been confirmed"
   end
-
 end

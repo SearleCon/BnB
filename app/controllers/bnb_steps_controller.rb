@@ -18,8 +18,13 @@ class BnbStepsController < ApplicationController
 
   private
   def finish_wizard_path
-    flash[:notice] = "Bnb was saved successfully."
-    show_bnb_url(@bnb)
+    if @bnb.rooms.any?
+     flash[:notice] = "Bnb was saved successfully."
+     show_bnb_url(@bnb)
+    else
+     flash[:notice] = "Bnb details complete. Please add rooms now to complete your setup."
+     bnb_rooms_url(@bnb)
+    end
   end
 
   def build_default_rooms

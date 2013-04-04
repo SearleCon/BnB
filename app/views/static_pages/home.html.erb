@@ -1,7 +1,7 @@
 <div class="hero-unit clearfix">
   <div class="pull-left span3">
     <h2>Welcome to BnBeezy</h2>
-    <p>An easy to use Bed and Breakfast and Accomodation portal to suit your needs, whether you are an Owner or a Guest</p>
+    <p>An easy to use Bed and Breakfast and Accomodation portal to suit your needs, whether you are an Owner or a Guest.</p>
     <br>
   </div>
   <div class="pull-right">
@@ -41,25 +41,38 @@
     </div>
   </div>
   <div class="span4 columns" id="column2">
-    <div class="thumbnail">
-      <img alt="" src=<%= image_path("holiday.jpg") %>>
-      <div class="caption">
-        <h5>Need a place to stay?</h5>
-        <br>
-        <p>Register now and have access to features such as:</p>
-        <ul>
-          <li>View guest houses/BnBs all over the world</li>
-          <li>Search for BnBs in a specific area anywhere in the world</li>
-          <li>Book online to guarantee peace of mind and focus on enjoying your holiday instead</li>
-          <li>Maintains a history of your bookings for future reference</li>
-        </ul>
-        <p align="center"><%= link_to 'Register to book now', register_path("guest"), class: "btn btn-primary"  %></p>
-      </div>
+  <div class="thumbnail">
+    <img alt="" src=<%= image_path("holiday.jpg") %>>
+    <div class="caption">
+      <h5>Need a place to stay?</h5>
+      <br>
+      <p>Register now and have access to features such as:</p>
+      <ul>
+        <li>View guest houses/BnBs all over the world</li>
+        <li>Search for BnBs in a specific area anywhere in the world</li>
+        <li>Book online to guarantee peace of mind and focus on enjoying your holiday instead</li>
+        <li>Maintains a history of your bookings for future reference</li>
+      </ul>
+      <p align="center"><%= link_to 'Register to book now', register_path("guest"), class: "btn btn-primary"  %></p>
     </div>
   </div>
-  <div id="searching" class="span4">
-     <h2>Search for BnB</h2>
-     <%= render 'shared/search' %>
+</div>
+  <div class="span4 columns" id="column3">
+    <div class="thumbnail">
+      <img alt="" src=<%= image_path("find.jpg") %>>
+      <div class="caption">
+        <h5>Find a place to stay?</h5>
+        <br>
+        <p>Click here to:</p>
+        <ul>
+          <li>View all our registered BnBs</li>
+          <li>Search for a specific BnB</li>
+          <li>Search by a range of criteria ie (Country, Region, City etc).</li>
+          <li>See detailed results about each BnB, including photos and the ability to view surrounding BnBs.</li>
+        </ul>
+        <p align="center"><%= link_to 'Search now', bnbs_path, class: "btn btn-primary"  %></p>
+      </div>
+    </div>
   </div>
 </div>
 

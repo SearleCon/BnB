@@ -5,19 +5,16 @@ class BnbsController < ApplicationController
   # GET /bnbs
   # GET /bnbs.json
   def index
-    @bnbs = Bnb.includes(:rooms).find_by_location(Search.new(params[:search])).paginate(:per_page => 15, :page => params[:page])
-    if @bnbs.try(:any?)
-     convert_to_map_data(@bnbs.reject{|bnb| valid_address(bnb.full_address)})
-    else
-     flash[:alert] = "No results were found for this search"
-     redirect_to root_url
-    end
+    params[:q] ||= {}
+    @search = Bnb.search(params[:q])
+    @bnbs = @search.result.paginate(:per_page => 15, :page => params[:page])
   end
 
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
     redirect_to startpage_url unless @bnb
+    to_gmaps_json(@bnb)
   end
 
   def nearby_bnbs
@@ -68,8 +65,10 @@ class BnbsController < ApplicationController
     else
       @json = nil
     end
+  end
 
-
+  def to_gmaps_json(bnb)
+    @json = bnb.to_gmaps4rails
   end
 
   def valid_address(address)

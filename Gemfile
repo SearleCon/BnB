@@ -24,7 +24,7 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
-gem 'gmaps4rails'
+gem 'gmaps4rails', '>= 2.0.0.pre', git: 'https://github.com/fiedl/Google-Maps-for-Rails.git'
 gem "jquery-turbolinks", "~> 1.0.0.rc2"
 gem 'select2-rails'
 gem 'placeholdit'
@@ -45,6 +45,7 @@ gem "client_side_validations-simple_form", "~> 2.0.1"
 gem 'datejs-rails'
 gem 'bootbox-rails'
 gem "friendly_id"
+gem "ransack"
 
 
 group :development, :test do

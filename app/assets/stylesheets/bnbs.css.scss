@@ -1,6 +1,35 @@
 body.bnbs{
 
   /* index */
+
+  #search_form{
+    .name_field{
+
+    }
+    
+    .city_field{
+
+    }
+    
+    .rate_field{
+      float:left;
+      display:inline-block;
+
+      .min_rate{
+        float:left;
+        display:inline-block;
+      }
+
+      .max_rate{
+        float:left;
+        display:inline-block;
+      }
+
+      .actions{
+        float:left;
+      }
+    }
+  }
   /* Search results details  */
   #result_details{
     padding:10px;

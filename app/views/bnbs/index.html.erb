@@ -1,7 +1,51 @@
-<% if @json.nil? %>
-<div class="hero-unit clearfix"><%= gmaps4rails(@json)  %></div>
-<% end %>
+<div class="hero-unit clearfix">
+  <h2>Search</h2>
+  <%= search_form_for @search, id: 'search_form' do |f| %>
+      <div class="row"></div>
+      <div class="name_field">
+        <%= f.label :name_cont, "Name:" %>
+        <%= f.text_field :name_cont, placeholder: "Search on BnB name" %>
+      </div>
 
+
+      <div class="rating_field">
+        <%= f.label :rating_eq, "Rating:" %>
+        <%= f.select :rating_eq, (1..5),  prompt: "Select a rating" %>
+      </div>
+
+      <div class="city_field">
+        <%= f.label :city_cont, "City:" %>
+        <%= f.text_field :city_cont, placeholder: "Search on city" %>
+      </div>
+
+      <div class="rate_field">
+        <div class= "min_rate">
+         <%= f.label :standard_rate_gteq, "Min Rate:" %>
+         <%= f.text_field :standard_rate_gteq, placeholder: "0"  %>
+        </div>
+        <div class= "max_rate">
+         <%= f.label :standard_rate_lteq, "Max Rate:" %>
+         <%= f.text_field :standard_rate_lteq, placeholder: "1000" %>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="actions">
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      </div>
+  <% end %>
+
+
+
+</div>
+
+
+<h2>Search Results</h2>
+<% params[:q] = {} %>
+<p align="center"><%= link_to "Clear search results", bnbs_path(params) %></p>
+<p align="center">Click on the city to filter results for the city only.</p>
+<p align="center">Sort search results by: <%= sort_link(@search, :name, "BnB Name") %> or <%= sort_link(@search, :city, "City") %></p>
 
 <% @bnbs.try(:each) do |bnb| %>
     <div class="row" id="bnb_row">
@@ -15,11 +59,17 @@
       </div>
       </div>
       <div id="result_details" class="span6">
-        <h5><%= bnb.name %></h5>
+        <h4><%= bnb.name %></h4>
+        <% params[:q].update :city_cont => bnb.city %>
+        <p>Location: <%= link_to bnb.city, bnbs_path(params) %></p>
+        <p><% bnb.rating.times do %>
+            <i class="icon-star icon-black"></i>
+        <% end %></p>
         <p><%= bnb.description %></p>
         <p><%= link_to "More...", show_bnb_path(bnb) %></p>
       </div>
     </div>
+    <hr>
 <% end %>
 
 <%= will_paginate @bnbs  %>

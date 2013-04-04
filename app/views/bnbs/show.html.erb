@@ -16,10 +16,13 @@
                 <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
             <% else %>
                <% cache @bnb.photos.processed.main_photo.first do %>
-                <%= image_tag @bnb.photos.processed.main_photo.first.image_url, :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+                    <a href="<%= @bnb.photos.processed.main_photo.first.image_url %>" class="thumbnail" rel="lazybox">
+                     <%= image_tag @bnb.photos.processed.main_photo.first.image_url, :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+                    </a>
                <% end %>
             <% end %>
           </div>
+         <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %>  </p>
         </div>
         <div id="contact_and_address" class="span8" align="left">
           <div class="span4" align="left">
@@ -37,7 +40,7 @@
               <%= @bnb.country %>
               <br>
               <% unless user_signed_in? && current_user.is?(:owner) && @bnb.geocoded? %>
-                  <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat('Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
+                  <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
               <% end %>
 
             </address>
@@ -46,28 +49,35 @@
             <address>
               <strong>Contact</strong>
               <br>
-              contact person: <%= @bnb.contact_person %>
+              Contact Person: <%= @bnb.contact_person %>
               <br>
-              telephone: <%= number_to_phone(@bnb.telephone_number, area: true ) %>
+              Telephone: <%= number_to_phone(@bnb.telephone_number, area: true ) %>
               <br>
-               mail: <%= mail_to @bnb.email %>
+              Mail: <%= mail_to @bnb.email %>
               <br>
-              <%= link_to @bnb.website, url_with_protocol(@bnb.website), :target => '_blank' %>
+              Website: <%= link_to @bnb.website, url_with_protocol(@bnb.website), :target => '_blank' %>
               <br>
-              facebook: <%= @bnb.facebook_page%>
+              Facebook: <%= @bnb.facebook_page%>
               <br>
-              twitter: <%= @bnb.twitter_account %>
+              Twitter: <%= @bnb.twitter_account %>
             </address>
           </div>
         </div>
       </div>
 
-      <div class="hero-unit clearfix gallery">
+      <div class="center hero-unit clearfix">
+        <%= link_to "Bookings", bnb_bookings_path(@bnb), :class => "btn-large btn-primary" %>
+        <%= link_to "Guests", bnb_guests_path(@bnb), :class => "btn-large btn-primary" %>
+        <%= link_to "Rooms", bnb_rooms_path(@bnb), :class => "btn-large btn-primary" %>
+        <%= link_to "Photos", bnb_photos_path(@bnb), :class => "btn-large btn-primary" %>
+        <%= link_to "Edit BnB Details", bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id), :class => "btn-large btn-primary" %>
+      </div>
+      <div class="hero-unit clearfix gallery" style="padding-bottom: 0px;">
         <div class="carousel slide span12" id="support_photos_carousel">
           <div class="carousel-inner">
             <div class="item active">
               <ul class="thumbnails">
-                <% unless @bnb.photos.processed.support_photos.empty? %>
+                <% if @bnb.photos.processed.support_photos.any? %>
                    <% cache @bnb.photos.processed.support_photos do %>
                     <% @bnb.photos.processed.support_photos.try(:each) do |photo| %>
                         <li class=<%= "span3" %>>
@@ -79,11 +89,39 @@
                         </li>
                     <% end %>
                    <% end %>
+                <% else %>
+                    <li class=<%= "span3" %>>
+                      <div class="thumbnail">
+                          <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
+                      </div>
+                    </li>
+                    <li class=<%= "span3" %>>
+                      <div class="thumbnail">
+                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
+                      </div>
+                    </li>
+                    <li class=<%= "span3" %>>
+                      <div class="thumbnail">
+                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
+                      </div>
+                    </li>
+                    <li class=<%= "span3" %>>
+                      <div class="thumbnail">
+                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
+                      </div>
+                    </li>
                 <% end %>
               </ul>
             </div>
           </div>
+         <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
+
         </div>
       </div>
+      <div class="hero-unit clearfix" style="padding-top: 0px">
+        <h2>Map</h2>
+        <%= gmaps4rails(@json) %>
+      </div>
+
     </div>
   </div>

@@ -42,7 +42,6 @@ class Bnb < ActiveRecord::Base
   attr_accessor :status
   attr_accessor :number_of_rooms
 
-  scope :find_by_location, -> search { where('city like ? or region like ? or country like ?' , "%#{search.city}%", search.region, search.country) }
 
   geocoded_by :full_address
 
@@ -55,7 +54,7 @@ class Bnb < ActiveRecord::Base
   after_commit :fetch_address, :if => :persisted?
 
   validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
-  validates :email, :address_line_one, :address_line_two, :region, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
+  validates :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
   validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
 
   def geocode?
@@ -104,7 +103,7 @@ class Bnb < ActiveRecord::Base
   end
 
   def fetch_address
-    Delayed::Job.enqueue ProcessAddressJob.new(self.id) if address_changed?
+   Delayed::Job.enqueue ProcessAddressJob.new(self.id) if address_changed?
   end
 
 end

@@ -18,7 +18,9 @@ class BnbsController < ApplicationController
   end
 
   def nearby_bnbs
-  @bnbs = @bnb.nearbys(10).paginate(:per_page => 5, :page => params[:page]) if @bnb.nearbys
+  params[:q] ||= {}
+  @search = @bnb.nearbys(10).search(params[:q])
+  @bnbs = @search.result.paginate(:per_page => 5, :page => params[:page]) if @bnb.nearbys
     if @bnbs.try(:any?)
       convert_to_map_data(@bnbs.reject{|bnb| valid_address(bnb.full_address)})
       render 'index'

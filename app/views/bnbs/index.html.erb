@@ -54,7 +54,7 @@
         <% if  bnb.photos.main_photo.empty? %>
             <%=link_to placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb) %>
       <% else %>
-            <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb), :onload=>'lzld(this)', :onerror => 'lzld(this)'), show_bnb_path(bnb))%>
+            <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb)), show_bnb_path(bnb))%>
       <% end %>
       </div>
       </div>

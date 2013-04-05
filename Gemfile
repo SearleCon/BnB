@@ -46,6 +46,8 @@ gem 'datejs-rails'
 gem 'bootbox-rails'
 gem "friendly_id"
 gem "ransack"
+gem 'newrelic_rpm'
+
 
 
 group :development, :test do

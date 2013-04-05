@@ -1,5 +1,5 @@
 class BnbNotifier < ActionMailer::Base
-  default from: "BnBeezy"
+  default from: "donotreply@bnbeezy.com"
 
   def enquiry(message)
     @message = message

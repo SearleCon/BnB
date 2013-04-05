@@ -3,12 +3,12 @@
     <li id="<%=photo.id %>" class="span3">
       <% if photo.main? %>
           <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox" style="border: solid; border-width: thick; border-color: blue;" >
-            <%= image_tag photo.image_url(:thumb), :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+            <%= image_tag photo.image_url(:thumb) %>
             <p><%= photo.description %></p>
           </a>
       <% else %>
           <a href="<%= photo.image_url %>"  class="thumbnail" rel="lazybox">
-            <%= image_tag photo.image_url(:thumb), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
+            <%= image_tag photo.image_url(:thumb) %>
             <p><%= photo.description %></p>
           </a>
       <% end %>

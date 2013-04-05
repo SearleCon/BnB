@@ -23,7 +23,7 @@
             <% else %>
                <% cache @bnb.photos.processed.main_photo.first do %>
                     <a href="<%= @bnb.photos.processed.main_photo.first.image_url %>" class="thumbnail" rel="lazybox">
-                     <%= image_tag @bnb.photos.processed.main_photo.first.image_url, :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+                     <%= image_tag @bnb.photos.processed.main_photo.first.image_url %>
                     </a>
                <% end %>
             <% end %>
@@ -93,7 +93,7 @@
                         <li class=<%= "span3" %>>
                           <div class="thumbnail">
                             <a href="<%= photo.image_url %>" class="thumbnail" rel="lazybox">
-                              <%= image_tag photo.image_url(:thumb), :onload=>'lzld(this)', :onerror => 'lzld(this)' %>
+                              <%= image_tag photo.image.url(:thumb) %>
                             </a>
                           </div>
                         </li>

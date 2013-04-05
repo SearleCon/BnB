@@ -1,26 +1,26 @@
 class UserMailer < ActionMailer::Base
-  default from: "BnBeezy@example.com"
+
 
   def welcome(user)
     @user = user
-    mail to: @user.email, subject: "Welcome"
+    mail from: 'registrations@bnbeezy.com', to: @user.email, subject: "Welcome"
   end
 
   def booking_made(booking)
     @booking = booking
     @user = User.find(@booking.user_id)
-    mail to: @user.email, subject: "Booking notification"
+    mail from: "donotreply@bnbeezy.com", to: @user.email, subject: "Booking notification"
   end
 
   def notify_bnb(booking)
     @booking = booking
     @user = User.find(booking.bnb.user_id)
-    mail to: 'paul@searleconsulting.co.za', subject: "Notice of online booking - #{@booking.guest.name} #{@booking.id}"
+    mail from: "donotreply@bnbeezy.com" , to: 'paul@searleconsulting.co.za', subject: "Notice of online booking - #{@booking.guest.name} #{@booking.id}"
   end
 
   def confirmation_received(booking)
       @booking = booking
       @user = User.find(@booking.user_id)
-      mail to: @user.email, subject: "Booking has been confirmed"
+      mail from: "donotreply@bnbeezy.com", to: @user.email, subject: "Booking has been confirmed"
   end
 end

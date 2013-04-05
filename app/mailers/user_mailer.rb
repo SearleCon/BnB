@@ -15,7 +15,7 @@ class UserMailer < ActionMailer::Base
   def notify_bnb(booking)
     @booking = booking
     @user = User.find(booking.bnb.user_id)
-    mail from: "donotreply@bnbeezy.com" , to: 'paul@searleconsulting.co.za', subject: "Notice of online booking - #{@booking.guest.name} #{@booking.id}"
+    mail from: "donotreply@bnbeezy.com" , to: @user.email, subject: "Notice of online booking - #{@booking.guest.name} #{@booking.id}"
   end
 
   def confirmation_received(booking)

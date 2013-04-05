@@ -8,4 +8,5 @@ class StaticPagesController
   screens: ->
     $('a[rel*=lazybox]').lazybox()
 
+
 this.BnBEezy.static_pages = new StaticPagesController()

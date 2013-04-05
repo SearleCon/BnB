@@ -1,41 +1,17 @@
 <% cache @cache_key do %>
     <h2>BnB Management - Web App Screenshots</h2>
 
+
+
     <ul class="thumbnails">
-  <li  class="span3">
-        <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-          <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
+      <% 17.times do |number| %>
+       <% if number > 0 %>
+       <li  class="span3">
+        <a href="<%= image_path(number.to_s.concat(".png")) %>"  class="thumbnail" rel="lazybox">
+          <%= image_tag image_path(number.to_s.concat(".png"))%>
         </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
-  <li  class="span3">
-    <a href="<%= image_path("bnb3.gif") %>"  class="thumbnail" rel="lazybox">
-      <%= image_tag image_path("bnb3.gif"), :onload=>'lzld(this)', :onerror => 'lzld(this)'%>
-    </a>
-  </li>
+      </li>
+     <% end %>
+     <% end %>
 </ul>
 <% end %>

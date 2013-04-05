@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
   }
 
   caches_action :my_bookings, :cache_path => proc {|c|
-    key = Booking.where(:user_id => current_user.id).maximum(:updated_at)
+    key = Booking.where(:user_id => current_user.id).unscoped.maximum(:updated_at)
     c.params.merge! :tag => key.to_i if key
   }
 

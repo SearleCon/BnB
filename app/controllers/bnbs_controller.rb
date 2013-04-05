@@ -47,7 +47,7 @@ class BnbsController < ApplicationController
   # PUT /bnbs/1.json
   def update
    @bnb.update_attributes(params[:bnb])
-   respond_with_bip(@bnb)
+   respond_with(@bnb)
   end
 
   # DELETE /bnbs/1

@@ -122,12 +122,18 @@ footer {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea, .uneditable-input {
  width: 80%;
  padding: 10px;
  margin-bottom: 15px;
   //@include box_sizing;
 }
+
+select {
+  width: 80%;
+  padding: 2px;
+}
+
 
 
 #error_explanation {

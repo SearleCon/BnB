@@ -24,6 +24,8 @@
 #  rating           :integer
 #  region           :string(255)
 #  standard_rate    :decimal(, )
+#  slug             :string(255)
+#  approved         :boolean          default(FALSE)
 #
 
 require 'spec_helper'

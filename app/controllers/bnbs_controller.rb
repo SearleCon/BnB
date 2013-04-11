@@ -6,7 +6,7 @@ class BnbsController < ApplicationController
   # GET /bnbs.json
   def index
     params[:q] ||= {}
-    @search = Bnb.search(params[:q])
+    @search = Bnb.approved.search(params[:q])
     @bnbs = @search.result.paginate(:per_page => 15, :page => params[:page])
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130401062952) do
+ActiveRecord::Schema.define(:version => 20130411140227) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(:version => 20130401062952) do
     t.string    "contact_person"
     t.string    "twitter_account"
     t.string    "facebook_page"
-    t.timestamp "created_at",       :null => false
-    t.timestamp "updated_at",       :null => false
+    t.timestamp "created_at",                          :null => false
+    t.timestamp "updated_at",                          :null => false
     t.integer   "user_id"
     t.float     "latitude"
     t.float     "longitude"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130401062952) do
     t.string    "region"
     t.decimal   "standard_rate"
     t.string    "slug"
+    t.boolean   "approved",         :default => false
   end
 
   add_index "bnbs", ["slug"], :name => "index_bnbs_on_slug", :unique => true

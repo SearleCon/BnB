@@ -24,11 +24,15 @@
 #  rating           :integer
 #  region           :string(255)
 #  standard_rate    :decimal(, )
+#  slug             :string(255)
+#  approved         :boolean          default(FALSE)
 #
 
 class Bnb < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  scope :approved, -> { where(approved: true) }
 
 
   has_many :guests, :dependent => :delete_all

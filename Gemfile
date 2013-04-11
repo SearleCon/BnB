@@ -47,7 +47,7 @@ gem 'bootbox-rails'
 gem "friendly_id"
 gem "ransack"
 gem 'newrelic_rpm'
-
+gem 'quiet_assets', :group => :development
 
 
 group :development, :test do

@@ -24,6 +24,7 @@
 #  contact_number         :string(255)
 #  surname                :string(255)
 #  authentication_token   :string(255)
+#  slug                   :string(255)
 #
 
 require 'spec_helper'

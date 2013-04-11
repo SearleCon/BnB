@@ -11,6 +11,7 @@
 #  bnb_id         :integer
 #  user_id        :integer
 #  email          :string(255)
+#  slug           :string(255)
 #
 
 class Guest < ActiveRecord::Base

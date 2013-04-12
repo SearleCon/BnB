@@ -1,4 +1,6 @@
 class BnbsController < ApplicationController
+  respond_to :html, :json, :js
+
   load_and_authorize_resource :bnb, :except => :subregions
 
 
@@ -47,7 +49,7 @@ class BnbsController < ApplicationController
   # PUT /bnbs/1.json
   def update
    @bnb.update_attributes(params[:bnb])
-   respond_with(@bnb)
+   respond_with_bip(@bnb)
   end
 
   # DELETE /bnbs/1

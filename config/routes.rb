@@ -49,6 +49,7 @@ SampleApp::Application.routes.draw do
   root to: 'static_pages#home'
 
   match '/startpage', to: 'static_pages#startpage'
+  match '/admin', to: 'static_pages#admin'
   match '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
   match '/privacypolicy', to: 'static_pages#privacy_policy'
   match '/faq', to: 'static_pages#faq'

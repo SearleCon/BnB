@@ -31,4 +31,8 @@ class Room < ActiveRecord::Base
   scope :search, -> term { where('lower(description) LIKE ?', "%#{term}%") }
   scope :unbooked_rooms, -> start_date, end_date { where('id NOT IN (select id from rooms where id in (?))', Booking.includes(:event, :rooms).where('events.start_at <= ? AND events.end_at >= ?', end_date, start_date).collect(&:rooms).flatten.map(&:id)) }
 
+  def room_info
+    "#{description} Capacity: #{capacity} Rate: #{rates}"
+  end
+
 end

@@ -3,73 +3,76 @@ class Ability
 
   def initialize(user)
 
+   #Set default user if user not logged in
    user ||= User.new
 
-    if user.has_role? :owner
-      if user.active_subscription.has_expired?
-        can :manage, Subscription
-      else
-       #Bnb
-       can :show, Bnb do |bnb|
-         bnb.try(:user_id) == user.id
-       end
-       can :create, Bnb
-       can :update, Bnb do |bnb|
-         bnb.try(:user_id) ==  user.id
-       end
-       can(:destroy, Bnb) do |bnb|
-         bnb.try(:user_id) == user.id
-       end
+   #Fetch abilites for each user role
+   user.roles.each { |role| send(role, user) }
 
-       #Rooms
-       can :manage, Room, :bnb => { :user_id => user.id }
-
-       #Bookings
-       can :manage, Booking, :bnb => { :user_id => user.id}
-       can :show, Booking, :bnb => { :user_id => user.id}
-       can :confirm, Booking, :bnb => { :user_id => user.id}
-       can :destroy, Booking, :bnb => { :user_id => user.id }
-
-       can :check_in, Booking do |bnb|
-         bnb.try(:user_id) == user.id
-       end
-
-       can :check_out, Booking do |bnb|
-         bnb.try(:user_id) == user.id
-       end
-
-       #Guest
-       can :manage, Guest, :bnb => {:user_id => user.id }
-
-       #Events
-       can :manage, Event
-
-       #LineItems
-       can :manage, LineItem
-
-       #Photos
-       can :manage, Photo, :processed => false
-       can :manage, Photo, :bnb => {:user_id => user.id }
-      end
-    end
-
-    if user.has_role? :guest
-        can :map, Bnb
-        can :nearby_bnbs, Bnb
-        can :read, Bnb
-        can :create, Booking
-        can :edit, Booking
-        can :update, Booking
-        can :show, Booking
-        can :my_bookings, Booking
-        can :read, Photo
-        can :find_available, Room
-    elsif user.roles.empty?
-        can :read, Bnb
-        can :map, Bnb
-        can :read, Photo
-        can :nearby_bnbs, Bnb
-    end
+   #If no roles defined set default permissions
+   default if user.roles.empty?
   end
 
+  def default
+    #Bnb
+    can :read, Bnb
+    can :nearby_bnbs, Bnb
+
+    #Photo
+    can :read, Photo
+  end
+
+  def admin(user)
+    # Access everything
+    can :manage, :all
+  end
+
+
+  def guest(user)
+
+    #Bnb
+    can :read, Bnb
+    can :nearby_bnbs, Bnb
+
+    #Booking
+    can :manage, Booking, user_id: user.id
+    cannot :destroy, Booking, user_id: user.id
+
+    #Photo
+    can :read, Photo
+
+    #Rooms
+    can :read, Room
+    can :find_available, Room
+  end
+
+  def owner(user)
+
+    if user.active_subscription.has_expired?
+      can :manage, Subscription, user_id: user.id
+    else
+      #Bnb
+      can :manage, Bnb, user_id: user.id
+
+      #Rooms
+      can :manage, Room
+
+      #Bookings
+      can :manage, Booking
+
+      #Guest
+      can :manage, Guest
+
+      #Events
+      can :manage, Event
+
+      #LineItems
+      can :manage, LineItem
+
+      #Photos
+      can :manage, Photo
+    end
+
+
+  end
 end

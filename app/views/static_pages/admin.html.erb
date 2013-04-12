@@ -1,0 +1,54 @@
+<h1>Admin</h1>
+
+
+  <table class="table table-striped" id="admin_bnbs" style="font-size: 15px">
+    <tr id='table_headers'>
+      <th>Name</th>
+      <th>Rooms</th>
+      <th>Guest</th>
+      <th>Bookings</th>
+      <th>Photos</th>
+      <th>Approved</th>
+    </tr>
+    <% @bnbs.each do |bnb| %>
+     <tr>
+       <td><%= bnb.name %></td>
+       <td><%= link_to "#{bnb.rooms.count} rooms", bnb_rooms_path(bnb) %></td>
+       <td><%= link_to "#{bnb.guests.count} guests", bnb_guests_path(bnb) %></td>
+       <td><%= link_to "#{bnb.bookings.count} bookings", bnb_bookings_path(bnb) %></td>
+       <td><%= link_to "#{bnb.photos.count} photos", bnb_photos_path(bnb) %></td>
+       <td><%= best_in_place bnb, :approved, type: :checkbox %></td>
+     </tr>
+    <% end %>
+  </table>
+
+  <br>
+<table class="table table-striped" id="admin_bnbs" style="font-size: 15px">
+  <tr id='table_headers'>
+    <th>Name</th>
+    <th>Created</th>
+    <th>Email</th>
+    <th>Last Sign In</th>
+    <th>Subscription Expiry</th>
+    <th>Role</th>
+    <th>Bnb</th>
+  </tr>
+  <% @users.each do |user| %>
+      <% unless user.is_any_of?(:admin) %>
+      <tr>
+        <td><%= link_to user.name,  edit_user_registration_path(user) %></td>
+        <td><%= user.created_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= user.email %></td>
+        <td><%= user.last_sign_in_at.strftime('%A, %d %B %Y') %></td>
+        <td><%= user.active_subscription.expiry_date.strftime('%A, %d %B %Y') if user.active_subscription %></td>
+        <td><%= user.roles.first.capitalize %></td>
+        <% if user.bnb %>
+        <td><%= link_to "#{user.bnb.name}", show_bnb_path(user.bnb) %></td>
+        <% else %>
+        <td>None</td>
+        <% end %>
+
+      </tr>
+     <% end %>
+  <% end %>
+</table>

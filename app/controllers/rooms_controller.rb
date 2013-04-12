@@ -47,10 +47,9 @@ class RoomsController < ApplicationController
   end
 
   def find_available
-    Booking.find(params[:booking_id]).rooms.destroy_all if params[:booking_id]
-    @unbooked = @bnb.rooms.unbooked_rooms(Date.parse(params[:start_at]), Date.parse(params[:end_at]))
-
-    respond_with(@unbooked)
+     @booking = params[:booking_id] ? Booking.find(params[:booking_id]) : Booking.new
+     @unbooked = @bnb.rooms.unbooked_rooms(Date.parse(params[:start_at]), Date.parse(params[:end_at])) + @booking.rooms
+     respond_with(@unbooked)
   end
 
   private

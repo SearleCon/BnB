@@ -5,6 +5,9 @@ class StaticPagesController
     $('.carousel').carousel()
     Utilities.imageLoader(".carousel")
 
+  admin: ->
+    $(".best_in_place").best_in_place()
+
   screens: ->
     $('a[rel*=lazybox]').lazybox()
 

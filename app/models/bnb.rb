@@ -40,7 +40,7 @@ class Bnb < ActiveRecord::Base
   has_many :rooms, :dependent => :delete_all
   has_many :bookings, :dependent => :delete_all
 
-  attr_accessible :name, :description, :email, :address_line_one, :address_line_two, :city, :postal_code, :country, :telephone_number, :website, :contact_person, :twitter_account, :standard_rate, :region, :rating, :facebook_page, :number_of_rooms, :user_id
+  attr_accessible :name, :description, :email, :address_line_one, :address_line_two, :city, :postal_code, :country, :telephone_number, :website, :contact_person, :twitter_account, :standard_rate, :region, :rating, :facebook_page, :number_of_rooms, :user_id, :approved
 
 
   attr_accessor :status

@@ -1,20 +1,4 @@
-<%= simple_form_for Booking.new do |rooms_field| %>
-<table class="table table-condensed">
-  <tr>
-    <th></th>
-    <th>Number</th>
-    <th>Description</th>
-    <th>Rates</th>
-    <th>Capacity</th>
-  </tr>
-  <% @unbooked.try(:each) do |room| %>
-      <tr class="center">
-        <td><%= check_box_tag "room_ids[]", room.id %></td>
-        <td><%= room.room_number %></td>
-        <td><%= room.description  %></td>
-        <td><%= room.rates  %></td>
-        <td><%= room.capacity  %></td>
-      </tr>
-  <% end %>
-</table>
+<%= simple_form_for @booking do |f| %>
+  <%= f.association :rooms, label_method: :room_info , collection: @unbooked, as: :check_boxes%>
 <% end %>
+

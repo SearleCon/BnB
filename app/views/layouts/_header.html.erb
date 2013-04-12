@@ -8,6 +8,9 @@
           <li><%= link_to "Home", current_user.try(:is?, :owner) ?show_bnb_path(current_user.bnb) : root_path %></li>
           <li><%= link_to "Screenshots", screens_path %></li>
           <% if user_signed_in? %>
+            <% if current_user.is?(:admin) %>
+                  <li><%= link_to "Admin", admin_path %></li>
+            <% end %>
             <% if current_user.is?(:owner) %>
                   <li id="fat-menu" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

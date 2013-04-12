@@ -61,7 +61,6 @@ class BookingsController < ApplicationController
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
-    @booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
     if @booking.update_attributes(params[:booking])
      flash.now[:notice] = "Booking was successfully updated." if request.xhr?
     else

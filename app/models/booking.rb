@@ -26,7 +26,7 @@ class Booking < ActiveRecord::Base
 
   scope :inactive, -> { where(:active => false) }
 
-  attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id
+  attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids
 
   before_create :set_event_name
   before_save :set_event_color

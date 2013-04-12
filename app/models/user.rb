@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   include RoleModel
   roles_attribute :role_id
 
-  roles :guest, :owner
+  roles :guest, :owner, :admin
 
   def active_subscription
     @subscription ||= Subscription.where(user_id: self).first

@@ -1,11 +1,14 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
       :provider               => 'AWS',                        # required
-      :aws_access_key_id      => 'AKIAJPJJ2WP2VMHCMOIA',                        # required
-      :aws_secret_access_key  => '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',
+      #:aws_access_key_id      => 'AKIAJPJJ2WP2VMHCMOIA',                        # required
+      #:aws_secret_access_key  => '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',
+      :aws_access_key_id      => 'AKIAJTDIXL57Z4GG4IKA',                        # required
+      :aws_secret_access_key  => '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',
       :region => 'eu-west-1'
   }
-  config.fog_directory  = 'bnbeezy'
+  #config.fog_directory  = 'bnbeezy'
+  config.fog_directory  = 'searlecon'
   config.max_file_size  = 1.megabyte
 end
 

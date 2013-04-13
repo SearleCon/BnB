@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/carrierwave.rb" afterPath="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/delayed_job.log" afterPath="$PROJECT_DIR$/log/delayed_job.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exception_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exception_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/newrelic_agent.log" afterPath="$PROJECT_DIR$/log/newrelic_agent.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exception/show.html.erb" afterPath="$PROJECT_DIR$/app/views/exception/show.html.erb" />
     </list>
     <ignored path="BnB.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="../Backups/BnB/public/uploads/" />
-    <file path="/Dummy.txt" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365842181154" ignored="false" />
+    <file path="/Dummy.txt" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843627915" ignored="false" />
     <file path="/Ruby Console" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365842626299" ignored="false" />
     <file path="/_unbooked_rooms.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365777820453" ignored="false" />
     <file path="$PROJECT_DIR$/../3things/app/views/tasks/_task.html.haml" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360480758271" ignored="false" />
@@ -55,7 +54,7 @@
     <file path="/_client_bookings_table.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1361267767420" ignored="false" />
     <file path="/_search.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1362135648539" ignored="false" />
     <file path="/show_invoice.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1363688692637" ignored="false" />
-    <file path="/carrierwave.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365679395920" ignored="false" />
+    <file path="/carrierwave.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843726751" ignored="false" />
     <file path="/_header.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365763880427" ignored="false" />
     <file path="/application.css.scss" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1364219936207" ignored="false" />
     <file path="/application.js" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1362039849981" ignored="false" />
@@ -262,6 +261,10 @@
     <file path="/20130411140227_add_approved_to_bnbs.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365688973555" ignored="false" />
     <file path="/admin.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365767207587" ignored="false" />
     <file path="/exception_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365842136534" ignored="false" />
+    <file path="$PROJECT_DIR$/../Backups/BnB/app/models/bnb.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843627915" ignored="false" />
+    <file path="$PROJECT_DIR$/../Backups/BnB/app/controllers/static_pages_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843627915" ignored="false" />
+    <file path="$PROJECT_DIR$/../Backups/BnB/config/environments/development.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843627915" ignored="false" />
+    <file path="$PROJECT_DIR$/../Backups/BnB/app/controllers/bnbs_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365843627915" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,15 +292,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bookings_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="2437" selection-end="2437" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -316,19 +310,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <file leaf-file-name="ability.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="110" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exception_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/exception_controller.rb">
+      <file leaf-file-name="carrierwave.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/initializers/carrierwave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.15768725">
+            <state line="10" column="37" selection-start="582" selection-end="582" vertical-scroll-proportion="0.19379845">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photos_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/photos_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="61" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -403,7 +406,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/static_pages.js.coffee" />
         <option value="$PROJECT_DIR$/app/models/bnb.rb" />
         <option value="$PROJECT_DIR$/app/views/static_pages/admin.html.erb" />
         <option value="$PROJECT_DIR$/app/models/booking.rb" />
@@ -419,6 +421,7 @@
         <option value="$PROJECT_DIR$/app/controllers/exception_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/exception/show.html.erb" />
+        <option value="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
       </list>
     </option>
   </component>
@@ -955,7 +958,7 @@
       <recent name="$PROJECT_DIR$/app/views/bookings" />
     </key>
   </component>
-  <component name="RunManager" selected="IRB console.Rails console: BnB">
+  <component name="RunManager" selected="Rails.Development: BnB">
     <configuration default="false" name="jobs:work" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="BnB" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -1410,11 +1413,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
+        <item index="0" class="java.lang.String" itemvalue="Rake.jobs:workoff" />
         <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
-        <item index="2" class="java.lang.String" itemvalue="Rake.db:migrate" />
-        <item index="3" class="java.lang.String" itemvalue="Rake.routes" />
-        <item index="4" class="java.lang.String" itemvalue="Rake.jobs:work" />
+        <item index="2" class="java.lang.String" itemvalue="IRB console.Rails console: BnB" />
+        <item index="3" class="java.lang.String" itemvalue="Rake.db:migrate" />
+        <item index="4" class="java.lang.String" itemvalue="Rake.routes" />
       </list>
     </recent_temporary>
   </component>
@@ -1555,27 +1558,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/rooms/find_available.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/booking.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="99" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/bnb.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="215" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/room.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="47" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0">
@@ -1616,23 +1598,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="54" selection-start="1939" selection-end="1988" vertical-scroll-proportion="6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="110" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1661,6 +1629,41 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/exception_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.15768725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="110" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.49277267">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/photos_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="61" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/carrierwave.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="37" selection-start="582" selection-end="582" vertical-scroll-proportion="0.19379845">
           <folding />
         </state>
       </provider>

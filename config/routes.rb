@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  get "exception/show"
+
   resources :payment_notifications, controller: 'payment_notification',  only: [:create]
 
   resources :subscriptions, except: [:index, :edit, :destroy, :update] do

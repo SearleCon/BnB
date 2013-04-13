@@ -10,3 +10,18 @@ en:
               separator: "."
               delimiter: ","
               precision: 2
+  exception:
+      show:
+        not_found:
+          title: "Not Found"
+          description: "Unfortunately the page you were looking for does not exist. Our apologies for the inconvenience."
+        internal_server_error:
+          title: "Internal Server Error"
+          description: "Sorry, something went wrong while processing your request. Our apologies for the inconvenience."
+        bad_request:
+          title: "Bad Request"
+          description: "The server did not understand your request. It may have been malformed. Our apologies for the inconvenience."
+        unauthorized:
+          title: "Access Denied"
+          description: "You are not authorized to perform this operation. Our apologies for the inconvenience."
+

@@ -1,0 +1,10 @@
+<div class="hero-unit center">
+  <h1><%= details[:name] %></h1>
+
+  <div><img alt="" src=<%= image_path("exceptions.jpeg") %>></div>
+  <p><%= simple_format(details[:message]) %></p>
+  <p><%= simple_format("You do not have permission to perform the #{@action} operation on #{@subject.to_s.pluralize.downcase}") if @action && @subject %></p>
+
+
+  <%= link_to "Back to home", root_path %>
+</div>

@@ -7,19 +7,8 @@ class ApplicationController < ActionController::Base
   after_filter :set_xhr_flash
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
-    flash[:error] = exception.message
-    redirect_to root_url
-  end
-
-  rescue_from ActionController::RoutingError, :with => :render_not_found
-
-  def routing_error
-    raise ActionController::RoutingError.new(params[:path])
-  end
-
-  def render_not_found
-    render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+   redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
+   raise
   end
 
 

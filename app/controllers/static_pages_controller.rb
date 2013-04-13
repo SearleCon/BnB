@@ -9,8 +9,10 @@ class StaticPagesController < ApplicationController
   end
 
   def admin
+
     @users = User.order('id desc')
     @bnbs = Bnb.all
+    authorize! :admin, User
   end
 
   private

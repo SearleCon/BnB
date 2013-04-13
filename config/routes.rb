@@ -67,8 +67,6 @@ SampleApp::Application.routes.draw do
     match "users/signup/:user_role" => "registrations#new", as: 'register'
   end
 
-  match "*path", :to => "application#routing_error"
-
 end
 #== Route Map
 # Generated on 11 Apr 2013 16:04

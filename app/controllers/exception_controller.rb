@@ -5,10 +5,6 @@ class ExceptionController < ApplicationController
     @exception       = env['action_dispatch.exception']
     @status_code     = ActionDispatch::ExceptionWrapper.new(env, @exception).status_code
     @rescue_response = ActionDispatch::ExceptionWrapper.rescue_responses[@exception.class.name]
-    @action = @exception.action if @exception.is_a?(CanCan::AccessDenied)
-    @subject = @exception.subject if @exception.is_a?(CanCan::AccessDenied)
-
-
 
     respond_to do |format|
       format.html { render :show, status: @status_code, layout: !request.xhr? }

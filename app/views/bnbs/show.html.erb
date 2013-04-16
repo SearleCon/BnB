@@ -132,11 +132,15 @@
       </div>
       <div class="hero-unit clearfix" style="padding-top: 0px">
         <h2>Map</h2>
+        <% if @json %>
         <%= gmaps({
                           "map_options" => {"auto_zoom" => false, "zoom" => 12 },
                           "markers" => {"data" => @json }
                   })
         %>
+        <% else %>
+         <p align="center">No map available at this time.</p>
+        <% end %>
       </div>
 
     </div>

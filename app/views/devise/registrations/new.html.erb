@@ -1,6 +1,11 @@
 <div class="hero-unit">
 <h2>Sign up</h2>
 
+  <%= content_for(:the_links) do %>
+      I agree to the  <%= link_to "Terms of Service", terms_and_conditions_path %>
+      and <%=link_to "Privacy Policy", privacypolicy_path %>
+  <% end %>
+
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -13,7 +18,8 @@
     <%= f.input :contact_number, as: :tel %>
     <%=f.input :country, :label => 'Country', :collection => sort_countries_for_carmen(Carmen::Country.all), prompt: "Select a country", id: 'choose_country'  %>
     <%= f.hidden_field :role_id %>
-    <%= f.input :terms_of_service, as: :boolean, label: false, :inline_label => "I accept and agree to the terms of service." %>
+    <%= f.input :terms_of_service, as: :boolean, label: false, :inline_label => content_for(:the_links) %>
+
     <br>
   </div>
     <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>

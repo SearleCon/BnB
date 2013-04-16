@@ -36,10 +36,7 @@ class GuestsController < ApplicationController
   # PUT /guests/1.json
   def update
     flash[:notice] = "#{@guest.full_name} was updated successfully" if @guest.update_attributes(params[:guest])
-
-    respond_with(@guest, location: bnb_guests_url(@bnb)) do |format|
-      format.json { respond_with_bip(@guest) }
-    end
+    respond_with(@guest, location: bnb_guests_url(@bnb))
   end
 
   # DELETE /guests/1

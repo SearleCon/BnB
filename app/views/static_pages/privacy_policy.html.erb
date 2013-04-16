@@ -1,25 +1,3 @@
 <% cache @cache_key do %>
-<div class="hero-unit">
-
-<h3>Privacy Policy</h3><br>
-  <h4>Your privacy is of utmost importance for us!</h4>
-  <h5>And we will do everything in our power to protect it!</h5><br>
-
-  BnBeezy.com respects the privacy of its customers and visitors. If you have any questions about the operation of our website, please <%= link_to 'contact us', contact_path %>.<br><br>
-
-  Our website collects names, email addresses, and other personal information from customers and visitors only when submitted via one of our online forms, such as our subscription form, or mailing list registration form. This data is used solely by BnBeezy.com and is not shared, traded, or sold to third parties.<br><br>
-
-  Customers can edit their personal information by logging into the secured area of our site.<br><br>
-
-  Our website also collects non-personal data through the use of server-based "session variables," which we use to achieve important site functionality, including the recognition of logged-in users and the secure passing of payment information. In order to identify customers as they proceed through the check out process, our website also uses a single “cookie” (a small file stored by your browser on your hard drive); thus, online transactions require a browser that accepts “cookies.”<br><br>
-
-  Our web-server also records IP addresses from all visitors to our site. An IP address is a number that is automatically assigned to your computer when you use the Internet. We use IP addresses to help diagnose problems with our server, to administer our site, to analyze trends, to track user movement, and to gather broad demographic information—all for the purpose of continually improving our website and delivering personalized, custom content. IP addresses are not linked to personally identifiable information, and their collection is standard procedure in most web-server environments.<br><br>
-
-  Should our website contain links to other websites, please note that when you click on one of these links, you are entering another website, for which BnBeezy.com is not responsible.<br><br>
-
-  By using BnBeezy.com, you signify your agreement to our privacy policy as stated above. Note that this policy may be revised periodically without notice. Please re-read this policy prior to submitting any personal information if you have concerns about how your information is being collected and used.<br><br>
-
-  <h4>Thank you for your support.</h4>
-
-</div>
+<%= render :partial => 'privacy_policy' %>
 <% end %>

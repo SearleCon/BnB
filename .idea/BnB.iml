@@ -32,7 +32,7 @@
     <orderEntry type="library" scope="PROVIDED" name="browser (v0.1.6, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bullet (v4.4.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.5, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cache_digests (v0.2.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cancan (v1.6.9, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v2.0.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />

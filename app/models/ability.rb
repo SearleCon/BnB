@@ -6,7 +6,7 @@ class Ability
    #Set default user if user not logged in
    user ||= User.new
 
-   #Fetch abilites for each user role
+   #Fetch abilities for each user role
    user.roles.each { |role| send(role, user) }
 
    #If no roles defined set default permissions

@@ -20,8 +20,6 @@ class Booking < ActiveRecord::Base
   has_and_belongs_to_many :rooms
   has_one :event, :dependent => :delete
 
-  include DelegateAssociation
-
   default_scope -> {where(:active => true)}
 
   scope :inactive, -> { where(:active => false) }
@@ -87,7 +85,7 @@ class Booking < ActiveRecord::Base
   end
 
   def set_event_name
-    self.event.name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
+    event_name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
   end
 
   def set_event_color

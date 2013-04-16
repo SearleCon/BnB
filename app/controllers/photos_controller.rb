@@ -23,13 +23,12 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo.destroy
-    flash.now[:error] = "Photo could not be destroyed." unless @photo.destroyed?
-    respond_with(@photo)
+    flash[:error] = "Photo could not be destroyed." unless @photo.destroyed?
+    respond_with(@photo, location: bnb_photos_url(@bnb))
   end
 
   def process_image
       @photo.key = params[:key]
-      @photo.remote_image_url = @photo.image.direct_fog_url(:with_path => true)
       if @photo.valid?
         @photo.save_and_process_image(:now => false)
         redirect_to bnb_photos_url(@bnb), notice: "Image is being processed."

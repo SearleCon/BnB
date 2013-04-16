@@ -49,6 +49,8 @@ gem "ransack"
 gem 'newrelic_rpm'
 gem 'quiet_assets', :group => :development
 gem "best_in_place"
+gem 'carrierwave-processing'
+gem 'normalize-rails'
 
 
 group :development, :test do

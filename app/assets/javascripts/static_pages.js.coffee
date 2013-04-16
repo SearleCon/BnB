@@ -2,8 +2,8 @@ class StaticPagesController
   init: ->
 
   home: ->
-    $('.carousel').carousel()
     Utilities.imageLoader(".carousel")
+    $('.carousel').carousel()
 
   admin: ->
     $(".best_in_place").best_in_place()

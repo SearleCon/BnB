@@ -29,16 +29,13 @@
 //= require gmaps4rails/base
 //= require gmaps4rails/google
 //= require gmaps4rails/openlayers
-//= require bnbeezy
-//= require initialize
-//= require ajax_helper
-//= require utilities
-//= require jquery.imagesloaded
-//= require jquery.disabler
+//= require jquery.imagesloaded.min
+//= require jquery.disabler.min
 //= require lazyload.min
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require date
 //= require bootbox
+//= require_tree .
 
 

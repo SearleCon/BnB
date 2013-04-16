@@ -7,6 +7,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  include CarrierWave::Processing::MiniMagick
+
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
    include Sprockets::Helpers::RailsHelper
@@ -14,6 +16,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
    include CarrierWave::MimeTypes
    process :set_content_type
+
+  process :strip
+  #process :resize_to_fill => [200, 200]
+  process :quality => 70 # Set JPEG/MIFF/PNG compression level (0-100)
+  #process :convert => 'png'
 
    process :resize_to_limit => [640, 480]
 

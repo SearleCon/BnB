@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bnbs/show.html.erb" afterPath="$PROJECT_DIR$/app/views/bnbs/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BnB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -233,7 +227,7 @@
     <file path="/contact_details.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365070084958" ignored="false" />
     <file path="/screens.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365173276180" ignored="false" />
     <file path="/_footer.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366098177586" ignored="false" />
-    <file path="/production.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366107324096" ignored="false" />
+    <file path="/production.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366108088189" ignored="false" />
     <file path="/steps.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365240804553" ignored="false" />
     <file path="/tutorial.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365246194250" ignored="false" />
     <file path="/_tutorial.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365244266317" ignored="false" />
@@ -368,9 +362,9 @@
       <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="67" selection-start="4087" selection-end="4087" vertical-scroll-proportion="1.8410853">
+            <state line="12" column="35" selection-start="508" selection-end="508" vertical-scroll-proportion="0.069767445">
               <folding>
-                <element signature="e#2707#3220#0" expanded="false" />
+                <element signature="e#2706#3219#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1630,9 +1624,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="67" selection-start="4087" selection-end="4087" vertical-scroll-proportion="1.8410853">
+        <state line="12" column="35" selection-start="508" selection-end="508" vertical-scroll-proportion="0.069767445">
           <folding>
-            <element signature="e#2707#3220#0" expanded="false" />
+            <element signature="e#2706#3219#0" expanded="false" />
           </folding>
         </state>
       </provider>

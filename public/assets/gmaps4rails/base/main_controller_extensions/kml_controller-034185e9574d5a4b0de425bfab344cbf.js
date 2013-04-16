@@ -1,0 +1,1 @@
+(function(){this.Gmaps4Rails.KmlController={addKml:function(e){var t,n,r,i;i=[];for(n=0,r=e.length;n<r;n++)t=e[n],i.push(this.kmls.push(this.createKml(t)));return i}}}).call(this);

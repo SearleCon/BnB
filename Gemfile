@@ -66,6 +66,7 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'turbo-sprockets-rails3'
 end
 
 group :test do

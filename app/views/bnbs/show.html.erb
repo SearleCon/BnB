@@ -6,7 +6,6 @@
           <p align="center"><% @bnb.rating.times do %>
                 <i class="icon-star icon-white"></i>
             <% end %></p>
-
           <br>
 
           <strong>Description</strong>
@@ -16,6 +15,8 @@
           <br>
           <%= display_action_links_for_user  %>
         </div>
+        <br>
+        <br>
         <div class="span5 pull-right gallery">
           <div class="thumbnail">
             <% if @bnb.photos.processed.main_photo.empty? %>
@@ -145,3 +146,4 @@
 
     </div>
   </div>
+

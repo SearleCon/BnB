@@ -6,13 +6,6 @@ class GuestsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
-  after_filter :expire_cached_index, :only => :destroy
-
-  caches_action :index, :cache_path => proc {|c|
-    key = Guest.maximum(:updated_at)
-     c.params.merge! :tag => key.to_i  if key
-  }
-
 
   # GET /guests
   # GET /guests.json
@@ -54,9 +47,5 @@ class GuestsController < ApplicationController
 
   def sort_column
     Guest.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
-
-  def expire_cached_index
-    expire_action :action => :index, :tag => Guest.maximum(:updated_at).to_i
   end
 end

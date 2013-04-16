@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   private
   def get_events
-    @events = Event.by_bookings(current_user.bnb.bookings.scoped)
+   @events = Event.by_bookings(current_user.bnb.bookings.scoped)
   end
+
 end

@@ -16,6 +16,7 @@
 </div>
 
 
+<% cache @guests do %>
 <table class="table sort_table" id="guests" style="font-size: 15px">
   <tr id='table_headers'>
     <th><%= sortable "name" %></th>
@@ -27,11 +28,15 @@
   </tr>
   <%= render :partial => 'row', :collection => @guests, :as => :guest %>
 </table>
+<% end %>
 
 <label><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add guest'), new_bnb_guest_path(@bnb) %></label>
 
 <br/>
 <div class="span9" style="text-align: center;"><%= will_paginate @guests  %></div>
+<br>
+<br>
+<br>
 
   <div class="help_info">
     Information: Please note to edit a guest, click on the <i class='icon-edit icon-white'></i> button to proceed.

@@ -85,7 +85,7 @@ class Booking < ActiveRecord::Base
   end
 
   def set_event_name
-    event_name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
+    self.event.name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
   end
 
   def set_event_color

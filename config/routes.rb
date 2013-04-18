@@ -40,27 +40,27 @@ SampleApp::Application.routes.draw do
     end
   end
 
-  match '/bnbs/sub_region_options', :to => "bnbs#subregions", via: :get
+  get '/bnbs/sub_region_options', :to => "bnbs#subregions"
 
-  match '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb', via: :get
+  get '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb'
 
-  match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  get 'contact' => 'contact#new', :as => 'contact'
+  post 'contact' => 'contact#create', :as => 'contact'
 
   root to: 'static_pages#home'
 
-  match '/startpage', to: 'static_pages#startpage'
-  match '/admin', to: 'static_pages#admin'
-  match '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
-  match '/privacypolicy', to: 'static_pages#privacy_policy'
-  match '/faq', to: 'static_pages#faq'
-  match '/help',    to: 'static_pages#help'
-  match '/about',   to: 'static_pages#about'
-  match '/contactus', to: 'static_pages#contact'
-  match '/pricing', to: 'static_pages#pricing'
-  match '/registration_page', to: 'static_pages#registration_page'
-  match '/ie_warning', to: 'static_pages#ie_warning'
-  match '/screens', to: 'static_pages#screens'
+    get '/startpage', to: 'static_pages#startpage'
+    get '/admin', to: 'static_pages#admin'
+    get '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
+    get '/privacypolicy', to: 'static_pages#privacy_policy'
+    get '/faq', to: 'static_pages#faq'
+    get '/help',    to: 'static_pages#help'
+    get '/about',   to: 'static_pages#about'
+    get '/contactus', to: 'static_pages#contact'
+    get '/pricing', to: 'static_pages#pricing'
+    get '/registration_page', to: 'static_pages#registration_page'
+    get '/ie_warning', to: 'static_pages#ie_warning'
+    get '/screens', to: 'static_pages#screens'
 
   devise_scope :user do
     match "users/signup/:user_role" => "registrations#new", as: 'register'

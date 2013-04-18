@@ -1,0 +1,1 @@
+(function(){this.Gmaps4Rails.Circle={},this.Gmaps4Rails.Circle.Class={DEFAULT_CONF:{fillColor:"#00AAFF",fillOpacity:.35,strokeColor:"#FFAA00",strokeOpacity:.8,strokeWeight:2,clickable:!1,zIndex:null}}}).call(this);

@@ -9,7 +9,7 @@
   <%= render 'layouts/shim' %>
 </head>
 <body class="<%= controller_name %>" data-controller="<%= controller_path %>" data-action="<%= action_name %>">
-<img alt="full screen background image" src="/background/background_wood.jpg" id="full-screen-background-image" />
+<img alt="full screen background image"  id="full-screen-background-image" src=<%= image_path("background_wood.jpg") %> />
 <%= render 'layouts/header' %>
 <div class="container">
   <div class="content">

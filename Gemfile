@@ -70,6 +70,7 @@ group :assets do
   gem 'uglifier'
   gem 'yui-compressor'
   gem 'turbo-sprockets-rails3'
+  gem 'asset_sync'
 end
 
 group :test do

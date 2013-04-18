@@ -22,6 +22,8 @@ SampleApp::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.assets.prefix = "/bnbeezy/assets"
+
   config.assets.css_compressor = :yui
   config.assets.js_compressor = :uglifier
 

@@ -41,6 +41,9 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    asset_sync (0.5.4)
+      activemodel
+      fog
     bcrypt-ruby (3.0.1)
     best_in_place (2.1.0)
       jquery-rails
@@ -319,6 +322,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (>= 2.5.0)
+  asset_sync
   bcrypt-ruby
   best_in_place
   bootbox-rails

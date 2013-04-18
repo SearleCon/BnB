@@ -18,16 +18,12 @@
 //= require bootstrap
 //= require best_in_place
 //= require jquery.ui.datepicker
-//= require fullcalendar
 //= require lazybox
 //= require cocoon
 //= require jquery.turbolinks
 //= require jquery.spin
-//= require gmaps4rails/base
-//= require gmaps4rails/google
 //= require jquery.imagesloaded.min
 //= require jquery.disabler.min
-//= require lazyload.min
 //= require date
 //= require bootbox
 //= require bnbeezy

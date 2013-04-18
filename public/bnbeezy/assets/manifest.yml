@@ -77,8 +77,8 @@ success.png: success-af3dddcd3610e13169fd2304ad955605.png
 success/index.png: success-af3dddcd3610e13169fd2304ad955605.png
 ajax_helper.js: ajax_helper-c0bc3ae8d25e4461a74ca03727bac97c.js
 ajax_helper/index.js: ajax_helper-c0bc3ae8d25e4461a74ca03727bac97c.js
-application.js: application-756012b297d4c4eec8f80b8d0090f0a4.js
-application/index.js: application-756012b297d4c4eec8f80b8d0090f0a4.js
+application.js: application-c089a0819487d85d5c638eb33eb9b80e.js
+application/index.js: application-c089a0819487d85d5c638eb33eb9b80e.js
 bnbeezy.js: bnbeezy-760cb5fbb388a22878b253bc75b693b2.js
 bnbeezy/index.js: bnbeezy-760cb5fbb388a22878b253bc75b693b2.js
 bnbs.js: bnbs-ac6b01742e21f037ec29b466cd41f500.js

@@ -41,4 +41,10 @@ module ApplicationHelper
     end
     true
   end
+
+  def load_page_specific_javascript(script)
+    content_for :scripts do
+      javascript_include_tag script
+    end
+  end
 end

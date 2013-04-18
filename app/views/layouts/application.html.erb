@@ -4,9 +4,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title><%= full_title(yield(:title)) %></title>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag controller_name if Rails.application.assets.find_asset "#{controller_name}.js.coffee" %>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+  <%= yield(:head) %>
 </head>
 <body class="<%= controller_name %>" data-controller="<%= controller_path %>" data-action="<%= action_name %>">
 <img alt="full screen background image"  id="full-screen-background-image" src=<%= image_path("background_wood.jpg") %> />
@@ -25,8 +28,6 @@
                        </div>
                    <% end %>
         <%= yield %>
-        <%= javascript_include_tag "application" %>
-        <%= javascript_include_tag controller_name if Rails.application.assets.find_asset "#{controller_name}.js.coffee" %>
         <%= yield :scripts %>
         <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
       </div>

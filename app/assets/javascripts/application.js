@@ -13,13 +13,10 @@
 
 //= require jquery
 //= require jquery-ui
-//= require jquery.ui.touch-punch
 //= require jquery_ujs
 //= require select2
 //= require bootstrap
-//= require jquery.purr
 //= require best_in_place
-//= require best_in_place.purr
 //= require jquery.ui.datepicker
 //= require fullcalendar
 //= require lazybox
@@ -28,14 +25,14 @@
 //= require jquery.spin
 //= require gmaps4rails/base
 //= require gmaps4rails/google
-//= require gmaps4rails/openlayers
 //= require jquery.imagesloaded.min
 //= require jquery.disabler.min
 //= require lazyload.min
-//= require rails.validations
-//= require rails.validations.simple_form
 //= require date
 //= require bootbox
-//= require_tree .
+//= require bnbeezy
+//= require utilities
+//= require ajax_helper
+//= require initialize
 
 

@@ -32,7 +32,6 @@ gem "paypal-recurring"
 gem "role_model"
 gem "browser"
 gem "workless"
-gem 'touchpunch-rails'
 gem 'fog'
 gem 'carrierwave_direct'
 gem 'spinjs-rails'
@@ -40,8 +39,6 @@ gem 'net-scp', '1.1.0'
 gem 'cache_digests'
 gem 'memcachier'
 gem 'dalli'
-gem 'client_side_validations'
-gem "client_side_validations-simple_form", "~> 2.0.1"
 gem 'datejs-rails'
 gem 'bootbox-rails'
 gem "friendly_id"

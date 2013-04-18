@@ -26,6 +26,7 @@
                    <% end %>
         <%= yield %>
         <%= javascript_include_tag "application" %>
+        <%= javascript_include_tag controller_name if Rails.application.assets.find_asset "#{controller_name}.js.coffee" %>
         <%= yield :scripts %>
         <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
       </div>

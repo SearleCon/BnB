@@ -38,10 +38,10 @@ sortdowns.png: 2777579f17b06ce17639c80fd3aef5e9
 sortups.png: 8ae059e5f754cc852aaa5b37af857b6d
 success.png: af3dddcd3610e13169fd2304ad955605
 ajax_helper.js: f0b6c9fa2e8e7564565cee75d89e6a7e
-application.js: 0d27eeb462d289f8b7229f87e44e1ef9
+application.js: c5aa27c41674419ae599a570f7f8d7a8
 bnbeezy.js: 5d659431dd8de60e78b0b996dcd533e1
 bnbs.js: e1a7c6ded07e768db3d66e5b73e61492
-bookings.js: 9f26e94dbc6f806b732574a6b2403430
+bookings.js: d4488829f83fb7e8dc0a545e4ec1aced
 guests.js: 529b8746574a7105d06477b4cdd0fe18
 initialize.js: 2b4daa60f3358e74eece89e18e9098a7
 jquery.disabler.min.js: 67f2a8a683009253c07ed34a587ccf39
@@ -51,7 +51,7 @@ photos.js: 4b558d79322dfe0ab344371b5e45e374
 rooms.js: b5228c2477749b0602d44ed94ab704dc
 static_pages.js: 43618c866cbc9ccd3c932d38bf428bc0
 utilities.js: 27cb7ec37d487732488483d9f17f0220
-application.css: ac91de00a5a19aff41f332da5d06a300
+application.css: 61e25ad646639d476803067348779013
 bnbs.css: a61e6f70ec75fa85fd6a971b9ad2f519
 bookings.css: d7fef74fd6da8982d36e0ddb54cbfce4
 bootstrap_and_overrides.css: a7341d32d23818217230c3e644ed27ca

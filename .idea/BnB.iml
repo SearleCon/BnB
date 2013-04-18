@@ -45,8 +45,6 @@
     <orderEntry type="library" scope="PROVIDED" name="carrierwave-processing (v0.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave_direct (v0.0.11, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.3.9, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="client_side_validations (v3.2.5, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="client_side_validations-simple_form (v2.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cocoon (v1.1.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
@@ -138,7 +136,6 @@
     <orderEntry type="library" scope="PROVIDED" name="systemu (v2.5.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.17.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.3.6, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="touchpunch-rails (v1.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.12, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-sprockets-rails3 (v0.3.6, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v1.0.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />

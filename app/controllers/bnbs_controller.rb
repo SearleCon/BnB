@@ -16,7 +16,7 @@ class BnbsController < ApplicationController
   # GET /bnbs/1.json
   def show
     redirect_to startpage_url and return unless @bnb
-    to_gmaps_json(@bnb)
+    to_gmaps_json(@bnb) if @bnb.mappable?
   end
 
   def nearby_bnbs
@@ -75,10 +75,4 @@ class BnbsController < ApplicationController
     @json = bnb.to_gmaps4rails
   end
 
-  def valid_address(address)
-     Gmaps4rails.geocode(address)
-     true
-  rescue
-    false
-  end
 end

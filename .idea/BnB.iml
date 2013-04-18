@@ -16,6 +16,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="POpen4 (v0.1.4, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="Platform (v0.4.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v3.2.13, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v3.2.13, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v3.2.13, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
@@ -39,6 +41,7 @@
     <orderEntry type="library" scope="PROVIDED" name="carmen (v1.0.0.beta2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carmen-rails (v1.0.0.beta3, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.8.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="carrierwave-processing (v0.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="carrierwave_direct (v0.0.11, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.3.9, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="client_side_validations (v3.2.5, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
@@ -94,6 +97,8 @@
     <orderEntry type="library" scope="PROVIDED" name="net-ssh (v2.6.6, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="newrelic_rpm (v3.6.0.78, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.7, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="normalize-rails (v2.0.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="open4 (v1.3.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.4.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="paypal-recurring (v1.1.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.12.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
@@ -149,6 +154,7 @@
     <orderEntry type="library" scope="PROVIDED" name="wkhtmltopdf-binary (v0.9.9.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="workless (v1.1.2, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v1.0.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="yui-compressor (v0.9.6, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

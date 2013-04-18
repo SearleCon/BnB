@@ -71,6 +71,7 @@ class User < ActiveRecord::Base
     8.hours
   end
 
+
   private
   def send_welcome_mail
     UserMailer.delay.welcome(self)

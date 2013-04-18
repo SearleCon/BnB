@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411140227) do
+ActiveRecord::Schema.define(:version => 20130417195542) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130411140227) do
     t.decimal   "standard_rate"
     t.string    "slug"
     t.boolean   "approved",         :default => false
+    t.boolean   "mappable",         :default => false
   end
 
   add_index "bnbs", ["slug"], :name => "index_bnbs_on_slug", :unique => true

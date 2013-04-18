@@ -64,7 +64,7 @@
               <br>
               Mail: <%= mail_to @bnb.email %>
               <br>
-              Website: <%= link_to @bnb.website, url_with_protocol(@bnb.website), :target => '_blank' %>
+              Website: <%= link_to_if @bnb.website, @bnb.website, url_with_protocol(@bnb.website), target: '_blank' %>
               <br>
               Facebook: <%= @bnb.facebook_page%>
               <br>

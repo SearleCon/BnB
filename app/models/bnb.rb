@@ -35,38 +35,33 @@ class Bnb < ActiveRecord::Base
   scope :approved, -> { where(approved: true) }
 
 
-  has_many :guests, :dependent => :delete_all
-  has_many :photos, :dependent => :delete_all
-  has_many :rooms, :dependent => :delete_all
-  has_many :bookings, :dependent => :delete_all
+  has_many :guests, dependent: :delete_all
+  has_many :photos, dependent: :delete_all
+  has_many :rooms, dependent: :delete_all
+  has_many :bookings, dependent: :delete_all
 
   attr_accessible :name, :description, :email, :address_line_one, :address_line_two, :city, :postal_code, :country, :telephone_number, :website, :contact_person, :twitter_account, :standard_rate, :region, :rating, :facebook_page, :number_of_rooms, :user_id, :approved
-
-
   attr_accessor :status
-  attr_accessor :number_of_rooms
-
 
   geocoded_by :full_address
 
-  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :process_geocoding => :geocode?, :check_process => false,
-                    :address => :full_address,
-                    :msg => "is not valid according to Google Maps"
+  acts_as_gmappable lat: 'latitude', lng: 'longitude', process_geocoding: false, check_process: false,
+                    address: :full_address,
+                    msg: "is not valid according to Google Maps"
 
 
-  after_initialize :set_default_status
-  after_commit :fetch_address, :if => :persisted?
+  before_validation :normalize_blank_values
+  after_commit :fetch_address, if: :persisted?
 
-  validates :name, :description, :standard_rate, :presence => true, :if => :active_or_bnb_details?
-  validates :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, :website, :presence => true, :if => :active_or_contact_details?
-  validates :facebook_page, :twitter_account, :contact_person, :presence => true, :if => :active_or_social_media?
+  validates :name, :description, :standard_rate, presence: true, if: :active_or_bnb_details?
+  validates  :contact_person, :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, presence: true, if: :active_or_contact_details?
 
   def geocode?
     active_or_contact_details? || address_changed?
   end
 
   def full_address
-     [address_line_one, address_line_two, city, postal_code, country].reject(&:nil?).join(",")
+    [self[:address_line_one], self[:address_line_two], self[:city], self[:postal_code], self[:country]].reject(&:nil?).join(",")
   end
 
   def co_ordinates
@@ -77,29 +72,37 @@ class Bnb < ActiveRecord::Base
     full_address
   end
 
-  private
-  def set_default_status
-    if new_record?
-      self.status = 'inactive'
-    else
-      self.status = 'active'
-    end
+  def facebook_page
+    self[:facebook_page] || 'N/A'
   end
 
+  def website
+    self[:website] || 'N/A'
+  end
+
+  def twitter_account
+    self[:twitter_account] || 'N/A'
+  end
+
+  def status
+    @status ||= new_record? ? 'inactive' : 'active'
+  end
+
+  private
   def active?
-    self.status == 'active'
+    self[:status] == 'active'
   end
 
   def active_or_bnb_details?
-    self.status.include?('bnb_details') || active?
+    status.include?('bnb_details') || active?
   end
 
   def active_or_contact_details?
-    self.status.include?('contact_details') || active?
+    status.include?('contact_details') || active?
   end
 
   def active_or_social_media?
-    self.status.include?('social_media') || active?
+    status.include?('social_media') || active?
   end
 
   def address_changed?
@@ -107,7 +110,17 @@ class Bnb < ActiveRecord::Base
   end
 
   def fetch_address
-   Delayed::Job.enqueue ProcessAddressJob.new(self.id) if address_changed?
+    Delayed::Job.enqueue ProcessAddressJob.new(self[:id]) if address_changed?
   end
+
+  def normalize_blank_values
+    attributes.each do |column, value|
+      self[column].strip! if self[column].respond_to?(:strip!)
+      self[column] = nil unless self[column].present?
+    end
+  end
+
+
+
 
 end

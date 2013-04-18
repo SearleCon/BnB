@@ -1,12 +1,14 @@
 <div class="hero-unit">
-<h2>Please fill in your social media details.</h2>
+<h2>Please fill in your social media details for your Bed and Breakfast</h2>
 
 <%= render :layout => 'form' do |f| %>
     <div class = 'form-inputs'>
-        <%= f.input :contact_person %>
+       <p>BnB Web Presence: (Optional)</p>
+        <%= f.input :website %>
         <%= f.input :twitter_account %>
         <%= f.input :facebook_page %>
     </div>
+      <br>
       <%= f.button :submit, :value => 'Finish', :id => 'commit', class: "btn btn-primary" %>
 <%end%>
 </div>

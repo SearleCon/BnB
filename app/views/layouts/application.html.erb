@@ -4,8 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag   "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
 </head>
@@ -19,13 +18,14 @@
         <div id="flash">
           <%= render :partial => 'shared/flash_messages' %>
         </div>
-        <% if browser.ie6? || browser.ie7? || browser.ie8? %>
-               <div class="ie_warn">                    
-                     <p style="text-align: center;">WARNING: You're running an older version of Internet Explorer that is not fully supported.
-                      <br> For more information, please click <%= link_to 'here', ie_warning_path %> </p>
-               </div>
-        <% end %>
+                <% if browser.ie6? || browser.ie7? || browser.ie8? %>
+                     <div class="ie_warn">                    
+                             <p style="text-align: center;">WARNING: You're running an older version of Internet Explorer that is not fully supported.
+        <br> For more information, please click <%= link_to 'here', ie_warning_path %> </p>
+                       </div>
+                   <% end %>
         <%= yield %>
+        <%= javascript_include_tag "application" %>
         <%= yield :scripts %>
         <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
       </div>

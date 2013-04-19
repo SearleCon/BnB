@@ -1,0 +1,173 @@
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-19 17:57:52 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mPhoto Load (0.8ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" IN (SELECT "bnbs"."id" FROM "bnbs" WHERE "bnbs"."approved" = 't') AND "photos"."processed" = 't' AND "photos"."main" = 't'[0m
+  [1m[35mBnb Load (0.2ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."id" = 1 LIMIT 1
+  Rendered static_pages/_carousel_items.html.erb (107.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (166.5ms)
+Compiled fullcalendar.css  (0ms)  (pid 15882)
+Compiled lazybox.css  (13ms)  (pid 15882)
+Compiled jquery.ui.core.css  (3ms)  (pid 15882)
+Compiled jquery.ui.theme.css  (18ms)  (pid 15882)
+Compiled jquery.ui.datepicker.css  (46ms)  (pid 15882)
+Compiled select2.css  (150ms)  (pid 15882)
+Compiled gmaps4rails.css  (0ms)  (pid 15882)
+Compiled normalize-rails/normalize.css  (0ms)  (pid 15882)
+Compiled normalize-rails/index.css  (8ms)  (pid 15882)
+Compiled bnbs.css  (18ms)  (pid 15882)
+Compiled bookings.css  (9ms)  (pid 15882)
+Compiled bootstrap_and_overrides.css  (3102ms)  (pid 15882)
+Compiled static_pages.css  (11ms)  (pid 15882)
+Compiled application.css  (3553ms)  (pid 15882)
+Compiled jquery.js  (4ms)  (pid 15882)
+Compiled jquery-ui.js  (6ms)  (pid 15882)
+Compiled jquery_ujs.js  (0ms)  (pid 15882)
+Compiled fullcalendar.js  (3ms)  (pid 15882)
+Compiled select2.js  (55ms)  (pid 15882)
+Compiled bootstrap-transition.js  (0ms)  (pid 15882)
+Compiled bootstrap-affix.js  (0ms)  (pid 15882)
+Compiled bootstrap-alert.js  (0ms)  (pid 15882)
+Compiled bootstrap-button.js  (0ms)  (pid 15882)
+Compiled bootstrap-carousel.js  (0ms)  (pid 15882)
+Compiled bootstrap-collapse.js  (0ms)  (pid 15882)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 15882)
+Compiled bootstrap-modal.js  (0ms)  (pid 15882)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 15882)
+Compiled bootstrap-tab.js  (0ms)  (pid 15882)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 15882)
+Compiled bootstrap-popover.js  (0ms)  (pid 15882)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 15882)
+Compiled bootstrap.js  (113ms)  (pid 15882)
+Compiled best_in_place.js  (1ms)  (pid 15882)
+Compiled jquery.ui.core.js  (0ms)  (pid 15882)
+Compiled jquery.ui.datepicker.js  (11ms)  (pid 15882)
+Compiled lazybox.js  (382ms)  (pid 15882)
+Compiled cocoon.js  (0ms)  (pid 15882)
+Compiled jquery.turbolinks.js  (0ms)  (pid 15882)
+Compiled spin.js  (0ms)  (pid 15882)
+Compiled jquery.spin.js  (12ms)  (pid 15882)
+Compiled jquery.imagesloaded.min.js  (0ms)  (pid 15882)
+Compiled jquery.disabler.min.js  (0ms)  (pid 15882)
+Compiled date/en-US.js  (0ms)  (pid 15882)
+Compiled date/core.js  (1ms)  (pid 15882)
+Compiled date/parser.js  (1ms)  (pid 15882)
+Compiled date/sugarpak.js  (0ms)  (pid 15882)
+Compiled date/time.js  (0ms)  (pid 15882)
+Compiled date.js  (53ms)  (pid 15882)
+Compiled bootbox.js  (1ms)  (pid 15882)
+Compiled bnbeezy.js  (165ms)  (pid 15882)
+Compiled utilities.js  (157ms)  (pid 15882)
+Compiled ajax_helper.js  (115ms)  (pid 15882)
+Compiled initialize.js  (135ms)  (pid 15882)
+Compiled application.js  (1546ms)  (pid 15882)
+Compiled static_pages.js  (101ms)  (pid 15882)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered shared/_flash_messages.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (2.1ms)
+Completed 200 OK in 5962ms (Views: 5804.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-04-19 17:58:04 +0200
+Processing by SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (107.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1758.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered shared/_flash_messages.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 2639ms (Views: 2569.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-04-19 17:58:18 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TWT6NhMPlMOv3fP06Zwkj5kzOsoggGHBhf6DcA0kWbo=", "user"=>{"email"=>"paul@searleconsulting.co.za", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'paul@searleconsulting.co.za' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-04-19 15:13:20.730636', "current_sign_in_at" = '2013-04-19 15:58:18.979485', "sign_in_count" = 102, "updated_at" = '2013-04-19 15:58:18.986795' WHERE "users"."id" = 1[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mBnb Load (0.7ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1[0m
+Redirected to http://localhost:3000/bnb/fish-eagle-villa
+Completed 302 Found in 1535ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/bnb/fish-eagle-villa" for 127.0.0.1 at 2013-04-19 17:58:20 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"fish-eagle-villa"}
+  [1m[36mBnb Load (0.8ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."slug" = 'fish-eagle-villa' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSubscription Load (1.4ms)[0m  [1mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."active_profile" = 't' AND "subscriptions"."user_id" = 1 LIMIT 1[0m
+Creating scope :search. Overwriting existing method Room.search.
+Creating scope :search. Overwriting existing method Guest.search.
+Compiled gmaps4rails/base/common.js  (131ms)  (pid 15881)
+Compiled gmaps4rails/base/configuration.js  (107ms)  (pid 15881)
+Compiled gmaps4rails/base/gmaps.js  (164ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/circle.js  (102ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/kml.js  (94ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/map.js  (120ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/marker.js  (169ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/polygon.js  (98ms)  (pid 15881)
+Compiled gmaps4rails/base/objects/polyline.js  (97ms)  (pid 15881)
+Compiled gmaps4rails/base/main_controller_extensions/circle_controller.js  (106ms)  (pid 15881)
+Compiled gmaps4rails/base/main_controller_extensions/kml_controller.js  (177ms)  (pid 15881)
+Compiled gmaps4rails/base/main_controller_extensions/marker_controller.js  (163ms)  (pid 15881)
+Compiled gmaps4rails/base/main_controller_extensions/polygon_controller.js  (105ms)  (pid 15881)
+Compiled gmaps4rails/base/main_controller_extensions/polyline_controller.js  (111ms)  (pid 15881)
+Compiled gmaps4rails/base/interfaces/basic_interface.js  (162ms)  (pid 15881)
+Compiled gmaps4rails/base/interfaces/controller_interface.js  (98ms)  (pid 15881)
+Compiled gmaps4rails/base/interfaces/map_interface.js  (106ms)  (pid 15881)
+Compiled gmaps4rails/base/interfaces/marker_interface.js  (104ms)  (pid 15881)
+Compiled gmaps4rails/base/main.js  (2628ms)  (pid 15881)
+Compiled gmaps4rails/base.js  (2766ms)  (pid 15881)
+Compiled gmaps4rails/google/shared.js  (105ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/circle.js  (136ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/kml.js  (110ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/map.js  (155ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/marker.js  (310ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/polygon.js  (129ms)  (pid 15881)
+Compiled gmaps4rails/google/objects/polyline.js  (134ms)  (pid 15881)
+Compiled gmaps4rails/google/main.js  (1335ms)  (pid 15881)
+Compiled gmaps4rails/google.js  (1437ms)  (pid 15881)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't'
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 'f'
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-2.0.0-p0@Rails3.2.13/bundler/gems/Google-Maps-for-Rails-6266f74a0ee0/app/views/gmaps4rails/_gmaps4rails.html.erb (2.5ms)
+  Rendered bnbs/show.html.erb within layouts/application (4845.9ms)
+Compiled bnbs.js  (223ms)  (pid 15881)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mBnb Load (0.4ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1[0m
+  Rendered layouts/_owner_menu_items.html.erb (3.8ms)
+  Rendered layouts/_header.html.erb (18.2ms)
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 5598ms (Views: 5387.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/bnbs/fish-eagle-villa/bookings" for 127.0.0.1 at 2013-04-19 17:58:30 +0200
+Processing by BookingsController#index as HTML
+  Parameters: {"bnb_id"=>"fish-eagle-villa"}
+  [1m[35mBnb Load (0.3ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."slug" = 'fish-eagle-villa' LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mSubscription Load (0.2ms)[0m  SELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."active_profile" = 't' AND "subscriptions"."user_id" = 1 LIMIT 1
+  Rendered bookings/index.html.erb within layouts/application (15.0ms)
+Compiled bookings.js  (182ms)  (pid 15881)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mBnb Load (0.3ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1[0m
+  Rendered layouts/_owner_menu_items.html.erb (1.6ms)
+  Rendered layouts/_header.html.erb (10.3ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 529ms (Views: 512.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events?start=1364680800&end=1368309600&_=1366387111080" for 127.0.0.1 at 2013-04-19 17:58:31 +0200
+Processing by EventsController#index as JSON
+  Parameters: {"start"=>"1364680800", "end"=>"1368309600", "_"=>"1366387111080"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mBnb Load (0.3ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mSELECT "events"."id" AS t0_r0, "events"."name" AS t0_r1, "events"."start_at" AS t0_r2, "events"."end_at" AS t0_r3, "events"."created_at" AS t0_r4, "events"."updated_at" AS t0_r5, "events"."booking_id" AS t0_r6, "events"."color" AS t0_r7, "bookings"."id" AS t1_r0, "bookings"."guest_id" AS t1_r1, "bookings"."active" AS t1_r2, "bookings"."created_at" AS t1_r3, "bookings"."updated_at" AS t1_r4, "bookings"."status" AS t1_r5, "bookings"."bnb_id" AS t1_r6, "bookings"."user_id" AS t1_r7, "bookings"."online" AS t1_r8, "bnbs"."id" AS t2_r0, "bnbs"."name" AS t2_r1, "bnbs"."description" AS t2_r2, "bnbs"."email" AS t2_r3, "bnbs"."address_line_one" AS t2_r4, "bnbs"."address_line_two" AS t2_r5, "bnbs"."city" AS t2_r6, "bnbs"."postal_code" AS t2_r7, "bnbs"."country" AS t2_r8, "bnbs"."telephone_number" AS t2_r9, "bnbs"."website" AS t2_r10, "bnbs"."contact_person" AS t2_r11, "bnbs"."twitter_account" AS t2_r12, "bnbs"."facebook_page" AS t2_r13, "bnbs"."created_at" AS t2_r14, "bnbs"."updated_at" AS t2_r15, "bnbs"."user_id" AS t2_r16, "bnbs"."latitude" AS t2_r17, "bnbs"."longitude" AS t2_r18, "bnbs"."rating" AS t2_r19, "bnbs"."region" AS t2_r20, "bnbs"."standard_rate" AS t2_r21, "bnbs"."slug" AS t2_r22, "bnbs"."approved" AS t2_r23, "bnbs"."mappable" AS t2_r24 FROM "events" LEFT OUTER JOIN "bookings" ON "bookings"."id" = "events"."booking_id" LEFT OUTER JOIN "bnbs" ON "bnbs"."id" = "bookings"."bnb_id" WHERE "events"."booking_id" IN (SELECT "bookings"."id" FROM "bookings" WHERE "bookings"."active" = 't' AND "bookings"."bnb_id" = 1)[0m
+Completed 200 OK in 356ms (Views: 114.2ms | ActiveRecord: 2.1ms)

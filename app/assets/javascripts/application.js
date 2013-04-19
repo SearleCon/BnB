@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require fullcalendar
 //= require select2
 //= require bootstrap
 //= require best_in_place

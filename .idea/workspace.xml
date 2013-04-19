@@ -2,10 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/BnB.iml" afterPath="$PROJECT_DIR$/.idea/BnB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/application-13bb5b6a5a8716bb9c5904bba1372a0d.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/application-13bb5b6a5a8716bb9c5904bba1372a0d.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides-8955cac6acc8416aa724eeee1130bd3a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides-8955cac6acc8416aa724eeee1130bd3a.css.gz" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/ajax_helper-c0bc3ae8d25e4461a74ca03727bac97c.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/ajax_helper-c0bc3ae8d25e4461a74ca03727bac97c.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/all-04739981acb909805f099ec9d0e8f225.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/all-04739981acb909805f099ec9d0e8f225.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/application-c089a0819487d85d5c638eb33eb9b80e.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/application-c089a0819487d85d5c638eb33eb9b80e.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/application.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/application.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base-2cfdbe66b26ba3deca21db79e9186bfc.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base-2cfdbe66b26ba3deca21db79e9186bfc.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/basic_interface-5a2b58a9e2e9bff53e88aea1c2005894.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/basic_interface-5a2b58a9e2e9bff53e88aea1c2005894.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing-b8315fc3eb70b387da9e5ffd032536e0.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing-b8315fc3eb70b387da9e5ffd032536e0.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bnbeezy-760cb5fbb388a22878b253bc75b693b2.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bnbeezy-760cb5fbb388a22878b253bc75b693b2.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bnbs-61047423ed3ebaf97092a7e38d1cb923.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bnbs-61047423ed3ebaf97092a7e38d1cb923.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bnbs-ac6b01742e21f037ec29b466cd41f500.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bnbs-ac6b01742e21f037ec29b466cd41f500.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bookings-3a61730fabc7921dd7c7031977768458.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bookings-3a61730fabc7921dd7c7031977768458.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bookings-ff24d994a20b5bf968476257f4b550ae.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bookings-ff24d994a20b5bf968476257f4b550ae.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/circle-025caa6d63f374abb01e77b661d50bc1.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/circle-025caa6d63f374abb01e77b661d50bc1.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/circle-7a9bfb63a505aba096e1eb2f6e51c1be.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/circle-7a9bfb63a505aba096e1eb2f6e51c1be.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/circle_controller-cc7a3adf5d6dd51d75efc6d2af9b86d6.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/circle_controller-cc7a3adf5d6dd51d75efc6d2af9b86d6.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/common-2afe3f179bdf69d82e21221b1073442f.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/common-2afe3f179bdf69d82e21221b1073442f.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/configuration-8a385741211d8137f601ae91e1d6dab7.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/configuration-8a385741211d8137f601ae91e1d6dab7.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/controller_interface-3a96d5c8de8a7d900aec6d8f98a74358.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/controller_interface-3a96d5c8de8a7d900aec6d8f98a74358.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/gmaps-cf7a04f567ca902e120a4a21c37f1997.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/gmaps-cf7a04f567ca902e120a4a21c37f1997.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails-639798646d2c8dec80471c6142043694.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails-639798646d2c8dec80471c6142043694.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google-5ecea3f4e9c37034a57713693f84c6e0.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google-5ecea3f4e9c37034a57713693f84c6e0.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/guests-b8cf8dd9bee8c5568b6a1f90fea102f1.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/guests-b8cf8dd9bee8c5568b6a1f90fea102f1.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/normalize-rails/index-27eeacb5bba642690c4e4f6f7c5b87d2.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/normalize-rails/index-27eeacb5bba642690c4e4f6f7c5b87d2.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/initialize-9ffaabb2e2dce6ab7102b89332983f01.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/initialize-9ffaabb2e2dce6ab7102b89332983f01.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/jquery.disabler.min-e42b7bcda32a4c2f9b7fad0881ae2fab.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/jquery.disabler.min-e42b7bcda32a4c2f9b7fad0881ae2fab.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/jquery.imagesloaded.min-78f3adb3fd5350b28967142fabc9bfc4.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/jquery.imagesloaded.min-78f3adb3fd5350b28967142fabc9bfc4.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/kml-6ded5532b493eb7e017af7e101d016ae.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/kml-6ded5532b493eb7e017af7e101d016ae.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/kml-8a87d9a96a02fccce7430444af264a96.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/kml-8a87d9a96a02fccce7430444af264a96.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/kml_controller-034185e9574d5a4b0de425bfab344cbf.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/kml_controller-034185e9574d5a4b0de425bfab344cbf.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/main-0e9e58117378e1351d03dca1dc944a4d.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/main-0e9e58117378e1351d03dca1dc944a4d.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/main-3b4f7a332fd06fb65b21fe169cc9a4b8.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/main-3b4f7a332fd06fb65b21fe169cc9a4b8.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main-c5f44b4f1a25361e021ea5ad698f7ab7.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main-c5f44b4f1a25361e021ea5ad698f7ab7.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/main-f2a5d41e64994cafba1e887874639bf8.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/main-f2a5d41e64994cafba1e887874639bf8.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/objects/map-59ee02b4ba8724cd100f6881f4c4ee4b.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/objects/map-59ee02b4ba8724cd100f6881f4c4ee4b.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/map-744e473d5105b71248857fcbe59658e7.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/map-744e473d5105b71248857fcbe59658e7.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/map-dde3260bc8723275f53d81423b9853aa.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/map-dde3260bc8723275f53d81423b9853aa.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/map-ee6e9f86f20b94961e6cbd595f2bc491.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/map-ee6e9f86f20b94961e6cbd595f2bc491.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/map_interface-3c132c73a2136c22d200352758880672.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/map_interface-3c132c73a2136c22d200352758880672.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/marker-04cb863462f6e3c06a4795936cda9ea8.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/marker-04cb863462f6e3c06a4795936cda9ea8.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/marker-144b32aa65908e7dd8b836d9c628480a.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/marker-144b32aa65908e7dd8b836d9c628480a.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/marker-c4ff93b67a01ece28cded2c56ed1b55e.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/marker-c4ff93b67a01ece28cded2c56ed1b55e.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/objects/marker-feb33903f4b8e82bc21deaf004acaa73.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/objects/marker-feb33903f4b8e82bc21deaf004acaa73.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/marker_controller-567552e620cc45787f60a50871ae432b.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/marker_controller-567552e620cc45787f60a50871ae432b.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/marker_interface-a42fa2b8a911884c8cc5891e7ca7b096.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/interfaces/marker_interface-a42fa2b8a911884c8cc5891e7ca7b096.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/normalize-rails/normalize-27eeacb5bba642690c4e4f6f7c5b87d2.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/normalize-rails/normalize-27eeacb5bba642690c4e4f6f7c5b87d2.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers-3b197fce93c0b116a994a26196440626.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers-3b197fce93c0b116a994a26196440626.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/photos-0b42927cd0edcbd07487876d9490ae4e.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/photos-0b42927cd0edcbd07487876d9490ae4e.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/polygon-a1a4861d3ab16368bb21cc7f616847ed.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/polygon-a1a4861d3ab16368bb21cc7f616847ed.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/polygon-bfd22075194fbd093e39ce8879480749.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/polygon-bfd22075194fbd093e39ce8879480749.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/polygon_controller-9fc1b52c0fc9119a8f508d7464eb4636.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/polygon_controller-9fc1b52c0fc9119a8f508d7464eb4636.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/polyline-4f6dcd06bcb4904b0aa3bf9614653b4a.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/objects/polyline-4f6dcd06bcb4904b0aa3bf9614653b4a.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/polyline-6694ad735b9f2f36666176b01b960302.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/objects/polyline-6694ad735b9f2f36666176b01b960302.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/polyline-a346f7e215d8330edca73318dd28924f.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/objects/polyline-a346f7e215d8330edca73318dd28924f.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/polyline_controller-9998d79469333da47c64d30fcef64b6f.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/base/main_controller_extensions/polyline_controller-9998d79469333da47c64d30fcef64b6f.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/rooms-42dff84fa08df4228b21d0a6bbebcc40.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/rooms-42dff84fa08df4228b21d0a6bbebcc40.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/shared-049cc491880e53e3dc0cff023a4d5a6c.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/openlayers/shared-049cc491880e53e3dc0cff023a4d5a6c.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/shared-aff85395281de309f8645bb849999f5c.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/google/shared-aff85395281de309f8645bb849999f5c.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/shared-b6d122a42adff945bbbd0c1da81bc175.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/gmaps4rails/bing/shared-b6d122a42adff945bbbd0c1da81bc175.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/static_pages-74355e810f2942b13a35d62f29beaa6f.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/static_pages-74355e810f2942b13a35d62f29beaa6f.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/static_pages-999f33f620a7cd5e945386f4204c60f7.css.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/static_pages-999f33f620a7cd5e945386f4204c60f7.css.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/utilities-87fabd82b26d105501f902bba3713d70.js.gz" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/utilities-87fabd82b26d105501f902bba3713d70.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/application.css" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/application.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides.css" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/bootstrap_and_overrides.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/manifest.yml" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/manifest.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/production.log" afterPath="$PROJECT_DIR$/log/production.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/bnbeezy/assets/sources_manifest.yml" afterPath="$PROJECT_DIR$/public/bnbeezy/assets/sources_manifest.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BnB.iws" />
@@ -231,7 +301,7 @@
     <file path="/contact_details.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366274134938" ignored="false" />
     <file path="/screens.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365173276180" ignored="false" />
     <file path="/_footer.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366098177586" ignored="false" />
-    <file path="/production.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366385685520" ignored="false" />
+    <file path="/production.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366386298979" ignored="false" />
     <file path="/steps.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365240804553" ignored="false" />
     <file path="/tutorial.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365246194250" ignored="false" />
     <file path="/_tutorial.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365244266317" ignored="false" />
@@ -325,7 +395,25 @@
       <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="21" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+            <state line="16" column="24" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/bookings/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -349,44 +437,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="36" selection-start="581" selection-end="581" vertical-scroll-proportion="-0.44573644">
+            <state line="3" column="69" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="foobar" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/foobar">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rooms.js.coffee" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="rooms.js.coffee" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rooms.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bnbeezy.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bnbeezy.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bnbs.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bnbs.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -418,7 +479,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/app/controllers/exception_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
@@ -431,9 +491,10 @@
         <option value="$PROJECT_DIR$/app/views/rooms/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bnb_steps/bnb_details.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/jquery.disabler.min.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/app/views/bookings/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       </list>
     </option>
   </component>
@@ -593,6 +654,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bookings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BnB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1251,16 +1400,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bnb_steps/bnb_details.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="99" selection-start="548" selection-end="548" vertical-scroll-proportion="-5.625" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rooms/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="33" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" />
@@ -1297,13 +1436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rooms.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1314,13 +1446,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/jquery.disabler.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="10283" selection-end="10283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="21" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1348,7 +1473,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="581" selection-end="581" vertical-scroll-proportion="-0.44573644">
+        <state line="3" column="69" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bookings/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="24" selection-start="669" selection-end="669" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/rooms.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

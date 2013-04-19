@@ -1,0 +1,1 @@
+(function(){var e;(e=this.BnBEezy)==null&&(this.BnBEezy={})}).call(this);

@@ -1,0 +1,99 @@
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-04-19 17:13:07 +0200
+Processing by SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 348ms (Views: 324.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-04-19 17:13:20 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIR0OPxS07O8SLPlS/ny6vvd1dBm1ScZWjaIABNcXqw=", "user"=>{"email"=>"paul@searleconsulting.co.za", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'paul@searleconsulting.co.za' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-04-19 12:26:26.696369', "current_sign_in_at" = '2013-04-19 15:13:20.730636', "sign_in_count" = 101, "updated_at" = '2013-04-19 15:13:20.740439' WHERE "users"."id" = 1
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mBnb Load (0.3ms)[0m  SELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1
+Redirected to http://localhost:3000/bnb/fish-eagle-villa
+Completed 302 Found in 140ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/bnb/fish-eagle-villa" for 127.0.0.1 at 2013-04-19 17:13:20 +0200
+Processing by BnbsController#show as HTML
+  Parameters: {"id"=>"fish-eagle-villa"}
+  [1m[36mBnb Load (0.3ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."slug" = 'fish-eagle-villa' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mSubscription Load (0.2ms)[0m  [1mSELECT "subscriptions".* FROM "subscriptions" WHERE "subscriptions"."active_profile" = 't' AND "subscriptions"."user_id" = 1 LIMIT 1[0m
+Creating scope :search. Overwriting existing method Room.search.
+Creating scope :search. Overwriting existing method Guest.search.
+Compiled gmaps4rails/base/common.js  (193ms)  (pid 14249)
+Compiled gmaps4rails/base/configuration.js  (109ms)  (pid 14249)
+Compiled gmaps4rails/base/gmaps.js  (110ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/circle.js  (103ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/kml.js  (162ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/map.js  (123ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/marker.js  (101ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/polygon.js  (98ms)  (pid 14249)
+Compiled gmaps4rails/base/objects/polyline.js  (162ms)  (pid 14249)
+Compiled gmaps4rails/base/main_controller_extensions/circle_controller.js  (107ms)  (pid 14249)
+Compiled gmaps4rails/base/main_controller_extensions/kml_controller.js  (109ms)  (pid 14249)
+Compiled gmaps4rails/base/main_controller_extensions/marker_controller.js  (203ms)  (pid 14249)
+Compiled gmaps4rails/base/main_controller_extensions/polygon_controller.js  (179ms)  (pid 14249)
+Compiled gmaps4rails/base/main_controller_extensions/polyline_controller.js  (110ms)  (pid 14249)
+Compiled gmaps4rails/base/interfaces/basic_interface.js  (122ms)  (pid 14249)
+Compiled gmaps4rails/base/interfaces/controller_interface.js  (108ms)  (pid 14249)
+Compiled gmaps4rails/base/interfaces/map_interface.js  (168ms)  (pid 14249)
+Compiled gmaps4rails/base/interfaces/marker_interface.js  (103ms)  (pid 14249)
+Compiled gmaps4rails/base/main.js  (2729ms)  (pid 14249)
+Compiled gmaps4rails/base.js  (2881ms)  (pid 14249)
+Compiled gmaps4rails/google/shared.js  (107ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/circle.js  (138ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/kml.js  (108ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/map.js  (153ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/marker.js  (272ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/polygon.js  (133ms)  (pid 14249)
+Compiled gmaps4rails/google/objects/polyline.js  (201ms)  (pid 14249)
+Compiled gmaps4rails/google/main.js  (1449ms)  (pid 14249)
+Compiled gmaps4rails/google.js  (1558ms)  (pid 14249)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't'
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "photos".* FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 't' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "photos" WHERE "photos"."bnb_id" = 1 AND "photos"."processed" = 't' AND "photos"."main" = 'f'
+  Rendered /Users/pauljansevanrensburg/.rvm/gems/ruby-2.0.0-p0@Rails3.2.13/bundler/gems/Google-Maps-for-Rails-6266f74a0ee0/app/views/gmaps4rails/_gmaps4rails.html.erb (2.1ms)
+  Rendered bnbs/show.html.erb within layouts/application (5017.2ms)
+Compiled bnbs.js  (198ms)  (pid 14249)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mBnb Load (0.4ms)[0m  [1mSELECT "bnbs".* FROM "bnbs" WHERE "bnbs"."user_id" = 1 ORDER BY "bnbs"."id" DESC LIMIT 1[0m
+  Rendered layouts/_owner_menu_items.html.erb (3.1ms)
+  Rendered layouts/_header.html.erb (13.2ms)
+  Rendered shared/_flash_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 5767ms (Views: 5535.3ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2013-04-19 17:14:24 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vIR0OPxS07O8SLPlS/ny6vvd1dBm1ScZWjaIABNcXqw="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/suggestions/new?user_id=1
+Completed 302 Found in 1474ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/suggestions/new?user_id=1" for 127.0.0.1 at 2013-04-19 17:14:26 +0200
+Processing by SuggestionsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendered suggestions/_form.html.erb (81.4ms)
+  Rendered suggestions/new.html.erb within layouts/application (85.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered shared/_flash_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 366ms (Views: 365.0ms | ActiveRecord: 0.0ms)

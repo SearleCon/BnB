@@ -54,6 +54,8 @@ class Bnb < ActiveRecord::Base
   after_commit :fetch_address, if: :persisted?
 
   validates :name, :description, :standard_rate, presence: true, if: :active_or_bnb_details?
+
+  validates :standard_rate, format: { with: /^\d{1,4}(\.\d{0,2})?$/ }, numericality: true, if: :active_or_bnb_details?
   validates  :contact_person, :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, presence: true, if: :active_or_contact_details?
 
   def geocode?
@@ -72,16 +74,10 @@ class Bnb < ActiveRecord::Base
     full_address
   end
 
-  def facebook_page
-    self[:facebook_page] || 'N/A'
-  end
+
 
   def website
     self[:website] || 'N/A'
-  end
-
-  def twitter_account
-    self[:twitter_account] || 'N/A'
   end
 
   def status

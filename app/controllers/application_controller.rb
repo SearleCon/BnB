@@ -6,11 +6,19 @@ class ApplicationController < ActionController::Base
   before_filter :correct_safari_and_ie_accept_headers
   after_filter :set_xhr_flash
 
-  rescue_from CanCan::AccessDenied do |exception|
-   redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
-   raise
+  rescue_from(CanCan::AccessDenied) do |exception|
+    redirect_to(payment_plans_subscriptions_url) and return if subscription_expired?
+    raise
   end
 
+
+  def root_for_role
+    if current_user.is?(:owner)
+      show_bnb_url(current_user.bnb)
+    else
+      session.delete(:return_to) || root_url
+    end
+  end
 
   private
   def after_sign_out_path_for(resource_or_scope)

@@ -4,6 +4,15 @@
 
   <div class="row-fluid">
     <div class="span12">
+      <% if user_signed_in? && current_user.is?(:owner) %>
+          <div class="center hero-unit clearfix">
+            <%= link_to "Bookings", bnb_bookings_path(@bnb), :class => "btn-large btn-primary" %>
+            <%= link_to "Guests", bnb_guests_path(@bnb), :class => "btn-large btn-primary" %>
+            <%= link_to "Rooms", bnb_rooms_path(@bnb), :class => "btn-large btn-primary" %>
+            <%= link_to "Photos", bnb_photos_path(@bnb), :class => "btn-large btn-primary" %>
+            <%= link_to "Edit BnB Details", bnb_bnb_step_url(@bnb, :bnb_details), :class => "btn-large btn-primary" %>
+          </div>
+      <% end %>
       <div class="hero-unit clearfix">
         <div id="details" class="span4" align="left">
           <h2><%= @bnb.name %></h2>
@@ -37,7 +46,7 @@
               <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
           <% end %>
         </div>
-        <div id="contact_and_address" class="span8" align="left">
+        <div id="contact_and_address" class="span9" align="left">
           <div class="span4" align="left">
             <address>
               <strong>Address</strong>
@@ -58,11 +67,11 @@
 
             </address>
           </div>
-          <div class="span4">
+          <div class="span5">
             <address>
               <strong>Contact</strong>
               <br>
-              Contact Person: <%= @bnb.contact_person %>
+              Contact Person: <%= @bnb.contact_person.humanize %>
               <br>
               Telephone: <%= number_to_phone(@bnb.telephone_number, area: true ) %>
               <br>
@@ -70,23 +79,17 @@
               <br>
               Website: <%= link_to_if @bnb.website, @bnb.website, url_with_protocol(@bnb.website), target: '_blank' %>
               <br>
-              Facebook: <%= @bnb.facebook_page%>
+              <% if @bnb.facebook_page %>
+              Facebook: <%= @bnb.facebook_page %>
+              <% end %>
               <br>
+              <% if @bnb.twitter_account %>
               Twitter: <%= @bnb.twitter_account %>
+              <% end %>
             </address>
           </div>
         </div>
       </div>
-
-      <% if user_signed_in? && current_user.is?(:owner) %>
-      <div class="center hero-unit clearfix">
-        <%= link_to "Bookings", bnb_bookings_path(@bnb), :class => "btn-large btn-primary" %>
-        <%= link_to "Guests", bnb_guests_path(@bnb), :class => "btn-large btn-primary" %>
-        <%= link_to "Rooms", bnb_rooms_path(@bnb), :class => "btn-large btn-primary" %>
-        <%= link_to "Photos", bnb_photos_path(@bnb), :class => "btn-large btn-primary" %>
-        <%= link_to "Edit BnB Details", bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id), :class => "btn-large btn-primary" %>
-      </div>
-      <% end %>
       <div class="hero-unit clearfix gallery" style="padding-bottom: 0px;">
         <div class="carousel slide span12" id="support_photos_carousel">
           <div class="carousel-inner">

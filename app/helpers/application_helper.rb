@@ -8,6 +8,23 @@ module ApplicationHelper
     end
   end
 
+  def correct_root_for_user
+    (current_user && current_user.is?(:owner)) ? show_bnb_path(current_user.bnb) : root_path
+  end
+
+  def fetch_menu_for_role
+   if current_user
+    case current_user.roles.first
+      when :admin
+        'layouts/admin_menu_items'
+      when :owner
+        'layouts/owner_menu_items'
+      else
+        'layouts/guest_menu_items'
+    end
+   end
+  end
+
   def sortable(column, title = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
@@ -40,11 +57,5 @@ module ApplicationHelper
       return false if hash_url1[key] != hash_url2[key]
     end
     true
-  end
-
-  def load_page_specific_javascript(script)
-    content_for :scripts do
-      javascript_include_tag script
-    end
   end
 end

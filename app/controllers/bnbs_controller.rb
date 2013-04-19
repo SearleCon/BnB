@@ -1,8 +1,7 @@
 class BnbsController < ApplicationController
   respond_to :html, :json, :js
 
-  load_and_authorize_resource :bnb, :except => :subregions
-
+  load_and_authorize_resource :bnb, except: :subregions
 
   # GET /bnbs
   # GET /bnbs.json
@@ -60,6 +59,8 @@ class BnbsController < ApplicationController
 
 
   private
+
+
   def convert_to_map_data(bnbs)
     if bnbs.any?
       @json = bnbs.to_gmaps4rails do |bnb, marker|

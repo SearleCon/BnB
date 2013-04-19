@@ -2,46 +2,13 @@
 <header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "BnBeezy", current_user.try(:is?, :owner) ?show_bnb_path(current_user.bnb) : root_path, id: "logo" %>
+      <%= link_to "BnBeezy", correct_root_for_user , id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", current_user.try(:is?, :owner) ?show_bnb_path(current_user.bnb) : root_path %></li>
-          <li><%= link_to "Screenshots", screens_path %></li>
+          <li><%= link_to "Home", correct_root_for_user  %></li>
+          <li><%= link_to "Screenshots", screens_path unless user_signed_in? %></li>
           <% if user_signed_in? %>
-            <% if current_user.is?(:admin) %>
-                  <li><%= link_to "Admin", admin_path %></li>
-            <% end %>
-            <% if current_user.is?(:owner) %>
-                  <li id="fat-menu" class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      MyBnB <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><%= link_to "Details", show_bnb_path(current_user.bnb) %></li>
-                    <% unless current_user.bnb.nil? %>
-                      <li class="divider"></li>
-                      <li>
-                        <%= link_to "Bookings", bnb_bookings_path(current_user.bnb) %>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                        <%= link_to "Rooms", bnb_rooms_path(current_user.bnb) %>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                        <%= link_to "Guests", bnb_guests_path(current_user.bnb) %>
-                      </li>
-                      <li class="divider"></li>
-                      <li>
-                        <%= link_to "Photos", bnb_photos_path(current_user.bnb) %>
-                      </li>
-                    <% end %>
-                    </ul>
-                  </li>
-            <% else %>
-                  <li><%= link_to "History", my_bookings_bookings_path  %></li>
-            <% end %>
-
+             <%= render fetch_menu_for_role  %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>

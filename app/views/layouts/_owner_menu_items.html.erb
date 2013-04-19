@@ -1,0 +1,26 @@
+<li id="fat-menu" class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    MyBnB <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Details", show_bnb_path(current_user.bnb) %></li>
+    <% unless current_user.bnb.nil? %>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Bookings", bnb_bookings_path(current_user.bnb) %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Rooms", bnb_rooms_path(current_user.bnb) %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Guests", bnb_guests_path(current_user.bnb) %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to "Photos", bnb_photos_path(current_user.bnb) %>
+        </li>
+    <% end %>
+  </ul>
+</li>

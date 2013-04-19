@@ -25,7 +25,9 @@ class Room < ActiveRecord::Base
   has_many  :guests, :through => :bookings
 
   validates :description, :rates, :room_number, :capacity, presence: true
-  validates :rates, :room_number, :capacity, numericality: true
+  validates :room_number, :capacity, numericality: true
+  validates :rates, format: { with: /^\d{1,4}(\.\d{0,2})?$/ }, numericality: true
+
   validates :description, length: { minimum: 2 }
 
   scope :search, -> term { where('lower(description) LIKE ?', "%#{term}%") }

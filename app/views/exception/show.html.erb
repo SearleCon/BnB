@@ -1,9 +1,8 @@
 <div class="hero-unit center">
   <h1><%= details[:name] %></h1>
 
-  <div><img alt="" src=<%= image_path("exceptions.jpeg") %>></div>
   <p><%= simple_format(details[:message]) %></p>
 
 
-  <%= link_to "Back to home", root_path %>
+  <%= link_to "Back to home", correct_root_for_user %>
 </div>

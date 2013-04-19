@@ -5,7 +5,10 @@
         <div class="form-inputs">
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input :standard_rate, as: :string, label: "Standard Rate (Per person sharing)" %>
+          <%= f.input :standard_rate, :wrapper => :prepend, :class => "inline", :label => "Rates (Per person sharing)" do %>
+              <%= content_tag :span, "R", :class => "add-on", :style => "color:black;" %>
+              <%= f.input_field :standard_rate, value: number_with_precision(f.object.standard_rate, precision: 2)%>
+          <% end %>
           <%= f.input :rating, :collection => 1..5,  :as => :radio_buttons, :item_wrapper_class => 'inline' %>
         </div>
         <br>

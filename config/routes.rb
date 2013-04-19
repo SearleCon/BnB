@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
 
+  root to: 'static_pages#home'
 
   resources :payment_notifications, controller: 'payment_notification',  only: [:create]
 
@@ -47,7 +48,6 @@ SampleApp::Application.routes.draw do
   get 'contact' => 'contact#new', :as => 'contact'
   post 'contact' => 'contact#create', :as => 'contact'
 
-  root to: 'static_pages#home'
 
     get '/startpage', to: 'static_pages#startpage'
     get '/admin', to: 'static_pages#admin'

@@ -1,1 +1,0 @@
-(function(){var e;e=function(){function e(){}return e.prototype.init=function(){},e.prototype.index=function(){return $("[rel=tooltip]").tooltip({animation:!0,placement:"right"})},e}(),this.BnBEezy.rooms=new e}).call(this);

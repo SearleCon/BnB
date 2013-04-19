@@ -1,1 +1,0 @@
-(function(){this.Gmaps4Rails.Configuration={setConf:function(){return this.CONF!=null?this.mergeObjects(this.CONF,this.DEFAULT_CONF):this.DEFAULT_CONF}}}).call(this);

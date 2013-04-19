@@ -1,1 +1,0 @@
-(function(){var e;e=function(){function e(){}return e.prototype.init=function(){},e.prototype.show=function(){return $("a[rel*=lazybox]").lazybox()},e}(),this.BnBEezy.bnbs=new e}).call(this);

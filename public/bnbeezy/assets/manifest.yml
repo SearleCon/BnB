@@ -101,8 +101,8 @@ static_pages.js: static_pages-74355e810f2942b13a35d62f29beaa6f.js
 static_pages/index.js: static_pages-74355e810f2942b13a35d62f29beaa6f.js
 utilities.js: utilities-87fabd82b26d105501f902bba3713d70.js
 utilities/index.js: utilities-87fabd82b26d105501f902bba3713d70.js
-application.css: application-13bb5b6a5a8716bb9c5904bba1372a0d.css
-application/index.css: application-13bb5b6a5a8716bb9c5904bba1372a0d.css
+application.css: application-6a149f6870dbc30b336ff2ac98a64396.css
+application/index.css: application-6a149f6870dbc30b336ff2ac98a64396.css
 bnbs.css: bnbs-61047423ed3ebaf97092a7e38d1cb923.css
 bnbs/index.css: bnbs-61047423ed3ebaf97092a7e38d1cb923.css
 bookings.css: bookings-ff24d994a20b5bf968476257f4b550ae.css

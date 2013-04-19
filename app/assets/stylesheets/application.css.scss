@@ -70,11 +70,11 @@ html, body {
      }
 
      th .asc{
-      background-image: url(sortups.png);
+      background-image: image-url('sortups.png');
      }
 
      th .desc {
-      background-image: url(sortdowns.png);
+      background-image: image-url('sortdowns.png');
      }
  }
 

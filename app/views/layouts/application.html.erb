@@ -12,7 +12,7 @@
   <%= yield(:head) %>
 </head>
 <body class="<%= controller_name %>" data-controller="<%= controller_path %>" data-action="<%= action_name %>">
-<img alt="full screen background image"  id="full-screen-background-image" src=<%= image_path("background_wood.jpg") %> />
+<%= image_tag("background_wood.jpg", id: "full-screen-background-image", alt: "full screen background image") %>
 <%= render 'layouts/header' %>
 <div class="container">
   <div class="content">

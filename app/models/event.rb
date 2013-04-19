@@ -14,24 +14,24 @@
 
 class Event < ActiveRecord::Base
   belongs_to :booking, touch: true
-  after_initialize :set_default_date, :if => :new_record?
+  after_initialize :set_default_date, if: :new_record?
 
   attr_accessible :name, :start_at, :end_at, :color
 
-  scope :by_bookings, -> bookings { includes(:booking => :bnb).where(:booking_id => bookings) }
+  scope :by_bookings, -> bookings { includes(booking: :bnb).where(booking_id: bookings) }
 
   def as_json(options = {})
     {
-        :id => self.id,
-        :title => self.name,
-        :description =>  "",
-        :start => start_at,
-        :end => end_at,
-        :allDay => true,
-        :recurring => false,
-        :url => Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
-        :edit_booking_url => Rails.application.routes.url_helpers.edit_bnb_booking_path(self.booking.bnb, booking_id),
-        :color => self.color
+        id: self.id,
+        title: self.name,
+        description: "",
+        start: start_at,
+        end: end_at,
+        allDay: true,
+        recurring: false,
+        url: Rails.application.routes.url_helpers.bnb_booking_path(self.booking.bnb, booking_id),
+        edit_booking_url: Rails.application.routes.url_helpers.edit_bnb_booking_path(self.booking.bnb, booking_id),
+        color: self.color
     }
   end
 

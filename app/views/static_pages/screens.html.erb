@@ -8,7 +8,7 @@
        <% if number > 0 %>
        <li  class="span3">
         <a href="<%= image_path(number.to_s.concat(".png")) %>"  class="thumbnail" rel="lazybox">
-          <%= image_tag image_path(number.to_s.concat(".png"))%>
+          <%= image_tag (number.to_s.concat(".png") )%>
         </a>
       </li>
      <% end %>

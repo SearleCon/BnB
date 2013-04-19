@@ -48,6 +48,7 @@ gem 'quiet_assets', :group => :development
 gem "best_in_place"
 gem 'carrierwave-processing'
 gem 'normalize-rails'
+gem 'sprockets-image_compressor'
 
 
 group :development, :test do

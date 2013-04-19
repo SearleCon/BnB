@@ -13,7 +13,7 @@
 #
 
 class Photo < ActiveRecord::Base
-  belongs_to :bnb, :touch => true
+  belongs_to :bnb, touch: true
   mount_uploader :image, ImageUploader
 
   attr_accessible :description, :main
@@ -26,13 +26,13 @@ class Photo < ActiveRecord::Base
   validates :description, presence: true
 
   scope :main_photo, -> {where(main: true)}
-  scope :support_photos, -> { where(:main => false) }
-  scope :processed, -> { where(:processed => true) }
+  scope :support_photos, -> { where(main: false) }
+  scope :processed, -> { where(processed: true) }
 
 
   def save_and_process_image(options = {})
     if options[:now]
-      self.remote_image_url = image.direct_fog_url(:with_path => true)
+      self.remote_image_url = image.direct_fog_url(with_path: true)
       self.processed = true
       save!
     else

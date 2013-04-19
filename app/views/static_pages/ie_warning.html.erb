@@ -33,10 +33,11 @@ You have 3 options:<br><br>
 
 Please go to one of the following links in order to download the latest browser of your choice:<br><br>
 
-<a href="http://www.google.com/chrome/"><img alt="chrome" src= <%= image_path("chrome.png") %>> Chrome</a>
-<a href="http://www.apple.com/safari/"><img alt="chrome" src= <%= image_path("safari.png") %>>Safari</a>
-<a href="http://www.mozilla.org/firefox/"><img alt="chrome" src= <%= image_path("firefox.png") %>> Firefox</a>
-<a href="http://www.microsoft.com/ie"><img alt="chrome" src= <%= image_path("explorer.png") %>> Explorer</a>
+<%= link_to(image_tag("chrome.png", :alt =>  "chrome") + " Chrome", "http://www.google.com/chrome/") %>
+<%= link_to(image_tag("safari.png", :alt =>  "safari") + " Safari", "http://www.apple.com/safari/") %>
+<%= link_to(image_tag("firefox.png", :alt =>  "firefox") + " Firefox", "http://www.mozilla.org/firefox/") %>
+<%= link_to(image_tag("explorer.png", :alt =>  "IE") + " Internet Explorer", "http://www.microsoft.com/ie") %>
+
 
 <hr class="bs-docs-separator">
 <b>Note:</b> The above links are 3rd party sites, and have no affiliation to our website. Use them at your own risk.

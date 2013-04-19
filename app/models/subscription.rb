@@ -19,7 +19,7 @@ class Subscription < ActiveRecord::Base
 
   attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date, :user_id
 
-  default_scope -> {where(:active_profile => true) }
+  default_scope -> {where(active_profile: true) }
   after_initialize :set_expiry_date
   before_create :deactivate_previous_subscription
 

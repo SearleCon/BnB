@@ -134,7 +134,7 @@ class BookingsController < ApplicationController
 
 
 def confirm
-  if @booking.confirm!
+  if @booking.confirm! then
     redirect_to bnb_bookings_url(@bnb), notice: "Booking for #{@booking.guest.name} was confirmed successfully"
   else
     redirect_to bnb_bookings_url(@bnb), :alert => "Booking for #{@booking.guest.name} could not be confirmed"

@@ -16,37 +16,38 @@
 class Booking < ActiveRecord::Base
   belongs_to :bnb
   belongs_to :guest
-  has_many :line_items, :dependent => :delete_all
+  has_many :line_items, dependent: :delete_all
   has_and_belongs_to_many :rooms
-  has_one :event, :dependent => :delete
+  has_one :event, dependent: :delete
 
-  default_scope -> {where(:active => true)}
+  default_scope -> {where(active: true)}
 
-  scope :inactive, -> { where(:active => false) }
+  scope :inactive, -> { where(active: false) }
 
   attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids
 
   before_create :set_event_name
   before_save :set_event_color
-  after_commit :send_notifications, :if => :notification_required?
-  after_commit :send_booking_confirmation, :if => :confirmation_required?
+  after_commit :send_notifications, if: :notification_required?
+  after_commit :send_booking_confirmation, if: :confirmation_required?
 
 
-  delegate :name, :start_at, :end_at, :to => :event, :prefix => true
+  delegate :name, :start_at, :end_at, to: :event, prefix: true
+
   validates_presence_of :guest
   validates_associated :guest
   validates_presence_of :rooms
 
   accepts_nested_attributes_for :event
-  accepts_nested_attributes_for :guest, :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :guest, reject_if: :all_blank, allow_destroy: true
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
   EVENT_COLORS = {
-      :booked => 'blue',
-      :checked_in => 'green',
-      :closed => 'orange',
-      :provisional => 'red'
+      booked: 'blue',
+      checked_in: 'green',
+      closed: 'orange',
+      provisional: 'red'
   }
 
   def total_price

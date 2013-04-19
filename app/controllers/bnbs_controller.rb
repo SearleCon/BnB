@@ -8,7 +8,7 @@ class BnbsController < ApplicationController
   def index
     params[:q] ||= {}
     @search = Bnb.approved.search(params[:q])
-    @bnbs = @search.result.paginate(:per_page => 15, :page => params[:page])
+    @bnbs = @search.result.paginate(per_page: 15, page: params[:page])
   end
 
   # GET /bnbs/1
@@ -21,7 +21,7 @@ class BnbsController < ApplicationController
   def nearby_bnbs
   params[:q] ||= {}
   @search = @bnb.nearbys(10).search(params[:q])
-  @bnbs = @search.result.paginate(:per_page => 5, :page => params[:page]) if @bnb.nearbys
+  @bnbs = @search.result.paginate(per_page: 5, page: params[:page]) if @bnb.nearbys
     if @bnbs.try(:any?)
       convert_to_map_data(@bnbs.reject{|bnb| valid_address(bnb.full_address)})
       render 'index'
@@ -35,9 +35,9 @@ class BnbsController < ApplicationController
   # POST /bnbs
   # POST /bnbs.json
   def create
-    @bnb = Bnb.new(:user_id => current_user.id)
+    @bnb = Bnb.new(user_id: current_user.id)
     if @bnb.save(validate: false)
-      redirect_to  bnb_bnb_step_url(:bnb_details, :bnb_id => @bnb.id)
+      redirect_to  bnb_bnb_step_url(:bnb_details, bnb_id: @bnb.id)
     else
       flash[:alert] = 'An error occurred while initializing bnb setup wizard'
       redirect_to startpage_url
@@ -59,13 +59,11 @@ class BnbsController < ApplicationController
 
 
   private
-
-
   def convert_to_map_data(bnbs)
     if bnbs.any?
       @json = bnbs.to_gmaps4rails do |bnb, marker|
         marker.title "#{bnb.name}"
-        marker.infowindow render_to_string(:partial => "/bnbs/mapinfo", :locals => { :bnb => bnb})
+        marker.infowindow render_to_string(partial: "/bnbs/mapinfo", :locals => { :bnb => bnb})
       end
     else
       @json = nil

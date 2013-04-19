@@ -42,8 +42,8 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id ,:terms_of_service, :contact_number, :country, :surname
   validates_acceptance_of :terms_of_service
 
-  after_create :create_subscription, :if => :subscription_required
-  after_commit :send_welcome_mail, :if => :created?
+  after_create :create_subscription, if: :subscription_required
+  after_commit :send_welcome_mail, if: :created?
 
   include RoleModel
   roles_attribute :role_id

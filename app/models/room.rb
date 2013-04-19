@@ -22,7 +22,7 @@ class Room < ActiveRecord::Base
   belongs_to :bnb
 
   has_and_belongs_to_many :bookings
-  has_many  :guests, :through => :bookings
+  has_many  :guests, through: :bookings
 
   validates :description, :rates, :room_number, :capacity, presence: true
   validates :room_number, :capacity, numericality: true

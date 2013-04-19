@@ -8,7 +8,7 @@
     <div id="home_carousel" class="carousel slide"><!-- class of slide for animation -->
       <div class="carousel-inner">
         <div class="item active"><!-- class of active since it's the first item -->
-          <img src=<%= image_path("bnb3.jpg") %>  />
+          <%= image_tag("bnb3.jpg") %>
           <div class="carousel-caption">
             <p>Welcome to BnBeezy <%= @session.to_s %></p>
           </div>
@@ -25,7 +25,7 @@
 <div class="row">
   <div class="span4 columns" id="column1">
     <div class="thumbnail">
-      <img alt="" src= <%= image_path("bnb_home_screen.jpg") %>>
+      <%= image_tag("bnb_home_screen.jpg") %>
       <div class="caption">
         <h5>Own a BnB?</h5>
         <br>
@@ -42,7 +42,7 @@
   </div>
   <div class="span4 columns" id="column2">
   <div class="thumbnail">
-    <img alt="" src=<%= image_path("holiday.jpg") %>>
+    <%= image_tag("holiday.jpg") %>
     <div class="caption">
       <h5>Need a place to stay?</h5>
       <br>
@@ -59,7 +59,7 @@
 </div>
   <div class="span4 columns" id="column3">
     <div class="thumbnail">
-      <img alt="" src=<%= image_path("find.jpg") %>>
+     <%= image_tag("find.jpg") %>
       <div class="caption">
         <h5>Find a place to stay</h5>
         <br>

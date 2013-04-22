@@ -15,7 +15,5 @@ class PhotosController
          bootbox.alert "File is invalid, make sure size is 1 mb or less and the name contains no special characters."
 
 
-  index: ->
-    $('a[rel*=lazybox]').lazybox()
 
 this.BnBEezy.photos = new PhotosController()

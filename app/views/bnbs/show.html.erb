@@ -1,7 +1,4 @@
-<% content_for :head do %>
-    <%= javascript_include_tag 'gmaps4rails/base','gmaps4rails/google' %>
-<% end %>
-
+<%= javascript_include_tag "googlemap" %>
   <div class="row-fluid">
     <div class="span12">
       <% if user_signed_in? && current_user.is?(:owner) %>

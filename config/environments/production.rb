@@ -41,7 +41,7 @@ SampleApp::Application.configure do
 
   # See everything in the log (default is :info)
   # config.log_level = :debug
-  config.action_mailer.default_url_options = { :host => 'sheltered-mesa-5241.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'www.bnbeezy.com' }
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
@@ -54,7 +54,7 @@ SampleApp::Application.configure do
   config.action_mailer.smtp_settings = {
    address: "smtp.mandrillapp.com",
    port: 587,
-   domain: "glacial-taiga-1918.herokuapp.com",
+   domain: "www.bnbeezy.com",
    authentication: "plain",
    enable_starttls_auto: true,
    user_name: "searlecon",
@@ -91,6 +91,7 @@ SampleApp::Application.configure do
       false
     end
   }
+  config.assets.precompile += %w( jquery.js jquery-ui.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

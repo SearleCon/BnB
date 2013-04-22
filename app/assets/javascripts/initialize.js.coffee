@@ -41,6 +41,11 @@ $(document).ajaxStop ->
   $("#overlay").remove()
 
 
+$(document).ready ->
+  $('a[rel*=lazybox]').lazybox()
+  $("[rel=tooltip]").tooltip({animation:true, placement:'top'})
+
+
 
 
 

@@ -11,13 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-//= require jquery
-//= require jquery-ui
+
 //= require jquery_ujs
-//= require fullcalendar
-//= require select2
 //= require bootstrap
 //= require best_in_place
+//= require select2
 //= require jquery.ui.datepicker
 //= require lazybox
 //= require cocoon
@@ -25,8 +23,6 @@
 //= require jquery.spin
 //= require jquery.imagesloaded.min
 //= require jquery.disabler.min
-//= require date
-//= require bootbox
 //= require bnbeezy
 //= require utilities
 //= require ajax_helper

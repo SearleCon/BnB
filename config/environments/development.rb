@@ -14,7 +14,7 @@ SampleApp::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
   config.cache_store = :dalli_store
 

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '3.2.13'
-gem 'jquery-rails'
+
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate'
@@ -14,7 +14,6 @@ gem 'carrierwave'
 gem 'best_in_place'
 gem 'fullcalendar-rails'
 gem 'lazybox'
-gem 'jquery-ui-rails'
 gem 'enumify'
 gem 'cocoon'
 gem 'carmen-rails'
@@ -49,6 +48,7 @@ gem "best_in_place"
 gem 'carrierwave-processing'
 gem 'normalize-rails'
 gem 'sprockets-image_compressor'
+gem 'jquery-rails-cdn-yjchen'
 
 
 group :development, :test do
@@ -62,6 +62,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
   gem 'sass-rails'
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'coffee-rails'

@@ -48,7 +48,7 @@ gem "best_in_place"
 gem 'carrierwave-processing'
 gem 'normalize-rails'
 gem 'sprockets-image_compressor'
-gem 'jquery-rails-cdn-yjchen'
+
 
 
 group :development, :test do

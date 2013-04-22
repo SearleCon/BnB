@@ -91,7 +91,6 @@ SampleApp::Application.configure do
       false
     end
   }
-  config.assets.precompile += %w( jquery.js jquery-ui.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

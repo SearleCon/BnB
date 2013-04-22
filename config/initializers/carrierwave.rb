@@ -7,7 +7,6 @@ CarrierWave.configure do |config|
       :aws_secret_access_key  => '7d8apJW1q+kjoqIBYbqUCqi25ACXIMSvNDhsepjt',
       :region => 'eu-west-1'
   }
-  #config.fog_directory  = 'bnbeezy'
   config.fog_directory  = 'searlecon'
   config.max_file_size  = 1.megabyte
 end

@@ -11,7 +11,7 @@ class GuestsController < ApplicationController
   # GET /guests.json
   def index
     search_term = params[:search].to_s.downcase if params[:search]
-    @guests = Guest.search(search_term).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
+    @guests = Guest.where(bnb_id: @bnb.id).search(name_cont: search_term).result.order(sort_column + " " + sort_direction).paginate(per_page: 15, page: params[:page])
   end
 
   # POST /guests

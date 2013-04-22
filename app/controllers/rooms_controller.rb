@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
   # GET /rooms.json
   def index
     search_term = params[:search].to_s.downcase if params[:search]
-    @rooms = Room.search(search_term).where('bnb_id = ?', @bnb.id).order(sort_column + " " + sort_direction).paginate(:per_page => 15, :page => params[:page])
+    @rooms = Room.where(bnb_id: @bnb.id).search(description_cont: search_term).result.order(sort_column + " " + sort_direction).paginate(per_page: 15, page: params[:page])
   end
 
   def new

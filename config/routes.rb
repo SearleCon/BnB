@@ -14,8 +14,16 @@ SampleApp::Application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
 
+  namespace :guest do
+    controller :guest_booking do
+     resources :bookings, only: [:index]
+     resources :bnb, except: [:index, :edit, :update, :destroy, :new, :show, :create ] do
+      resources :bookings, except: [:index, :show, :destroy]
+     end
+    end
+  end
+
   resources :bookings do
-    get :my_bookings, on: :collection
     resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
   end
 
@@ -37,7 +45,7 @@ SampleApp::Application.routes.draw do
     resources :guests, except: [:show]
     resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
     resources :rooms, controller: 'rooms', except: [:show] do
-      get :find_available, :on => :collection
+      get :find_available, on: :collection
     end
   end
 
@@ -65,7 +73,6 @@ SampleApp::Application.routes.draw do
   devise_scope :user do
     match "users/signup/:user_role" => "registrations#new", as: 'register'
   end
-
 end
 #== Route Map
 # Generated on 11 Apr 2013 16:04

@@ -3,7 +3,7 @@ module BnbsHelper
     if user_signed_in?
        if current_user.is?(:guest)
         content_tag(:p, :align => "center") do
-          link_to "Book Now", new_bnb_booking_path(@bnb), :class => "btn-large btn-primary"
+          link_to "Book Now", new_guest_bnb_booking_path(@bnb), :class => "btn-large btn-primary"
         end
        end
     elsif !user_signed_in?

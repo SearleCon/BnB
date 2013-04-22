@@ -20,6 +20,7 @@
 //= require jquery.ui.datepicker
 //= require lazybox
 //= require cocoon
+//= require date
 //= require jquery.turbolinks
 //= require jquery.spin
 //= require jquery.imagesloaded.min

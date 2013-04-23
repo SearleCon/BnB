@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417195542) do
+ActiveRecord::Schema.define(:version => 20130423100216) do
 
   create_table "bnbs", :force => true do |t|
     t.string    "name"
@@ -152,6 +152,25 @@ ActiveRecord::Schema.define(:version => 20130417195542) do
     t.timestamp "updated_at", :null => false
     t.string    "name"
     t.boolean   "free"
+  end
+
+  create_table "rate_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rates", :force => true do |t|
+    t.decimal  "price"
+    t.boolean  "per_person"
+    t.boolean  "per_room"
+    t.boolean  "active"
+    t.string   "name"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.integer  "rate_type_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "roles", :force => true do |t|

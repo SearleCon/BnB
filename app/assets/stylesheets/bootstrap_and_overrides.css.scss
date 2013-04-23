@@ -219,6 +219,24 @@ select {
       text-shadow: #000 1px 5px 10px;
     }
   }
+
+
+
+  .control-group {
+    clear: both;
+  }
+
+  .error .controls .help-inline{
+    color: #B94A48;
+  }
+
+  .error .control-label {
+    color: #B94A48;
+  }
+
+  .error .controls select{
+    border: 1px solid #B94A48;
+  }
 }
 
 

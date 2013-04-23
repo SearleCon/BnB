@@ -10,7 +10,6 @@ class BnbStepsController < ApplicationController
   def update
     @bnb.status = last_step(step) ? 'active' : step.to_s
     @bnb.region = Search.new(params[:search]).region if params[:search]
-    build_default_rooms if @bnb.rooms.empty?
     @bnb.save
     @step_text = last_step(step) ? 'Finish' : 'Continue'
     render_wizard @bnb

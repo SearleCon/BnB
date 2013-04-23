@@ -1,0 +1,14 @@
+<div class="nested-fields" style="display: inline-block; width: 30%;" >
+  <h5>Rate</h5>
+  <%= link_to_remove_association content_tag('i', '', class: 'icon-remove-sign icon-white').concat(" Remove"), f %>
+  <br>
+
+  <%= f.input :name %>
+  <%= f.association :rate_type, collection: RateType.all, label_method: :name, include_blank: false %>
+  <%= f.input :per_person, as: :boolean, inline_label: true, label: false %>
+  <%= f.input :per_room, as: :boolean, inline_label: true, label: false %>
+  <%= f.input :price, :wrapper => :prepend, :class => "inline", :label => "Price" do %>
+      <%= content_tag :span, "R", :class => "add-on", :style => "color:black;" %>
+      <%= f.input_field :price, value: number_with_precision(f.object.price, precision: 2)%>
+  <% end %>
+</div>

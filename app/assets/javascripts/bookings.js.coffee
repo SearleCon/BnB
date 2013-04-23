@@ -65,7 +65,7 @@ class BookingsController
     $('#booking_guest_id').select2({
        width: 'element',
        placeholder: 'Search for a guest'
-       });
+        });
 
     $('#guest').on 'cocoon:before-insert', ->
       $("#find_guest").remove()

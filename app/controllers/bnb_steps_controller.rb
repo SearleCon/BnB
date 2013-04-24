@@ -1,6 +1,6 @@
 class BnbStepsController < ApplicationController
   include Wicked::Wizard
-  steps :bnb_details, :contact_details, :social_media
+  steps :bnb_details, :rates, :contact_details, :social_media
   before_filter :get_bnb
   before_filter :set_values, only: :update
   def show
@@ -9,7 +9,6 @@ class BnbStepsController < ApplicationController
 
   def update
     @bnb.status = last_step(step) ? 'active' : step.to_s
-    @bnb.region = Search.new(params[:search]).region if params[:search]
     @bnb.save
     @step_text = last_step(step) ? 'Finish' : 'Continue'
     render_wizard @bnb

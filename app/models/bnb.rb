@@ -39,7 +39,7 @@ class Bnb < ActiveRecord::Base
   has_many :photos, dependent: :delete_all
   has_many :rooms, dependent: :delete_all
   has_many :bookings, dependent: :delete_all
-  has_many :rates, as: :rateable
+  has_many :rates, as: :rateable, include: :rate_type
 
 
   accepts_nested_attributes_for :rates, reject_if: :all_blank, allow_destroy: true
@@ -59,9 +59,8 @@ class Bnb < ActiveRecord::Base
   before_validation :normalize_blank_values
   after_commit :fetch_address, if: :persisted?
 
-  validates :name, :description, :standard_rate, presence: true, if: :active_or_bnb_details?
-
-  validates :standard_rate, format: { with: /^\d{1,4}(\.\d{0,2})?$/ }, numericality: true, if: :active_or_bnb_details?
+  validates :name, :description, presence: true, if: :active_or_bnb_details?
+  validates_associated :rates, if: :active_or_rates?
   validates  :contact_person, :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, presence: true, if: :active_or_contact_details?
 
   def geocode?
@@ -95,6 +94,8 @@ class Bnb < ActiveRecord::Base
     self[:status] == 'active'
   end
 
+
+
   def active_or_bnb_details?
     status.include?('bnb_details') || active?
   end
@@ -105,6 +106,10 @@ class Bnb < ActiveRecord::Base
 
   def active_or_social_media?
     status.include?('social_media') || active?
+  end
+
+  def active_or_rates?
+    status.include?('rates') || active?
   end
 
   def address_changed?

@@ -7,7 +7,6 @@
         <%= f.text_field :name_cont, placeholder: "Search on BnB name" %>
       </div>
 
-
       <div class="rating_field">
         <%= f.label :rating_eq, "Rating:" %>
         <%= f.select :rating_eq, (1..5),  prompt: "Select a rating" %>
@@ -17,17 +16,6 @@
         <%= f.label :city_cont, "City:" %>
         <%= f.text_field :city_cont, placeholder: "Search on city" %>
       </div>
-
-      <div class="rate_field">
-        <div class= "min_rate">
-         <%= f.label :standard_rate_gteq, "Min Rate:" %>
-         <%= f.text_field :standard_rate_gteq, placeholder: "0"  %>
-        </div>
-        <div class= "max_rate">
-         <%= f.label :standard_rate_lteq, "Max Rate:" %>
-         <%= f.text_field :standard_rate_lteq, placeholder: "1000" %>
-        </div>
-      </div>
       <br>
       <br>
       <br>
@@ -35,9 +23,6 @@
         <%= f.submit "Search", class: "btn btn-primary" %>
       </div>
   <% end %>
-
-
-
 </div>
 
 
@@ -51,7 +36,7 @@
     <div class="row" id="bnb_row">
       <div class="span3 gallery">
       <div class="thumbnail" align="center">
-        <% if  bnb.photos.main_photo.empty? %>
+      <% if  bnb.photos.main_photo.empty? %>
             <%=link_to placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb) %>
       <% else %>
             <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb)), show_bnb_path(bnb))%>

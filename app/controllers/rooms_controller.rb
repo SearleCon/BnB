@@ -14,9 +14,6 @@ class RoomsController < ApplicationController
     @rooms = Room.where(bnb_id: @bnb.id).search(description_cont: search_term).result.order(sort_column + " " + sort_direction).paginate(per_page: 15, page: params[:page])
   end
 
-  def new
-    @room.rates = @bnb.standard_rate
-  end
 
   # POST /rooms
   # POST /rooms.json

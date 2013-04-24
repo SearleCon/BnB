@@ -11,33 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423100216) do
+ActiveRecord::Schema.define(:version => 20130424114102) do
 
   create_table "bnbs", :force => true do |t|
-    t.string    "name"
-    t.text      "description"
-    t.string    "email"
-    t.string    "address_line_one"
-    t.string    "address_line_two"
-    t.string    "city"
-    t.string    "postal_code"
-    t.string    "country"
-    t.string    "telephone_number"
-    t.string    "website"
-    t.string    "contact_person"
-    t.string    "twitter_account"
-    t.string    "facebook_page"
-    t.timestamp "created_at",                          :null => false
-    t.timestamp "updated_at",                          :null => false
-    t.integer   "user_id"
-    t.float     "latitude"
-    t.float     "longitude"
-    t.integer   "rating"
-    t.string    "region"
-    t.decimal   "standard_rate"
-    t.string    "slug"
-    t.boolean   "approved",         :default => false
-    t.boolean   "mappable",         :default => false
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "address_line_one"
+    t.string   "address_line_two"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "country"
+    t.string   "telephone_number"
+    t.string   "website"
+    t.string   "contact_person"
+    t.string   "twitter_account"
+    t.string   "facebook_page"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "rating"
+    t.string   "region"
+    t.string   "slug"
+    t.boolean  "approved",         :default => false
+    t.boolean  "mappable",         :default => false
   end
 
   add_index "bnbs", ["slug"], :name => "index_bnbs_on_slug", :unique => true

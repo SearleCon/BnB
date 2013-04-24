@@ -11,7 +11,7 @@
           </div>
       <% end %>
       <div class="hero-unit clearfix">
-        <div id="details" class="span4" align="left">
+        <div id="details" class="span6" align="left">
           <h2><%= @bnb.name %></h2>
           <p align="center"><% @bnb.rating.times do %>
                 <i class="icon-star icon-white"></i>
@@ -21,6 +21,24 @@
           <strong>Description</strong>
 
           <p><%= simple_format(@bnb.description) %></p>
+          <br>
+
+          <strong>Rates</strong>
+          <table class="table table-bordered">
+          <% @bnb.rates.each do |rate| %>
+            <tr>
+              <td><%= rate.name%></td>
+              <td><%= rate.rate_type.name %></td>
+              <td><%= number_to_currency(rate.price, precision: 2) %></td>
+              <% if rate.per_person %>
+                  <td><%= "per person" %></td>
+              <% end %>
+              <% if rate.per_room %>
+                  <td><%= "per room" %></td>
+              <% end %>
+            </tr>
+          <% end %>
+          </table>
 
           <br>
           <%= display_action_links_for_user  %>

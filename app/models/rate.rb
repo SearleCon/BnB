@@ -4,9 +4,10 @@ class Rate < ActiveRecord::Base
 
   attr_accessible :active, :name, :per_person, :per_room, :price, :rate_type_id
 
+  validates :name, presence: true
+  validates :price, format: { with: /^\d{1,4}(\.\d{0,2})?$/ }, numericality: true
+
   after_initialize :set_default_values, if: :new_record?
-
-
 
   private
   def set_default_values
@@ -14,5 +15,4 @@ class Rate < ActiveRecord::Base
     self[:per_person] = false
     self[:per_room] = false
   end
-
 end

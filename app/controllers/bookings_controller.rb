@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :booking, through: :bnb, except: :index
   authorize_resource only: :index
 
-  before_filter :expire_cached_action, :only => :destroy
+  before_filter :expire_cached_action, only: :destroy
 
   helper_method :sort_column, :sort_direction
 
@@ -135,6 +135,6 @@ class BookingsController < ApplicationController
   end
 
   def expire_cached_action
-    expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.maximum(:updated_at).to_i
+    expire_action :controller => '/events', action: 'index', tag: current_user.bnb.bookings.unscoped.maximum(:updated_at).to_i
   end
 end

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8718bb0-374b-4373-95dc-a4a55ae900bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bookings/_line_item_row.html.erb" afterPath="$PROJECT_DIR$/app/views/bookings/_line_item_row.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/line_item.rb" afterPath="$PROJECT_DIR$/app/models/line_item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/line_items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/line_items_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/newrelic_agent.log" afterPath="$PROJECT_DIR$/log/newrelic_agent.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BnB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +12,7 @@
     <file path="/_unbooked_rooms.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1365777820453" ignored="false" />
     <file path="$PROJECT_DIR$/../3things/app/views/tasks/_task.html.haml" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360480758271" ignored="false" />
     <file path="/find_available.js.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1360481344153" ignored="false" />
-    <file path="/bookings_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366969238592" ignored="false" />
+    <file path="/bookings_controller.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366973929864" ignored="false" />
     <file path="/new.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366612779046" ignored="false" />
     <file path="/_form.html.erb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1366968837435" ignored="false" />
     <file path="/booking_observer.rb" changelist="c8718bb0-374b-4373-95dc-a4a55ae900bc" time="1362122438431" ignored="false" />
@@ -372,19 +365,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bookings_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="bookings_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="4175" selection-end="4175" vertical-scroll-proportion="0.0">
+            <state line="140" column="86" selection-start="4185" selection-end="4185" vertical-scroll-proportion="0.740634">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="line_items_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="events_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line_items_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/line_items_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="16" selection-start="95" selection-end="130" vertical-scroll-proportion="-0.17291066">
+            <state line="2" column="16" selection-start="95" selection-end="130" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -434,11 +436,11 @@
         <option value="$PROJECT_DIR$/app/views/bookings/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/models/booking.rb" />
         <option value="$PROJECT_DIR$/app/views/guest/bookings/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/line_items/create.js.erb" />
         <option value="$PROJECT_DIR$/app/controllers/line_items_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/line_item.rb" />
         <option value="$PROJECT_DIR$/app/views/bookings/_line_item_row.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/bookings_controller.rb" />
       </list>
     </option>
   </component>
@@ -1702,15 +1704,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/guest/bookings/_client_bookings_table.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/guest/bookings/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="8" selection-start="782" selection-end="782" vertical-scroll-proportion="-6.875">
@@ -1742,13 +1735,6 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/contact_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="4175" selection-end="4175" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1811,7 +1797,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/line_items_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="95" selection-end="130" vertical-scroll-proportion="-0.17291066">
+        <state line="2" column="16" selection-start="95" selection-end="130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/bookings_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="86" selection-start="4185" selection-end="4185" vertical-scroll-proportion="0.740634">
           <folding />
         </state>
       </provider>

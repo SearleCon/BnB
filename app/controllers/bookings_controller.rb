@@ -136,6 +136,5 @@ class BookingsController < ApplicationController
 
   def expire_cached_action
     expire_action :controller => '/events', :action => 'index', :tag => current_user.bnb.bookings.maximum(:updated_at).to_i
-    expire_action :action => :my_bookings, :tag => Booking.where(:user_id => current_user.id).maximum(:updated_at).to_i
   end
 end

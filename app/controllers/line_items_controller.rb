@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
-   respond_to :js, :json
+   respond_to :js, only: [:create, :destroy]
+   respond_to :json, only: :update
    before_filter :get_booking
    before_filter :get_line_item, :only => [:update, :destroy]
 

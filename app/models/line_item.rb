@@ -17,8 +17,8 @@ class LineItem < ActiveRecord::Base
 
   validates_presence_of :value
 
-  def currency
-     helpers.number_to_currency(self[:value], precision: 2)
+  def to_currency
+    return helpers.number_to_currency(self[:value], precision: 2)
   end
 
 

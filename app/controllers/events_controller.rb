@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   caches_action :index, cache_path: proc { |c|
     key = current_user.bnb.bookings.unscoped.maximum(:updated_at)
-    {:tag => key.to_i} if key
+    {tag: key.to_i} if key
   }
 
   # GET /events

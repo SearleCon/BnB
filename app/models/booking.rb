@@ -19,12 +19,13 @@ class Booking < ActiveRecord::Base
   has_many :line_items, dependent: :delete_all
   has_and_belongs_to_many :rooms
   has_one :event, dependent: :delete
+  belongs_to :rate
 
   default_scope -> {where(active: true)}
 
   scope :inactive, -> { where(active: false) }
 
-  attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids
+  attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids, :rate_id
 
   before_create :set_event_name
   before_save :set_event_color

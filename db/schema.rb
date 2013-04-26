@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424114102) do
+ActiveRecord::Schema.define(:version => 20130426092747) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130424114102) do
     t.integer   "bnb_id"
     t.integer   "user_id"
     t.boolean   "online",     :default => false
+    t.integer   "rate_id"
   end
 
   add_index "bookings", ["bnb_id"], :name => "index_bookings_on_bnb_id"
@@ -161,13 +162,10 @@ ActiveRecord::Schema.define(:version => 20130424114102) do
 
   create_table "rates", :force => true do |t|
     t.decimal  "price"
-    t.boolean  "per_person"
-    t.boolean  "per_room"
     t.boolean  "active"
-    t.string   "name"
+    t.string   "description"
     t.integer  "rateable_id"
     t.string   "rateable_type"
-    t.integer  "rate_type_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

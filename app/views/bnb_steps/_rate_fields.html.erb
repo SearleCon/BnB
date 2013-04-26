@@ -1,14 +1,9 @@
-<div class="nested-fields">
-  <h5>Rate</h5>
-  <%= link_to_remove_association content_tag('i', '', class: 'icon-remove-sign icon-white').concat(" Remove"), f %>
-  <br>
-
-  <%= f.input :name %>
-  <%= f.association :rate_type, collection: RateType.all, label_method: :name, include_blank: false %>
-  <%= f.input :per_person, as: :boolean, inline_label: true, label: false %>
-  <%= f.input :per_room, as: :boolean, inline_label: true, label: false %>
-  <%= f.input :price, :wrapper => :prepend, :class => "inline", :label => "Price" do %>
-      <%= content_tag :span, "R", :class => "add-on", :style => "color:black;" %>
-      <%= f.input_field :price, value: number_with_precision(f.object.price, precision: 2)%>
-  <% end %>
-</div>
+<tr class='nested-fields'>
+    <td><%= f.input :description, label: false %></td>
+    <td><%= f.input :price, label: false %></td>
+    <td valign="top">
+    <%= link_to_remove_association f do %>
+     <i class="icon-remove icon-white"></i>
+    <% end %>
+    </td>
+</tr>

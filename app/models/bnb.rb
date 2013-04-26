@@ -39,7 +39,7 @@ class Bnb < ActiveRecord::Base
   has_many :photos, dependent: :delete_all
   has_many :rooms, dependent: :delete_all
   has_many :bookings, dependent: :delete_all
-  has_many :rates, as: :rateable, include: :rate_type
+  has_many :rates, as: :rateable
 
 
   accepts_nested_attributes_for :rates, reject_if: :all_blank, allow_destroy: true

@@ -16,4 +16,14 @@ class LineItem < ActiveRecord::Base
   attr_accessible :description, :value
 
   validates_presence_of :value
+
+  def currency
+     helpers.number_to_currency(self[:value], precision: 2)
+  end
+
+
+  private
+  def helpers
+    ActionController::Base.helpers
+  end
 end

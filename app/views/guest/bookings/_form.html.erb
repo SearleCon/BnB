@@ -8,7 +8,10 @@
             <%= event_form.input :end_at, :as => :datepicker, label: 'Check-out date:', :input_html => { :data => { :previous_value => f.object.event.end_at}, :value => f.object.event.end_at} %>
         <% end %>
       </div>
-        <%= f.simple_fields_for :guest do |field| %>
+    <%= f.association :rate, label_method: :rate_info , collection: @bnb.rates, as: :radio_buttons%>
+    <br>
+
+    <%= f.simple_fields_for :guest do |field| %>
             <%= field.input :name %>
             <%= field.input :surname %>
             <%= field.input :contact_number %>

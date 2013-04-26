@@ -61,12 +61,10 @@ class BookingsController < ApplicationController
   end
 
   def check_out
-    @booking.line_items.delete_all
-    @booking.rooms.each do |room|
-      @line_item = @booking.line_items.build
-      @line_item.description = room.room_number
-      @line_item.value = room.rates * number_of_nights
-    end
+     @booking.line_items.delete_all
+     @line_item = @booking.line_items.build
+     @line_item.description = @booking.rate.description
+     @line_item.value = @booking.rate.price * number_of_nights
     if @booking.save
       redirect_to show_invoice_bnb_booking_url(@bnb, @booking)
     else

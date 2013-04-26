@@ -27,15 +27,8 @@
           <table class="table table-bordered">
           <% @bnb.rates.each do |rate| %>
             <tr>
-              <td><%= rate.name%></td>
-              <td><%= rate.rate_type.name %></td>
+              <td><%= rate.description%></td>
               <td><%= number_to_currency(rate.price, precision: 2) %></td>
-              <% if rate.per_person %>
-                  <td><%= "per person" %></td>
-              <% end %>
-              <% if rate.per_room %>
-                  <td><%= "per room" %></td>
-              <% end %>
             </tr>
           <% end %>
           </table>

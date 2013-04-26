@@ -6,7 +6,6 @@ class GuestsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
-
   # GET /guests
   # GET /guests.json
   def index

@@ -6,11 +6,7 @@ class Guest::BookingsController < ApplicationController
 
   helper_method :sort_column, :sort_direction
 
-  caches_action :index, cache_path: proc { |c|
-    key = Booking.where(user_id: current_user.id).unscoped.maximum(:updated_at)
-    c.params.merge! tag: key.to_i if key
-  }
-
+  cache_sweeper :bookings_sweeper, only: [:create, :update]
 
   def index
     active = Booking.includes([:event, :bnb]).where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)

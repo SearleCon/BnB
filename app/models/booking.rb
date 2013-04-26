@@ -27,7 +27,7 @@ class Booking < ActiveRecord::Base
 
   attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids, :rate_id
 
-  before_create :set_event_name
+  before_save :set_event_name
   before_save :set_event_color
   after_commit :send_notifications, if: :notification_required?
   after_commit :send_booking_confirmation, if: :confirmation_required?

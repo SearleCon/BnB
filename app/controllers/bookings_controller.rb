@@ -5,15 +5,9 @@ class BookingsController < ApplicationController
   load_and_authorize_resource :booking, through: :bnb, except: :index
   authorize_resource only: :index
 
-  before_filter :expire_cached_action, only: :destroy
+  cache_sweeper :bookings_sweeper
 
-  helper_method :sort_column, :sort_direction
-
-  caches_action :show, cache_path: proc { |c|
-    key = Booking.find(c.params[:id]).updated_at
-    {tag: key.to_i} if key
-  }
-
+  caches_action :show
 
   # GET /bookings/1
   # GET /bookings/1.json
@@ -122,19 +116,9 @@ class BookingsController < ApplicationController
   end
 
   private
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
-
-  def sort_column
-    Booking.column_names.include?(params[:sort]) ? params[:sort] : "bnb_id"
-  end
 
   def number_of_nights
     total ||= (Date.parse(@booking.event.end_at) - Date.parse(@booking.event.start_at)).to_i
   end
 
-  def expire_cached_action
-    expire_action :controller => '/events', action: 'index', tag: current_user.bnb.bookings.unscoped.maximum(:updated_at).to_i
-  end
 end

@@ -1,4 +1,4 @@
-SampleApp::Application.routes.draw do
+Bnbeezy::Application.routes.draw do
 
   root to: 'static_pages#home'
 

@@ -1,4 +1,4 @@
-SampleApp::Application.configure do
+Bnbeezy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   config.action_controller.asset_host = "//searlecon.s3.amazonaws.com"

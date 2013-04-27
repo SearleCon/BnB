@@ -1,4 +1,4 @@
-SampleApp::Application.configure do
+Bnbeezy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
 

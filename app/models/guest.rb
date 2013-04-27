@@ -32,9 +32,16 @@ class Guest < ActiveRecord::Base
   validates :contact_number, length: { is: 10 }
   validates :email, format: { with: VALID_EMAIL_REGEX}, allow_nil: true
 
+  before_save :capitalize_names
 
   def full_name
     "#{self.name} #{self.surname}".titleize
+  end
+
+  private
+  def capitalize_names
+    self[:name].capitalize!
+    self[:surname].capitalize!
   end
 
 end

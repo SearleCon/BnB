@@ -16,7 +16,7 @@ if defined?(Bundler)
    Bundler.require(:default, :assets, Rails.env)
 end
 
-module SampleApp
+module Bnbeezy
   class Application < Rails::Application
 
 

@@ -8,11 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def destroy
-    if resource.is?(:owner)
-     resource.bnb.destroy if resource.bnb
-    else
-      Booking.destroy_all(:user_id => resource)
-    end
+    resource.is?(:owner) ? (resource.bnb.destroy if resource.bnb) : Booking.destroy_all(:user_id => resource)
     super
   end
 
@@ -24,8 +20,4 @@ class RegistrationsController < Devise::RegistrationsController
        session.delete(:return_to) || root_url
      end
   end
-
-
-
-
 end

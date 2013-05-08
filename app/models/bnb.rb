@@ -56,16 +56,13 @@ class Bnb < ActiveRecord::Base
                     msg: "is not valid according to Google Maps"
 
 
+  after_initialize :default_values
   before_validation :normalize_blank_values
   after_commit :fetch_address, if: :persisted?
 
   validates :name, :description, presence: true, if: :active_or_bnb_details?
-  validates_associated :rates, if: :active_or_rates?
   validates  :contact_person, :email, :address_line_one, :address_line_two, :city, :postal_code, :telephone_number, presence: true, if: :active_or_contact_details?
 
-  def geocode?
-    active_or_contact_details? || address_changed?
-  end
 
   def full_address
     [self[:address_line_one], self[:address_line_two], self[:city], self[:postal_code], self[:country]].reject(&:nil?).join(",")
@@ -80,21 +77,14 @@ class Bnb < ActiveRecord::Base
   end
 
 
-
-  def website
-    self[:website] || 'N/A'
-  end
-
-  def status
-    @status ||= new_record? ? 'inactive' : 'active'
-  end
-
   private
-  def active?
-    self[:status] == 'active'
+  def default_values
+    @status = new_record? ? 'inactive' : 'active'
   end
 
-
+  def active?
+   @status == 'active'
+  end
 
   def active_or_bnb_details?
     status.include?('bnb_details') || active?
@@ -102,14 +92,6 @@ class Bnb < ActiveRecord::Base
 
   def active_or_contact_details?
     status.include?('contact_details') || active?
-  end
-
-  def active_or_social_media?
-    status.include?('social_media') || active?
-  end
-
-  def active_or_rates?
-    status.include?('rates') || active?
   end
 
   def address_changed?

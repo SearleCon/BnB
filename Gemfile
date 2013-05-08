@@ -3,7 +3,6 @@ ruby '2.0.0'
 gem 'rails', '3.2.13'
 
 gem 'bcrypt-ruby'
-gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'simple_form', "~> 2.0.1"
@@ -54,6 +53,7 @@ gem 'sprockets-image_compressor'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'annotate', ">=2.5.0"
   gem 'daemons'
   gem 'bullet'
@@ -74,10 +74,11 @@ group :assets do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'cucumber-rails'
-  gem 'database_cleaner'
+  gem "faker", "~> 1.1.2"
+  gem "capybara", "~> 2.0.2"
+  gem "database_cleaner", "~> 0.9.1"
+  gem "launchy", "~> 2.2.0"
+  gem 'shoulda-matchers'
 end
 
 group :production do

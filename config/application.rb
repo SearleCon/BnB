@@ -13,7 +13,7 @@ if defined?(Bundler)
   #Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   #
-   Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, :assets, Rails.env)
 end
 
 module Bnbeezy
@@ -36,7 +36,7 @@ module Bnbeezy
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
     # Activate observers that should always be running.
-     config.active_record.observers = :bookings_sweeper
+    config.active_record.observers = :bookings_sweeper
 
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
@@ -87,5 +87,17 @@ module Bnbeezy
     config.autoload_paths << "#{Rails.root}/app/jobs"
     config.autoload_paths << "#{Rails.root}/app/sweepers"
     config.autoload_paths << "#{Rails.root}/lib"
+
+
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       controller_specs: true,
+                       request_specs: false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
   end
 end

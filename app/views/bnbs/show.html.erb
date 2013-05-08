@@ -40,15 +40,9 @@
         <br>
         <div class="span5 pull-right gallery">
           <div class="thumbnail">
-            <% if @bnb.photos.processed.main_photo.empty? %>
-                <%= placeholdit_image_tag "300", text: "No photos uploaded!" %>
-            <% else %>
-               <% cache @bnb.photos.processed.main_photo.first do %>
-                    <a href="<%= @bnb.photos.processed.main_photo.first.image_url %>" class="thumbnail" rel="lazybox">
-                     <%= image_tag @bnb.photos.processed.main_photo.first.image_url %>
-                    </a>
-               <% end %>
-            <% end %>
+          <% cache  @bnb.photos.main_photo.first do %>
+           <%= display_main_photo(@bnb.photos.main_photo.first) %>
+          <% end %>
           </div>
           <% if user_signed_in? && current_user.is?(:owner) %>
               <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
@@ -103,47 +97,15 @@
           <div class="carousel-inner">
             <div class="item active">
               <ul class="thumbnails">
-                <% if @bnb.photos.processed.support_photos.any? %>
                    <% cache @bnb.photos.processed.support_photos do %>
-                    <% @bnb.photos.processed.support_photos.try(:each) do |photo| %>
-                        <li class=<%= "span3" %>>
-                          <div class="thumbnail">
-                            <a href="<%= photo.image_url %>" class="thumbnail" rel="lazybox">
-                              <%= image_tag photo.image.url(:thumb) %>
-                            </a>
-                          </div>
-                        </li>
+                    <%= display_support_photos(@bnb.photos.processed.support_photos)  %>
                     <% end %>
-                   <% end %>
-                <% else %>
-                    <li class=<%= "span3" %>>
-                      <div class="thumbnail">
-                          <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                      </div>
-                    </li>
-                    <li class=<%= "span3" %>>
-                      <div class="thumbnail">
-                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                      </div>
-                    </li>
-                    <li class=<%= "span3" %>>
-                      <div class="thumbnail">
-                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                      </div>
-                    </li>
-                    <li class=<%= "span3" %>>
-                      <div class="thumbnail">
-                        <%= placeholdit_image_tag "200", text: "No photos uploaded!" %>
-                      </div>
-                    </li>
-                <% end %>
               </ul>
             </div>
           </div>
          <% if user_signed_in? && current_user.is?(:owner) %>
            <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
          <% end %>
-
         </div>
       </div>
       <div class="hero-unit clearfix" style="padding-top: 0px">

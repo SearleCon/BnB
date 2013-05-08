@@ -18,4 +18,37 @@ module BnbsHelper
       end
     end
   end
+
+  def display_main_photo(photo)
+    if photo
+        content_tag(:a, href: photo.image_url, class:"thumbnail", rel:"lazybox") do
+          image_tag photo.image_url
+        end
+    else
+      placeholdit_image_tag "300", text: "No photos uploaded!"
+    end
+  end
+
+  def display_support_photos(photos)
+    photos = nil
+    if photos
+      photos.collect do |photo|
+         content_tag(:li, class: "span3") do
+          content_tag(:div, class: "thumbnail") do
+            content_tag(:a, href: photo.image_url, class: "thumbnail", rel: "lazybox") do
+              image_tag photo.image_url(:thumb)
+            end
+          end
+         end
+      end.join().html_safe
+    else
+      4.times.collect do
+        content_tag(:li, class: "span3") do
+          content_tag(:div, class: "thumbnail") do
+              placeholdit_image_tag "300", text: "No photos uploaded!"
+          end
+        end
+      end.join().html_safe
+    end
+  end
 end

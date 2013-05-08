@@ -1,0 +1,4 @@
+2013-04-28T09:55:45+0200: [Worker(host:8ta-150-76-39.telkomadsl.co.za pid:12899)] New Relic Ruby Agent Monitoring DJ worker host:8ta-150-76-39.telkomadsl.co.za pid:12899
+2013-04-28T09:55:45+0200: [Worker(delayed_job.workless host:8ta-150-76-39.telkomadsl.co.za pid:12899)] Starting job worker
+2013-04-28T09:55:58+0200: [Worker(delayed_job.workless host:8ta-150-76-39.telkomadsl.co.za pid:12899)] ProcessImageJob completed after 13.0593
+2013-04-28T09:55:58+0200: [Worker(delayed_job.workless host:8ta-150-76-39.telkomadsl.co.za pid:12899)] 1 jobs processed at 0.0758 j/s, 0 failed ...

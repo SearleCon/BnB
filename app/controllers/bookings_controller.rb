@@ -40,9 +40,11 @@ class BookingsController < ApplicationController
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
-    @booking.update_attributes(params[:booking]) ?
-        flash.now[:notice] = "Booking was successfully updated." :
-        flash.now[:alert] = "Booking could not be updated."
+    if @booking.update_attributes(params[:booking]) then
+      flash.now[:notice] = "Booking was successfully updated."
+    else
+      flash.now[:alert] = "Booking could not be updated."
+    end
     respond_with(@booking, location: bnb_bookings_url(@bnb))
   end
 
@@ -55,10 +57,8 @@ class BookingsController < ApplicationController
   end
 
   def check_out
-     @booking.line_items.delete_all
-     @line_item = @booking.line_items.build
-     @line_item.description = @booking.rate.description
-     @line_item.value = @booking.rate.price * number_of_nights
+    @booking.line_items.clear
+    @booking.line_items.build(description: @booking.rate.description, value: (@booking.rate.price * number_of_nights) )
     if @booking.save
       redirect_to show_invoice_bnb_booking_url(@bnb, @booking)
     else
@@ -67,24 +67,18 @@ class BookingsController < ApplicationController
   end
 
   def cancel_check_out
-    @booking.status = :checked_in
-    @booking.active = true
-    if @booking.save
-      redirect_to bnb_bookings_url(@bnb), :notice => 'Check out process was cancelled successfully.'
+    if @booking.update_attributes(status: :checked_in, active: true)
+      redirect_to bnb_bookings_url(@bnb), notice: 'Check out process was cancelled successfully.'
     else
-      flash[:alert] = "Cancellation failed."
-      redirect_to show_invoice_bnb_booking_url(@bnb, @booking)
+      redirect_to show_invoice_bnb_booking_url(@bnb, @booking), alert: "Cancellation failed."
     end
   end
 
   def complete_check_out
-    @booking.status = :closed
-    @booking.active = false
-    if @booking.save
-      redirect_to bnb_bookings_url(@bnb), :notice => 'Booking has been checked out successfully.'
+    if @booking.update_attributes(status: :closed, active: false)
+      redirect_to bnb_bookings_url(@bnb), notice: 'Booking has been checked out successfully.'
     else
-      flash[:alert] = "The check out process could not be completed."
-      redirect_to show_invoice_bnb_booking_url(@bnb, @booking)
+      redirect_to show_invoice_bnb_booking_url(@bnb, @booking), alert: "The check out process could not be completed."
     end
   end
 
@@ -108,7 +102,8 @@ class BookingsController < ApplicationController
 
 
   def confirm
-    if @booking.confirm!
+    if @booking.update_attributes(status: :booked)
+      UserMailer.delay.confirmation_received(@booking)
       redirect_to bnb_bookings_url(@bnb), notice: "Booking for #{@booking.guest.name} was confirmed successfully"
     else
       redirect_to bnb_bookings_url(@bnb), alert: "Booking for #{@booking.guest.name} could not be confirmed"
@@ -116,7 +111,6 @@ class BookingsController < ApplicationController
   end
 
   private
-
   def number_of_nights
     total ||= (Date.parse(@booking.event.end_at) - Date.parse(@booking.event.start_at)).to_i
   end

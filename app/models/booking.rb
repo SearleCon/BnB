@@ -21,26 +21,20 @@ class Booking < ActiveRecord::Base
   has_one :event, dependent: :delete
   belongs_to :rate
 
-  default_scope -> {where(active: true)}
-
-  scope :inactive, -> { where(active: false) }
-
   attr_accessible :active, :guest_attributes, :rooms, :status, :online, :event_attributes, :bnb_id, :guest_id, :room_ids, :rate_id
-
-  before_save :set_event_name
-  before_save :set_event_color
-  after_commit :send_notifications, if: :notification_required?
-  after_commit :send_booking_confirmation, if: :confirmation_required?
-
-
-  delegate :name, :start_at, :end_at, to: :event, prefix: true
-
-  validates_presence_of :guest
-  validates_associated :guest
-  validates_presence_of :rooms
 
   accepts_nested_attributes_for :event
   accepts_nested_attributes_for :guest, reject_if: :all_blank, allow_destroy: true
+
+  validates_presence_of :guest
+  validates_presence_of :rooms
+
+  before_save :set_event_details
+
+  default_scope -> {where(active: true)}
+  scope :inactive, -> { where(active: false) }
+
+  delegate :name, :start_at, :end_at, :color, to: :event, prefix: true
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
@@ -63,34 +57,9 @@ class Booking < ActiveRecord::Base
     end
   end
 
-  def confirm!
-    booked!
-  end
-
   private
-  def confirmation_required?
-     updated? && booked? && online?
-  end
-
-  def notification_required?
-    created? && online?
-  end
-
-
-  def send_notifications
-    UserMailer.delay.booking_made(self)
-    UserMailer.delay.notify_bnb(self)
-  end
-
-  def send_booking_confirmation
-    UserMailer.delay.confirmation_received(self)
-  end
-
-  def set_event_name
-    self.event.name = "#{self.guest.name} (#{self.guest.contact_number} #{self.guest.email})"
-  end
-
-  def set_event_color
-    self.event.color = EVENT_COLORS[self.status]
+  def set_event_details
+    event[:name] = "#{guest[:name]} (#{guest[:contact_number]} #{guest[:email]})"
+    event[:color] = EVENT_COLORS.fetch(self[:status].to_sym)
   end
 end

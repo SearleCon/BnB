@@ -1,7 +1,7 @@
 class Guest::BookingsController < ApplicationController
   respond_to :html
 
-  load_and_authorize_resource :bnb, except: :my_bookings
+  load_and_authorize_resource :bnb, except: :index
   load_and_authorize_resource :booking, through: :bnb, except: :index
 
   helper_method :sort_column, :sort_direction
@@ -26,7 +26,7 @@ class Guest::BookingsController < ApplicationController
     @booking.guest.user_id = current_user.id
     @booking.guest.bnb = @bnb
     @booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
-    @booking.save
+    send_notifications(@booking) if @booking.save
     respond_with(@booking, location: guest_bookings_path)
   end
 
@@ -43,6 +43,13 @@ class Guest::BookingsController < ApplicationController
   def sort_column
     Booking.column_names.include?(params[:sort]) ? params[:sort] : "bnb_id"
   end
+
+  def send_notifications(booking)
+    UserMailer.delay.booking_made(booking)
+    UserMailer.delay.notify_bnb(booking)
+  end
+
+
 
 
 

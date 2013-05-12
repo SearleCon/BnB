@@ -12,5 +12,4 @@
 
 class Suggestion < ActiveRecord::Base
   attr_accessible :subject, :suggestion, :user_id
-
 end

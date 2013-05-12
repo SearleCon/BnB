@@ -87,11 +87,11 @@ class Bnb < ActiveRecord::Base
   end
 
   def active_or_bnb_details?
-    status.include?('bnb_details') || active?
+    @status.include?('bnb_details') || active?
   end
 
   def active_or_contact_details?
-    status.include?('contact_details') || active?
+    @status.include?('contact_details') || active?
   end
 
   def address_changed?

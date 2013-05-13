@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :event do
     name "Booking"
-    start_at Date.today
-    end_at Date.tomorrow
+    start_at Time.zone.now
+    end_at Time.zone.now + 1.day
     color 'blue'
   end
 end

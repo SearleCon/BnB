@@ -7,6 +7,5 @@ FactoryGirl.define do
     guest
     event
     bnb
-    association :rooms, factory: :room
   end
 end

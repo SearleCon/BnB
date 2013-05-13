@@ -9,9 +9,9 @@ class Guest::BookingsController < ApplicationController
   cache_sweeper :bookings_sweeper, only: [:create, :update]
 
   def index
-    active = Booking.includes([:event, :bnb]).where(:user_id => current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+    active = Booking.includes([:event, :bnb]).where(user_id: current_user).search(bnb_name_cont: params[:search]).result.order(sort_column + " " + sort_direction)
     @active_bookings = active.paginate(per_page: 15, page: params[:active_page]) if active
-    inactive = Booking.inactive.includes([:event, :bnb]).where(user_id: current_user).search(params[:search]).order(sort_column + " " + sort_direction)
+    inactive = Booking.inactive.includes([:event, :bnb]).where(user_id: current_user).search(bnb_name_cont: params[:search]).result.order(sort_column + " " + sort_direction)
     @inactive_bookings = inactive.paginate(per_page: 15, page: params[:inactive_page]) if inactive
   end
 
@@ -48,9 +48,5 @@ class Guest::BookingsController < ApplicationController
     UserMailer.delay.booking_made(booking)
     UserMailer.delay.notify_bnb(booking)
   end
-
-
-
-
 
 end

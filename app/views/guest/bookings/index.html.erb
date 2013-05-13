@@ -16,10 +16,10 @@
   </div>
 
   <h2>Current</h2>
-  <%= render :partial => 'client_bookings_table', :locals => {bookings: @active_bookings, info_page: 'active_page'} %>
+  <%= render partial: 'client_bookings_table', locals: {bookings: @active_bookings, info_page: 'active_page'} %>
 
   <h2>History</h2>
-  <%= render :partial => 'client_bookings_table', :locals => {bookings: @inactive_bookings, info_page: 'inactive_page'} %>
+  <%= render partial: 'client_bookings_table', locals: {bookings: @inactive_bookings, info_page: 'inactive_page'} %>
 </div>
 
 

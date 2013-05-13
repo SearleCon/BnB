@@ -27,8 +27,8 @@ class Event < ActiveRecord::Base
         id: self[:id],
         title: self[:name],
         description: "",
-        start: [:start_at],
-        end: [:end_at],
+        start: self[:start_at],
+        end: self[:end_at],
         allDay: true,
         recurring: false,
         url: Rails.application.routes.url_helpers.bnb_booking_path(booking.bnb, self[:booking_id]),
@@ -48,7 +48,7 @@ class Event < ActiveRecord::Base
   private
 
   def default_values
-      self[:start_at] ||= Date.today
-      self[:end_at] ||= self[:start_at] + 1.days
+      self[:start_at] = Time.zone.now unless self[:start_at]
+      self[:end_at] = self[:start_at] + 1.day unless self[:end_at]
   end
 end

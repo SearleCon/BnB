@@ -49,14 +49,6 @@ class Booking < ActiveRecord::Base
    line_items.sum(:value)
   end
 
-  def self.search(search)
-    if search
-      joins(:bnb).where("lower(bnbs.name) like ?", "%#{search.downcase}%")
-    else
-      scoped
-    end
-  end
-
   private
   def set_event_details
     event[:name] = "#{guest[:name]} (#{guest[:contact_number]} #{guest[:email]})"

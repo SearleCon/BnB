@@ -14,13 +14,16 @@
 #
 
 class Subscription < ActiveRecord::Base
-  belongs_to :plan
-  attr_accessor :paypal_payment_token
 
+  attr_accessor :paypal_payment_token
   attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date, :user_id
 
-  default_scope -> {where(active_profile: true) }
-  after_initialize :set_expiry_date
+  belongs_to :plan
+
+  default_scope -> { where(active_profile: true) }
+
+
+  before_create :set_expiry_date
   before_create :deactivate_previous_subscription
 
 
@@ -53,12 +56,12 @@ class Subscription < ActiveRecord::Base
 
   private
   def set_expiry_date
-    self.expiry_date = Time.now + self.plan.duration.months if self.new_record?
+    self[:expiry_date] = Time.zone.now + plan.duration.months if new_record?
   end
 
   def deactivate_previous_subscription
-    previous = Subscription.where(user_id: self.user_id).first
-    previous.try(:toggle!,:active_profile)
+    previous = Subscription.where(user_id: self[:user_id]).first
+    previous.toggle!(:active_profile) if previous
   end
 
 end

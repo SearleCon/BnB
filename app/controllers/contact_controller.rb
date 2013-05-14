@@ -1,17 +1,20 @@
 class ContactController < ApplicationController
+  before_filter :new_resource
+
   def new
-    @message = Message.new
-    session[:last_page] = request.env['HTTP_REFERER']
   end
 
   def create
-    @message = Message.new(params[:message])
     if @message.valid?
       BnbNotifier.delay.enquiry(@message)
-      redirect_to root_url, notice: 'Email has been sent'
+      redirect_to root_url, notice: 'Thank you for contacting us. We will get back to you as soon as we can.'
     else
-      flash[:alert] = "Please fill all fields."
       render :new
     end
+  end
+
+  private
+  def new_resource
+    @message = Message.new(params[:message])
   end
 end

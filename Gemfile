@@ -57,6 +57,7 @@ group :development, :test do
   gem 'annotate', ">=2.5.0"
   gem 'daemons'
   gem 'bullet'
+  gem 'sextant'
 end
 
 # Gems used only for assets and not required

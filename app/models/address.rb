@@ -49,5 +49,4 @@ class Address
     entity = @geo_address.address_components_of_type(:route).first
     entity['long_name'] if entity
   end
-
 end

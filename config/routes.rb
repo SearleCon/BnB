@@ -12,7 +12,7 @@ Bnbeezy::Application.routes.draw do
   resources :suggestions, only: [:new, :create]
   resources :events, only: [:index]
 
-  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"}
+  devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
 
   namespace :guest do
     controller :guest_booking do
@@ -49,12 +49,14 @@ Bnbeezy::Application.routes.draw do
     end
   end
 
-  get '/bnbs/sub_region_options', :to => "bnbs#subregions"
+  get '/bnbs/sub_region_options', to: "bnbs#subregions"
 
-  get '/bnb(/:id)', :to => "bnbs#show", :as => 'show_bnb'
+  get '/bnb(/:id)', to: "bnbs#show", as: 'show_bnb'
 
-  get 'contact' => 'contact#new', :as => 'contact'
-  post 'contact' => 'contact#create', :as => 'contact'
+  scope controller: :contact do
+   get 'new', as: :new_contact
+   post 'create', as: :contact
+  end
 
 
     get '/startpage', to: 'static_pages#startpage'
@@ -64,7 +66,6 @@ Bnbeezy::Application.routes.draw do
     get '/faq', to: 'static_pages#faq'
     get '/help',    to: 'static_pages#help'
     get '/about',   to: 'static_pages#about'
-    get '/contactus', to: 'static_pages#contact'
     get '/pricing', to: 'static_pages#pricing'
     get '/registration_page', to: 'static_pages#registration_page'
     get '/ie_warning', to: 'static_pages#ie_warning'

@@ -20,8 +20,8 @@ module Bnbeezy
   class Application < Rails::Application
 
 
-    config.exceptions_app = ->(env) { ExceptionController.action(:show).call(env) }
-    config.action_dispatch.rescue_responses["CanCan::AccessDenied"] = :unauthorized
+    config.exceptions_app = self.routes
+    config.action_dispatch.rescue_responses["CanCan::AccessDenied"] = :forbidden
 
 
     # Settings in config/environments/* take precedence over those specified here.

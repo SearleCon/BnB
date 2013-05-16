@@ -16,9 +16,10 @@
 class Subscription < ActiveRecord::Base
 
   attr_accessor :paypal_payment_token
-  attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date, :user_id
+  attr_accessible :paypal_customer_token, :paypal_recurring_profile_token, :active_profile, :expiry_date, :user_id, :plan
 
   belongs_to :plan
+  belongs_to :user
 
   default_scope -> { where(active_profile: true) }
 
@@ -47,7 +48,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def has_expired?
-    Time.now > self.expiry_date
+    Time.zone.now > self.expiry_date
   end
 
   def payment_provided?

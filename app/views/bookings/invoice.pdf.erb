@@ -29,7 +29,7 @@
 
 
 <div class="document">
-  <p><b>Guest: </b><%= @booking.guest.name.concat(" ").concat(@booking.guest.surname).camelcase %></p>
+  <p><b>Guest: </b><%= @booking.guest.full_name %></p>
 
   <p><b>Period of stay:</b> <%= @booking.event_start_at %> to <%= @booking.event_end_at %> </p>
   <br>

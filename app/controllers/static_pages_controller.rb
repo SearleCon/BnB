@@ -1,10 +1,11 @@
 class StaticPagesController < ApplicationController
   # encoding: utf-8
+  skip_before_filter :renew_subscription
+
   before_filter :generate_cache_key
   before_filter :authenticate_user!, only: :admin
 
   def home
-    #@photos = Photo.includes(:bnb).processed.main_photo
     @photos = Photo.where(bnb_id: Bnb.approved).processed.main_photo
   end
 

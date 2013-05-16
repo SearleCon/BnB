@@ -1,0 +1,16 @@
+2013-05-15T11:38:15+0200: [Worker(host:Pauls-MacBook-Air.local pid:2941)] New Relic Ruby Agent Monitoring DJ worker host:Pauls-MacBook-Air.local pid:2941
+2013-05-15T11:38:15+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:2941)] Starting job worker
+2013-05-15T11:38:15+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:2941)] Class#welcome completed after 0.3264
+2013-05-15T11:38:15+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:2941)] 1 jobs processed at 2.6257 j/s, 0 failed ...
+2013-05-16T09:14:59+0200: [Worker(host:Pauls-MacBook-Air.local pid:4360)] New Relic Ruby Agent Monitoring DJ worker host:Pauls-MacBook-Air.local pid:4360
+2013-05-16T09:14:59+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4360)] Starting job worker
+2013-05-16T09:14:59+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4360)] Class#welcome completed after 0.3209
+2013-05-16T09:14:59+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4360)] 1 jobs processed at 2.6757 j/s, 0 failed ...
+2013-05-16T09:18:52+0200: [Worker(host:Pauls-MacBook-Air.local pid:4453)] New Relic Ruby Agent Monitoring DJ worker host:Pauls-MacBook-Air.local pid:4453
+2013-05-16T09:18:52+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4453)] Starting job worker
+2013-05-16T09:18:54+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4453)] ProcessAddressJob completed after 1.9020
+2013-05-16T09:18:54+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4453)] 1 jobs processed at 0.5105 j/s, 0 failed ...
+2013-05-16T09:32:50+0200: [Worker(host:Pauls-MacBook-Air.local pid:4711)] New Relic Ruby Agent Monitoring DJ worker host:Pauls-MacBook-Air.local pid:4711
+2013-05-16T09:32:50+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4711)] Starting job worker
+2013-05-16T09:33:55+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4711)] ProcessAddressJob completed after 64.4713
+2013-05-16T09:33:55+0200: [Worker(delayed_job.workless host:Pauls-MacBook-Air.local pid:4711)] 1 jobs processed at 0.0155 j/s, 0 failed ...

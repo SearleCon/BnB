@@ -1,126 +1,129 @@
 <%= javascript_include_tag "googlemap" %>
-  <div class="row-fluid">
-    <div class="span12">
-      <% if user_signed_in? && current_user.is?(:owner) %>
-          <div class="center hero-unit clearfix">
-            <%= link_to "Bookings", bnb_bookings_path(@bnb), :class => "btn-large btn-primary" %>
-            <%= link_to "Guests", bnb_guests_path(@bnb), :class => "btn-large btn-primary" %>
-            <%= link_to "Rooms", bnb_rooms_path(@bnb), :class => "btn-large btn-primary" %>
-            <%= link_to "Photos", bnb_photos_path(@bnb), :class => "btn-large btn-primary" %>
-            <%= link_to "Edit BnB Details", bnb_bnb_step_url(@bnb, :bnb_details), :class => "btn-large btn-primary" %>
-          </div>
-      <% end %>
-      <div class="hero-unit clearfix">
-        <div id="details" class="span6" align="left">
-          <h2><%= @bnb.name %></h2>
-          <p align="center"><% @bnb.rating.times do %>
-                <i class="icon-star icon-white"></i>
-            <% end %></p>
-          <br>
+<div class="row-fluid">
+  <div class="span12">
+    <% if user_signed_in? && current_user.is?(:owner) %>
+        <div class="center hero-unit clearfix">
+          <%= link_to "Bookings", bnb_bookings_path(@bnb), class: "btn-large btn-primary" %>
+          <%= link_to "Guests", bnb_guests_path(@bnb), class: "btn-large btn-primary" %>
+          <%= link_to "Rooms", bnb_rooms_path(@bnb), class: "btn-large btn-primary" %>
+          <%= link_to "Photos", bnb_photos_path(@bnb), class: "btn-large btn-primary" %>
+          <%= link_to "Edit BnB Details", edit_bnb_path(@bnb), class: "btn-large btn-primary" %>
+        </div>
+    <% end %>
+    <div class="hero-unit clearfix">
+      <div id="details" class="span6" align="left">
+        <h2><%= @bnb.name %></h2>
 
-          <strong>Description</strong>
+        <p align="center">
+          <% @bnb.rating.times do %>
+              <i class="icon-star icon-white"></i>
+          <% end %></p>
+        <br>
 
-          <p><%= simple_format(@bnb.description) %></p>
-          <br>
+        <strong>Description</strong>
 
-          <strong>Rates</strong>
-          <table class="table table-bordered">
+        <p><%= simple_format(@bnb.description) %></p>
+        <br>
+
+        <strong>Rates</strong>
+        <table class="table table-bordered">
           <% @bnb.rates.each do |rate| %>
-            <tr>
-              <td><%= rate.description%></td>
-              <td><%= number_to_currency(rate.price, precision: 2) %></td>
-            </tr>
+              <tr>
+                <td><%= rate.description %></td>
+                <td><%= number_to_currency(rate.price, precision: 2) %></td>
+              </tr>
           <% end %>
-          </table>
+        </table>
 
-          <br>
-          <%= display_action_links_for_user  %>
-        </div>
         <br>
-        <br>
-        <div class="span5 pull-right gallery">
-          <div class="thumbnail">
-          <% cache  @bnb.photos.main_photo.first do %>
-           <%= display_main_photo(@bnb.photos.main_photo.first) %>
-          <% end %>
-          </div>
-          <% if user_signed_in? && current_user.is?(:owner) %>
-              <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
-          <% end %>
-        </div>
-        <div id="contact_and_address" class="span9" align="left">
-          <div class="span4" align="left">
-            <address>
-              <strong>Address</strong>
-              <br>
-              <%= @bnb.address_line_one %>,
-              <br>
-              <%= @bnb.address_line_two %>
-              <br>
-              <%= @bnb.city %>
-              <br>
-              <%= @bnb.postal_code %>
-              <br>
-              <%= @bnb.country %>
-              <br>
-              <% unless user_signed_in? && current_user.is?(:owner) && @bnb.geocoded? %>
-                  <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
-              <% end %>
+        <%= display_action_links_for_user %>
+      </div>
+      <br>
+      <br>
 
-            </address>
-          </div>
-          <div class="span5">
-            <address>
-              <strong>Contact</strong>
-              <br>
-              Contact Person: <%= @bnb.contact_person.humanize %>
-              <br>
-              Telephone: <%= number_to_phone(@bnb.telephone_number, area: true ) %>
-              <br>
-              Mail: <%= mail_to @bnb.email %>
-              <br>
-              Website: <%= link_to_if @bnb.website, @bnb.website, url_with_protocol(@bnb.website), target: '_blank' %>
-              <br>
-              <% if @bnb.facebook_page %>
-              Facebook: <%= @bnb.facebook_page %>
-              <% end %>
-              <br>
-              <% if @bnb.twitter_account %>
-              Twitter: <%= @bnb.twitter_account %>
-              <% end %>
-            </address>
-          </div>
+      <div class="span5 pull-right gallery">
+        <div class="thumbnail">
+          <% cache @bnb.photos.main_photo.first do %>
+              <%= display_main_photo(@bnb.photos.main_photo.first) %>
+          <% end %>
         </div>
-      </div>
-      <div class="hero-unit clearfix gallery" style="padding-bottom: 0px;">
-        <div class="carousel slide span12" id="support_photos_carousel">
-          <div class="carousel-inner">
-            <div class="item active">
-              <ul class="thumbnails">
-                   <% cache @bnb.photos.processed.support_photos do %>
-                    <%= display_support_photos(@bnb.photos.processed.support_photos)  %>
-                    <% end %>
-              </ul>
-            </div>
-          </div>
-         <% if user_signed_in? && current_user.is?(:owner) %>
-           <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
-         <% end %>
-        </div>
-      </div>
-      <div class="hero-unit clearfix" style="padding-top: 0px">
-        <h2>Map</h2>
-        <% if @json %>
-        <%= gmaps({
-                          "map_options" => {"auto_zoom" => false, "zoom" => 12 },
-                          "markers" => {"data" => @json }
-                  })
-        %>
-        <% else %>
-         <p align="center">No map available at this time.</p>
+        <% if user_signed_in? && current_user.is?(:owner) %>
+            <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
         <% end %>
       </div>
+      <div id="contact_and_address" class="span9" align="left">
+        <div class="span4" align="left">
+          <address>
+            <strong>Address</strong>
+            <br>
+            <%= @bnb.address_line_one %>,
+            <br>
+            <%= @bnb.address_line_two %>
+            <br>
+            <%= @bnb.city %>
+            <br>
+            <%= @bnb.postal_code %>
+            <br>
+            <%= @bnb.country %>
+            <br>
+            <% unless user_signed_in? && current_user.is?(:owner) && @bnb.geocoded? %>
+                <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
+            <% end %>
 
+          </address>
+        </div>
+        <div class="span5">
+          <address>
+            <strong>Contact</strong>
+            <br>
+            Contact Person: <%= @bnb.contact_person.humanize %>
+            <br>
+            Telephone: <%= number_to_phone(@bnb.telephone_number, area: true) %>
+            <br>
+            Mail: <%= mail_to @bnb.email %>
+            <br>
+            Website: <%= link_to_if @bnb.website, @bnb.website, url_with_protocol(@bnb.website), target: '_blank' %>
+            <br>
+            <% if @bnb.facebook_page %>
+                Facebook: <%= @bnb.facebook_page %>
+            <% end %>
+            <br>
+            <% if @bnb.twitter_account %>
+                Twitter: <%= @bnb.twitter_account %>
+            <% end %>
+          </address>
+        </div>
+      </div>
     </div>
+    <div class="hero-unit clearfix gallery" style="padding-bottom: 0px;">
+      <div class="carousel slide span12" id="support_photos_carousel">
+        <div class="carousel-inner">
+          <div class="item active">
+            <ul class="thumbnails">
+              <% cache @bnb.photos.processed.support_photos do %>
+                  <%= display_support_photos(@bnb.photos.processed.support_photos) %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <% if user_signed_in? && current_user.is?(:owner) %>
+            <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="hero-unit clearfix" style="padding-top: 0px">
+      <h2>Map</h2>
+      <% if @map_data %>
+          <%= gmaps({
+                            map_options: {auto_zoom: false, zoom: 12},
+                            markers: {data: @map_data}
+                    })
+          %>
+      <% else %>
+          <p align="center">No map available at this time.</p>
+      <% end %>
+    </div>
+
   </div>
+</div>
 

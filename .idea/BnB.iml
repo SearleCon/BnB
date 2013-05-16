@@ -126,6 +126,7 @@
     <orderEntry type="library" scope="PROVIDED" name="select2-rails (v3.3.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.32.1, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="session (v3.1.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sextant (v0.2.3, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="shoulda-matchers (v2.1.0, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="simple_form (v2.0.4, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="spinjs-rails (v1.2.8, RVM: ruby-2.0.0-p0 [Rails3.2.13]) [gem]" level="application" />

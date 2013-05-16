@@ -19,13 +19,13 @@
     <div class="row">
       <div class="span12">
         <div id="flash">
-          <%= render :partial => 'shared/flash_messages' %>
+          <%= render partial: 'shared/flash_messages' %>
         </div>
                 <% if browser.ie6? || browser.ie7? || browser.ie8? %>
                      <div class="ie_warn">                    
                              <p style="text-align: center;">WARNING: You're running an older version of Internet Explorer that is not fully supported.
-        <br> For more information, please click <%= link_to 'here', ie_warning_path %> </p>
-                       </div>
+                             <br> For more information, please click <%= link_to 'here', ie_warning_path %> </p>
+                     </div>
                    <% end %>
         <%= yield %>
         <%= yield :scripts %>

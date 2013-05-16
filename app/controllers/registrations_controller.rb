@@ -1,14 +1,25 @@
 class RegistrationsController < Devise::RegistrationsController
   include ApplicationHelper
 
+  skip_before_filter :renew_subscription
+
   before_filter :set_return_url, only: :new
 
   def new
     @user = User.new { |user| user.roles = params[:user_role] }
   end
 
+  def create
+    super
+    UserMailer.delay.welcome(@user) unless @user.invalid?
+  end
+
   def destroy
-    resource.is?(:owner) ? (resource.bnb.destroy if resource.bnb) : Booking.destroy_all(:user_id => resource)
+    if resource.is?(:owner) then
+      (resource.bnb.destroy if resource.bnb)
+    else
+      Booking.destroy_all(user_id: resource)
+    end
     super
   end
 

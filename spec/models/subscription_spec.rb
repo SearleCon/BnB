@@ -9,6 +9,7 @@ describe Subscription do
   #Relationships
   describe 'Relationships' do
     it { should belong_to(:plan) }
+    it { should belong_to(:user) }
   end
 
   #CallBacks

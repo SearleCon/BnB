@@ -15,7 +15,7 @@ class Ability
 
   def default
     #Bnb
-    can :read, Bnb
+   # can :read, Bnb
     can :nearby_bnbs, Bnb
 
     #Photo
@@ -47,10 +47,9 @@ class Ability
   end
 
   def owner(user)
-
-    if user.active_subscription.has_expired?
+      #Subscription
       can :manage, Subscription, user_id: user.id
-    else
+
       #Bnb
       can :manage, Bnb, user_id: user.id
 
@@ -71,8 +70,5 @@ class Ability
 
       #Photos
       can :manage, Photo
-    end
-
-
   end
 end

@@ -1,0 +1,14 @@
+<div class="hero-unit center">
+
+
+<h1>Forbidden</h1>
+<% if @exception %>
+    <p><%= @exception.message %></p>
+<% else %>
+    <p>You are not authorized to perform that action.</p>
+<% end %>
+
+<p>Go <%= link_to 'back', :back %> to what you were doing.</p>
+
+
+</div>

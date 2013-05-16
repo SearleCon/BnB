@@ -40,7 +40,7 @@
         <td><%= user.created_at.strftime('%A, %d %B %Y') %></td>
         <td><%= user.email %></td>
         <td><%= user.last_sign_in_at.strftime('%A, %d %B %Y') %></td>
-        <td><%= user.active_subscription.expiry_date.strftime('%A, %d %B %Y') if user.active_subscription %></td>
+        <td><%= user.subscriptions.first.expiry_date.strftime('%A, %d %B %Y') if user.subscriptions.any? %></td>
         <td><%= user.roles.first.capitalize %></td>
         <% if user.bnb %>
         <td><%= link_to "#{user.bnb.name}", show_bnb_path(user.bnb) %></td>

@@ -82,21 +82,17 @@ class BookingsController < ApplicationController
     end
   end
 
-  def tabular_view
-    @bookings = @bnb.bookings.search(params[:search]).order(sort_column + " " + sort_direction)
-  end
-
   def refresh_total
     respond_with(@booking)
   end
 
   def print_pdf
-    @pdf = render_to_string :pdf => @booking.guest.name,
-                            :template => 'bookings/invoice.pdf.erb',
-                            :header => {center: "Invoice", right: Time.now.strftime('%A, %d %B %Y')},
-                            :encoding => "UTF-8"
+    @pdf = render_to_string pdf: @booking.guest.name,
+                            template: 'bookings/invoice.pdf.erb',
+                            header: {center: "Invoice", right: Time.now.strftime('%A, %d %B %Y')},
+                            encoding: "UTF-8"
     respond_to do |format|
-      format.pdf { send_data(@pdf, :filename => @booking.guest.name, :type => "application/pdf", :disposition => 'inline') }
+      format.pdf { send_data(@pdf, filename: @booking.guest.name, type: "application/pdf", disposition: 'inline') }
     end
   end
 

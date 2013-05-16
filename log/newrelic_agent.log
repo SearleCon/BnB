@@ -1,0 +1,541 @@
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Environment: development
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : No known dispatcher detected.
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] WARN : Agent configured not to send data in this environment.
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing DelayedJob instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing Net instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : Finished instrumentation
+[05/15/13 09:44:15 +0200 Pauls-MacBook-Air.local (958)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Environment: development
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : No known dispatcher detected.
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] WARN : Agent configured not to send data in this environment.
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing DelayedJob instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing Net instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : Finished instrumentation
+[05/15/13 10:44:28 +0200 Pauls-MacBook-Air.local (1944)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 10:44:56 +0200 Pauls-MacBook-Air.local (1954)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 10:44:56 +0200 Pauls-MacBook-Air.local (1954)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 10:44:56 +0200 Pauls-MacBook-Air.local (1954)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Environment: development
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : No known dispatcher detected.
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] WARN : Agent configured not to send data in this environment.
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing DelayedJob instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing Net instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : Finished instrumentation
+[05/15/13 10:44:57 +0200 Pauls-MacBook-Air.local (1954)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Environment: development
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Dispatcher: unicorn
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] WARN : Agent configured not to send data in this environment.
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing DelayedJob instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Net instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Unicorn instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : Finished instrumentation
+[05/15/13 11:36:41 +0200 Pauls-MacBook-Air.local (2882)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Environment: development
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : No known dispatcher detected.
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] WARN : Agent configured not to send data in this environment.
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing DelayedJob instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing Net instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : Finished instrumentation
+[05/15/13 11:38:12 +0200 Pauls-MacBook-Air.local (2929)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 11:38:15 +0200 Pauls-MacBook-Air.local (2941)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 11:38:15 +0200 Pauls-MacBook-Air.local (2941)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 11:38:15 +0200 Pauls-MacBook-Air.local (2941)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Environment: development
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : No known dispatcher detected.
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] WARN : Agent configured not to send data in this environment.
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing DelayedJob instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing Net instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : Finished instrumentation
+[05/15/13 11:38:25 +0200 Pauls-MacBook-Air.local (2944)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Environment: development
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Dispatcher: unicorn
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] WARN : Agent configured not to send data in this environment.
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing DelayedJob instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Net instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Unicorn instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : Finished instrumentation
+[05/15/13 12:01:15 +0200 Pauls-MacBook-Air.local (3440)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Environment: development
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Dispatcher: unicorn
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] WARN : Agent configured not to send data in this environment.
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing DelayedJob instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Net instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Unicorn instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : Finished instrumentation
+[05/15/13 12:18:01 +0200 Pauls-MacBook-Air.local (3797)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Environment: development
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Dispatcher: unicorn
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] WARN : Agent configured not to send data in this environment.
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing DelayedJob instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Net instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Unicorn instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : Finished instrumentation
+[05/15/13 13:24:19 +0200 Pauls-MacBook-Air.local (4904)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Environment: development
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Dispatcher: unicorn
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] WARN : Agent configured not to send data in this environment.
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing DelayedJob instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Net instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Unicorn instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : Finished instrumentation
+[05/15/13 13:49:56 +0200 Pauls-MacBook-Air.local (5341)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Environment: development
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Dispatcher: unicorn
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] WARN : Agent configured not to send data in this environment.
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing DelayedJob instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Net instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Unicorn instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : Finished instrumentation
+[05/15/13 15:28:47 +0200 Pauls-MacBook-Air.local (7190)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] INFO : Environment: development
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] INFO : Dispatcher: unicorn
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 16:01:50 +0200 Pauls-MacBook-Air.local (7838)] WARN : Agent configured not to send data in this environment.
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing DelayedJob instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Net instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Unicorn instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : Finished instrumentation
+[05/15/13 16:01:51 +0200 Pauls-MacBook-Air.local (7838)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Starting the New Relic agent in "development" environment.
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Reading configuration from config/newrelic.yml
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Environment: development
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Dispatcher: unicorn
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] WARN : Agent configured not to send data in this environment.
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing DelayedJob instrumentation hooks
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing ActiveRecord instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing DelayedJob instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Dalli Memcache instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Net instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Unicorn instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Rails 3 Controller instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Installing Rails3 Error instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : Finished instrumentation
+[05/15/13 16:16:29 +0200 Pauls-MacBook-Air.local (8123)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Environment: development
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Dispatcher: unicorn
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Net instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Unicorn instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : Finished instrumentation
+[05/16/13 09:13:38 +0200 Pauls-MacBook-Air.local (4319)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Environment: development
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : No known dispatcher detected.
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing Net instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : Finished instrumentation
+[05/16/13 09:14:56 +0200 Pauls-MacBook-Air.local (4353)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:14:59 +0200 Pauls-MacBook-Air.local (4360)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:14:59 +0200 Pauls-MacBook-Air.local (4360)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:14:59 +0200 Pauls-MacBook-Air.local (4360)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Environment: development
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : No known dispatcher detected.
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing Net instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : Finished instrumentation
+[05/16/13 09:15:08 +0200 Pauls-MacBook-Air.local (4363)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Environment: development
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : No known dispatcher detected.
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing Net instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:18:49 +0200 Pauls-MacBook-Air.local (4445)] INFO : Finished instrumentation
+[05/16/13 09:18:50 +0200 Pauls-MacBook-Air.local (4445)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:18:52 +0200 Pauls-MacBook-Air.local (4453)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:18:52 +0200 Pauls-MacBook-Air.local (4453)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:18:52 +0200 Pauls-MacBook-Air.local (4453)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Environment: development
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : No known dispatcher detected.
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing Net instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : Finished instrumentation
+[05/16/13 09:19:03 +0200 Pauls-MacBook-Air.local (4456)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Environment: development
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Dispatcher: unicorn
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Net instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Unicorn instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : Finished instrumentation
+[05/16/13 09:30:58 +0200 Pauls-MacBook-Air.local (4660)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Environment: development
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : No known dispatcher detected.
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing Net instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:32:47 +0200 Pauls-MacBook-Air.local (4704)] INFO : Finished instrumentation
+[05/16/13 09:32:48 +0200 Pauls-MacBook-Air.local (4704)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 09:32:50 +0200 Pauls-MacBook-Air.local (4711)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:32:50 +0200 Pauls-MacBook-Air.local (4711)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:32:50 +0200 Pauls-MacBook-Air.local (4711)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Environment: development
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : No known dispatcher detected.
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] WARN : Agent configured not to send data in this environment.
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing DelayedJob instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing Net instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : Finished instrumentation
+[05/16/13 09:34:05 +0200 Pauls-MacBook-Air.local (4746)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Environment: development
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Dispatcher: unicorn
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] WARN : Agent configured not to send data in this environment.
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing DelayedJob instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Net instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Unicorn instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : Finished instrumentation
+[05/16/13 10:17:07 +0200 Pauls-MacBook-Air.local (5558)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Environment: development
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Dispatcher: unicorn
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] WARN : Agent configured not to send data in this environment.
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing DelayedJob instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Net instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Unicorn instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : Finished instrumentation
+[05/16/13 10:18:14 +0200 Pauls-MacBook-Air.local (5591)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Environment: development
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Dispatcher: unicorn
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] WARN : Agent configured not to send data in this environment.
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing DelayedJob instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Net instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Unicorn instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : Finished instrumentation
+[05/16/13 10:18:51 +0200 Pauls-MacBook-Air.local (5611)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Environment: development
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Dispatcher: unicorn
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] WARN : Agent configured not to send data in this environment.
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing DelayedJob instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Net instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Unicorn instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : Finished instrumentation
+[05/16/13 11:46:43 +0200 Pauls-MacBook-Air.local (7308)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Environment: development
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Dispatcher: unicorn
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] WARN : Agent configured not to send data in this environment.
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing DelayedJob instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Net instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Unicorn instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : Finished instrumentation
+[05/16/13 11:48:32 +0200 Pauls-MacBook-Air.local (7344)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Environment: development
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Dispatcher: unicorn
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] WARN : Agent configured not to send data in this environment.
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing DelayedJob instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Net instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Unicorn instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : Finished instrumentation
+[05/16/13 11:50:52 +0200 Pauls-MacBook-Air.local (7399)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Environment: development
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Dispatcher: unicorn
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] WARN : Agent configured not to send data in this environment.
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing DelayedJob instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Net instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Unicorn instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 11:51:45 +0200 Pauls-MacBook-Air.local (7426)] INFO : Finished instrumentation
+[05/16/13 11:51:46 +0200 Pauls-MacBook-Air.local (7426)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] INFO : Starting the New Relic agent in "development" environment.
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] INFO : Reading configuration from config/newrelic.yml
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] INFO : Environment: development
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] INFO : Dispatcher: unicorn
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] ERROR : Unable to determine application name. Please set the application name in your newrelic.yml or in a NEW_RELIC_APP_NAME environment variable.
+[05/16/13 11:57:40 +0200 Pauls-MacBook-Air.local (7531)] WARN : Agent configured not to send data in this environment.
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing DelayedJob instrumentation hooks
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing ActiveRecord instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing DelayedJob instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Dalli Memcache instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Net instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Unicorn instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Rails 3 Controller instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Installing Rails3 Error instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : Finished instrumentation
+[05/16/13 11:57:41 +0200 Pauls-MacBook-Air.local (7531)] INFO : NewRelic::Agent::Samplers::DelayedJobSampler sampler not available: No DJ worker present

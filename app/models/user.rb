@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  has_many :subscriptions
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -42,26 +43,17 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_id ,:terms_of_service, :contact_number, :country, :surname
   validates_acceptance_of :terms_of_service
 
-  after_create :create_subscription, if: :subscription_required
-  after_commit :send_welcome_mail, if: :created?
+  after_create :create_subscription
 
   include RoleModel
   roles_attribute :role_id
 
   roles :guest, :owner, :admin
 
-  def active_subscription
-    @subscription ||= Subscription.where(user_id: self).first
-  end
-
   def bnb
     @bnb ||= Bnb.where(user_id: self).last
   end
 
-  def reload(options = nil)
-    super
-    @subscription = nil
-  end
 
   def after_token_authentication
     reset_authentication_token!
@@ -73,18 +65,11 @@ class User < ActiveRecord::Base
 
 
   private
-  def send_welcome_mail
-    UserMailer.delay.welcome(self)
-  end
-
-  def subscription_required
-    self.is_owner?
-  end
-
   def create_subscription
-    plan = Plan.free_trial.first
-    subscription = plan.subscriptions.build(user_id: self.id)
-    subscription.save!
+    if is_owner?
+     plan = Plan.free_trial.first
+     subscription = subscriptions.build(plan: plan)
+     subscription.save!
+    end
   end
-
 end

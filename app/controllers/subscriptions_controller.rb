@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  authorize_resource
+  skip_before_filter :renew_subscription
 
   # GET /subscriptions/1
   # GET /subscriptions/1.json
@@ -17,7 +17,6 @@ class SubscriptionsController < ApplicationController
   def new
     @plan = Plan.find(params[:plan_id])
     @subscription = @plan.subscriptions.build
-    @subscription.user_id = current_user.id
     if params[:PayerID]
       @subscription.paypal_customer_token = params[:PayerID]
       @subscription.paypal_payment_token = params[:token]
@@ -28,10 +27,8 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
-    @subscription = Subscription.new(params[:subscription])
-    @subscription.user_id = current_user.id
+    @subscription = current_user.subscriptions.build(params[:subscription])
     if @subscription.save_with_paypal_payment
-      current_user.reload
       redirect_to @subscription
     else
       render :new

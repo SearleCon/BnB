@@ -23,33 +23,29 @@ Bnbeezy::Application.routes.draw do
     end
   end
 
-  resources :bookings do
-    resources :line_items, controller: 'line_items', only: [:create, :update, :destroy]
+
+  resources :bnbs, except: [:show, :destroy] do
+      get :nearby_bnbs, on: :member
+      resources :photos, except: [:show]  do
+       get :process_image, on: :member
+      end
+      resources :bookings do
+        resources :line_items, only: [:create, :update, :destroy]
+        put :check_out, on: :member
+        get :refresh_total, on: :member
+        get :show_invoice, on: :member
+        get :print_pdf, on: :member
+        put :cancel_check_out, on: :member
+        put :complete_check_out, on: :member
+        get :confirm, on: :member
+      end
+      resource :setup_wizard, controller: :setup_wizard, only: [:show, :update]
+      resources :guests, except: [:show]
+      resources :rooms, except: [:show] do
+        get :find_available, on: :collection
+      end
   end
 
-  resources :bnbs, except: [:show] do
-    get :nearby_bnbs, on: :member
-    resources :photos, only: [:index, :edit, :update, :new, :create, :destroy]  do
-     get :process_image, on: :member
-    end
-    resources :bookings do
-      put :check_out, on: :member
-      get :refresh_total, on: :member
-      get :show_invoice, on: :member
-      get :print_pdf, on: :member
-      get :tabular_view, on: :collection
-      put :cancel_check_out, on: :member
-      put :complete_check_out, on: :member
-      get :confirm, on: :member
-    end
-    resources :guests, except: [:show]
-    resources :bnb_steps, controller: 'bnb_steps', only: [:show, :update]
-    resources :rooms, controller: 'rooms', except: [:show] do
-      get :find_available, on: :collection
-    end
-  end
-
-  get '/bnbs/sub_region_options', to: "bnbs#subregions"
 
   get '/bnb(/:id)', to: "bnbs#show", as: 'show_bnb'
 
@@ -59,21 +55,27 @@ Bnbeezy::Application.routes.draw do
   end
 
 
-    get '/startpage', to: 'static_pages#startpage'
-    get '/admin', to: 'static_pages#admin'
-    get '/terms_and_conditions',  to: 'static_pages#terms_and_conditions'
-    get '/privacypolicy', to: 'static_pages#privacy_policy'
-    get '/faq', to: 'static_pages#faq'
-    get '/help',    to: 'static_pages#help'
-    get '/about',   to: 'static_pages#about'
-    get '/pricing', to: 'static_pages#pricing'
-    get '/registration_page', to: 'static_pages#registration_page'
-    get '/ie_warning', to: 'static_pages#ie_warning'
-    get '/screens', to: 'static_pages#screens'
+  scope controller: :static_pages do
+    get 'startpage'
+    get 'admin'
+    get 'terms_and_conditions'
+    get 'privacypolicy'
+    get 'faq'
+    get 'help'
+    get 'about'
+    get 'pricing'
+    get 'registration_page'
+    get 'ie_warning'
+    get 'screens'
+  end
 
   devise_scope :user do
-    match "users/signup/:user_role" => "registrations#new", as: 'register'
+    get "users/signup/:user_role" => "registrations#new", as: 'register'
   end
+
+  match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/}
+
+
 end
 #== Route Map
 # Generated on 11 Apr 2013 16:04

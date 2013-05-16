@@ -4,11 +4,9 @@
   <%= image_tag "secure-paypal-logo.png", style: "float:right" %>
 
   <br>
-  <% if current_user.active_subscription && current_user.active_subscription.has_expired? %>
+  <% if current_user.subscriptions.any? && current_user.subscriptions.first.has_expired? %>
       <p>Your free trial has expired. To continue using BnBeezy you need to subscribe:</p>
       <p>(Note that payment is done through PayPal and is 100% secure)</p>
-
-
   <% end %>
   <br>
   <table class="table table-bordered">
@@ -23,8 +21,8 @@
             <tr>
               <td><b><%= plan.name %></b></td>
               <td><%= plan.duration %> Months</td>
-              <td>$ <%= number_with_precision(plan.price, :precision => 2) %></td>
-              <td align="center"><%= link_to 'Place Order', new_subscription_path(:plan_id => plan.id), class: "btn btn-primary" %></td>
+              <td>$ <%= number_with_precision(plan.price, precision: 2) %></td>
+              <td align="center"><%= link_to 'Place Order', new_subscription_path(plan_id: plan.id), class: "btn btn-primary" %></td>
             </tr>
         <% end %>
     <% end %>

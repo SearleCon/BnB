@@ -4,9 +4,9 @@
 
 <p>This is a notice of an online booking which is awaiting confirmation:
   <br>
-  Starting: <%= @booking.event.start_at %>
+  Starting: <%= @booking.event_start_at %>
   <br>
-  Ending: <%= @booking.event.end_at %>
+  Ending: <%= @booking.event_end_at %>
   <br>
   Guest: <%= @booking.guest.name %>
   <br>
@@ -15,7 +15,7 @@
 
   Once you confirm on the schedule the guest will be notified via email.
   <br>
-  <%= link_to 'Confirm booking now', confirm_bnb_booking_url(@booking.bnb, @booking , { :auth_token => @user.authentication_token}) %>
+  <%= link_to 'Confirm booking now', confirm_bnb_booking_url(@booking.bnb, @booking , { auth_token: @user.authentication_token}) %>
 
 
 </p>

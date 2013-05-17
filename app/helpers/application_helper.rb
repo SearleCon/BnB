@@ -9,7 +9,11 @@ module ApplicationHelper
   end
 
   def correct_root_for_user
-    (current_user && current_user.is?(:owner)) ? show_bnb_path(current_user.bnb) : root_path
+    if current_user && current_user.is_owner?
+      show_bnb_path(current_user.bnb)
+    else
+      root_path
+    end
   end
 
   def fetch_menu_for_role

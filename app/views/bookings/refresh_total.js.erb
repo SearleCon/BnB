@@ -1,1 +1,1 @@
-$('#Total_Cost').html('<%= escape_javascript(render :partial => 'bookings/total_cost')%>');
+$('#Total_Cost').html('<%= escape_javascript(render partial: 'bookings/total_cost', locals: { booking: @booking })%>');

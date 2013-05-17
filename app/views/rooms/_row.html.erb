@@ -1,13 +1,13 @@
 <% cache room do %>
-<tr id="<%=room.id %>" class="center"  >
-  <td><%= room.room_number %></td>
-  <td><%= room.description %></td>
-  <td><%= room.en_suite ? 'Yes' : 'No' %></td>
-  <td><%= room.extras  %></td>
-  <td><%= number_to_currency (room.rates)  %></td>
-  <td><%= room.capacity %></td>
-  <td><%= room.available ? 'Yes' : 'No'  %></td>
-  <td><div title="Click to edit" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-edit icon-white'), edit_bnb_room_path(@bnb, room), :id => 'edit' %></div></td>
-  <td><div title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), bnb_room_path(@bnb,room), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></div></td>
-</tr>
+    <%= content_tag_for(:tr, room, class: 'center') do %>
+      <td><%= room.room_number %></td>
+      <td><%= room.description %></td>
+      <td><%= room.en_suite ? 'Yes' : 'No' %></td>
+      <td><%= room.extras  %></td>
+      <td><%= number_to_currency (room.rates)  %></td>
+      <td><%= room.capacity %></td>
+      <td><%= room.available ? 'Yes' : 'No'  %></td>
+      <td><div title="Click to edit" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-edit icon-white'), edit_room_path(room), id: 'edit' %></div></td>
+      <td><div title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), room_path(room), confirm: 'Are you sure?', id: 'delete', method: :delete, remote: true %></div></td>
+    <% end %>
 <% end %>

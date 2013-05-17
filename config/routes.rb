@@ -2,7 +2,7 @@ Bnbeezy::Application.routes.draw do
 
   root to: 'static_pages#home'
 
-  resources :payment_notifications, controller: 'payment_notification',  only: [:create]
+  resources :payment_notifications, only: [:create]
 
   resources :subscriptions, except: [:index, :edit, :destroy, :update] do
     get :payment_plans, on: :collection
@@ -15,29 +15,27 @@ Bnbeezy::Application.routes.draw do
   devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
 
   namespace :guest do
-    controller :guest_booking do
      resources :bookings, only: [:index]
-     resources :bnb, except: [:index, :edit, :update, :destroy, :new, :show, :create ] do
+     resources :bnb, shallow: true, except: [:index, :edit, :update, :destroy, :new, :show, :create ] do
       resources :bookings, except: [:index, :show, :destroy]
      end
-    end
   end
 
 
-  resources :bnbs, except: [:show, :destroy] do
+  resources :bnbs, shallow: true, except: [:show, :destroy] do
       get :nearby_bnbs, on: :member
       resources :photos, except: [:show]  do
        get :process_image, on: :member
       end
-      resources :bookings do
-        resources :line_items, only: [:create, :update, :destroy]
+      resources :bookings, shallow: true do
         put :check_out, on: :member
         get :refresh_total, on: :member
         get :show_invoice, on: :member
-        get :print_pdf, on: :member
+        get :print_invoice, on: :member
         put :cancel_check_out, on: :member
-        put :complete_check_out, on: :member
+        put :close, on: :member
         get :confirm, on: :member
+        resources :line_items, only: [:create, :update, :destroy]
       end
       resource :setup_wizard, controller: :setup_wizard, only: [:show, :update]
       resources :guests, except: [:show]

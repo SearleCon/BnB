@@ -2,8 +2,30 @@
 
   <h2>New room</h2>
 
-  <%= render 'form' %>
+  <%= simple_form_for [@bnb, @room] do |f| %>
+      <%= f.error_notification %>
 
-  <%= link_to 'Back', bnb_rooms_path(@bnb) %>
+      <div class="form-inputs">
+        <%= f.input :room_number %>
+        <%= f.input :description %>
+        <%= f.input :en_suite, as: :radio_buttons,  item_wrapper_class: "inline" %>
+        <%= f.input :extras, as: :text %>
+        <%= f.input :rates, wrapper: :prepend, class: "inline", label: "Rates (Per person sharing)" do %>
+            <%= content_tag :span, "R", class: "add-on", style: "color:black;" %>
+            <%= f.input_field :rates, value: number_with_precision(f.object.rates, precision: 2)%>
+        <% end %>
+        <%= f.input :capacity, as: :integer%>
+        <%= f.input :available, as: :radio_buttons, item_wrapper_class: "inline" %>
+
+
+      </div>
+
+      <%= f.button :wrapped %>
+
+
+  <% end %>
+
+
+  <%= link_to 'Back', :back %>
 
 </div>

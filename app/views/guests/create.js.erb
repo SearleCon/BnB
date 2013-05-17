@@ -1,6 +1,0 @@
-$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
-<% if @guest.persisted? %>
-$('#guests').append("<%= escape_javascript(render(:partial => 'guests/row', :locals =>  { :guest => @guest })) %>");
-$("[rel=tooltip]").tooltip({animation:true, placement:'right'});
-$("#<%=@guest.id%>").hide().fadeIn(500);
-<% end %>

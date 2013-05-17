@@ -1,8 +1,9 @@
 class Guest::BookingsController < ApplicationController
   respond_to :html
 
-  load_and_authorize_resource :bnb, except: :index
-  load_and_authorize_resource :booking, through: :bnb, except: :index
+  load_and_authorize_resource :bnb, only: [:new, :create]
+  load_and_authorize_resource :booking, through: :bnb, only: [:new, :create]
+  load_and_authorize_resource :booking, only: [:edit, :update]
 
   helper_method :sort_column, :sort_direction
 

@@ -1,7 +1,7 @@
 <%= javascript_include_tag "googlemap" %>
 <div class="row-fluid">
   <div class="span12">
-    <% if user_signed_in? && current_user.is?(:owner) %>
+    <% if user_signed_in? && current_user.is_owner? %>
         <div class="center hero-unit clearfix">
           <%= link_to "Bookings", bnb_bookings_path(@bnb), class: "btn-large btn-primary" %>
           <%= link_to "Guests", bnb_guests_path(@bnb), class: "btn-large btn-primary" %>
@@ -47,7 +47,7 @@
               <%= display_main_photo(@bnb.photos.main_photo.first) %>
           <% end %>
         </div>
-        <% if user_signed_in? && current_user.is?(:owner) %>
+        <% if user_signed_in? && current_user.is_owner? %>
             <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
         <% end %>
       </div>
@@ -66,7 +66,7 @@
             <br>
             <%= @bnb.country %>
             <br>
-            <% unless user_signed_in? && current_user.is?(:owner) && @bnb.geocoded? %>
+            <% unless user_signed_in? && current_user.is_owner? && @bnb.geocoded? %>
                 <%= link_to content_tag('i', '', class: 'icon-search icon-white').concat(' Find other BnBs in the area'), nearby_bnbs_bnb_path(@bnb) %>
             <% end %>
 
@@ -106,7 +106,7 @@
             </ul>
           </div>
         </div>
-        <% if user_signed_in? && current_user.is?(:owner) %>
+        <% if user_signed_in? && current_user.is_owner? %>
             <p align="center"> <%= link_to 'Add/Edit Photos', bnb_photos_path(@bnb) %></p>
         <% end %>
       </div>

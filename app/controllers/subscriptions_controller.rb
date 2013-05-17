@@ -34,7 +34,7 @@ class SubscriptionsController < ApplicationController
       render :new
     end
     rescue PaypalError => error
-      redirect_to root_url, :alert => error.message
+      redirect_to root_url, alert: error.message
   end
 
   def payment_plans
@@ -46,7 +46,7 @@ class SubscriptionsController < ApplicationController
     subscription = plan.subscriptions.new
     subscription.user_id = current_user.id
     redirect_to subscription.paypal.checkout_url(
-                    return_url: new_subscription_url(:plan_id => plan.id),
+                    return_url: new_subscription_url(plan_id: plan.id),
                     cancel_url: root_url, ipn_url: payment_notifications_url)
   end
 

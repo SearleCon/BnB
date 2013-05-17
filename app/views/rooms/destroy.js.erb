@@ -1,7 +1,7 @@
-$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+$('#flash').html('<%= escape_javascript(render partial: 'shared/flash_messages')%>');
 <% if @room.destroyed? %>
 $("[rel=tooltip]").tooltip('hide');
-$("#<%=@room.id%>").fadeOut(1000, function () {
+$(<%= "#{dom_id(@room)}" %>).fadeOut(1000, function () {
     $(this).remove();
 });
 <% end %>

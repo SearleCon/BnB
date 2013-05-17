@@ -30,21 +30,21 @@
   </table>
   <div><%= link_to content_tag('i', '', class: 'icon-plus-sign icon-white').concat(' Add Line Item'), booking_line_items_path(@booking), method: :post, remote: true %></div>
   <div id='Total_Cost'>
-    <%= render :partial => 'total_cost' %>
+    <%= render partial: 'total_cost', locals: {booking: @booking} %>
   </div>
   <br>
   <br>
 
   <div align="center">
-    <%= link_to 'Print PDF', print_pdf_bnb_booking_path(@bnb, @booking, format: :pdf), class: 'btn btn-primary', :target => '_blank' %>
+    <%= link_to 'Print Invoice', print_invoice_booking_path(@booking, format: :pdf), class: 'btn btn-primary', :target => '_blank' %>
   </div>
   <div class="pull-left">
-    <%= link_to 'Cancel Checkout', cancel_check_out_bnb_booking_path(@bnb, @booking), :method => :put, class: 'btn btn-danger' %>
+    <%= link_to 'Cancel Checkout', cancel_check_out_booking_path(@booking), method: :put, class: 'btn btn-danger' %>
   </div>
   <div class="pull-right">
-    <%= link_to 'Complete Checkout', complete_check_out_bnb_booking_path(@bnb, @booking), :method => :put, class: 'btn btn-inverse' %>
+    <%= link_to 'Complete Checkout', close_booking_path(@booking), method: :put, class: 'btn btn-inverse' %>
   </div>
-  <%= hidden_field_tag 'booking_total_path', refresh_total_bnb_booking_path(@bnb, @booking) %>
+  <%= hidden_field_tag 'booking_total_path', refresh_total_booking_path(@booking) %>
 </div>
 
 

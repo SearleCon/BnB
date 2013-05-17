@@ -34,7 +34,7 @@ class Booking < ActiveRecord::Base
   default_scope -> {where(active: true)}
   scope :inactive, -> { where(active: false) }
 
-  delegate :name, :start_at, :end_at, :color, to: :event, prefix: true
+  delegate :name, :start_at, :end_at, :color, :duration, to: :event, prefix: true
 
   enum :status, [:provisional, :booked, :checked_in, :closed]
 
@@ -44,6 +44,13 @@ class Booking < ActiveRecord::Base
       closed: 'orange',
       provisional: 'red'
   }
+
+
+  def check_out
+    line_items.clear
+    line_items.build(description: rate.description, value: (rate.price * event_duration) )
+    save
+  end
 
   def total_price
    line_items.sum(:value)

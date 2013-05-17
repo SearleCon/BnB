@@ -15,7 +15,7 @@ class Ability
 
   def default
     #Bnb
-   # can :read, Bnb
+    can :read, Bnb
     can :nearby_bnbs, Bnb
 
     #Photo

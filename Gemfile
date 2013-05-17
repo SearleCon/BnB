@@ -47,6 +47,7 @@ gem "best_in_place"
 gem 'carrierwave-processing'
 gem 'normalize-rails'
 gem 'sprockets-image_compressor'
+gem 'responders'
 
 
 

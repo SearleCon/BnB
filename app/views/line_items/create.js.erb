@@ -1,7 +1,7 @@
-$('#flash').html('<%= escape_javascript(render :partial => 'shared/flash_messages')%>');
+$('#flash').html('<%= escape_javascript(render partial: 'shared/flash_messages')%>');
 <% if @line_item.persisted? %>
-$('#line_items').append("<%= escape_javascript(render(:partial => 'bookings/line_item_row', :locals =>  { :line_item => @line_item })) %>");
+$('#line_items').append("<%= escape_javascript(render(partial: 'bookings/line_item_row', locals:  { line_item: @line_item })) %>");
 $("#<%=@line_item.id%>").hide().fadeIn(500);
-$('#Total_Cost').html('<%= escape_javascript(render :partial => 'bookings/total_cost')%>');
+$('#Total_Cost').html('<%= escape_javascript(render partial: 'bookings/total_cost', locals: {booking: @booking})%>');
 <% end %>
 

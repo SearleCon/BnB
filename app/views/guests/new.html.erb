@@ -2,8 +2,20 @@
 
 <h2>New guest</h2>
 
-<%= render 'form' %>
+  <%= simple_form_for [@bnb, @guest] do |f| %>
+      <%= f.error_notification %>
 
-<%= link_to 'Back', bnb_guests_path(@bnb) %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :surname %>
+        <%= f.input :contact_number, as: :tel, placeholder: '(043) 433 4546' %>
+        <%= f.input :email, as: :email, placeholder: 'user@domain.com'  %>
+      </div>
+
+      <%= f.button :submit, class: "btn btn-primary btn-small" %>
+  <% end %>
+
+
+<%= link_to 'Back', :back %>
 
 </div>

@@ -1,39 +1,35 @@
 class PhotosController < ApplicationController
   respond_to :js, :html
-  prepend_before_filter :load_resources, :only => :index
-  prepend_before_filter :new_resource, :only => [:new, :create]
-  prepend_before_filter :load_resource, :only => [:edit,:update, :process_image, :destroy]
-  prepend_before_filter :load_parent
+  prepend_before_filter :load_resources, only: :index
+  prepend_before_filter :new_resource, only: [:new, :create]
+  prepend_before_filter :load_resource, only: [:edit,:update, :process_image, :destroy]
+  prepend_before_filter :load_parent, only: [:new, :create, :index]
   authorize_resource
 
 
   def create
-    @photo.image.success_action_redirect = process_image_bnb_photo_url(@bnb, @photo) if @photo.save
+    @photo.image.success_action_redirect = process_image_photo_url(@photo) if @photo.save
     respond_with(@photo)
   end
 
   def update
-    if @photo.update_attributes(params[:photo])
-      flash[:notice] = 'Photo was updated successfully'
-      redirect_to bnb_photos_url(@bnb)
-    else
-      render 'edit'
-    end
+  @photo.update_attributes(params[:photo])
+  respond_with(@photo, location: bnb_photos_url(@photo.bnb))
   end
 
   def destroy
     @photo.destroy
-    flash[:error] = "Photo could not be destroyed." unless @photo.destroyed?
-    respond_with(@photo, location: bnb_photos_url(@bnb))
+    respond_with(@photo, location: bnb_photos_url(@photo.bnb))
   end
 
   def process_image
       @photo.key = params[:key]
       if @photo.valid?
-        @photo.save_and_process_image(:now => false)
-        redirect_to bnb_photos_url(@bnb), notice: "Image is being processed."
+        @photo.save_and_process_image(now: false)
+        redirect_to bnb_photos_url(@photo.bnb), notice: "Image is being processed."
       else
-        @photo.destroy and render 'photos/upload'
+        @photo.destroy
+        render 'photos/upload'
       end
   end
 
@@ -47,7 +43,7 @@ class PhotosController < ApplicationController
   end
 
   def load_resource
-   @photo = @bnb.photos.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
 
   def load_resources

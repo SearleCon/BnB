@@ -1,5 +1,5 @@
 <tr id=<%=line_item.id%>>
-  <td><%= best_in_place line_item, :description, :path => booking_line_item_path(@booking, line_item), type: :input  %></td>
-  <td><%= best_in_place line_item, :value, :path => booking_line_item_path(@booking, line_item), type: :input, display_as: :to_currency  %></td>
-  <td><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), booking_line_item_path(@booking,line_item), confirm: 'Are you sure?', :id => 'delete', method: :delete, remote: true %></td>
+  <td><%= best_in_place line_item, :description, path:line_item_path(line_item), type: :input  %></td>
+  <td><%= best_in_place line_item, :value, path: line_item_path(line_item), type: :input, display_as: :to_currency  %></td>
+  <td><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), line_item_path(line_item), confirm: 'Are you sure?', id: 'delete', method: :delete, remote: true %></td>
 </tr>

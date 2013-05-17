@@ -1,7 +1,30 @@
 <div class="hero-unit">
   <h3 align="center">Add new image</h3>
   <div id='photoform'>
-    <%= render 'photos/form' %>
+    <%= simple_form_for [@bnb,@photo], :remote => true  do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description, as: :string %>
+        <%= f.input :main, label: false, inline_label: 'Would you like to make this your main photo?' %>
+        <br>
+        <%= f.submit "Next",:class => "btn btn-primary"%>
+    <% end %>
+    <%= link_to 'Back', :back %>
+    <br>
+    <br>
+    <div class="help_info">
+      <ul>
+        <li>
+          <%= simple_format("<h5>Description:</h5> This field is used to describe the image, the description will be displayed in all galleries along with the image. (On the home page the BnB name will be used instead of the description)") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>Main Photo:</h5> The main photo will appear on the home page carousel of this website and be the most prominently displayed photo on your BnB info screen.(Generally this will be a picture of the BnB itself.)") %>
+        </li>
+        <li>
+          <%= simple_format("<h5>Main Photo:</h5> After the data is saved the upload image screen will appear.") %>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
 </div>

@@ -18,7 +18,7 @@ class BookingsSweeper < ActionController::Caching::Sweeper
 
   private
   def expire_cache_for(booking)
-    expire_action(bnb_booking_url(booking.bnb, booking))
+    expire_action(booking_url(booking))
   end
 
   def expire_events_cache(booking)

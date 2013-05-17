@@ -43,5 +43,4 @@ class Guest < ActiveRecord::Base
     self[:name].capitalize!
     self[:surname].capitalize!
   end
-
 end

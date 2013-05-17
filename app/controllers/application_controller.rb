@@ -1,4 +1,9 @@
+require "application_responder"
+
 class ApplicationController < ActionController::Base
+  self.responder = ApplicationResponder
+  respond_to :html
+
   protect_from_forgery
 
   before_filter :require_layout, :correct_xhr_headers, :renew_subscription
@@ -7,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
   # Devise
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.is?(:owner)
+    if current_user.is_owner?
       show_bnb_url(current_user.bnb)
     else
       session.delete(:return_to) || root_url
@@ -21,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   #Subscriptions
   def renew_subscription
-    if current_user && current_user.is?(:owner)
+    if current_user && current_user.is_owner?
       redirect_to(payment_plans_subscriptions_url) if current_user.subscriptions.first.has_expired?
     end
   end

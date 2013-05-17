@@ -22,10 +22,10 @@
             <% end %>
         </td>
         <td><%= display_status_label(booking.status) %></td>
-        <td><%= link_to 'Edit', edit_guest_bnb_booking_path(booking.bnb, booking), class: 'btn btn-mini btn-primary' unless booking.closed? %></td>
+        <td><%= link_to 'Edit', edit_guest_booking_path(booking), class: 'btn btn-mini btn-primary' unless booking.closed? %></td>
       </tr>
   <% end %>
 </table>
 
 <br>
-<div class="span9" style="text-align: center;"><%= will_paginate(bookings, :param_name => info_page) %></div>
+<div class="span9" style="text-align: center;"><%= will_paginate(bookings, param_name: info_page) %></div>

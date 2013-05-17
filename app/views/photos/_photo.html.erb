@@ -14,8 +14,8 @@
       <% end %>
 
 
-      <%= link_to 'Edit', edit_bnb_photo_path(@bnb,photo) if can? :edit, photo %>
-      <%= link_to 'Remove', bnb_photo_path(@bnb, photo),:class => "delete_photo", method: :delete if can? :destroy, photo  %>
+      <%= link_to 'Edit', edit_photo_path(photo) if can? :edit, photo %>
+      <%= link_to 'Remove', photo_path(photo),class: "delete_photo", method: :delete if can? :destroy, photo  %>
 
     </li>
   </ul>

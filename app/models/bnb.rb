@@ -76,6 +76,10 @@ class Bnb < ActiveRecord::Base
     full_address
   end
 
+  def photo_limit_reached?
+    photos.any? && photos.count >= 5
+  end
+
 
   private
   def default_values

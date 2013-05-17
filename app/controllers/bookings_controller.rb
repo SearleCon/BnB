@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
   respond_to :js, :html, :json
   before_filter :authenticate_user!, only: :confirm
-  load_and_authorize_resource :bnb
-  load_and_authorize_resource :booking, through: :bnb, except: :index
+  load_and_authorize_resource :bnb, only: [:new, :create, :index]
+  load_and_authorize_resource :booking, through: :bnb, only: [:new, :create]
+  load_and_authorize_resource :booking, except: [:new, :create, :index]
+
   authorize_resource only: :index
 
   cache_sweeper :bookings_sweeper
@@ -40,45 +42,38 @@ class BookingsController < ApplicationController
   # PUT /bookings/1
   # PUT /bookings/1.json
   def update
-    if @booking.update_attributes(params[:booking]) then
-      flash.now[:notice] = "Booking was successfully updated."
-    else
-      flash.now[:alert] = "Booking could not be updated."
-    end
-    respond_with(@booking, location: bnb_bookings_url(@bnb))
+    @booking.update_attributes(params[:booking])
+    respond_with(@booking, location: bnb_bookings_url(@booking.bnb))
   end
 
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
     @booking.destroy
-    flash.now[:alert] = 'Booking could not be destroyed' unless @booking.destroyed?
     respond_with(@booking)
   end
 
   def check_out
-    @booking.line_items.clear
-    @booking.line_items.build(description: @booking.rate.description, value: (@booking.rate.price * number_of_nights) )
-    if @booking.save
-      redirect_to show_invoice_bnb_booking_url(@bnb, @booking)
+    if @booking.check_out
+      redirect_to show_invoice_booking_url(@booking)
     else
       redirect_to bnb_bookings_url(@bnb), alert: "This booking could not be checked out."
     end
   end
 
   def cancel_check_out
-    if @booking.update_attributes(status: :checked_in, active: true)
-      redirect_to bnb_bookings_url(@bnb), notice: 'Check out process was cancelled successfully.'
+    if @booking.update_attributes(status: :checked_in)
+      redirect_to bnb_bookings_url(@booking.bnb), notice: 'Check out was cancelled successfully.'
     else
-      redirect_to show_invoice_bnb_booking_url(@bnb, @booking), alert: "Cancellation failed."
+      redirect_to show_invoice_booking_url(@booking), alert: "Cancellation failed."
     end
   end
 
-  def complete_check_out
+  def close
     if @booking.update_attributes(status: :closed, active: false)
-      redirect_to bnb_bookings_url(@bnb), notice: 'Booking has been checked out successfully.'
+      redirect_to bnb_bookings_url(@booking.bnb), notice: 'Booking has been closed successfully.'
     else
-      redirect_to show_invoice_bnb_booking_url(@bnb, @booking), alert: "The check out process could not be completed."
+      redirect_to show_invoice_booking_url(@booking), alert: "The booking could not be closed."
     end
   end
 
@@ -86,7 +81,7 @@ class BookingsController < ApplicationController
     respond_with(@booking)
   end
 
-  def print_pdf
+  def print_invoice
     @pdf = render_to_string pdf: @booking.guest.name,
                             template: 'bookings/invoice.pdf.erb',
                             header: {center: "Invoice", right: Time.now.strftime('%A, %d %B %Y')},
@@ -98,17 +93,7 @@ class BookingsController < ApplicationController
 
 
   def confirm
-    if @booking.update_attributes(status: :booked)
-      UserMailer.delay.confirmation_received(@booking)
-      redirect_to bnb_bookings_url(@bnb), notice: "Booking for #{@booking.guest.name} was confirmed successfully"
-    else
-      redirect_to bnb_bookings_url(@bnb), alert: "Booking for #{@booking.guest.name} could not be confirmed"
-    end
+    UserMailer.delay.confirmation_received(@booking) if @booking.update_attributes(status: :booked)
+    respond_with(@booking, location: bnb_bookings_url(@bnb))
   end
-
-  private
-  def number_of_nights
-    total ||= (Date.parse(@booking.event.end_at) - Date.parse(@booking.event.start_at)).to_i
-  end
-
 end

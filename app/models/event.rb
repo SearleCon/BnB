@@ -31,18 +31,22 @@ class Event < ActiveRecord::Base
         end: self[:end_at],
         allDay: true,
         recurring: false,
-        url: Rails.application.routes.url_helpers.bnb_booking_path(booking.bnb, self[:booking_id]),
-        edit_booking_url: Rails.application.routes.url_helpers.edit_bnb_booking_path(booking.bnb,self[:booking_id]),
+        url: Rails.application.routes.url_helpers.booking_path(booking),
+        edit_booking_url: Rails.application.routes.url_helpers.edit_booking_path(booking),
         color: self[:color]
     }
   end
 
   def start_at
-    self[:start_at].strftime('%A, %d %B %Y')
+   self[:start_at].strftime('%A, %d %B %Y')
   end
 
   def end_at
     self[:end_at].strftime('%A, %d %B %Y')
+  end
+
+  def duration
+    (self[:end_at].to_date - self[:start_at].to_date).to_i
   end
 
   private

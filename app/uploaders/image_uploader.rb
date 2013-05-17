@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'carrierwave/processing/mime_types'
+require "securerandom"
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWaveDirect::Uploader
 
@@ -53,9 +54,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   protected
 
   def uuid
-    UUID.state_file = false
-    uuid = UUID.new
-    uuid.generate
+    SecureRandom.hex(9)
   end
 
 end

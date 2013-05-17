@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   validates_acceptance_of :terms_of_service
 
   after_create :create_subscription
+  before_destroy :clean_up
 
   include RoleModel
   roles_attribute :role_id
@@ -69,7 +70,11 @@ class User < ActiveRecord::Base
     if is_owner?
      plan = Plan.free_trial.first
      subscription = subscriptions.build(plan: plan)
-     subscription.save!
+     subscription.save
     end
+  end
+
+  def clean_up
+    bnb.try(:destroy) if is_owner?
   end
 end

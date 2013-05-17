@@ -1,13 +1,12 @@
 class LineItemsController < ApplicationController
    respond_to :js, only: [:create, :destroy]
    respond_to :json, only: :update
-   before_filter :get_booking
+   before_filter :get_booking, only: :create
    before_filter :get_line_item, only: [:update, :destroy]
 
 
   def create
-    @line_item = @booking.line_items.build(:description => 'describe charge', :value => 0)
-    flash.now[:error] = "An error occurred. Line item could not be created." unless @line_item.save
+    @line_item = @booking.line_items.create(description: 'describe charge', value: 0)
     respond_with(@line_item)
   end
 
@@ -18,7 +17,6 @@ class LineItemsController < ApplicationController
 
   def destroy
     @line_item.destroy
-    flash.now[:error] = 'An error occurred. Line item could not be removed.' unless @line_item.destroyed?
     respond_with(@line_item)
   end
 

@@ -1,10 +1,10 @@
 <% cache guest do %>
-<tr id="<%= guest.id %>" class="center">
-  <td><%= guest.name %></td>
-  <td><%= guest.surname %></td>
-  <td><%= number_to_phone(guest.contact_number, area_code: true)%></td>
-  <td><%= mail_to guest.email, nil, encode: :javascript %></td>
-  <td><div title="Click to edit" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-edit icon-white'), edit_bnb_guest_path(@bnb, guest), :id => 'edit' %></div></td>
-  <td><div title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), bnb_guest_path(@bnb, guest), confirm: 'Are you sure? Deleting the client will delete all his bookings as well!', :id => 'delete', method: :delete, remote: true %></div></td>
-</tr>
+    <%= content_tag_for(:tr, guest, class: 'center') do %>
+      <td><%= guest.name %></td>
+      <td><%= guest.surname %></td>
+      <td><%= number_to_phone(guest.contact_number, area_code: true)%></td>
+      <td><%= mail_to guest.email, nil, encode: :javascript %></td>
+      <td><div title="Click to edit" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-edit icon-white'), edit_guest_path(guest), id: 'edit' %></div></td>
+      <td><div title="Click to delete" rel="tooltip"><%= link_to content_tag('i', '', class: 'icon-remove-sign icon-white'), guest_path(guest), confirm: 'Are you sure? Deleting the client will delete all his bookings as well!', id: 'delete', method: :delete, remote: true %></div></td>
+    <% end %>
 <% end %>

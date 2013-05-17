@@ -3,11 +3,11 @@
 <h2>Guests</h2>
 
 <div class="header form-search" align="right">
-  <%= form_tag bnb_guests_path(@bnb), :method => 'get', id: 'search_table_form' do %>
+  <%= form_tag bnb_guests_path(@bnb), method: :get, id: 'search_table_form' do %>
      <%= hidden_field_tag :direction, params[:direction] %>
      <%= hidden_field_tag :sort, params[:sort] %>    
      
-     <%= text_field_tag :search, params[:search], :class => "input-medium search-query", :placeholder => "Search guests", :method => 'get' %>
+     <%= text_field_tag :search, params[:search], class: "input-medium search-query", placeholder: "Search guests", method: 'get' %>
        <% if params[:search]  %>
           <br>
           <label><%=link_to content_tag('i', '', class: 'icon-remove-sign icon-white').concat(" Show All"), bnb_guests_path(@bnb) %></label>
@@ -27,7 +27,7 @@
     <th></th>
     <th></th>
   </tr>
-  <%= render :partial => 'row', :collection => @guests, :as => :guest %>
+  <%= render partial: 'row', collection: @guests, as: :guest %>
 </table>
 <% end %>
 

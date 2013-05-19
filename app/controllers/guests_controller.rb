@@ -27,7 +27,7 @@ class GuestsController < ApplicationController
   # PUT /guests/1.json
   def update
     @guest.update_attributes(params[:guest])
-    respond_with(@guest, location: bnb_guests_url(@bnb))
+    respond_with(@guest, location: bnb_guests_url(@guest.bnb))
   end
 
   # DELETE /guests/1

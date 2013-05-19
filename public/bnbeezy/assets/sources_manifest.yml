@@ -37,11 +37,9 @@ sortdowns.png: 30ea8d713d6acecd99b4951d43951150
 sortups.png: 3ddc6e2345651e0fd5089fc9c3d1123c
 success.png: cb10698581d2c13cafd2622de948dab8
 ajax_helper.js: 128ff1874f5ef16cfa7bd45d97fdb632
-application.js: 36689f6819eea93e8a4dd4ec365de20e
+application.js: 49ef05c2d60c83b4ee9a042f6ae7877a
 bnbeezy.js: 0a5a441031c60e026dcb4b851d331130
-bookings.js: e2a135133ac09c1509f104fa6bff2fd9
-calendar.js: a8e0eb0d346e4c631d0cd8352c87051f
-googlemap.js: 5b7a344498b0fde32e488b346c716ab3
+bookings.js: d4b3a4f40c4f0417d4233818df5d6869
 guest/bookings.js: 72ef968a3ec2797eebd2364f654bfc1f
 initialize.js: b1d8a2453105786b3e28e8168c8a4051
 jquery.disabler.min.js: 5827e509f0844da5773075c18da5b98d
@@ -49,11 +47,10 @@ jquery.imagesloaded.min.js: a737ccf97ff346b7840803e638859e1c
 photos.js: 1dfb4a0e676cc8c79ac37ffacc8c9eca
 static_pages.js: af2e01f47d2b2863eabe0ed3cf457f42
 utilities.js: 3ca8ed7150a35a339fefadd5fffe892c
-application.css: 74e24a5821d3003d42d29da5e850a1a2
+application.css: f65b3e946114d0b8d79f49802bc72b87
 bnbs.css: b180ba4c27fe37294f973878890896f7
 bookings.css: 43a0c6e5880277a893ced62573078e7a
-bootstrap_and_overrides.css: f1cd043fcd17d66bedc0a5cb1eec5b79
-guest/bookings.css: 2253bc70d16715329294a69114de1f2a
+bootstrap_and_overrides.css: c42a70308fb3d3e604fa09b62619981d
 static_pages.css: 9312ff1ea0757a000a8fcb252579743d
 gmaps4rails/all.js: 5f162e7b5bb391ede1a2b92163aa6247
 gmaps4rails/base.js: eb0f2b9adc1f0cc1044b62c24667f3bf
@@ -96,6 +93,8 @@ gmaps4rails/openlayers/objects/map.js: 51cece970d451a7d559481bff6b7f7c9
 gmaps4rails/openlayers/objects/marker.js: cef9de6294ed9b087f0044497b53ac6f
 gmaps4rails/openlayers/objects/polyline.js: 718eacb8fe9fecfbbafd932dafe558d5
 gmaps4rails/openlayers/shared.js: fee690fa9473a819da30cbdf9cfb91a8
+head.js: 7f1ea471638cfae5b7820062f735d235
+head.min.js: 4609c542804ef4b704a72b46ff177f28
 gmaps4rails.css: c2788ccb7aa6158a63ade4271d8c3fcc
 glyphicons-halflings-white.png: d5520c35466bc8ca4a8542d9ee69f156
 glyphicons-halflings.png: a7bc9a883015ba6164960f7033c44aba
@@ -113,8 +112,6 @@ jquery-ui/ui-icons_2e83ff_256x240.png: affb65c5201ff256efa84b3bb4b39fee
 jquery-ui/ui-icons_454545_256x240.png: 6067129dd597759030e53cf15e60ec18
 jquery-ui/ui-icons_888888_256x240.png: 67b85ada55129b573517a7e59831413f
 jquery-ui/ui-icons_cd0a0a_256x240.png: f31841d583a5bab7e3006fc93bf03f9e
-jquery-ui.js: 3de6c3db9b40714cfce7ccac57e2907a
-jquery.js: a6fa4f53241fdf30afb9fb1cc539353a
 jquery.min.map: 1a79e8646229bcb89d78019310fe30e0
 normalize-rails/index.css: 7df884248c903850971828e536f4eb8a
 normalize-rails/normalize.css: 7df884248c903850971828e536f4eb8a

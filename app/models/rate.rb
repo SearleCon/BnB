@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: rates
+#
+#  id            :integer          not null, primary key
+#  price         :decimal(, )
+#  active        :boolean
+#  description   :string(255)
+#  rateable_id   :integer
+#  rateable_type :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class Rate < ActiveRecord::Base
   belongs_to :rateable, polymorphic: true
 

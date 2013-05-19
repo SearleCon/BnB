@@ -140,6 +140,8 @@ GEM
     friendly_id (4.0.9)
     fullcalendar-rails (1.5.4.0)
     geocoder (1.1.8)
+    headjs-rails (0.4.1)
+      rails (>= 3.0.0)
     heroku-api (0.3.9)
       excon (~> 0.20.1)
     hike (1.2.2)
@@ -346,6 +348,7 @@ DEPENDENCIES
   fullcalendar-rails
   geocoder
   gmaps4rails (>= 2.0.0.pre)!
+  headjs-rails
   jquery-rails
   jquery-turbolinks (~> 1.0.0.rc2)
   jquery-ui-rails

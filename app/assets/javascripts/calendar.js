@@ -1,2 +1,0 @@
-//= require fullcalendar
-//= require bootbox

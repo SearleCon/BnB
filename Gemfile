@@ -42,12 +42,13 @@ gem 'bootbox-rails'
 gem "friendly_id"
 gem "ransack"
 gem 'newrelic_rpm'
-gem 'quiet_assets', :group => :development
+gem 'quiet_assets', group: :development
 gem "best_in_place"
 gem 'carrierwave-processing'
 gem 'normalize-rails'
 gem 'sprockets-image_compressor'
 gem 'responders'
+gem "headjs-rails"
 
 
 

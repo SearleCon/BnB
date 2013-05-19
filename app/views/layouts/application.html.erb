@@ -5,8 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag controller_path if Rails.application.assets.find_asset "#{controller_name}.js.coffee" %>
+  <%= javascript_include_tag('head.min') %>
+  <%= headjs_include_tag "application" %>
+  <%= headjs_include_tag controller_path if Rails.application.assets.find_asset "#{controller_name}.js.coffee" %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
   <%= yield(:head) %>

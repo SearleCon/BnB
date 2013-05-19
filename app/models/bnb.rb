@@ -2,7 +2,7 @@
 #
 # Table name: bnbs
 #
-#  id               :integer          primary key
+#  id               :integer          not null, primary key
 #  name             :string(255)
 #  description      :text
 #  email            :string(255)
@@ -16,16 +16,16 @@
 #  contact_person   :string(255)
 #  twitter_account  :string(255)
 #  facebook_page    :string(255)
-#  created_at       :timestamp        not null
-#  updated_at       :timestamp        not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #  user_id          :integer
 #  latitude         :float
 #  longitude        :float
 #  rating           :integer
 #  region           :string(255)
-#  standard_rate    :decimal(, )
 #  slug             :string(255)
 #  approved         :boolean          default(FALSE)
+#  mappable         :boolean          default(FALSE)
 #
 
 class Bnb < ActiveRecord::Base

@@ -1,5 +1,4 @@
 class SubscriptionsController < ApplicationController
-  skip_before_filter :renew_subscription
 
   # GET /subscriptions/1
   # GET /subscriptions/1.json

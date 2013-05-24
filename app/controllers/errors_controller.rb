@@ -1,5 +1,4 @@
 class ErrorsController < ApplicationController
-  skip_before_filter :renew_subscription
 
   def show
     @exception = env["action_dispatch.exception"]

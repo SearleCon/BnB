@@ -32,6 +32,8 @@ class Bnb < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  PHOTO_LIMIT = 5
+
   scope :approved, -> { where(approved: true) }
 
 
@@ -77,7 +79,15 @@ class Bnb < ActiveRecord::Base
   end
 
   def photo_limit_reached?
-    photos.any? && photos.count >= 5
+    photos.many? && photos.size >= PHOTO_LIMIT
+  end
+
+  def main_photo
+    photos.processed.main_photo.first
+  end
+
+  def support_photos
+    photos.processed.support_photos
   end
 
 

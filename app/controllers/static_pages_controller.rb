@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   # encoding: utf-8
-  skip_before_filter :renew_subscription
 
   before_filter :generate_cache_key
   before_filter :authenticate_user!, only: :admin

@@ -36,21 +36,19 @@
     <div class="row" id="bnb_row">
       <div class="span3 gallery">
       <div class="thumbnail" align="center">
-      <% if  bnb.photos.main_photo.empty? %>
-            <%=link_to placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb) %>
+      <% if  bnb.main_photo %>
+            <%= link_to(image_tag(bnb.main_photo.image_url(:thumb)), show_bnb_path(bnb))%>
       <% else %>
-            <%= link_to(image_tag(bnb.photos.main_photo.first.image_url(:thumb)), show_bnb_path(bnb))%>
+            <%=link_to placeholdit_image_tag("240",text: "No photos uploaded!"),show_bnb_path(bnb) %>
       <% end %>
       </div>
       </div>
       <div id="result_details" class="span6">
         <h4><%= bnb.name %></h4>
-        <% params[:q].update :city_cont => bnb.city %>
+        <% params[:q].update city_cont: bnb.city %>
         <p>Location: <%= link_to bnb.city, bnbs_path(params) %></p>
-        <p><% bnb.rating.times do %>
-            <i class="icon-star icon-black"></i>
-        <% end %></p>
-        <p><%= bnb.description %></p>
+        <p><%= show_rating_stars(bnb.rating, invert: true) %></p>
+        <p><%= simple_format bnb.description %></p>
         <p><%= link_to "More...", show_bnb_path(bnb) %></p>
       </div>
     </div>
@@ -59,7 +57,7 @@
 
 <%= will_paginate @bnbs  %>
 
-<%= link_to "Back",:back%>
+<%= link_to "Back",:back %>
 
 
 

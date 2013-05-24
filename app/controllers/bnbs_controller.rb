@@ -8,14 +8,15 @@ class BnbsController < ApplicationController
   def index
     params[:q] ||= {}
     @search = Bnb.approved.search(params[:q])
-    @bnbs = @search.result.paginate(per_page: 15, page: params[:page])
+    @bnbs = @search.result.select([:id, :name, :description, :city, :rating, :slug]).paginate(per_page: 15, page: params[:page])
+
   end
 
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
     redirect_to startpage_url and return unless @bnb
-    convert_to_map_data(@bnb) if @bnb.mappable?
+     convert_to_map_data(@bnb) if @bnb.mappable?
   end
 
   def nearby_bnbs
@@ -23,7 +24,7 @@ class BnbsController < ApplicationController
      params[:q] ||= {}
      @search = @bnb.nearbys(10).search(params[:q])
      @bnbs = @search.result.paginate(per_page: 5, page: params[:page])
-     render 'index'
+     render :index
     else
      redirect_to show_bnb_url(@bnb), alert: "No bnbs were found nearby"
    end
@@ -43,8 +44,6 @@ class BnbsController < ApplicationController
     redirect_to bnb_setup_wizard_url(@bnb)
   end
 
-  # PUT /bnbs/1
-  # PUT /bnbs/1.json
   def update
    @bnb.update_attributes(params[:bnb])
    respond_with(@bnb)

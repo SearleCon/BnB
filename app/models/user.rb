@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   roles :guest, :owner, :admin
 
   def bnb
-    @bnb ||= Bnb.where(user_id: self).last
+    @bnb ||= Bnb.where(user_id: self[:id]).last
   end
 
 

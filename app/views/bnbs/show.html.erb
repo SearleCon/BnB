@@ -14,9 +14,8 @@
         <h2><%= @bnb.name %></h2>
 
         <p align="center">
-          <% @bnb.rating.times do %>
-              <i class="icon-star icon-white"></i>
-          <% end %></p>
+          <%= show_rating_stars(@bnb.rating)  %>
+        </p>
         <br>
 
         <strong>Description</strong>
@@ -42,8 +41,8 @@
 
       <div class="span5 pull-right gallery">
         <div class="thumbnail">
-          <% cache @bnb.photos.main_photo.first do %>
-              <%= display_main_photo(@bnb.photos.main_photo.first) %>
+          <% cache @bnb.main_photo do %>
+              <%= display_main_photo(@bnb.main_photo) %>
           <% end %>
         </div>
         <% if user_signed_in? && current_user.is_owner? %>
@@ -99,8 +98,8 @@
         <div class="carousel-inner">
           <div class="item active">
             <ul class="thumbnails">
-              <% cache @bnb.photos.processed.support_photos do %>
-                  <%= display_support_photos(@bnb.photos.processed.support_photos) %>
+              <% cache @bnb.support_photos do %>
+                  <%= display_support_photos(@bnb.support_photos) %>
               <% end %>
             </ul>
           </div>

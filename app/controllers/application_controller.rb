@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  before_filter :require_layout, :correct_xhr_headers, :renew_subscription
+  before_filter :require_layout, :correct_xhr_headers
   after_filter :set_xhr_flash
 
   private

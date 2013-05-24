@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426092747) do
+ActiveRecord::Schema.define(:version => 20130522081015) do
 
   create_table "bnbs", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130426092747) do
     t.string   "slug"
     t.boolean  "approved",         :default => false
     t.boolean  "mappable",         :default => false
+    t.integer  "photos_count",     :default => 0
   end
 
   add_index "bnbs", ["slug"], :name => "index_bnbs_on_slug", :unique => true
@@ -133,13 +134,13 @@ ActiveRecord::Schema.define(:version => 20130426092747) do
   add_index "payment_notifications", ["user_id"], :name => "index_payment_notifications_on_user_id"
 
   create_table "photos", :force => true do |t|
-    t.string    "description"
-    t.string    "image"
-    t.timestamp "created_at",                     :null => false
-    t.timestamp "updated_at",                     :null => false
-    t.integer   "bnb_id"
-    t.boolean   "main",        :default => false
-    t.boolean   "processed",   :default => false
+    t.string   "description"
+    t.string   "image"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "bnb_id"
+    t.boolean  "main",        :default => false
+    t.boolean  "processed",   :default => false
   end
 
   add_index "photos", ["bnb_id"], :name => "index_photos_on_bnb_id"

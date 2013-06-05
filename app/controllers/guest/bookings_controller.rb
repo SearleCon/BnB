@@ -28,12 +28,12 @@ class Guest::BookingsController < ApplicationController
     @booking.guest.bnb = @bnb
     @booking.rooms = Room.find(params[:room_ids]) if params[:room_ids]
     send_notifications(@booking) if @booking.save
-    respond_with(@booking, location: guest_bookings_path)
+    respond_with(@booking, location: guest_bookings_url)
   end
 
   def update
     @booking.update_attributes(params[:booking])
-    respond_with(@booking, location: guest_bookings_path)
+    respond_with(@booking, location: guest_bookings_url)
   end
 
   private

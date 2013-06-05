@@ -52,7 +52,7 @@ class Event < ActiveRecord::Base
   private
 
   def default_values
-      self[:start_at] = Time.zone.now.current unless self[:start_at]
+      self[:start_at] = Time.zone.now unless self[:start_at]
       self[:end_at] = self[:start_at].advance(days: 1) unless self[:end_at]
   end
 end

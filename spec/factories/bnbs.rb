@@ -20,7 +20,21 @@ FactoryGirl.define do
     facebook_page 'www.facebook.com/TestBnb'
     approved true
     user_id 1
+
+    trait :valid_address do
+      address_line_one {'25 Lukin Rd'}
+      address_line_two { 'Selborne' }
+      city { 'East London' }
+      region { 'Eastern Cape' }
+      postal_code { '5201' }
+      country {'South Africa'}
+      latitude '-32.994557'
+      longitude '27.904022'
+      mappable true
+    end
   end
+
+
 end
 
 

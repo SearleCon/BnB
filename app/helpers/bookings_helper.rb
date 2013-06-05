@@ -5,9 +5,9 @@ module BookingsHelper
        when :checked_in
         html = (link_to 'Check out', check_out_booking_path(booking), method: :put, class: "btn btn-warning")
       when :booked
-        html = (link_to 'Check in', booking_path(@booking, {booking: { status: :checked_in}}), method: :put, remote: true, class: "btn btn-success")
+        html = (link_to 'Check in', check_in_booking_path(@booking), method: :put, remote: true, class: "btn btn-success")
        when :provisional
-        html =(link_to 'Confirm', booking_path(@booking , { booking: { status: :booked}}), method: :put, remote: true, class: "btn btn-info")
+        html =(link_to 'Confirm', confirm_booking_path(@booking), method: :put, remote: true, class: "btn btn-info")
       end
   end
 
@@ -19,7 +19,7 @@ module BookingsHelper
         content_tag(:span, status.capitalize, class: "label label-info")
       when :provisional
         content_tag(:span, status.capitalize, class: "label label-important")
-      when :closed
+      else
         content_tag(:span, status.capitalize, class: "label label-inverse")
     end
   end

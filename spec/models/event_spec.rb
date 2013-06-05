@@ -78,8 +78,8 @@ describe Event do
         expect(json[:end].strftime('%A, %d %B %Y')).to eq event.end_at
         expect(json[:allDay]).to be_true
         expect(json[:recurring]).to be_false
-        expect(json[:url]).to eq helper.bnb_booking_path(booking.bnb, event.booking_id)
-        expect(json[:edit_booking_url]).to eq helper.edit_bnb_booking_path(booking.bnb, event.booking_id)
+        expect(json[:url]).to eq helper.booking_path(event.booking_id)
+        expect(json[:edit_booking_url]).to eq helper.edit_booking_path(event.booking_id)
         expect(json[:color]).to eq event.color
       end
     end

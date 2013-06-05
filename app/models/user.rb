@@ -67,11 +67,11 @@ class User < ActiveRecord::Base
 
   private
   def create_subscription
-    if is_owner?
-     plan = Plan.free_trial.first
-     subscription = subscriptions.build(plan: plan)
-     subscription.save
-    end
+    #if is_owner?
+    # plan = Plan.free_trial.first
+    # subscription = subscriptions.build(plan: plan)
+    # subscription.save
+    #end
   end
 
   def clean_up

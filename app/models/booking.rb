@@ -28,6 +28,7 @@ class Booking < ActiveRecord::Base
 
   validates_presence_of :guest
   validates_presence_of :rooms
+  validates_presence_of :rate
 
   before_save :set_event_details
 
@@ -58,7 +59,7 @@ class Booking < ActiveRecord::Base
 
   private
   def set_event_details
-    event[:name] = "#{guest[:name]} (#{guest[:contact_number]} #{guest[:email]})"
-    event[:color] = EVENT_COLORS.fetch(self[:status].to_sym)
+     event[:name] = "#{guest[:name]} (#{guest[:contact_number]} #{guest[:email]})"
+     event[:color] = EVENT_COLORS.fetch(self[:status].to_sym)
   end
 end

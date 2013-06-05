@@ -7,5 +7,7 @@ FactoryGirl.define do
     guest
     event
     bnb
+    rate
+    status :provisional
   end
 end

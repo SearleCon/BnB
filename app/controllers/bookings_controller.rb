@@ -53,6 +53,11 @@ class BookingsController < ApplicationController
     respond_with(@booking)
   end
 
+  def check_in
+    @booking.update_attributes(status: :checked_in)
+    respond_with(@booking, location: bnb_bookings_url(@booking.bnb))
+  end
+
   def check_out
     if @booking.check_out
       redirect_to show_invoice_booking_url(@booking)

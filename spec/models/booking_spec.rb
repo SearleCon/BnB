@@ -24,6 +24,8 @@ describe Booking do
   describe 'Validations' do
     it { should validate_presence_of(:rooms) }
     it { should validate_presence_of(:guest) }
+    it { should validate_presence_of(:rate) }
+
   end
 
   #CallBacks

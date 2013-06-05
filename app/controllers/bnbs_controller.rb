@@ -15,7 +15,7 @@ class BnbsController < ApplicationController
   # GET /bnbs/1
   # GET /bnbs/1.json
   def show
-    redirect_to startpage_url and return unless @bnb
+     redirect_to startpage_url and return unless @bnb
      convert_to_map_data(@bnb) if @bnb.mappable?
   end
 

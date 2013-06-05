@@ -3,7 +3,7 @@
       <td><%= room.room_number %></td>
       <td><%= room.description %></td>
       <td><%= room.en_suite ? 'Yes' : 'No' %></td>
-      <td><%= room.extras  %></td>
+      <td><%= room.extras.presence || 'None'  %></td>
       <td><%= number_to_currency (room.rates)  %></td>
       <td><%= room.capacity %></td>
       <td><%= room.available ? 'Yes' : 'No'  %></td>

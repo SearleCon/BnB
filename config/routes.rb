@@ -22,7 +22,7 @@ Bnbeezy::Application.routes.draw do
      end
   end
 
-  resources :bnbs, shallow: true, except: [:show, :destroy] do
+  resources :bnbs, shallow: true, except: [:show, :new, :destroy] do
       get :nearby_bnbs, on: :member
       resources :photos, except: [:show]  do
        get :process_image, on: :member
@@ -34,7 +34,8 @@ Bnbeezy::Application.routes.draw do
         get :print_invoice, on: :member
         put :cancel_check_out, on: :member
         put :close, on: :member
-        get :confirm, on: :member
+        match :confirm, on: :member, via: [:get, :put]
+        put :check_in, on: :member
         resources :line_items, only: [:create, :update, :destroy]
       end
       resource :setup_wizard, controller: :setup_wizard, only: [:show, :update]

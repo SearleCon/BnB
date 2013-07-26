@@ -5,13 +5,10 @@ class RoomsController < ApplicationController
   load_and_authorize_resource :room, through: :bnb, only: [:new, :create, :index ]
   load_and_authorize_resource :room, except: [:new, :create, :index, :find_available]
 
-
-  helper_method :sort_column, :sort_direction
-
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.where(bnb_id: @bnb.id).search(description_cont: params[:search]).result.order(sort_column + " " + sort_direction).paginate(per_page: 15, page: params[:page])
+    @rooms = @rooms.search(description_cont: params[:search]).result.paginate(per_page: 15, page: params[:page])
   end
 
 
@@ -43,14 +40,6 @@ class RoomsController < ApplicationController
   end
 
   private
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
-  end
-
-  def sort_column
-    Room.column_names.include?(params[:sort]) ? params[:sort] : "description"
-  end
-
   def interpolation_options
     { resource_name: @room.description }
   end

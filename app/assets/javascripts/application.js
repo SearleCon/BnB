@@ -15,6 +15,7 @@
 //= require jquery.ui.all
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-sortable
 //= require best_in_place
 //= require select2
 //= require jquery.ui.datepicker

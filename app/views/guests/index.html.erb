@@ -4,9 +4,7 @@
 
 <div class="header form-search" align="right">
   <%= form_tag bnb_guests_path(@bnb), method: :get, id: 'search_table_form' do %>
-     <%= hidden_field_tag :direction, params[:direction] %>
-     <%= hidden_field_tag :sort, params[:sort] %>    
-     
+       
      <%= text_field_tag :search, params[:search], class: "input-medium search-query", placeholder: "Search guests", method: 'get' %>
        <% if params[:search]  %>
           <br>
@@ -18,16 +16,15 @@
 
 
 <% cache @guests do %>
-<table class="table sort_table" id="guests" style="font-size: 15px">
-  <tr id='table_headers'>
-    <th><%= sortable "name" %></th>
-    <th><%= sortable "surname" %></th>
-    <th><%= sortable "contact_number" %></th>
-    <th><%= sortable "email" %></th>
+<table class="table table-condensed table-bordered sortable" id="guests" style="font-size: 15px">
+  <thead>
+    <th>Name</th>
+    <th data-defaultsort="desc">Surname</th>
+    <th>Contact Number</th>
+    <th>Email</th>
     <th></th>
-    <th></th>
-  </tr>
-  <%= render partial: 'row', collection: @guests, as: :guest %>
+  </thead>
+  <%= render @guests %>
 </table>
 <% end %>
 

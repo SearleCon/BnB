@@ -1,17 +1,17 @@
 class GuestsController < ApplicationController
-  respond_to :json, :js, :html
+  respond_to :html, :js,:json
 
   load_and_authorize_resource :bnb, only: [:index, :new, :create]
   load_and_authorize_resource :guest, through: :bnb, only: [:index, :new, :create]
   load_and_authorize_resource :guest, except: [:index, :new, :create]
 
 
-  helper_method :sort_column, :sort_direction
 
   # GET /guests
   # GET /guests.json
   def index
-    @guests = Guest.where(bnb_id: @bnb.id).search(name_cont: params[:search]).result.order(sort_column + " " + sort_direction).paginate(per_page: 15, page: params[:page])
+    @guests = @guests.search(name_cont: params[:search]).result.paginate(per_page: 15, page: params[:page])
+    respond_with(@guests)
   end
 
   # POST /guests
@@ -38,13 +38,6 @@ class GuestsController < ApplicationController
   end
 
   private
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
-  end
-
-  def sort_column
-    Guest.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
 
   def interpolation_options
     { resource_name: @guest.full_name }

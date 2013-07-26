@@ -5,7 +5,7 @@
     <br>
   </div>
   <div class="pull-right">
-    <div id="home_carousel" class="carousel slide"><!-- class of slide for animation -->
+    <div id="home_carousel" class="carousel slide container"><!-- class of slide for animation -->
       <div class="carousel-inner">
         <div class="item active"><!-- class of active since it's the first item -->
           <%= image_tag("bnb3.jpg") %>
@@ -14,9 +14,10 @@
           </div>
         </div>
          <% cache @photos do %>
-          <%= render :partial => 'carousel_items', :collection => @photos, :as => :photo %>
+          <%= render partial: 'carousel_items', collection: @photos, as: :photo %>
          <% end %>
       </div>
+      <div class="loading hide"> <%= image_tag("black.png") %></div>
       <a class="carousel-control left" href="#home_carousel" data-slide="prev">&lsaquo;</a>
       <a class="carousel-control right" href="#home_carousel" data-slide="next">&rsaquo;</a>
     </div>

@@ -58,7 +58,7 @@ Bnbeezy::Application.routes.draw do
     get 'startpage'
     get 'admin'
     get 'terms_and_conditions'
-    get 'privacypolicy'
+    get 'privacy_policy'
     get 'faq'
     get 'help'
     get 'about'
@@ -164,7 +164,7 @@ end
 #                     startpage GET    /startpage(.:format)                         static_pages#startpage
 #                         admin GET    /admin(.:format)                             static_pages#admin
 #          terms_and_conditions GET    /terms_and_conditions(.:format)              static_pages#terms_and_conditions
-#                 privacypolicy GET    /privacypolicy(.:format)                     static_pages#privacypolicy
+#                 privacy_policy GET    /privacy_policy(.:format)                     static_pages#privacy_policy
 #                           faq GET    /faq(.:format)                               static_pages#faq
 #                          help GET    /help(.:format)                              static_pages#help
 #                         about GET    /about(.:format)                             static_pages#about

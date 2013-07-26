@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.14'
 
 gem 'bcrypt-ruby'
 gem 'will_paginate'
@@ -22,8 +22,8 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
-gem 'gmaps4rails', '>= 2.0.0.pre', git: 'https://github.com/fiedl/Google-Maps-for-Rails.git'
-gem "jquery-turbolinks", "~> 1.0.0.rc2"
+gem 'gmaps4rails'
+gem "jquery-turbolinks", "~> 1.0.0"
 gem 'select2-rails'
 gem 'placeholdit'
 gem "paypal-recurring"
@@ -49,6 +49,9 @@ gem 'normalize-rails'
 gem 'sprockets-image_compressor'
 gem 'responders'
 gem "headjs-rails"
+gem 'unicorn'
+
+
 
 
 
@@ -86,5 +89,4 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-  gem 'unicorn'
 end

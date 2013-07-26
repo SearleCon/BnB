@@ -1,5 +1,5 @@
 <div class="item">
-  <img src='<%= photo.image_url %>' />
+  <img alt="Bnb" lazy-src=<%= photo.image_url %> />
   <div class="carousel-caption">
     <p><%= link_to photo.try(:bnb).try(:name), show_bnb_path(photo.bnb) %></p>
   </div>

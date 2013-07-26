@@ -3,7 +3,7 @@
 
   <%= content_for(:the_links) do %>
       I agree to the  <%= link_to "Terms of Service", terms_and_conditions_path %>
-      and <%=link_to "Privacy Policy", privacypolicy_path %>
+      and <%=link_to "Privacy Policy", privacy_policy_path %>
   <% end %>
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>

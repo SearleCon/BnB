@@ -2,7 +2,8 @@ class StaticPagesController
   init: ->
 
   home: ->
-    Utilities.imageLoader(".carousel")
+    #Utilities.imageLoader(".carousel")
+    $('img').unveil()
     $('.carousel').carousel()
 
   admin: ->

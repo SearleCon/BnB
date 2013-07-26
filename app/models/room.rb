@@ -36,4 +36,8 @@ class Room < ActiveRecord::Base
     "#{description} Capacity: #{capacity} Rate: #{rates}"
   end
 
+  def bob
+   @association.owner
+  end
+
 end

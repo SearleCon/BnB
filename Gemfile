@@ -24,6 +24,7 @@ gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
 gem 'gmaps4rails'
 gem "jquery-turbolinks", "~> 1.0.0"
+gem "turbolinks"
 gem 'select2-rails'
 gem 'placeholdit'
 gem "paypal-recurring"

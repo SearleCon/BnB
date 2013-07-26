@@ -26,6 +26,8 @@
 //= require jquery.imagesloaded.min
 //= require jquery.disabler.min
 //= require lazy-bootstrap-carousel
+//= require jquery.blockUI
+//= require turbolinks
 //= require fullcalendar
 //= require bootbox
 //= require gmaps4rails/base

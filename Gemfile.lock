@@ -367,6 +367,7 @@ DEPENDENCIES
   sprockets-image_compressor
   sqlite3
   turbo-sprockets-rails3
+  turbolinks
   uglifier
   unicorn
   wicked

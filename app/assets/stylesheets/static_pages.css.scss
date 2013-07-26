@@ -3,17 +3,19 @@ body.static_pages {
   /* BnB Carousel */
   #home_carousel {
     width: 600px;
-    margin: 0px auto;
+    height: 480px;
 
     .carousel-inner {
       text-align: center;
     }
 
+    .carousel-inner > .item > img { margin: 0 auto; }
+
+
+
     .carousel .item > img {
       width: auto;
-      height: 480px;
       max-height: 480px;
-      display: inline-block;
     }
 
     .carousel-caption {

@@ -34,11 +34,10 @@ $.rails.showConfirmDialog = (link) ->
 
 
 
-$(document).ajaxStart ->
-  Utilities.createOverLay()
-
-$(document).ajaxStop ->
-  $("#overlay").remove()
+# BlockUI - Ajax and Turbolinks requests
+$(document).ajaxStart($.blockUI).ajaxStop $.unblockUI
+$(document).on "page:fetch", $.blockUI
+$(document).on "page:receive", $.unblockUI
 
 
 $(document).ready ->

@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   respond_to :js, :json, :html
 
   load_and_authorize_resource :bnb, find_by: :slug, only: [:new, :create, :index, :find_available ]
-  load_and_authorize_resource :room, through: :bnb, only: [:new, :create, :index ]
+  load_and_authorize_resource :room, through: :bnb, only: [:new, :create, :index, :find_available ]
   load_and_authorize_resource :room, except: [:new, :create, :index, :find_available]
 
   # GET /rooms
@@ -35,7 +35,7 @@ class RoomsController < ApplicationController
 
   def find_available
      @booking = params[:booking_id] ? Booking.find(params[:booking_id]) : Booking.new
-     @unbooked = @bnb.rooms.unbooked_rooms(Date.parse(params[:start_at]), Date.parse(params[:end_at])) + @booking.rooms
+     @unbooked =  @rooms.unbooked_rooms(Date.parse(params[:start_at]), Date.parse(params[:end_at])) + @booking.rooms
      respond_with(@unbooked)
   end
 

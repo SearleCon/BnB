@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="3285781572">
-    <data-source source="LOCAL" name="Rails BnB: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="5a269aee-e893-467a-b88c-2b33e079daf2">
+    <data-source source="LOCAL" name="Rails BnB: development" uuid="5a269aee-e893-467a-b88c-2b33e079daf2">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries>
@@ -13,7 +14,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: cucumber" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="7c9f2ea8-1666-4c00-a6b9-6b320af5f9a1">
+    <data-source source="LOCAL" name="Rails BnB: cucumber" uuid="7c9f2ea8-1666-4c00-a6b9-6b320af5f9a1">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries>
@@ -25,7 +27,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="43b05c99-b881-4bd6-bbbe-72ec86742513">
+    <data-source source="LOCAL" name="Rails BnB: test" uuid="43b05c99-b881-4bd6-bbbe-72ec86742513">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries>
@@ -37,7 +40,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: production" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="142f43d9-08d9-424c-a1e6-39d2f49eefae">
+    <data-source source="LOCAL" name="Rails BnB: production" uuid="142f43d9-08d9-424c-a1e6-39d2f49eefae">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/production.sqlite3</jdbc-url>
       <libraries>
@@ -49,7 +53,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="bc92650c-2e9c-4acf-864f-a6e5251bffd3">
+    <data-source source="LOCAL" name="Rails BnB: development" uuid="bc92650c-2e9c-4acf-864f-a6e5251bffd3">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries>
@@ -61,7 +66,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: cucumber" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="7179f0a6-4653-4588-8d5e-aaca5ebfc5a8">
+    <data-source source="LOCAL" name="Rails BnB: cucumber" uuid="7179f0a6-4653-4588-8d5e-aaca5ebfc5a8">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries>
@@ -73,7 +79,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: test" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="cac172d3-5fd6-4f3d-98ca-5bb601898c50">
+    <data-source source="LOCAL" name="Rails BnB: test" uuid="cac172d3-5fd6-4f3d-98ca-5bb601898c50">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries>
@@ -85,7 +92,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails BnB: production" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="b4985b1a-567c-49f9-b498-352f30f20e91">
+    <data-source source="LOCAL" name="Rails BnB: production" uuid="b4985b1a-567c-49f9-b498-352f30f20e91">
+      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/production.sqlite3</jdbc-url>
       <libraries>

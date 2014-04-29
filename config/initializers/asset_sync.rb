@@ -1,7 +1,7 @@
 AssetSync.configure do |config|
   config.fog_provider = 'AWS'
-  config.aws_access_key_id = 'AKIAJTDIXL57Z4GG4IKA'
-  config.aws_secret_access_key = '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'
+  config.aws_access_key_id = ENV['AWS_ACCESS_KEY']
+  config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
   config.fog_directory = 'searlecon'
 
   

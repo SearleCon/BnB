@@ -19,7 +19,6 @@ class Event < ActiveRecord::Base
 
   after_initialize :default_values, if: :new_record?
 
-
   scope :by_bookings, -> bookings { includes(booking: :bnb).where(booking_id: bookings) }
 
   def as_json(options = {})

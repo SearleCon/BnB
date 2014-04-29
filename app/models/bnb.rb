@@ -26,6 +26,7 @@
 #  slug             :string(255)
 #  approved         :boolean          default(FALSE)
 #  mappable         :boolean          default(FALSE)
+#  photos_count     :integer          default(0)
 #
 
 class Bnb < ActiveRecord::Base
